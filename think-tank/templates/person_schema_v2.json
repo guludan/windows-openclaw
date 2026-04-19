@@ -1,0 +1,151 @@
+{
+  "_schema": "person_v2",
+  "_version": "2.0",
+  "_meta": {
+    "name": "学者/人物姓名",
+    "last_updated": "ISO日期",
+    "distillation_sources": ["来源列表"],
+    "distillation_model": "使用的模型",
+    "source_materials": "论文/演讲/历史记录/战役记录等",
+    "quality_note": "蒸馏质量备注（基于哪些材料、覆盖度、待补充等）"
+  },
+
+  "identity": {
+    "name": "",
+    "name_en": "",
+    "era": "活跃年代或时期",
+    "primary_domain": "主要领域（学术/军事/政治/经济等）",
+    "secondary_domains": ["次要领域"],
+    "brief": "一句话定位"
+  },
+
+  "persona": {
+    "style": "语言和表达风格",
+    "tone": "语气和情感基调",
+    "catchphrases": ["标志性用语"],
+    "speaking_patterns": {
+      "opening": "开场模式",
+      "argumentation": "论证模式",
+      "rhetoric": "修辞特征",
+      "humor": "幽默风格（如有）",
+      "transition": "过渡方式"
+    }
+  },
+
+  "cognitive_patterns": [
+    {
+      "pattern_id": "cp_001",
+      "name": "认知模式名称",
+      "description": "详细描述这个思维模式",
+      "trigger_topics": ["会激活此模式的话题/情境"],
+      "reasoning_chain": "标准推理路径：观察→框架→推导→结论",
+      "typical_conclusion_direction": "在此模式下结论通常朝哪个方向",
+      "confidence": 0.85,
+      "example_application": "给定具体场景，此人物会如何分析"
+    }
+  ],
+
+  "analytical_frameworks": [
+    {
+      "framework_name": "框架名称",
+      "core_logic": "核心逻辑（一段话）",
+      "key_concepts": ["关键概念及其定义"],
+      "key_variables": ["关键变量"],
+      "causal_model": "因果链条 A→B→C",
+      "when_activated": "在什么条件下启用此框架",
+      "output_characteristics": "使用此框架时分析产出的特征",
+      "limitations": "此框架的盲区",
+      "evolution": "框架的演化历程（如有）"
+    }
+  ],
+
+  "knowledge": {
+    "core_frameworks": [
+      {
+        "name": "核心理论/战略框架名",
+        "description": "描述",
+        "key_evidence": ["支撑证据/历史案例"]
+      }
+    ],
+    "methods": ["偏好方法/战术"],
+    "key_arguments": {
+      "议题": "其观点和论证"
+    },
+    "deep_domains": [
+      {
+        "domain": "深度掌握的领域",
+        "depth": "深度描述",
+        "signature_insights": ["代表性洞见/战例/案例"]
+      }
+    ],
+    "surface_domains": ["了解但不深入的领域"],
+    "blind_spots": ["明显忽略的角度"],
+    "interdisciplinary_connections": ["跨领域连接"]
+  },
+
+  "value_system": {
+    "core_values": [
+      {"value": "价值", "rank": 1, "rationale": "为什么这是最高价值"}
+    ],
+    "red_lines": ["在任何情况下都不会接受的底线"],
+    "pragmatic_flexibility": "在哪些方面愿意妥协或灵活处理",
+    "value_conflicts": ["当两个价值冲突时的典型选择"]
+  },
+
+  "argumentation_style": {
+    "preferred_methods": ["偏好的论证/说服方式"],
+    "rhetorical_signatures": ["标志性修辞特征"],
+    "data_usage": "如何使用数据/证据/情报",
+    "counter_argument_style": "如何回应反对意见",
+    "audience_awareness": "对受众的预设"
+  },
+
+  "personality_traits": {
+    "intellectual_temperament": "智识气质（激进/保守/务实/理想等）",
+    "emotional_register": "情感基调和表达方式",
+    "relationship_to_power": "与权力的关系",
+    "international_orientation": "国际视野/立场",
+    "communication_style": "沟通风格",
+    "evolution_trajectory": "思想演变轨迹总述",
+    "controversial_positions": ["有争议的立场"],
+    "strengths": ["核心优势"],
+    "limitations": ["局限性"]
+  },
+
+  "predictive_patterns": {
+    "strengths": [
+      {"domain": "领域", "reason": "为什么预测/判断准确"}
+    ],
+    "biases": [
+      {"domain": "领域", "bias_direction": "系统性偏差方向", "reason": "为什么会有此偏差"}
+    ],
+    "conditions_for_accuracy": "在什么条件下判断最可靠",
+    "conditions_for_inaccuracy": "在什么条件下容易失误",
+    "warning_signals": ["其关注的关键预警信号"],
+    "methodology": "做判断时的标准流程"
+  },
+
+  "decision_framework": {
+    "priority_order": ["决策时的价值优先级"],
+    "risk_tolerance": "风险承受度描述",
+    "information_sources": "信息来源偏好和优先级",
+    "decision_speed": "决策速度（果断/谨慎/拖延）",
+    "thinking_patterns": ["决策时的思维模式"],
+    "default_stance": "面对新问题时的默认立场"
+  },
+
+  "samples": [
+    {
+      "source": "来源",
+      "topic": "话题",
+      "quote": "原始引用/发言片段",
+      "context": "上下文背景"
+    }
+  ],
+
+  "interaction_guide": {
+    "role_prompt": "作为此人物AI人格时使用的系统提示词",
+    "do": ["应该做的事"],
+    "dont": ["不应该做的事"]
+  }
+}

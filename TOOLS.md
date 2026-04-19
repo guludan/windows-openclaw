@@ -1,0 +1,51 @@
+# TOOLS.md - 本地配置笔记
+
+## API Keys
+
+### 搜索
+- **Exa Search**: 7be7a599-fa7b-4107-9ef1-ad96646156c2 (primary, working), 68d64b2b-0c48-4fd4-a1fb-74fb71f3f4ba (backup, may be 403)
+- **SerpAPI**: 848c4ec87cac7776b9404f0af1aeb36fce936d1aa3aebe899664eaa43e67ccc2
+- **Tavily**: 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 (primary), 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 (backup)
+
+### 经济/金融数据
+- **MAP KEY**: 758b37447501167e207b94e50bf793ef
+- **EIA API**: 5k9gGtqYJZbo6xmBRntk1DqoXGbyQrFxRqYeJVqf
+- **FRED API**: 14876f904987b05adca701fb6f6e026d
+- **AIS API**: edf9248fb33dedf8e9c72f23b9d1e5bb6a31afff
+- **Finnhub**: d709oh1r01qtb4ra0b50d709oh1r01qtb4ra0b5g
+- **WTO API**: (pending)
+
+### 冲突/政治数据
+- **UCDP API**: 3704a6e6c39684d5
+- **ACLED**: email=jaccck1234567@gmail.com, password=Thugstools123@
+
+### 航空/交通
+- **ICAO API**: 8d3f6e2a-9de9-4894-9bf4-8f9e1413c029
+- **OPENSKY**: clientId=jaccck1234567@gmail.com-api-client, clientSecret=UOv4T51xiUEB1c4VEx7FAefNWynaTqAk
+
+### LLM
+- **智谱 (Zhipu)**: 19649c91787b4220b809353ce50657ad.kHqGtEeuidt6UecO (GLM-4-plus / GLM-5)
+- **SiliconFlow** (兜底): sk-tnaasdpeozarapwsxndsewyobdlvmwauwoemzmwcvltbapmj
+- **本地 Ollama Embedding**: http://localhost:11434/api/embed
+
+## 知乎 Cookies
+- 路径: .cookies/zhihu_cookies.txt
+- 状态: 搜索API返回401，需排查
+
+## Ollama (本地 LLM + Embedding)
+- **地址**: http://172.26.0.1:11434
+- **Embedding 模型**: bge-m3:latest (1024维, 多语言100+语言, 中英文最优) — 推荐
+- **Embedding 备用**: qwen3-embedding:latest (4096维)
+- **LLM**: qwen3-embedding 仅 embed, 需 pull 大模型做蒸馏
+- **调用**: POST /api/embed, {"model":"qwen3-embedding:latest","input":"text"}
+- 优先用本地 Ollama embedding, SiliconFlow 仅兜底
+
+## 数据存储
+- **统一路径**: /mnt/d/data (Windows D:\data)
+- 所有数据库、向量库、缓存数据放这里
+- chromadb、postgres、redis 等数据目录都在此
+
+## 注意
+- SiliconFlow 要钱，仅作兜底
+- 优先用本地 Ollama embedding
+- 子 session 跑分析任务（coding plan 免费）

@@ -1,0 +1,95 @@
+# think-tank/config.yaml - 三套人格智库统一配置
+# 采集源、Lacan维度、目录结构全部在这里定义
+
+categories:
+  joint-staff:
+    display_name: "联合参谋部"
+    person_root: "joint-staff"  # 相对 think-tank/
+    # 联参的 person 在 group 子目录下: joint-staff/commander/毛泽东/
+    has_groups: true
+    lacan_dims: standard
+    # 采集配置
+    sources:
+      web: true
+      bilibili: true
+      images: false
+      papers: false
+    # 提取参数
+    extract:
+      is_military: 1
+      default_source: "web"
+    # 向量库
+    vecdb:
+      lacan: "_chromadb/lacan_db"
+      custom: null
+    # 报告引擎
+    report_engine: "joint-staff/joint_staff_report.py"
+
+  designers:
+    display_name: "设计师"
+    person_root: "designers"
+    has_groups: false
+    lacan_dims: aesthetic
+    sources:
+      web: true
+      bilibili: false
+      images: true
+      papers: false
+    extract:
+      is_military: 0
+      default_source: "web"
+    vecdb:
+      lacan: "_chromadb/lacan_db"
+      custom: "_chromadb/designers"
+    report_engine: null
+
+  psychologists:
+    display_name: "心理学智库"
+    person_root: "psychologists"
+    has_groups: true  # psychologists/cognitive/卡尼曼/
+    lacan_dims: standard
+    sources:
+      web: true
+      bilibili: true
+      images: false
+      papers: true
+    extract:
+      is_military: 0
+      default_source: "paper"
+    vecdb:
+      lacan: "_chromadb/lacan_db"
+      custom: null
+    report_engine: null
+
+  scholars:
+    display_name: "学者"
+    person_root: "scholars"
+    has_groups: true  # scholars/economics/张维迎/
+    lacan_dims: standard
+    sources:
+      web: true
+      bilibili: true
+      images: false
+      papers: true
+    extract:
+      is_military: 0
+      default_source: "speech"
+    vecdb:
+      lacan: "_chromadb/lacan_db"
+      custom: null
+    report_engine: null
+
+lacan_dim_templates:
+  standard:
+    unconscious: "无意识层面的深层动机和信念"
+    repetition: "反复出现的思维模式和主题"
+    transference: "如何与他人/听众建立关系"
+    drive: "内在驱动力和行动模式"
+  aesthetic:
+    unconscious: "审美无意识——什么在驱动你的设计直觉和审美判断"
+    repetition: "签名重复——你反复出现的设计母题和标志性手法"
+    transference: "风格转移——你如何将影响转化为自己的设计语言"
+    drive: "创作驱力——什么在真正驱动你的创作，你的执念和突破"
+
+# 人物名单（自动扫描时过滤用）
+# 不在这里维护，pipeline.py 会自动发现有 personality_v2.json 或 materials/ 的目录

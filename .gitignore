@@ -1,0 +1,16 @@
+# Secrets
+.cookies/
+*.env
+*_api_key*
+# Large data
+think-tank/_chromadb/
+think-tank/_trash/
+think-tank/personalities/*/materials/
+think-tank/personalities/*/*/materials/
+# OS
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+# OpenClaw internal
+.openclaw/

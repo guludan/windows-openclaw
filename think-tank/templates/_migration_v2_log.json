@@ -1,0 +1,227 @@
+{
+  "timestamp": "2026-04-11T12:19:47",
+  "total": 31,
+  "status_counts": {
+    "meta-upgraded": 3,
+    "skipped": 28
+  },
+  "results": [
+    {
+      "source": "scholar",
+      "group": "economics",
+      "name": "卢麒元",
+      "status": "meta-upgraded",
+      "details": "v2 already complete, meta upgraded"
+    },
+    {
+      "source": "scholar",
+      "group": "economics",
+      "name": "张维迎",
+      "status": "meta-upgraded",
+      "details": "v2 already complete, meta upgraded"
+    },
+    {
+      "source": "scholar",
+      "group": "economics",
+      "name": "温铁军",
+      "status": "meta-upgraded",
+      "details": "v2 already complete, meta upgraded"
+    },
+    {
+      "source": "scholar",
+      "group": "ir-security",
+      "name": "Chomsky",
+      "status": "skipped",
+      "details": "v2 already complete, no meta to upgrade"
+    },
+    {
+      "source": "scholar",
+      "group": "ir-security",
+      "name": "艾跃进",
+      "status": "skipped",
+      "details": "v2 already complete, no meta to upgrade"
+    },
+    {
+      "source": "scholar",
+      "group": "ir-security",
+      "name": "沈逸",
+      "status": "skipped",
+      "details": "v2 already complete, no meta to upgrade"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-ops",
+      "name": "崔可夫",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-ops",
+      "name": "林彪",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-ops",
+      "name": "朱可夫",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-ops",
+      "name": "隆美尔",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-ops",
+      "name": "张国华",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-ops",
+      "name": "古德里安",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "red-team",
+      "name": "粟裕",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "red-team",
+      "name": "山本五十六",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "red-team",
+      "name": "切·格瓦拉",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "red-team",
+      "name": "武元甲",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "commander",
+      "name": "徐向前",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "commander",
+      "name": "毛泽东",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "commander",
+      "name": "彭德怀",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "commander",
+      "name": "朱德",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "commander",
+      "name": "叶剑英",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "commander",
+      "name": "邓小平",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-intel",
+      "name": "周恩来",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-intel",
+      "name": "盖伦",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-intel",
+      "name": "佐尔格",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-intel",
+      "name": "杜勒斯",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-intel",
+      "name": "戴笠",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-intel",
+      "name": "卡纳里斯",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-logistics",
+      "name": "聂荣臻",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-logistics",
+      "name": "罗荣桓",
+      "status": "skipped",
+      "details": "v2 already complete"
+    },
+    {
+      "source": "joint-staff",
+      "group": "seat-logistics",
+      "name": "陈云",
+      "status": "skipped",
+      "details": "v2 already complete"
+    }
+  ]
+}
