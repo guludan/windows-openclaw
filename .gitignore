@@ -2,15 +2,25 @@
 .cookies/
 *.env
 *_api_key*
-# Large data
+
+# Large data / symlinked data
 think-tank/_chromadb/
 think-tank/_trash/
-think-tank/personalities/*/materials/
-think-tank/personalities/*/*/materials/
+think-tank/personalities
+think-tank/personality_vectors.json
+think-tank/reports/
+
 # OS
 .DS_Store
 Thumbs.db
 __pycache__/
 *.pyc
+
 # OpenClaw internal
 .openclaw/
+
+# Runtime state
+memory/
+state/
+design/
+*.log

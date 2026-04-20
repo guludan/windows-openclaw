@@ -24,6 +24,24 @@
 - **Embedding**：SiliconFlow Qwen3-Embedding-8B（`input` 不是 `inputs`，便宜首选）
 - **Python 环境**：miniconda3 (base=3.13, stt=3.11)
 
+## 智库Pipeline (政策/IR分析→金融市场)
+- **Pipeline v2**: `scripts/think_tank_pipeline_v2.py`
+  - 子议题拆分搜索（每个维度分学者/心理两路，每路6条）
+  - 概率自动归一化（总和=100%）
+  - 学术化prompt避免GLM 400过滤
+  - 历史参照Redis长效化（10个事件）
+  - 报告必须通过sessions_spawn生成（走coding plan，不花钱）
+  - 保存路径: `/mnt/d/data/think-tank-data/reports/`
+- **历史事件引擎**: `scripts/historical_context.py` (Redis DB0)
+  - 预置: 海湾1991、伊拉克2003、两伊1980、赎罪日1973、苏伊士1956、油轮2019、俄乌2022、朝鲜1950、太平洋1941、中印1962
+  - 可通过add_custom_event()添加
+- **RAG**: 78人格（25军事+30学者+23心理），15,747条向量
+  - Embedding: Ollama bge-m3 (1024维)
+  - Collections: core_profile, insights, materials
+- **已生成的报告**:
+  - `亚洲热点研判v1_2026-04-20.md` (初版)
+  - `亚洲热点研判v3_2026-04-20.md` (完整版，概率已归一化)
+
 ## 人格蒸馏v2→v3工作流
 详细操作手册：**WORKFLOWS.md**（reset后必读）
 - 四类数据源：联参25人(joint-staff)、设计师24人(designers)、学者(scholars)、心理学家24人(psychologists)

@@ -1,0 +1,566 @@
+{
+  "designers": {
+    "Alessandro Michele": {
+      "art_score": 10,
+      "commerce_score": 9,
+      "tension_type": "融合大师",
+      "tension_magnitude": 1,
+      "tension_label": "低"
+    },
+    "By Far": {
+      "art_score": 6,
+      "commerce_score": 8,
+      "tension_type": "商业偏重型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "Coco Chanel": {
+      "art_score": 7,
+      "commerce_score": 9,
+      "tension_type": "融合大师",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "Gattinoni": {
+      "art_score": 5,
+      "commerce_score": 7,
+      "tension_type": "商业偏重型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "Goyard": {
+      "art_score": 10,
+      "commerce_score": 10,
+      "tension_type": "融合大师",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "Hermès匠人精神": {
+      "art_score": 10,
+      "commerce_score": 10,
+      "tension_type": "融合大师",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "Jamin Puech": {
+      "art_score": 8,
+      "commerce_score": 5,
+      "tension_type": "艺术偏重型",
+      "tension_magnitude": 3,
+      "tension_label": "中"
+    },
+    "Lancel": {
+      "art_score": 5,
+      "commerce_score": 6,
+      "tension_type": "商业偏重型",
+      "tension_magnitude": 1,
+      "tension_label": "低"
+    },
+    "Le Tanneur": {
+      "art_score": 10,
+      "commerce_score": 7,
+      "tension_type": "融合大师",
+      "tension_magnitude": 3,
+      "tension_label": "中"
+    },
+    "Loewe": {
+      "art_score": 10,
+      "commerce_score": 6,
+      "tension_type": "挣扎者",
+      "tension_magnitude": 4,
+      "tension_label": "高"
+    },
+    "Loredana Roccisano": {
+      "art_score": 10,
+      "commerce_score": 5,
+      "tension_type": "挣扎者",
+      "tension_magnitude": 5,
+      "tension_label": "高"
+    },
+    "Malababa": {
+      "art_score": 10,
+      "commerce_score": 5,
+      "tension_type": "挣扎者",
+      "tension_magnitude": 5,
+      "tension_label": "高"
+    },
+    "Moynat": {
+      "art_score": 8,
+      "commerce_score": 7,
+      "tension_type": "融合大师",
+      "tension_magnitude": 1,
+      "tension_label": "低"
+    },
+    "Muzungo Sisters": {
+      "art_score": 10,
+      "commerce_score": 6,
+      "tension_type": "挣扎者",
+      "tension_magnitude": 4,
+      "tension_label": "高"
+    },
+    "Olympia Le-Tan": {
+      "art_score": 10,
+      "commerce_score": 5,
+      "tension_type": "挣扎者",
+      "tension_magnitude": 5,
+      "tension_label": "高"
+    },
+    "Phoebe Philo": {
+      "art_score": 9,
+      "commerce_score": 10,
+      "tension_type": "融合大师",
+      "tension_magnitude": 1,
+      "tension_label": "低"
+    },
+    "Polène": {
+      "art_score": 10,
+      "commerce_score": 9,
+      "tension_type": "融合大师",
+      "tension_magnitude": 1,
+      "tension_label": "低"
+    },
+    "Rei Kawakubo": {
+      "art_score": 10,
+      "commerce_score": 5,
+      "tension_type": "挣扎者",
+      "tension_magnitude": 5,
+      "tension_label": "高"
+    },
+    "Sandqvist": {
+      "art_score": 6,
+      "commerce_score": 5,
+      "tension_type": "艺术偏重型",
+      "tension_magnitude": 1,
+      "tension_label": "低"
+    },
+    "Serapian": {
+      "art_score": 5,
+      "commerce_score": 7,
+      "tension_type": "商业偏重型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "Skagen": {
+      "art_score": 6,
+      "commerce_score": 6,
+      "tension_type": "商业偏重型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "Uterqüe": {
+      "art_score": 5,
+      "commerce_score": 10,
+      "tension_type": "挣扎者",
+      "tension_magnitude": 5,
+      "tension_label": "高"
+    },
+    "Valextra": {
+      "art_score": 10,
+      "commerce_score": 5,
+      "tension_type": "挣扎者",
+      "tension_magnitude": 5,
+      "tension_label": "高"
+    },
+    "Virgil Abloh": {
+      "art_score": 10,
+      "commerce_score": 8,
+      "tension_type": "融合大师",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    }
+  },
+  "joint_staff": {
+    "叶剑英": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "彭德怀": {
+      "intuition_score": 8,
+      "logic_score": 6,
+      "tension_type": "直觉偏重型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "徐向前": {
+      "intuition_score": 8,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "朱德": {
+      "intuition_score": 8,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "毛泽东": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "邓小平": {
+      "intuition_score": 6,
+      "logic_score": 10,
+      "tension_type": "矛盾冲突型",
+      "tension_magnitude": 4,
+      "tension_label": "高"
+    },
+    "切·格瓦拉": {
+      "intuition_score": 10,
+      "logic_score": 9,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 1,
+      "tension_label": "低"
+    },
+    "山本五十六": {
+      "intuition_score": 9,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 1,
+      "tension_label": "低"
+    },
+    "武元甲": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "粟裕": {
+      "intuition_score": 8,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "佐尔格": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "卡纳里斯": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "周恩来": {
+      "intuition_score": 8,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "戴笠": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "杜勒斯": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "盖伦": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "罗荣桓": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "聂荣臻": {
+      "intuition_score": 6,
+      "logic_score": 10,
+      "tension_type": "矛盾冲突型",
+      "tension_magnitude": 4,
+      "tension_label": "高"
+    },
+    "陈云": {
+      "intuition_score": 8,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "古德里安": {
+      "intuition_score": 8,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "崔可夫": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "张国华": {
+      "intuition_score": 8,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "朱可夫": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "林彪": {
+      "intuition_score": 6,
+      "logic_score": 10,
+      "tension_type": "矛盾冲突型",
+      "tension_magnitude": 4,
+      "tension_label": "高"
+    },
+    "隆美尔": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    }
+  },
+  "scholars": {
+    "卢麒元": {
+      "intuition_score": 8,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "张维迎": {
+      "intuition_score": 10,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0,
+      "tension_label": "低"
+    },
+    "温铁军": {
+      "intuition_score": 8,
+      "logic_score": 7,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 1,
+      "tension_label": "低"
+    },
+    "Chomsky": {
+      "intuition_score": 6,
+      "logic_score": 10,
+      "tension_type": "矛盾冲突型",
+      "tension_magnitude": 4,
+      "tension_label": "高"
+    },
+    "沈逸": {
+      "intuition_score": 8,
+      "logic_score": 10,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    },
+    "艾跃进": {
+      "intuition_score": 10,
+      "logic_score": 8,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 2,
+      "tension_label": "中"
+    }
+  },
+  "schema_version": "v2",
+  "naming_convention": "think-tank/{category}/{group}/{person}/{meta.json, personality_v2.json}",
+  "chroma_path": "_chromadb/{designers, lacan_db}",
+  "psychologists": {
+    "丹尼尔·卡尼曼": {
+      "theory_score": 5.4,
+      "application_score": 7.1,
+      "tension_type": "应用驱动型",
+      "tension_magnitude": 0.17,
+      "tension_label": "中"
+    },
+    "唐纳德·诺曼": {
+      "theory_score": 6.2,
+      "application_score": 7.1,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0.09,
+      "tension_label": "低"
+    },
+    "基思·斯坦诺维奇": {
+      "theory_score": 5.4,
+      "application_score": 6.5,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0.11,
+      "tension_label": "低"
+    },
+    "米哈里·契克森米哈赖": {
+      "theory_score": 10.0,
+      "application_score": 4.7,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.53,
+      "tension_label": "中高"
+    },
+    "阿莫斯·特沃斯基": {
+      "theory_score": 7.7,
+      "application_score": 5.9,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.18,
+      "tension_label": "中"
+    },
+    "R·D·莱恩": {
+      "theory_score": 9.2,
+      "application_score": 7.1,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.21,
+      "tension_label": "中"
+    },
+    "卡尔·罗杰斯": {
+      "theory_score": 7.7,
+      "application_score": 5.9,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.18,
+      "tension_label": "中"
+    },
+    "欧文·亚隆": {
+      "theory_score": 10.0,
+      "application_score": 2.9,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.71,
+      "tension_label": "中高"
+    },
+    "维吉尼亚·萨提亚": {
+      "theory_score": 5.4,
+      "application_score": 4.7,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0.07,
+      "tension_label": "低"
+    },
+    "苏珊·福沃德": {
+      "theory_score": 8.5,
+      "application_score": 7.1,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0.14,
+      "tension_label": "低"
+    },
+    "阿尔伯特·埃利斯": {
+      "theory_score": 6.2,
+      "application_score": 3.5,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.27,
+      "tension_label": "中"
+    },
+    "保罗·艾克曼": {
+      "theory_score": 3.1,
+      "application_score": 4.7,
+      "tension_type": "应用驱动型",
+      "tension_magnitude": 0.16,
+      "tension_label": "中"
+    },
+    "克里斯·哈德纳吉": {
+      "theory_score": 3.1,
+      "application_score": 6.5,
+      "tension_type": "应用驱动型",
+      "tension_magnitude": 0.34,
+      "tension_label": "中"
+    },
+    "凯文·米特尼克": {
+      "theory_score": 3.8,
+      "application_score": 7.6,
+      "tension_type": "应用驱动型",
+      "tension_magnitude": 0.38,
+      "tension_label": "中"
+    },
+    "罗伯特·西奥迪尼": {
+      "theory_score": 6.2,
+      "application_score": 10.0,
+      "tension_type": "应用驱动型",
+      "tension_magnitude": 0.38,
+      "tension_label": "中"
+    },
+    "丹·阿瑞利": {
+      "theory_score": 6.2,
+      "application_score": 6.5,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0.03,
+      "tension_label": "低"
+    },
+    "乔纳森·海特": {
+      "theory_score": 4.6,
+      "application_score": 2.9,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.17,
+      "tension_label": "中"
+    },
+    "古斯塔夫·勒庞": {
+      "theory_score": 6.9,
+      "application_score": 4.7,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.22,
+      "tension_label": "中"
+    },
+    "所罗门·阿希": {
+      "theory_score": 4.6,
+      "application_score": 5.9,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0.13,
+      "tension_label": "低"
+    },
+    "斯坦利·米尔格拉姆": {
+      "theory_score": 6.2,
+      "application_score": 7.6,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0.14,
+      "tension_label": "低"
+    },
+    "理查德·塞勒": {
+      "theory_score": 8.5,
+      "application_score": 6.5,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.2,
+      "tension_label": "中"
+    },
+    "菲利普·津巴多": {
+      "theory_score": 5.4,
+      "application_score": 3.5,
+      "tension_type": "理论驱动型",
+      "tension_magnitude": 0.19,
+      "tension_label": "中"
+    },
+    "阿尔伯特·班杜拉": {
+      "theory_score": 5.4,
+      "application_score": 6.5,
+      "tension_type": "辩证融合型",
+      "tension_magnitude": 0.11,
+      "tension_label": "低"
+    },
+    "马丁·塞利格曼": {
+      "theory_score": 3.8,
+      "application_score": 10.0,
+      "tension_type": "应用驱动型",
+      "tension_magnitude": 0.62,
+      "tension_label": "中高"
+    }
+  }
+}

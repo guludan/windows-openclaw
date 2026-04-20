@@ -49,3 +49,7 @@
 - SiliconFlow 要钱，仅作兜底
 - 优先用本地 Ollama embedding
 - 子 session 跑分析任务（coding plan 免费）
+- **GLM API调用必须走子session（sessions_spawn）**，直接调API会被内容过滤400且花钱
+- **所有智库报告保存到D盘**: `/mnt/d/data/think-tank-data/reports/`
+- **Redis**: 127.0.0.1:6379, 数据在 `/mnt/d/data/redis/data/`, 二进制在 `~/.local/redis/bin/`
+- **Pipeline v2**: `scripts/think_tank_pipeline_v2.py` — 子议题拆分搜索+归一化概率+学术化prompt
