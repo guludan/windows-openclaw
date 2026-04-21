@@ -31,14 +31,10 @@
 
 | 集合 | 数量 | 说明 |
 |------|------|------|
-| materials | 11,303 | 素材chunk（800字/块） |
-| insights | 5,584 | 深层逻辑（从v3提取） |
-| core_profile | 105 | 人格摘要（含部分重复，实际95人） |
-| tension | 20 | 张力评分 |
-| drive | 46 | Lacan冲动驱动 |
-| repetition | 85 | 重复行为模式 |
-| transference | 40 | 转移关系 |
-| unconscious | 34 | 无意识语言模式 |
+| materials | 15,354 | 素材chunk（800字/块，含去重过滤） |
+| insights | 4,991 | 深层逻辑（从v3提取，is_meaningful过滤） |
+| core_profile | 96 | 人格摘要（96人完整） |
+| tension/drive/repetition/transference/unconscious | - | legacy集合，不再主动写入 |
 
 Embedding: Ollama bge-m3 (1024维)
 

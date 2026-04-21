@@ -1,6 +1,6 @@
 ---
 name: think-tank
-description: "多视角人格智库系统（统一pipeline）。学者+心理学家，v3逻辑溯源。采集→蒸馏→入库→张力→RAG报告。触发词：智库讨论、人格蒸馏、人格还原、战略报告、pipeline、逻辑溯源。"
+description: "多视角人格智库系统（统一pipeline）。学者+心理学家，v4偏差审计。采集→蒸馏→入库→RAG报告（4章+预-mortem）。触发词：智库讨论、人格蒸馏、人格还原、战略报告、pipeline、逻辑溯源。"
 metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ---
 
@@ -62,13 +62,25 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 ---
 
-## B. 报告生成 Pipeline v3.2
+## B. 报告生成 Pipeline v4.0
 
 ```bash
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/think_tank_pipeline_v3.py "议题"
 ```
 
-子议题拆解 → 四源时事搜索 → RAG → 历史参照 → 红蓝选人 → 逐章sessions_spawn
+```
+议题 → 子议题拆解 → 四源时事搜索 → RAG → 红蓝对抗(心理学家独立) → 4章报告 → 预-mortem偏差审计 → 拼接
+```
+
+**v4改动（基于8位心理学家评审）：**
+- 6章→4章（合并问题解构+历史参照、红蓝对抗+必要条件、心理学独立为一章、情景+投资）
+- 心理学家从红蓝阵营**独立为偏差审计层**（不是红蓝一方）
+- 新增**预-mortem**反向检验（假设报告失败，回溯原因）
+- 概率改为**独立区间+条件概率**（不归一化100%）
+- 8位心理学家全覆盖：卡尼曼/阿希/**津巴多**/海特/西奥迪尼/班杜拉/艾克曼/**阿瑞利**
+- 蒸馏模板新增**情境触发条件矩阵**（situational_triggers）
+
+**生成顺序：** ch01-ch04并行子session → premortem审计 → 拼接最终报告
 
 ---
 
@@ -82,7 +94,7 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 缺蒸馏：克里斯·哈德纳吉（素材仅1条meta，无实际内容，需补采集）
 
-向量库：17,217条（materials:11303, insights:5584, core_profile:105, tension:20, drive:46, repetition:85, transference:40, unconscious:34）
+向量库：20,341条（materials:15354, insights:4991, core_profile:96）
 
 ---
 
@@ -96,7 +108,7 @@ skills/think-tank/
 │   ├── batch_ingest.py           批量串行入库
 │   ├── _preprocess.py            素材去噪/清理
 │   ├── _batch_distill.py         蒸馏辅助（子session任务生成）
-│   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v3.2
+│   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v4.0（4章+预-mortem）
 │   ├── collect_new_scholars.py   论文元数据采集
 │   ├── batch_game_theory_collect.py 全文下载
 │   ├── historical_context.py     历史事件引擎(Redis)
@@ -104,7 +116,7 @@ skills/think-tank/
 │   ├── fetch_acled.py / fetch_ucdp.py / fetch_cls.py / fetch_market.py
 │   └── rebuild_all.sh            全量重建（严格串行）
 └── templates/
-    └── distill_prompt_v3.md      V3蒸馏模板
+    └── distill_prompt_v3.md      V3蒸馏模板（含情境触发条件矩阵）
 
 /mnt/d/data/think-tank-data/              ← 数据目录（D盘）
 ├── _chromadb/lacan_db/                   ← 向量库（chromadb，严禁并发）

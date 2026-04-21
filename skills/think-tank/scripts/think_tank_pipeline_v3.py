@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 """
-智库分析Pipeline v3.2
-问题拆解 → 时事搜索(财联社+Exa+Tavily+SerpAPI) → 历史参照(Redis) → 深度RAG → 子session报告生成 → 保存
+智库分析Pipeline v4.0
+问题拆解 → 时事搜索 → RAG → 红蓝对抗(心理学家独立) → 4章报告 → 预-mortem偏差审计 → 拼接
+
+v4改动(心理学家评审建议):
+- 6章→4章(合并ch1/ch2, ch3/ch4)
+- 心理学家从红蓝阵营独立为偏差审计层
+- 新增预-mortem反向检验
+- 概率改为独立区间+条件概率
+- 8位心理学家全覆盖(含津巴多、阿瑞利)
 
 Usage:
     python3 think_tank_pipeline_v3.py "议题"
     python3 think_tank_pipeline_v3.py "议题" --no-affairs
 """
 
-import json, sys, os, subprocess, time, re
+import json, sys, os, subprocess, time, re, hashlib
 from pathlib import Path
 
 import chromadb, requests
@@ -409,12 +416,14 @@ RED_BLUE_TEAMS = {
     "蓝方美国": ["Graham_Allison", "John_Gaddis", "John_Mearsheimer", "William_Blum", "Vali_Nasr", "Fawaz_Gerges"],
     "蓝方经济": ["Ray_Dalio", "Nassim_Taleb", "Hyman_Minsky", "Carmen_Reinhart", "Charles_Kindleberger"],
     "蓝方历史": ["山本五十六_Yamamoto", "盖伦_Reinhard_Gehlen"],
-    "心理学家": ["丹尼尔·卡尼曼", "乔纳森·海特", "欧文·亚隆", "罗伯特·西奥迪尼", "所罗门·阿希", "阿尔伯特·班杜拉", "保罗·艾克曼"],
 }
+
+# 心理学家独立于红蓝对抗（v4：偏差审计层）
+PSYCHOLOGISTS = ["丹尼尔·卡尼曼", "乔纳森·海特", "欧文·亚隆", "罗伯特·西奥迪尼", "所罗门·阿希", "阿尔伯特·班杜拉", "保罗·艾克曼", "丹·阿瑞利"]
 
 
 def red_blue_match(question: str, rag_data: dict) -> dict:
-    """从RAG结果中筛选红蓝对抗阵容，确保阵营平衡"""
+    """从RAG结果中筛选红蓝对抗阵容（不含心理学家），独立匹配心理学家人格"""
     rag_persons = set()
     person_dists = {}
     for items in rag_data.values():
@@ -423,17 +432,25 @@ def red_blue_match(question: str, rag_data: dict) -> dict:
             rag_persons.add(p)
             person_dists[p] = min(person_dists.get(p, 999), item["dist"])
 
+    # 红蓝阵营（不含心理学家）
     selection = {}
     for team, members in RED_BLUE_TEAMS.items():
         available = sorted([m for m in members if m in rag_persons],
                            key=lambda p: person_dists.get(p, 999))
         selection[team] = available[:3]
         print(f"  {team}: {len(selection[team])}人 → {selection[team]}")
+
+    # 心理学家独立匹配
+    psych_available = sorted([m for m in PSYCHOLOGISTS if m in rag_persons],
+                             key=lambda p: person_dists.get(p, 999))
+    selection["心理学家"] = psych_available[:4]
+    print(f"  心理学家(独立): {len(selection['心理学家'])}人 → {selection['心理学家']}")
+
     return selection
 
 
 def format_red_blue_prompt(selection: dict) -> str:
-    """格式化红蓝对抗prompt指令"""
+    """格式化红蓝对抗prompt（心理学家标注为独立审计层）"""
     role_map = {
         "红方军事鹰派": "进攻视角，主张行动",
         "红方战略家": "中国决策层视角，权衡利弊",
@@ -441,11 +458,14 @@ def format_red_blue_prompt(selection: dict) -> str:
         "蓝方美国": "美国/西方视角，强调风险和威慑",
         "蓝方经济": "经济风险警示视角，强调代价",
         "蓝方历史": "历史教训视角，强调失败案例",
-        "心理学家": "心理偏差分析，揭示认知盲区",
+        "心理学家": "独立偏差审计层（不参与红蓝对抗）",
     }
     lines = ["## 红蓝对抗阵容（必须让双方充分辩论）"]
     for team, persons in selection.items():
-        lines.append(f"- **{team}**（{role_map.get(team, '')}）: {', '.join(persons)}")
+        if team == "心理学家":
+            lines.append(f"- **{team}**（{role_map.get(team, '')}）: {', '.join(persons)}")
+        else:
+            lines.append(f"- **{team}**（{role_map.get(team, '')}）: {', '.join(persons)}")
     lines.append("")
     lines.append("**要求：每个关键判断必须呈现红蓝双方对立观点。"
                  "心理学家（卡尼曼/海特/西奥迪尼/阿希/班杜拉/艾克曼）必须有实质性引用。**")
@@ -453,10 +473,7 @@ def format_red_blue_prompt(selection: dict) -> str:
 
 
 def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dict, selection: dict, affairs_data: dict = None) -> dict:
-    """构建分段报告任务（6章）"""
-    rag_text = format_rag_for_prompt(rag_data)
-    hist_text = format_historical_for_prompt(events)
-    rb_text = format_red_blue_prompt(selection)
+    """构建报告章节任务（v4: 4章+预-mortem）"""
     dims = ', '.join(decomp['triggered_dimensions'])
     ents = ', '.join(decomp.get('matched_entities', ['通用']))
     assets = ', '.join(decomp['relevant_assets'])
@@ -464,62 +481,23 @@ def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dic
     affairs_text = format_affairs_for_prompt(affairs_data) if affairs_data else ""
     affairs_block = f"\n\n{affairs_text}\n" if affairs_text else ""
     
-    common = f"""\n## 核心问题\n{question}{affairs_block}\n\n{rb_text}\n"""
+    common = f"\n## 核心问题\n{question}{affairs_block}\n\n{rb_text}\n"
 
+    # v4: 4章结构 + 偏差审计 + 预-mortem
     chapters = {
-        "ch01": {"title": "问题解构", "words": "800-1000",
-            "instruction": f"你是学术战略研究分析引擎。撰写第1章：问题解构（800-1000字）。{common}\n## 维度：{dims} | 实体：{ents} | 资产：{assets}\n从五个维度（军事、政治、经济、技术、心理）解构问题，识别关键变量。**结合实时情报分析最新动态**。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## RAG参考\n{rag_text}"},
-        "ch02": {"title": "历史参照矩阵", "words": "800-1000",
-            "instruction": f"你是学术战略研究分析引擎。撰写第2章：历史参照矩阵（800-1000字）。{common}提取可类比模式，注意区分相似性与差异性。蓝方历史视角强调失败案例。提炼3-5条核心教训。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## 历史参照\n{hist_text}\n\n## RAG参考\n{rag_text}"},
-        "ch03": {"title": "必要条件深度分析", "words": "1500-2000",
-            "instruction": f"你是学术战略研究分析引擎。撰写第3章：必要条件深度分析（1500-2000字）。{common}从军事/政治/经济/技术四维度分析。**每个维度必须呈现红蓝双方对立观点**：红方强调能力增长和优势，蓝方强调差距和风险。军事要给具体数据。末尾四维联动。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## RAG参考\n{rag_text}"},
-        "ch04": {"title": "心理画像与集体决策偏差", "words": "1500-2000",
-            "instruction": f"你是学术战略研究分析引擎。撰写第4章：心理画像与集体决策偏差（1500-2000字）。{common}\n**心理学家必须实质性引用（不能只用海特！）**：1.大陆决策层：损失厌恶[卡尼曼]、权威服从[阿希/班杜拉]、群体思维 2.台湾社会：社会认同[海特]、恐惧诉求[艾克曼]、群体极化 3.美国：信息茧房、修昔底德锁定 4.三方互动：道德脱离[班杜拉]、螺旋升级。每个心理机制引用具体理论/实验。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## RAG参考\n{rag_text}"},
-        "ch05": {"title": "跨学科交叉验证与窗口期判断", "words": "1500-2000",
-            "instruction": f"你是学术战略研究分析引擎。撰写第5章：跨学科交叉验证与战略窗口期判断（1500-2000字）。{common}四维交叉验证：识别共识区间和核心分歧。三时段候选窗口（短期/中期/长期）+概率。窗口开启/关闭条件。**红蓝辩论**：军事派vs经济派vs心理学家充分碰撞。情景概率归一化（总和=100%）。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## RAG参考\n{rag_text}\n\n## 历史参照\n{hist_text}"},
-        "ch06": {"title": "情景推演与投资影响", "words": "1000-1500",
-            "instruction": f"你是学术战略研究分析引擎。撰写第6章：情景推演与投资影响（1000-1500字）。{common}四个递进情景（基线/升级/高烈度/极端），概率归一化。**必须包含A股（上证/沪深300/创业板）和港股（恒生）**。参照历史数据。投资策略区分防御/进攻/对冲。用Taleb反脆弱框架审视。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## 资产：{assets}\n## RAG参考\n{rag_text}\n\n## 历史参照\n{hist_text}"},
+        "ch01": {"title": "问题解构与历史参照", "words": "1200-1500",
+            "instruction": f"你是学术战略研究分析引擎。撰写第1章：问题解构与历史参照（1200-1500字）。{common}\n## 维度：{dims} | 实体：{ents} | 资产：{assets}\n\n### 第一部分：问题解构（600-800字）\n从五个维度（军事、政治、经济、技术、心理）解构问题，识别关键变量和不确定性来源。结合实时情报分析最新动态。每个数据点只完整陈述一次。\n\n### 第二部分：历史参照矩阵（400-600字）\n提取2-3个最相关的历史类比。注意区分相似性与差异性。每个类比给出一条可验证的预测。区分已确认事实与推测性判断。\n\n写作纪律：禁止空洞过渡句、不重复数据、信息密度优先。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## 历史参照\n{hist_text}\n\n## RAG参考\n{rag_text}"},
+        "ch02": {"title": "红蓝对抗与必要条件", "words": "1500-2000",
+            "instruction": f"你是学术战略研究分析引擎。撰写第2章：红蓝对抗与必要条件（1500-2000字）。{common}\n\n核心要求：真正的交锋。红蓝对抗不是并列式观点罗列，而是辩论：红方提出观点-蓝方直接反驳-红方回应-蓝方再补充。至少两轮交锋。\n\n从军事/政治/经济/技术四维度分析必要条件。每个维度：1)红方核心论点（附具体数据）2)蓝方反驳（附反例或逻辑漏洞）3)交锋后的收敛判断。\n\n禁止：并列式罗列、重复第1章数据、用心理学理论佐证（留给第3章）、车轱辘话。\n\n每个判断标注[RAG: 人格名]。直接输出正文。\n\n## RAG参考\n{rag_text}"},
+        "ch03": {"title": "心理动力学与偏差审计", "words": "1500-2000",
+            "instruction": f"你是认知偏差审计专家。撰写第3章：心理动力学与偏差审计（1500-2000字）。{common}\n\n你的角色不是红蓝任何一方，而是独立于对抗之外的元分析者。\n\n审计框架（8位心理学家，每人至少一个实质性应用）：\n1. 卡尼曼：前景理论/损失厌恶/系统双过程/框架效应\n2. 阿希：从众效应（区分信息性vs规范性影响，不简单推广到宏观）\n3. 津巴多：情境力量/去个性化——哪些情境结构在塑造行为\n4. 海特：道德基础理论——各方在哪些道德维度上不可通约\n5. 西奥迪尼：影响力原则——互惠/权威/社会认同/稀缺/承诺与一致/喜好\n6. 班杜拉：道德脱离/三元交互决定论——螺旋升级机制\n7. 艾克曼：情绪动力学——恐惧和愤怒的阶段变化、情绪劫持临界点\n8. 阿瑞利：锚定效应/任意一致性/默认偏差\n\n每个理论必须：a)引用具体理论/实验名称 b)构建因果链：心理机制-行为变化-政策结果 c)给出可验证预测 d)标注偏差风险[低/中/高]\n\n禁止：对称补刀式「双方都有偏差」（要分析不对称性）、重复第1-2章论点、理论只展开一次。\n\n每个判断标注[RAG: 人格名]。直接输出正文。\n\n## RAG参考\n{rag_text}"},
+        "ch04": {"title": "情景推演与投资影响", "words": "1500-2000",
+            "instruction": f"你是战略情景分析专家。撰写第4章：情景推演与投资影响（1500-2000字）。{common}\n\n情景推演：三个递进情景（基线/升级/极端），每个含：1.触发条件 2.核心指标变化（具体数字区间+时间框架） 3.持续时间。概率用独立评估不归一化，格式：中位数X%，90%CI [A%, B%]。条件变化时如何调整。\n\n投资策略（必须具体）：具体标的（ETF/个股代码）、仓位比例、止损止盈、时间窗口。防御/进攻/对冲三层。Taleb反脆弱审视。\n\n必须含：A股（上证/沪深300/创业板）、港股恒生、汇率、黄金、原油。\n\n写作纪律：不重复1-3章、投资必须有标的+仓位+止损、概率为区间。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## 资产：{assets}\n## RAG参考\n{rag_text}\n\n## 历史参照\n{hist_text}"},
     }
-    return chapters
 
-
-# ============ 时事自动搜索（多源：Exa + Tavily + SerpAPI） ============
-
-def _search_exa(queries: list, start_date: str) -> list:
-    """Exa搜索，返回 [(title, text, url, pub, source)]"""
-    articles = []
-    for q in queries[:3]:
-        try:
-            payload = json.dumps({
-                "query": q,
-                "num_results": 8,
-                "use_autoprompt": True,
-                "startPublishedDate": start_date,
-                "contents": {"text": {"maxCharacters": 3000}}
-            })
-            # Exa要求用curl，Python urllib会403
-            cmd = [
-                'curl', '-s', '-X', 'POST', 'https://api.exa.ai/search',
-                '-H', f'x-api-key: {EXA_API_KEY}',
-                '-H', 'Content-Type: application/json',
-                '-d', payload, '--max-time', '30'
-            ]
-            r = subprocess.run(cmd, capture_output=True, text=True, timeout=35)
-            if r.returncode != 0:
-                print(f"  ⚠️ Exa curl失败: {r.returncode}")
-                continue
-            data = json.loads(r.stdout)
-            for res in data.get("results", []):
-                title = res.get("title", "")
-                text = res.get("text", "")
-                url = res.get("url", "")
-                pub = res.get("publishedDate", "")
-                if text and len(text) > 100:
-                    articles.append((title, text, url, pub, "Exa"))
-        except Exception as e:
-            print(f"  ⚠️ Exa搜索异常: {e}")
-        time.sleep(1)
-    return articles
+    premortem = {"title": "预-mortem偏差审计", "words": "800-1000",
+        "instruction": f"你是魔鬼代言人。假设以下报告发布6个月后，被专业分析师评为「垃圾报告」。请回溯最可能的3个失败原因。{common}\n\n审计维度：1.核心假设盲区：最可能被证伪的3个假设及替代假设 2.偏差审计：哪方更可能受认知偏差污染 3.遗漏变量：忽略了什么关键变量 4.概率校准：是否过于自信或保守 5.投资策略漏洞：什么条件下策略失效\n\n每个失败原因：具体描述+置信度（高/中/低）+补救建议。不标注RAG。直接输出正文。"}
+    return chapters, premortem
 
 
 def _search_tavily(queries: list) -> list:
@@ -793,19 +771,25 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
     affairs_text = format_affairs_for_prompt(affairs_data)
     
     # Step 4: 红蓝对抗匹配
-    print(f"\n⚔️  Step 4: 红蓝对抗匹配")
+    print(f"\n⚔️  Step 4: 红蓝对抗匹配（心理学家独立）")
     selection = red_blue_match(question, rag_data)
-    total_sel = sum(len(v) for v in selection.values())
-    print(f"  总计: {total_sel}人/{len(RED_BLUE_TEAMS)}阵营")
+    rb_total = sum(len(v) for k, v in selection.items() if k != "心理学家")
+    psych_total = len(selection.get("心理学家", []))
+    print(f"  红蓝阵营: {rb_total}人 | 心理学家(独立): {psych_total}人")
 
-    # Step 5: 构建分段task
-    print(f"\n📝 Step 5: 构建分段报告任务")
-    chapters = build_chapter_tasks(question, decomp, events, rag_data, selection, affairs_data)
+    # Step 5: 构建分段task（v4: 4章 + 预-mortem）
+    print(f"\n📝 Step 5: 构建分段报告任务（4章 + 预-mortem偏差审计）")
+    chapters, premortem = build_chapter_tasks(question, decomp, events, rag_data, selection, affairs_data)
     os.makedirs("/tmp", exist_ok=True)
+    topic_hash = hashlib.md5(question.encode()).hexdigest()[:4]
     for ch_id, ch in chapters.items():
-        with open(f"/tmp/{ch_id}_task.txt", "w") as f:
+        with open(f"/tmp/{topic_hash}_{ch_id}_task.txt", "w") as f:
             f.write(ch["instruction"])
         print(f"  {ch_id} {ch['title']} ({ch['words']}字): {len(ch['instruction'])}字符")
+    # 预-mortem task
+    with open(f"/tmp/{topic_hash}_premortem_task.txt", "w") as f:
+        f.write(premortem["instruction"])
+    print(f"  premortem {premortem['title']} ({premortem['words']}字): {len(premortem['instruction'])}字符")
 
     # 保存框架JSON
     framework = {
@@ -814,22 +798,23 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
         "historical_events": len(events),
         "rag_total": total_rag,
         "rag_col_counts": col_counts,
-        "red_blue_selection": selection,
+        "red_blue_selection": {k: v for k, v in selection.items()},
         "chapters": {k: {"title": v["title"], "words": v["words"]} for k, v in chapters.items()},
+        "premortem": {"title": premortem["title"], "words": premortem["words"]},
         "generated_at": time.strftime("%Y-%m-%d %H:%M"),
     }
     with open("/tmp/think_tank_v3_framework.json", "w") as f:
         json.dump(framework, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ Pipeline就绪: {total_rag}条RAG + {len(events)}个历史事件 + {total_sel}人红蓝对抗")
+    print(f"\n✅ Pipeline就绪: {total_rag}条RAG + {len(events)}个历史事件 + {rb_total}人红蓝对抗 + {psych_total}人心理学家(独立)")
     if auto_save:
         print(f"\n📄 报告将保存到: {REPORT_DIR}/")
-    print(f"\n💡 各章节task已保存到 /tmp/ch0X_task.txt")
-    print(f"   用GLM-5-TURBO子session逐章生成，然后拼接即可")
+    print(f"\n💡 各章节task已保存到 /tmp/{topic_hash}_ch0X_task.txt + _premortem_task.txt")
+    print(f"   生成顺序：ch01-ch04并行 → premortem审计 → 拼接最终报告")
 
-    return chapters, framework
+    return chapters, premortem, framework
 
 
 if __name__ == "__main__":
     q = " ".join(sys.argv[1:]) if len(sys.argv) > 1 else "中国收复台湾的战略窗口期是什么时候？必要条件是什么？"
-    chapters, framework = run_pipeline(q)
+    chapters, premortem, framework = run_pipeline(q)
