@@ -4,7 +4,7 @@ import csv, json, os, time, requests
 from pathlib import Path
 
 OUT_DIR = Path("/mnt/d/data/conflict-data/ucdp")
-API_KEY = "3704a6e6c39684d5"
+API_KEY = os.environ.get("UCDP_API_KEY", "")
 BASE = "https://ucdpapi.pcr.uu.se/api/georeferenced"
 
 OUT_DIR.mkdir(parents=True, exist_ok=True)

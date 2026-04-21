@@ -5,8 +5,8 @@ from pathlib import Path
 import requests
 
 OUT_DIR = Path("/mnt/d/data/conflict-data/acled")
-EMAIL = "jaccck1234567@gmail.com"
-PASSWORD = "Thugstools123@"
+EMAIL = os.environ.get("ACLED_EMAIL", "")
+PASSWORD = os.environ.get("ACLED_PASSWORD", "")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def login():

@@ -1,45 +1,27 @@
 #!/usr/bin/env python3
 """
-智库分析Pipeline v3
-问题拆解(智能) → 历史参照(Redis) → 深度RAG(insights+materials) → 子session报告生成 → D盘保存
-
-v2→v3改进:
-- 智能子议题生成（基于问题实体+维度自动构建）
-- RAG搜索加入materials集合（5900+条原始素材）
-- 更丰富的维度关键词（台海/半导体/科技/地区安全）
-- 历史事件补充台海相关
-- 子议题去重+质量过滤
-
-Usage:
-    python think_tank_pipeline_v3.py "中国收复台湾的战略窗口期是什么时候？必要条件是什么？"
-"""
-
-"""
 智库分析Pipeline v3.2
-问题拆解(智能) → 时事搜索(四源: 财联社+Exa+Tavily+SerpAPI) → 历史参照(Redis) → 深度RAG(insights+materials) → 子session报告生成 → D盘保存
-
-v3.2: 财联社Redis缓存整合 + 多源时事搜索
-v3.1: Exa+Tavily+SerpAPI多源时事搜索 + 自动入库
-v3: 智能子议题生成 + RAG materials集合 + 历史事件补充
+问题拆解 → 时事搜索(财联社+Exa+Tavily+SerpAPI) → 历史参照(Redis) → 深度RAG → 子session报告生成 → 保存
 
 Usage:
-    ~/miniconda3/bin/python3 skills/think-tank/scripts/think_tank_pipeline_v3.py "议题"
-    ~/miniconda3/bin/python3 skills/think-tank/scripts/think_tank_pipeline_v3.py "议题" --no-affairs  # 禁用时事搜索
+    python3 think_tank_pipeline_v3.py "议题"
+    python3 think_tank_pipeline_v3.py "议题" --no-affairs
 """
 
 import json, sys, os, subprocess, time, re
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+from pathlib import Path
 
-from scripts.historical_context import search_historical_events, get_redis_status
 import chromadb, requests
+sys.path.insert(0, str(Path(__file__).parent))
+from historical_context import search_historical_events, get_redis_status
 
 DB_PATH = "/mnt/d/data/think-tank-data/_chromadb/lacan_db"
 OLLAMA_URL = 'http://172.26.0.1:11434/api/embed'
 OLLAMA_MODEL = 'bge-m3:latest'
 REPORT_DIR = "/mnt/d/data/think-tank-data/reports"
-EXA_API_KEY = '7be7a599-fa7b-4107-9ef1-ad96646156c2'
-TAVILY_API_KEY = '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'
-SERPAPI_KEY = '848c4ec87cac7776b9404f0af1aeb36fce936d1aa3aebe899664eaa43e67ccc2'
+EXA_API_KEY = os.environ.get('EXA_API_KEY', '')
+TAVILY_API_KEY = os.environ.get('TAVILY_API_KEY', '')
+SERPAPI_KEY = os.environ.get('SERPAPI_KEY', '')
 PYTHON = os.path.expanduser('~/miniconda3/bin/python3')
 
 

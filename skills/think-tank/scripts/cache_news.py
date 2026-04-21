@@ -249,8 +249,8 @@ if __name__ == "__main__":
         fetch_cls()
         # 建tag索引
         import sys, os
-        sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        from scripts.cache_news_tags import build_tag_index
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from cache_news_tags import build_tag_index
         build_tag_index(recent_only=True)
         fetch_market()
         stats()

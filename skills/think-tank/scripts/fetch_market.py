@@ -8,7 +8,7 @@ OUT_DIR = Path("/mnt/d/data/conflict-data/market")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ===== FRED =====
-FRED_API = "14876f904987b05adca701fb6f6e026d"
+FRED_API = os.environ.get("FRED_API_KEY", "")
 FRED_BASE = "https://api.stlouisfed.org/fred/series/observations"
 
 # 关键指数series ID
@@ -47,7 +47,7 @@ def fetch_fred_series(series_id, start="2010-01-01"):
     return []
 
 # ===== Finnhub =====
-FINNHUB_API = "d709oh1r01qtb4ra0b50d709oh1r01qtb4ra0b5g"
+FINNHUB_API = os.environ.get("FINNHUB_API_KEY", "")
 FINNHUB_BASE = "https://finnhub.io/api/v1"
 
 FINNHUB_INDICES = {

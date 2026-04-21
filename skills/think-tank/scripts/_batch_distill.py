@@ -8,8 +8,7 @@ _batch_distill.py — 批量V3蒸馏（子session调用）
     python3 _batch_distill.py --all                     # 蒸馏所有缺v3的人物
 
 注意:
-    - 必须在 OpenClaw 子session 中调用，不能直接运行
-    - 素材 >60000 字符会自动分段
+    - 大素材自动分段（>60000字符）
     - 模板: skills/think-tank/templates/distill_prompt_v3.md
 """
 
