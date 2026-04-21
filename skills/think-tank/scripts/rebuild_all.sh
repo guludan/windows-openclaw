@@ -4,7 +4,7 @@
 set -e
 
 PYTHON="/home/tearsyu/miniconda3/envs/tt/bin/python3"
-SCRIPT="/home/tearsyu/.openclaw/workspace/scripts/ingest_v3.py"
+SCRIPT="/home/tearsyu/.openclaw/workspace/skills/think-tank/scripts/ingest_v3.py"
 BASE="/mnt/d/data/think-tank-data/personalities"
 
 TOTAL=0; OK=0; FAIL=0

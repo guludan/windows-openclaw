@@ -23,8 +23,8 @@ v3.1: Exa+Tavily+SerpAPI多源时事搜索 + 自动入库
 v3: 智能子议题生成 + RAG materials集合 + 历史事件补充
 
 Usage:
-    ~/miniconda3/bin/python3 scripts/think_tank_pipeline_v3.py "议题"
-    ~/miniconda3/bin/python3 scripts/think_tank_pipeline_v3.py "议题" --no-affairs  # 禁用时事搜索
+    ~/miniconda3/bin/python3 skills/think-tank/scripts/think_tank_pipeline_v3.py "议题"
+    ~/miniconda3/bin/python3 skills/think-tank/scripts/think_tank_pipeline_v3.py "议题" --no-affairs  # 禁用时事搜索
 """
 
 import json, sys, os, subprocess, time, re

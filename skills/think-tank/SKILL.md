@@ -30,8 +30,8 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ### Step 1: 素材采集
 
 **论文（学者/心理学家）：**
-1. 元数据：`scripts/collect_new_scholars.py`（SerpAPI Google Scholar）
-2. 全文下载：`scripts/batch_game_theory_collect.py`（OpenAlex→Unpaywall→Sci-Hub+Playwright）
+1. 元数据：`skills/think-tank/scripts/collect_new_scholars.py`（SerpAPI Google Scholar）
+2. 全文下载：`skills/think-tank/scripts/batch_game_theory_collect.py`（OpenAlex→Unpaywall→Sci-Hub+Playwright）
 3. 保存：`{person}/materials/paper_{title}.txt`
 
 **网页：**
@@ -41,21 +41,21 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ### Step 2: 预处理
 
 ```bash
-~/miniconda3/envs/tt/bin/python3 scripts/_preprocess.py
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_preprocess.py
 ```
 
 ### Step 3: V3 蒸馏（sessions_spawn）
 
-- 模板：`think-tank/templates/distill_prompt_v3.md`
+- 模板：`skills/think-tank/templates/distill_prompt_v3.md`
 - 输出：`{person}/personality_v3.json`
 - 素材 >60000字符需截断
 
 ### Step 4: 向量入库
 
-**唯一脚本：`scripts/ingest_v3.py`**（通用）
+**唯一脚本：`skills/think-tank/scripts/ingest_v3.py`**（通用）
 
 ```bash
-~/miniconda3/envs/tt/bin/python3 scripts/ingest_v3.py <人物名> <人物目录>
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/ingest_v3.py <人物名> <人物目录>
 ```
 
 两层合一：materials chunk + 7个结构化集合。
@@ -65,7 +65,7 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ## B. 报告生成 Pipeline v3.2
 
 ```bash
-~/miniconda3/envs/tt/bin/python3 scripts/think_tank_pipeline_v3.py "议题"
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/think_tank_pipeline_v3.py "议题"
 ```
 
 子议题拆解 → 四源时事搜索 → RAG → 历史参照 → 红蓝选人 → 逐章sessions_spawn
@@ -89,18 +89,30 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ## 项目结构
 
 ```
-/mnt/d/data/think-tank-data/              ← 工作目录（D盘）
-├── _chromadb/lacan_db/                   ← 向量库
-├── personalities/                        ← symlink ← workspace/think-tank/personalities
+skills/think-tank/
+├── SKILL.md                      ← 你正在这里
+├── scripts/                      ← 全部流程脚本
+│   ├── ingest_v3.py              ⭐ 单人入库（素材+结构化）
+│   ├── batch_ingest.py           批量串行入库
+│   ├── _preprocess.py            素材去噪/清理
+│   ├── _batch_distill.py         蒸馏辅助（子session任务生成）
+│   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v3.2
+│   ├── collect_new_scholars.py   论文元数据采集
+│   ├── batch_game_theory_collect.py 全文下载
+│   ├── historical_context.py     历史事件引擎(Redis)
+│   ├── cache_news.py             新闻缓存
+│   ├── fetch_acled.py / fetch_ucdp.py / fetch_cls.py / fetch_market.py
+│   └── rebuild_all.sh            全量重建（严格串行）
+└── templates/
+    └── distill_prompt_v3.md      V3蒸馏模板
+
+/mnt/d/data/think-tank-data/              ← 数据目录（D盘）
+├── _chromadb/lacan_db/                   ← 向量库（chromadb，严禁并发）
+├── personalities/                        ← 96人素材+蒸馏
 │   ├── military/                         ← 25人
 │   ├── scholars/                         ← 47人（8子领域）
 │   └── psychologists/                    ← 24人（4子领域）
 └── reports/                              ← 生成的报告
-
-~/.openclaw/workspace/think-tank/
-├── personalities → /mnt/d/data/think-tank-data/personalities
-├── templates/distill_prompt_v3.md
-└── tension_analysis.json
 ```
 
 ## 红线

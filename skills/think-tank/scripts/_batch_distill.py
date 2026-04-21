@@ -10,7 +10,7 @@ _batch_distill.py — 批量V3蒸馏（子session调用）
 注意:
     - 必须在 OpenClaw 子session 中调用，不能直接运行
     - 素材 >60000 字符会自动分段
-    - 模板: think-tank/templates/distill_prompt_v3.md
+    - 模板: skills/think-tank/templates/distill_prompt_v3.md
 """
 
 import json
@@ -19,7 +19,7 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path("/mnt/d/data/think-tank-data/personalities")
-TEMPLATE = Path("~/.openclaw/workspace/think-tank/templates/distill_prompt_v3.md").expanduser()
+TEMPLATE = Path("~/.openclaw/workspace/skills/think-tank/templates/distill_prompt_v3.md").expanduser()
 MAX_CHARS = 60000
 
 
@@ -41,7 +41,7 @@ def build_distill_task(person_name: str, person_dir: Path, person_domain: str = 
 
     # 读取模板
     template = TEMPLATE.read_text(encoding='utf-8') if TEMPLATE.exists() else ""
-    template_ref = "读取模板: ~/.openclaw/workspace/think-tank/templates/distill_prompt_v3.md"
+    template_ref = "读取模板: ~/.openclaw/workspace/skills/think-tank/templates/distill_prompt_v3.md"
 
     # 读取素材
     files = get_materials(person_dir)

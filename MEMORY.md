@@ -54,15 +54,15 @@ Embedding: Ollama bge-m3 (1024维)
 
 | 脚本 | 用途 |
 |------|------|
-| `scripts/ingest_v3.py` | ⭐ 通用入库（素材chunk+结构化，所有体系） |
-| `scripts/ingest_batch.py` | 批量入库多人 |
-| `scripts/_preprocess.py` | 素材预处理（去噪/删垃圾/删404） |
-| `scripts/_batch_distill.py` | 蒸馏辅助（生成子session任务，大素材分段） |
-| `scripts/think_tank_pipeline_v3.py` | 报告生成v3.2 |
-| `scripts/collect_new_scholars.py` | Google Scholar论文元数据 |
-| `scripts/batch_game_theory_collect.py` | 全文下载（OA+Sci-Hub+Playwright） |
-| `scripts/historical_context.py` | 历史事件引擎(Redis) |
-| `scripts/cache_news.py` | 财联社/A股/FRED缓存 |
+| `skills/think-tank/scripts/ingest_v3.py` | ⭐ 通用入库（素材chunk+结构化，所有体系） |
+| `skills/think-tank/scripts/ingest_batch.py` | 批量入库多人 |
+| `skills/think-tank/scripts/_preprocess.py` | 素材预处理（去噪/删垃圾/删404） |
+| `skills/think-tank/scripts/_batch_distill.py` | 蒸馏辅助（生成子session任务，大素材分段） |
+| `skills/think-tank/scripts/think_tank_pipeline_v3.py` | 报告生成v3.2 |
+| `skills/think-tank/scripts/collect_new_scholars.py` | Google Scholar论文元数据 |
+| `skills/think-tank/scripts/batch_game_theory_collect.py` | 全文下载（OA+Sci-Hub+Playwright） |
+| `skills/think-tank/scripts/historical_context.py` | 历史事件引擎(Redis) |
+| `skills/think-tank/scripts/cache_news.py` | 财联社/A股/FRED缓存 |
 
 ### 已废弃
 - ❌ `distill_v2.py`, `_extract_one.py`, `incremental_vecdb.py` — 不存在
