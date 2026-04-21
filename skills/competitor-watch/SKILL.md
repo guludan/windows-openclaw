@@ -301,3 +301,10 @@ Alerts can be sent via:
 ---
 
 **Know what they're shipping. Before their customers do.**
+
+## 触发条件
+
+- 用户提到 "竞品"、"竞争对手"、"competitor"
+- 想监控某个公司/产品的动态
+- 用户问 "xxx 最近有什么变化"、"xxx 上线了什么新功能"
+- 需要设置定期竞品监控

@@ -1,19 +1,15 @@
 # HEARTBEAT.md
 
 ## 论文下载监控
-每次heartbeat检查论文下载进程是否存活，汇报进度。
+- `pgrep -f scholar_download.py` — 进程存活检查
+- 累计论文数：`find /mnt/d/data -name "paper_*.txt" 2>/dev/null | wc -l`
+- 进程挂了 → 自动重启（先学者后心理学家）
+- 每2小时汇报一次，不频繁打扰
 
-```python
-# 检查下载进程
-import subprocess
-result = subprocess.run(['pgrep', '-f', 'scholar_download.py'], capture_output=True, text=True)
-if result.returncode != 0:
-    # 进程挂了，重启
-    ...
-```
+## 待办跟踪（VPN恢复后推进）
+- Finnhub ETF指数数据
+- UCDP/ACLED冲突数据
+- 克里斯·哈德纳吉素材补采集+蒸馏（当前唯一缺蒸馏的人）
 
-### 检查项
-1. `pgrep -f scholar_download.py` — 进程是否存活
-2. `find ... -name "paper_*.txt" | wc -l` — 累计论文数
-3. 如果进程死了 → 自动重启（先学者后心理学家）
-4. 每2小时汇报一次进度（不频繁打扰）
+## 定期任务
+- 检查磁盘空间（阈值85%）

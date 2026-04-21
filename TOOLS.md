@@ -24,9 +24,13 @@
 - **OPENSKY**: clientId=jaccck1234567@gmail.com-api-client, clientSecret=UOv4T51xiUEB1c4VEx7FAefNWynaTqAk
 
 ### LLM
-- **智谱 (Zhipu)**: 19649c91787b4220b809353ce50657ad.kHqGtEeuidt6UecO (GLM-4-plus / GLM-5)
 - **SiliconFlow** (兜底): sk-tnaasdpeozarapwsxndsewyobdlvmwauwoemzmwcvltbapmj
 - **本地 Ollama Embedding**: http://localhost:11434/api/embed
+
+## 财联社
+- **AKShare**: `ak.stock_info_global_cls()` → DataFrame(标题/内容/时间)，最简单
+- **Playwright备用**: `scripts/fetch_cls.py` (绕WAF)
+- Cookies: `.cookies/cls_cookies.txt`
 
 ## 知乎 Cookies
 - 路径: .cookies/zhihu_cookies.txt

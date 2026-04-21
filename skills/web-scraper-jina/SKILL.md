@@ -15,6 +15,21 @@ tags:
 
 Bypass Cloudflare and scrape any website using free r.jina.ai API.
 
+## 触发条件
+
+- web_fetch 被 Cloudflare/WAF 拦截
+- 用户提到 "绕过 Cloudflare"、"反爬"
+- Truth Social、Bitget 等强保护站点
+- 快速获取页面 Markdown（比 Playwright 轻）
+
+## 操作步骤
+
+1. 构造 URL：`https://r.jina.ai/<目标URL>`
+2. `web_fetch "https://r.jina.ai/https://target.com"`
+3. 或 curl：`curl -s "https://r.jina.ai/https://target.com"`
+
+## 优先级：web_fetch > r.jina.ai > Playwright
+
 ## Features
 
 - Bypass Cloudflare, Turnstile, and other protections

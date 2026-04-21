@@ -9,6 +9,19 @@ metadata: {"clawdbot":{"emoji":"🐳","requires":{"bins":["docker"]}}}
 
 Essential Docker commands for container and image management.
 
+## 触发条件
+
+- 用户提到 Docker、容器、镜像相关操作
+- 需要构建/运行/调试容器
+- docker-compose 部署问题
+- 容器网络/卷/资源管理
+
+## 操作步骤
+
+1. 确认 Docker 已安装：`docker --version`
+2. 根据需求查阅下方对应命令
+3. 排查问题时先 `docker logs` 和 `docker inspect`
+
 ## Container Lifecycle
 
 ### Running containers

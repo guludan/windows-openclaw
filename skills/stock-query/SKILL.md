@@ -9,6 +9,18 @@ Python: `/home/admin/miniconda3/bin/python3`
 Script: `scripts/stock_query.py`
 数据源: Yahoo Finance (主) + AKShare (备), 含自动缓存
 
+## 触发条件
+
+- 用户提到股票代码（600xxx/000xxx/002xxx/300xxx）
+- 用户提到股票名称（茅台/比亚迪等）
+- 用户问 "行情"、"K线"、"财报"、"市值"、"涨跌"、"PE"、"ROE"
+
+## 操作步骤
+
+1. 实时行情：`python3 scripts/stock_query.py quote <codes...>`
+2. 历史K线：`python3 scripts/stock_query.py kline <code> --period 1mo`
+3. 财务数据：`python3 scripts/stock_query.py financial <code>`
+
 ## 股票代码格式
 
 支持多种输入: `600519` / `600519.SS` / `sh600519` 均可自动识别。

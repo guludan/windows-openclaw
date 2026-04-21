@@ -7,6 +7,19 @@ description: Unified knowledge capture and retrieval for URLs, video/article/pap
 
 File-based knowledge organization. Capture fast, search later, clean up automatically.
 
+## 触发条件
+
+- 用户说 "保存这个"、"记录下来"、"存到知识库"
+- 收到有用的 URL/论文/文章想归档
+- 用户问 "之前存过 xxx 吗"、"知识库里有这个吗"
+- 任何值得以后再找的信息
+
+## 操作步骤
+
+1. **添加内容**：`~/.openclaw/workspace/skills/agent-knowledge/scripts/know add <type> --title "..." --tags "a,b"`
+2. **搜索**：`know search "query"`
+3. **维护**：定期跑 `know tidy --fix`
+
 ## Installation
 
 ```bash

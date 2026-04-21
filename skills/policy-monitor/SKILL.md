@@ -8,6 +8,18 @@ description: "中国宏观经济金融政策监控管道。自动采集央行、
 Python: `/home/admin/miniconda3/bin/python3`
 Script: `scripts/pipeline.py`
 
+## 触发条件
+
+- 用户提到 "政策监控"、"央行"、"财联社"、"证监会"、"统计局"
+- 需要 GDP/CPI/PMI 等经济数据
+- 用户想设置政策速报推送
+
+## 操作步骤
+
+1. 单源采集：`python3 scripts/pipeline.py --sources cls -o /tmp/output.json`
+2. 全量采集：`python3 scripts/pipeline.py --all -o /tmp/output.json`
+3. AI 分析结果后推送
+
 ## 数据源
 
 | 源 | 方式 | 内容 | 更新频率 |
