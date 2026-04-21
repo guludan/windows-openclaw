@@ -35,7 +35,7 @@ except ImportError:
 R = redis.Redis(host="127.0.0.1", port=6379, decode_responses=True)
 
 # === 配置 ===
-FRED_KEY = "14876f904987b05adca701fb6f6e026d"
+FRED_KEY = os.environ.get("FRED_API_KEY", "")
 AKSHARE_INDICES = {
     "sh000001": "上证指数", "sh000300": "沪深300",
     "sz399001": "深证成指", "sz399006": "创业板指",

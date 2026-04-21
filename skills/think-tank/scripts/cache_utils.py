@@ -13,7 +13,7 @@ def get_cache():
     """获取 Redis 连接"""
     return redis_lib.Redis(
         host='127.0.0.1', port=6379,
-        password='fc80763c5c42977ed6b0fd7d27e1bb7f',
+        password=os.environ.get('REDIS_PASSWORD', ''),
         decode_responses=True,
         socket_timeout=5,
     )
