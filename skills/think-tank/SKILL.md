@@ -80,6 +80,13 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 - 8位心理学家全覆盖：卡尼曼/阿希/**津巴多**/海特/西奥迪尼/班杜拉/艾克曼/**阿瑞利**
 - 蒸馏模板新增**情境触发条件矩阵**（situational_triggers）
 
+**v4.2 RAG架构改造（心理学家圆桌共识）：**
+- RAG数据**按学者分组传递**（不再按子议题），每人给profile+insights+tensions+materials
+- **insights不截断**（蒸馏后的逻辑表述本身就是引用素材）
+- **tension独立集合**（从insights中分离，不再被过滤）
+- **强制引用纪律**：每个论点必须直接引用insight原文，禁止纯转述
+- **关联表**：每条insight/tension通过source_ref→material_id关联到原文
+
 **生成顺序：** ch01-ch04并行子session → premortem审计 → 拼接最终报告
 
 ---
@@ -94,7 +101,15 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 缺蒸馏：克里斯·哈德纳吉（素材仅1条meta，无实际内容，需补采集）
 
-向量库：20,341条（materials:15354, insights:4991, core_profile:96）
+向量库：4个活跃集合
+| 集合 | 说明 | 关联 |
+|------|------|------|
+| insights | 蒸馏后的核心逻辑表述（按dim分类） | source_ref→material_id |
+| tension | 思想内在矛盾（独立集合） | source_ref→material_id |
+| materials | 原始素材分块（800字/块） | material_id |
+| core_profile | 人格摘要（96人） | — |
+
+关联表：每条insight/tension通过metadata.source_ref和material_id关联到materials集合的原文。
 
 ---
 

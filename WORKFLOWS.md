@@ -75,20 +75,26 @@ lineage / turning_points / grounding / collaborations / renunciations / adversar
 - **materials**：原始素材分800字chunk embed
 - **7个结构化集合**：core_profile / insights / unconscious / repetition / transference / drive / tension
 
-## 二、报告生成 Pipeline v4.0
+## 二、报告生成 Pipeline v4.2
 
 ```bash
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/think_tank_pipeline_v3.py "议题"
 ```
 
 ```
-议题 → 子议题拆解 → 四源时事搜索 → RAG → 红蓝对抗(心理学家独立) → 4章报告 → 预-mortem偏差审计 → 拼接
+议题 → 子议题拆解 → 四源时事搜索 → RAG(按人聚合) → 红蓝对抗(心理学家独立) → 4章报告 → 预-mortem偏差审计 → 拼接
 ```
 
 **v4改动（心理学家评审建议）：**
 - 6章→4章 | 心理学家独立为偏差审计层 | 预-mortem反向检验 | 概率改为区间
 - 8位心理学家全覆盖（含津巴多、阿瑞利）
 - 生成顺序：ch01-ch04并行 → premortem → 拼接
+
+**v4.2 RAG架构改造（心理学家圆桌共识）：**
+- RAG按学者分组传递（profile + insights + tensions + materials）
+- insights不截断，强制直接引用原文，禁止纯转述
+- tension独立集合（不再被过滤掉）
+- 关联表：insight.source_ref → material.material_id → 原文
 
 ## 三、人员体系
 

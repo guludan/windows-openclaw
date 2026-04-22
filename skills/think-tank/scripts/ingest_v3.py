@@ -10,7 +10,7 @@ Embedding: 本地 Ollama bge-m3 (1024维)
 DB路径: /mnt/d/data/think-tank-data/_chromadb/lacan_db
 """
 
-import json, sys, os, gc, time, re
+import json, sys, os, gc, time, re, hashlib
 from pathlib import Path
 
 import chromadb
@@ -270,7 +270,8 @@ def ingest_materials(person_name, person_dir, cols):
             for ci, chunk in enumerate(chunks):
                 texts_batch.append(f"[{person_name}] {f.stem}[{ci}]: {chunk}")
                 ids_batch.append(f"{person_name}_mat_{f.stem}_{ci}")
-                metadatas_batch.append({"person": person_name, "source": f.name, "chunk": ci})
+                metadatas_batch.append({"person": person_name, "source": f.name, "chunk": ci,
+                                          "material_id": f"{person_name}_mat_{hashlib.md5(f.stem.encode()).hexdigest()[:8]}"})
                 count += 1
 
                 if len(texts_batch) >= 8:
@@ -363,26 +364,53 @@ def run(person_name, person_dir):
     # 2. insights
     insight_chunks = extract_insights(pv3, person_name)
     ins_col = cols["insights"]
+    tension_col = cols["tension"]
     try:
         old = ins_col.get(where={"person": person_name}, include=[])
-        if old['ids']:
-            ins_col.delete(ids=old['ids'])
+        if old['ids']: ins_col.delete(ids=old['ids'])
+        old_t = tension_col.get(where={"person": person_name}, include=[])
+        if old_t['ids']: tension_col.delete(ids=old_t['ids'])
     except: pass
 
     if insight_chunks:
-        all_texts = [c['text'] for c in insight_chunks]
-        all_ids = [f"{person_name}_ins_{i}" for i in range(len(insight_chunks))]
-        all_metadatas = [{"person": person_name, "source": c['source'], "dim": c['dim']} for c in insight_chunks]
+        # v4.2: 按dim分流 — tension写入独立集合，其余写入insights
+        ins_texts, ins_ids, ins_metas = [], [], []
+        ten_texts, ten_ids, ten_metas = [], [], []
+        for i, c in enumerate(insight_chunks):
+            meta = {"person": person_name, "source": c['source'], "dim": c['dim'],
+                    "source_ref": "", "material_id": ""}
+            # 提取source_ref建立关联
+            m = re.search(r'\[来源:\s*(\S+)\]', c['text'])
+            if m:
+                meta["source_ref"] = m.group(1)
+                meta["material_id"] = f"{person_name}_mat_{hashlib.md5(m.group(1).encode()).hexdigest()[:8]}"
+            if c['dim'] == 'tension':
+                ten_texts.append(c['text'])
+                ten_ids.append(f"{person_name}_ten_{len(ten_ids)}")
+                ten_metas.append(meta)
+            else:
+                ins_texts.append(c['text'])
+                ins_ids.append(f"{person_name}_ins_{len(ins_ids)}")
+                ins_metas.append(meta)
+        # 写入insights
         ins_embeds = []
-        for bi in range(0, len(all_texts), 8):
-            batch = all_texts[bi:bi+8]
-            e = embed_texts(batch)
+        for bi in range(0, len(ins_texts), 8):
+            e = embed_texts(ins_texts[bi:bi+8])
             if e: ins_embeds.extend(e)
             gc.collect()
         if ins_embeds:
-            ins_col.add(documents=all_texts[:len(ins_embeds)], embeddings=ins_embeds,
-                       ids=all_ids[:len(ins_embeds)], metadatas=all_metadatas[:len(ins_embeds)])
-        print(f"  insights: {len(ins_embeds)} (原始{len(insight_chunks)}, 过滤空值{len(insight_chunks)-len(ins_embeds)})", flush=True)
+            ins_col.add(documents=ins_texts[:len(ins_embeds)], embeddings=ins_embeds,
+                       ids=ins_ids[:len(ins_embeds)], metadatas=ins_metas[:len(ins_embeds)])
+        # 写入tension
+        ten_embeds = []
+        for bi in range(0, len(ten_texts), 8):
+            e = embed_texts(ten_texts[bi:bi+8])
+            if e: ten_embeds.extend(e)
+            gc.collect()
+        if ten_embeds:
+            tension_col.add(documents=ten_texts[:len(ten_embeds)], embeddings=ten_embeds,
+                           ids=ten_ids[:len(ten_embeds)], metadatas=ten_metas[:len(ten_embeds)])
+        print(f"  insights: {len(ins_embeds)} | tension: {len(ten_embeds)} (原始{len(insight_chunks)})", flush=True)
     else:
         print(f"  insights: 0 (无有意义内容)", flush=True)
     gc.collect()
@@ -391,7 +419,7 @@ def run(person_name, person_dir):
     mat_count = ingest_materials(person_name, person_dir, cols)
 
     # 汇总
-    print(f"  DONE — core:1 + insights:{len(ins_embeds) if insight_chunks else 0} + materials:{mat_count}", flush=True)
+    print(f"  DONE — core:1 + insights:{len(ins_embeds) if insight_chunks else 0} + tension:{len(ten_embeds) if insight_chunks else 0} + materials:{mat_count}", flush=True)
 
 
 if __name__ == "__main__":

@@ -27,15 +27,16 @@
 
 缺蒸馏：克里斯·哈德纳吉（social-engineering，素材仅1条meta，无实际内容，需补采集）
 
-### 向量库（lacan_db, 20,341条，2026-04-21重建）
+### 向量库（lacan_db, v4.2架构）
 
-| 集合 | 数量 | 说明 |
+| 集合 | 说明 | 关联 |
 |------|------|------|
-| materials | 15,354 | 素材chunk（800字/块，含去重过滤） |
-| insights | 4,991 | 深层逻辑（从v3提取，is_meaningful过滤） |
-| core_profile | 96 | 人格摘要（96人完整） |
-| tension/drive/repetition/transference/unconscious | - | legacy集合，不再主动写入 |
+| insights | 蒸馏核心逻辑（按dim分类，不截断） | source_ref→material_id |
+| tension | 思想内在矛盾（v4.2独立集合） | source_ref→material_id |
+| materials | 原始素材分块（800字/块） | material_id |
+| core_profile | 人格摘要（96人） | — |
 
+关联表：insight/tension.metadata.source_ref ↔ materials.metadata.material_id
 Embedding: Ollama bge-m3 (1024维)
 
 ### 唯一工作流
