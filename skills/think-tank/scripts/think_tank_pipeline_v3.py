@@ -689,25 +689,17 @@ def format_affairs_for_prompt(affairs: dict) -> str:
 
 
 def auto_ingest_materials(affairs: dict, question: str):
-    """高质量长文自动保存为素材"""
+    """时事素材入库到chromadb（不再明文保存）"""
     saved = 0
-    materials_dir = os.path.join(REPORT_DIR, "_auto_materials")
-    os.makedirs(materials_dir, exist_ok=True)
     
     for topic, articles in affairs.items():
         for a in articles:
             text = a.get('text', '')
             if len(text) < 2000:
-                continue  # 只入库长文
-            # 保存原始文本
-            safe_title = re.sub(r'[^\w\u4e00-\u9fff]', '_', a['title'])[:50]
-            ts = time.strftime('%Y%m%d_%H%M%S')
-            path = os.path.join(materials_dir, f"{safe_title}_{ts}.txt")
-            with open(path, 'w', encoding='utf-8') as f:
-                f.write(f"Title: {a['title']}\nURL: {a.get('url', '')}\nPublished: {a.get('pub', '')}\nQuery: {question}\n\n{text}")
+                continue
             saved += 1
             
-            # 尝试入库到chromadb的materials集合
+            # 入库到chromadb的materials集合
             try:
                 client = chromadb.PersistentClient(path=DB_PATH)
                 col = client.get_or_create_collection("materials", metadata={"hnsw:space": "cosine"})
@@ -719,13 +711,13 @@ def auto_ingest_materials(affairs: dict, question: str):
                         ids=[f"auto_{doc_id}"],
                         embeddings=[emb],
                         documents=[text[:1000]],
-                        metadatas=[{"person": "时事自动入库", "source": "exa", "title": a['title'], "url": a.get('url', ''), "type": "current_affairs"}]
+                        metadatas=[{"person": "时事自动入库", "source": a.get('source', 'unknown'), "title": a['title'], "url": a.get('url', ''), "type": "current_affairs"}]
                     )
             except Exception as e:
                 print(f"  ⚠️ 自动入库失败: {e}")
     
     if saved:
-        print(f"  📥 自动入库: {saved}条高质量素材")
+        print(f"  📥 chromadb入库: {saved}条高质量素材")
     return saved
 
 
