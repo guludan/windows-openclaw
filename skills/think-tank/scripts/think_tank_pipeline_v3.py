@@ -453,19 +453,21 @@ def format_red_blue_prompt(selection: dict) -> str:
     return "\n".join(lines)
 
 
-def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dict, selection: dict, affairs_data: dict = None) -> dict:
-    """构建报告章节任务（v5: 条件判断+框架对抗+因果推理）"""
+def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dict, selection: dict, affairs_data: dict = None, market_data: dict = None) -> dict:
+    """构建报告章节任务（v5: 条件判断+框架对抗+因果推理+市场数据）"""
     dims = ', '.join(decomp['triggered_dimensions'])
     ents = ', '.join(decomp.get('matched_entities', ['通用']))
     assets = ', '.join(decomp['relevant_assets'])
 
     affairs_text = format_affairs_for_prompt(affairs_data) if affairs_data else ""
     affairs_block = f"\n\n{affairs_text}\n" if affairs_text else ""
+    market_text = format_market_for_prompt(market_data) if market_data else ""
+    market_block = f"\n\n{market_text}\n" if market_text else ""
     rag_text = format_rag_for_prompt(rag_data)
     hist_text = format_historical_for_prompt(events)
     rb_text = format_red_blue_prompt(selection)
 
-    common = f"\n## 核心问题\n{question}{affairs_block}\n\n{rb_text}\n"
+    common = f"\n## 核心问题\n{question}{affairs_block}{market_block}\n\n{rb_text}\n"
 
     quote_rule = '【引用纪律】每个关键论点必须直接引用下方学者的具体观点。格式要求：先给出来源（学者名+作品/框架名+年份），再引用原文核心论断，最后说明该论点的适用边界和与当前问题的因果连接。严禁：纯转述（「XX认为」而无原文）、[RAG: XX]式标签（不可验证不可挑战）、无边界条件的引用。当学者存在内在张力时必须呈现。'
 
@@ -572,6 +574,167 @@ def _search_serpapi(queries: list) -> list:
     return articles
 
 
+def _search_baidu(queries: list) -> list:
+    """百度搜索（通过r.jina.ai绕反爬），返回 [(title, text, url, pub, source)]"""
+    articles = []
+    for q in queries[:2]:
+        try:
+            # 用r.jina.ai代理百度搜索
+            search_url = f"https://www.baidu.com/s?wd={requests.utils.quote(q)}&rn=5"
+            proxy_url = f"https://r.jina.ai/{search_url}"
+            r = requests.get(proxy_url, headers={"Accept": "text/plain"}, timeout=15)
+            if r.status_code != 200:
+                continue
+            text = r.text
+            # 从纯文本中提取标题和摘要（jina返回markdown）
+            lines = text.split('\n')
+            current_title = ""
+            current_url = ""
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    continue
+                # 标题通常是较短的行，且可能包含方括号编号
+                if line.startswith('[') and ']' in line and len(line) < 150 and '...' not in line:
+                    if current_title and len(current_title) > 5:
+                        articles.append((current_title, current_url[:300], "", "", "百度"))
+                    current_title = line.lstrip('[').split(']', 1)[-1].strip()
+                    current_url = ""
+                elif current_title and len(line) > 20:
+                    current_url += line + " "
+            if current_title and len(current_title) > 5:
+                articles.append((current_title, current_url[:300], "", "", "百度"))
+        except Exception as e:
+            print(f"  ⚠️ 百度搜索异常: {e}")
+        time.sleep(1)
+    return articles
+
+
+def _search_zhihu(queries: list) -> list:
+    """知乎搜索，返回 [(title, text, url, pub, source)]"""
+    cookie_path = os.path.expanduser("~/.openclaw/workspace/.cookies/zhihu_cookies.txt")
+    if not os.path.exists(cookie_path):
+        return []
+    try:
+        with open(cookie_path, 'r') as f:
+            cookie_str = f.read().strip()
+    except Exception:
+        return []
+    articles = []
+    for q in queries[:2]:
+        try:
+            headers = {"User-Agent": "Mozilla/5.0", "Cookie": cookie_str}
+            r = requests.get(
+                "https://www.zhihu.com/api/v4/search_v3",
+                params={"t": "general", "q": q, "correction": 1, "offset": 0, "limit": 5},
+                headers=headers, timeout=10
+            )
+            if r.status_code != 200:
+                continue
+            data = r.json()
+            for item in data.get("data", [])[:5]:
+                obj = item.get("object", {}) or item
+                title = obj.get("title") or obj.get("question", {}).get("title", "")
+                text = obj.get("excerpt") or obj.get("content", "")[:500]
+                url = f"https://www.zhihu.com/question/{obj.get('id', '')}"
+                if title and text:
+                    articles.append((title, text, url, "", "知乎"))
+        except Exception:
+            pass
+        time.sleep(1)
+    return articles
+
+
+MARKET_DATA_DIR = "/mnt/d/data/conflict-data/market/"
+MARKET_KEYWORD_MAP = {
+    # (关键词列表): [(JSON文件名, 指标中文名, 数据类型)]
+    ("通胀", "CPI", "物价"): [("fred_CPIAUCSL_美国CPI.json", "美国CPI", "fred")],
+    ("利率", "LPR", "加息", "降息"): [("fred_DGS10.json", "美国10年期国债收益率", "fred")],
+    ("美元", "汇率", "人民币"): [
+        ("fred_DEXCHUS.json", "美元/人民币汇率", "fred"),
+        ("fred_DTWEXBGS_美元指数.json", "美元指数", "fred"),
+    ],
+    ("黄金", "金价"): [("fred_VIXCLS.json", "VIX恐慌指数", "fred")],
+    ("股市", "A股", "上证", "大盘"): [("akshare_sh000001_上证指数.json", "上证指数", "stock")],
+    ("港股", "恒生"): [("akshare_hang_seng.json", "恒生指数", "stock")],
+    ("石油", "油价", "原油", "能源"): [("fred_DCOILBRENTEU.json", "布伦特原油", "fred")],
+    ("失业"): [("fred_UNRATE_失业率.json", "美国失业率", "fred")],
+    ("GDP", "经济总量"): [("fred_GDP_美国GDP.json", "美国GDP", "fred")],
+    ("日本", "日经"): [("fred_NIKKEI225.json", "日经225", "fred")],
+    ("美股", "纳斯达克", "标普"): [
+        ("fred_SP500.json", "标普500", "fred"),
+        ("fred_NIKKEI225.json", "日经225", "fred"),
+    ],
+    ("国债", "债务"): [("fred_GFDEBTN_美国国债.json", "美国国债总额", "fred")],
+}
+
+
+def _fetch_market_data(question: str, decomp: dict) -> dict:
+    """根据议题定向拉取相关市场数据，返回 {指标名: [最新5条]}"""
+    # 构建搜索关键词
+    keywords = set()
+    question_lower = question.lower()
+    for words in MARKET_KEYWORD_MAP:
+        for w in words:
+            if w.lower() in question_lower:
+                keywords.add(words)
+                break
+    entities = decomp.get('matched_entities', [])
+    for ent in entities:
+        for words in MARKET_KEYWORD_MAP:
+            for w in words:
+                if w.lower() in ent.lower():
+                    keywords.add(words)
+                    break
+    if not keywords:
+        return {}
+
+    results = {}
+    for words in keywords:
+        for fname, label, dtype in MARKET_KEYWORD_MAP[words]:
+            fpath = os.path.join(MARKET_DATA_DIR, fname)
+            if not os.path.exists(fpath):
+                continue
+            try:
+                with open(fpath, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                if not isinstance(data, list) or not data:
+                    continue
+                # 取最新5条
+                latest = data[-5:] if dtype == "stock" else data[-5:]
+                formatted = []
+                for item in latest:
+                    if dtype == "stock":
+                        ts = item.get('date', 0)
+                        if isinstance(ts, (int, float)) and ts > 1e12:
+                            from datetime import datetime
+                            dt = datetime.fromtimestamp(ts / 1000).strftime("%Y-%m-%d")
+                        else:
+                            dt = str(ts)[:10]
+                        formatted.append({"date": dt, "close": item.get("close", "")})
+                    else:
+                        formatted.append({"date": item.get("date", "")[:10], "value": item.get("value", "")})
+                results[label] = formatted
+            except Exception as e:
+                print(f"  ⚠️ 读取市场数据失败 {fname}: {e}")
+    return results
+
+
+def format_market_for_prompt(market_data: dict) -> str:
+    """格式化市场数据为prompt文本"""
+    if not market_data:
+        return ""
+    lines = ["## 📊 相关市场数据（最新）"]
+    for label, points in market_data.items():
+        if not points:
+            continue
+        latest = points[-1]
+        val = latest.get('close', latest.get('value', '?'))
+        dt = latest.get('date', '?')
+        lines.append(f"- **{label}**: {dt} → {val}")
+    return "\n".join(lines)
+
+
 def _search_cls_cache(question: str, decomp: dict, days: int = 14) -> list:
     """搜索Redis缓存的财联社快讯"""
     try:
@@ -653,6 +816,18 @@ def search_current_affairs(question: str, decomp: dict, days: int = 14) -> dict:
 
     print(f"  🌐 [4/4] SerpAPI搜索...")
     all_articles.extend(_search_serpapi(queries))
+
+    print(f"  🌐 [5/6] 百度搜索...")
+    baidu_results = _search_baidu(queries)
+    all_articles.extend(baidu_results)
+    if baidu_results:
+        print(f"    百度: {len(baidu_results)}条")
+
+    print(f"  🌐 [6/6] 知乎搜索...")
+    zhihu_results = _search_zhihu(queries)
+    all_articles.extend(zhihu_results)
+    if zhihu_results:
+        print(f"    知乎: {len(zhihu_results)}条")
     
     # 去重 by title前40字
     seen_titles = set()
@@ -722,9 +897,9 @@ def auto_ingest_materials(affairs: dict, question: str):
 
 
 def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True, enable_affairs: bool = True):
-    """完整Pipeline v3 (红蓝对抗+分段生成+时事搜索)"""
+    """完整Pipeline v5 (框架对抗+条件情景+多源时事+市场数据)"""
     print("=" * 60)
-    print("🧠 智库分析Pipeline v3 (红蓝对抗+分段生成+时事搜索)")
+    print("🧠 智库分析Pipeline v5 (框架对抗+条件情景+多源时事+市场数据)")
     print("=" * 60)
 
     # Redis
@@ -765,14 +940,27 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
     total_tensions = sum(len(d.get('tensions',[])) for d in rag_data.values())
     print(f"  学者: {total_rag}人 | insights: {total_insights}条 | tensions: {total_tensions}条")
 
-    # Step 3.5: 时事自动搜索
+    # Step 3.5: 时事自动搜索（6源）
     affairs_data = {}
     if enable_affairs:
-        print(f"\n🌐 Step 3.5: 时事自动搜索（多源：Exa+Tavily+SerpAPI）")
+        print(f"\n🌐 Step 3.5: 时事自动搜索（多源：Exa+Tavily+SerpAPI+百度+知乎+财联社）")
         affairs_data = search_current_affairs(question, decomp, days=14)
         # 自动入库高质量素材
         auto_ingest_materials(affairs_data, question)
     affairs_text = format_affairs_for_prompt(affairs_data)
+
+    # Step 3.6: 市场数据定向拉取
+    market_data = {}
+    print(f"\n📊 Step 3.6: 市场数据定向拉取")
+    try:
+        market_data = _fetch_market_data(question, decomp)
+        if market_data:
+            print(f"  匹配 {len(market_data)} 个相关指标")
+        else:
+            print(f"  未匹配到相关市场指标")
+    except Exception as e:
+        print(f"  ⚠️ 市场数据拉取失败: {e}")
+    market_text = format_market_for_prompt(market_data)
     
     # Step 4: 红蓝对抗匹配
     print(f"\n⚔️  Step 4: 红蓝对抗匹配（心理学家独立）")
@@ -781,9 +969,9 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
     psych_total = len(selection.get("心理学家", []))
     print(f"  红蓝阵营: {rb_total}人 | 心理学家(独立): {psych_total}人")
 
-    # Step 5: 构建分段task（v4: 4章 + 预-mortem）
+    # Step 5: 构建分段task（v5: 4章 + 预-mortem）
     print(f"\n📝 Step 5: 构建分段报告任务（4章 + 预-mortem偏差审计）")
-    chapters, premortem = build_chapter_tasks(question, decomp, events, rag_data, selection, affairs_data)
+    chapters, premortem = build_chapter_tasks(question, decomp, events, rag_data, selection, affairs_data, market_data)
     os.makedirs("/tmp", exist_ok=True)
     topic_hash = hashlib.md5(question.encode()).hexdigest()[:4]
     for ch_id, ch in chapters.items():
