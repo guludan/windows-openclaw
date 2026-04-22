@@ -212,7 +212,7 @@ def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6)
                 if col.count() == 0:
                     continue
                 # materials取少一些（内容长），insights/core_profile多取
-                n = min(3 if col_name == "materials" else n_per_col, col.count())
+                n = min(5 if col_name == "materials" else n_per_col, col.count())
                 res = col.query(query_embeddings=[emb], n_results=n)
                 for i, doc in enumerate(res["documents"][0]):
                     meta = res["metadatas"][0][i]
@@ -224,7 +224,7 @@ def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6)
                     topic_results.append({
                         "person": person,
                         "col": col_name,
-                        "text": doc[:400 if col_name == "materials" else 300],
+                        "text": doc[:600 if col_name == "materials" else 300],
                         "dist": res["distances"][0][i],
                     })
             except Exception as e:
@@ -320,13 +320,28 @@ def match_historical_events(question: str, dimensions: list) -> list:
 
 
 def format_rag_for_prompt(rag_data: dict) -> str:
-    """格式化RAG数据为prompt文本（区分insights和materials）"""
+    """格式化RAG数据为prompt文本（v4: 原文优先，insights/core_profile作辅助标签）"""
     sections = []
     for topic, items in rag_data.items():
         lines = [f"**{topic}:**"]
         seen_persons = set()
+        mat_added = 0
 
-        # insights/core_profile 优先（每个person一条）
+        # 第一轮：materials原文优先（最多6条，不同person）
+        for item in items:
+            if item["col"] != "materials":
+                continue
+            person = item["person"]
+            if person in seen_persons:
+                continue
+            seen_persons.add(person)
+            mat_added += 1
+            text = item["text"].replace("\n", " ")[:600]
+            lines.append(f"- 📄 [原文: {person}] {text}")
+            if mat_added >= 6:
+                break
+
+        # 第二轮：insights/core_profile补充（每个person一条，未出场的才加）
         for item in items:
             if item["col"] == "materials":
                 continue
@@ -335,23 +350,8 @@ def format_rag_for_prompt(rag_data: dict) -> str:
                 continue
             seen_persons.add(person)
             tag = "💡" if item["col"] == "insights" else "👤"
-            text = item["text"].replace("\n", " ")
-            lines.append(f"- {tag} [RAG: {person}] {text}")
-
-        # materials补充（最多2条，不同person）
-        mat_count = 0
-        for item in items:
-            if item["col"] != "materials":
-                continue
-            person = item["person"]
-            if person in seen_persons and mat_count >= 2:
-                continue
-            seen_persons.add(person)
-            mat_count += 1
-            text = item["text"].replace("\n", " ")
-            lines.append(f"- 📄 [RAG: {person}/素材] {text}")
-            if mat_count >= 3:
-                break
+            text = item["text"].replace("\n", " ")[:200]
+            lines.append(f"- {tag} [{item['col']}: {person}] {text}")
 
         sections.append("\n".join(lines))
     return "\n\n".join(sections)
@@ -386,7 +386,7 @@ def build_report_task(question: str, decomp: dict, events: list, rag_data: dict)
 ## 相关资产：{', '.join(decomp['relevant_assets'])}
 
 ## 要求
-1. 使用RAG数据中的具体观点，每个判断标注[RAG: 人格名]
+1. 使用RAG数据中的具体观点，每个关键论点必须引用RAG原文片段（从下方「RAG参考」中摘录具体句子或数据），用引号包裹并标注出处如「…」[RAG: 人格名]。禁止只写「XX认为」的转述而不引用原文。
 2. 心理学家分析要深刻具体（认知偏差、群体决策、道德脱离、社会认同、损失厌恶等）
 3. 历史类比严谨，注意区分不同历史情境的异同
 4. 所有情景概率必须归一化（总和=100%）
@@ -486,13 +486,13 @@ def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dic
     # v4: 4章结构 + 偏差审计 + 预-mortem
     chapters = {
         "ch01": {"title": "问题解构与历史参照", "words": "1200-1500",
-            "instruction": f"你是学术战略研究分析引擎。撰写第1章：问题解构与历史参照（1200-1500字）。{common}\n## 维度：{dims} | 实体：{ents} | 资产：{assets}\n\n### 第一部分：问题解构（600-800字）\n从五个维度（军事、政治、经济、技术、心理）解构问题，识别关键变量和不确定性来源。结合实时情报分析最新动态。每个数据点只完整陈述一次。\n\n### 第二部分：历史参照矩阵（400-600字）\n提取2-3个最相关的历史类比。注意区分相似性与差异性。每个类比给出一条可验证的预测。区分已确认事实与推测性判断。\n\n写作纪律：禁止空洞过渡句、不重复数据、信息密度优先。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## 历史参照\n{hist_text}\n\n## RAG参考\n{rag_text}"},
+            "instruction": f"你是学术战略研究分析引擎。撰写第1章：问题解构与历史参照（1200-1500字）。{common}\n## 维度：{dims} | 实体：{ents} | 资产：{assets}\n\n### 第一部分：问题解构（600-800字）\n从五个维度（军事、政治、经济、技术、心理）解构问题，识别关键变量和不确定性来源。结合实时情报分析最新动态。每个数据点只完整陈述一次。\n\n### 第二部分：历史参照矩阵（400-600字）\n提取2-3个最相关的历史类比。注意区分相似性与差异性。每个类比给出一条可验证的预测。区分已确认事实与推测性判断。\n\n写作纪律：禁止空洞过渡句、不重复数据、信息密度优先。每个关键论点必须引用RAG原文片段（从下方「RAG参考」中摘录具体句子或数据），用引号包裹并标注出处如「…」[RAG: 人格名]。禁止只写「XX认为」的转述而不引用原文。。直接输出正文。\n\n## 历史参照\n{hist_text}\n\n## RAG参考\n{rag_text}"},
         "ch02": {"title": "红蓝对抗与必要条件", "words": "1500-2000",
-            "instruction": f"你是学术战略研究分析引擎。撰写第2章：红蓝对抗与必要条件（1500-2000字）。{common}\n\n核心要求：真正的交锋。红蓝对抗不是并列式观点罗列，而是辩论：红方提出观点-蓝方直接反驳-红方回应-蓝方再补充。至少两轮交锋。\n\n从军事/政治/经济/技术四维度分析必要条件。每个维度：1)红方核心论点（附具体数据）2)蓝方反驳（附反例或逻辑漏洞）3)交锋后的收敛判断。\n\n禁止：并列式罗列、重复第1章数据、用心理学理论佐证（留给第3章）、车轱辘话。\n\n每个判断标注[RAG: 人格名]。直接输出正文。\n\n## RAG参考\n{rag_text}"},
+            "instruction": f"你是学术战略研究分析引擎。撰写第2章：红蓝对抗与必要条件（1500-2000字）。{common}\n\n核心要求：真正的交锋。红蓝对抗不是并列式观点罗列，而是辩论：红方提出观点-蓝方直接反驳-红方回应-蓝方再补充。至少两轮交锋。\n\n从军事/政治/经济/技术四维度分析必要条件。每个维度：1)红方核心论点（附具体数据）2)蓝方反驳（附反例或逻辑漏洞）3)交锋后的收敛判断。\n\n禁止：并列式罗列、重复第1章数据、用心理学理论佐证（留给第3章）、车轱辘话。\n\n每个关键论点必须引用RAG原文片段（从下方「RAG参考」中摘录具体句子或数据），用引号包裹并标注出处如「…」[RAG: 人格名]。禁止只写「XX认为」的转述而不引用原文。。直接输出正文。\n\n## RAG参考\n{rag_text}"},
         "ch03": {"title": "心理动力学与偏差审计", "words": "1500-2000",
-            "instruction": f"你是认知偏差审计专家。撰写第3章：心理动力学与偏差审计（1500-2000字）。{common}\n\n你的角色不是红蓝任何一方，而是独立于对抗之外的元分析者。\n\n审计框架（8位心理学家，每人至少一个实质性应用）：\n1. 卡尼曼：前景理论/损失厌恶/系统双过程/框架效应\n2. 阿希：从众效应（区分信息性vs规范性影响，不简单推广到宏观）\n3. 津巴多：情境力量/去个性化——哪些情境结构在塑造行为\n4. 海特：道德基础理论——各方在哪些道德维度上不可通约\n5. 西奥迪尼：影响力原则——互惠/权威/社会认同/稀缺/承诺与一致/喜好\n6. 班杜拉：道德脱离/三元交互决定论——螺旋升级机制\n7. 艾克曼：情绪动力学——恐惧和愤怒的阶段变化、情绪劫持临界点\n8. 阿瑞利：锚定效应/任意一致性/默认偏差\n\n每个理论必须：a)引用具体理论/实验名称 b)构建因果链：心理机制-行为变化-政策结果 c)给出可验证预测 d)标注偏差风险[低/中/高]\n\n禁止：对称补刀式「双方都有偏差」（要分析不对称性）、重复第1-2章论点、理论只展开一次。\n\n每个判断标注[RAG: 人格名]。直接输出正文。\n\n## RAG参考\n{rag_text}"},
+            "instruction": f"你是认知偏差审计专家。撰写第3章：心理动力学与偏差审计（1500-2000字）。{common}\n\n你的角色不是红蓝任何一方，而是独立于对抗之外的元分析者。\n\n审计框架（8位心理学家，每人至少一个实质性应用）：\n1. 卡尼曼：前景理论/损失厌恶/系统双过程/框架效应\n2. 阿希：从众效应（区分信息性vs规范性影响，不简单推广到宏观）\n3. 津巴多：情境力量/去个性化——哪些情境结构在塑造行为\n4. 海特：道德基础理论——各方在哪些道德维度上不可通约\n5. 西奥迪尼：影响力原则——互惠/权威/社会认同/稀缺/承诺与一致/喜好\n6. 班杜拉：道德脱离/三元交互决定论——螺旋升级机制\n7. 艾克曼：情绪动力学——恐惧和愤怒的阶段变化、情绪劫持临界点\n8. 阿瑞利：锚定效应/任意一致性/默认偏差\n\n每个理论必须：a)引用具体理论/实验名称 b)构建因果链：心理机制-行为变化-政策结果 c)给出可验证预测 d)标注偏差风险[低/中/高]\n\n禁止：对称补刀式「双方都有偏差」（要分析不对称性）、重复第1-2章论点、理论只展开一次。\n\n每个关键论点必须引用RAG原文片段（从下方「RAG参考」中摘录具体句子或数据），用引号包裹并标注出处如「…」[RAG: 人格名]。禁止只写「XX认为」的转述而不引用原文。。直接输出正文。\n\n## RAG参考\n{rag_text}"},
         "ch04": {"title": "情景推演与投资影响", "words": "1500-2000",
-            "instruction": f"你是战略情景分析专家。撰写第4章：情景推演与投资影响（1500-2000字）。{common}\n\n情景推演：三个递进情景（基线/升级/极端），每个含：1.触发条件 2.核心指标变化（具体数字区间+时间框架） 3.持续时间。概率用独立评估不归一化，格式：中位数X%，90%CI [A%, B%]。条件变化时如何调整。\n\n投资策略（必须具体）：具体标的（ETF/个股代码）、仓位比例、止损止盈、时间窗口。防御/进攻/对冲三层。Taleb反脆弱审视。\n\n必须含：A股（上证/沪深300/创业板）、港股恒生、汇率、黄金、原油。\n\n写作纪律：不重复1-3章、投资必须有标的+仓位+止损、概率为区间。每个判断标注[RAG: 人格名]。直接输出正文。\n\n## 资产：{assets}\n## RAG参考\n{rag_text}\n\n## 历史参照\n{hist_text}"},
+            "instruction": f"你是战略情景分析专家。撰写第4章：情景推演与投资影响（1500-2000字）。{common}\n\n情景推演：三个递进情景（基线/升级/极端），每个含：1.触发条件 2.核心指标变化（具体数字区间+时间框架） 3.持续时间。概率用独立评估不归一化，格式：中位数X%，90%CI [A%, B%]。条件变化时如何调整。\n\n投资策略（必须具体）：具体标的（ETF/个股代码）、仓位比例、止损止盈、时间窗口。防御/进攻/对冲三层。Taleb反脆弱审视。\n\n必须含：A股（上证/沪深300/创业板）、港股恒生、汇率、黄金、原油。\n\n写作纪律：不重复1-3章、投资必须有标的+仓位+止损、概率为区间。每个关键论点必须引用RAG原文片段（从下方「RAG参考」中摘录具体句子或数据），用引号包裹并标注出处如「…」[RAG: 人格名]。禁止只写「XX认为」的转述而不引用原文。。直接输出正文。\n\n## 资产：{assets}\n## RAG参考\n{rag_text}\n\n## 历史参照\n{hist_text}"},
     }
 
     premortem = {"title": "预-mortem偏差审计", "words": "800-1000",
