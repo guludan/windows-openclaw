@@ -483,6 +483,31 @@ def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dic
     return chapters, premortem
 
 
+def _search_exa(queries: list, start_date: str) -> list:
+    """Exa搜索（付费API，失败时静默跳过）"""
+    if not EXA_API_KEY:
+        return []
+    try:
+        articles = []
+        for q in queries[:3]:
+            r = requests.post("https://api.exa.ai/search", json={
+                "query": q, "num_results": 5, "start_published_date": start_date,
+                "type": "auto", "contents": {"text": {"maxCharacters": 500}}
+            }, headers={"x-api-key": EXA_API_KEY}, timeout=15)
+            if r.status_code != 200:
+                continue
+            for a in r.json().get("results", []):
+                articles.append({"title": a.get("title", ""),
+                    "text": a.get("text", "")[:500],
+                    "url": a.get("url", ""),
+                    "pub": a.get("publishedDate", ""),
+                    "source": "exa"})
+            time.sleep(0.3)
+        return articles
+    except Exception:
+        return []
+
+
 def _search_tavily(queries: list) -> list:
     """Tavily搜索，返回 [(title, text, url, pub, source)]"""
     articles = []
@@ -776,7 +801,7 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
         "decomposition": decomp,
         "historical_events": len(events),
         "rag_total": total_rag,
-        "rag_col_counts": col_counts,
+        "rag_col_counts": {"insights": total_insights, "tension": total_tensions, "materials": sum(len(d.get('materials',[])) for d in rag_data.values())},
         "red_blue_selection": {k: v for k, v in selection.items()},
         "chapters": {k: {"title": v["title"], "words": v["words"]} for k, v in chapters.items()},
         "premortem": {"title": premortem["title"], "words": premortem["words"]},
