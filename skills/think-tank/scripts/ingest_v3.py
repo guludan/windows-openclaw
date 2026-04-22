@@ -230,7 +230,7 @@ def extract_insights(pv3, person_name):
     # tension_explanation: dict {note, tracing}
     te = lt.get('tension_explanation', {})
     if isinstance(te, dict) and te.get('tracing'):
-        add(f"[{person_name}] 张力溯源: {te['tracing']}", 'tension', 'logical_tracing')
+        add(f"[{person_name}] 张力溯源: {te['tracing']}", 'logical_tracing', 'tension')
 
     return chunks
 

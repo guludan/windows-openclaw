@@ -460,6 +460,9 @@ def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dic
 
     affairs_text = format_affairs_for_prompt(affairs_data) if affairs_data else ""
     affairs_block = f"\n\n{affairs_text}\n" if affairs_text else ""
+    rag_text = format_rag_for_prompt(rag_data)
+    hist_text = format_historical_for_prompt(events)
+    rb_text = format_red_blue_prompt(selection)
     
     common = f"\n## 核心问题\n{question}{affairs_block}\n\n{rb_text}\n"
 
