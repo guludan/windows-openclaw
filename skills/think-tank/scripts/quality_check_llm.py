@@ -39,40 +39,77 @@ def generate_prompt(person_dir: Path, batch_size: int = 20) -> list:
         return []
 
     person_name = person_dir.name
+
+    # 加载名称映射，获取别名（用于评分时识别中英文名素材）
+    name_map_path = Path("/mnt/d/data/think-tank-data/personalities/name_map.json")
+    aliases = []
+    if name_map_path.exists():
+        with open(name_map_path, 'r', encoding='utf-8') as f:
+            name_map = json.load(f)
+        if person_name in name_map:
+            entry = name_map[person_name]
+            if entry.get("zh"):
+                aliases.append(entry["zh"])
+            if entry.get("en"):
+                aliases.append(entry["en"])
+        else:
+            for key, entry in name_map.items():
+                if entry.get("en", "").lower() == person_name.lower():
+                    aliases.append(key)
+                    if entry.get("zh"):
+                        aliases.append(entry["zh"])
+                    break
+    alias_note = f"\n别名: {', '.join(aliases)}" if aliases else ""
+
     type_counts = {}
     for item in report:
         t = item['source_type']
         type_counts[t] = type_counts.get(t, 0) + 1
 
-    header_lines = [
-        f"# 素材质量评分任务",
-        f"",
-        f"人物: {person_name}",
-        f"素材总数: {len(report)}",
-        f"来源分布: {json.dumps(type_counts)}",
-        f"",
-        f"## 评分标准",
-        f"- **5分**: 高质量学术论文全文/核心著作摘要，包含原创观点、数据或理论",
-        f"- **4分**: 有实质内容的文章/书评/访谈，信息密度较高",
-        f"- **3分**: 一般性介绍/概述，有一定参考价值但信息密度一般",
-        f"- **2分**: 内容重复/转载/摘要页，信息量低",
-        f"- **1分**: 无关内容/广告/错误页面/纯导航页",
-        f"",
-        f"## 判断维度",
-        f"1. **相关性**: 内容是否真正关于{person_name}（而非仅仅提到名字）",
-        f"2. **信息密度**: 是否包含具体观点、数据、分析，还是泛泛而谈",
-        f"3. **学术价值**: 是否包含可被蒸馏的深层逻辑或独特见解",
-        f"4. **原创性**: 是否为原创内容（非转载/重复/洗稿）",
-        f"",
-        f"## 输出格式",
-        f"严格输出JSON数组，不要输出任何其他文字：",
-        f"[",
-        f'  {{"filename": "xxx.txt", "score": 4, "reason": "简短理由", "action": "keep"}},',
-        f'  {{"filename": "yyy.txt", "score": 1, "reason": "无关内容", "action": "discard"}}',
-        f"]",
-        f"",
-        f"注意: score<=2 的设为 discard，score>=3 的设为 keep",
-    ]
+    # 从模板文件读取prompt头
+    template_path = Path("~/.openclaw/workspace/skills/think-tank/templates/quality_score_prompt.md").expanduser()
+    if template_path.exists():
+        template = template_path.read_text(encoding='utf-8')
+        all_names = ', '.join([person_name] + aliases)
+        alias_str = ', '.join(aliases)
+        # 替换模板变量
+        header_text = template.replace('{person_name}', person_name) \
+            .replace('{alias_note}', f'别名: {alias_str}' if aliases else '') \
+            .replace('{all_names}', all_names) \
+            .replace('{materials_list}', '')  # 素材列表在分批时追加
+        header_lines = header_text.split('\n')
+    else:
+        # 兜底：模板不存在时用硬编码
+        header_lines = [
+            f"# 素材质量评分任务",
+            f"",
+            f"人物: {person_name}{alias_note}",
+            f"注意: 评分相关性时，该人物的所有别名都算相关：{', '.join([person_name] + aliases)}",
+            f"素材总数: {len(report)}",
+            f"来源分布: {json.dumps(type_counts)}",
+            f"",
+            f"## 评分标准",
+            f"- **5分**: 高质量学术论文全文/核心著作摘要，包含原创观点、数据或理论",
+            f"- **4分**: 有实质内容的文章/书评/访谈，信息密度较高",
+            f"- **3分**: 一般性介绍/概述，有一定参考价值但信息密度一般",
+            f"- **2分**: 内容重复/转载/摘要页，信息量低",
+            f"- **1分**: 无关内容/广告/错误页面/纯导航页",
+            f"",
+            f"## 判断维度",
+            f"1. **相关性**: 内容是否真正关于{person_name}（而非仅仅提到名字）",
+            f"2. **信息密度**: 是否包含具体观点、数据、分析，还是泛泛而谈",
+            f"3. **学术价值**: 是否包含可被蒸馏的深层逻辑或独特见解",
+            f"4. **原创性**: 是否为原创内容（非转载/重复/洗稿）",
+            f"",
+            f"## 输出格式",
+            f"严格输出JSON数组，不要输出任何其他文字：",
+            f"[",
+            f'  {{"filename": "xxx.txt", "score": 4, "reason": "简短理由", "action": "keep"}},',
+            f'  {{"filename": "yyy.txt", "score": 1, "reason": "无关内容", "action": "discard"}}',
+            f"]",
+            f"",
+            f"注意: score<=2 的设为 discard，score>=3 的设为 keep",
+        ]
 
     # 分批
     batches = []
