@@ -148,8 +148,6 @@ skills/think-tank/
 │   ├── quality_check_llm.py      LLM质量评分（生成prompt→sessions_spawn评分→apply）
 │   ├── _batch_distill.py         蒸馏辅助（子session任务生成）
 │   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v4.0（4章+预-mortem）
-│   ├── collect_new_scholars.py   论文元数据采集（Google Scholar）
-│   ├── batch_game_theory_collect.py 全文下载（OA+Sci-Hub+Playwright）
 │   ├── cache_news.py / cache_news_tags.py  新闻缓存
 │   ├── fetch_acled.py / fetch_ucdp.py / fetch_cls.py / fetch_market.py  数据抓取
 │   ├── historical_context.py     历史事件引擎(Redis)

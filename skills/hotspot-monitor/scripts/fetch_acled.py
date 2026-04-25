@@ -1,1 +1,0 @@
-/home/tearsyu/.openclaw/workspace/scripts/fetch_acled.py
