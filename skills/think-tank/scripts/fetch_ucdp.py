@@ -6,17 +6,17 @@ from pathlib import Path
 OUT_DIR = Path("/mnt/d/data/conflict-data/ucdp")
 API_KEY = os.environ.get("UCDP_API_KEY", "")
 BASE = "https://ucdpapi.pcr.uu.se/api/georeferenced"
+HEADERS = {"x-ucdp-access-token": API_KEY} if API_KEY else {}
 
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def fetch_page(year, page=1, limit=50000):
     params = {
-        "key": API_KEY,
         "year": year,
         "page": page,
         "limit": limit,
     }
-    r = requests.get(BASE, params=params, timeout=60)
+    r = requests.get(BASE, params=params, headers=HEADERS, timeout=60)
     if r.status_code == 200:
         return r.json()
     else:

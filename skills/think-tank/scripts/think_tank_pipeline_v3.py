@@ -185,18 +185,18 @@ def decompose_question(question: str) -> dict:
     }
 
 
-# ============ 深度RAG（含materials） ============
+# ============ 深度RAG（含evidence） ============
 
 def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6) -> dict:
     """
     深度RAG搜索，返回按人聚合的数据（v4.2: 按人分组，insights不截断）
-    返回: {person_name: {"profile": str, "insights": [str], "materials": [str], "tensions": [str]}}
+    返回: {person_name: {"profile": str, "insights": [str], "evidence": [str], "tensions": [str]}}
     """
     client = chromadb.PersistentClient(path=DB_PATH)
     queries = sub_queries if sub_queries else {"default": question}
-    COLLECTIONS = ["insights", "core_profile", "materials", "tension"]
+    COLLECTIONS = ["insights", "core_profile", "evidence", "tension"]
 
-    # 按人聚合: {person: {"profile": "", "insights": [], "materials": [], "tensions": []}}
+    # 按人聚合: {person: {"profile": "", "insights": [], "evidence": [], "tensions": []}}
     persons = {}
 
     for topic, query in queries.items():
@@ -210,7 +210,7 @@ def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6)
                 col = client.get_collection(col_name)
                 if col.count() == 0:
                     continue
-                n = min(3 if col_name == "materials" else n_per_col, col.count())
+                n = min(3 if col_name == "evidence" else n_per_col, col.count())
                 res = col.query(query_embeddings=[emb], n_results=n)
                 for i, doc in enumerate(res["documents"][0]):
                     meta = res["metadatas"][0][i]
@@ -220,15 +220,15 @@ def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6)
                         continue
                     seen.add(key)
                     if person not in persons:
-                        persons[person] = {"profile": "", "insights": [], "materials": [], "tensions": []}
-                    # insights和tension不截断，materials截断800字
-                    text = doc if col_name != "materials" else doc[:800]
+                        persons[person] = {"profile": "", "insights": [], "evidence": [], "tensions": []}
+                    # insights和tension不截断，evidence截断800字
+                    text = doc if col_name != "evidence" else doc[:800]
                     if col_name == "core_profile":
                         persons[person]["profile"] = text
                     elif col_name == "tension":
                         persons[person]["tensions"].append(text)
-                    elif col_name == "materials":
-                        persons[person]["materials"].append(text)
+                    elif col_name == "evidence":
+                        persons[person]["evidence"].append(text)
                     else:
                         persons[person]["insights"].append(text)
             except Exception as e:
@@ -338,9 +338,9 @@ def format_rag_for_prompt(rag_data: dict) -> str:
             lines.append("**内在张力**：")
             for t in data["tensions"][:2]:
                 lines.append(f"- {t.replace(chr(10), ' ')}")
-        if data.get("materials"):
-            lines.append("**原文参考**：")
-            for m in data["materials"][:2]:
+        if data.get("evidence"):
+            lines.append("📄 原文证据：")
+            for m in data["evidence"][:2]:
                 lines.append(f"- {m.replace(chr(10), ' ')}")
         sections.append("\n".join(lines))
     return "\n\n".join(sections)
@@ -706,14 +706,24 @@ def _fetch_market_data(question: str, decomp: dict) -> dict:
                 for item in latest:
                     if dtype == "stock":
                         ts = item.get('date', 0)
+                        close = item.get('close', 0)
+                        if close <= 0:
+                            continue
                         if isinstance(ts, (int, float)) and ts > 1e12:
                             from datetime import datetime
                             dt = datetime.fromtimestamp(ts / 1000).strftime("%Y-%m-%d")
                         else:
                             dt = str(ts)[:10]
-                        formatted.append({"date": dt, "close": item.get("close", "")})
+                        formatted.append({"date": dt, "close": close})
                     else:
-                        formatted.append({"date": item.get("date", "")[:10], "value": item.get("value", "")})
+                        val_str = item.get('value', '')
+                        if not val_str or val_str == '.':
+                            continue
+                        try:
+                            float(val_str)
+                        except (ValueError, TypeError):
+                            continue
+                        formatted.append({"date": item.get('date', '')[:10], "value": val_str})
                 results[label] = formatted
             except Exception as e:
                 print(f"  ⚠️ 读取市场数据失败 {fname}: {e}")
@@ -874,10 +884,10 @@ def auto_ingest_materials(affairs: dict, question: str):
                 continue
             saved += 1
             
-            # 入库到chromadb的materials集合
+            # 入库到chromadb的evidence集合
             try:
                 client = chromadb.PersistentClient(path=DB_PATH)
-                col = client.get_or_create_collection("materials", metadata={"hnsw:space": "cosine"})
+                col = client.get_or_create_collection("evidence", metadata={"hnsw:space": "cosine"})
                 emb = embed(text[:500])
                 if emb:
                     import hashlib
@@ -926,8 +936,8 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
         events = []
         print(f"  匹配 0 个历史事件（Redis不可用）")
 
-    # Step 3: 深度RAG（insights + core_profile + materials）
-    print(f"\n🔍 Step 3: 深度RAG检索（含materials）")
+    # Step 3: 深度RAG（insights + core_profile + evidence）
+    print(f"\n🔍 Step 3: 深度RAG检索（含evidence）"
     if sub_queries:
         print(f"  子议题: {len(sub_queries)}个（自定义）")
     else:
@@ -989,7 +999,7 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
         "decomposition": decomp,
         "historical_events": len(events),
         "rag_total": total_rag,
-        "rag_col_counts": {"insights": total_insights, "tension": total_tensions, "materials": sum(len(d.get('materials',[])) for d in rag_data.values())},
+        "rag_col_counts": {"insights": total_insights, "tension": total_tensions, "evidence": sum(len(d.get('evidence',[])) for d in rag_data.values())},
         "red_blue_selection": {k: v for k, v in selection.items()},
         "chapters": {k: {"title": v["title"], "words": v["words"]} for k, v in chapters.items()},
         "premortem": {"title": premortem["title"], "words": premortem["words"]},

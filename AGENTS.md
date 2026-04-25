@@ -50,6 +50,8 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - Don't run destructive commands without asking.
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
+- **Sci-Hub/论文全文下载禁止批量爬取** — 必须一篇一篇下载，每次间隔60s+，绝不能循环批量请求。批量爬会被封IP，搞崩IP地址得不偿失。宁可慢，不能崩。
+- **任何外部API/网站禁止高频循环请求** — 必须有合理间隔（至少5-10s），不能for循环一秒一个请求。尊重对方服务器，也保护自己的IP。
 
 ## External vs Internal
 

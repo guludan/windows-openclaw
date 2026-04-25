@@ -24,7 +24,7 @@ OLLAMA_MODEL = "bge-m3:latest"
 COLLECTION_SPECS = {
     "core_profile":  "人格核心摘要 (brief+school+domains+evolution)",
     "insights":      "深层逻辑 (信念/认知/框架/决策/溯源)",
-    "materials":     "原始资料语义索引",
+    "evidence":      "被蒸馏标注的原文证据片段",
 }
 
 # Lacan 维度集合（暂时不用，保留结构）
@@ -235,65 +235,113 @@ def extract_insights(pv3, person_name):
     return chunks
 
 
-def ingest_materials(person_name, person_dir, cols):
-    """素材文件分块入库到 materials 集合，过滤噪音"""
-    mat_dir = Path(person_dir) / "materials"
-    if not mat_dir.exists():
-        return 0
+def ingest_evidence(person_name, pv3, cols):
+    """从 personality_v3.json 的 insights_with_evidence 字段入库到 insights 和 evidence 集合"""
+    iwe = pv3.get('insights_with_evidence', [])
+    if not iwe:
+        print("  evidence: 0 (insights_with_evidence字段为空)", flush=True)
+        return 0, 0
 
-    mat_col = cols["materials"]
+    evidence_col = cols["evidence"]
+
     # 删除旧数据
-    try:
-        old = mat_col.get(where={"person": person_name}, include=[])
-        if old['ids']:
-            mat_col.delete(ids=old['ids'])
-    except: pass
-
-    count = 0
-    embed_batch = []
-    texts_batch = []
-    ids_batch = []
-    metadatas_batch = []
-
-    for f in sorted(mat_dir.glob("*.txt")):
-        if f.stat().st_size < 500:
-            continue
+    for col_name in ["insights", "evidence"]:
         try:
-            content = f.read_text(encoding='utf-8', errors='ignore')[:8000]
-            # 快速噪音检测
-            lines = content.split('\n')
-            link_lines = sum(1 for l in lines if 'http' in l and len(l.strip()) < 100)
-            if len(lines) > 5 and link_lines / len(lines) > 0.3:
-                continue  # 跳过导航密集的噪音文件
+            old = cols[col_name].get(where={"person": person_name}, include=[])
+            if old['ids']:
+                cols[col_name].delete(ids=old['ids'])
+        except:
+            pass
 
-            chunks = [content[i:i+800] for i in range(0, len(content), 800)]
-            for ci, chunk in enumerate(chunks):
-                texts_batch.append(f"[{person_name}] {f.stem}[{ci}]: {chunk}")
-                ids_batch.append(f"{person_name}_mat_{f.stem}_{ci}")
-                metadatas_batch.append({"person": person_name, "source": f.name, "chunk": ci,
-                                          "material_id": f"{person_name}_mat_{hashlib.md5(f.stem.encode()).hexdigest()[:8]}"})
-                count += 1
+    # Phase 1: 先入库所有 evidence 条目，收集 ID 映射
+    ev_texts, ev_ids, ev_metas = [], [], []
+    # Map: (insight_index, ev_index_within_insight) -> ev_id
+    ev_id_map = {}
+    global_ev_idx = 0
 
-                if len(texts_batch) >= 8:
-                    embeds = embed_texts(texts_batch)
-                    if embeds and len(embeds) == len(texts_batch):
-                        mat_col.add(documents=texts_batch, embeddings=embeds,
-                                   ids=ids_batch, metadatas=metadatas_batch)
-                    texts_batch = []
-                    ids_batch = []
-                    metadatas_batch = []
-                    gc.collect()
-        except Exception as e:
-            print(f"  Error {f.name}: {e}", flush=True)
+    for i, ins in enumerate(iwe):
+        if not isinstance(ins, dict):
+            continue
+        claim = ins.get('claim', '')
+        dim = ins.get('dim', '')
+        evidences = ins.get('evidence', [])
+        for ei, ev in enumerate(evidences):
+            if not isinstance(ev, dict):
+                continue
+            excerpt = ev.get('excerpt', '')
+            if not excerpt or len(excerpt.strip()) < 20:
+                continue
+            ev_id = f"{person_name}_ev_{global_ev_idx:03d}"
+            ev_id_map[(i, ei)] = ev_id
+            source_file = ev.get('source_file', '')
+            location = ev.get('location', '')
+            ev_texts.append(excerpt)
+            ev_ids.append(ev_id)
+            ev_metas.append({
+                "person": person_name,
+                "source_file": source_file,
+                "location": location,
+                "insight_id": f"{person_name}_ins_{i:03d}",
+                "material_id": f"{person_name}_mat_{hashlib.md5(source_file.encode()).hexdigest()[:8]}" if source_file else "",
+            })
+            global_ev_idx += 1
 
-    if texts_batch:
-        embeds = embed_texts(texts_batch)
-        if embeds and len(embeds) == len(texts_batch):
-            mat_col.add(documents=texts_batch, embeddings=embeds,
-                       ids=ids_batch, metadatas=metadatas_batch)
+    # 批量 embed evidence
+    for bi in range(0, len(ev_texts), 8):
+        batch = ev_texts[bi:bi+8]
+        embeds = embed_texts(batch)
+        if embeds and len(embeds) == len(batch):
+            evidence_col.add(
+                documents=batch,
+                embeddings=embeds,
+                ids=ev_ids[bi:bi+8],
+                metadatas=ev_metas[bi:bi+8]
+            )
+        gc.collect()
 
-    print(f"  materials: {count} chunks", flush=True)
-    return count
+    # Phase 2: 入库 insights (每个 claim 一条，关联 evidence_ids)
+    ins_texts, ins_ids, ins_metas = [], [], []
+    for i, ins in enumerate(iwe):
+        if not isinstance(ins, dict):
+            continue
+        claim = ins.get('claim', '')
+        if not claim or len(claim.strip()) < 20:
+            continue
+        dim = ins.get('dim', '')
+        evidences = ins.get('evidence', [])
+        # 收集关联的 evidence IDs
+        linked_ev_ids = []
+        for ei in range(len(evidences)):
+            if (i, ei) in ev_id_map:
+                linked_ev_ids.append(ev_id_map[(i, ei)])
+        first_source = evidences[0].get('source_file', '') if evidences else ''
+
+        ins_id = f"{person_name}_ins_{i:03d}"
+        ins_texts.append(claim)
+        ins_ids.append(ins_id)
+        ins_metas.append({
+            "person": person_name,
+            "dim": dim,
+            "claim": claim[:200],
+            "evidence_ids": ",".join(linked_ev_ids),
+            "source_file": first_source,
+        })
+
+    # 批量 embed insights
+    for bi in range(0, len(ins_texts), 8):
+        batch = ins_texts[bi:bi+8]
+        embeds = embed_texts(batch)
+        if embeds and len(embeds) == len(batch):
+            cols["insights"].add(
+                documents=batch,
+                embeddings=embeds,
+                ids=ins_ids[bi:bi+8],
+                metadatas=ins_metas[bi:bi+8]
+            )
+        gc.collect()
+
+    print(f"  evidence: {len(ev_ids)} excerpts, {len(ins_ids)} insights", flush=True)
+    return len(ins_ids), len(ev_ids)
 
 
 def load_v3(pv3_path):
@@ -415,11 +463,11 @@ def run(person_name, person_dir):
         print(f"  insights: 0 (无有意义内容)", flush=True)
     gc.collect()
 
-    # 3. materials
-    mat_count = ingest_materials(person_name, person_dir, cols)
+    # 3. evidence (from insights_with_evidence)
+    ev_ins_count, ev_ev_count = ingest_evidence(person_name, pv3, cols)
 
     # 汇总
-    print(f"  DONE — core:1 + insights:{len(ins_embeds) if insight_chunks else 0} + tension:{len(ten_embeds) if insight_chunks else 0} + materials:{mat_count}", flush=True)
+    print(f"  DONE — core:1 + insights:{len(ins_embeds) if insight_chunks else 0} + tension:{len(ten_embeds) if insight_chunks else 0} + evidence:{ev_ev_count} excerpts ({ev_ins_count} insights)", flush=True)
 
 
 if __name__ == "__main__":

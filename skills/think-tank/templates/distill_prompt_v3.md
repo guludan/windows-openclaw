@@ -107,6 +107,19 @@
   },
   "evolution_trajectory": "思想演变轨迹总述",
   "key_aphorisms": ["标志性语录"],
+  "insights_with_evidence": [
+    {
+      "claim": "观点表述（100-300字，蒸馏后的核心论断）",
+      "dim": "维度分类",
+      "evidence": [
+        {
+          "excerpt": "原文中支撑此观点的关键段落（100-500字，必须是原文原文原文，不是转述）",
+          "source_file": "素材文件名",
+          "location": "在文件中的位置描述（如：第3段、第12-15行）"
+        }
+      ]
+    }
+  ],
   "_distill_meta": {
     "source_count": 0,
     "model": "glm-5-turbo",
@@ -171,6 +184,7 @@ logical_tracing 是本版本的核心新增字段。它回答的不是"这个人
 - 如果是军事家，lineage 可能没有学术师承，改为战场经验传承（老指挥员带新指挥员）
 - 如果是设计师，grounding 可能是某段旅行、某个工坊经历
 - tension_explanation 需要结合张力分析的维度来写
+- **insights_with_evidence 是本模板最重要的输出字段，直接决定后续RAG检索质量**。必须从原文中精确提取，excerpt一字不改。每个人物至少15-30个insights，每个insight至少1条evidence（重要观点2-5条）。多段原文表述同一观点时，归入同一个insight下作为多条evidence。dim分类复用现有维度：stance, cognitive, method, decision, communication, logical_tracing, tension, situational 等。
 
 ## 人物素材（来自{count}篇素材的原始材料）
 

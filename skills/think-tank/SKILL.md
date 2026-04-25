@@ -32,17 +32,43 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 **论文（学者/心理学家）：**
 1. 元数据：`skills/think-tank/scripts/collect_new_scholars.py`（SerpAPI Google Scholar）
 2. 全文下载：`skills/think-tank/scripts/batch_game_theory_collect.py`（OpenAlex→Unpaywall→Sci-Hub+Playwright）
-3. 保存：`{person}/materials/paper_{title}.txt`
+3. 保存：`{person}/materials/paper_{title}.txt`（有DOI时命名为 `paper_{title}_DOI_{doi}.txt`）
+
+⚠️ **素材数量红线：每人学术论文至少30-50篇，有多少找多少，不是10-15篇。10-15篇远远不够。**
+
+⚠️ **采集必须用data_search模块（skills/data-search/scripts/data_search.py）**，不要自己重写搜索脚本。data_search已有L1通用搜索(Exa/SerpAPI/Tavily)+L2中文深度(知乎/搜狗/财联社)+L3学术(Semantic Scholar)+L4宏观数据。中英文必须分开搜。采集脚本import data_search的函数，不要重复造轮子。
 
 **网页：**
 - 优先级：`web_fetch` → `web-scraper-jina` → `playwright-scraper`
 - 跳过 <500B 文件
 
-### Step 2: 预处理
+⚠️ **论文元数据：文件名必须包含论文标题，有DOI时加DOI后缀。入库时自动提取title和doi存入向量库metadata，按DOI去重。**
+
+⚠️ **搜索渠道：用data_search模块，中英文分开搜。采集脚本用collect_via_datasearch.py（基于data_search模块）。禁止自己重写搜索脚本。**
+- Sci-Hub/任何外部网站**禁止批量循环下载**，必须逐篇下载，每次间隔**60秒+**
+- Exa/Tavily等API每次请求间隔**5-10秒**
+- 违反会封IP，后果严重
+
+### Step 2: 预处理 + 质量检测（必须两步都做，不能只跑预处理）
 
 ```bash
-~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_preprocess.py
+# Step 2a: 预处理 + 机械去重 + 低质量过滤 + 生成报告
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_preprocess.py <person_dir> --quality
 ```
+
+⚠️ **--quality 是必须参数，不要省略。** 只跑预处理不做质量检测等于没做。
+
+```bash
+# Step 2b: LLM质量评分（sessions_spawn调GLM-4.7，分批处理）
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/quality_check_llm.py <person_dir>
+# 生成 _quality_prompt_0.md, _quality_prompt_1.md ...（每批20篇）
+
+# 对每个batch文件，spawn子session读prompt并让GLM评分，返回JSON
+# 然后逐批apply：
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/quality_check_llm.py <person_dir> --apply '<json>'
+```
+
+⚠️ **预处理和质量检测是绑定流程，采集完素材后必须执行完整流程。**
 
 ### Step 3: V3 蒸馏（sessions_spawn）
 
@@ -90,25 +116,24 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 ---
 
-## 当前状态（2026-04-21）
+## 当前状态（2026-04-25）
 
-| 体系 | 子领域 | 人数 | 蒸馏 | 素材 |
-|------|--------|------|------|------|
-| 军事(military) | — | 25 | 25/25 ✅ | 680 |
-| 学者(scholars) | game-theory(10), economics(8), ir-theory(8), middle-east(5), central-asia(4), ir-security(4), persian-islamic(4), religious-studies(4) | 47 | 47/47 ✅ | 1164 |
-| 心理学家(psychologists) | behavioral(7), cognitive(6), psychoanalysis(6), social-engineering(5) | 24 | 23/24 | 445 |
+### 人员体系（108人）
 
-缺蒸馏：克里斯·哈德纳吉（素材仅1条meta，无实际内容，需补采集）
+| 体系 | 子领域 | 人数 |
+|------|--------|------|
+| 军事(military) | — | 25 |
+| 学者(scholars) | economics(8), financial-engineering(9), financial-data(5), actuarial-science(5), game-theory(10), ir-theory(8), ir-security(4), middle-east(5), central-asia(4), persian-islamic(4), religious-studies(4), media-studies(5) | 67 |
+| 心理学家(psychologists) | behavioral(7), cognitive(6), psychoanalysis(6), social-engineering(5), neuropsychology(3), evolutionary-psychology(1) | 28 |
 
-向量库：4个活跃集合
-| 集合 | 说明 | 关联 |
-|------|------|------|
-| insights | 蒸馏后的核心逻辑表述（按dim分类） | source_ref→material_id |
-| tension | 思想内在矛盾（独立集合） | source_ref→material_id |
-| materials | 原始素材分块（800字/块） | material_id |
-| core_profile | 人格摘要（96人） | — |
+### 质量检测状态
+- 全部108人均已完成LLM质量评分（quality_check_llm.py + sessions_spawn）
+- 规则评分脚本已废弃（batch_quality_score.py等），只允许LLM评分
+- B站转录文件被误discard后已恢复
 
-关联表：每条insight/tension通过metadata.source_ref和material_id关联到materials集合的原文。
+### 向量库状态
+- materials: ~15,739条（⚠️ 包含评分前旧数据，需清空重建）
+- insights/tension/core_profile: 需基于新素材重新蒸馏入库
 
 ---
 
@@ -118,19 +143,20 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 skills/think-tank/
 ├── SKILL.md                      ← 你正在这里
 ├── scripts/                      ← 全部流程脚本
-│   ├── ingest_v3.py              ⭐ 单人入库（素材+结构化）
-│   ├── batch_ingest.py           批量串行入库
-│   ├── _preprocess.py            素材去噪/清理
+│   ├── ingest_v3.py              ⭐ 单人入库（素材chunk+结构化）
+│   ├── _preprocess.py            素材预处理（去重+低质量过滤+质量报告）
+│   ├── quality_check_llm.py      LLM质量评分（生成prompt→sessions_spawn评分→apply）
 │   ├── _batch_distill.py         蒸馏辅助（子session任务生成）
 │   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v4.0（4章+预-mortem）
-│   ├── collect_new_scholars.py   论文元数据采集
-│   ├── batch_game_theory_collect.py 全文下载
+│   ├── collect_new_scholars.py   论文元数据采集（Google Scholar）
+│   ├── batch_game_theory_collect.py 全文下载（OA+Sci-Hub+Playwright）
+│   ├── cache_news.py / cache_news_tags.py  新闻缓存
+│   ├── fetch_acled.py / fetch_ucdp.py / fetch_cls.py / fetch_market.py  数据抓取
 │   ├── historical_context.py     历史事件引擎(Redis)
-│   ├── cache_news.py             新闻缓存
-│   ├── fetch_acled.py / fetch_ucdp.py / fetch_cls.py / fetch_market.py
-│   └── rebuild_all.sh            全量重建（严格串行）
+│   └── batch_llm_quality.py      批量LLM评分辅助
 └── templates/
-    └── distill_prompt_v3.md      V3蒸馏模板（含情境触发条件矩阵）
+    └── distill_prompt_v3.md      V3蒸馏模板（含逻辑溯源+情境触发）
+```
 
 /mnt/d/data/think-tank-data/              ← 数据目录（D盘）
 ├── _chromadb/lacan_db/                   ← 向量库（chromadb，严禁并发）
@@ -144,6 +170,8 @@ skills/think-tank/
 ## 红线
 
 - **GLM调用必须走sessions_spawn**，禁止直接调API
+- **质量评分只用LLM，禁止用规则评分脚本**
+- **蒸馏必须分批逐篇读素材**，一次读全部会导致幻觉。每篇读完提取观点+标注source_ref，再读下一篇
 - 禁止用SiliconFlow API（要钱）
 - 分析必须基于RAG素材，禁止凭空编造
 - source_ref 必须指向真实素材

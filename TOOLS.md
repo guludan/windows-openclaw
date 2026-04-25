@@ -16,7 +16,7 @@
 - **WTO API**: (pending)
 
 ### 冲突/政治数据
-- **UCDP API**: 3704a6e6c39684d5
+- **UCDP API**: 3704a6e6c39684d5 (需用header: `x-ucdp-access-token: <key>`，不再支持query参数)
 - **ACLED**: email=jaccck1234567@gmail.com, password=Thugstools123@
 
 ### 航空/交通
@@ -34,7 +34,8 @@
 
 ## 知乎 Cookies
 - 路径: .cookies/zhihu_cookies.txt
-- 状态: 搜索API返回401，需排查
+- 状态: ✅ 正常（2026-04-24更新）
+- 注意: cookies里有中文值，不能用MozillaCookieJar加载，需手动tab解析
 
 ## Ollama (本地 LLM + Embedding)
 - **地址**: http://172.26.0.1:11434
