@@ -19,19 +19,32 @@
 
 ### 工作流
 ```
-素材采集(data_search.py) → 预处理(_preprocess.py) → LLM质量评分(sessions_spawn) → 蒸馏(sessions_spawn) → 入库(ingest_v3.py)
+素材采集(data_search.py / bilibili_transcribe.py) → 预处理 → 蒸馏(sessions_spawn) → 入库(ingest_v3.py)
 ```
 
-### 核心脚本（skills/think-tank/scripts/）
-- `data_search.py`（skills/data-search/scripts/）— 唯一搜索采集入口
-- `ingest_v3.py` — 入库（insights+evidence+core_profile+tension）
-- `_preprocess.py` — 素材预处理（去噪/删404/删极小文件）
-- `_batch_distill.py` — 蒸馏辅助
+### 人员：150人（2026-04-26更新）
+- military 25 + psychologists 31 + scholars 77（含17新增）
+- 蒸馏进度：133/133 V3 ✅，17人待蒸馏
+- 向量库：已入库133人（89MB）
+
+### 新增分类（2026-04-26）
+- geopolitical-finance: Bremmer, Roubini, Friedman, Zeihan
+- sanctions-finance: Zarate, Drezner, Economy
+- information-warfare: DiResta, Rid, Singer
+- indo-pacific: Mastro, Bush, Campbell
+- tech-geopolitics: Miller, Mazzucato
+- political-forecasting: Tetlock, Silver
+
+### 核心脚本
+- `data_search.py`（skills/data-search/scripts/）— 统一搜索入口
+- `bilibili_transcribe.py` — B站视频搜索+下载+转录（you-get+ffmpeg+faster-whisper）
+- `ingest_v3.py` — 入库（insights+evidence+core_profile+tension），入库前自动删除旧数据，metadata含person+category防同名误删
+- `incremental_distill.py` — 增量蒸馏（补充新素材后用，不需要全量重跑蒸馏，新insights追加+相同claim的evidence合并）
 - `think_tank_pipeline_v3.py` — 报告生成
 
-### 向量库集合（v5，待重建）
+### 向量库集合（v5，已重建）
 - core_profile / insights / evidence / tension
-- insights ↔ evidence 双向关联（evidence_ids / insight_id）
+- 89MB，133人已入库
 
 ## 🔴 红线
 - **犯错/被纠正时必须用 self-improvement skill 记录教训**
