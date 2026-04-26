@@ -5,11 +5,13 @@ incremental_distill.py — 增量蒸馏工具
 功能:
 1. 生成增量蒸馏prompt (基于已有insights + 新素材)
 2. 应用LLM返回的增量结果 (合并新insights到已有JSON)
+3. 自动追踪已蒸馏素材（_distilled_files.json）
 
 用法:
     # 生成增量蒸馏prompt
     python3 incremental_distill.py <person_dir> --new-materials file1.txt file2.txt ...
     python3 incremental_distill.py <person_dir> --since "2026-04-26"  # 按修改时间自动选新素材
+    python3 incremental_distill.py <person_dir> --auto  # 自动找出未蒸馏的新素材（推荐）
 
     # 应用LLM返回的增量结果
     python3 incremental_distill.py <person_dir> --apply
@@ -70,6 +72,74 @@ def read_material_files(file_paths, person_dir):
                 "content": content
             })
     return materials
+
+
+def get_all_material_files(person_dir):
+    """扫描 materials/ 目录下所有 .txt 文件（排除 _ 开头的文件和 _discarded/ 目录）"""
+    materials_dir = Path(person_dir) / "materials"
+    if not materials_dir.exists():
+        return []
+
+    files = []
+    for file_path in sorted(materials_dir.iterdir()):
+        # 跳过目录
+        if not file_path.is_file():
+            continue
+        # 跳过非 .txt 文件
+        if file_path.suffix != ".txt":
+            continue
+        # 跳过以 _ 开头的文件
+        if file_path.name.startswith("_"):
+            continue
+        files.append(file_path)
+    return files
+
+
+def load_distilled_files_record(person_dir):
+    """读取 _distilled_files.json"""
+    record_path = Path(person_dir) / "_distilled_files.json"
+    if not record_path.exists():
+        return None
+    with open(record_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_distilled_files_record(person_dir, distilled_files):
+    """保存 _distilled_files.json"""
+    record_path = Path(person_dir) / "_distilled_files.json"
+    record = {
+        "last_distill_time": datetime.now().isoformat(),
+        "distilled_files": sorted(distilled_files)
+    }
+    with open(record_path, "w", encoding="utf-8") as f:
+        json.dump(record, f, ensure_ascii=False, indent=2)
+    print(f"已更新蒸馏记录: {record_path}")
+
+
+def find_new_materials_auto(person_dir):
+    """自动查找未蒸馏的新素材"""
+    # 读取已蒸馏记录
+    record = load_distilled_files_record(person_dir)
+    if record is None:
+        print("错误: 未找到 _distilled_files.json", file=sys.stderr)
+        print("首次蒸馏请使用 --new-materials 或 --since 指定素材", file=sys.stderr)
+        sys.exit(1)
+
+    distilled_set = set(record.get("distilled_files", []))
+    last_time = record.get("last_distill_time", "")
+
+    # 扫描所有素材文件
+    all_files = get_all_material_files(person_dir)
+
+    # 找出未蒸馏的文件
+    new_files = [f for f in all_files if f.name not in distilled_set]
+
+    if last_time:
+        last_dt = datetime.fromisoformat(last_time)
+        print(f"上次蒸馏时间: {last_time}")
+        print(f"已蒸馏文件数: {len(distilled_set)}")
+
+    return new_files
 
 
 def find_new_materials_since(person_dir, since_date):
@@ -189,6 +259,13 @@ def generate_incremental_prompt(person_dir, new_materials, pv3_data):
     prompt_path = Path(person_dir) / "_incremental_prompt.md"
     with open(prompt_path, "w", encoding="utf-8") as f:
         f.write(prompt)
+
+    # 保存本次使用的素材文件列表（供 --apply 时使用）
+    material_files = [mat["filename"] for mat in new_materials]
+    materials_list_path = Path(person_dir) / "_incremental_materials.json"
+    with open(materials_list_path, "w", encoding="utf-8") as f:
+        json.dump({"materials": material_files}, f, ensure_ascii=False, indent=2)
+
     print(f"已生成增量蒸馏prompt: {prompt_path}")
     print(f"  - 已有insights: {len(existing_insights)}条")
     print(f"  - 新素材: {len(new_materials)}篇")
@@ -204,6 +281,14 @@ def apply_incremental_result(person_dir, pv3_data):
 
     with open(result_path, "r", encoding="utf-8") as f:
         result = json.load(f)
+
+    # 读取本次蒸馏使用的素材文件列表
+    materials_list_path = Path(person_dir) / "_incremental_materials.json"
+    distilled_files = []
+    if materials_list_path.exists():
+        with open(materials_list_path, "r", encoding="utf-8") as f:
+            materials_data = json.load(f)
+            distilled_files = materials_data.get("materials", [])
 
     new_insights = result.get("new_insights", [])
     merge_into = result.get("merge_into", [])
@@ -284,6 +369,18 @@ def apply_incremental_result(person_dir, pv3_data):
     # 保存
     save_personality_v3(person_dir, pv3_data)
 
+    # 更新已蒸馏素材记录
+    if distilled_files:
+        record = load_distilled_files_record(person_dir)
+        if record is None:
+            # 首次创建记录
+            save_distilled_files_record(person_dir, distilled_files)
+        else:
+            # 合并已有记录和新蒸馏的文件
+            existing_distilled = set(record.get("distilled_files", []))
+            all_distilled = existing_distilled.union(set(distilled_files))
+            save_distilled_files_record(person_dir, list(all_distilled))
+
     # 打印统计
     print("\n增量蒸馏完成:")
     print(f"  - 新增insights: {added_insights_count}条")
@@ -304,6 +401,9 @@ def main():
   # 按修改时间自动选新素材（2026-04-26之后修改的）
   python3 incremental_distill.py /path/to/person/dir --since "2026-04-26"
 
+  # 自动找出未蒸馏的新素材（推荐）
+  python3 incremental_distill.py /path/to/person/dir --auto
+
   # 应用LLM返回的增量结果
   python3 incremental_distill.py /path/to/person/dir --apply
         """
@@ -315,6 +415,8 @@ def main():
                        help="新增素材文件名列表（相对materials目录或绝对路径）")
     group.add_argument("--since", metavar="DATE",
                        help="按修改时间筛选新素材（格式: YYYY-MM-DD）")
+    group.add_argument("--auto", action="store_true",
+                       help="自动找出未蒸馏的新素材（推荐，需要已有_distilled_files.json）")
     group.add_argument("--apply", action="store_true",
                        help="应用_incremental_result.json中的增量结果")
 
@@ -334,6 +436,15 @@ def main():
         pv3_data = load_personality_v3(person_dir)
         if args.new_materials:
             new_files = args.new_materials
+        elif args.auto:
+            # 自动模式：找出未蒸馏的素材
+            new_files = find_new_materials_auto(person_dir)
+            if not new_files:
+                print("没有未蒸馏的新素材")
+                sys.exit(0)
+            print(f"找到 {len(new_files)} 个未蒸馏的新素材文件:")
+            for f in new_files:
+                print(f"  - {f.name}")
         else:  # args.since
             new_files = find_new_materials_since(person_dir, args.since)
             if not new_files:

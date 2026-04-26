@@ -75,15 +75,23 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 如果已有人物补充了新素材，不需要全量重跑蒸馏，使用增量蒸馏：
 
 ```bash
-# 生成增量蒸馏prompt（指定新素材或按日期筛选）
+# 自动检测未蒸馏的新素材（推荐，基于 _distilled_files.json 对比）
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --auto
+
+# 或手动指定新素材
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --new-materials file1.txt file2.txt
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --since "2026-04-26"
 
 # sessions_spawn 调LLM处理 _incremental_prompt.md，输出 _incremental_result.json
 
-# 应用增量结果（新insights追加 + 相同claim的evidence合并 + 自动备份）
+# 应用增量结果（新insights追加 + 相同claim的evidence合并 + 自动备份 + 更新蒸馏记录）
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --apply
 ```
+
+- 每次蒸馏完成后自动记录 `_distilled_files.json`（已蒸馏的素材文件列表）
+- `--auto` 模式对比该记录与 materials/ 目录，自动找出未蒸馏的新素材
+- 首次使用需用 `--new-materials` 或 `--since` 指定
+- 全量蒸馏后用 `_batch_distill.py --gen-record <person_dir>` 生成初始记录
 
 ### Step 3: V3 蒸馏（sessions_spawn）
 

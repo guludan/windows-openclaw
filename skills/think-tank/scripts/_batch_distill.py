@@ -6,6 +6,7 @@ _batch_distill.py — 批量V3蒸馏（子session调用）
     python3 _batch_distill.py <person_dir>              # 蒸馏单人物
     python3 _batch_distill.py --list                    # 列出缺v3的人物
     python3 _batch_distill.py --all                     # 蒸馏所有缺v3的人物
+    python3 _batch_distill.py --gen-record <person_dir> # 生成蒸馏记录文件
 
 注意:
     - 大素材自动分段（>60000字符）
@@ -15,23 +16,55 @@ _batch_distill.py — 批量V3蒸馏（子session调用）
 import json
 import sys
 import os
+from datetime import datetime
 from pathlib import Path
+from typing import List, Tuple
 
 BASE_DIR = Path("/mnt/d/data/think-tank-data/personalities")
 TEMPLATE = Path("~/.openclaw/workspace/skills/think-tank/templates/distill_prompt_v3.md").expanduser()
 MAX_CHARS = 60000
 
 
-def get_materials(person_dir: Path) -> list[Path]:
-    """获取素材文件列表，按大小排序"""
+def get_materials(person_dir: Path) -> List[Path]:
+    """获取素材文件列表，按大小排序（排除 _ 开头的文件和 _discarded/ 目录）"""
     mat_dir = person_dir / "materials"
     if not mat_dir.exists():
         return []
     files = sorted(mat_dir.glob("*.txt"), key=lambda f: f.stat().st_size)
-    return [f for f in files if f.stat().st_size >= 200]
+    # 排除 _ 开头的文件
+    return [f for f in files if f.stat().st_size >= 200 and not f.name.startswith("_")]
 
 
-def estimate_total_chars(files: list[Path]) -> int:
+def generate_distilled_record(person_dir: Path):
+    """为已蒸馏的人物生成 _distilled_files.json"""
+    # 检查是否存在 personality_v3.json
+    pv3_path = person_dir / "personality_v3.json"
+    if not pv3_path.exists():
+        print(f"错误: 找不到 {pv3_path}", file=sys.stderr)
+        sys.exit(1)
+
+    # 获取所有素材文件
+    materials = get_materials(person_dir)
+    if not materials:
+        print(f"警告: {person_dir} 没有素材文件")
+        return
+
+    # 生成记录
+    record_path = person_dir / "_distilled_files.json"
+    record = {
+        "last_distill_time": datetime.now().isoformat(),
+        "distilled_files": sorted([f.name for f in materials])
+    }
+
+    with open(record_path, "w", encoding="utf-8") as f:
+        json.dump(record, f, ensure_ascii=False, indent=2)
+
+    print(f"已生成蒸馏记录: {record_path}")
+    print(f"  - 素材文件数: {len(materials)}")
+    print(f"  - 蒸馏时间: {record['last_distill_time']}")
+
+
+def estimate_total_chars(files: List[Path]) -> int:
     return sum(f.stat().st_size for f in files)
 
 
@@ -118,7 +151,7 @@ def build_distill_task(person_name: str, person_dir: Path, person_domain: str = 
     return task
 
 
-def find_missing(base_dir: Path = BASE_DIR) -> list[tuple[str, Path, str]]:
+def find_missing(base_dir: Path = BASE_DIR) -> List[Tuple[str, Path, str]]:
     """找出缺 personality_v3.json 的人物"""
     missing = []
     for group_dir in sorted(base_dir.iterdir()):
@@ -153,7 +186,16 @@ def main():
     parser.add_argument("--list", action="store_true", help="列出缺v3的人物")
     parser.add_argument("--all", action="store_true", help="蒸馏所有缺v3的人物")
     parser.add_argument("--print-task", action="store_true", help="打印任务prompt（调试用）")
+    parser.add_argument("--gen-record", metavar="DIR", help="为指定人物目录生成_distilled_files.json")
     args = parser.parse_args()
+
+    if args.gen_record:
+        pdir = Path(args.gen_record)
+        if not pdir.is_dir():
+            print(f"错误: 目录不存在: {pdir}", file=sys.stderr)
+            sys.exit(1)
+        generate_distilled_record(pdir)
+        return
 
     if args.list:
         missing = find_missing()
