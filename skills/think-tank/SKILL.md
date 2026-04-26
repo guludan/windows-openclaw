@@ -99,6 +99,7 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ```
 
 - 每次蒸馏完成后自动记录 `_distilled_files.json`（已蒸馏的素材文件列表）
+- 逐篇蒸馏的JSON结果保留在 `_per_file_results/` 目录，**不要删除**（用于溯源和灾备）
 
 **逐篇蒸馏模式**（素材过多时LLM上下文不够）：
 

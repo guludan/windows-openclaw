@@ -40,9 +40,17 @@
 - `bilibili_transcribe.py` — B站视频搜索+下载+转录（you-get+ffmpeg+faster-whisper）
 - `ingest_v3.py` — 入库（insights+evidence+core_profile+tension），入库前自动删除旧数据，metadata含person+category防同名误删
 - `_batch_distill.py` — 全量蒸馏（--per-file逐篇生成prompt → spawn逐个处理 → --merge-per-file合并）
-- `incremental_distill.py` — 增量蒸馏（--auto自动检测新素材 → 逐篇prompt → --apply合并，共用_per_file_prompts/和_per_file_results/）
+- `_distill_utils.py` — 蒸馏公共工具（大文件切分15000字符/chunk）
+- `incremental_distill.py` — 增量蒸馏（--auto自动检测新素材 → 逐篇prompt → --apply合并）
 - `think_tank_pipeline_v3.py` — 报告生成
 - ⚠️ 蒸馏必须逐篇处理，禁止一次性塞给LLM
+- ⚠️ 逐篇蒸馏的JSON结果保留在_per_file_results/目录，用于溯源和灾备
+
+### 并发限制
+- GLM-5-turbo: 3个并发
+- GLM-5.1: 2个并发
+- GLM-5: 可额外开
+- 总计可同时处理5个人
 
 ### 向量库集合（v5，已重建）
 - core_profile / insights / evidence / tension
