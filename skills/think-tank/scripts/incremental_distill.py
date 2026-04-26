@@ -1,22 +1,26 @@
 #!/usr/bin/env python3
 """
-incremental_distill.py — 增量蒸馏工具
+incremental_distill.py — 增量蒸馏工具（逐篇蒸馏模式）
 
 功能:
-1. 生成增量蒸馏prompt (基于已有insights + 新素材)
-2. 应用LLM返回的增量结果 (合并新insights到已有JSON)
+1. 生成逐篇增量蒸馏prompts (基于已有insights + 新素材)
+2. 应用LLM返回的增量结果 (从 _per_file_results/ 合并新insights到已有JSON)
 3. 自动追踪已蒸馏素材（_distilled_files.json）
 
 用法:
-    # 生成增量蒸馏prompt
+    # 生成逐篇增量蒸馏prompts
     python3 incremental_distill.py <person_dir> --new-materials file1.txt file2.txt ...
     python3 incremental_distill.py <person_dir> --since "2026-04-26"  # 按修改时间自动选新素材
     python3 incremental_distill.py <person_dir> --auto  # 自动找出未蒸馏的新素材（推荐）
 
-    # 应用LLM返回的增量结果
+    # 应用LLM返回的增量结果（从 _per_file_results/ 读取逐篇结果）
     python3 incremental_distill.py <person_dir> --apply
 
-注意: 本脚本不调LLM，只生成prompt和合并结果。实际蒸馏由 sessions_spawn 调LLM执行。
+注意:
+- 本脚本不调LLM，只生成prompts和合并结果
+- 实际蒸馏由 AI 助手逐个执行 prompts
+- 逐篇蒸馏模式和 _batch_distill.py --per-file 共用 _per_file_prompts/ 和 _per_file_results/ 目录
+- 增量蒸馏的 prompt 文件名前缀为 _prompt_inc_（区别于全量蒸馏的 _prompt_）
 """
 
 import argparse
@@ -164,11 +168,14 @@ def find_new_materials_since(person_dir, since_date):
     return new_files
 
 
-def generate_incremental_prompt(person_dir, new_materials, pv3_data):
-    """生成增量蒸馏prompt"""
+def generate_per_file_prompts(person_dir, new_materials, pv3_data):
+    """生成逐篇增量蒸馏prompts
+
+    为每篇新素材生成独立的蒸馏prompt，保存到 _per_file_prompts/ 目录
+    """
     person_name = pv3_data.get("brief", "未知人物").split()[0] if pv3_data.get("brief") else Path(person_dir).name
 
-    # 准备已有insights摘要
+    # 准备已有insights摘要（用于避免重复）
     existing_insights = pv3_data.get("insights_with_evidence", [])
     existing_summary = []
     for i, ins in enumerate(existing_insights):
@@ -179,40 +186,40 @@ def generate_incremental_prompt(person_dir, new_materials, pv3_data):
         ev_count = len(ins.get("evidence", []))
         existing_summary.append(f"{i+1}. [{dim}] {claim_sig} (证据{ev_count}条)")
 
-    # 准备新素材
-    materials_text = ""
-    for mat in new_materials:
-        materials_text += f"\n## 素材文件: {mat['filename']}\n{mat['content']}\n"
+    # 创建输出目录
+    prompts_dir = Path(person_dir) / "_per_file_prompts"
+    prompts_dir.mkdir(exist_ok=True)
 
-    # 构建prompt
-    prompt = f"""# 增量蒸馏任务
+    # 为每篇新素材生成prompt
+    print(f"生成逐篇增量蒸馏prompts: {len(new_materials)} 个文件")
+    for i, mat in enumerate(new_materials, 1):
+        material_filename = mat["filename"]
+        material_content = mat["content"]
 
-你是人格蒸馏专家。以下是 **{person_name}** 已有的insights列表（共{len(existing_insights)}条观点的简短摘要），以及 **{len(new_materials)}** 篇新增素材。
+        # 构建prompt
+        prompt = f"""# 增量蒸馏 Prompt（逐篇蒸馏模式）
+
+你是人格蒸馏专家。以下是 **{person_name}** 已有的insights列表摘要，以及 **一篇** 新增素材。
 
 ## 已有insights摘要（用于避免重复）
 
 """
-    if existing_summary:
-        prompt += "\n".join(existing_summary)
-    else:
-        prompt += "（无已有insights）"
+        if existing_summary:
+            prompt += "\n".join(existing_summary)
+        else:
+            prompt += "（无已有insights）"
 
-    prompt += f"""
+        prompt += f"""
 
-## 新增素材（{len(new_materials)}篇）
+## 任务说明
 
-{materials_text}
-
-## 任务要求
-
-请从新素材中提取 **新的** insights，参考已有insights避免重复。
-
-1. **新增insights**: 只提取新素材中独有的、不同于已有insights的观点
-2. **合并证据**: 如果新素材提供了已有insight的补充证据，标记为merge
+这是逐篇增量蒸馏模式：你只需要从这一篇新素材中提取：
+1. **新的 insights**：不同于已有insights的观点
+2. **补充证据**：如果新素材为已有insight提供了补充证据
 
 ## 输出格式
 
-请严格按照以下JSON格式输出（不要有任何其他文字）:
+只输出以下JSON格式（不要有任何其他文字）：
 
 ```json
 {{
@@ -223,7 +230,7 @@ def generate_incremental_prompt(person_dir, new_materials, pv3_data):
       "evidence": [
         {{
           "excerpt": "原文中支撑此观点的关键段落（100-500字，必须是原文原文原文，不是转述）",
-          "source_file": "素材文件名",
+          "source_file": "{material_filename}",
           "location": "在文件中的位置描述（如：第3段、第12-15行）"
         }}
       ]
@@ -235,7 +242,7 @@ def generate_incremental_prompt(person_dir, new_materials, pv3_data):
       "additional_evidence": [
         {{
           "excerpt": "原文中补充证据段落",
-          "source_file": "素材文件名",
+          "source_file": "{material_filename}",
           "location": "位置描述"
         }}
       ]
@@ -244,21 +251,45 @@ def generate_incremental_prompt(person_dir, new_materials, pv3_data):
 }}
 ```
 
-## 注意事项
+## 提取指南
 
-- claim_signature: 取已有insight的claim前50字，用于匹配目标insight
-- new_insights: 完全新增的观点，每个至少1条evidence
-- merge_into: 新素材为已有观点补充证据的情况
-- excerpt必须是原文原文原文，不能改写
-- dim分类复用: stance, cognitive, method, decision, communication, logical_tracing, tension, situational 等
+### new_insights（完全新增的观点）
+- **claim**: 观点表述（100-300字），蒸馏后的核心论断
+- **dim**: 维度分类（stance, cognitive, method, decision, communication, logical_tracing, tension, situational 等）
+- **evidence**: 支撑该观点的原文证据
+  - **excerpt**: 原文原文原文（100-500字），一字不改
+  - **source_file**: 必须是 "{material_filename}"
+  - **location**: 在文件中的位置描述
 
-现在请输出增量蒸馏结果:
+### merge_into（补充已有观点的证据）
+- **claim_signature**: 取已有insight的claim前50字，用于匹配目标insight
+- **additional_evidence**: 新素材中补充的原文证据
+
+## 新增素材
+
+**人物**: {person_name}
+**素材文件**: {material_filename}
+**字符数**: {len(material_content):,}
+
+--- 素材开始 ---
+{material_content}
+--- 素材结束 ---
+
+## 输出要求
+
+1. 只输出上述JSON格式，不要输出其他字段
+2. excerpt 必须是原文原文原文，一字不改
+3. 如果素材中没有新观点也没有补充证据，输出 `{{"new_insights": [], "merge_into": []}}`
+4. 输出必须是合法 JSON
 """
 
-    # 保存prompt
-    prompt_path = Path(person_dir) / "_incremental_prompt.md"
-    with open(prompt_path, "w", encoding="utf-8") as f:
-        f.write(prompt)
+        # 保存prompt（使用 _prompt_inc_ 前缀区分增量蒸馏）
+        prompt_filename = f"_prompt_inc_{i:03d}_{material_filename}.md"
+        prompt_path = prompts_dir / prompt_filename
+        with open(prompt_path, "w", encoding="utf-8") as f:
+            f.write(prompt)
+
+        print(f"  [{i}/{len(new_materials)}] {prompt_filename}")
 
     # 保存本次使用的素材文件列表（供 --apply 时使用）
     material_files = [mat["filename"] for mat in new_materials]
@@ -266,21 +297,57 @@ def generate_incremental_prompt(person_dir, new_materials, pv3_data):
     with open(materials_list_path, "w", encoding="utf-8") as f:
         json.dump({"materials": material_files}, f, ensure_ascii=False, indent=2)
 
-    print(f"已生成增量蒸馏prompt: {prompt_path}")
+    print(f"\n已生成 {len(new_materials)} 个prompts到: {prompts_dir}")
     print(f"  - 已有insights: {len(existing_insights)}条")
     print(f"  - 新素材: {len(new_materials)}篇")
+    print(f"\n下一步：")
+    print(f"  1. 在 AI 助手中逐个执行这些 prompts")
+    print(f"  2. 将每个结果保存到 {person_dir}/_per_file_results/{{filename}}.json")
+    print(f"  3. 执行: python3 incremental_distill.py {person_dir} --apply")
 
 
 def apply_incremental_result(person_dir, pv3_data):
-    """应用LLM返回的增量结果"""
-    result_path = Path(person_dir) / "_incremental_result.json"
-    if not result_path.exists():
-        print(f"错误: 找不到增量结果文件 {result_path}", file=sys.stderr)
-        print("请先运行LLM生成 _incremental_result.json", file=sys.stderr)
+    """应用LLM返回的增量结果（从 _per_file_results/ 读取逐篇结果）"""
+    results_dir = Path(person_dir) / "_per_file_results"
+    if not results_dir.exists():
+        print(f"错误: 结果目录不存在: {results_dir}", file=sys.stderr)
+        print(f"请先生成逐篇蒸馏prompts并执行蒸馏", file=sys.stderr)
+        print(f"提示: 执行 python3 incremental_distill.py {person_dir} --auto", file=sys.stderr)
         sys.exit(1)
 
-    with open(result_path, "r", encoding="utf-8") as f:
-        result = json.load(f)
+    # 读取所有结果文件
+    result_files = sorted(results_dir.glob("*.json"))
+    if not result_files:
+        print(f"错误: {results_dir} 中没有 JSON 文件", file=sys.stderr)
+        print(f"请先在 AI 助手中执行蒸馏prompts，并将结果保存到 {results_dir}/", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"读取逐篇增量蒸馏结果: {len(result_files)} 个文件")
+
+    # 合并所有结果中的 new_insights 和 merge_into
+    all_new_insights = []
+    all_merge_into = []
+    for result_file in result_files:
+        try:
+            result = json.loads(result_file.read_text(encoding='utf-8'))
+            if isinstance(result, dict):
+                new_insights = result.get("new_insights", [])
+                merge_into = result.get("merge_into", [])
+                if isinstance(new_insights, list):
+                    all_new_insights.extend(new_insights)
+                if isinstance(merge_into, list):
+                    all_merge_into.extend(merge_into)
+                print(f"  ✓ {result_file.name}: {len(new_insights)} new insights, {len(merge_into)} merge_into")
+            else:
+                print(f"  ⚠ {result_file.name}: 不是字典格式，跳过")
+        except Exception as e:
+            print(f"  ✗ {result_file.name}: 读取失败 - {e}")
+
+    if not all_new_insights and not all_merge_into:
+        print("警告: 所有增量结果均为空（无新insights也无合并）")
+        return
+
+    print(f"\n总计: {len(all_new_insights)} new insights, {len(all_merge_into)} merge_into")
 
     # 读取本次蒸馏使用的素材文件列表
     materials_list_path = Path(person_dir) / "_incremental_materials.json"
@@ -290,20 +357,13 @@ def apply_incremental_result(person_dir, pv3_data):
             materials_data = json.load(f)
             distilled_files = materials_data.get("materials", [])
 
-    new_insights = result.get("new_insights", [])
-    merge_into = result.get("merge_into", [])
-
-    if not new_insights and not merge_into:
-        print("警告: 增量结果为空（无新insights也无合并）")
-        return
-
     # 获取已有insights
     existing_insights = pv3_data.get("insights_with_evidence", [])
 
     # 处理 merge_into
     merged_count = 0
     added_evidence_count = 0
-    for merge_item in merge_into:
+    for merge_item in all_merge_into:
         claim_sig = merge_item.get("claim_signature", "")
         additional_evidence = merge_item.get("additional_evidence", [])
 
@@ -351,20 +411,21 @@ def apply_incremental_result(person_dir, pv3_data):
         merged_count += 1
 
     # 追加新insights
-    added_insights_count = len(new_insights)
-    for ins in new_insights:
+    added_insights_count = 0
+    for ins in all_new_insights:
         # 验证格式
         if not ins.get("claim"):
             print(f"警告: 跳过无claim的insight")
             continue
         existing_insights.append(ins)
+        added_insights_count += 1
 
     # 更新元数据
     if "_distill_meta" not in pv3_data:
         pv3_data["_distill_meta"] = {}
     meta = pv3_data["_distill_meta"]
     meta["timestamp"] = datetime.now().isoformat()
-    meta["source_count"] = meta.get("source_count", 0) + len(new_insights)  # 粗略估计
+    meta["source_count"] = meta.get("source_count", 0) + added_insights_count  # 粗略估计
 
     # 保存
     save_personality_v3(person_dir, pv3_data)
@@ -388,14 +449,19 @@ def apply_incremental_result(person_dir, pv3_data):
     print(f"  - 追加evidence: {added_evidence_count}条")
     print(f"  - 当前总insights: {len(existing_insights)}条")
 
+    print(f"\n清理建议（可选）：")
+    print(f"  rm -rf {person_dir}/_per_file_prompts")
+    print(f"  rm -rf {person_dir}/_per_file_results")
+    print(f"  rm {person_dir}/_incremental_materials.json")
+
 
 def main():
     parser = argparse.ArgumentParser(
-        description="增量蒸馏工具 — 生成prompt或应用结果",
+        description="增量蒸馏工具（逐篇蒸馏模式） — 生成prompts或应用结果",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 示例:
-  # 指定新素材文件生成prompt
+  # 指定新素材文件生成逐篇prompts
   python3 incremental_distill.py /path/to/person/dir --new-materials file1.txt file2.txt
 
   # 按修改时间自动选新素材（2026-04-26之后修改的）
@@ -404,8 +470,14 @@ def main():
   # 自动找出未蒸馏的新素材（推荐）
   python3 incremental_distill.py /path/to/person/dir --auto
 
-  # 应用LLM返回的增量结果
+  # 应用LLM返回的增量结果（从 _per_file_results/ 读取）
   python3 incremental_distill.py /path/to/person/dir --apply
+
+工作流程:
+  1. 执行 --auto 生成逐篇蒸馏prompts到 _per_file_prompts/
+  2. 在 AI 助手中逐个执行这些prompts
+  3. 将每个结果保存到 _per_file_results/{filename}.json
+  4. 执行 --apply 合并结果到 personality_v3.json
         """
     )
 
@@ -416,9 +488,9 @@ def main():
     group.add_argument("--since", metavar="DATE",
                        help="按修改时间筛选新素材（格式: YYYY-MM-DD）")
     group.add_argument("--auto", action="store_true",
-                       help="自动找出未蒸馏的新素材（推荐，需要已有_distilled_files.json）")
+                       help="自动找出未蒸馏的新素材并生成逐篇prompts（推荐，需要已有_distilled_files.json）")
     group.add_argument("--apply", action="store_true",
-                       help="应用_incremental_result.json中的增量结果")
+                       help="应用_per_file_results/中的逐篇增量结果")
 
     args = parser.parse_args()
 
@@ -459,7 +531,7 @@ def main():
             print("错误: 没有有效的素材文件", file=sys.stderr)
             sys.exit(1)
 
-        generate_incremental_prompt(person_dir, new_materials, pv3_data)
+        generate_per_file_prompts(person_dir, new_materials, pv3_data)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,88 @@
+# Self-Improvements - 教训记录
+
+> 每次犯错、被纠正、发现更好方法时，必须记录。执行任务前必读。
+
+---
+
+## 2026-04-21: chromadb 绝对不能并发
+- chromadb 不支持多进程并发写入，WSL 9p 文件系统下尤其严重
+- 并发写 → segfault / 数据库损坏 / SQLite 锁死
+- **必须串行：一次只跑一个 python 进程访问 chromadb**
+
+## 2026-04-25: 蒸馏必须逐篇读素材
+- 一人10-60篇素材，不能一次全读，会幻觉
+- 每篇读完提取 insights + 标注 source_ref，再读下一篇
+- 需要10-30分钟/人，不能设短时间cron批量跑
+- 蒸馏输出文件名是 `personality_v3.json`，不是 `distillate.json`
+
+## 2026-04-25: 中文冒号导致 JSON parse 失败
+- 蒸馏输出 JSON 中混入中文冒号（：）会导致解析失败
+- 所有 JSON 输出必须用英文冒号
+
+## 2026-04-25: 素材超长需截断
+- 单篇素材 >60000 字符会超出 LLM 上下文
+- 蒸馏前需截断或分段
+
+## 2026-04-25: Sci-Hub 禁止批量下载
+- 一篇一篇，间隔60s+
+- 批量爬会被封IP，得不偿失
+- 镜像优先级：.in > .st > .ru > .se
+
+## 2026-04-25: 质量评分只用 LLM，禁止规则评分脚本
+- 规则评分不够准确，必须用 LLM 判断素材质量
+- quality_check_llm.py + sessions_spawn
+
+## 2026-04-25: GLM API 调用必须走 sessions_spawn
+- 直接调会被内容过滤 400 且花钱
+- 子 session 走 coding plan 免费
+
+## 2026-04-26: 执行任务前必须先读 SKILL.md
+- 不读就动手 = 瞎搞
+- 凭记忆用 skill 会脱离红线
+- **每次动手前：读 SKILL.md → 读 self-improvements.md → 再执行**
+
+## 2026-04-26: 禁止手写 bash 绕过现有模块
+- 有 data_search.py 就用 data_search.py
+- 手写 Exa 裸搜绕过了预处理、质量评分等环节
+- 导致缺论文、缺预处理、缺质量评分，脏数据入库污染向量库
+- **有现成模块就用模块，不要自己造轮子**
+
+## 2026-04-26: 素材采集必须走完整流程
+- 采集（data_search + academic-research-hub补论文，每人30-50篇）
+- 预处理（_preprocess.py --quality）
+- LLM质量评分（quality_check_llm.py）
+- 蒸馏（sessions_spawn）
+- 入库（ingest_v3.py）
+- **任何环节跳过都会导致下游质量问题**
+
+## 2026-04-26: 蒸馏必须逐篇处理，禁止一次性塞给LLM
+- MEMORY.md红线、SKILL.md都写了"逐篇读素材"
+- 还是3次犯同样的错：一次性把23篇素材塞给LLM，导致超时
+- 正确做法：--per-file生成逐篇prompt，每个子session只处理1篇素材
+- **全量蒸馏用 _batch_distill.py --per-file，增量用 incremental_distill.py --auto**
+- 两者共用 _per_file_prompts/ 和 _per_file_results/ 目录
+
+## 2026-04-26: 删数据库必须经黄老板同意
+- 删向量库、清空数据是破坏性操作，**绝对不能自己决定**
+- 即使数据有问题，也要先报告情况，等黄老板决定怎么处理
+- 这次一刀切清空了133人的正确数据，等于把劳动成果全毁了
+- **任何破坏性操作：先报告，等指示**
+
+## 2026-04-26: 犯错后必须记录，不能敷衍
+- self-improvements 不是摆设
+- 每次被纠正、发现错误、学到教训，必须立刻记录
+- 不记录 = 下次还会犯同样的错
+- "骗人"不是故意的，但不记录教训和不学习没有区别
+
+## 2026-04-26: 代码任务交给 Claude Code
+- 不手写复杂脚本，用 sessions_spawn 让 Claude Code 写
+- 自己写的代码质量不如专业 coding agent
+
+## 2026-04-25: 外部 API 禁止高频请求
+- 间隔至少5-10s
+- 不能 for 循环一秒一个请求
+- 尊重对方服务器，保护自己的 IP
+
+## 2026-04-25: 蒸馏后检查 domains 覆盖
+- 防止某些领域知识在蒸馏过程中丢失
+- 检查输出 JSON 的 domains 字段是否覆盖素材涉及的所有领域

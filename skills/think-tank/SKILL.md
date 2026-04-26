@@ -70,34 +70,61 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 ⚠️ **预处理和质量检测是绑定流程，采集完素材后必须执行完整流程。**
 
-### Step 2b: 增量蒸馏（补充新素材后）
+### Step 3: V3 蒸馏（逐篇模式）
 
-如果已有人物补充了新素材，不需要全量重跑蒸馏，使用增量蒸馏：
+⚠️ **蒸馏必须逐篇处理，禁止一次性塞给LLM。** 素材量大时会超时或幻觉。
 
+**全量蒸馏（首次）：**
 ```bash
-# 自动检测未蒸馏的新素材（推荐，基于 _distilled_files.json 对比）
+# 生成逐篇蒸馏prompts
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_batch_distill.py <person_dir> --per-file
+# → 生成 _per_file_prompts/_prompt_{index}_{filename}.md
+
+# 逐个spawn子session处理每个prompt，结果保存到 _per_file_results/{filename}.json
+
+# 全部完成后合并
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_batch_distill.py <person_dir> --merge-per-file
+```
+
+**增量蒸馏（补充新素材后）：**
+```bash
+# 自动检测未蒸馏的新素材，生成逐篇prompts
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --auto
+# → 生成 _per_file_prompts/_prompt_inc_{index}_{filename}.md（包含已有insights摘要避免重复）
 
-# 或手动指定新素材
-~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --new-materials file1.txt file2.txt
-~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --since "2026-04-26"
+# 逐个spawn子session处理，结果保存到 _per_file_results/{filename}.json
 
-# sessions_spawn 调LLM处理 _incremental_prompt.md，输出 _incremental_result.json
-
-# 应用增量结果（新insights追加 + 相同claim的evidence合并 + 自动备份 + 更新蒸馏记录）
+# 应用增量结果
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --apply
 ```
 
 - 每次蒸馏完成后自动记录 `_distilled_files.json`（已蒸馏的素材文件列表）
-- `--auto` 模式对比该记录与 materials/ 目录，自动找出未蒸馏的新素材
-- 首次使用需用 `--new-materials` 或 `--since` 指定
-- 全量蒸馏后用 `_batch_distill.py --gen-record <person_dir>` 生成初始记录
 
-### Step 3: V3 蒸馏（sessions_spawn）
+**逐篇蒸馏模式**（素材过多时LLM上下文不够）：
 
-- 模板：`skills/think-tank/templates/distill_prompt_v3.md`
-- 输出：`{person}/personality_v3.json`
-- 素材 >60000字符需截断
+```bash
+# Step 3a: 生成逐篇蒸馏prompts
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_batch_distill.py <person_dir> --per-file
+# 生成 person_dir/_per_file_prompts/_prompt_001_xxx.md ...
+
+# Step 3b: 在 AI 助手中逐个执行这些 prompts
+# 将每个结果保存到 person_dir/_per_file_results/{filename}.json
+
+# Step 3c: 合并逐篇蒸馏结果
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_batch_distill.py <person_dir> --merge-per-file
+# 自动合并 insights_with_evidence（相同claim的合并evidence）+ 更新蒸馏记录
+
+# 清理（可选）
+rm -rf <person_dir>/_per_file_prompts
+rm -rf <person_dir>/_per_file_results
+```
+
+**逐篇蒸馏模式说明**：
+- 每个素材文件生成独立的蒸馏prompt
+- LLM只需要从单篇素材中提取 insights_with_evidence（不需要生成完整人格模型）
+- 输出为JSON数组（只包含insights_with_evidence部分）
+- 合并时自动去重（相同claim的合并evidence，避免重复）
+- 适用于素材数量过多、单次LLM上下文不够的场景
 
 ### Step 4: 向量入库
 
@@ -170,7 +197,7 @@ skills/think-tank/
 ├── scripts/                      ← 全部流程脚本
 │   ├── ingest_v3.py              ⭐ 单人入库（素材chunk+结构化），自动删除旧数据
 │   ├── incremental_distill.py    ⭐ 增量蒸馏（新素材补充insights+合并evidence+蒸馏记录追踪）
-│   ├── _batch_distill.py         全量蒸馏辅助（子session任务生成+--gen-record生成蒸馏记录）
+│   ├── _batch_distill.py         全量蒸馏辅助（子session任务生成+--gen-record+--per-file逐篇蒸馏+--merge-per-file合并）
 │   ├── _preprocess.py            素材预处理（去重+低质量过滤+质量报告）
 │   ├── quality_check_llm.py      LLM质量评分（生成prompt→sessions_spawn评分→apply）
 │   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v4.0（4章+预-mortem）

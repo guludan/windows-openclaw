@@ -39,8 +39,10 @@
 - `data_search.py`（skills/data-search/scripts/）— 统一搜索入口
 - `bilibili_transcribe.py` — B站视频搜索+下载+转录（you-get+ffmpeg+faster-whisper）
 - `ingest_v3.py` — 入库（insights+evidence+core_profile+tension），入库前自动删除旧数据，metadata含person+category防同名误删
-- `incremental_distill.py` — 增量蒸馏（补充新素材后用，不需要全量重跑蒸馏，新insights追加+相同claim的evidence合并）
+- `_batch_distill.py` — 全量蒸馏（--per-file逐篇生成prompt → spawn逐个处理 → --merge-per-file合并）
+- `incremental_distill.py` — 增量蒸馏（--auto自动检测新素材 → 逐篇prompt → --apply合并，共用_per_file_prompts/和_per_file_results/）
 - `think_tank_pipeline_v3.py` — 报告生成
+- ⚠️ 蒸馏必须逐篇处理，禁止一次性塞给LLM
 
 ### 向量库集合（v5，已重建）
 - core_profile / insights / evidence / tension
