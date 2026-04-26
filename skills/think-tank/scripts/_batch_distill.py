@@ -203,7 +203,7 @@ def generate_per_file_prompts(person_dir: Path) -> None:
     print(f"\n下一步：")
     print(f"  1. 在 AI 助手中逐个执行这些 prompts")
     print(f"  2. 将每个结果保存到 {person_dir}/_per_file_results/{{filename}}.json")
-    print(f"     （如果文件被切分，结果文件名会带有 _chunk{N} 后缀）")
+    print(f"     （如果文件被切分，结果文件名会带有 _chunkN 后缀）")
     print(f"  3. 执行: python3 _batch_distill.py {person_dir} --merge-per-file")
 
 
