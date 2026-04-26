@@ -168,16 +168,15 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 skills/think-tank/
 ├── SKILL.md                      ← 你正在这里
 ├── scripts/                      ← 全部流程脚本
-│   ├── ingest_v3.py              ⭐ 单人入库（素材chunk+结构化）
+│   ├── ingest_v3.py              ⭐ 单人入库（素材chunk+结构化），自动删除旧数据
+│   ├── incremental_distill.py    ⭐ 增量蒸馏（新素材补充insights+合并evidence+蒸馏记录追踪）
+│   ├── _batch_distill.py         全量蒸馏辅助（子session任务生成+--gen-record生成蒸馏记录）
 │   ├── _preprocess.py            素材预处理（去重+低质量过滤+质量报告）
 │   ├── quality_check_llm.py      LLM质量评分（生成prompt→sessions_spawn评分→apply）
-│   ├── _batch_distill.py         蒸馏辅助（子session任务生成）
-│   ├── incremental_distill.py    增量蒸馏（新素材补充insights+合并evidence）
 │   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v4.0（4章+预-mortem）
 │   ├── cache_news.py / cache_news_tags.py  新闻缓存
 │   ├── fetch_acled.py / fetch_ucdp.py / fetch_cls.py / fetch_market.py  数据抓取
-│   ├── historical_context.py     历史事件引擎(Redis)
-│   └── batch_llm_quality.py      批量LLM评分辅助
+│   └── historical_context.py     历史事件引擎(Redis)
 └── templates/
     └── distill_prompt_v3.md      V3蒸馏模板（含逻辑溯源+情境触发）
 ```
