@@ -29,6 +29,9 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+# 导入公共切分函数
+from _distill_utils import split_material_into_chunks
+
 
 def load_personality_v3(person_dir):
     """读取现有 personality_v3.json"""
@@ -172,6 +175,7 @@ def generate_per_file_prompts(person_dir, new_materials, pv3_data):
     """生成逐篇增量蒸馏prompts
 
     为每篇新素材生成独立的蒸馏prompt，保存到 _per_file_prompts/ 目录
+    大文件会自动按段落切分成多个chunks（每个chunk不超过15000字符）
     """
     person_name = pv3_data.get("brief", "未知人物").split()[0] if pv3_data.get("brief") else Path(person_dir).name
 
@@ -192,30 +196,52 @@ def generate_per_file_prompts(person_dir, new_materials, pv3_data):
 
     # 为每篇新素材生成prompt
     print(f"生成逐篇增量蒸馏prompts: {len(new_materials)} 个文件")
+    prompt_index = 0
     for i, mat in enumerate(new_materials, 1):
         material_filename = mat["filename"]
         material_content = mat["content"]
 
-        # 构建prompt
-        prompt = f"""# 增量蒸馏 Prompt（逐篇蒸馏模式）
+        # 按段落切分（大文件自动切分）
+        chunks = split_material_into_chunks(material_content, material_filename, max_chars=15000, overlap_paragraphs=2)
+
+        # 打印切分统计
+        if len(chunks) > 1:
+            print(f"  [{i}/{len(new_materials)}] {material_filename}: 切分为 {len(chunks)} 个chunks (共{len(material_content):,}字符)")
+        else:
+            print(f"  [{i}/{len(new_materials)}] {material_filename}: {len(material_content):,}字符")
+
+        # 为每个chunk生成prompt
+        for chunk in chunks:
+            prompt_index += 1
+
+            # 构建chunk说明（如果有切分）
+            chunk_info = ""
+            if chunk["total_chunks"] > 1:
+                chunk_info = f"\n**说明**: 本文件较大，已切分为第 {chunk['index']}/{chunk['total_chunks']} 部分，chunk之间有2个段落重叠以保持上下文连贯性。"
+                result_filename = chunk["result_filename"]
+            else:
+                result_filename = f"{material_filename}.json"
+
+            # 构建prompt
+            prompt = f"""# 增量蒸馏 Prompt（逐篇蒸馏模式）
 
 你是人格蒸馏专家。以下是 **{person_name}** 已有的insights列表摘要，以及 **一篇** 新增素材。
 
 ## 已有insights摘要（用于避免重复）
 
 """
-        if existing_summary:
-            prompt += "\n".join(existing_summary)
-        else:
-            prompt += "（无已有insights）"
+            if existing_summary:
+                prompt += "\n".join(existing_summary)
+            else:
+                prompt += "（无已有insights）"
 
-        prompt += f"""
+            prompt += f"""
 
 ## 任务说明
 
 这是逐篇增量蒸馏模式：你只需要从这一篇新素材中提取：
 1. **新的 insights**：不同于已有insights的观点
-2. **补充证据**：如果新素材为已有insight提供了补充证据
+2. **补充证据**：如果新素材为已有insight提供了补充证据{chunk_info}
 
 ## 输出格式
 
@@ -269,10 +295,10 @@ def generate_per_file_prompts(person_dir, new_materials, pv3_data):
 
 **人物**: {person_name}
 **素材文件**: {material_filename}
-**字符数**: {len(material_content):,}
+**字符数**: {chunk['char_count']:,}
 
 --- 素材开始 ---
-{material_content}
+{chunk['content']}
 --- 素材结束 ---
 
 ## 输出要求
@@ -283,13 +309,16 @@ def generate_per_file_prompts(person_dir, new_materials, pv3_data):
 4. 输出必须是合法 JSON
 """
 
-        # 保存prompt（使用 _prompt_inc_ 前缀区分增量蒸馏）
-        prompt_filename = f"_prompt_inc_{i:03d}_{material_filename}.md"
-        prompt_path = prompts_dir / prompt_filename
-        with open(prompt_path, "w", encoding="utf-8") as f:
-            f.write(prompt)
+            # 保存prompt（使用 _prompt_inc_ 前缀区分增量蒸馏）
+            # 如果是chunk，文件名格式: _prompt_inc_{index}_{filename}_chunk{N}.md
+            chunk_suffix = chunk["chunk_suffix"]
+            prompt_filename = f"_prompt_inc_{prompt_index:03d}_{material_filename}{chunk_suffix}.md"
+            prompt_path = prompts_dir / prompt_filename
+            with open(prompt_path, "w", encoding="utf-8") as f:
+                f.write(prompt)
 
-        print(f"  [{i}/{len(new_materials)}] {prompt_filename}")
+            if chunk["total_chunks"] > 1:
+                print(f"    - chunk {chunk['index']}/{chunk['total_chunks']}: {prompt_filename}")
 
     # 保存本次使用的素材文件列表（供 --apply 时使用）
     material_files = [mat["filename"] for mat in new_materials]
@@ -297,12 +326,13 @@ def generate_per_file_prompts(person_dir, new_materials, pv3_data):
     with open(materials_list_path, "w", encoding="utf-8") as f:
         json.dump({"materials": material_files}, f, ensure_ascii=False, indent=2)
 
-    print(f"\n已生成 {len(new_materials)} 个prompts到: {prompts_dir}")
+    print(f"\n已生成 {prompt_index} 个prompts到: {prompts_dir}")
     print(f"  - 已有insights: {len(existing_insights)}条")
     print(f"  - 新素材: {len(new_materials)}篇")
     print(f"\n下一步：")
     print(f"  1. 在 AI 助手中逐个执行这些 prompts")
     print(f"  2. 将每个结果保存到 {person_dir}/_per_file_results/{{filename}}.json")
+    print(f"     （如果文件被切分，结果文件名会带有 _chunk{N} 后缀）")
     print(f"  3. 执行: python3 incremental_distill.py {person_dir} --apply")
 
 

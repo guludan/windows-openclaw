@@ -23,6 +23,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Tuple, Dict, Any
 
+# 导入公共切分函数
+from _distill_utils import split_material_into_chunks
+
 BASE_DIR = Path("/mnt/d/data/think-tank-data/personalities")
 TEMPLATE = Path("~/.openclaw/workspace/skills/think-tank/templates/distill_prompt_v3.md").expanduser()
 MAX_CHARS = 60000
@@ -71,6 +74,7 @@ def generate_per_file_prompts(person_dir: Path) -> None:
     """生成逐篇蒸馏prompt
 
     为每个素材文件生成独立的蒸馏prompt，保存到 _per_file_prompts/ 目录
+    大文件会自动按段落切分成多个chunks（每个chunk不超过15000字符）
     """
     # 读取模板
     if not TEMPLATE.exists():
@@ -94,18 +98,40 @@ def generate_per_file_prompts(person_dir: Path) -> None:
 
     # 为每个素材文件生成prompt
     print(f"生成逐篇蒸馏prompts: {len(materials)} 个文件")
+    prompt_index = 0
     for i, material_file in enumerate(materials, 1):
         # 读取素材内容
         material_content = material_file.read_text(encoding='utf-8', errors='ignore')
 
-        # 生成prompt
-        prompt = f"""# 人格蒸馏 Prompt v3（逐篇蒸馏模式）
+        # 按段落切分（大文件自动切分）
+        chunks = split_material_into_chunks(material_content, material_file.name, max_chars=15000, overlap_paragraphs=2)
+
+        # 打印切分统计
+        if len(chunks) > 1:
+            print(f"  [{i}/{len(materials)}] {material_file.name}: 切分为 {len(chunks)} 个chunks (共{len(material_content):,}字符)")
+        else:
+            print(f"  [{i}/{len(materials)}] {material_file.name}: {len(material_content):,}字符")
+
+        # 为每个chunk生成prompt
+        for chunk in chunks:
+            prompt_index += 1
+
+            # 构建chunk说明（如果有切分）
+            chunk_info = ""
+            if chunk["total_chunks"] > 1:
+                chunk_info = f"\n**说明**: 本文件较大，已切分为第 {chunk['index']}/{chunk['total_chunks']} 部分，chunk之间有2个段落重叠以保持上下文连贯性。"
+                result_filename = chunk["result_filename"]
+            else:
+                result_filename = f"{material_file.name}.json"
+
+            # 生成prompt
+            prompt = f"""# 人格蒸馏 Prompt v3（逐篇蒸馏模式）
 
 你是人格蒸馏专家。根据提供的人物素材，提取结构化的 insights_with_evidence。
 
 ## 任务说明
 
-这是逐篇蒸馏模式：你只需要从这一篇素材中提取 insights_with_evidence，不需要生成完整的人格模型。
+这是逐篇蒸馏模式：你只需要从这一篇素材中提取 insights_with_evidence，不需要生成完整的人格模型。{chunk_info}
 
 ## 输出格式
 
@@ -148,10 +174,10 @@ def generate_per_file_prompts(person_dir: Path) -> None:
 
 **人物**: {person_name}
 **素材文件**: {material_file.name}
-**字符数**: {len(material_content):,}
+**字符数**: {chunk['char_count']:,}
 
 --- 素材开始 ---
-{material_content}
+{chunk['content']}
 --- 素材结束 ---
 
 ## 输出要求
@@ -163,17 +189,21 @@ def generate_per_file_prompts(person_dir: Path) -> None:
 5. 每个insight至少1条evidence，重要观点2-5条
 """
 
-        # 保存prompt
-        prompt_filename = f"_prompt_{i:03d}_{material_file.name}.md"
-        prompt_path = prompts_dir / prompt_filename
-        prompt_path.write_text(prompt, encoding='utf-8')
+            # 保存prompt
+            # 如果是chunk，文件名格式: _prompt_{index}_{filename}_chunk{N}.md
+            chunk_suffix = chunk["chunk_suffix"]
+            prompt_filename = f"_prompt_{prompt_index:03d}_{material_file.name}{chunk_suffix}.md"
+            prompt_path = prompts_dir / prompt_filename
+            prompt_path.write_text(prompt, encoding='utf-8')
 
-        print(f"  [{i}/{len(materials)}] {prompt_filename}")
+            if chunk["total_chunks"] > 1:
+                print(f"    - chunk {chunk['index']}/{chunk['total_chunks']}: {prompt_filename}")
 
-    print(f"\n已生成 {len(materials)} 个prompts到: {prompts_dir}")
+    print(f"\n已生成 {prompt_index} 个prompts到: {prompts_dir}")
     print(f"\n下一步：")
     print(f"  1. 在 AI 助手中逐个执行这些 prompts")
     print(f"  2. 将每个结果保存到 {person_dir}/_per_file_results/{{filename}}.json")
+    print(f"     （如果文件被切分，结果文件名会带有 _chunk{N} 后缀）")
     print(f"  3. 执行: python3 _batch_distill.py {person_dir} --merge-per-file")
 
 
