@@ -17,6 +17,7 @@ import chromadb
 import requests
 
 # ============ 配置 ============
+BASE_DIR = Path("/mnt/d/data/think-tank-data/personalities")
 DB_PATH = Path("/mnt/d/data/think-tank-data/_chromadb/lacan_db")
 OLLAMA_URL = "http://172.26.0.1:11434/api/embed"
 OLLAMA_MODEL = "bge-m3:latest"
@@ -235,7 +236,7 @@ def extract_insights(pv3, person_name):
     return chunks
 
 
-def ingest_evidence(person_name, pv3, cols):
+def ingest_evidence(person_name, category, pv3, cols):
     """从 personality_v3.json 的 insights_with_evidence 字段入库到 insights 和 evidence 集合"""
     iwe = pv3.get('insights_with_evidence', [])
     if not iwe:
@@ -243,15 +244,6 @@ def ingest_evidence(person_name, pv3, cols):
         return 0, 0
 
     evidence_col = cols["evidence"]
-
-    # 删除旧数据
-    for col_name in ["insights", "evidence"]:
-        try:
-            old = cols[col_name].get(where={"person": person_name}, include=[])
-            if old['ids']:
-                cols[col_name].delete(ids=old['ids'])
-        except:
-            pass
 
     # Phase 1: 先入库所有 evidence 条目，收集 ID 映射
     ev_texts, ev_ids, ev_metas = [], [], []
@@ -279,6 +271,7 @@ def ingest_evidence(person_name, pv3, cols):
             ev_ids.append(ev_id)
             ev_metas.append({
                 "person": person_name,
+                "category": category,
                 "source_file": source_file,
                 "location": location,
                 "insight_id": f"{person_name}_ins_{i:03d}",
@@ -321,6 +314,7 @@ def ingest_evidence(person_name, pv3, cols):
         ins_ids.append(ins_id)
         ins_metas.append({
             "person": person_name,
+            "category": category,
             "dim": dim,
             "claim": claim[:200],
             "evidence_ids": ",".join(linked_ev_ids),
@@ -378,6 +372,11 @@ def run(person_name, person_dir):
         print(f"ERROR: {pv3_path} not found", flush=True)
         return
 
+    # 提取 category：person_dir 的父目录相对路径
+    # 例如: /mnt/d/data/think-tank-data/personalities/scholars/economics/Milton_Friedman -> scholars/economics
+    #       /mnt/d/data/think-tank-data/personalities/military/毛泽东 -> military
+    category = str(person_dir.parent.relative_to(BASE_DIR)) if person_dir.parent != BASE_DIR else ""
+
     pv3 = load_v3(pv3_path)
     meta = pv3.get('_distill_meta', {})
     print(f"Ingesting {person_name}... ({meta.get('source_count','?')} sources)", flush=True)
@@ -392,6 +391,24 @@ def run(person_name, person_dir):
     for name in ["unconscious", "repetition", "transference", "drive", "tension"]:
         cols[name] = client.get_or_create_collection(name=name)
 
+    # === 统一删除该人物的旧数据（所有集合） ===
+    all_collections = ["core_profile", "insights", "evidence", "tension",
+                       "unconscious", "repetition", "transference", "drive"]
+    total_deleted = 0
+    for col_name in all_collections:
+        try:
+            col = cols[col_name]
+            old = col.get(where={"person": person_name, "category": category}, include=[])
+            if old['ids']:
+                col.delete(ids=old['ids'])
+                total_deleted += len(old['ids'])
+                print(f"  删除 {col_name}: {len(old['ids'])}条", flush=True)
+        except Exception as e:
+            # 集合可能为空或不存在，忽略错误
+            pass
+    if total_deleted > 0:
+        print(f"  共删除旧数据: {total_deleted}条", flush=True)
+
     # 1. core_profile
     core_text = (
         f"[{person_name}] {pv3.get('brief','')} "
@@ -401,31 +418,23 @@ def run(person_name, person_dir):
     )
     core_id = f"{person_name}_core"
     core_col = cols["core_profile"]
-    try: core_col.delete(ids=[core_id])
-    except: pass
     embeds = embed_texts([core_text])
     if embeds:
         core_col.add(documents=[core_text], embeddings=embeds, ids=[core_id],
-                    metadatas=[{"person": person_name, "source": "personality_v3"}])
+                    metadatas=[{"person": person_name, "category": category, "source": "personality_v3"}])
     print(f"  core_profile: 1", flush=True)
 
     # 2. insights
     insight_chunks = extract_insights(pv3, person_name)
     ins_col = cols["insights"]
     tension_col = cols["tension"]
-    try:
-        old = ins_col.get(where={"person": person_name}, include=[])
-        if old['ids']: ins_col.delete(ids=old['ids'])
-        old_t = tension_col.get(where={"person": person_name}, include=[])
-        if old_t['ids']: tension_col.delete(ids=old_t['ids'])
-    except: pass
 
     if insight_chunks:
         # v4.2: 按dim分流 — tension写入独立集合，其余写入insights
         ins_texts, ins_ids, ins_metas = [], [], []
         ten_texts, ten_ids, ten_metas = [], [], []
         for i, c in enumerate(insight_chunks):
-            meta = {"person": person_name, "source": c['source'], "dim": c['dim'],
+            meta = {"person": person_name, "category": category, "source": c['source'], "dim": c['dim'],
                     "source_ref": "", "material_id": ""}
             # 提取source_ref建立关联
             m = re.search(r'\[来源:\s*(\S+)\]', c['text'])
@@ -464,7 +473,7 @@ def run(person_name, person_dir):
     gc.collect()
 
     # 3. evidence (from insights_with_evidence)
-    ev_ins_count, ev_ev_count = ingest_evidence(person_name, pv3, cols)
+    ev_ins_count, ev_ev_count = ingest_evidence(person_name, category, pv3, cols)
 
     # 汇总
     print(f"  DONE — core:1 + insights:{len(ins_embeds) if insight_chunks else 0} + tension:{len(ten_embeds) if insight_chunks else 0} + evidence:{ev_ev_count} excerpts ({ev_ins_count} insights)", flush=True)
@@ -474,7 +483,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python3 ingest_v3.py <person_name> <person_dir>")
         print("       python3 ingest_v3.py --all  # 重建全部")
-        sys.exit(1)
+        sys.exit(0)
 
     if sys.argv[1] == '--all':
         base = Path("/mnt/d/data/think-tank-data/personalities")

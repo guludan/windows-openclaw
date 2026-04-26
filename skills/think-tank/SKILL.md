@@ -70,6 +70,21 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 ⚠️ **预处理和质量检测是绑定流程，采集完素材后必须执行完整流程。**
 
+### Step 2b: 增量蒸馏（补充新素材后）
+
+如果已有人物补充了新素材，不需要全量重跑蒸馏，使用增量蒸馏：
+
+```bash
+# 生成增量蒸馏prompt（指定新素材或按日期筛选）
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --new-materials file1.txt file2.txt
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --since "2026-04-26"
+
+# sessions_spawn 调LLM处理 _incremental_prompt.md，输出 _incremental_result.json
+
+# 应用增量结果（新insights追加 + 相同claim的evidence合并 + 自动备份）
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --apply
+```
+
 ### Step 3: V3 蒸馏（sessions_spawn）
 
 - 模板：`skills/think-tank/templates/distill_prompt_v3.md`
@@ -84,7 +99,9 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/ingest_v3.py <人物名> <人物目录>
 ```
 
-两层合一：materials chunk + 7个结构化集合。
+- 入库前自动删除该人物的旧数据（按 `person` + `category` 双条件匹配，同名不同人不会误删）
+- 所有向量 metadata 包含 `person`（人物名）和 `category`（子领域路径，如 scholars/economics）
+- 两层合一：materials chunk + 7个结构化集合
 
 ---
 
@@ -147,6 +164,7 @@ skills/think-tank/
 │   ├── _preprocess.py            素材预处理（去重+低质量过滤+质量报告）
 │   ├── quality_check_llm.py      LLM质量评分（生成prompt→sessions_spawn评分→apply）
 │   ├── _batch_distill.py         蒸馏辅助（子session任务生成）
+│   ├── incremental_distill.py    增量蒸馏（新素材补充insights+合并evidence）
 │   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v4.0（4章+预-mortem）
 │   ├── cache_news.py / cache_news_tags.py  新闻缓存
 │   ├── fetch_acled.py / fetch_ucdp.py / fetch_cls.py / fetch_market.py  数据抓取
