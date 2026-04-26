@@ -139,6 +139,30 @@ rm -rf <person_dir>/_per_file_results
 - 所有向量 metadata 包含 `person`（人物名）和 `category`（子领域路径，如 scholars/economics）
 - 两层合一：materials chunk + 7个结构化集合
 
+### Step 4b: 重新生成完整人格模型（基于insights）
+
+逐篇蒸馏只生成 insights_with_evidence，顶层字段（brief, school, domains, logical_tracing等）可能过时。合并后需要重新生成：
+
+```bash
+# 生成重新生成prompt（insights作为输入）
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py <person_dir>
+
+# spawn子session处理prompt，输出到 _regenerate_result.json
+
+# 应用结果（替换顶层字段，保留原insights_with_evidence，旧文件自动备份）
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py <person_dir> --apply
+```
+
+### 批量蒸馏流程
+
+1. 生成prompts: `auto_distill.py --generate`
+2. 每批5人，每人一个子session（内部逐篇处理所有素材），超时设2-4小时
+3. 完成后合并: `_batch_distill.py --merge-per-file`
+4. 重新生成人格模型: `regenerate_personality.py`
+5. 入库: `ingest_v3.py`
+
+⚠️ **已知问题：大量论文素材只有元数据（标题/DOI）没有正文**，采集时论文只抓了索引没下载全文。这些素材蒸馏出来是空的，需要用academic-research-hub补下载全文。
+
 ---
 
 ## B. 报告生成 Pipeline v4.0

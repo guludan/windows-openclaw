@@ -78,6 +78,8 @@
 - **蒸馏输出文件名是 `personality_v3.json`，不是 `distillate.json`** — 旧版的 distillate.json 是空壳已清理
 - 代码任务交给Claude Code，不手写
 - 先读已有skill再写脚本，避免重复造轮子
+- **大量论文素材只有元数据（标题/DOI）没有正文** — 采集时论文只抓了索引没下载全文，导致蒸馏结果空洞。需要补下载全文或用academic-research-hub重新采集
+- **同名误匹配** — 论文搜索时同名不同人会被误收录（如化学/光学领域的Ledoux vs 神经科学家LeDoux）
 
 ## 本地服务
 - **STT**: http://127.0.0.1:9977 (faster-whisper, conda stt)
