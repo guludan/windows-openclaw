@@ -44,15 +44,15 @@
 - **蒸馏后检查domains覆盖** — 防止丢失
 - **GLM调用走sessions_spawn** — 直接调API会被限流
 - **质量评分只用LLM** — 禁止规则评分脚本
-- **子agent经常空跑** — 重要任务优先用脚本执行
-- **必须用已配置的skill** — self-improvement(犯错纠正)、agent-autopilot(持续任务)、所有已安装skill，不要闲置
+- **蒸馏红线：必须逐篇读素材，不能一次全读** — 每篇读完提取insights+标注source_ref，再读下一篇。一人10-60篇素材，需10-30分钟/人。不能设2分钟cron批量跑
+- **执行任务前必须先读SKILL.md** — 不读就动手=瞎搞，红线写再多不看等于没有
 
 ## 关键经验
 - 素材>60000字符需截断再蒸馏
 - 中文冒号导致JSON parse失败
 - Sci-Hub镜像优先级：.in > .st > .ru > .se
 - 著作采集：优先全文PDF，没有就找高质量书评/摘要
-- 报告用RAG驱动+[RAG: dim/source]标记，末尾标注"AI模拟"
+- **蒸馏输出文件名是 `personality_v3.json`，不是 `distillate.json`** — 旧版的 distillate.json 是空壳已清理
 - 代码任务交给Claude Code，不手写
 - 先读已有skill再写脚本，避免重复造轮子
 

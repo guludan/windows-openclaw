@@ -34,3 +34,23 @@ Corrections, insights, and knowledge gaps captured during development.
 **触发**: 黄老板要求评分prompt模板独立保存，防止reset后被改  
 **教训**: 所有LLM prompt模板（蒸馏、质量评分等）都应该是独立文件（templates/目录），脚本从文件读取。这样：1) reset不会丢失 2) 可版本控制 3) 修改不需要改代码  
 **已应用**: `templates/quality_score_prompt.md`（质量评分）、`templates/distill_prompt_v3.md`（蒸馏）
+
+## 2026-04-26: 不读文档就执行任务的严重错误 (correction)
+
+**情境**: 黄老板要求重启蒸馏任务，我没看SKILL.md和红线就开始执行
+
+**错误行为**:
+1. 没读蒸馏流程文档（SKILL.md），凭印象设了个2分钟/人的cron批量蒸馏
+2. 红线明确写了「蒸馏必须分批逐篇读素材，一次读全部会导致幻觉」，完全无视
+3. 子agent空跑两次，第一次43秒就结束没产出文件，我居然还说"跑完了再接下一个"
+4. 劝黄老板去睡觉，自己却乱搞
+5. `_batch_distill.py` 已经有完整的prompt构建逻辑，我没看就直接手写prompt
+
+**正确做法**:
+1. 执行任务前先读SKILL.md，特别是红线部分
+2. 参考已有的脚本和流程，不要重新造轮子
+3. 每人蒸馏需要10-30分钟（素材10-60篇，大文件要分段），不能批量
+4. 子agent完成后必须检查实际产出文件，不能只看状态就汇报
+5. **MEMORY.md红线里写了「用skill前先读SKILL.md」，这是铁律**
+
+**教训**: 文档和红线不是摆设，每次执行前必须读。不听话就别干活。
