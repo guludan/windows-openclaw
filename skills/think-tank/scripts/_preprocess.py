@@ -403,7 +403,10 @@ def detect_source_type(filename: str) -> str:
 
 
 def generate_quality_report(person_dir: Path, dry_run: bool = False) -> dict:
-    """生成质量评估报告JSON"""
+    """生成质量评估报告JSON
+    
+    大文件（书籍>50000字符）智能采样：目录+前言+首章，不全送LLM。
+    """
     mat_dir = person_dir / "materials"
     raw_dir = mat_dir / "raw"
     if not raw_dir.exists():
@@ -420,12 +423,27 @@ def generate_quality_report(person_dir: Path, dry_run: bool = False) -> dict:
         except Exception:
             continue
 
+        chars = len(content)
+        source_type = detect_source_type(f.name)
+        
+        # 按文件大小分级生成预览
+        if chars < 2000:
+            # 小文件：全文
+            preview = content[:1000].replace('\n', ' ').strip()
+        elif chars < 50000:
+            # 中等文件：前1000字符
+            preview = content[:1000].replace('\n', ' ').strip()
+        else:
+            # 大文件（书籍）：智能采样 — 目录+前言+首章开头
+            preview = _sample_book_preview(content)
+
         report.append({
             "filename": f.name,
             "size": f.stat().st_size,
-            "chars": len(content),
-            "preview": content[:200].replace('\n', ' ').strip(),
-            "source_type": detect_source_type(f.name),
+            "chars": chars,
+            "preview": preview,
+            "source_type": source_type,
+            "is_book": chars > 50000,  # 标记书籍文件
         })
 
     if not dry_run:
@@ -433,6 +451,56 @@ def generate_quality_report(person_dir: Path, dry_run: bool = False) -> dict:
         report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
 
     return {"report_entries": len(report), "errors": []}
+
+
+def _sample_book_preview(content: str, max_chars: int = 2000) -> str:
+    """书籍智能采样：提取目录+前言+首章开头，控制在max_chars内"""
+    lines = content.split('\n')
+    
+    # 尝试提取有意义的段落
+    parts = []
+    total = 0
+    
+    # 1. 取前30行（通常是封面/版权/目录/前言）
+    head = '\n'.join(lines[:30])
+    if total + len(head) <= max_chars:
+        parts.append(head)
+        total += len(head)
+    
+    # 2. 跳过空行，找第一个实质章节的开头
+    chapter_start = None
+    for i, line in enumerate(lines[30:200]):
+        stripped = line.strip()
+        if stripped and (
+            stripped.lower().startswith(('chapter', 'part', '第', '1 ', '1.', 'introduction', 'preface'))
+            or (stripped.isupper() and len(stripped) > 5 and len(stripped) < 80)
+        ):
+            chapter_start = 30 + i
+            break
+    
+    # 3. 取章节开头（约500字符）
+    if chapter_start:
+        chapter_preview = '\n'.join(lines[chapter_start:chapter_start + 20])
+        remaining = max_chars - total
+        if remaining > 200:
+            parts.append('\n[...]\n')
+            parts.append(chapter_preview[:remaining - 50])
+            total = max_chars
+    
+    # 4. 如果还没满，从中间随机取一小段
+    if total < max_chars * 0.7:
+        mid = len(lines) // 2
+        mid_sample = '\n'.join(lines[mid:mid + 10])
+        remaining = max_chars - total - 50
+        if remaining > 200 and mid_sample.strip():
+            parts.append('\n[...中间段落...]\n')
+            parts.append(mid_sample[:remaining])
+    
+    preview = '\n'.join(parts)
+    # 压缩多余空白
+    import re
+    preview = re.sub(r'\n{3,}', '\n\n', preview)
+    return preview[:max_chars].strip()
 
 
 def quality_pipeline(person_dir: Path, dry_run: bool = False) -> dict:
