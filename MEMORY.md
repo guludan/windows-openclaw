@@ -36,6 +36,7 @@
 | 学术论文搜索（arXiv/SS/PubMed） | 同上 | `search_academic()`, `_search_semantic_scholar()`, `_search_arxiv()` | 同上 |
 | 论文全文下载（Sci-Hub） | 同上 | `download_scihub_pdf(doi, output_dir)`, `download_papers()` | 同上 |
 | 著作下载（libgen.com.im→archive.org） | 同上 | `download_book(title, output_dir, isbn, proxies)` | 同上 |
+| 素材质检（蒸馏前） | 同上 | `check_materials_quality(person_dir, person_name)` | 同上 |
 | DOI搜索→全文下载完整链路 | 同上 | SS搜索拿DOI → `download_scihub_pdf(doi)` → PyMuPDF提文本 | 同上 |
 | B站视频采集+转录 | `skills/data-search/scripts/bilibili_transcribe.py` | `search --keyword`, `download --bv` | 同上 |
 | 人物素材采集 | `skills/data-search/scripts/data_search.py` | CLI: `person "姓名"` | 同上 |
@@ -58,15 +59,18 @@ Phase 1: 素材采集
   ├─ bilibili_transcribe.py → B站视频转文本 → materials/
   └─ 著作: 通用搜索找书名 → download_book() → materials/book_书名.txt
 
-Phase 2: 蒸馏
+Phase 2: 质检
+  └─ check_materials_quality(person_dir, person_name) → 检测空文件/无正文/同名误匹配
+
+Phase 3: 蒸馏
   ├─ _batch_distill.py --per-file → 逐篇LLM提取 → _per_file_results/
   ├─ incremental_distill.py --auto → 检测新素材自动蒸馏
   └─ 输出: personality_v3.json（不是distillate.json）
 
-Phase 3: 入库
+Phase 4: 入库
   └─ ingest_v3.py → chromadb 4集合(core_profile/insights/evidence/tension)
 
-Phase 4: 报告
+Phase 5: 报告
   └─ think_tank_pipeline_v3.py
 ```
 

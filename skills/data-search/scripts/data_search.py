@@ -1852,6 +1852,103 @@ def _format_ris(papers: List[Dict[str, Any]]) -> str:
 
 
 # =============================================================================
+# Material Quality Check — 素材质检（蒸馏前预处理）
+# =============================================================================
+
+def check_materials_quality(person_dir: str, person_name: str,
+                           preview_chars: int = 500) -> Dict[str, Any]:
+    """检查人物素材质量，返回问题文件列表。
+    
+    轻量质检：只读每个文件前N字符，检查空文件、不相关、同名误匹配。
+    
+    Args:
+        person_dir: 人物目录路径（含materials/和papers/raw/）
+        person_name: 人物姓名（用于相关性判断）
+        preview_chars: 每个文件读取前N字符
+    
+    Returns:
+        {
+            "total": int,
+            "ok": int,
+            "issues": [{"file": str, "type": str, "reason": str}],
+            "empty_files": [str],
+            "irrelevant_files": [str],
+            "suspicious_files": [str]
+        }
+    """
+    import glob
+    
+    result = {
+        "total": 0, "ok": 0,
+        "issues": [],
+        "empty_files": [], "irrelevant_files": [], "suspicious_files": []
+    }
+    
+    person_path = Path(person_dir)
+    
+    # 收集所有素材文件
+    files = []
+    for pattern_dir in ["materials", "papers/raw"]:
+        d = person_path / pattern_dir
+        if d.exists():
+            files.extend(glob.glob(str(d / "**/*.txt"), recursive=True))
+            files.extend(glob.glob(str(d / "**/*.json"), recursive=True))
+    
+    # 排除汇总文件
+    files = [f for f in files if not os.path.basename(f).startswith('_')]
+    result["total"] = len(files)
+    
+    for fpath in files:
+        fsize = os.path.getsize(fpath)
+        fname = os.path.basename(fpath)
+        rel_path = os.path.relpath(fpath, person_path)
+        
+        # 1. 空文件检查
+        if fsize < 100:
+            result["empty_files"].append(rel_path)
+            result["issues"].append({"file": rel_path, "type": "empty", "reason": f"文件过小 ({fsize} bytes)"})
+            continue
+        
+        # 2. 读取预览
+        try:
+            with open(fpath, 'r', encoding='utf-8', errors='ignore') as f:
+                preview = f.read(preview_chars)
+        except:
+            result["issues"].append({"file": rel_path, "type": "unreadable", "reason": "无法读取"})
+            continue
+        
+        # 3. 内容为空（只有元数据头）
+        lines = [l.strip() for l in preview.split('\n') if l.strip() and not l.startswith('#')]
+        if len(lines) < 3:
+            result["empty_files"].append(rel_path)
+            result["issues"].append({"file": rel_path, "type": "no_content", "reason": "只有元数据没有正文"})
+            continue
+        
+        # 4. 同名误匹配检查（论文文件名含非相关领域关键词）
+        if "paper_" in fname:
+            # 检查DOI相关的学科领域不匹配
+            irrelevant_keywords = {
+                # 常见误匹配领域
+                "soot": "材料科学", "catalytic": "化学", "optical": "光学", 
+                "laser": "激光", "thermal": "热力学", "solar": "太阳能",
+                "concrete": "建筑", "steel": "冶金", "algorithm": "计算机(非相关)",
+            }
+            for kw, field in irrelevant_keywords.items():
+                if kw.lower() in preview.lower()[:200]:
+                    # 进一步确认：如果人物名不在作者列表中，很大概率是误匹配
+                    if person_name.lower().replace(" ", "") not in preview.lower().replace(" ", "")[:500]:
+                        result["irrelevant_files"].append(rel_path)
+                        result["issues"].append({"file": rel_path, "type": "irrelevant", "reason": f"疑似同名误匹配({field})"})
+                        break
+            else:
+                result["ok"] += 1
+        else:
+            result["ok"] += 1
+    
+    return result
+
+
+# =============================================================================
 # Unified Search Entry Point
 # =============================================================================
 
