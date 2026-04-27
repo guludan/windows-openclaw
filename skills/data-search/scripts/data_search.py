@@ -1560,50 +1560,73 @@ def download_scihub_pdf(doi: str, output_dir: str, mirrors: Optional[List[str]] 
 
 def download_book(title: str, output_dir: str, isbn: Optional[str] = None,
                   proxies: Optional[Dict[str, str]] = None) -> Optional[str]:
-    """Download book PDF from Library Genesis (libgen.com.im) or Internet Archive.
+    """Download book and extract text from Library Genesis or Internet Archive.
     
     Fallback chain: libgen.com.im → archive.org → None
+    Downloads PDF then extracts text via PyMuPDF, saves as .txt
     
     Args:
         title: Book title to search
-        output_dir: Directory to save PDF
+        output_dir: Directory to save .txt
         isbn: Optional ISBN for more precise search
         proxies: Optional proxy dict, e.g. {"https": "http://172.26.0.1:10808"}
     
     Returns:
-        Path to downloaded file if successful, None otherwise
+        Path to extracted .txt if successful, None otherwise
     """
+    try:
+        import fitz
+    except ImportError:
+        print("PyMuPDF (fitz) required for book download", file=sys.stderr)
+        return None
+    
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
     safe_title = re.sub(r'[^\w\s.-]', '_', title)[:60]
-    filepath = output_path / f"book_{safe_title}.pdf"
+    txt_path = output_path / f"book_{safe_title}.txt"
+    
+    if txt_path.exists() and txt_path.stat().st_size > 5000:
+        print(f"Book already exists: {txt_path.name}", file=sys.stderr)
+        return str(txt_path)
+    
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
     
     # --- libgen.com.im ---
     try:
         search_url = "https://libgen.com.im/search.php"
         params = {"q": isbn if isbn else title}
-        if isbn:
-            params["column"] = "identifier"
         
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
         resp = requests.get(search_url, params=params, headers=headers, timeout=15, proxies=proxies)
         resp.raise_for_status()
         
-        # Extract first md5 from search results
-        md5_match = re.search(r'download\.php\?md5=([a-f0-9]{32})', resp.text)
-        if md5_match:
-            md5 = md5_match.group(1)
-            # Direct download link
-            dl_url = f"https://libgen.com.im/download.php?md5={md5}"
-            dl_resp = requests.get(dl_url, headers=headers, timeout=30,
-                                    allow_redirects=True, proxies=proxies)
-            dl_resp.raise_for_status()
-            
-            if len(dl_resp.content) > 50000:
-                with open(filepath, 'wb') as f:
+        # Extract all md5s, try each
+        md5s = re.findall(r'download\.php\?md5=([a-f0-9]{32})', resp.text)
+        for md5 in md5s[:3]:  # try top 3 results
+            try:
+                dl_url = f"https://libgen.com.im/download.php?md5={md5}"
+                dl_resp = requests.get(dl_url, headers=headers, timeout=60,
+                                        allow_redirects=True, proxies=proxies)
+                if dl_resp.status_code != 200 or len(dl_resp.content) < 50000:
+                    continue
+                
+                # Save temp PDF, extract text
+                tmp_pdf = output_path / f"_tmp_{md5}.pdf"
+                with open(tmp_pdf, 'wb') as f:
                     f.write(dl_resp.content)
-                print(f"Downloaded book: {filepath.name} ({len(dl_resp.content)} bytes)", file=sys.stderr)
-                return str(filepath)
+                
+                doc = fitz.open(str(tmp_pdf))
+                text = "\n".join(page.get_text() for page in doc)
+                doc.close()
+                tmp_pdf.unlink()
+                
+                if len(text.strip()) > 1000:
+                    with open(txt_path, 'w', encoding='utf-8') as f:
+                        f.write(f"title: {title}\nsource: libgen\ndate_added: {time.strftime('%Y-%m-%d')}\n\n{text}")
+                    print(f"Downloaded book: {txt_path.name} ({len(text)} chars)", file=sys.stderr)
+                    return str(txt_path)
+            except Exception as e:
+                print(f"  md5 {md5[:8]}... failed: {e}", file=sys.stderr)
+                continue
     except Exception as e:
         print(f"libgen.com.im failed: {e}", file=sys.stderr)
     
@@ -1624,15 +1647,26 @@ def download_book(title: str, output_dir: str, isbn: Optional[str] = None,
             identifier = doc.get("identifier", "")
             if not identifier:
                 continue
-            # Try PDF download
             pdf_url = f"https://archive.org/download/{identifier}/{identifier}.pdf"
-            dl_resp = requests.get(pdf_url, headers={'User-Agent': 'Mozilla/5.0'},
-                                    timeout=30, allow_redirects=True, proxies=proxies)
-            if dl_resp.status_code == 200 and len(dl_resp.content) > 50000:
-                with open(filepath, 'wb') as f:
-                    f.write(dl_resp.content)
-                print(f"Downloaded book from archive.org: {filepath.name}", file=sys.stderr)
-                return str(filepath)
+            dl_resp = requests.get(pdf_url, headers=headers,
+                                    timeout=60, allow_redirects=True, proxies=proxies)
+            if dl_resp.status_code != 200 or len(dl_resp.content) < 50000:
+                continue
+            
+            tmp_pdf = output_path / f"_tmp_{identifier}.pdf"
+            with open(tmp_pdf, 'wb') as f:
+                f.write(dl_resp.content)
+            
+            doc = fitz.open(str(tmp_pdf))
+            text = "\n".join(page.get_text() for page in doc)
+            doc.close()
+            tmp_pdf.unlink()
+            
+            if len(text.strip()) > 1000:
+                with open(txt_path, 'w', encoding='utf-8') as f:
+                    f.write(f"title: {title}\nsource: archive.org\ndate_added: {time.strftime('%Y-%m-%d')}\n\n{text}")
+                print(f"Downloaded book from archive.org: {txt_path.name}", file=sys.stderr)
+                return str(txt_path)
     except Exception as e:
         print(f"archive.org failed: {e}", file=sys.stderr)
     
