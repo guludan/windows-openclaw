@@ -19,6 +19,7 @@ _batch_distill.py — 批量V3蒸馏（子session调用）
 import json
 import sys
 import os
+import sqlite3
 from datetime import datetime
 from pathlib import Path
 from typing import List, Tuple, Dict, Any
@@ -32,13 +33,36 @@ MAX_CHARS = 60000
 
 
 def get_materials(person_dir: Path) -> List[Path]:
-    """获取素材文件列表，按大小排序（排除 _ 开头的文件和 _discarded/ 目录）"""
-    mat_dir = person_dir / "materials"
-    if not mat_dir.exists():
-        return []
-    files = sorted(mat_dir.glob("*.txt"), key=lambda f: f.stat().st_size)
-    # 排除 _ 开头的文件
-    return [f for f in files if f.stat().st_size >= 200 and not f.name.startswith("_")]
+    """获取素材文件列表，从 materials/raw/ 和 papers/raw/ 读取"""
+    files = []
+    for subdir in ["materials/raw", "papers/raw"]:
+        raw_dir = person_dir / subdir
+        if raw_dir.exists():
+            files.extend(f for f in raw_dir.glob("*.txt") if f.stat().st_size >= 200)
+    files.sort(key=lambda f: f.stat().st_size)
+    return files
+
+
+def get_db(person_dir: Path) -> sqlite3.Connection:
+    """获取人物数据库连接"""
+    db_path = person_dir / "_db.sqlite"
+    if not db_path.exists():
+        raise FileNotFoundError(f"Database not found: {db_path}. Run init_db.py first.")
+    conn = sqlite3.connect(str(db_path))
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+def get_category(person_dir: Path, filepath: Path) -> str:
+    """判断素材属于 materials 还是 papers"""
+    try:
+        rel = filepath.relative_to(person_dir)
+        parts = rel.parts
+        if parts[0] == 'papers':
+            return 'papers'
+    except ValueError:
+        pass
+    return 'materials'
 
 
 def generate_distilled_record(person_dir: Path):
@@ -245,6 +269,72 @@ def merge_per_file_results(person_dir: Path) -> None:
 
     print(f"\n总计: {len(all_insights)} insights")
 
+    # Save per-file distillate results to distillates/ directories
+    # Also update _db.sqlite
+    db_path = person_dir / "_db.sqlite"
+    db_conn = None
+    try:
+        if db_path.exists():
+            db_conn = sqlite3.connect(str(db_path))
+            db_conn.row_factory = sqlite3.Row
+    except Exception as e:
+        print(f"  ⚠ DB连接失败: {e}", file=sys.stderr)
+
+    now_iso = datetime.now().isoformat()
+
+    for result_file in result_files:
+        try:
+            insights = json.loads(result_file.read_text(encoding='utf-8'))
+            if isinstance(insights, list) and insights:
+                # Determine category by checking actual file location in raw dirs
+                category = "materials"
+                source_file = insights[0].get("evidence", [{}])[0].get("source_file", "") if insights else ""
+                # Check if the source file exists in papers/raw/
+                if (person_dir / "papers" / "raw" / source_file).exists():
+                    category = "papers"
+                elif not (person_dir / "materials" / "raw" / source_file).exists() and source_file.startswith("paper_"):
+                    category = "papers"
+                dist_dir = person_dir / category / "distillates"
+                dist_dir.mkdir(parents=True, exist_ok=True)
+                dist_path = dist_dir / f"{result_file.stem}.json"
+                dist_path.write_text(json.dumps(insights, ensure_ascii=False, indent=2), encoding='utf-8')
+
+                # Update DB
+                if db_conn:
+                    try:
+                        filename = source_file or result_file.stem
+                        rel_distillate = str(dist_path.relative_to(person_dir))
+                        db_conn.execute(
+                            "UPDATE items SET distilled=1, distillate_path=?, distill_time=?, status='distilled', insight_count=? WHERE filename=?",
+                            (rel_distillate, now_iso, len(insights), filename)
+                        )
+                        # Write distillate_insights
+                        item_row = db_conn.execute("SELECT id FROM items WHERE filename=? ORDER BY id LIMIT 1", (filename,)).fetchone()
+                        if item_row:
+                            item_id = item_row[0]
+                            for idx, ins in enumerate(insights):
+                                claim_preview = ins.get("claim", "")[:100]
+                                dim = ins.get("dim", "")
+                                ev_count = len(ins.get("evidence", []))
+                                db_conn.execute(
+                                    "INSERT INTO distillate_insights (item_id, insight_idx, claim_preview, dim, evidence_count) VALUES (?, ?, ?, ?, ?)",
+                                    (item_id, idx, claim_preview, dim, ev_count)
+                                )
+                        db_conn.execute(
+                            "INSERT INTO processing_log (person, action, details) VALUES (?, 'merge_per_file', ?)",
+                            (person_dir.name, f"merged {len(insights)} insights from {result_file.name}")
+                        )
+                    except Exception as e:
+                        print(f"  ⚠ DB更新失败 {source_file}: {e}", file=sys.stderr)
+        except Exception:
+            pass
+
+    if db_conn:
+        try:
+            db_conn.commit()
+        finally:
+            db_conn.close()
+
     # 读取或创建 personality_v3.json
     pv3_path = person_dir / "personality_v3.json"
 
@@ -418,7 +508,12 @@ def build_distill_task(person_name: str, person_dir: Path, person_domain: str = 
         parts = []
         for f in files:
             content = f.read_text(encoding='utf-8', errors='ignore')
-            parts.append(f"[{f.name}]\n{content}")
+            # Use relative path from person_dir for display
+            try:
+                rel = f.relative_to(person_dir)
+            except ValueError:
+                rel = f.name
+            parts.append(f"[{rel}]\n{content}")
         materials_text = "\n\n---\n\n".join(parts)
 
         task = f"""你是人格蒸馏专家。完成以下任务：
@@ -458,7 +553,7 @@ def build_distill_task(person_name: str, person_dir: Path, person_domain: str = 
 2. 逐段读取素材文件并理解：
 
 素材文件列表：
-{chr(10).join(f'  - {f}' for f in files)}
+{chr(10).join(f'  - {f.relative_to(person_dir) if f.is_relative_to(person_dir) else f}' for f in files)}
 
 分段策略：素材总量超过{MAX_CHARS}字符，你必须：
   a) 先读取前1/3素材，提取关键信息

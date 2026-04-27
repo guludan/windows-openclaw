@@ -16,8 +16,10 @@ quality_check_llm.py — LLM质量评分工具
 """
 
 import json
+import sqlite3
 import sys
 import shutil
+from datetime import datetime
 from pathlib import Path
 
 
@@ -137,33 +139,38 @@ def generate_prompt(person_dir: Path, batch_size: int = 20) -> list:
 
 
 def apply_scores(person_dir: Path, scores: list) -> dict:
-    """根据LLM评分结果移除低质量素材"""
+    """根据LLM评分结果移除低质量素材，写入数据库"""
     mat_dir = person_dir / "materials"
     discard_dir = mat_dir / "_discarded"
     discard_dir.mkdir(parents=True, exist_ok=True)
 
     stats = {"kept": 0, "discarded": 0, "missing": 0, "errors": []}
+    now = datetime.now().isoformat()
 
-    # 合并已有评分（多批次追加）
+    # Update DB
+    db_path = person_dir / "_db.sqlite"
+    conn = sqlite3.connect(str(db_path)) if db_path.exists() else None
+
+    # 合并已有评分（多批次追加）— still write JSON for backwards compat
     scores_path = mat_dir / "_quality_scores.json"
     existing = []
     if scores_path.exists():
         with open(scores_path, 'r', encoding='utf-8') as f:
             existing = json.load(f)
-    # 去重：按filename取最新
     all_scores = {s['filename']: s for s in existing}
     for s in scores:
         all_scores[s['filename']] = s
     merged = list(all_scores.values())
 
-    # 只处理本批次新传入的
-    new_filenames = {s['filename'] for s in scores}
     for item in scores:
         filename = item.get("filename", "")
         action = item.get("action", "keep")
         score = item.get("score", 3)
 
-        fpath = mat_dir / filename
+        # Look in both raw/ and old locations
+        fpath = mat_dir / "raw" / filename
+        if not fpath.exists():
+            fpath = mat_dir / filename
         if not fpath.exists():
             stats["missing"] += 1
             stats["errors"].append(f"{filename}: file not found")
@@ -173,11 +180,21 @@ def apply_scores(person_dir: Path, scores: list) -> dict:
             shutil.move(str(fpath), str(discard_dir / filename))
             stats["discarded"] += 1
             stats["errors"].append(f"{filename}: discarded (score={score}, {item.get('reason', '')})")
+            if conn:
+                conn.execute("UPDATE items SET status='discarded', quality_score=?, quality_checked=1, quality_check_time=?, discard_reason=? WHERE filename=?",
+                             (score, now, item.get('reason', ''), filename))
         else:
             stats["kept"] += 1
+            if conn:
+                conn.execute("UPDATE items SET status='quality_checked', quality_score=?, quality_checked=1, quality_check_time=? WHERE filename=?",
+                             (score, now, filename))
 
-    # 保存合并后的全部评分
+    # 保存合并后的全部评分（兼容）
     scores_path.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding='utf-8')
+
+    if conn:
+        conn.commit()
+        conn.close()
 
     return stats
 

@@ -58,3 +58,9 @@
 - **所有智库报告保存到D盘**: `/mnt/d/data/think-tank-data/reports/`
 - **Redis**: 127.0.0.1:6379, 数据在 `/mnt/d/data/redis/data/`, 二进制在 `~/.local/redis/bin/`
 - **Pipeline v2**: `scripts/think_tank_pipeline_v2.py` — 子议题拆分搜索+归一化概率+学术化prompt
+
+## WSL代理
+- **V2RayN代理**: `http://172.26.0.1:10808`（需开启局域网访问）
+- libgen.li、archive.org 等需走代理
+- sci-hub.ru/.in 可直连
+- 脚本里需 `export https_proxy=http://172.26.0.1:10808 http_proxy=http://172.26.0.1:10808`

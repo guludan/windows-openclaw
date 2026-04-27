@@ -25,6 +25,7 @@ incremental_distill.py — 增量蒸馏工具（逐篇蒸馏模式）
 
 import argparse
 import json
+import sqlite3
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -60,18 +61,31 @@ def save_personality_v3(person_dir, data):
 
 
 def read_material_files(file_paths, person_dir):
-    """读取素材文件内容"""
+    """读取素材文件内容，支持 Path 对象和字符串"""
     materials = []
     for file_path in file_paths:
         path = Path(file_path)
-        # 如果是相对路径，尝试从 person_dir/materials/ 解析
-        if not path.is_absolute() and not path.exists():
-            full_path = Path(person_dir) / "materials" / file_path
-            if full_path.exists():
-                path = full_path
-        if not path.exists():
-            print(f"警告: 素材文件不存在: {file_path}", file=sys.stderr)
-            continue
+        if path.is_absolute() and path.exists():
+            pass
+        else:
+            found = None
+            fname = path.name if hasattr(path, 'name') else str(file_path)
+            for subdir in ["materials/raw", "papers/raw"]:
+                candidate = Path(person_dir) / subdir / fname
+                if candidate.exists():
+                    found = candidate
+                    break
+            if not found:
+                candidate = Path(person_dir) / "materials" / fname
+                if candidate.exists():
+                    found = candidate
+            if not found and path.exists():
+                found = path
+            if found:
+                path = found
+            else:
+                print(f"警告: 素材文件不存在: {file_path}", file=sys.stderr)
+                continue
         with open(path, "r", encoding="utf-8") as f:
             content = f.read()
             materials.append({
@@ -82,23 +96,14 @@ def read_material_files(file_paths, person_dir):
 
 
 def get_all_material_files(person_dir):
-    """扫描 materials/ 目录下所有 .txt 文件（排除 _ 开头的文件和 _discarded/ 目录）"""
-    materials_dir = Path(person_dir) / "materials"
-    if not materials_dir.exists():
-        return []
-
+    """扫描 materials/raw/ 和 papers/raw/ 目录下所有 .txt 文件"""
     files = []
-    for file_path in sorted(materials_dir.iterdir()):
-        # 跳过目录
-        if not file_path.is_file():
-            continue
-        # 跳过非 .txt 文件
-        if file_path.suffix != ".txt":
-            continue
-        # 跳过以 _ 开头的文件
-        if file_path.name.startswith("_"):
-            continue
-        files.append(file_path)
+    for subdir in ["materials/raw", "papers/raw"]:
+        raw_dir = Path(person_dir) / subdir
+        if raw_dir.exists():
+            for file_path in sorted(raw_dir.iterdir()):
+                if file_path.is_file() and file_path.suffix == ".txt" and not file_path.name.startswith("_"):
+                    files.append(file_path)
     return files
 
 
@@ -124,25 +129,46 @@ def save_distilled_files_record(person_dir, distilled_files):
 
 
 def find_new_materials_auto(person_dir):
-    """自动查找未蒸馏的新素材"""
-    # 读取已蒸馏记录
+    """自动查找未蒸馏的新素材，优先从DB查询"""
+    db_path = Path(person_dir) / "_db.sqlite"
+
+    if db_path.exists():
+        try:
+            conn = sqlite3.connect(str(db_path))
+            rows = conn.execute(
+                "SELECT filename, file_path FROM items WHERE distilled=0 AND status != 'discarded'"
+            ).fetchall()
+            conn.close()
+            new_files = []
+            for filename, file_path in rows:
+                fp = Path(person_dir) / file_path if file_path else None
+                if fp and fp.exists():
+                    new_files.append(fp)
+                else:
+                    for subdir in ["materials/raw", "papers/raw"]:
+                        candidate = Path(person_dir) / subdir / filename
+                        if candidate.exists():
+                            new_files.append(candidate)
+                            break
+            print(f"从DB查询到 {len(new_files)} 个未蒸馏素材")
+            return new_files
+        except Exception as e:
+            print(f"  ⚠ DB查询失败: {e}，fallback到json记录", file=sys.stderr)
+
+    # Fallback: 旧逻辑
     record = load_distilled_files_record(person_dir)
     if record is None:
-        print("错误: 未找到 _distilled_files.json", file=sys.stderr)
+        print("错误: 未找到 _db.sqlite 或 _distilled_files.json", file=sys.stderr)
         print("首次蒸馏请使用 --new-materials 或 --since 指定素材", file=sys.stderr)
         sys.exit(1)
 
     distilled_set = set(record.get("distilled_files", []))
     last_time = record.get("last_distill_time", "")
 
-    # 扫描所有素材文件
     all_files = get_all_material_files(person_dir)
-
-    # 找出未蒸馏的文件
     new_files = [f for f in all_files if f.name not in distilled_set]
 
     if last_time:
-        last_dt = datetime.fromisoformat(last_time)
         print(f"上次蒸馏时间: {last_time}")
         print(f"已蒸馏文件数: {len(distilled_set)}")
 
@@ -150,24 +176,22 @@ def find_new_materials_auto(person_dir):
 
 
 def find_new_materials_since(person_dir, since_date):
-    """按修改时间查找新素材文件"""
-    materials_dir = Path(person_dir) / "materials"
-    if not materials_dir.exists():
-        print(f"警告: materials目录不存在: {materials_dir}", file=sys.stderr)
-        return []
-    # 解析日期
+    """按修改时间查找新素材文件（扫描 materials/raw/ 和 papers/raw/）"""
     try:
         since = datetime.strptime(since_date, "%Y-%m-%d")
     except ValueError:
         print(f"错误: 日期格式应为 YYYY-MM-DD，得到: {since_date}", file=sys.stderr)
         sys.exit(1)
-    # 查找修改时间晚于 since_date 的文件
     new_files = []
-    for file_path in sorted(materials_dir.iterdir()):
-        if file_path.is_file():
-            mtime = datetime.fromtimestamp(file_path.stat().st_mtime)
-            if mtime >= since:
-                new_files.append(file_path)
+    for subdir in ["materials/raw", "papers/raw"]:
+        raw_dir = Path(person_dir) / subdir
+        if not raw_dir.exists():
+            continue
+        for file_path in sorted(raw_dir.iterdir()):
+            if file_path.is_file():
+                mtime = datetime.fromtimestamp(file_path.stat().st_mtime)
+                if mtime >= since:
+                    new_files.append(file_path)
     return new_files
 
 
@@ -460,17 +484,57 @@ def apply_incremental_result(person_dir, pv3_data):
     # 保存
     save_personality_v3(person_dir, pv3_data)
 
-    # 更新已蒸馏素材记录
-    if distilled_files:
-        record = load_distilled_files_record(person_dir)
-        if record is None:
-            # 首次创建记录
-            save_distilled_files_record(person_dir, distilled_files)
-        else:
-            # 合并已有记录和新蒸馏的文件
-            existing_distilled = set(record.get("distilled_files", []))
-            all_distilled = existing_distilled.union(set(distilled_files))
-            save_distilled_files_record(person_dir, list(all_distilled))
+    # 更新DB中的蒸馏状态
+    db_path = Path(person_dir) / "_db.sqlite"
+    db_conn = None
+    try:
+        if db_path.exists():
+            db_conn = sqlite3.connect(str(db_path))
+            now_iso = datetime.now().isoformat()
+            for filename in distilled_files:
+                distillate_path = None
+                for cat in ["materials", "papers"]:
+                    candidate = Path(person_dir) / cat / "distillates" / f"{filename}.json"
+                    if candidate.exists():
+                        distillate_path = str(candidate.relative_to(person_dir))
+                        break
+                db_conn.execute(
+                    "UPDATE items SET distilled=1, status='distilled', distillate_path=?, distill_time=? WHERE filename=?",
+                    (distillate_path, now_iso, filename)
+                )
+            for result_file in result_files:
+                try:
+                    result_data = json.loads(result_file.read_text(encoding='utf-8'))
+                    insights = result_data.get("new_insights", []) if isinstance(result_data, dict) else (result_data if isinstance(result_data, list) else [])
+                    source_file = ""
+                    if isinstance(result_data, dict):
+                        ni = result_data.get("new_insights", [])
+                        if ni:
+                            source_file = ni[0].get("evidence", [{}])[0].get("source_file", "")
+                    elif isinstance(result_data, list) and result_data:
+                        source_file = result_data[0].get("evidence", [{}])[0].get("source_file", "")
+                    if source_file:
+                        db_conn.execute(
+                            "UPDATE items SET insight_count=? WHERE filename=?",
+                            (len(insights), source_file)
+                        )
+                except Exception:
+                    pass
+            db_conn.execute(
+                "INSERT INTO processing_log (person, action, details) VALUES (?, 'incremental_distill', ?)",
+                (Path(person_dir).name, f"new_insights={added_insights_count}, merged={merged_count}, evidence_added={added_evidence_count}")
+            )
+            db_conn.commit()
+            db_conn.close()
+            db_conn = None
+    except Exception as e:
+        print(f"  ⚠ DB更新失败: {e}", file=sys.stderr)
+    finally:
+        if db_conn:
+            try:
+                db_conn.close()
+            except Exception:
+                pass
 
     # 打印统计
     print("\n增量蒸馏完成:")

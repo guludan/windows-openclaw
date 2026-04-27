@@ -5,27 +5,18 @@
 - 项目方向：① **人格智库** (think-tank) ② **人格还原** (person-replication)
 - GitHub：guludan
 
-## 智库项目（2026-04-25）
+## 智库项目（2026-04-27）
 
 ### 数据目录
 - 数据根：`/mnt/d/data/think-tank-data/`
-- 向量库：`_chromadb/lacan_db/`（待重建）
+- 向量库：`_chromadb/lacan_db/`（89MB，133人已入库）
 - 报告：`reports/`
+- 人物映射：`personalities/name_map.json`（148人）
 
-### 人员：130人（military 25 + scholars 74 + psychologists 31）
-- 全员素材已采集 ✅
-- 蒸馏进度：15/77（scholars），military/psychologists 待重蒸馏
-- 向量库已删除，蒸馏完成后重建
-
-### 工作流
-```
-素材采集(data_search.py / bilibili_transcribe.py) → 预处理 → 蒸馏(sessions_spawn) → 入库(ingest_v3.py)
-```
-
-### 人员：150人（2026-04-26更新）
+### 人员：150人
 - military 25 + psychologists 31 + scholars 77（含17新增）
-- 蒸馏进度：133/133 V3 ✅，17人待蒸馏
-- 向量库：已入库133人（89MB）
+- 蒸馏进度：133/133 V3 ✅，17新增人待蒸馏
+- 部分人素材不足，正在补采集中
 
 ### 新增分类（2026-04-26）
 - geopolitical-finance: Bremmer, Roubini, Friedman, Zeihan
@@ -35,51 +26,90 @@
 - tech-geopolitics: Miller, Mazzucato
 - political-forecasting: Tetlock, Silver
 
-### 核心脚本
-- `data_search.py`（skills/data-search/scripts/）— 统一搜索入口
-- `bilibili_transcribe.py` — B站视频搜索+下载+转录（you-get+ffmpeg+faster-whisper）
-- `ingest_v3.py` — 入库（insights+evidence+core_profile+tension），入库前自动删除旧数据，metadata含person+category防同名误删
-- `_batch_distill.py` — 全量蒸馏（--per-file逐篇生成prompt → spawn逐个处理 → --merge-per-file合并）
-- `_distill_utils.py` — 蒸馏公共工具（大文件切分15000字符/chunk）
-- `incremental_distill.py` — 增量蒸馏（--auto自动检测新素材 → 逐篇prompt → --apply合并）
-- `think_tank_pipeline_v3.py` — 报告生成
-- ⚠️ 蒸馏必须逐篇处理，禁止一次性塞给LLM
-- ⚠️ 逐篇蒸馏的JSON结果保留在_per_file_results/目录，用于溯源和灾备
+## 📦 模块索引（任务→模块→函数 映射）
 
-### 并发限制
-- GLM-5-turbo: 3个并发
-- GLM-5.1: 2个并发
-- GLM-5: 可额外开
-- 总计可同时处理5个人
+**每次执行任务前，先查这张表，找到对应模块，再读SKILL.md。禁止凭记忆瞎搞。**
 
-### 向量库集合（v5，已重建）
-- core_profile / insights / evidence / tension
-- 89MB，133人已入库
+| 任务 | 脚本 | 关键函数/命令 | SKILL.md |
+|------|------|--------------|----------|
+| 通用搜索/新闻/中文搜索 | `skills/data-search/scripts/data_search.py` | `search()`, `search_general()`, `search_chinese()` | skills/data-search/SKILL.md |
+| 学术论文搜索（arXiv/SS/PubMed） | 同上 | `search_academic()`, `_search_semantic_scholar()`, `_search_arxiv()` | 同上 |
+| 论文全文下载（Sci-Hub） | 同上 | `download_scihub_pdf(doi, output_dir)`, `download_papers()` | 同上 |
+| 著作下载（libgen.com.im→archive.org） | 同上 | `download_book(title, output_dir, isbn, proxies)` | 同上 |
+| DOI搜索→全文下载完整链路 | 同上 | SS搜索拿DOI → `download_scihub_pdf(doi)` → PyMuPDF提文本 | 同上 |
+| B站视频采集+转录 | `skills/data-search/scripts/bilibili_transcribe.py` | `search --keyword`, `download --bv` | 同上 |
+| 人物素材采集 | `skills/data-search/scripts/data_search.py` | CLI: `person "姓名"` | 同上 |
+| 入库（向量库） | `skills/think-tank/scripts/ingest_v3.py` | 入库4个集合 | skills/think-tank/SKILL.md |
+| 全量蒸馏 | `skills/think-tank/scripts/_batch_distill.py` | `--per-file` 逐篇 | 同上 |
+| 增量蒸馏 | `skills/think-tank/scripts/incremental_distill.py` | `--auto` 检测新素材 | 同上 |
+| 报告生成 | `skills/think-tank/scripts/think_tank_pipeline_v3.py` | | 同上 |
+| PDF文本提取 | `skills/extract-pdf-text/` | | skills/extract-pdf-text/SKILL.md |
+| 知乎爬取 | `skills/zhihu-keyword-content-search/` | | skills/zhihu-keyword-content-search/SKILL.md |
+| 网站抓取（绕CF） | `skills/web-scraper-jina/` 或 `skills/agent-stealth-scraper/` | | 对应SKILL.md |
+
+## 🔄 完整管线流程映射
+
+```
+Phase 1: 素材采集
+  ├─ data_search.py person "姓名" → 通用+中文+学术搜索 → materials/
+  ├─ data_search.py academic "姓名" → SS搜论文拿DOI → papers/raw/
+  ├─ download_scihub_pdf(doi) → Sci-Hub下载PDF → PyMuPDF提文本
+  ├─ bilibili_transcribe.py → B站视频转文本 → materials/
+  └─ 著作: 通用搜索找书名 → Sci-Hub下载PDF → materials/book_书名.txt
+
+Phase 2: 蒸馏
+  ├─ _batch_distill.py --per-file → 逐篇LLM提取 → _per_file_results/
+  ├─ incremental_distill.py --auto → 检测新素材自动蒸馏
+  └─ 输出: personality_v3.json（不是distillate.json）
+
+Phase 3: 入库
+  └─ ingest_v3.py → chromadb 4集合(core_profile/insights/evidence/tension)
+
+Phase 4: 报告
+  └─ think_tank_pipeline_v3.py
+```
+
+### 批量操作脚本（⚠️ 严格控制频率，避免被封）
+- **补论文全文**：`scripts/fix_small_papers.py`（遍历小文件→提取DOI→Sci-Hub下载→fitz提文本，15秒间隔）
+- **素材采集**：逐人手动调 `data_search.py person "姓名"`，不要批量循环
+- 环境变量：`export EXA_API_KEY=... TAVILY_API_KEY=... SERPAPI_KEY=...`
+- **禁止批量循环请求外部API** — 会被封，逐个慢慢来
+
+### 前置条件
+- 新人物采集前：先注册到 `name_map.json`
+- Python环境：`~/miniconda3/envs/tt/bin/python3`
+- API Keys：见 TOOLS.md，脚本里需export
+
+### 蒸馏注意事项
+- 蒸馏必须逐篇处理，禁止一次性塞给LLM
+- 逐篇蒸馏的JSON结果保留在 `_per_file_results/` 目录，用于溯源和灾备
+- 并发限制：GLM-5-turbo 3个，GLM-5.1 2个，总计5个人
 
 ## 🔴 红线
 - **犯错/被纠正时必须用 self-improvement skill 记录教训**
 - **用skill前先读SKILL.md**，不要凭印象用
+- **执行任务前先查MEMORY.md模块索引表**，有现成模块就用，禁止重写
 - **chromadb 严禁并发** — WSL 9p 下会 segfault 损坏数据库
 - **SiliconFlow 禁止** — 未经黄老板许可不得使用
-- **Sci-Hub 禁止批量下载** — 一篇一篇，间隔60s+
-- **任何外部API 禁止高频请求** — 间隔至少5-10s
-- **蒸馏必须逐篇读素材** — 一次全读会幻觉，逐篇提取+标注source_ref
-- **蒸馏后检查domains覆盖** — 防止丢失
+- **Sci-Hub 下载间隔15秒**，禁止高频请求
+- **任何外部API 间隔至少5-10秒**
+- **蒸馏必须逐篇读素材** — 不能一次全读，需10-30分钟/人
 - **GLM调用走sessions_spawn** — 直接调API会被限流
 - **质量评分只用LLM** — 禁止规则评分脚本
-- **蒸馏红线：必须逐篇读素材，不能一次全读** — 每篇读完提取insights+标注source_ref，再读下一篇。一人10-60篇素材，需10-30分钟/人。不能设2分钟cron批量跑
-- **执行任务前必须先读SKILL.md** — 不读就动手=瞎搞，红线写再多不看等于没有
 
 ## 关键经验
+- **素材采集必须包含著作原文** — 通用搜索找书名 → Sci-Hub/开放资源下载PDF → PyMuPDF提文本 → materials/book_书名.txt
+- **搜索只用人物名字** — 不要带领域词（如"geopolitics"），会导致搜不到
+- **同名误匹配** — 论文搜索时同名不同人会被误收录（如化学领域的Ledoux vs 神经科学家LeDoux）
 - 素材>60000字符需截断再蒸馏
 - 中文冒号导致JSON parse失败
-- Sci-Hub镜像优先级：.in > .st > .ru > .se
+- Sci-Hub镜像：只保留 .ru 和 .in（.se已挂，.st会403）
 - 著作采集：优先全文PDF，没有就找高质量书评/摘要
-- **蒸馏输出文件名是 `personality_v3.json`，不是 `distillate.json`** — 旧版的 distillate.json 是空壳已清理
+- **蒸馏输出文件名是 `personality_v3.json`**，不是 distillate.json
 - 代码任务交给Claude Code，不手写
-- 先读已有skill再写脚本，避免重复造轮子
-- **大量论文素材只有元数据（标题/DOI）没有正文** — 采集时论文只抓了索引没下载全文，导致蒸馏结果空洞。需要补下载全文或用academic-research-hub重新采集
-- **同名误匹配** — 论文搜索时同名不同人会被误收录（如化学/光学领域的Ledoux vs 神经科学家LeDoux）
+- **data_search.py 是统一入口**，不要在外面重写脚本，直接import或CLI调用
+- **API Key需export环境变量**，否则 `_get_working_key` 返回None，付费搜索全部跳过
+- **data_search.py person 命令输出格式**：结果保存为 `_search_results_姓名.json`（汇总JSON，含general/chinese/academic各层结果），不自动拆txt。蒸馏时直接读JSON即可。
 
 ## 本地服务
 - **STT**: http://127.0.0.1:9977 (faster-whisper, conda stt)
@@ -87,15 +117,10 @@
 - **Python**: miniconda3 (base=3.13, tt=3.13+chromadb)
 - **Chromium**: /snap/bin/chromium
 
-## 技能体系
-核心：self-improving-agent, colleague-skill, agent-knowledge, knowledge-capture, agent-council, agent-autopilot, adaptive-reasoning
-采集：playwright-scraper, extract-pdf-text, data-search
-工具：github-cli, api-gateway, summarize-pro, docker-essentials, task-status
-专业：think-tank, stock-query, policy-monitor, hotspot-monitor, zhihu-crawler, web-scraper-jina
-
 ## 已废弃（不要再提）
 旧脚本（distill_v2, scholar_download, collect_v2, batch_game_theory_collect等）全部统一到 data_search.py
 materials集合→evidence集合 | designers体系已删 | 联参已独立 | 本地调智谱API→sessions_spawn
+academic-research-hub skill 已删除，功能在 data_search.py 里
 
 ## 已生成报告
 - 亚洲热点研判 v1/v3（2026-04-20）

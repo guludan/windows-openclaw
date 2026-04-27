@@ -54,3 +54,65 @@ Corrections, insights, and knowledge gaps captured during development.
 5. **MEMORY.md红线里写了「用skill前先读SKILL.md」，这是铁律**
 
 **教训**: 文档和红线不是摆设，每次执行前必须读。不听话就别干活。
+
+## 2026-04-26: 不读SKILL.md就开干（严重）
+
+**教训**：采集17个新学者素材时，完全没读 data-search/SKILL.md 和 academic-research-hub/SKILL.md，直接手写bash脚本用Exa API裸搜。
+
+**正确做法**：
+1. `data_search.py person <name>` — 自动多源搜索（通用+中文+学术），去重+质量评分
+2. `search_academic` — arXiv + Semantic Scholar 论文搜索
+3. `academic-research-hub/research.py` — 下载论文PDF、提取引用
+4. `bilibili_transcribe.py` — B站视频转录
+
+**后果**：
+- 17人只有Exa网页搜索结果，没有论文
+- 浪费API调用，绕过了已有的去重/质量评分机制
+- 违反了MEMORY.md红线："执行任务前必须先读SKILL.md"
+
+**根因**：赶进度心切，跳过了读文档的步骤
+
+### 2026-04-26: 不读文档就动手，反复重写已有脚本
+
+**Category**: correction
+**Severity**: critical
+**Context**: 黄老板让补全论文素材，我没有读 data_search.py 的SKILL.md，不知道里面已经有完整的 SS搜索DOI → Sci-Hub下载PDF → 全文提取 管线。自己重写了一个 fetch_abstracts.py 只补摘要不下载全文。被纠正后又要删 Semantic Scholar，破坏了完整链路。
+
+**What went wrong**:
+1. 没读SKILL.md就动手
+2. 不理解管线架构：SS搜索DOI是上游，Sci-Hub下载是下游，是一条完整链路
+3. 凭记忆瞎搞，每次都重写脚本
+
+**Correction**:
+- 执行任何任务前，先查 MEMORY.md 的模块索引表
+- 有现成模块就用，禁止重写
+- data_search.py 是统一入口：search_academic() 搜论文 → download_scihub_pdf(doi) 下载全文
+- SS搜索和Sci-Hub下载是同一条管线，不要拆开
+
+**Prevention**:
+- MEMORY.md 已建立模块索引表（任务→脚本→函数映射）
+- 红线新增：禁止重写已有脚本
+---
+
+### 2026-04-27: data_search.py Tavily字段名bug + Sci-Hub空PDF + 环境变量缺失
+
+**Category**: correction
+**Severity**: high
+**Context**: 素材采集全部返回空结果，花了大量时间排查。
+
+**What went wrong**:
+1. Tavily API返回字段是 `results`，代码写的是 `articles`，永远返回空
+2. Sci-Hub下载PDF时没检查文件大小，写了0字节文件，fitz打开崩溃
+3. API key没设置环境变量，`_get_working_key` 返回None，所有付费搜索跳过
+4. name_map.json 没有新人条目，person搜索直接报错跳过
+
+**Fix**:
+- `get("articles")` → `get("results")`
+- Sci-Hub下载加了 `len > 1000` 和 `%PDF` magic bytes 检查
+- 脚本里 export 环境变量（EXA/TAVILY/SERPAPI）
+- 新人注册到 name_map.json
+
+**Prevention**:
+- 改完API对接代码必须实际测试返回结果
+- 环境变量要在脚本启动前设置
+- 新人物采集前先注册 name_map

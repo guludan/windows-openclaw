@@ -22,6 +22,7 @@ import re
 import sys
 import os
 import json
+import sqlite3
 import shutil
 from pathlib import Path
 from collections import Counter
@@ -119,16 +120,30 @@ def clean_text(text: str) -> str:
 
 
 def preprocess_person(person_dir: Path, dry_run: bool = False) -> dict:
-    """预处理单人物的所有素材"""
+    """预处理单人物的所有素材（从 materials/raw/ 读取）"""
     mat_dir = person_dir / "materials"
-    if not mat_dir.exists():
+    raw_dir = mat_dir / "raw"
+    if not raw_dir.exists():
+        raw_dir = mat_dir
+    if not raw_dir.exists():
         return {"deleted": 0, "cleaned": 0, "errors": []}
 
     stats = {"deleted": 0, "cleaned": 0, "errors": []}
     total_savings = 0
 
-    for f in sorted(mat_dir.glob("*")):
-        if f.name.startswith('_'):  # 跳过 meta 文件
+    # Open DB if exists
+    db_path = person_dir / "_db.sqlite"
+    db_conn = None
+    try:
+        if db_path.exists():
+            db_conn = sqlite3.connect(str(db_path))
+    except Exception:
+        db_conn = None
+
+    deleted_files = []
+
+    for f in sorted(raw_dir.glob("*")):
+        if f.name.startswith('_'):
             continue
         if not f.is_file():
             continue
@@ -141,30 +156,50 @@ def preprocess_person(person_dir: Path, dry_run: bool = False) -> dict:
 
         # 1. 极小文件删除
         if len(content) < 200:
+            reason = f"too small ({len(content)}B)"
             if not dry_run:
                 f.unlink()
+                deleted_files.append((f.name, reason))
             stats["deleted"] += 1
-            stats["errors"].append(f"{f.name}: too small ({len(content)}B), deleted")
+            stats["errors"].append(f"{f.name}: {reason}, deleted")
             continue
 
         # 2. 纯错误/404页面删除
         if is_error_page(content):
+            reason = "error/404 page"
             if not dry_run:
                 f.unlink()
+                deleted_files.append((f.name, reason))
             stats["deleted"] += 1
-            stats["errors"].append(f"{f.name}: error/404 page, deleted")
+            stats["errors"].append(f"{f.name}: {reason}, deleted")
             continue
 
         # 3. 清理噪音
         cleaned = clean_text(content)
         savings = len(content) - len(cleaned)
 
-        if savings > 100:  # 只在节省超过100B时重写
+        if savings > 100:
             if not dry_run:
                 f.write_text(cleaned, encoding='utf-8')
             stats["cleaned"] += 1
             total_savings += savings
             stats["errors"].append(f"{f.name}: {len(content)}B → {len(cleaned)}B (-{savings}B)")
+
+    # Update DB for deleted files
+    if db_conn and deleted_files and not dry_run:
+        try:
+            for fname, reason in deleted_files:
+                db_conn.execute(
+                    "UPDATE items SET status='discarded', discard_reason=? WHERE filename=?",
+                    (reason, fname)
+                )
+            db_conn.commit()
+        except Exception:
+            pass
+        finally:
+            db_conn.close()
+    elif db_conn:
+        db_conn.close()
 
     if total_savings > 0:
         print(f"  Total cleaned: {total_savings:,}B", flush=True)
@@ -186,12 +221,15 @@ def jaccard_similarity(text_a: str, text_b: str) -> float:
 def dedup_person(person_dir: Path, dry_run: bool = False) -> dict:
     """相似度去重：>0.85的保留较长的，其余移到_duplicates/"""
     mat_dir = person_dir / "materials"
-    if not mat_dir.exists():
+    raw_dir = mat_dir / "raw"
+    if not raw_dir.exists():
+        raw_dir = mat_dir
+    if not raw_dir.exists():
         return {"duplicates": 0, "errors": []}
 
     stats = {"duplicates": 0, "errors": []}
     files = sorted(
-        [f for f in mat_dir.glob("*") if f.is_file() and not f.name.startswith('_')],
+        [f for f in raw_dir.glob("*") if f.is_file() and not f.name.startswith('_')],
         key=lambda f: f.stat().st_size, reverse=True
     )
 
@@ -207,6 +245,8 @@ def dedup_person(person_dir: Path, dry_run: bool = False) -> dict:
             contents[f] = ""
 
     dup_dir = mat_dir / "_duplicates"
+    db_path = person_dir / "_db.sqlite"
+    conn = sqlite3.connect(str(db_path)) if db_path.exists() else None
     removed = set()
 
     for i, fa in enumerate(files):
@@ -225,7 +265,12 @@ def dedup_person(person_dir: Path, dry_run: bool = False) -> dict:
                 if not dry_run:
                     dup_dir.mkdir(parents=True, exist_ok=True)
                     shutil.move(str(victim), str(dup_dir / victim.name))
+                    if conn:
+                        conn.execute("UPDATE items SET status='discarded', discard_reason='duplicate' WHERE filename=?", (victim.name,))
 
+    if conn:
+        conn.commit()
+        conn.close()
     return stats
 
 
@@ -274,13 +319,27 @@ def effective_text_ratio(text: str) -> float:
 def low_quality_check(person_dir: Path, dry_run: bool = False) -> dict:
     """低质量检测：文本比例低或索引页移到_low_quality/"""
     mat_dir = person_dir / "materials"
-    if not mat_dir.exists():
+    raw_dir = mat_dir / "raw"
+    if not raw_dir.exists():
+        raw_dir = mat_dir
+    if not raw_dir.exists():
         return {"low_quality": 0, "errors": []}
 
     stats = {"low_quality": 0, "errors": []}
     lq_dir = mat_dir / "_low_quality"
 
-    for f in sorted(mat_dir.glob("*")):
+    # Open DB if exists
+    db_path = person_dir / "_db.sqlite"
+    db_conn = None
+    try:
+        if db_path.exists():
+            db_conn = sqlite3.connect(str(db_path))
+    except Exception:
+        db_conn = None
+
+    moved_files = []
+
+    for f in sorted(raw_dir.glob("*")):
         if not f.is_file() or f.name.startswith('_'):
             continue
         try:
@@ -300,6 +359,23 @@ def low_quality_check(person_dir: Path, dry_run: bool = False) -> dict:
             if not dry_run:
                 lq_dir.mkdir(parents=True, exist_ok=True)
                 shutil.move(str(f), str(lq_dir / f.name))
+                moved_files.append((f.name, reason))
+
+    # Update DB for moved files
+    if db_conn and moved_files and not dry_run:
+        try:
+            for fname, reason in moved_files:
+                db_conn.execute(
+                    "UPDATE items SET status='discarded', discard_reason=? WHERE filename=?",
+                    (reason, fname)
+                )
+            db_conn.commit()
+        except Exception:
+            pass
+        finally:
+            db_conn.close()
+    elif db_conn:
+        db_conn.close()
 
     return stats
 
@@ -329,11 +405,14 @@ def detect_source_type(filename: str) -> str:
 def generate_quality_report(person_dir: Path, dry_run: bool = False) -> dict:
     """生成质量评估报告JSON"""
     mat_dir = person_dir / "materials"
-    if not mat_dir.exists():
+    raw_dir = mat_dir / "raw"
+    if not raw_dir.exists():
+        raw_dir = mat_dir
+    if not raw_dir.exists():
         return {"report_entries": 0, "errors": []}
 
     report = []
-    for f in sorted(mat_dir.glob("*")):
+    for f in sorted(raw_dir.glob("*")):
         if not f.is_file() or f.name.startswith('_'):
             continue
         try:
