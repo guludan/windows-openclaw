@@ -51,11 +51,12 @@
 
 ```
 Phase 1: 素材采集
-  ├─ data_search.py person "姓名" → 通用+中文+学术搜索 → materials/
+  ├─ data_search.py person "姓名" → 通用+中文+学术搜索 → materials/_search_results_姓名.json
   ├─ data_search.py academic "姓名" → SS搜论文拿DOI → papers/raw/
   ├─ download_scihub_pdf(doi) → Sci-Hub下载PDF → PyMuPDF提文本
+  ├─ download_book(title, output_dir, proxies) → libgen.com.im → archive.org → book_书名.txt
   ├─ bilibili_transcribe.py → B站视频转文本 → materials/
-  └─ 著作: 通用搜索找书名 → Sci-Hub下载PDF → materials/book_书名.txt
+  └─ 著作: 通用搜索找书名 → download_book() → materials/book_书名.txt
 
 Phase 2: 蒸馏
   ├─ _batch_distill.py --per-file → 逐篇LLM提取 → _per_file_results/
@@ -98,7 +99,9 @@ Phase 4: 报告
 - **质量评分只用LLM** — 禁止规则评分脚本
 
 ## 关键经验
-- **素材采集必须包含著作原文** — 通用搜索找书名 → Sci-Hub/开放资源下载PDF → PyMuPDF提文本 → materials/book_书名.txt
+- **素材采集必须包含著作原文** — `download_book(title, dir, proxies=...)` → libgen.com.im/archive.org → 自动PDF转txt → materials/book_书名.txt
+- **著作下载需代理** — `proxies={'https':'http://172.26.0.1:10808'}`
+- **著作下载回退链** — libgen.com.im(优先) → archive.org(回退)
 - **搜索只用人物名字** — 不要带领域词（如"geopolitics"），会导致搜不到
 - **同名误匹配** — 论文搜索时同名不同人会被误收录（如化学领域的Ledoux vs 神经科学家LeDoux）
 - 素材>60000字符需截断再蒸馏
