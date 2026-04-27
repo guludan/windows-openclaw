@@ -36,7 +36,7 @@
 | 学术论文搜索（arXiv/SS/PubMed） | 同上 | `search_academic()`, `_search_semantic_scholar()`, `_search_arxiv()` | 同上 |
 | 论文全文下载（Sci-Hub） | 同上 | `download_scihub_pdf(doi, output_dir)`, `download_papers()` | 同上 |
 | 著作下载（libgen.com.im→archive.org） | 同上 | `download_book(title, output_dir, isbn, proxies)` | 同上 |
-| 素材质检（蒸馏前） | 同上 | `check_materials_quality(person_dir, person_name)` | 同上 |
+| 素材质检（LLM，蒸馏前） | `skills/think-tank/scripts/quality_check_llm.py` + `_preprocess.py` | `--quality`生成报告→生成prompt→GLM评分→`--apply`清理 | skills/think-tank/SKILL.md |
 | DOI搜索→全文下载完整链路 | 同上 | SS搜索拿DOI → `download_scihub_pdf(doi)` → PyMuPDF提文本 | 同上 |
 | B站视频采集+转录 | `skills/data-search/scripts/bilibili_transcribe.py` | `search --keyword`, `download --bv` | 同上 |
 | 人物素材采集 | `skills/data-search/scripts/data_search.py` | CLI: `person "姓名"` | 同上 |
@@ -60,7 +60,8 @@ Phase 1: 素材采集
   └─ 著作: 通用搜索找书名 → download_book() → materials/book_书名.txt
 
 Phase 2: 质检
-  └─ check_materials_quality(person_dir, person_name) → 检测空文件/无正文/同名误匹配
+  ├─ _preprocess.py --quality → _quality_report.json
+  └─ quality_check_llm.py → 生成prompt → GLM评分 → --apply 清理低分素材
 
 Phase 3: 蒸馏
   ├─ _batch_distill.py --per-file → 逐篇LLM提取 → _per_file_results/
