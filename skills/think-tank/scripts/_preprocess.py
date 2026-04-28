@@ -429,13 +429,13 @@ def generate_quality_report(person_dir: Path, dry_run: bool = False) -> dict:
         # 按文件大小分级生成预览
         if chars < 2000:
             # 小文件：全文
-            preview = content[:1000].replace('\n', ' ').strip()
+            preview = content[:5000].replace('\n', ' ').strip()
         elif chars < 50000:
-            # 中等文件：前1000字符
-            preview = content[:1000].replace('\n', ' ').strip()
+            # 中等文件：前5000字符
+            preview = content[:5000].replace('\n', ' ').strip()
         else:
             # 大文件（书籍）：智能采样 — 目录+前言+首章开头
-            preview = _sample_book_preview(content)
+            preview = _sample_book_preview(content, max_chars=10000)
 
         report.append({
             "filename": f.name,
@@ -453,7 +453,7 @@ def generate_quality_report(person_dir: Path, dry_run: bool = False) -> dict:
     return {"report_entries": len(report), "errors": []}
 
 
-def _sample_book_preview(content: str, max_chars: int = 2000) -> str:
+def _sample_book_preview(content: str, max_chars: int = 10000) -> str:
     """书籍智能采样：提取目录+前言+首章开头，控制在max_chars内"""
     lines = content.split('\n')
     

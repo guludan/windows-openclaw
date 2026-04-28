@@ -73,7 +73,7 @@ def migrate_person(person_dir: Path, dry_run: bool = False) -> dict:
 
     # --- Step 1: Move paper_*.txt from materials/ to papers/raw/ ---
     if mat_dir.exists():
-        paper_files = [f for f in mat_dir.glob("paper_*.txt") if f.is_file()]
+        paper_files = [f for f in mat_dir.glob("paper_*.[tm][xd]t") if f.is_file()]
         if paper_files:
             papers_raw = papers_dir / "raw"
             do_mkdir(papers_raw)
@@ -91,7 +91,7 @@ def migrate_person(person_dir: Path, dry_run: bool = False) -> dict:
     if mat_dir.exists():
         raw_dir = mat_dir / "raw"
         txt_files = [f for f in mat_dir.iterdir()
-                     if f.is_file() and f.suffix == '.txt' and not f.name.startswith('_')
+                     if f.is_file() and f.suffix in ('.txt', '.md') and not f.name.startswith('_')
                      and f.name not in moved_files]
         if txt_files:
             do_mkdir(raw_dir)
@@ -101,7 +101,7 @@ def migrate_person(person_dir: Path, dry_run: bool = False) -> dict:
     # --- Step 4: Move papers/texts/*.txt → papers/raw/ ---
     texts_dir = papers_dir / "texts"
     if texts_dir.exists():
-        txt_files = list(texts_dir.glob("*.txt"))
+        txt_files = list(texts_dir.glob("*.[tm][xd]t"))
         if txt_files:
             papers_raw = papers_dir / "raw"
             do_mkdir(papers_raw)

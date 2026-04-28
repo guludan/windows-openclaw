@@ -11,7 +11,7 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ## 唯一工作流
 
 ```
-素材采集 → 预处理(_preprocess.py) → 下载全文(batch_game_theory_collect.py) → 预处理(_preprocess.py) → chunk入库(ingest_v3.py) → V3蒸馏(sessions_spawn) → 结构化入库(ingest_v3.py)
+素材采集 → init_db.py → 预处理(_preprocess.py --quality) → LLM质量评分(quality_check_llm.py) → V3蒸馏(sessions_spawn逐篇) → 合并(--merge-per-file) → regenerate_personality.py → 入库(ingest_v3.py)
 ```
 
 ⚠️ **预处理必须做，不能跳过。**
@@ -38,6 +38,10 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 ⚠️ **采集必须用data_search模块（skills/data-search/scripts/data_search.py）**，不要自己重写搜索脚本。data_search已有L1通用搜索(Exa/SerpAPI/Tavily)+L2中文深度(知乎/搜狗/财联社)+L3学术(Semantic Scholar)+L4宏观数据。中英文必须分开搜。采集脚本import data_search的函数，不要重复造轮子。
 
+⚠️ **搜索关键词用全名+领域词**：常见名（Chris Miller、Nate Silver、Juan Zarate等）搜索时必须加领域关键词（如 "semiconductor"、"forecasting"、"terrorist financing"），否则搜出来全是同名不同人。
+
+⚠️ **libgen著作下载必须验证内容**：libgen搜索只按标题匹配不带作者，同名书很多。下载后必须检查内容是否为正确作者的著作。已验证的错误案例：Flashpoints(Friedman)、Next 100 Years(Friedman)、J Curve(Bremmer)、Crisis Economics(Roubini)、Disunited Nations(Zeihan)、Active Measures(Rid)、Treasury War(Zarate)——下载到的全是无关论文或其他作者的书。
+
 **网页：**
 - 优先级：`web_fetch` → `web-scraper-jina` → `playwright-scraper`
 - 跳过 <500B 文件
@@ -49,7 +53,19 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 - Exa/Tavily等API每次请求间隔**5-10秒**
 - 违反会封IP，后果严重
 
-### Step 2: 预处理 + 质量检测（必须两步都做，不能只跑预处理）
+### Step 2a: 素材注册（init_db）
+
+```bash
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/init_db.py <person_dir> [--reset]
+```
+
+- 扫描 `materials/`（根目录+raw子目录）和 `papers/`（raw子目录+pdfs）
+- 注册素材元数据到 `_db.sqlite`（文件名、大小、字数、状态等）
+- `--reset` 删除旧库重建；不加则只注册新文件
+- 排除 `_` 开头文件和 `_discarded/` 目录
+- ⚠️ **init_db是质量评分和蒸馏的前提**，未注册的素材不会被处理
+
+### Step 2b: 预处理 + 质量检测（必须两步都做，不能只跑预处理）
 
 ```bash
 # Step 2a: 预处理 + 机械去重 + 低质量过滤 + 生成报告

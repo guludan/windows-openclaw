@@ -4,6 +4,21 @@
 
 ---
 
+## 2026-04-28: 搜索用全名+领域关键词，避免同名误匹配
+- "Chris Miller" → 搜出数论教授和动画导演，全名是 Christopher M. Miller
+- "Nate Silver" → 搜出生物医学信号处理论文
+- "Juan Zarate" → Treasury War下载到内战论文
+- **规则**: 短名/常见名搜索时，加领域关键词（如 "semiconductor", "forecasting", "geopolitics"）
+- **name_map应存全名**: en字段用全名（Christopher Miller而非Chris Miller）
+
+## 2026-04-28: libgen著作下载误匹配严重
+- 7本著作下载到错误内容（同名论文/其他作者的书）
+- 根因: libgen搜索只按标题匹配，不带作者，同名书很多
+- **验证**: 下载后必须检查内容是否为正确作者的书，不能只看标题匹配
+- 已确认错误的: Flashpoints(Friedman), Next 100 Years(Friedman), J Curve(Bremmer), Crisis Economics(Roubini), Disunited Nations(Zeihan), Active Measures(Rid), Treasury War(Zarate)
+
+---
+
 ## 2026-04-21: chromadb 绝对不能并发
 - chromadb 不支持多进程并发写入，WSL 9p 文件系统下尤其严重
 - 并发写 → segfault / 数据库损坏 / SQLite 锁死

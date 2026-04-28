@@ -116,3 +116,19 @@ Corrections, insights, and knowledge gaps captured during development.
 - 改完API对接代码必须实际测试返回结果
 - 环境变量要在脚本启动前设置
 - 新人物采集前先注册 name_map
+
+### 2026-04-27: download_book搜索只传书名不传作者名
+
+**问题**: `download_book('Chip War Chris Miller', dir)` 返回None，搜索0结果
+**根因**: libgen.com.im搜索接口，参数包含作者名时返回0结果，只搜书名才能匹配
+**修复**: title参数只传书名部分，不要包含作者名
+  - 正确: `download_book('Chip War', dir, proxies=proxies)`
+  - 错误: `download_book('Chip War Chris Miller', dir, proxies=proxies)`
+**已更新**: data_search.py 的 download_book 函数注释和参数说明
+
+### 2026-04-27: 著作下载不要并发，代理带宽有限
+
+**问题**: 多个子session同时下载大PDF导致代理超时/SIGKILL
+**根因**: V2RayN代理带宽有限，并发下载大文件（50-200MB PDF）会互相挤占带宽
+**规则**: 逐个下载，每次间隔10秒+，不要多个子session同时跑download_book
+**已修复**: download_book 的 timeout 从60秒改为120秒

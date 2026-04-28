@@ -19,7 +19,7 @@ def get_coverage(pv3_path):
     """计算覆盖率"""
     pdir = pv3_path.parent
     mat_dir = pdir / "materials"
-    all_files = set(f.name for f in mat_dir.glob("*.txt") if not f.name.startswith("_"))
+    all_files = set(f.name for f in mat_dir.glob("*.[tm][xd]t") if not f.name.startswith("_"))
     if not all_files:
         return 100, 0, 0
     

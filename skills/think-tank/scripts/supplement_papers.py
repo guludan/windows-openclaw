@@ -53,7 +53,7 @@ def get_supplement_list():
         person_dir = mat_dir.parent
         
         meta_only_files = []
-        for f in mat_dir.glob("paper_*.txt"):
+        for f in sorted(list(mat_dir.glob("paper_*.txt")) + list(mat_dir.glob("paper_*.md"))):
             if is_meta_only(f):
                 doi = extract_doi(f)
                 title = extract_title(f)
@@ -97,7 +97,7 @@ if __name__ == "__main__":
         
         from data_search import download_scihub_pdf
         
-        meta_files = [f for f in mat_dir.glob("paper_*.txt") if is_meta_only(f)]
+        meta_files = [f for f in sorted(list(mat_dir.glob("paper_*.txt")) + list(mat_dir.glob("paper_*.md"))) if is_meta_only(f)]
         print(f"{person_dir.name}: {len(meta_files)} 篇需要补下载")
         
         success = 0

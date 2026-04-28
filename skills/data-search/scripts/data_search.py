@@ -1562,17 +1562,30 @@ def download_book(title: str, output_dir: str, isbn: Optional[str] = None,
                   proxies: Optional[Dict[str, str]] = None) -> Optional[str]:
     """Download book and extract text from Library Genesis or Internet Archive.
     
-    Fallback chain: libgen.com.im → archive.org → None
-    Downloads PDF then extracts text via PyMuPDF, saves as .txt
+    ⚠️ 重要注意事项（必读）:
+    
+    1. **每次只下载1本！** 不要批量循环调用。代理带宽有限（~1-2MB/s），
+       大PDF（10-200MB）容易断流，并发会互相挤占带宽全部失败。
+       调用完一本后等20秒再调下一本。
+    
+    2. **title只传书名，不要包含作者名！** 所有libgen源搜索时包含作者名都会返回0结果。
+       ✅ download_book('Chip War', dir, proxies=proxies)
+       ❌ download_book('Chip War Chris Miller', dir, proxies=proxies)
+    
+    3. **PDF下载后保留原文件**到 output_dir/books/ 目录，txt中记录pdf路径。
+    
+    4. **仅支持PDF格式**（PyMuPDF）。EPUB/MOBI暂不支持。
+    
+    Fallback chain: libgen.li → libgen.com.im → archive.org → None
     
     Args:
-        title: Book title to search
-        output_dir: Directory to save .txt
+        title: Book title to search（只传书名！）
+        output_dir: Directory to save .md and books/ subdirectory
         isbn: Optional ISBN for more precise search
         proxies: Optional proxy dict, e.g. {"https": "http://172.26.0.1:10808"}
     
     Returns:
-        Path to extracted .txt if successful, None otherwise
+        Path to extracted .md if successful, None otherwise
     """
     try:
         import fitz
@@ -1583,18 +1596,81 @@ def download_book(title: str, output_dir: str, isbn: Optional[str] = None,
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
     safe_title = re.sub(r'[^\w\s.-]', '_', title)[:60]
-    txt_path = output_path / f"book_{safe_title}.txt"
+    md_path = output_path / f"book_{safe_title}.md"
     
-    if txt_path.exists() and txt_path.stat().st_size > 5000:
-        print(f"Book already exists: {txt_path.name}", file=sys.stderr)
-        return str(txt_path)
+    if md_path.exists() and md_path.stat().st_size > 5000:
+        print(f"Book already exists: {md_path.name}", file=sys.stderr)
+        return str(md_path)
     
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
     
-    # --- libgen.com.im ---
+    # --- libgen.li (primary, larger catalog, needs proxy) ---
+    try:
+        search_url = "https://libgen.li/index.php"
+        params = {"req": isbn if isbn else title, "ext": "pdf"}
+        
+        resp = requests.get(search_url, params=params, headers=headers, timeout=15, proxies=proxies)
+        resp.raise_for_status()
+        
+        # Extract md5s from search results
+        md5s = re.findall(r'md5=([a-f0-9]{32})', resp.text)
+        for md5 in md5s[:5]:  # try top 5 results
+            try:
+                # Visit ads page to get get.php link with key
+                ads_url = f"https://libgen.li/ads.php?md5={md5}"
+                ads_resp = requests.get(ads_url, headers=headers, timeout=15, proxies=proxies)
+                
+                # Extract get.php link
+                get_match = re.search(r'href="(get\.php\?md5=[a-f0-9]+&key=[^"]+)"', ads_resp.text)
+                if not get_match:
+                    continue
+                
+                dl_url = f"https://libgen.li/{get_match.group(1)}"
+                dl_resp = requests.get(dl_url, headers=headers, timeout=120, proxies=proxies)
+                
+                if dl_resp.status_code != 200 or len(dl_resp.content) < 50000:
+                    continue
+                
+                # Check if PDF (PyMuPDF can handle PDF)
+                if not (b'%PDF' in dl_resp.content[:5]):
+                    continue
+                
+                # Save temp, extract text
+                tmp_pdf = output_path / f"_tmp_{md5}.pdf"
+                with open(tmp_pdf, 'wb') as f:
+                    f.write(dl_resp.content)
+                
+                doc = fitz.open(str(tmp_pdf))
+                text = "\n".join(page.get_text() for page in doc)
+                doc.close()
+                
+                if len(text.strip()) > 1000:
+                    # 保留PDF原文件
+                    books_dir = output_path.parent / "books"
+                    books_dir.mkdir(parents=True, exist_ok=True)
+                    pdf_name = f"book_{safe_title}.pdf"
+                    import shutil
+                    shutil.move(str(tmp_pdf), str(books_dir / pdf_name))
+                    
+                    with open(md_path, 'w', encoding='utf-8') as f:
+                        f.write(f"---\ntitle: {title}\nsource: libgen.li\ndate_added: {time.strftime('%Y-%m-%d')}\npdf: books/{pdf_name}\n---\n\n{text}")
+                    print(f"Downloaded book: {md_path.name} ({len(text)} chars)", file=sys.stderr)
+                    return str(md_path)
+                else:
+                    tmp_pdf.unlink()
+            except Exception as e:
+                print(f"  libgen.li md5 {md5[:8]}... failed: {e}", file=sys.stderr)
+                continue
+    except Exception as e:
+        print(f"libgen.li failed: {e}", file=sys.stderr)
+
+    # --- libgen.com.im (fallback) ---
     try:
         search_url = "https://libgen.com.im/search.php"
-        params = {"q": isbn if isbn else title}
+        # ⚠️ libgen.com.im搜索只支持书名，包含作者名会返回0结果
+        # 所以只取title的前几个词（书名部分），不包含作者名
+        search_term = isbn if isbn else title
+        params = {"q": search_term}
         
         resp = requests.get(search_url, params=params, headers=headers, timeout=15, proxies=proxies)
         resp.raise_for_status()
@@ -1604,7 +1680,7 @@ def download_book(title: str, output_dir: str, isbn: Optional[str] = None,
         for md5 in md5s[:3]:  # try top 3 results
             try:
                 dl_url = f"https://libgen.com.im/download.php?md5={md5}"
-                dl_resp = requests.get(dl_url, headers=headers, timeout=60,
+                dl_resp = requests.get(dl_url, headers=headers, timeout=120,
                                         allow_redirects=True, proxies=proxies)
                 if dl_resp.status_code != 200 or len(dl_resp.content) < 50000:
                     continue
@@ -1617,13 +1693,20 @@ def download_book(title: str, output_dir: str, isbn: Optional[str] = None,
                 doc = fitz.open(str(tmp_pdf))
                 text = "\n".join(page.get_text() for page in doc)
                 doc.close()
-                tmp_pdf.unlink()
                 
                 if len(text.strip()) > 1000:
-                    with open(txt_path, 'w', encoding='utf-8') as f:
-                        f.write(f"title: {title}\nsource: libgen\ndate_added: {time.strftime('%Y-%m-%d')}\n\n{text}")
-                    print(f"Downloaded book: {txt_path.name} ({len(text)} chars)", file=sys.stderr)
-                    return str(txt_path)
+                    books_dir = output_path.parent / "books"
+                    books_dir.mkdir(parents=True, exist_ok=True)
+                    pdf_name = f"book_{safe_title}.pdf"
+                    import shutil
+                    shutil.move(str(tmp_pdf), str(books_dir / pdf_name))
+                    
+                    with open(md_path, 'w', encoding='utf-8') as f:
+                        f.write(f"---\ntitle: {title}\nsource: libgen.com.im\ndate_added: {time.strftime('%Y-%m-%d')}\npdf: books/{pdf_name}\n---\n\n{text}")
+                    print(f"Downloaded book: {md_path.name} ({len(text)} chars)", file=sys.stderr)
+                    return str(md_path)
+                else:
+                    tmp_pdf.unlink()
             except Exception as e:
                 print(f"  md5 {md5[:8]}... failed: {e}", file=sys.stderr)
                 continue
@@ -1660,13 +1743,20 @@ def download_book(title: str, output_dir: str, isbn: Optional[str] = None,
             doc = fitz.open(str(tmp_pdf))
             text = "\n".join(page.get_text() for page in doc)
             doc.close()
-            tmp_pdf.unlink()
             
             if len(text.strip()) > 1000:
-                with open(txt_path, 'w', encoding='utf-8') as f:
-                    f.write(f"title: {title}\nsource: archive.org\ndate_added: {time.strftime('%Y-%m-%d')}\n\n{text}")
-                print(f"Downloaded book from archive.org: {txt_path.name}", file=sys.stderr)
-                return str(txt_path)
+                books_dir = output_path.parent / "books"
+                books_dir.mkdir(parents=True, exist_ok=True)
+                pdf_name = f"book_{safe_title}.pdf"
+                import shutil
+                shutil.move(str(tmp_pdf), str(books_dir / pdf_name))
+                
+                with open(md_path, 'w', encoding='utf-8') as f:
+                    f.write(f"---\ntitle: {title}\nsource: archive.org\ndate_added: {time.strftime('%Y-%m-%d')}\npdf: books/{pdf_name}\n---\n\n{text}")
+                print(f"Downloaded book from archive.org: {md_path.name}", file=sys.stderr)
+                return str(md_path)
+            else:
+                tmp_pdf.unlink()
     except Exception as e:
         print(f"archive.org failed: {e}", file=sys.stderr)
     
@@ -1891,6 +1981,7 @@ def check_materials_quality(person_dir: str, person_name: str,
     for pattern_dir in ["materials", "papers/raw"]:
         d = person_path / pattern_dir
         if d.exists():
+            files.extend(glob.glob(str(d / "**/*.md"), recursive=True))
             files.extend(glob.glob(str(d / "**/*.txt"), recursive=True))
             files.extend(glob.glob(str(d / "**/*.json"), recursive=True))
     

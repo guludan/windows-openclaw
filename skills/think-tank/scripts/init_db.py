@@ -125,7 +125,31 @@ def init_person_db(person_dir: Path, reset: bool = False) -> dict:
 
     now = datetime.now().isoformat()
 
-    # --- Register files from materials/raw/ ---
+    # --- Register files from materials/ (root) ---
+    mat_dir = person_dir / "materials"
+    if mat_dir.exists():
+        for f in sorted(mat_dir.iterdir()):
+            if not f.is_file() or f.name.startswith('_'):
+                continue
+            if f.suffix.lower() not in ('.md', '.txt', '.json'):
+                continue
+            try:
+                content = f.read_text(encoding='utf-8', errors='ignore')
+                char_count = len(content)
+            except Exception:
+                char_count = 0
+            try:
+                conn.execute("""
+                    INSERT OR IGNORE INTO items (person, category, filename, source_type, status, file_path, file_size, char_count)
+                    VALUES (?, 'materials', ?, ?, 'raw', ?, ?, ?)
+                """, (person_name, f.name, detect_source_type(f.name),
+                      f"materials/{f.name}", f.stat().st_size, char_count))
+                if conn.total_changes:
+                    stats["items_added"] += 1
+            except Exception as e:
+                print(f"    ⚠ Error inserting {f.name}: {e}")
+
+    # --- Register files from materials/raw/ (legacy) ---
     mat_raw = person_dir / "materials" / "raw"
     if mat_raw.exists():
         for f in sorted(mat_raw.iterdir()):
@@ -175,10 +199,10 @@ def init_person_db(person_dir: Path, reset: bool = False) -> dict:
             conn.execute("""
                 UPDATE items SET has_pdf = 1 WHERE person = ? AND filename = ?
             """, (person_name, f.stem + ".txt"))
-            # Also try without .txt extension
+            # Also try .md extension
             conn.execute("""
                 UPDATE items SET has_pdf = 1 WHERE person = ? AND filename = ?
-            """, (person_name, f.name))
+            """, (person_name, f.stem + ".md"))
             stats["pdfs_registered"] += 1
 
     # --- Load papers/_meta.json for doi/year/title ---

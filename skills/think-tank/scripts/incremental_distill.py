@@ -96,13 +96,13 @@ def read_material_files(file_paths, person_dir):
 
 
 def get_all_material_files(person_dir):
-    """扫描 materials/raw/ 和 papers/raw/ 目录下所有 .txt 文件"""
+    """扫描 materials/raw/ 和 papers/raw/ 目录下所有 .txt 和 .md 文件"""
     files = []
     for subdir in ["materials/raw", "papers/raw"]:
         raw_dir = Path(person_dir) / subdir
         if raw_dir.exists():
             for file_path in sorted(raw_dir.iterdir()):
-                if file_path.is_file() and file_path.suffix == ".txt" and not file_path.name.startswith("_"):
+                if file_path.is_file() and file_path.suffix in ('.txt', '.md') and not file_path.name.startswith("_"):
                     files.append(file_path)
     return files
 

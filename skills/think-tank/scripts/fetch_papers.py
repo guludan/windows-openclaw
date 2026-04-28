@@ -193,24 +193,32 @@ def search_papers_arxiv(author_name: str, max_papers: int = 10) -> list:
     """使用 arXiv API 搜索论文"""
     try:
         import arxiv
-        client = arxiv.Client()
+        client = arxiv.Client(page_size=max_papers)
         search = arxiv.Search(
             query=f"au:{author_name}",
             max_results=max_papers,
             sort_by=arxiv.SortCriterion.SubmittedDate
         )
         output = []
-        for result in client.results(search):
-            output.append({
-                "title": result.title,
-                "year": result.published.year if result.published else None,
-                "doi": result.doi or '',
-                "paper_id": result.entry_id,
-                "abstract": result.summary or '',
-                "citation_count": 0,
-                "url": result.entry_id,
-                "open_access_pdf": result.pdf_url,
-            })
+        import signal
+        def _arxiv_timeout_handler(signum, frame):
+            raise TimeoutError("arXiv search timeout")
+        signal.signal(signal.SIGALRM, _arxiv_timeout_handler)
+        signal.alarm(30)
+        try:
+            for result in client.results(search):
+                output.append({
+                    "title": result.title,
+                    "year": result.published.year if result.published else None,
+                    "doi": result.doi or '',
+                    "paper_id": result.entry_id,
+                    "abstract": result.summary or '',
+                    "citation_count": 0,
+                    "url": result.entry_id,
+                    "open_access_pdf": result.pdf_url,
+                })
+        finally:
+            signal.alarm(0)
         return output
     except Exception as e:
         print(f"    arXiv搜索失败: {e}")
@@ -295,19 +303,9 @@ def process_person(person_dir: Path, max_papers: int = 10, offset: int = 0) -> d
     stats["searched"] += len(ss_papers)
     time.sleep(2)  # 速率限制
     
-    # arXiv (补充)
-    if len(all_papers) < max_papers:
-        print(f"  搜索 arXiv...")
-        arxiv_papers = search_papers_arxiv(name, max_papers=max_papers - len(all_papers))
-        # 去重（按标题）
-        existing_titles = {p['title'].lower() for p in all_papers}
-        for p in arxiv_papers:
-            if p['title'].lower() not in existing_titles:
-                all_papers.append(p)
-                existing_titles.add(p['title'].lower())
-        new_count = len([p for p in arxiv_papers if p['title'].lower() not in existing_titles])
-        print(f"    arXiv补充 {new_count} 篇")
-        stats["searched"] += len(arxiv_papers)
+    # arXiv (补充) - DISABLED: hangs for social science authors
+    # if len(all_papers) < max_papers:
+    #     print(f"  搜索 arXiv...")
     
     if not all_papers:
         stats["errors"].append("未找到任何论文")
@@ -328,7 +326,8 @@ def process_person(person_dir: Path, max_papers: int = 10, offset: int = 0) -> d
     for i, paper in enumerate(all_papers):
         safe_name = sanitize_filename(paper['title'])
         filename = f"{i+1:03d}_{safe_name}"
-        meta[filename + ".txt"] = {
+        md_filename = filename + ".md"
+        meta[md_filename] = {
             "title": paper['title'],
             "doi": paper.get('doi', ''),
             "year": paper.get('year'),
@@ -351,15 +350,19 @@ def process_person(person_dir: Path, max_papers: int = 10, offset: int = 0) -> d
     # 下载PDF + 提取文本
     for i, paper in enumerate(all_papers):
         safe_name = sanitize_filename(paper['title'])
-        txt_filename = f"{i+1+offset:03d}_{safe_name}.txt"
+        txt_filename = f"{i+1+offset:03d}_{safe_name}.md"
+        # 也检查旧格式 .txt
+        txt_filename_old = f"{i+1+offset:03d}_{safe_name}.txt"
         pdf_filename = f"{i+1+offset:03d}_{safe_name}.pdf"
         
         txt_path = papers_raw / txt_filename
+        txt_path_old = papers_raw / txt_filename_old
         pdf_path = papers_pdfs / pdf_filename
         
         # 跳过已存在的
-        if txt_path.exists() and txt_path.stat().st_size > 100:
-            print(f"  [{i+1}/{len(all_papers)}] 已存在: {txt_filename}")
+        if (txt_path.exists() and txt_path.stat().st_size > 100) or (txt_path_old.exists() and txt_path_old.stat().st_size > 100):
+            existing = txt_path if txt_path.exists() else txt_path_old
+            print(f"  [{i+1}/{len(all_papers)}] 已存在: {existing.name}")
             stats["extracted"] += 1
             continue
         
@@ -377,15 +380,17 @@ def process_person(person_dir: Path, max_papers: int = 10, offset: int = 0) -> d
                 # 提取文本
                 text = extract_text_from_pdf(pdf_path)
                 if text and len(text) > 200:
-                    # 在文本头部加元数据
-                    header = f"Title: {paper['title']}\n"
+                    # 在文本头部加markdown front matter
+                    header = f"---\n"
+                    header += f'title: "{paper["title"]}"\n'
                     if paper.get('doi'):
-                        header += f"DOI: {paper['doi']}\n"
+                        header += f"doi: {paper['doi']}\n"
                     if paper.get('year'):
-                        header += f"Year: {paper['year']}\n"
+                        header += f"year: {paper['year']}\n"
+                    header += f"---\n\n"
                     if paper.get('abstract'):
-                        header += f"\nAbstract:\n{paper['abstract']}\n"
-                    header += f"\n{'='*60}\n\n"
+                        header += f"## Abstract\n\n{paper['abstract']}\n\n"
+                    header += f"---\n\n"
                     
                     txt_path.write_text(header + text, encoding='utf-8')
                     stats["extracted"] += 1
@@ -398,13 +403,15 @@ def process_person(person_dir: Path, max_papers: int = 10, offset: int = 0) -> d
         # 如果没有PDF，用abstract + URL作为素材
         if not has_pdf:
             if paper.get('abstract'):
-                content = f"Title: {paper['title']}\n"
+                content = f"---\n"
+                content += f'title: "{paper["title"]}"\n'
                 if paper.get('doi'):
-                    content += f"DOI: {paper['doi']}\n"
+                    content += f"doi: {paper['doi']}\n"
                 if paper.get('year'):
-                    content += f"Year: {paper['year']}\n"
-                content += f"URL: {paper.get('url', '')}\n"
-                content += f"\nAbstract:\n{paper['abstract']}\n"
+                    content += f"year: {paper['year']}\n"
+                content += f"url: {paper.get('url', '')}\n"
+                content += f"---\n\n"
+                content += f"## Abstract\n\n{paper['abstract']}\n"
                 
                 txt_path.write_text(content, encoding='utf-8')
                 stats["extracted"] += 1
@@ -423,21 +430,26 @@ def process_person(person_dir: Path, max_papers: int = 10, offset: int = 0) -> d
             
             for i, paper in enumerate(all_papers):
                 safe_name = sanitize_filename(paper['title'])
-                filename = f"{i+1+offset:03d}_{safe_name}.txt"
+                filename = f"{i+1+offset:03d}_{safe_name}.md"
+                # 也检查旧格式
+                filename_old = f"{i+1+offset:03d}_{safe_name}.txt"
                 pdf_filename = f"{i+1+offset:03d}_{safe_name}.pdf"
                 
                 has_pdf_file = (papers_pdfs / pdf_filename).exists()
                 txt_file = papers_raw / filename
+                txt_file_old = papers_raw / filename_old
                 
-                if txt_file.exists():
+                if txt_file.exists() or txt_file_old.exists():
+                    actual_file = txt_file if txt_file.exists() else txt_file_old
+                    actual_filename = actual_file.name
                     conn.execute("""
                         INSERT OR IGNORE INTO items 
                         (person, category, filename, source_type, status, file_path, file_size, char_count, 
                          doi, year, title, has_pdf, added_time)
                         VALUES (?, 'papers', ?, 'paper', 'raw', ?, ?, ?, ?, ?, ?, ?, datetime('now'))
                     """, (
-                        person_dir.name, filename, f"papers/raw/{filename}",
-                        txt_file.stat().st_size, txt_file.stat().st_size,
+                        person_dir.name, actual_filename, f"papers/raw/{actual_filename}",
+                        actual_file.stat().st_size, actual_file.stat().st_size,
                         paper.get('doi', ''), paper.get('year'), paper['title'],
                         1 if has_pdf_file else 0
                     ))
