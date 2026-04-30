@@ -15,7 +15,7 @@
 
 ### 人员：150人
 - military 25 + psychologists 31 + scholars 77（含17新增）
-- 蒸馏进度：133/133 V3 ✅，17新增人待蒸馏
+- 蒸馏进度：质检100%完成，全部150人待蒸馏
 - 部分人素材不足，正在补采集中
 
 ### 新增分类（2026-04-26）
@@ -155,9 +155,10 @@ Phase 6: 报告
 - `_preprocess.py` — report生成时sanitize含`\n`/`\t`的文件名
 - `init_db.py` — 新增`jaccard_similarity`、`check_dup_against_existing`、注册时自动去重
 
-### 质检进度（16:15）
-- 总素材4021，已评分2284+丢弃662=2946，待评分1075
-- 完成率73.3%，93人有待评分，162个prompt batch
+### 质检进度（已完成 2026-04-30）
+- Total: 3922, Scored: 3055, Discarded: 867, Raw: 0, Rate: 100.0%
+- 124个raw幽灵记录已标记discarded
+- json已全部清理，materials/根目录清零
 
 ## 关键经验
 - **素材采集必须包含著作原文** — `download_book(title, dir, proxies=...)` → libgen.li→libgen.com.im→archive.org → materials/book_书名.md + materials/books/书名.pdf

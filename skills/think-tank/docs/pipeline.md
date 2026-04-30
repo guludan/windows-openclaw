@@ -3,7 +3,7 @@
 ## 流程概览
 
 ```
-① 素材采集(data_search.py) → ② 预处理(_preprocess.py) → ③ LLM质量评分(quality_check_llm.py) → ④ 蒸馏(distill_prompt_v3.md) → ⑤ 入库(ingest_v3.py)
+① 素材采集(data_search.py) → ② 注册(init_db.py) → ③ 预处理(_preprocess.py --quality) → ④ LLM质量评分(quality_check_llm.py) → ⑤ 蒸馏(_batch_distill.py --per-file) → ⑥ 合并(--merge-per-file) → ⑦ 重新生成(regenerate_personality.py) → ⑧ 入库(ingest_v3.py)
 ```
 
 ## 模板文件（skills/think-tank/templates/）
@@ -11,7 +11,8 @@
 | 模板 | 用途 |
 |------|------|
 | `distill_prompt_v3.md` | 蒸馏模板（人格模型JSON结构+逻辑溯源提取指南） |
-| `quality_score_prompt.md` | LLM质量评分prompt模板（5分制+判断维度+输出格式） |
+| `quality_score_prompt.md` | LLM质量评分prompt模板（精简版~350B，5分制+判断维度） |
+| `regenerate_from_insights.md` | 基于insights重新生成人格模型模板 |
 
 ⚠️ 模板独立保存，脚本从文件读取，不硬编码。修改模板不需要改代码。
 
@@ -39,14 +40,14 @@ python3 data_search.py download --doi 10.1038/xxx --output-dir ./pdfs
 ```bash
 # 自动中英文双语搜索
 python3 data_search.py person "林毅夫"
-python3 data_search.py person "Paul Krugman" --output-dir /path/to/materials
+python3 data_search.py person "Paul Krugman" --output-dir /path/to/person_dir
 ```
 
 **工作原理**：
 1. 读取 `name_map.json`，解析输入姓名的中英文变体
 2. 用每个名称变体分别调用 `search()` 搜索
 3. 合并去重，按所有名称变体评分取最高分
-4. 可选保存结果到指定目录
+4. **自动保存**：搜索缓存→`_search_cache/`，有正文的结果→`materials/raw/`（.md格式）
 
 **新人物（不在映射中）**：
 - 主session启动子session调LLM搜索推断中英文名（`resolve_new_person()`生成任务prompt）
@@ -79,7 +80,22 @@ python3 data_search.py person "Paul Krugman" --output-dir /path/to/materials
 
 ---
 
-## ② 预处理 — `_preprocess.py`
+## ② 注册 — `init_db.py`
+
+**位置**: `skills/think-tank/scripts/init_db.py`
+
+```bash
+python3 init_db.py <person_dir> [--reset]
+```
+
+- 扫描 `materials/raw/` 和 `papers/raw/` 下的 `.md`/`.txt` 文件
+- **不注册 `.json` 文件**
+- 排除 `_` 开头文件、`_discarded/`、`_duplicates/`、`_search_cache/` 目录
+- 自动 Jaccard 去重（>0.85 移到 `_duplicates/`）
+
+---
+
+## ③ 预处理 — `_preprocess.py`
 
 **位置**: `skills/think-tank/scripts/_preprocess.py`
 
@@ -131,10 +147,12 @@ python3 quality_check_llm.py <person_dir> --apply-from-file
 
 ### 工作原理
 
-1. 读 `_quality_report.json`，按每20篇分批生成 `_quality_prompt_N.md`
-2. **自动注入人物别名**：从 `name_map.json` 读取中英文名，在prompt中标注"所有别名都算相关"
-3. LLM按5分制评分（1=无关，5=高质量），≤2分标记discard
-4. discard的素材移到 `_discarded/`，评分保存到 `_quality_scores.json`
+1. 读 `_quality_report.json`，按每8篇分批生成 `_quality_prompt_N.md`（每prompt≤10KB）
+2. **自动跳过已评分文件**：读 `_quality_scores.json`，已评分的不重复评分
+3. **自动注入人物别名**：从 `name_map.json` 读取中英文名，在prompt中标注"所有别名都算相关"
+4. LLM按5分制评分（1=无关，5=高质量），≤2分标记discard
+5. discard的素材移到 `_discarded/`，评分保存到 `_quality_scores.json`
+6. **discard>0时自动重新生成report和prompt**（防止幽灵文件）
 
 ### 评分标准
 
@@ -157,8 +175,9 @@ python3 quality_check_llm.py <person_dir> --apply-from-file
 
 ## ④ 蒸馏 — `_batch_distill.py` + `distill_prompt_v3.md`
 
-**模板**: `skills/think-tank/templates/distill_prompt_v3.md`
-**辅助**: `skills/think-tank/scripts/_batch_distill.py`
+### 素材来源
+
+蒸馏脚本 `_batch_distill.py` 从 `materials/raw/` 和 `papers/raw/` 读取素材文件。
 
 ### 查看待蒸馏
 
@@ -234,10 +253,12 @@ WSL 9p文件系统下多进程写入会导致segfault和数据库损坏。必须
 3. **更新映射**: `update_name_map(result)` 自动写入 `name_map.json`
 4. **创建目录**: `mkdir -p /mnt/d/data/think-tank-data/personalities/scholars/xxx/Zhang_San/materials`
 5. **采集素材**: `search_person("张三", output_dir=...)` 双语搜索保存
+5. **注册**: `python3 init_db.py <person_dir>`
 6. **预处理**: `python3 _preprocess.py <person_dir> --quality`
 7. **质量评分**: `python3 quality_check_llm.py <person_dir>` → sessions_spawn → apply
-8. **蒸馏**: sessions_spawn，读模板+素材，输出 personality_v3.json
-9. **入库**: `python3 ingest_v3.py Zhang_San <person_dir>`
+8. **蒸馏**: `python3 _batch_distill.py <person_dir> --per-file` → sessions_spawn逐篇 → `--merge-per-file`
+9. **重新生成**: `python3 regenerate_personality.py <person_dir>` → sessions_spawn → `--apply`
+10. **入库**: `python3 ingest_v3.py <person_name> <person_dir>`
 
 ---
 
@@ -245,39 +266,41 @@ WSL 9p文件系统下多进程写入会导致segfault和数据库损坏。必须
 
 ```
 /mnt/d/data/think-tank-data/personalities/
-├── name_map.json                          # 133人中英文映射
+├── name_map.json                          # 150人中英文映射
 ├── scholars/
 │   └── economics/
 │       ├── 林毅夫/
+│       │   ├── _db.sqlite                # 素材元数据
+│       │   ├── personality_v3.json       # 蒸馏结果
 │       │   ├── materials/
-│       │   │   ├── *.txt                  # 素材文件
-│       │   │   ├── _quality_report.json   # 预处理质量报告
-│       │   │   ├── _quality_prompt_0.md   # LLM评分prompt（分批）
-│       │   │   ├── _quality_scores.json   # LLM评分结果
-│       │   │   ├── _duplicates/           # 去重移除
-│       │   │   ├── _low_quality/          # 低质量移除
-│       │   │   └── _discarded/            # LLM评分丢弃
-│       │   └── personality_v3.json        # 蒸馏结果
+│       │   │   ├── raw/                  # ✅ 质量通过的素材（.md/.txt）
+│       │   │   ├── _discarded/           # ❌ 评分丢弃
+│       │   │   ├── _search_cache/        # 搜索缓存（.json）
+│       │   │   ├── _quality_scores.json  # LLM评分结果
+│       │   │   └── _quality_report.json   # 质检报告
+│       │   └── papers/
+│       │       ├── raw/                  # 论文文本（.md）
+│       │       ├── pdfs/                 # PDF原件
+│       │       └── _meta.json            # 论文元数据
 │       └── Paul_Krugman/
-│           └── ...
-├── military/
-│   └── 毛泽东/
-│       └── ...
-└── psychologists/
-    └── behavioral/
-        └── 丹·阿瑞利/
-            └── ...
+└── ...
 
 skills/data-search/scripts/
 └── data_search.py                         # 搜索模块（含person子命令）
 
 skills/think-tank/scripts/
-├── _preprocess.py                         # 预处理
-├── quality_check_llm.py                   # LLM质量评分
-├── _batch_distill.py                      # 蒸馏辅助
-├── ingest_v3.py                           # 入库
-└── think_tank_pipeline_v3.py              # 报告生成
+├── init_db.py                         # 素材注册
+├── _preprocess.py                     # 预处理
+├── quality_check_llm.py               # LLM质量评分
+├── _batch_distill.py                  # 蒸馏辅助
+├── incremental_distill.py             # 增量蒸馏
+├── regenerate_personality.py          # 重新生成人格模型
+├── ingest_v3.py                       # 入库
+├── fetch_papers.py                    # 论文搜索+下载
+└── think_tank_pipeline_v3.py          # 报告生成
 
 skills/think-tank/templates/
-└── distill_prompt_v3.md                   # 蒸馏模板
+├── distill_prompt_v3.md               # 蒸馏模板
+├── quality_score_prompt.md            # 质量评分模板
+└── regenerate_from_insights.md        # 重新生成模板
 ```

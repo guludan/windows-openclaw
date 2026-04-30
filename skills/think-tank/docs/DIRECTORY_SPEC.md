@@ -5,27 +5,35 @@
 ```
 person/
 ├── _db.sqlite                 # 素材索引数据库（init_db.py 生成）
-├── _distilled_files.json      # [旧版] 已蒸馏文件记录（逐步弃用，改用DB）
-├── personality_v3.json        # 蒸馏后的人格模型
-├── _per_file_prompts/         # 逐篇蒸馏生成的prompts（临时，蒸馏完可删）
-├── _per_file_results/         # 逐篇蒸馏结果（临时，合并完可删）
+├── personality_v3.json        # 蒸馏后的人格模型（最终产出）
+├── profile.json               # 人物基本信息（部分人物有）
+├── meta.json                  # 人物元数据（部分人物有）
 │
 ├── materials/
-│   ├── raw/                   # 原始素材文本文件
-│   ├── distillates/           # 蒸馏后的insights JSON
-│   ├── _low_quality/          # 低质量文件（被preprocess移出）
-│   ├── _duplicates/           # 重复文件（被dedup移出）
-│   ├── _quality_prompt_*.md   # LLM质量评估prompt
-│   ├── _quality_report.json   # 质量评估报告
-│   └── _quality_scores.json   # LLM质量评分
+│   ├── raw/                   # ✅ 质量通过的素材（.md/.txt）
+│   ├── _discarded/            # ❌ 质量评分未通过的素材（.md/.json）
+│   ├── _duplicates/           # 重复素材
+│   ├── _search_cache/         # 搜索结果缓存（.json，init_db不注册）
+│   ├── _per_file_prompts/     # 逐篇蒸馏生成的prompts
+│   ├── _per_file_results/     # 逐篇蒸馏结果JSON
+│   ├── _quality_prompt_*.md   # LLM质量评分prompt（batch_size=8）
+│   ├── _quality_report.json   # 质检报告（800字符预览）
+│   └── _quality_scores.json   # LLM质量评分结果
 │
 └── papers/
-    ├── raw/                   # 论文素材文本文件
-    ├── distillates/           # 蒸馏后的insights JSON
-    ├── pdfs/                  # 原始PDF文件
-    ├── _discarded/            # 质量评分废弃的论文素材
+    ├── raw/                   # 论文提取文本（.md）
+    ├── pdfs/                  # 论文PDF原件
+    ├── distillates/           # [旧版] 蒸馏后的insights JSON
     └── _meta.json             # 论文元数据（doi, year, title）
 ```
+
+## ⚠️ 关键规则
+
+1. **materials/根目录不放任何素材文件** — 所有素材在 `raw/` 或 `_discarded/` 里
+2. **只保存 .md 和 .txt** — init_db只注册这两种格式，不注册 .json
+3. **搜索缓存放 `_search_cache/`** — 带 `_` 前缀的目录 init_db 不扫描
+4. **PDF原件放 `papers/pdfs/`** — `papers/raw/` 只放提取后的文本
+5. **文件名必须 sanitize** — 去除 HTML 标签、智能引号、特殊字符
 
 ## 数据库表结构（_db.sqlite）
 
@@ -37,13 +45,13 @@ person/
 | id | INTEGER PK | 自增主键 |
 | person | TEXT | 人物名 |
 | category | TEXT | 'materials' 或 'papers' |
-| filename | TEXT | 文件名 |
+| filename | TEXT | 文件名（纯文件名，不含路径前缀） |
 | source_type | TEXT | 来源（paper/exa/tavily/zhihu等） |
-| status | TEXT | 状态：raw / distilled / discarded |
-| file_path | TEXT | 相对路径（如 materials/raw/xxx.txt） |
+| status | TEXT | 状态：`raw` / `quality_checked` / `discarded` |
+| file_path | TEXT | 相对路径 |
 | file_size | INTEGER | 文件大小 |
 | char_count | INTEGER | 字符数 |
-| quality_score | INTEGER | 质量评分 |
+| quality_score | INTEGER | 质量评分（1-5） |
 | quality_checked | INTEGER | 是否已质量检查 |
 | distilled | INTEGER | 是否已蒸馏（0/1） |
 | distillate_path | TEXT | 蒸馏产物路径 |

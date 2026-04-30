@@ -226,24 +226,31 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 ---
 
-## 当前状态（2026-04-25）
+## 当前状态（2026-04-30）
 
-### 人员体系（108人）
+### 人员体系（150人）
 
 | 体系 | 子领域 | 人数 |
 |------|--------|------|
 | 军事(military) | — | 25 |
-| 学者(scholars) | economics(8), financial-engineering(9), financial-data(5), actuarial-science(5), game-theory(10), ir-theory(8), ir-security(4), middle-east(5), central-asia(4), persian-islamic(4), religious-studies(4), media-studies(5) | 67 |
-| 心理学家(psychologists) | behavioral(7), cognitive(6), psychoanalysis(6), social-engineering(5), neuropsychology(3), evolutionary-psychology(1) | 28 |
+| 学者(scholars) | economics(8), financial-engineering(9), financial-data(5), actuarial-science(5), game-theory(5), ir-theory(8), ir-security(4), middle-east(5), central-asia(4), persian-islamic(4), religious-studies(4), media-studies(5), geopolitical-finance(4), sanctions-finance(3), information-warfare(3), indo-pacific(3), tech-geopolitics(2), political-forecasting(2) | 83 |
+| 心理学家(psychologists) | behavioral(7), cognitive(6), psychoanalysis(6), social-engineering(5), neuropsychology(4), evolutionary-psychology(2) | 30 |
 
 ### 质量检测状态
-- 全部108人均已完成LLM质量评分（quality_check_llm.py + sessions_spawn）
+- **全部150人已完成LLM质量评分** ✅ (Total: 3922, Kept: 3055, Discarded: 867)
 - 规则评分脚本已废弃（batch_quality_score.py等），只允许LLM评分
-- B站转录文件被误discard后已恢复
+- batch_size=8, preview 800字符, 每子session最多3个prompt
+
+### 数据清理状态（2026-04-30）
+- materials/根目录完全清零（所有素材在raw/或_discarded/里）
+- json文件已全部清理（元数据→_search_cache/, 有正文→转md）
+- init_db不再注册.json文件
+- 文件名特殊字符已sanitize
 
 ### 向量库状态
 - materials: ~15,739条（⚠️ 包含评分前旧数据，需清空重建）
 - insights/tension/core_profile: 需基于新素材重新蒸馏入库
+- 蒸馏进度：质检完成后待开始
 
 ---
 
@@ -253,26 +260,52 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 skills/think-tank/
 ├── SKILL.md                      ← 你正在这里
 ├── scripts/                      ← 全部流程脚本
-│   ├── ingest_v3.py              ⭐ 单人入库（素材chunk+结构化），自动删除旧数据
-│   ├── incremental_distill.py    ⭐ 增量蒸馏（新素材补充insights+合并evidence+蒸馏记录追踪）
-│   ├── _batch_distill.py         全量蒸馏辅助（子session任务生成+--gen-record+--per-file逐篇蒸馏+--merge-per-file合并）
+│   ├── init_db.py                素材注册（扫描materials/raw/和papers/raw/，只注册.md/.txt）
 │   ├── _preprocess.py            素材预处理（去重+低质量过滤+质量报告）
 │   ├── quality_check_llm.py      LLM质量评分（生成prompt→sessions_spawn评分→apply）
+│   ├── _batch_distill.py         全量蒸馏（--per-file逐篇蒸馏+--merge-per-file合并）
+│   ├── incremental_distill.py    ⭐ 增量蒸馏（新素材补充insights+合并evidence）
+│   ├── regenerate_personality.py 基于insights重新生成完整人格模型
+│   ├── ingest_v3.py              ⭐ 单人入库（素材chunk+结构化），自动删除旧数据
+│   ├── fetch_papers.py           论文搜索+下载+PDF提取（SS+arXiv→Sci-Hub→PyMuPDF）
 │   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v4.0（4章+预-mortem）
-│   ├── cache_news.py / cache_news_tags.py  新闻缓存
-│   ├── fetch_acled.py / fetch_ucdp.py / fetch_cls.py / fetch_market.py  数据抓取
-│   └── historical_context.py     历史事件引擎(Redis)
-└── templates/
-    └── distill_prompt_v3.md      V3蒸馏模板（含逻辑溯源+情境触发）
+│   └── ...（其他辅助脚本）
+├── templates/
+│   ├── distill_prompt_v3.md      V3蒸馏模板（含逻辑溯源+情境触发）
+│   ├── quality_score_prompt.md   LLM质量评分模板（精简版，~350B）
+│   └── regenerate_from_insights.md 重新生成人格模板
+└── docs/
+    ├── DIRECTORY_SPEC.md         目录结构规范
+    └── pipeline.md               Pipeline说明
 ```
 
 /mnt/d/data/think-tank-data/              ← 数据目录（D盘）
 ├── _chromadb/lacan_db/                   ← 向量库（chromadb，严禁并发）
-├── personalities/                        ← 96人素材+蒸馏
+├── personalities/                        ← 150人素材+蒸馏
 │   ├── military/                         ← 25人
-│   ├── scholars/                         ← 47人（8子领域）
-│   └── psychologists/                    ← 24人（4子领域）
+│   ├── scholars/                         ← 83人（18子领域）
+│   └── psychologists/                    ← 30人（6子领域）
 └── reports/                              ← 生成的报告
+```
+
+每个人物目录结构：
+```
+person_name/
+├── _db.sqlite                          ← 素材元数据（状态追踪）
+├── personality_v3.json                 ← 蒸馏产出的人格模型（最终结果）
+├── materials/
+│   ├── raw/                            ← ✅ 质量通过的素材（.md/.txt）
+│   ├── _discarded/                     ← ❌ 质量未通过的素材
+│   ├── _duplicates/                    ← 重复素材
+│   ├── _search_cache/                  ← 搜索结果缓存（.json）
+│   ├── _quality_scores.json            ← 质量评分结果
+│   ├── _quality_report.json            ← 质检报告
+│   ├── _quality_prompt_*.md            ← 评分prompt（batch_size=8）
+│   └── _per_file_prompts/              ← 蒸馏prompt
+└── papers/
+    ├── raw/                            ← 论文提取文本（.md）
+    ├── pdfs/                           ← 论文PDF原件
+    └── _meta.json                      ← 论文元数据
 ```
 
 ## 红线

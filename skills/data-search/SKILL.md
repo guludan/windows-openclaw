@@ -234,14 +234,50 @@ skills/data-search/
     └── test_data_search.py     # 测试套件（TDD）
 ```
 
+## 素材保存工具函数
+
+### `sanitize_filename(title, max_len=200)`
+将标题转为安全文件名：去除HTML标签、智能引号(`''``""`)、特殊字符(`<>"|\`)。
+
+### `result_to_md(result)`
+将搜索结果dict转为markdown内容（含frontmatter: title/url/source/pub）。
+
+### `save_result(result, output_dir, prefix="")`
+单条搜索结果保存为`.md`到`output_dir/materials/raw/`。自动sanitize文件名、去重（文件存在时追加编号）。
+
+```python
+from data_search import save_result
+save_result({"title":"标题","text":"正文","url":"URL","source":"Exa"}, "/path/to/person_dir")
+```
+
+### `save_results_batch(results, output_dir, prefix="")`
+批量保存搜索结果。返回保存路径列表。
+
+### `search_person()` 自动保存
+`search_person(output_dir=...)` 调用时，自动将搜索缓存保存到`_search_cache/`，同时把有正文的结果调用`save_result()`存为md。
+
+## 文件结构
+
+```
+skills/data-search/
+├── SKILL.md                    # 本文件
+├── templates/
+│   └── collection_task_prompt.md  # 子session采集task模板
+└── scripts/
+    ├── data_search.py          # 主模块（所有搜索+保存逻辑）
+    ├── bilibili_transcribe.py  # B站视频转录
+    └── test_data_search.py     # 测试套件
+```
+
 ## 约束
 
 - 每个搜索源独立try/except，失败静默跳过
 - 不硬编码API key，全部用 `os.environ.get()`
 - 并行搜索但同一源不并发（防rate limit）
-- 搜索结果不做持久化（由调用方决定是否入库）
+- **搜索结果必须保存为.md，禁止保存.json素材文件**
+- **文件名必须经过sanitize_filename()处理**
+- 搜索缓存（`_search_results_*.json`）保存到`_search_cache/`目录，init_db不注册
 - 中文cookie路径: `~/.openclaw/workspace/.cookies/zhihu_cookies.txt`
-- 本地市场数据: `/mnt/d/data/conflict-data/market/`
 - Playwright使用 `/snap/bin/chromium` 作为无头浏览器
 - SearXNG默认实例: `http://localhost:8888`
 
@@ -250,7 +286,7 @@ skills/data-search/
 **脚本**: `scripts/bilibili_transcribe.py`
 
 ### 功能
-搜索B站视频 → you-get下载 → ffmpeg提取音频 → faster-whisper转录 → 保存为统一格式 .txt
+搜索B站视频 → you-get下载 → ffmpeg提取音频 → faster-whisper转录 → 保存为`.md`格式
 
 ### 依赖
 - `you-get`（tt conda env）
@@ -279,11 +315,12 @@ bvid: BV号
 video_title: 标题
 language: zh
 date_added: "YYYY-MM-DD"
+---
 
-===== 转录内容 =====
-
-(文字内容)
+(转录文字内容)
 ```
+
+输出文件名: `bilibili_{BV号}.md`
 
 ### Whisper模型选择
 | 模型 | VRAM/速度 | 中文质量 | 推荐 |
