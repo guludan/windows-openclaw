@@ -38,7 +38,8 @@ def get_materials(person_dir: Path) -> List[Path]:
     for subdir in ["materials/raw", "papers/raw"]:
         raw_dir = person_dir / subdir
         if raw_dir.exists():
-            files.extend(f for f in raw_dir.glob("*.[tm][xd]t") if f.stat().st_size >= 200)
+            for pattern in ["*.md", "*.txt"]:
+                files.extend(f for f in raw_dir.glob(pattern) if f.stat().st_size >= 200)
     files.sort(key=lambda f: f.stat().st_size)
     return files
 

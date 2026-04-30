@@ -24,6 +24,43 @@ import time
 import re
 from pathlib import Path
 
+
+def sanitize_filename(title: str, max_len: int = 200) -> str:
+    """Sanitize a title for use as a filename. Removes special chars, HTML tags, smart quotes."""
+    # Remove HTML tags
+    s = re.sub(r'<[^>]+>', '', title)
+    # Normalize smart quotes/dashes to plain
+    s = s.replace('\u2018', "'").replace('\u2019', "'")  # smart single quotes
+    s = s.replace('\u201c', '"').replace('\u201d', '"')  # smart double quotes
+    s = s.replace('\u2013', '-').replace('\u2014', '-')    # dashes
+    # Remove chars unsafe for filenames
+    s = re.sub(r'[\\/*?:"<>|]', '', s)
+    # Collapse whitespace
+    s = re.sub(r'\s+', ' ', s).strip()
+    # Truncate
+    if len(s) > max_len:
+        s = s[:max_len].rsplit(' ', 1)[0]
+    return s
+
+
+def result_to_md(result: dict) -> str:
+    """Convert a search result dict to markdown content."""
+    lines = []
+    if result.get('title'):
+        lines.append(f"---")
+        lines.append(f"title: {result['title']}")
+        if result.get('url'):
+            lines.append(f"url: {result['url']}")
+        if result.get('source'):
+            lines.append(f"source: {result['source']}")
+        if result.get('pub'):
+            lines.append(f"pub: {result['pub']}")
+        lines.append(f"---")
+        lines.append("")
+    text = result.get('text', '') or result.get('content', '') or result.get('snippet', '') or ''
+    lines.append(text)
+    return '\n'.join(lines)
+
 # Optional dependencies for enhanced academic search
 try:
     import arxiv as arxiv_lib
@@ -1985,8 +2022,9 @@ def check_materials_quality(person_dir: str, person_name: str,
             files.extend(glob.glob(str(d / "**/*.txt"), recursive=True))
             files.extend(glob.glob(str(d / "**/*.json"), recursive=True))
     
-    # 排除汇总文件
+    # 排除汇总文件和非文本素材
     files = [f for f in files if not os.path.basename(f).startswith('_')]
+    files = [f for f in files if f.endswith(('.md', '.txt'))]  # Only text materials, not json
     result["total"] = len(files)
     
     for fpath in files:

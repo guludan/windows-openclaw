@@ -23,7 +23,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-def generate_prompt(person_dir: Path, batch_size: int = 20) -> list:
+def generate_prompt(person_dir: Path, batch_size: int = 8) -> list:
     """生成GLM评分prompt文件，按批次分段，避免超出上下文
     
     返回prompt文件路径列表，每个文件包含一批素材的评分指令。
@@ -62,6 +62,34 @@ def generate_prompt(person_dir: Path, batch_size: int = 20) -> list:
                         aliases.append(entry["zh"])
                     break
     alias_note = f"\n别名: {', '.join(aliases)}" if aliases else ""
+
+    # 跳过已评分的文件，避免重复
+    scores_path = person_dir / 'materials' / '_quality_scores.json'
+    already_scored = set()
+    if scores_path.exists():
+        try:
+            with open(scores_path, 'r', encoding='utf-8') as f:
+                already_scored = {s['filename'] for s in json.load(f)}
+        except:
+            pass
+
+    # 过滤掉已评分的 和 磁盘上不存在的文件
+    mat_dir = person_dir / 'materials'
+    existing_files = set()
+    for d in ['raw', '']:  # materials/raw/ and materials/
+        scan = mat_dir / d if d else mat_dir
+        if scan.exists():
+            existing_files.update(f.name for f in scan.iterdir() if f.is_file() and not f.name.startswith('_'))
+    papers_dir = person_dir / 'papers'
+    for d in ['raw', '']:
+        scan = papers_dir / d if d else papers_dir
+        if scan.exists():
+            existing_files.update(f.name for f in scan.iterdir() if f.is_file() and not f.name.startswith('_'))
+    
+    report = [item for item in report if item['filename'] not in already_scored and item['filename'] in existing_files]
+    if not report:
+        print(f'All items already scored for {person_dir.name}, skipping.', flush=True)
+        return []
 
     type_counts = {}
     for item in report:
@@ -142,6 +170,48 @@ def generate_prompt(person_dir: Path, batch_size: int = 20) -> list:
     return batches
 
 
+def normalize_filename(name: str) -> str:
+    """Normalize filename for fuzzy matching: replace Chinese/smart quotes, \xa0, etc."""
+    import unicodedata
+    # Replace smart/Chinese quotes with ASCII quotes
+    for ch in ['\u201c', '\u201d', '\u2018', '\u2019', '\u300c', '\u300d']:
+        name = name.replace(ch, '"')
+    # Replace Chinese dash with ASCII dash
+    name = name.replace('\u2014', '-').replace('\u2013', '-')
+    # Replace non-breaking space
+    name = name.replace('\xa0', ' ')
+    # Normalize unicode
+    name = unicodedata.normalize('NFC', name)
+    return name
+
+
+def find_file_fuzzy(filename: str, search_dirs: list) -> Path | None:
+    """Find file with exact match first, then normalized match, then prefix match."""
+    # Exact match
+    for d in search_dirs:
+        if d.exists():
+            p = d / filename
+            if p.exists():
+                return p
+    # Normalized match
+    norm_target = normalize_filename(filename)
+    for d in search_dirs:
+        if d.exists():
+            for f in d.iterdir():
+                if normalize_filename(f.name) == norm_target:
+                    return f
+    # Prefix match (WSL truncates filenames at 255 bytes)
+    stem = Path(filename).stem
+    suffix = Path(filename).suffix
+    norm_stem = normalize_filename(stem)
+    for d in search_dirs:
+        if d.exists():
+            for f in d.iterdir():
+                if f.suffix == suffix and normalize_filename(f.stem).startswith(norm_stem):
+                    return f
+    return None
+
+
 def apply_scores(person_dir: Path, scores: list) -> dict:
     """根据LLM评分结果移除低质量素材，写入数据库"""
     mat_dir = person_dir / "materials"
@@ -171,11 +241,16 @@ def apply_scores(person_dir: Path, scores: list) -> dict:
         action = item.get("action", "keep")
         score = item.get("score", 3)
 
-        # Look in both raw/ and old locations
-        fpath = mat_dir / "raw" / filename
-        if not fpath.exists():
-            fpath = mat_dir / filename
-        if not fpath.exists():
+        # Look in materials/raw/, materials/, and papers/raw/ with fuzzy match
+        search_dirs = [mat_dir / "raw", mat_dir, person_dir / "papers" / "raw"]
+        fpath = find_file_fuzzy(filename, search_dirs)
+        if not fpath:
+            # Check if already in _discarded/
+            discarded_dir = mat_dir / "_discarded"
+            if discarded_dir.exists():
+                discarded_files = set(f.name for f in discarded_dir.iterdir() if f.is_file())
+                if filename in discarded_files or normalize_filename(filename) in {normalize_filename(n) for n in discarded_files}:
+                    continue  # already discarded, skip
             stats["missing"] += 1
             stats["errors"].append(f"{filename}: file not found")
             continue
@@ -229,6 +304,22 @@ def main():
         print(f"Applied: kept={stats['kept']}, discarded={stats['discarded']}, missing={stats['missing']}")
         for e in stats['errors']:
             print(f"  {e}")
+
+        # After apply, regenerate report and prompts (files may have been moved to _discarded)
+        if stats['discarded'] > 0:
+            try:
+                import subprocess
+                pp_script = str(Path(__file__).parent / '_preprocess.py')
+                for p in list((person_dir / 'materials').glob('_quality_prompt_*.md')):
+                    p.unlink()
+                report_path = person_dir / 'materials' / '_quality_report.json'
+                if report_path.exists():
+                    report_path.unlink()
+                subprocess.run([sys.executable, pp_script, str(person_dir), '--quality'],
+                             capture_output=True, timeout=60)
+                print(f"Regenerated report after apply.")
+            except Exception as e:
+                print(f"  Warning: could not regenerate report: {e}")
 
     elif args.apply:
         try:

@@ -75,34 +75,63 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ⚠️ **--quality 是必须参数，不要省略。** 只跑预处理不做质量检测等于没做。
 
 ```bash
-# Step 2b: LLM质量评分（sessions_spawn调GLM-4.7，分批处理）
+# Step 2b: LLM质量评分（sessions_spawn调GLM-5-turbo，batch_size=5）
+# 1. 生成评分prompt（batch_size=5，已内置）
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/quality_check_llm.py <person_dir>
-# 生成 _quality_prompt_0.md, _quality_prompt_1.md ...（每批20篇）
+# 生成 _quality_prompt_0.md, _quality_prompt_1.md ...（每批5篇，最大~70KB）
 
-# 对每个batch文件，spawn子session读prompt并让GLM评分，返回JSON
-# 然后逐批apply：
-~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/quality_check_llm.py <person_dir> --apply '<json>'
+# 2. spawn子session评分（5并发，glm-5-turbo）
+# - ≤3个prompt：1个子session读所有prompt并评分
+# - >3个prompt：按3个一批分成多个子session（避免context overflow）
+# - 子session任务：read prompt文件 → 评分JSON → 写入 _quality_scores.json → exec --apply-from-file
+# - gateway超时率~50%，spawn失败后立即重试
+# - 每个子session完成后立刻spawn下一批，保持流水线
+# - **10并发**：glm-5-turbo + glm-4.7混用
+
+# 3. apply（子session内自动执行）
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/quality_check_llm.py <person_dir> --apply-from-file
 ```
 
 ⚠️ **预处理和质量检测是绑定流程，采集完素材后必须执行完整流程。**
+⚠️ **batch_size=5是经过验证的值**：20→200KB prompt（太大），5→70KB（子session可处理）
+⚠️ **不要拆分split文件**：子session可以读多个prompt文件，只需按数量分session即可
+⚠️ **每子session最多3个prompt**：>3个会context overflow，这是反复验证的结论
 
-### Step 3: V3 蒸馏（逐篇模式）
+### Step 3: V3 蒸馏（逐篇模式，唯一模式）
 
 ⚠️ **蒸馏必须逐篇处理，禁止一次性塞给LLM。** 素材量大时会超时或幻觉。
 
-**全量蒸馏（首次）：**
+⚠️ **一个人物一个子session，禁止多人塞进一个子session。** 多人素材总量一定会超出子session上下文限制。
+
+⚠️ **超大型素材（含数本著作，总字符超过10万）需要分批多个子session处理。** 一个子session处理不完时，按素材文件分批，每批一个子session，全部完成后再合并。
+
+#### Chunk切分机制
+
+逐篇模式下，`--per-file` 会为每个素材文件生成蒸馏prompt：
+- 单篇 ≤ **15000字符**：生成1个prompt，整篇喂给LLM
+- 单篇 > **15000字符**：按段落边界自动切分成多个chunk（每chunk ≤15000字符），相邻chunk有2段重叠保持上下文连贯。每个chunk生成1个独立prompt
+- 所以"逐篇"本质上是"逐chunk"——一个素材文件可能产生多个prompt
+
+#### 全量蒸馏（首次）
+
 ```bash
-# 生成逐篇蒸馏prompts
+# Step 3a: 生成逐篇蒸馏prompts
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_batch_distill.py <person_dir> --per-file
 # → 生成 _per_file_prompts/_prompt_{index}_{filename}.md
 
-# 逐个spawn子session处理每个prompt，结果保存到 _per_file_results/{filename}.json
+# Step 3b: 逐个spawn子session处理每个prompt
+# 每个子session只处理1个prompt（1个chunk），提取 insights_with_evidence
+# 结果保存到 _per_file_results/{filename}.json 或 {filename}_chunk{N}.json
+# ⚠️ 一个人物一个子session（内部逐chunk处理）
+# ⚠️ 超过10万字符的人物需分批：先处理第1批prompts → 再开新子session处理第2批
 
-# 全部完成后合并
+# Step 3c: 全部prompt处理完成后合并
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_batch_distill.py <person_dir> --merge-per-file
+# 自动合并 insights_with_evidence（相同claim的合并evidence）+ 更新蒸馏记录
 ```
 
-**增量蒸馏（补充新素材后）：**
+#### 增量蒸馏（补充新素材后）
+
 ```bash
 # 自动检测未蒸馏的新素材，生成逐篇prompts
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --auto
@@ -114,34 +143,21 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/incremental_distill.py <person_dir> --apply
 ```
 
+#### 蒸馏注意事项
+
 - 每次蒸馏完成后自动记录 `_distilled_files.json`（已蒸馏的素材文件列表）
 - 逐篇蒸馏的JSON结果保留在 `_per_file_results/` 目录，**不要删除**（用于溯源和灾备）
-
-**逐篇蒸馏模式**（素材过多时LLM上下文不够）：
-
-```bash
-# Step 3a: 生成逐篇蒸馏prompts
-~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_batch_distill.py <person_dir> --per-file
-# 生成 person_dir/_per_file_prompts/_prompt_001_xxx.md ...
-
-# Step 3b: 在 AI 助手中逐个执行这些 prompts
-# 将每个结果保存到 person_dir/_per_file_results/{filename}.json
-
-# Step 3c: 合并逐篇蒸馏结果
-~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_batch_distill.py <person_dir> --merge-per-file
-# 自动合并 insights_with_evidence（相同claim的合并evidence）+ 更新蒸馏记录
-
-# 清理（可选）
-rm -rf <person_dir>/_per_file_prompts
-rm -rf <person_dir>/_per_file_results
-```
-
-**逐篇蒸馏模式说明**：
-- 每个素材文件生成独立的蒸馏prompt
-- LLM只需要从单篇素材中提取 insights_with_evidence（不需要生成完整人格模型）
+- LLM只需从单chunk素材中提取 insights_with_evidence（不需要生成完整人格模型）
 - 输出为JSON数组（只包含insights_with_evidence部分）
 - 合并时自动去重（相同claim的合并evidence，避免重复）
-- 适用于素材数量过多、单次LLM上下文不够的场景
+- **素材可能包含大量口水话/闲聊/无关内容**，LLM必须实事求是，有观点才提取，没有就输出空数组，禁止为了凑数而编造观点
+
+#### 提示词防幻觉要求
+
+- **excerpt必须是原文逐字摘录**，禁止转述、改写、概括后冒充原文
+- **claim必须基于素材中的实际论断**，禁止推断、延伸、脑补
+- 素材中只有描述没有观点时，不应强行提取insight
+- 输出空数组 `[]` 是合法且正确的，比编造一条假的insight好一百倍
 
 ### Step 4: 向量入库
 
@@ -171,13 +187,14 @@ rm -rf <person_dir>/_per_file_results
 
 ### 批量蒸馏流程
 
-1. 生成prompts: `auto_distill.py --generate`
-2. 每批5人，每人一个子session（内部逐篇处理所有素材），超时设2-4小时
-3. 完成后合并: `_batch_distill.py --merge-per-file`
-4. 重新生成人格模型: `regenerate_personality.py`
-5. 入库: `ingest_v3.py`
+1. 生成prompts: `auto_distill.py --generate`（或逐人 `--per-file`）
+2. **每人一个子session**（内部逐chunk处理所有素材），超时设2-4小时
+3. 超过10万字符的人物需分多个子session分批处理
+4. 完成后合并: `_batch_distill.py --merge-per-file`
+5. 重新生成人格模型: `regenerate_personality.py`
+6. 入库: `ingest_v3.py`
 
-⚠️ **已知问题：大量论文素材只有元数据（标题/DOI）没有正文**，采集时论文只抓了索引没下载全文。这些素材蒸馏出来是空的，需要用academic-research-hub补下载全文。
+⚠️ **已知问题：大量论文素材只有元数据（标题/DOI）没有正文**，采集时论文只抓了索引没下载全文。这些素材蒸馏出来是空的，需要补下载全文。
 
 ---
 
@@ -262,7 +279,10 @@ skills/think-tank/
 
 - **GLM调用必须走sessions_spawn**，禁止直接调API
 - **质量评分只用LLM，禁止用规则评分脚本**
-- **蒸馏必须分批逐篇读素材**，一次读全部会导致幻觉。每篇读完提取观点+标注source_ref，再读下一篇
+- **蒸馏必须逐篇逐chunk处理**，一次读全部会导致幻觉。每篇读完提取观点+标注source_ref，再读下一篇
+- **一个人物一个子session**，多人塞一个session必定超出上下文
+- **超过10万字符素材需分多个子session分批处理**
+- **蒸馏必须实事求是**，有观点才提取，没观点输出空数组，禁止编造
 - 禁止用SiliconFlow API（要钱）
 - 分析必须基于RAG素材，禁止凭空编造
 - source_ref 必须指向真实素材

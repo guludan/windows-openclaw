@@ -66,9 +66,16 @@ Phase 2: 注册+质检
   ├─ _preprocess.py --quality → 去重+低质量检测+报告
   └─ quality_check_llm.py → 生成prompt → spawn GLM评分 → --apply 清理低分素材
 
-Phase 3: 蒸馏
-  ├─ _batch_distill.py --per-file → 逐篇LLM提取 → _per_file_results/
-  ├─ incremental_distill.py --auto → 检测新素材自动蒸馏
+Phase 3: 蒸馏（逐篇模式，唯一模式）
+  ├─ _batch_distill.py <person_dir> --per-file → 预生成所有prompt到 _per_file_prompts/
+  ├─ 大素材(>15000字符)自动按段落切chunk，每chunk≤15000字符，相邻chunk 2段重叠
+  ├─ 手动逐个sessions_spawn子session，每个子session读1个prompt处理1个chunk
+  ├─ ⚠️ 一人一个子session，禁止多人塞一个
+  ├─ ⚠️ 超过10万字符就需分多个子session分批处理
+  ├─ 结果保存到 _per_file_results/
+  ├─ incremental_distill.py --auto → 增量蒸馏（检测新素材）
+  ├─ --merge-per-file → 合并所有chunk的insights（相同claim合并evidence）
+  └─ regenerate_personality.py → 基于insights重新生成顶层字段
   └─ 输出: personality_v3.json
 
 Phase 4: 人格完善
@@ -103,7 +110,11 @@ Phase 6: 报告
 - **之前失败的重跑**: 删除该人的 `_quality_scores.json` 再重新spawn
 
 ### 蒸馏注意事项
-- 蒸馏必须逐篇处理，禁止一次性塞给LLM
+- 蒸馏必须逐篇逐chunk处理，禁止一次性塞给LLM
+- **一人一个子session**，多人塞一个必定超出上下文
+- **超百万字符需分多个子session分批处理**
+- **蒸馏prompt是预生成到文件的**（`_per_file_prompts/`），不是实时生成
+- 蒸馏必须实事求是，有观点才提取，没观点输出空数组，禁止编造
 - 逐篇蒸馏的JSON结果保留在 `_per_file_results/` 目录，用于溯源和灾备
 - 并发限制：GLM-5-turbo 3个，GLM-5.1 2个，总计5个人
 
@@ -115,13 +126,38 @@ Phase 6: 报告
 - **SiliconFlow 禁止** — 未经黄老板许可不得使用
 - **Sci-Hub 下载间隔15秒**，禁止高频请求
 - **任何外部API 间隔至少5-10秒**
-- **蒸馏必须逐篇读素材** — 不能一次全读，需10-30分钟/人
+- **蒸馏必须逐篇逐chunk处理** — 一人一个子session，禁止多人塞一个
+- **超过10万字符就需分多个子session** — 分批处理
+- **蒸馏必须实事求是** — 有观点才提取，没观点输出空数组，禁止编造
+- **蒸馏prompt预生成到文件** — `_per_file_prompts/`，不是实时生成
 - **GLM调用走sessions_spawn** — 直接调API会被限流
 - **质量评分只用LLM** — 禁止规则评分脚本
+- **质量评分batch_size=5** — 20→200KB prompt太大，5→70KB可处理
+- **质量评分每子session最多3个prompt** — 超过3个必须拆成多个子session（>3个会context overflow）
+- **质量评分5并发** — glm-5-turbo + glm-4.7混用，gateway超时立即重试
+- **质量评分子session内apply** — --apply-from-file在子session内执行
+- **scores JSON扩展名必须同步** — .txt→.md重命名后scores也要同步，否则apply全部file not found
 - **质检输入规则** — <2k字全文；2k-50k字前5000字符；>50k字书籍智能采样10000字符（目录+前言+首章）
 - **libgen著作下载必须验证内容** — 同名书很多，下载后检查是否正确作者的著作
 - **搜索用全名+领域关键词** — 常见名必须加领域词区分同名不同人
 - **init_db.py扫描materials/根目录** — 不只是materials/raw/，17个新人的素材直接在materials/下
+
+## 2026-04-29 质检管线修复
+
+### 修复的问题
+1. **幽灵文档** — prompt包含磁盘不存在的文件（旧report快照）。修复：`generate_prompt`加磁盘存在性检查
+2. **文件名特殊字符** — 14个文件名含`\n`/`\t`/`\r`导致匹配失败。修复：`_preprocess.py`生成report时自动sanitize文件名
+3. **apply的fuzzy match** — 中文引号`""`/破折号`——`/`\xa0`导致missing。修复：`normalize_filename`+`find_file_fuzzy`
+4. **注册时自动去重** — `init_db.py`新增Jaccard去重（>0.85移到`_duplicates/`），注册即检查
+
+### 修改的文件
+- `quality_check_llm.py` — 加了`normalize_filename`、`find_file_fuzzy`、磁盘存在性过滤
+- `_preprocess.py` — report生成时sanitize含`\n`/`\t`的文件名
+- `init_db.py` — 新增`jaccard_similarity`、`check_dup_against_existing`、注册时自动去重
+
+### 质检进度（16:15）
+- 总素材4021，已评分2284+丢弃662=2946，待评分1075
+- 完成率73.3%，93人有待评分，162个prompt batch
 
 ## 关键经验
 - **素材采集必须包含著作原文** — `download_book(title, dir, proxies=...)` → libgen.li→libgen.com.im→archive.org → materials/book_书名.md + materials/books/书名.pdf
@@ -132,7 +168,12 @@ Phase 6: 报告
 - **搜索用全名+领域关键词** — 常见名（Chris Miller、Nate Silver等）必须加领域词
 - **同名误匹配** — 论文搜索时同名不同人会被误收录（如化学领域的Ledoux vs 神经科学家LeDoux）
 - **init_db.py扫描materials/根目录** — 不只是raw/，排除_开头文件
-- 素材>60000字符需截断再蒸馏
+- **质量评分已验证的流程**：_preprocess --quality → quality_check_llm.py(bat=5) → spawn子session(≤5个prompt/session, glm-5-turbo, 5并发) → --apply-from-file
+- **质量评分batch_size=5**：经验证20→200KB太大，5→70KB最佳
+- **质量评分每子session最多3个prompt**：>3个会context overflow，必须分多个子session
+- **质量评分5并发**：glm-5-turbo + glm-4.7，GLM API本身支持20并发
+- **质量评分子session模板**：read prompt → JSON评分 → write scores → exec --apply-from-file
+- **gateway超时是常态**：spawn失败立即重试，不要空转等
 - 中文冒号导致JSON parse失败
 - Sci-Hub镜像：只保留 .ru 和 .in（.se已挂，.st会403）
 - **蒸馏输出文件名是 `personality_v3.json`**，不是 distillate.json

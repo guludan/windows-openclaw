@@ -4,7 +4,7 @@
 
 ---
 
-## 2026-04-28: 搜索用全名+领域关键词，避免同名误匹配
+## 2026-04-28: 数量级必须反复核对，不能凭感觉报数字
 - "Chris Miller" → 搜出数论教授和动画导演，全名是 Christopher M. Miller
 - "Nate Silver" → 搜出生物医学信号处理论文
 - "Juan Zarate" → Treasury War下载到内战论文
@@ -33,6 +33,20 @@
 ## 2026-04-25: 中文冒号导致 JSON parse 失败
 - 蒸馏输出 JSON 中混入中文冒号（：）会导致解析失败
 - 所有 JSON 输出必须用英文冒号
+
+## 2026-04-29: 质量评分prompt batch_size必须=5
+- batch_size=20导致单个prompt 200KB（20×10000字符预览），子session读不动
+- 改为batch_size=5后，最大prompt约70KB，子session可直接读
+- **不需要拆分split文件**，之前搞的split方案完全多余
+- **每子session最多3个prompt**：>3个会context overflow，必须分多个子session
+- **10并发**：glm-5-turbo + glm-4.7混用
+- gateway超时是常态（~50%），必须立即重试spawn，不要空转等待
+- **统一流程**：_preprocess --quality → quality_check_llm.py生成prompt(bat=5) → spawn子session(≤3prompt/session)读prompt+评分+apply
+
+## 2026-04-29: scores JSON中文件名扩展名必须同步
+- .txt→.md批量重命名后，_quality_scores.json中的filename也必须同步
+- 否则apply时全部file not found，评分白做
+- **修复脚本**：遍历所有scores JSON，filename.endswith('.txt')→替换为.md
 
 ## 2026-04-25: 素材超长需截断
 - 单篇素材 >60000 字符会超出 LLM 上下文
@@ -88,6 +102,12 @@
 - 正确做法：--per-file生成逐篇prompt，每个子session只处理1篇素材
 - **全量蒸馏用 _batch_distill.py --per-file，增量用 incremental_distill.py --auto**
 - 两者共用 _per_file_prompts/ 和 _per_file_results/ 目录
+
+## 2026-04-29: spawn子session必须立即重试超时
+- gateway超时率~50%，spawn失败后必须立刻重试，不要等
+- 每个子session完成事件后立刻spawn下一批，保持流水线
+- 5并发上限，glm-5-turbo模型
+- 黄老板要求：超时自动重试，不要空转
 
 ## 2026-04-26: 删数据库必须经黄老板同意
 - 删向量库、清空数据是破坏性操作，**绝对不能自己决定**

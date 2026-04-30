@@ -405,46 +405,75 @@ def detect_source_type(filename: str) -> str:
 def generate_quality_report(person_dir: Path, dry_run: bool = False) -> dict:
     """生成质量评估报告JSON
     
+    扫描 materials/raw/ 和 papers/raw/ 下所有素材，生成质量评估报告。
     大文件（书籍>50000字符）智能采样：目录+前言+首章，不全送LLM。
     """
     mat_dir = person_dir / "materials"
-    raw_dir = mat_dir / "raw"
-    if not raw_dir.exists():
-        raw_dir = mat_dir
-    if not raw_dir.exists():
+    papers_dir = person_dir / "papers"
+
+    # 收集所有需要扫描的素材目录
+    scan_dirs = []
+    for sd in [mat_dir / "raw", mat_dir, papers_dir / "raw"]:
+        if sd.exists() and sd.is_dir():
+            scan_dirs.append(sd)
+
+    if not scan_dirs:
         return {"report_entries": 0, "errors": []}
 
     report = []
-    for f in sorted(raw_dir.glob("*")):
-        if not f.is_file() or f.name.startswith('_'):
-            continue
-        try:
-            content = f.read_text(encoding='utf-8', errors='ignore')
-        except Exception:
-            continue
+    seen_files = set()  # 避免重复（如果materials和papers有同名文件）
 
-        chars = len(content)
-        source_type = detect_source_type(f.name)
-        
-        # 按文件大小分级生成预览
-        if chars < 2000:
-            # 小文件：全文
-            preview = content[:5000].replace('\n', ' ').strip()
-        elif chars < 50000:
-            # 中等文件：前5000字符
-            preview = content[:5000].replace('\n', ' ').strip()
-        else:
-            # 大文件（书籍）：智能采样 — 目录+前言+首章开头
-            preview = _sample_book_preview(content, max_chars=10000)
+    for raw_dir in scan_dirs:
+        for f in sorted(raw_dir.glob("*")):
+            if not f.is_file() or f.name.startswith('_'):
+                continue
+            if f.name in seen_files:
+                continue
+            seen_files.add(f.name)
 
-        report.append({
-            "filename": f.name,
-            "size": f.stat().st_size,
-            "chars": chars,
-            "preview": preview,
-            "source_type": source_type,
-            "is_book": chars > 50000,  # 标记书籍文件
-        })
+            # 只处理 .md 和 .txt 文件
+            if f.suffix not in ('.md', '.txt'):
+                continue
+
+            try:
+                content = f.read_text(encoding='utf-8', errors='ignore')
+            except Exception:
+                continue
+
+            chars = len(content)
+            if chars < 200:
+                continue
+
+            source_type = detect_source_type(f.name)
+            
+            # 按文件大小分级生成预览
+            if chars < 2000:
+                # 小文件：全文（上限800字符）
+                preview = content[:800].replace('\n', ' ').strip()
+            elif chars < 50000:
+                # 中等文件：前800字符
+                preview = content[:800].replace('\n', ' ').strip()
+            else:
+                # 大文件（书籍）：智能采样 — 目录+前言开头
+                preview = _sample_book_preview(content, max_chars=800)
+
+            # Sanitize filename (remove newlines/tabs that break matching)
+            clean_name = f.name.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
+            if clean_name != f.name:
+                clean_path = f.parent / clean_name
+                if not clean_path.exists():
+                    import shutil
+                    shutil.move(str(f), str(clean_path))
+                f = clean_path
+
+            report.append({
+                "filename": clean_name,
+                "size": f.stat().st_size,
+                "chars": chars,
+                "preview": preview,
+                "source_type": source_type,
+                "is_book": chars > 50000,  # 标记书籍文件
+            })
 
     if not dry_run:
         report_path = mat_dir / "_quality_report.json"
