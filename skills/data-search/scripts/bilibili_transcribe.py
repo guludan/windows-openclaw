@@ -239,7 +239,7 @@ def transcribe_audio(audio_path: Path, language: str = "zh") -> str:
 
 def save_transcript(bvid: str, title: str, text: str, output_dir: Path) -> Path:
     """保存转录结果"""
-    fname = f"{bvid}_转录.txt"
+    fname = f"bilibili_{bvid}.md"
     path = output_dir / fname
 
     header = f"""title: "{bvid} 转录"
@@ -262,7 +262,7 @@ date_added: "{time.strftime('%Y-%m-%d')}"
 def process_video(bvid: str, title: str, output_dir: Path) -> Optional[Path]:
     """下载+转录+保存单个视频"""
     # 检查是否已存在
-    existing = output_dir / f"{bvid}_转录.txt"
+    existing = output_dir / f"bilibili_{bvid}.md"
     if existing.exists():
         print(f"  Skip {bvid}: already transcribed", flush=True)
         return existing

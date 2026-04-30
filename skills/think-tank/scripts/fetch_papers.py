@@ -268,10 +268,18 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
 
 def sanitize_filename(title: str, max_len: int = 80) -> str:
     """将论文标题转为安全文件名"""
+    # Remove HTML tags
+    name = re.sub(r'<[^>]+>', '', title)
+    # Normalize smart quotes/dashes
+    name = name.replace('\u2018', "'").replace('\u2019', "'")
+    name = name.replace('\u201c', '"').replace('\u201d', '"')
+    name = name.replace('\u2013', '-').replace('\u2014', '-')
     # 移除不安全字符
-    name = re.sub(r'[<>:"/\\|?*\n\r]', '', title)
+    name = re.sub(r'[<>:"/\\|?*\n\r]', '', name)
     # 空格替换为下划线
     name = name.replace(' ', '_')
+    # Collapse multiple underscores
+    name = re.sub(r'_+', '_', name)
     # 截断
     if len(name) > max_len:
         name = name[:max_len]

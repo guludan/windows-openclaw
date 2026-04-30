@@ -1682,7 +1682,7 @@ def download_book(title: str, output_dir: str, isbn: Optional[str] = None,
     
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
-    safe_title = re.sub(r'[^\w\s.-]', '_', title)[:60]
+    safe_title = sanitize_filename(title, max_len=60)
     md_path = output_path / f"book_{safe_title}.md"
     
     if md_path.exists() and md_path.stat().st_size > 5000:
