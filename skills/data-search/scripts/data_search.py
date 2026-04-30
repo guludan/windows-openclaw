@@ -61,6 +61,56 @@ def result_to_md(result: dict) -> str:
     lines.append(text)
     return '\n'.join(lines)
 
+
+def save_result(result: dict, output_dir: str, prefix: str = "") -> str:
+    """Save a search result as .md file in output_dir/materials/raw/.
+    
+    Args:
+        result: Search result dict with title/text/url/source keys
+        output_dir: Person directory (e.g. /path/to/John_Mearsheimer)
+        prefix: Optional filename prefix (e.g. 'exa', 'tavily')
+    
+    Returns:
+        Path to saved .md file, or empty string if failed
+    """
+    if not result or not isinstance(result, dict):
+        return ""
+    
+    text = result.get('text', '') or result.get('content', '') or ''
+    if len(text) < 200:
+        return ""
+    
+    title = result.get('title', 'untitled')
+    safe_name = sanitize_filename(title)
+    if prefix:
+        safe_name = f"{prefix}_{safe_name}"
+    if not safe_name.endswith('.md'):
+        safe_name += '.md'
+    
+    mat_raw = Path(output_dir) / 'materials' / 'raw'
+    mat_raw.mkdir(parents=True, exist_ok=True)
+    filepath = mat_raw / safe_name
+    
+    if filepath.exists():
+        i = 1
+        while (mat_raw / f"{safe_name[:-3]}_{i}.md").exists():
+            i += 1
+        filepath = mat_raw / f"{safe_name[:-3]}_{i}.md"
+    
+    md_content = result_to_md(result)
+    filepath.write_text(md_content, encoding='utf-8')
+    return str(filepath)
+
+
+def save_results_batch(results: list, output_dir: str, prefix: str = "") -> list:
+    """Save multiple search results as .md files."""
+    saved = []
+    for r in results:
+        path = save_result(r, output_dir, prefix)
+        if path:
+            saved.append(path)
+    return saved
+
 # Optional dependencies for enhanced academic search
 try:
     import arxiv as arxiv_lib
@@ -2324,9 +2374,17 @@ def search_person(
     if output_dir:
         out = Path(output_dir)
         out.mkdir(parents=True, exist_ok=True)
-        out_file = out / f"_search_results_{person_name}.json"
+        # 保存元数据汇总到_search_cache/(带_前缀，init_db不会注册)
+        cache_dir = out / '_search_cache'
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        out_file = cache_dir / f"_search_results_{person_name}.json"
         with open(out_file, 'w', encoding='utf-8') as f:
             json.dump(all_results, f, ensure_ascii=False, indent=2)
+        # 同时将有正文的结果保存为.md到materials/raw/
+        person_dir = out.parent if out.name == 'materials' else out
+        for layer in layers:
+            for item in all_results.get(layer, []):
+                save_result(item, str(person_dir), prefix=layer[:3])
         print(f"[search_person] 结果已保存: {out_file}", flush=True)
     
     return all_results
