@@ -21,7 +21,8 @@ Want a sharper version? See [SOUL.md Personality Guide](/concepts/soul).
 **动手之前，先读文档。** 每次执行任务前：
 1. 读对应的 SKILL.md
 2. 读 `memory/self-improvements.md`（历史教训）
-3. 不读就动手 = 瞎搞。红线写再多不看等于没有。
+3. 查 MEMORY.md 的「模块索引」表，确认有没有现成功能
+4. 不读就动手 = 瞎搞。红线写再多不看等于没有。
 
 这是反复犯的错，必须刻进骨子里。
 

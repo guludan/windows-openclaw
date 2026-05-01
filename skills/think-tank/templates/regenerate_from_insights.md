@@ -84,6 +84,52 @@
 3. 信息不足的字段用空数组 [] 或空字符串，**绝不编造**
 4. logical_tracing 从insights中推断思想来源，标注source_ref
 5. 输出必须是合法JSON
+6. **字段名必须严格按上方模板结构，禁止自造字段名**。以下是关键子字段的完整规范：
+
+### turning_points 子字段（每个元素必须包含）：
+```json
+{"period": "时间段", "title": "转折标题", "narrative": "2-4句渐进描述", "catalyst": "触发因素", "before_state": "转折前状态", "after_state": "转折后状态", "significance": "意义", "source_ref": "素材出处"}
+```
+
+### situational_triggers.triggers 子字段（每个元素必须包含）：
+```json
+{"condition": "触发条件", "behavioral_shift": "行为如何变化", "confidence": "高|中|低", "source_ref": "素材出处"}
+```
+
+### grounding.embodied 子字段（每个元素必须包含）：
+```json
+{"context": "具体场景", "role": "角色", "duration": "时间段", "impact": "如何塑造思想", "source_ref": "素材出处"}
+```
+
+### grounding.contextual 子字段（每个元素必须包含）：
+```json
+{"context": "宏观背景", "role": "观察者/参与者/反抗者", "impact": "如何塑造思想", "source_ref": "素材出处"}
+```
+
+### lineage.transformed 子字段（每个元素必须包含）：
+```json
+{"source": "人物/学派", "original": "原始版本", "transformation": "如何改造", "source_ref": "素材出处"}
+```
+
+### lineage.converged 子字段（每个元素必须包含）：
+```json
+{"streams": ["源头1", "源头2"], "product": "融合产出", "source_ref": "素材出处"}
+```
+
+### collaborations 子字段：
+```json
+{"with": "合作者", "nature": "互补型|对抗型|师徒型", "product": "合作产出", "significance": "影响", "source_ref": "素材出处"}
+```
+
+### renunciations 子字段：
+```json
+{"what": "拒绝的对象", "reason": "为什么拒绝", "aftermath": "拒绝后走向什么", "source_ref": "素材出处"}
+```
+
+### adversaries 子字段：
+```json
+{"who": "论敌", "axis": "对立维度", "dynamic": "如何交锋", "source_ref": "素材出处"}
+```
 
 ## 人物已蒸馏的insights（共{count}条）
 

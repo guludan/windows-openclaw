@@ -153,6 +153,48 @@ papers = search_academic("躺平 FIRE movement", max_results=3)
 - PubMed: 免费，生物医学
 - 返回论文摘要，不含全文
 
+### L5.5 网页内容抓取 (`fetch_webpage` / `fetch_urls_to_materials`)
+
+**用途**: 批量抓取URL列表的内容，保存为素材`.md`文件。适用于搜索后拿到URL列表，需要逐篇提取正文内容的场景。
+
+**原理**: 通过Jina Reader API（`r.jina.ai`）将网页转为Markdown，走WSL代理访问。
+
+**Python调用**:
+```python
+from data_search import fetch_webpage, fetch_urls_to_materials
+
+# 抓取单个URL
+text = fetch_webpage('https://example.com/article')
+
+# 批量抓取URL列表并保存为素材
+urls = [
+    {"title": "文章标题", "url": "https://example.com/article"},
+    ...
+]
+stats = fetch_urls_to_materials(
+    urls,
+    output_dir='/path/to/Person_Dir/',  # 人物目录
+    delay=6.0,                            # 间隔秒数（最小5秒）
+    proxy='http://172.26.0.1:10808'       # Jina代理
+)
+# stats: {"saved": N, "skipped": N, "failed": N, "files": [...]}
+```
+
+**CLI调用**:
+```bash
+# 1. 先用SerpAPI等收集URL列表，保存为JSON
+python3 data_search.py fetch urls.json --output-dir /path/to/Person_Dir/
+
+# urls.json格式: [{"title": "...", "url": "https://..."}, ...]
+```
+
+**自动处理**:
+- 跳过YouTube/Twitter/Reddit等非内容站
+- 跳过已存在的文件（>500字节）
+- 自动创建 `materials/raw/` 目录
+- 文件名sanitize
+- **间隔6秒**（红线：外部API 5-10秒间隔）
+
 ### L5 全文下载 (`download_scihub_pdf` / `download_book`)
 
 **论文下载**:

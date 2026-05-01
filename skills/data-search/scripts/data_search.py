@@ -1568,6 +1568,91 @@ def search_macro(keywords: str, max_results: int = 5) -> List[Dict[str, Any]]:
 
 
 # =============================================================================
+# Web Content Fetch Functions
+# =============================================================================
+
+def fetch_webpage(url: str, proxy: str = "http://172.26.0.1:10808") -> Optional[str]:
+    """Fetch URL content via Jina Reader API (through proxy).
+
+    Args:
+        url: URL to fetch
+        proxy: HTTP proxy for Jina API access
+
+    Returns:
+        Markdown text content, or None on failure.
+    """
+    try:
+        result = subprocess.run(
+            ['curl', '-sL', '--max-time', '30',
+             '-H', 'Accept: text/markdown',
+             '--proxy', proxy,
+             f'https://r.jina.ai/{url}'],
+            capture_output=True, text=True, timeout=40
+        )
+        text = result.stdout
+        if text and len(text) > 300:
+            return text
+    except Exception as e:
+        print(f"Jina fetch failed for {url}: {e}", file=sys.stderr)
+    return None
+
+
+def fetch_urls_to_materials(urls: list, output_dir: str, delay: float = 6.0, proxy: str = "http://172.26.0.1:10808") -> dict:
+    """Fetch multiple URLs and save as material .md files.
+
+    Args:
+        urls: List of dicts with 'title' and 'url' keys
+        output_dir: Person directory (e.g. .../Nate_Silver/)
+        delay: Delay between fetches in seconds (default 6, min 5)
+        proxy: HTTP proxy for Jina API
+
+    Returns:
+        {"saved": int, "skipped": int, "failed": int, "files": [...]}
+    """
+    delay = max(delay, 5.0)
+    stats = {"saved": 0, "skipped": 0, "failed": 0, "files": []}
+
+    for i, item in enumerate(urls):
+        title = item.get('title', '')
+        url = item.get('url', '')
+
+        # Skip non-content domains
+        skip_domains = ['youtube.com', 'twitter.com', 'x.com', 'tiktok.com',
+                        'reddit.com', 'facebook.com', 'amazon.com', 'goodreads.com']
+        if any(d in url for d in skip_domains):
+            stats['skipped'] += 1
+            continue
+
+        # Sanitize filename
+        fname = re.sub(r'[/\\\:|?<>"*\n\r\t]', '_', title)[:70].strip('_')
+        if not fname:
+            fname = f'article_{i}'
+
+        outpath = Path(output_dir) / 'materials' / 'raw' / f'{fname}.md'
+        outpath.parent.mkdir(parents=True, exist_ok=True)
+
+        if outpath.exists() and outpath.stat().st_size > 500:
+            stats['skipped'] += 1
+            continue
+
+        print(f"[{i+1}/{len(urls)}] {fname[:50]}")
+        text = fetch_webpage(url, proxy=proxy)
+        if text:
+            content = f"# {title}\n\nSource: {url}\n\n{text}"
+            outpath.write_text(content, encoding='utf-8')
+            stats['saved'] += 1
+            stats['files'].append(str(outpath))
+            print(f"  OK: {len(content):,} bytes")
+        else:
+            stats['failed'] += 1
+            print(f"  FAIL: too short or error")
+
+        time.sleep(delay)
+
+    return stats
+
+
+# =============================================================================
 # PDF Download Functions
 # =============================================================================
 
@@ -2520,6 +2605,13 @@ def main():
     dp.add_argument("--doi", help="按DOI下载")
     dp.add_argument("--output-dir", default="downloads", help="PDF输出目录")
 
+    # --- fetch subcommand ---
+    fp = subparsers.add_parser("fetch", help="抓取URL内容保存为素材")
+    fp.add_argument("urls_file", help="URL列表JSON文件 [{title, url}, ...]")
+    fp.add_argument("--output-dir", required=True, help="人物目录")
+    fp.add_argument("--delay", type=float, default=6.0, help="抓取间隔(秒)")
+    fp.add_argument("--proxy", default="http://172.26.0.1:10808", help="HTTP代理")
+
     args = parser.parse_args()
 
     # Backwards compat: if no subcommand, treat as search with --query
@@ -2611,6 +2703,16 @@ def main():
             return
         result = download_papers(doi=args.doi, output_dir=args.output_dir)
         print(json.dumps(result, ensure_ascii=False, indent=2))
+
+    elif args.command == "fetch":
+        with open(args.urls_file, encoding='utf-8') as f:
+            urls = json.load(f)
+        stats = fetch_urls_to_materials(
+            urls, args.output_dir,
+            delay=args.delay, proxy=args.proxy
+        )
+        print(f"\nDone: saved={stats['saved']}, skipped={stats['skipped']}, failed={stats['failed']}")
+        print(json.dumps(stats, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

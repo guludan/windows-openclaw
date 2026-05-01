@@ -133,3 +133,27 @@
 ## 2026-04-25: 蒸馏后检查 domains 覆盖
 - 防止某些领域知识在蒸馏过程中丢失
 - 检查输出 JSON 的 domains 字段是否覆盖素材涉及的所有领域
+
+## 2026-04-30: 现有模块有功能就必须用，不要绕路手写
+- data_search.py 已有 Sci-Hub、download 等功能，还手写 curl + jina 脚本
+- 正确做法：先查 MEMORY.md 模块索引 → 看有没有现成函数 → 没有再集成进模块
+- 新增 fetch_webpage() + fetch_urls_to_materials() + CLI `fetch` 子命令到 data_search.py
+- **SKILL.md已更新**，MEMORY.md模块索引已更新
+- 黄老板要求：新功能必须同步更新文档，不能只改代码不改文档
+
+## 2026-04-30: 蒸馏必须强调evidence（原文逐字摘录）
+- 蒸馏最核心的输出是 insights_with_evidence，不是顶层人格字段
+- evidence.excerpt 必须是**原文逐字摘录**，一字不改，禁止转述/概括/改写
+- 每个 claim 至少1条 evidence，重要观点2-5条
+- 没有 evidence 的 claim = 编造，比空数组更差
+- 每人至少15-30个 insights
+- evidence 结构：{"excerpt": "原文", "source_file": "文件名", "location": "位置描述"}
+- **总结蒸馏红线时漏掉了evidence这个最关键要求**，这是蒸馏质量命脉
+
+## 2026-04-30: regenerate_personality必须严格按模板字段名输出
+- 子session在regenerate时自造字段名，没有按distill_prompt_v3.md模板
+- turning_points用了event/description而不是period/title/narrative/catalyst/before_state/after_state/significance
+- situational_triggers用了strength/response而不是condition/behavioral_shift/confidence/source_ref
+- grounding.embodied用了experience/description而不是context/role/duration/impact
+- lineage.transformed缺original/transformation，converged缺streams/product
+- **解决方案**：regenerate prompt中必须附上完整的模板字段名要求，并明确说"字段名必须严格按以下结构，禁止自造字段名"

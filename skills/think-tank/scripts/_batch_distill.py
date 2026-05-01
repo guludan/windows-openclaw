@@ -217,7 +217,9 @@ def generate_per_file_prompts(person_dir: Path) -> None:
             # 保存prompt
             # 如果是chunk，文件名格式: _prompt_{index}_{filename}_chunk{N}.md
             chunk_suffix = chunk["chunk_suffix"]
-            prompt_filename = f"_prompt_{prompt_index:03d}_{material_file.name}{chunk_suffix}.md"
+            # 去掉素材文件扩展名，避免 .md.md 双扩展名
+            stem = material_file.stem  # 不含扩展名
+            prompt_filename = f"_prompt_{prompt_index:03d}_{stem}{chunk_suffix}.md"
             prompt_path = prompts_dir / prompt_filename
             prompt_path.write_text(prompt, encoding='utf-8')
 

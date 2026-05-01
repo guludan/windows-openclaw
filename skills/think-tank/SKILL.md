@@ -294,7 +294,7 @@ person_name/
 ├── _db.sqlite                          ← 素材元数据（状态追踪）
 ├── personality_v3.json                 ← 蒸馏产出的人格模型（最终结果）
 ├── materials/
-│   ├── raw/                            ← ✅ 质量通过的素材（.md/.txt）
+│   ├── raw/                            ← ✅ 素材来源①：网页采集素材（.md/.txt）
 │   ├── _discarded/                     ← ❌ 质量未通过的素材
 │   ├── _duplicates/                    ← 重复素材
 │   ├── _search_cache/                  ← 搜索结果缓存（.json）
@@ -303,10 +303,12 @@ person_name/
 │   ├── _quality_prompt_*.md            ← 评分prompt（batch_size=8）
 │   └── _per_file_prompts/              ← 蒸馏prompt
 └── papers/
-    ├── raw/                            ← 论文提取文本（.md）
+    ├── raw/                            ← ✅ 素材来源②：论文全文提取文本（.md）
     ├── pdfs/                           ← 论文PDF原件
     └── _meta.json                      ← 论文元数据
 ```
+
+⚠️ **素材统计必须合计两处**：`materials/raw/` + `papers/raw/`，只算一处会严重低估素材量。
 
 ## 红线
 
