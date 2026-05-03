@@ -178,15 +178,44 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 **regenerate会做归纳合并**：LLM将同一论点的多条insight合并，输出 `merged_from` 索引，代码自动合并原始evidence。目标压缩到30-60%，evidence总量不变。
 
+#### 三步流程
+
+**Step 4b-1: 生成prompt**（代码层，不调LLM）
 ```bash
-# 生成重新生成prompt（insights摘要作为输入）
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py <person_dir>
+```
+- 输入：`personality_v3.json` 中的 insights_with_evidence
+- 输出：`_regenerate_prompt.md`（包含insights摘要：claim + dim + source_files，**不含excerpt**，控制prompt大小）
+- ⚠️ prompt中只有insight摘要，不含完整evidence，所以LLM无法输出evidence
 
-# spawn子session处理prompt，输出到 _regenerate_result.json
-# LLM输出包含merged_from索引数组
+**Step 4b-2: spawn子session调LLM**
+```
+spawn子session → 读 _regenerate_prompt.md → 输出 _regenerate_result.json
+```
+- LLM任务：①归纳合并相似insights ②生成顶层字段（brief, school, domains等）
+- LLM输出格式：每条insight包含 `merged_from` 数组（原始insight的index）
+- ⚠️ `_regenerate_result.json` 是**中间产物**，不是最终人格文件，不含完整evidence
+- ⚠️ LLM可能输出非法JSON（claim中有未转义引号），apply时会自动尝试修复
 
-# 应用结果（代码自动按merged_from合并evidence，旧文件自动备份）
+**Step 4b-3: apply合并**
+```bash
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py <person_dir> --apply
+```
+- 读取 `_regenerate_result.json`（LLM的合并方案）
+- 根据 `merged_from` 索引，从原始 `personality_v3.json` 中提取完整evidence合并到对应insight
+- 遗漏的原始insight自动原样保留
+- 旧文件自动备份为 `personality_v3.json.bak.{timestamp}`
+- 输出：更新后的 `personality_v3.json`（最终人格文件）
+
+#### 数据流图
+```
+personality_v3.json (原始，含insights+evidence)
+        ↓ generate_prompt
+_regenerate_prompt.md (insights摘要，不含evidence)
+        ↓ spawn LLM
+_regenerate_result.json (中间产物，含merged_from索引，不含完整evidence)
+        ↓ --apply (用merged_from从原始文件提取evidence)
+personality_v3.json (最终，合并后insights+完整evidence+新生成的顶层字段)
 ```
 
 ### 批量蒸馏流程
