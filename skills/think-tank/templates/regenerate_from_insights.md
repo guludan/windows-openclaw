@@ -79,8 +79,14 @@
 
 ## 关键要求
 
-1. **insights_with_evidence 字段直接使用输入数据，不要修改**——原样保留
-2. 其他字段（brief, school, domains, stance_anchors 等）根据insights内容归纳生成
+1. **insights_with_evidence 的归纳合并策略**：
+   - 你需要将同一论点的多条insight归纳合并，输出合并后的claims列表
+   - 对于每条合并后的insight，输出 `merged_from` 字段（原始insight的index数组），代码会自动合并evidence
+   - 格式示例：`{"claim": "合并后的观点", "dim": "维度", "merged_from": [1, 3, 5]}`
+   - 目标：合并后的insight数量应为原始的30-60%
+   - ⚠️ 不要丢弃独特观点，只合并实质相同的
+   - ⚠️ 每条原始insight必须被引用一次（出现在某个merged_from中），不能丢失
+2. 其他字段（brief, school, domains, stance_anchors 等）根据合并后的insights归纳生成
 3. 信息不足的字段用空数组 [] 或空字符串，**绝不编造**
 4. logical_tracing 从insights中推断思想来源，标注source_ref
 5. 输出必须是合法JSON

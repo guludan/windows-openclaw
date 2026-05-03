@@ -115,9 +115,10 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 #### 全量蒸馏（首次）
 
 ```bash
-# Step 3a: 生成逐篇蒸馏prompts
+# Step 3a: 生成逐篇蒸馏prompts（从数据库读取非废弃素材）
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/_batch_distill.py <person_dir> --per-file
-# → 生成 _per_file_prompts/_prompt_{index}_{filename}.md
+# → 从 _db.sqlite 查询 status != 'discarded' 的素材，生成 _per_file_prompts/
+# ⚠️ 必须在质量评分完成后执行，否则会包含废弃素材
 
 # Step 3b: 逐个spawn子session处理每个prompt
 # 每个子session只处理1个prompt（1个chunk），提取 insights_with_evidence
@@ -175,13 +176,16 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 逐篇蒸馏只生成 insights_with_evidence，顶层字段（brief, school, domains, logical_tracing等）可能过时。合并后需要重新生成：
 
+**regenerate会做归纳合并**：LLM将同一论点的多条insight合并，输出 `merged_from` 索引，代码自动合并原始evidence。目标压缩到30-60%，evidence总量不变。
+
 ```bash
-# 生成重新生成prompt（insights作为输入）
+# 生成重新生成prompt（insights摘要作为输入）
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py <person_dir>
 
 # spawn子session处理prompt，输出到 _regenerate_result.json
+# LLM输出包含merged_from索引数组
 
-# 应用结果（替换顶层字段，保留原insights_with_evidence，旧文件自动备份）
+# 应用结果（代码自动按merged_from合并evidence，旧文件自动备份）
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py <person_dir> --apply
 ```
 
@@ -315,6 +319,9 @@ person_name/
 - **GLM调用必须走sessions_spawn**，禁止直接调API
 - **质量评分只用LLM，禁止用规则评分脚本**
 - **蒸馏必须逐篇逐chunk处理**，一次读全部会导致幻觉。每篇读完提取观点+标注source_ref，再读下一篇
+- **`_batch_distill.py --per-file` 从数据库查询非废弃素材**（status != 'discarded'），必须在Step 2b质量评分完成后执行
+- **质量评分是5分制(1-5)**，用 `action=keep/discard` 和数据库 `status` 字段判断，不是 score>=6
+- **论文下载必须验证作者身份**：同名不同人问题严重（hull=船壳、silver=金属），下载后必须检查内容是否为正确作者
 - **一个人物一个子session**，多人塞一个session必定超出上下文
 - **超过10万字符素材需分多个子session分批处理**
 - **蒸馏必须实事求是**，有观点才提取，没观点输出空数组，禁止编造

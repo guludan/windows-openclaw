@@ -33,7 +33,39 @@ MAX_CHARS = 60000
 
 
 def get_materials(person_dir: Path) -> List[Path]:
-    """获取素材文件列表，从 materials/raw/ 和 papers/raw/ 读取"""
+    """获取素材文件列表，从数据库读取非废弃状态的文件
+    
+    优先从 _db.sqlite 查询 status != 'discarded' 的文件，
+    确保质量评分过滤生效。如果数据库不可用则回退到文件系统扫描。
+    """
+    db_path = person_dir / "_db.sqlite"
+    
+    if db_path.exists():
+        try:
+            conn = sqlite3.connect(str(db_path))
+            conn.row_factory = sqlite3.Row
+            # 查询非废弃状态的文件
+            rows = conn.execute(
+                "SELECT filename, file_path FROM items WHERE status != 'discarded' ORDER BY char_count"
+            ).fetchall()
+            conn.close()
+            
+            files = []
+            for row in rows:
+                filename = row['filename']
+                # 尝试从多个可能的位置找到文件
+                for subdir in ["materials/raw", "papers/raw"]:
+                    fp = person_dir / subdir / filename
+                    if fp.exists() and fp.stat().st_size >= 200:
+                        files.append(fp)
+                        break
+            
+            if files:
+                return sorted(files, key=lambda f: f.stat().st_size)
+        except Exception as e:
+            print(f"  ⚠ 数据库查询失败，回退到文件系统扫描: {e}", file=sys.stderr)
+    
+    # 回退：直接扫描文件系统（不检查质量评分）
     files = []
     for subdir in ["materials/raw", "papers/raw"]:
         raw_dir = person_dir / subdir
@@ -446,8 +478,39 @@ def merge_per_file_results(person_dir: Path) -> None:
     print(f"  rm -rf {person_dir}/_per_file_results")
 
 
+def _claim_similarity(a: str, b: str) -> float:
+    """计算两个claim的相似度（基于关键词重叠）
+    
+    使用改进的重叠系数：交集词数/min(len_a, len_b)
+    这样对短文本更敏感，不会因为长度差异过大而稀释相似度
+    """
+    import re
+    # 中英文分词
+    def tokenize(text):
+        tokens = set()
+        # 英文单词
+        for w in re.findall(r'[a-zA-Z]{2,}', text.lower()):
+            tokens.add(w)
+        # 中文字符级（2-4字窗口）
+        cn = re.findall(r'[\u4e00-\u9fff]+', text)
+        for seg in cn:
+            for n in range(2, min(5, len(seg)+1)):
+                for i in range(len(seg)-n+1):
+                    tokens.add(seg[i:i+n])
+        return tokens
+    
+    tokens_a = tokenize(a)
+    tokens_b = tokenize(b)
+    if not tokens_a or not tokens_b:
+        return 0.0
+    intersection = tokens_a & tokens_b
+    # Overlap coefficient: 交集/min(len_a, len_b)
+    min_len = min(len(tokens_a), len(tokens_b))
+    return len(intersection) / min_len
+
+
 def merge_insights(insights: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """合并 insights，相同 claim 的合并 evidence
+    """合并 insights，相似 claim 的合并 evidence
 
     Args:
         insights: insights 列表
@@ -455,36 +518,56 @@ def merge_insights(insights: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     Returns:
         合并后的 insights 列表
     """
-    # 按 claim 分组
-    groups: Dict[str, Dict[str, Any]] = {}
+    SIMILARITY_THRESHOLD = 0.6  # Jaccard相似度阈值
+    
+    # 两阶段合并：先精确匹配，再模糊匹配
+    groups: List[Dict[str, Any]] = []
+    used_indices = set()
 
-    for insight in insights:
-        claim = insight.get("claim", "").strip()
-        if not claim:
+    for i, insight in enumerate(insights):
+        if i in used_indices:
+            continue
+        claim_i = insight.get("claim", "").strip()
+        if not claim_i:
+            used_indices.add(i)
             continue
 
-        dim = insight.get("dim", "")
-        evidence_list = insight.get("evidence", [])
+        dim_i = insight.get("dim", "")
+        evidence_list = list(insight.get("evidence", []))
 
-        if claim not in groups:
-            groups[claim] = {
-                "claim": claim,
-                "dim": dim,
-                "evidence": []
-            }
+        # 寻找后续相似claims
+        for j in range(i + 1, len(insights)):
+            if j in used_indices:
+                continue
+            claim_j = insights[j].get("claim", "").strip()
+            if not claim_j:
+                used_indices.add(j)
+                continue
 
-        # 合并 evidence（避免重复）
-        existing_evidence = groups[claim]["evidence"]
-        for evidence in evidence_list:
-            # 用 excerpt 和 source_file 作为唯一标识
-            key = (evidence.get("excerpt", ""), evidence.get("source_file", ""))
-            if not any(
-                (e.get("excerpt", ""), e.get("source_file", "")) == key
-                for e in existing_evidence
-            ):
-                existing_evidence.append(evidence)
+            # 同维度优先合并，不同维度但高度相似也合并
+            sim = _claim_similarity(claim_i, claim_j)
+            same_dim = insights[j].get("dim", "") == dim_i
 
-    return list(groups.values())
+            if (same_dim and sim >= SIMILARITY_THRESHOLD) or sim >= 0.8:
+                # 合并evidence
+                for ev in insights[j].get("evidence", []):
+                    key = (ev.get("excerpt", ""), ev.get("source_file", ""))
+                    if not any(
+                        (e.get("excerpt", ""), e.get("source_file", "")) == key
+                        for e in evidence_list
+                    ):
+                        evidence_list.append(ev)
+                used_indices.add(j)
+
+        # 保留较长/更好的claim
+        groups.append({
+            "claim": claim_i,
+            "dim": dim_i,
+            "evidence": evidence_list
+        })
+        used_indices.add(i)
+
+    return groups
 
 
 def estimate_total_chars(files: List[Path]) -> int:

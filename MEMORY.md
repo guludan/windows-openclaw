@@ -47,6 +47,7 @@
 | 报告生成 | `skills/think-tank/scripts/think_tank_pipeline_v3.py` | |
 
 ## 🔴 红线
+- **质量评分是5分制(1-5)，用action=keep/discard判断，不是score>=6**
 - **用skill前先读SKILL.md**
 - **chromadb 严禁并发**
 - **蒸馏逐篇逐chunk，一人一个子session，>10万字符分批**
@@ -56,6 +57,9 @@
 - **SiliconFlow 禁止**
 - **Sci-Hub 间隔15秒，外部API间隔5-10秒**
 - **init_db不注册json，素材必须.md/.txt**
+- **必须先质量评分再生成蒸馏prompts，顺序不能反**
+- **regenerate必须做归纳合并**：模板要求LLM输出merged_from索引，代码层合并evidence。目标压缩到30-60%，evidence总量不变
+- **论文下载必须验证作者身份，同名不同人问题严重**
 
 ## 关键经验
 - 蒸馏输出：`personality_v3.json`

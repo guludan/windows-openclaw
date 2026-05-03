@@ -90,18 +90,59 @@ def apply_result(person_dir):
     pv3_path.rename(backup_path)
     print(f"Backup: {backup_path}")
     
-    # 合并：用新数据替换顶层字段，但保留原insights_with_evidence
+    # 合并：用新数据替换顶层字段，insights用LLM的merged_from做代码级evidence合并
     original_iwe = pv3.get("insights_with_evidence", [])
-    new_data["insights_with_evidence"] = original_iwe
+    new_iwe_raw = new_data.get("insights_with_evidence", [])
+    
+    # LLM输出包含merged_from字段时，用原始insights的evidence合并
+    merged_iwe = []
+    used_indices = set()
+    
+    for new_ins in new_iwe_raw:
+        merged_from = new_ins.get("merged_from", [])
+        if merged_from and original_iwe:
+            # 收集所有被合并的原始insights的evidence
+            all_evidence = []
+            for idx in merged_from:
+                if 0 < idx <= len(original_iwe):
+                    orig = original_iwe[idx - 1]  # 1-indexed
+                    for ev in orig.get("evidence", []):
+                        key = (ev.get("excerpt", ""), ev.get("source_file", ""))
+                        if not any((e.get("excerpt", ""), e.get("source_file", "")) == key for e in all_evidence):
+                            all_evidence.append(ev)
+                    used_indices.add(idx)
+            merged_iwe.append({
+                "claim": new_ins.get("claim", ""),
+                "dim": new_ins.get("dim", ""),
+                "evidence": all_evidence
+            })
+        else:
+            # LLM没有merged_from（旧格式），直接使用
+            merged_iwe.append(new_ins)
+    
+    # 检查是否有遗漏的原始insights
+    if original_iwe and used_indices:
+        all_expected = set(range(1, len(original_iwe) + 1))
+        missed = all_expected - used_indices
+        if missed:
+            for idx in missed:
+                orig = original_iwe[idx - 1]
+                merged_iwe.append(orig)
+            print(f"  ⚠️ {len(missed)} insights未被LLM合并，已原样保留")
+    
+    new_data["insights_with_evidence"] = merged_iwe
     new_data["_distill_meta"] = pv3.get("_distill_meta", {})
     new_data["_distill_meta"]["version"] = "v3-regenerated"
     new_data["_distill_meta"]["regenerated_at"] = datetime.now().isoformat()
+    new_data["_distill_meta"]["pre_merge_count"] = len(original_iwe)
+    new_data["_distill_meta"]["post_merge_count"] = len(merged_iwe)
     
     # 保存
     pv3_path.write_text(json.dumps(new_data, ensure_ascii=False, indent=2), encoding="utf-8")
     
     print(f"Applied: {pv3_path}")
-    print(f"  Preserved {len(original_iwe)} insights_with_evidence")
+    dedup_count = len(original_iwe) - len(merged_iwe)
+    print(f"  Insights: {len(original_iwe)} → {len(merged_iwe)} (merged {dedup_count})")
     print(f"  Updated: brief, school, domains, stance_anchors, cognitive_patterns, etc.")
 
 
