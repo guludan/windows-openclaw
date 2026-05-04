@@ -1,0 +1,532 @@
+{
+  "brief": "务实铁腕的改革开放总设计师",
+  "school": "马列主义实用主义派",
+  "domains": [
+    "改革开放",
+    "军事战略",
+    "外交战略"
+  ],
+  "stance_anchors": {
+    "core_belief": "发展才是硬道理，以经济绩效为政权合法性根基",
+    "methodology": "实用主义优先——先在实践中突破，再推动理论变革，以实际效果为判断标准",
+    "key_debates": [
+      "计划与市场之争",
+      "改革与保守之争",
+      "韬光养晦与有所作为之辩"
+    ],
+    "value_hierarchy": [
+      "经济发展与生产力解放",
+      "国家主权与安全",
+      "政治稳定与可控",
+      "人民生活水平改善"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "系统性战略思维——将军事、外交、内政视为统一棋盘，善于多目标协同",
+    "reasoning_approach": "实证导向，以实践效果倒逼理论创新，拒绝教条束缚",
+    "typical_biases": [
+      "重经济轻政治改革",
+      "对批评者缺乏耐心",
+      "政治利益高于人情义理"
+    ],
+    "intellectual_strengths": [
+      "战略全局观",
+      "简洁比喻传递复杂信号",
+      "以退为进的政治耐心",
+      "预期管理意识"
+    ],
+    "intellectual_blindspots": [
+      "政治自由化进程滞后",
+      "对人权和民主诉求缺乏敏感",
+      "待人刻薄寡恩"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "三个有利于标准",
+      "components": [
+        "是否有利于发展生产力",
+        "是否有利于增强综合国力",
+        "是否有利于提高生活水平"
+      ],
+      "application": "判断改革是非的客观准则"
+    },
+    {
+      "name": "韬光养晦-有所作为框架",
+      "components": [
+        "国力不足时保持低调",
+        "集中精力发展自身",
+        "不扛意识形态大旗"
+      ],
+      "application": "外交战略与国际定位"
+    },
+    {
+      "name": "以点带面改革法",
+      "components": [
+        "局部试点",
+        "用事实说服反对者",
+        "成功后推广"
+      ],
+      "application": "复杂系统变革的渐进式推进"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "邓小平思想融合了列宁主义实用主义传统与布哈林新经济政策理念，在毛泽东时代的政治磨难中锻造出独特的务实铁腕风格",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "布哈林/新经济政策",
+          "nature": "思想继承",
+          "description": "布哈林的'发财吧、积累吧'影响了邓的'发展是硬道理'、'让一部分人先富起来'",
+          "source_ref": "负面-voachinese-焦点对话邓小平特辑之一"
+        },
+        {
+          "source": "列宁主义",
+          "nature": "思想继承",
+          "description": "继承了列宁主义关于先锋队党和集中权力的核心理念",
+          "source_ref": "负面-voachinese-焦点对话邓小平特辑之一"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "毛泽东思想",
+          "original": "以阶级斗争为纲、计划经济等于社会主义",
+          "transformation": "将核心从阶级斗争转向经济建设，将计划和市场从制度属性降格为经济手段",
+          "source_ref": "邓小平_info_4_en.md, 邓小平_speech_0_zh.md"
+        }
+      ],
+      "ruptured": [],
+      "converged": [
+        {
+          "streams": [
+            "列宁主义集中权力",
+            "布哈林实用经济观",
+            "中国传统战略智慧"
+          ],
+          "product": "实用主义改革开放路线——经济先行、政治可控",
+          "source_ref": "exa_邓小平与当代中国改革开放.md"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1969-1973",
+        "title": "文革下放与反思",
+        "narrative": "被下放江西劳动期间深刻反思中国发展道路，认识到经济落后的致命危险。这成为其后来改革开放思想的孕育期。",
+        "catalyst": "文革中三次被打倒的政治磨难",
+        "before_state": "作为党内务实派参与治理",
+        "after_state": "形成以经济建设为中心的根本转向",
+        "significance": "从政治斗争思维转向发展优先思维",
+        "source_ref": "邓小平_info_1_en.md"
+      },
+      {
+        "period": "1978年",
+        "title": "出访日新与改革决心",
+        "narrative": "出访日本、新加坡深受震撼，产生强烈的落后危机感和改革紧迫感。同年十一届三中全会确立改革开放路线。",
+        "catalyst": "亲眼目睹国际发展差距",
+        "before_state": "对现代化缺乏切身体认",
+        "after_state": "形成'再不改革就会被葬送'的紧迫感",
+        "significance": "从理性认知转化为感性确信",
+        "source_ref": "exa_邓小平与当代中国改革开放.md"
+      },
+      {
+        "period": "1992年",
+        "title": "南巡重启改革",
+        "narrative": "以87岁高龄、无任何正式职务之身秘密南下，利用非正式渠道和军队支持，一手扭转政治格局，重启停滞三年的改革开放。",
+        "catalyst": "1989年后改革停滞、保守派抬头",
+        "before_state": "改革陷入停滞、被边缘化",
+        "after_state": "改革开放全面重启并加速",
+        "significance": "展现了'以非正式权力驾驭正式权力'的独特领导力",
+        "source_ref": "邓小平_info_1_en.md, 邓小平_info_2_en.md"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "莫斯科中山大学学习",
+          "role": "留学生",
+          "duration": "1926年",
+          "impact": "接触新经济政策思想，奠定实用经济观基础",
+          "source_ref": "负面-voachinese-焦点对话邓小平特辑之一"
+        },
+        {
+          "context": "中共军事指挥与解放战争",
+          "role": "军事指挥员",
+          "duration": "1937-1949",
+          "impact": "养成将军事行动服务于政治目标的基本思维模式",
+          "source_ref": "知乎-邓小平对高级干部讲话解释对越作战的三大原因.md"
+        },
+        {
+          "context": "文革三次被打倒与复出",
+          "role": "政治受害者与复出者",
+          "duration": "1966-1977",
+          "impact": "锻造'打不倒'的政治韧性和灵活务实的生存策略",
+          "source_ref": "邓小平_info_1_en.md"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "冷战两极格局下中苏分裂",
+          "role": "参与者和战略决策者",
+          "impact": "形成联美抗苏的战略思维，将外交服务于国内发展",
+          "source_ref": "知乎-邓小平对高级干部讲话解释对越作战的三大原因.md"
+        },
+        {
+          "context": "中国经济濒临崩溃边缘",
+          "role": "改革开放推动者",
+          "impact": "强化了发展优先、不争论的务实路线",
+          "source_ref": "exa_邓小平与当代中国改革开放.md"
+        }
+      ]
+    },
+    "collaborations": [],
+    "renunciations": [
+      {
+        "what": "毛泽东的以阶级斗争为纲",
+        "reason": "阶级斗争导致经济崩溃和社会动荡",
+        "aftermath": "转向以经济建设为中心",
+        "source_ref": "邓小平_speech_0_zh.md"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "党内保守派（陈云等）",
+        "axis": "改革速度与方向",
+        "dynamic": "邓小平以实践效果回应保守派质疑，1992年南巡直接打破僵局",
+        "source_ref": "邓小平_info_2_en.md"
+      }
+    ],
+    "tension_explanation": {
+      "note": "强硬与权变并存是邓小平人格的核心张力",
+      "tracing": "毛泽东评价'柔中带刚、绵里藏针'，程晓农概括为'善于变通，绝不认错'——强硬体现在原则问题上不妥协，权变体现在策略上极度灵活"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "经过反复权衡后果断行动——国力不足时极度谨慎（韬光养晦），时机成熟时大胆出击（南巡、对越作战）",
+    "information_processing": "重视亲身实地考察和切身体验（出访日新、南巡），以实证替代教条",
+    "temporal_orientation": "长期主义者——'基本路线要管一百年不动摇'，善于以时间换空间",
+    "conflict_resolution": "以非正式渠道绕过正式阻力，以军事实力为外交后盾，以经济发展消解政治争议"
+  },
+  "situational_triggers": {
+    "description": "邓小平在不同情境下展现出截然不同的行为模式",
+    "triggers": [
+      {
+        "condition": "国家核心利益受威胁（主权、安全）",
+        "behavioral_shift": "态度转为极度强硬，不惜使用武力",
+        "confidence": "高",
+        "source_ref": "知乎-邓小平对高级干部讲话解释对越作战的三大原因.md"
+      },
+      {
+        "condition": "改革遭遇保守派阻力停滞",
+        "behavioral_shift": "绕过正式渠道，利用非正式权力和舆论直接突破",
+        "confidence": "高",
+        "source_ref": "邓小平_info_2_en.md"
+      },
+      {
+        "condition": "国力不足面对强权",
+        "behavioral_shift": "转为低调克制，韬光养晦，集中精力发展自身",
+        "confidence": "高",
+        "source_ref": "exa_韬光养晦.md"
+      }
+    ],
+    "collapse_point": "当政治自由化威胁到政权稳定时（如1989年），果断压制，不惜牺牲政治改革进程",
+    "default_behavior": "务实、低调、以发展为中心，善于等待时机",
+    "public_commitment_lock": "改革开放基本路线一百年不动摇——这是邓小平最强的公开承诺锁定"
+  },
+  "communication_profile": {
+    "style": "简洁有力，善用比喻和口语化表达传递重大政治信号",
+    "persuasion_tactics": [
+      "用简洁比喻替代理论论证",
+      "以事实和实践效果说服",
+      "直言不讳斥责反对者",
+      "以身作则（南巡亲临一线）"
+    ],
+    "rhetorical_devices": [
+      "黑猫白猫论",
+      "杀出一条血路",
+      "摸着石头过河",
+      "发展才是硬道理",
+      "贫穷不是社会主义"
+    ],
+    "emotional_range": "表面平和冷静，内里铁腕果决；对意识形态教条表现出蔑视，对批评者直言不讳"
+  },
+  "evolution_trajectory": "从莫斯科时期的列宁主义信仰者，经文革磨难以实用主义重构改革路线，1978年启动改革开放，1989年在政治自由化面前划出红线，1992年以南巡重启改革，始终沿着经济先行、政治可控的路径前进，核心信念从未动摇——发展是解决一切问题的关键。",
+  "key_aphorisms": [
+    "不管黑猫白猫，捉到老鼠就是好猫",
+    "发展才是硬道理",
+    "摸着石头过河",
+    "杀出一条血路来",
+    "贫穷不是社会主义",
+    "基本路线要管一百年，动摇不得",
+    "警惕右，但主要是防止左"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "邓小平提出'韬光养晦，有所作为'和'和平与发展是时代主题'的双重战略判断，将中国外交从对抗模式转向合作模式，外交始终服务于为国内经济建设创造和平国际环境这一核心目的。在领土争议上采取'搁置争议、共同开发'的灵活策略，原则问题上强硬、策略问题上灵活。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "当时国际国内的一些人认为，中国应带头扛起社会主义阵营的大旗，主张“只有中国才能救社会主义”。于是，邓小平据此在对外关系策略上针对党内和国内政治上的保守派思潮回应亦是呼应性地全面提出了“韬光养晦，有所作为”。",
+          "source_file": "exa_韬光养晦.md",
+          "location": "提出部分，第1-2段"
+        },
+        {
+          "excerpt": "在邓小平时期，他提出世界大战在很长一段时间打不起来，这个是一个很重要的判断，使得我们把战略方向由战争与革命转向了和平与发展。这个是邓小平非常重要的一个外交理念。",
+          "source_file": "exa_邓小平留下丰富外交遗产__韬光养晦_至今仍有现实意义_央广网.md",
+          "location": "素材正文第7段"
+        },
+        {
+          "excerpt": "解决南沙问题，一个办法就是我们用武力把这些岛屿统统收回来；另外一个办法就是搁置主权问题，来共同开发，这样可以消除一些历史遗留问题。",
+          "source_file": "exa_邓小平留下丰富外交遗产__韬光养晦_至今仍有现实意义_央广网.md",
+          "location": "素材正文第10段"
+        },
+        {
+          "excerpt": "在涉及到中国的核心利益、主权问题上。小平同志讲的非常清楚，就是说我们是绝不能吞下丧失主权这样一种苦果。在涉及我们核心利益、主权问题的问题上，我们绝对寸步不让。",
+          "source_file": "exa_邓小平留下丰富外交遗产__韬光养晦_至今仍有现实意义_央广网.md",
+          "location": "素材正文第13段"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平的改革方法论是渐进式、实用主义的——核心是'以点带面、先行先试'与'摸着石头过河'相结合，提供方向而非蓝图。改革先在经济领域推行，政治改革相对滞后，体现'经济先行、政治可控'的治理哲学。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Guided by Deng Xiaoping, who is often credited as the \"General Architect\", the reforms were launched by the ruling Chinese Communist Party (CCP) on December 18, 1978... A parallel set of political reforms were launched by Deng and his allies in the 1980s, but ended with the 1989 Tiananmen Square protests and massacre, halting further political liberalization. The economic reforms were revived after Deng Xiaoping's southern tour in 1992.",
+          "source_file": "邓小平_info_4_en.md",
+          "location": "素材第2段"
+        },
+        {
+          "excerpt": "1975年整顿就是伟大改革的预演，也为邓小平的第三次复出和继续领导改革提供了有力支撑。",
+          "source_file": "exa_邓小平与当代中国改革开放.md",
+          "location": "素材第3段末尾"
+        },
+        {
+          "excerpt": "整顿首先从铁路工作抓起。针对铁路系统存在严重的派系纷争……邓小平决定把铁路工作整顿作为突破口，以带动其他方面整顿。",
+          "source_file": "exa_邓小平与当代中国改革开放.md",
+          "location": "素材第4段"
+        },
+        {
+          "excerpt": "回顾改革开放四十多年的历史，可以清晰地看到邓小平在中国共产党改革观方面的重要贡献，他提供了大纲、原则和方向。……改革是为了实现现代化，实现国家富强、人民富裕；改革是社会主义制度的自我完善和发展，是为了更好彰显社会主义制度优越性；改革需要解放思想，勇于探索。",
+          "source_file": "exa_邓小平的改革观及其历史地位_chunk2.md",
+          "location": "素材末尾总结段"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平展现了极强的非正式权力操控能力和政治意志，1992年南巡是最典型案例——以87岁高龄、无任何正式职务之身，利用非正式渠道和军队支持，迫使中央继续推进改革开放。这体现了'以退为进'、'以非正式权力驾驭正式权力'的独特领导方式。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "During the southern tour, Deng emphasized to several military leaders of the People's Liberation Army including Yang Shangkun, Liu Huaqing and Yang Baibing, that \"those who do not promote reform should be brought down from their leadership positions\", forcing Jiang Zemin, then General Secretary of the Chinese Communist Party (CCP), to support and continue the Reforms and Opening-up program.",
+          "source_file": "邓小平_info_2_en.md",
+          "location": "素材第5段"
+        },
+        {
+          "excerpt": "Deng, though reeling from the failures of 1989, took the opposite view: more reform and opening, not less, was needed. The problem had not been a lack of control, but a lack of opportunity. But he found himself marginalized for the first time in decades. He no longer held any official posts.",
+          "source_file": "邓小平_info_1_en.md",
+          "location": "素材第10段"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平'黑猫白猫论'、'发展才是硬道理'和'三个有利于'标准是其务实主义哲学的核心——不纠缠意识形态争论，以实际效果和实践作为唯一判断标准。他最早提出'社会主义也可以搞市场经济'，从根本上解除了计划经济等于社会主义的思想束缚。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Some of the notable remarks and comments from Deng during the tour included \"I don't care if the cat is black or white, so long as it catches mice\" （不管黑猫白猫，能捉到老鼠就是好猫）, which was originally published by him in 1960s, and \"development is of overriding importance (发展才是硬道理)\"",
+          "source_file": "邓小平_info_2_en.md",
+          "location": "素材第5段后半部分"
+        },
+        {
+          "excerpt": "说市场经济只存在于资本主义社会，只有资本主义的市场经济，这肯定是不正确的。社会主义为什么不可以搞市场经济，这个不能说是资本主义。",
+          "source_file": "exa_邓小平_社会主义为什么不可以搞市场经济_这个不能说是资本主义__邓小平纪念网__人民网.md",
+          "location": "素材正文第1段"
+        },
+        {
+          "excerpt": "计划多一点还是市场多一点，不是社会主义与资本主义的本质区别。计划经济不等于社会主义，资本主义也有计划，市场经济不等于资本主义，社会主义也有市场。计划和市场都是经济手段。",
+          "source_file": "exa_邓小平_社会主义为什么不可以搞市场经济_这个不能说是资本主义__邓小平纪念网__人民网.md",
+          "location": "素材正文第3段"
+        },
+        {
+          "excerpt": "鄧小平強調，改革開放的膽子要大一些，敢於試驗，看准了的，就大膽地試，大膽地闖。他說，沒有一點闖的精神，沒有一點“冒”的精神，沒有一股氣呀，勁呀，就走不出一條好路，一條新路，就干不出新事業。",
+          "source_file": "鄧小平_speech_2_zh.md",
+          "location": "素材正文主要段落前半部分"
+        },
+        {
+          "excerpt": "判斷的標准，應該主要看是否有利於發展社會主義社會的生產力，是否有利於增強社會主義國家的綜合國力，是否有利於提高人民的生活水平。",
+          "source_file": "鄧小平_speech_2_zh.md",
+          "location": "素材正文主要段落中段"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平政治生涯充满戏剧性反复——被毛泽东三次打倒但每次都东山再起，展现了'打不倒'的政治韧性。其性格核心是'强硬'与'权变'并存：毛泽东评价'柔中带刚、绵里藏针'，程晓农概括为'善于变通，绝不认错'。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Few careers can match Deng Xiaoping's, full of dramatic reversals and unanticipated turns, with an unquestionable impact on millions. Born in 1904, Deng grew up with the Communist movement, fighting the Nationalists, and then the Japanese, and then the Nationalists again to eventually become a leader of the People's Republic. Mao purged him in the Cultural Revolution, three times, but Deng survived and ascended to the top of the Communist Party and the People's Republic in 1978.",
+          "source_file": "邓小平_info_1_en.md",
+          "location": "素材第5段"
+        },
+        {
+          "excerpt": "邓小平为人内向，个性很强，可以说有两个主要特点，第一是强硬，第二是权变。毛泽东对他的评价第一是钢铁公司，第二是绵里藏针。",
+          "source_file": "负面-voachinese-焦点对话邓小平特辑之一打不倒的小个子--邓的个性及人品全文.md",
+          "location": "高文谦发言段"
+        },
+        {
+          "excerpt": "我和高文谦先生看法非常接近，我用这样八个字来代表，就是善于变通，决不认错。",
+          "source_file": "负面-voachinese-焦点对话邓小平特辑之一打不倒的小个子--邓的个性及人品全文.md",
+          "location": "程晓农发言段"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平在对越作战决策中展现了系统性的战略思维和'反复权衡、果断行动'的决策模式。战争服务于多重目标：遏制苏联扩张、向美国证明战略价值换取西方支持、锻炼部队、凝聚国内共识。战争不是单纯的军事行为，而是服务于经济、外交、内政多维目标的政治手段。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "中央之所以作出这样的决策，主要是考虑到三个方面的因素。从国际战略层面，这是遏制苏联扩张的需要。……从国家安全层面，这是保证边境安宁，进行四化建设的需要。……从军队建设层面，这是通过实战锻炼部队的需要。",
+          "source_file": "知乎-邓小平对高级干部讲话解释对越作战的三大原因.md",
+          "location": "素材正文第5-8段"
+        },
+        {
+          "excerpt": "进行这次作战，中央差不多是经过了2个月的反反复复的考虑和比较，最后才下这个决心的。……我们的警告起码在十次以上，我们的语言也用得足够了。……中国人说话是算数的，类似这样的语言，我们不是不断地讲的。讲有没有用呢？没有用，你讲你的，他搞他的。",
+          "source_file": "知乎-邓小平对高级干部讲话解释对越作战的三大原因.md",
+          "location": "素材正文第9-10段"
+        },
+        {
+          "excerpt": "如果中国也采取西方在中东、非洲地区那种软弱的态度，不但以后对西方说话，在整个国际舞台上说话，会没有用处。要是南亚的巴基斯坦、印度发生不好的变化，东盟站不住，苏联得以比较顺利地推行他的亚安体系，我们的战略处境就会越来越困难。",
+          "source_file": "知乎-邓小平对高级干部讲话解释对越作战的三大原因.md",
+          "location": "素材正文第6段"
+        },
+        {
+          "excerpt": "第一个也是最重要的原因是：这场战争是邓小平当时就苏联对中国威胁做出的反应。……邓小平认为与西方结盟会反对苏联的扩张会证明中国的价值，以此作为回报，西方将以资金和技术帮助中国进行经济改革。",
+          "source_file": "网页-bbc-BBC专访中国79年对越战争是胜是败.md",
+          "location": "素材正文第15-18段"
+        },
+        {
+          "excerpt": "邓小平不仅巩固了他的政治权力，也同时能够在国内实施他的经济改革议程。而苏联发现自己在冷战的最后十年里陷入困境。……从战略的角度来看，越南和苏联都陷入比中国困难得多的境地。",
+          "source_file": "网页-bbc-BBC专访中国79年对越战争是胜是败.md",
+          "location": "素材正文第26-27段"
+        },
+        {
+          "excerpt": "最后，邓小平的性格和他的独断的领导风格也在中国的战争决策中发挥了重要的作用。",
+          "source_file": "网页-bbc-BBC专访中国79年对越战争是胜是败.md",
+          "location": "素材正文第23段"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平的改革合法性建立在经济绩效基础上——改革也是解放生产力，以人民生活改善为政权合法性根基。他对政策连续性极度重视，认为不变本身就是最大的政策，体现了对预期管理的深刻理解。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "革命是解放生产力，改革也是解放生产力。……过去，只讲在社会主义条件下发展生产力，没有讲还要通过改革解放生产力，不完全。应该把解放生产力和发展生产力两个讲全了。",
+          "source_file": "邓小平_speech_0_zh.md",
+          "location": "素材正文第4段"
+        },
+        {
+          "excerpt": "为什么“六四”以后我们的国家能够很稳定？就是因为我们搞了改革开放，促进了经济发展，人民生活得到了改善。所以，军队、国家政权，都要维护这条道路、这个制度、这些政策。",
+          "source_file": "邓小平_speech_0_zh.md",
+          "location": "素材正文第6段"
+        },
+        {
+          "excerpt": "农村改革初期，安徽出了个“傻子瓜子”问题。当时许多人不舒服，说他赚了一百万，主张动他。我说不能动，一动人们就会说政策变了，得不偿失。……即使没有新的主意也可以，就是不要变，不要使人们感到政策变了。有了这一条，中国就大有希望。",
+          "source_file": "邓小平_speech_0_zh.md",
+          "location": "素材正文第7段"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平在社会主义本质问题上展现了理论勇气，提出'警惕右但主要是防止左'的政治判断，以发展重新定义社会主义本质——解放生产力、发展生产力、最终达到共同富裕。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "中国要警惕右，但主要是防止“左”；社会主义的本质，是解放生产力，发展生产力，消灭剥削，消除两极分化，最终达到共同富裕",
+          "source_file": "邓小平_info_1_zh.md",
+          "location": "素材正文第8段（编者按总结部分）"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平的沟通风格简洁有力、直言不讳，善于用比喻和口语化表达传递重大政治信号。他对批评者态度强硬，斥责担心外资引入会导致资本主义的人连基本常识都没有。'杀出一条血路'等表达增强了政治感召力。",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "鄧小平說，有的人認為，多一分外資，就多一分資本主義，“三資”企業多了，就是資本主義的東西多了，就是發展了資本主義，這些人連基本常識都沒。",
+          "source_file": "鄧小平_speech_2_zh.md",
+          "location": "素材正文主要段落后半部分"
+        },
+        {
+          "excerpt": "还是叫特区好，陕甘宁开始就叫特区嘛！中央没有钱，可以给些政策，你们自己去搞，杀出一条血路来。",
+          "source_file": "exa_邓小平与当代中国改革开放.md",
+          "location": "素材倒数第5段"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平对国际发展差距有深刻切身体认，1978年出访日新深受震撼后转化为强烈的改革紧迫感——'如果现在再不实行改革，我们的现代化事业就会被葬送'。这体现了他以开放心态面对落后现实的认知特质。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "在日本访问期间，邓小平参观了日产、松下等企业，深受震撼，他说知道什么叫现代化了。当乘坐时速达200公里的高速列车时，他说有催人跑的感觉，中国需要坐这样的车。",
+          "source_file": "exa_邓小平与当代中国改革开放.md",
+          "location": "素材第9段"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平待人刻薄寡恩、翻脸不认人，政治利益高于人情义理——主导批斗刘伯承、拒绝为其平反，将政治盟友杨尚昆一脚踢开，用'资本主义拯救共产党政权'的方式变通。揭示了其人格中冷酷实用的一面。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "邓小平的为人我觉得是这样的，他待人不是那么厚道，待人处事相当冷酷，可以说是刻薄寡恩……邓小平在文革后掌权之后，拒绝给刘伯承平反。",
+          "source_file": "负面-voachinese-焦点对话邓小平特辑之一打不倒的小个子--邓的个性及人品全文.md",
+          "location": "高文谦第二段发言"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平的思想渊源可追溯到苏联新经济政策时期的布哈林——'发财吧、积累吧'的口号影响了邓后来的'发展是硬道理'、'让一部分人先富起来'等核心论述。其改革思想融合了列宁主义和布哈林主义的实用主义传统。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "布哈琳发出了著名的口号，号召农民们资本家们：发财吧，积累吧，发展自己的经济吧！……布哈林这些话实际上是邓小平后来改革的一个样板，邓小平说发展是硬道理，贫穷不是社会主义，让一部分人先富起来，其实都是布哈林的遗产。",
+          "source_file": "负面-voachinese-焦点对话邓小平特辑之一打不倒的小个子--邓的个性及人品全文.md",
+          "location": "王康第一段发言"
+        }
+      ]
+    },
+    {
+      "claim": "邓小平在新时期军队建设中实现指导思想战略性转变，将军队从临战状态转为和平建设轨道，提出精兵、利器、合成、高效的质量建设原则，体现军事服从于国家发展战略全局的思维。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "邓小平敏锐洞察世界形势新变化，指出：“对于总的国际局势，我的看法是，争取比较长期的和平是可能的，战争是可以避免的。”这就改变了长期以来我们党关于“世界大战不可避免”的战略判断。",
+          "source_file": "网页-dangjian-邓小平新时期军队建设思想的伟大历史贡献_-_党建网.md",
+          "location": "素材正文科学判断和把握时代主题段落"
+        },
+        {
+          "excerpt": "邓小平坚持从国家发展战略全局思考和解决军队建设问题，指出，“军队要服从整个国家建设大局”。他一方面要求军队要忍耐几年，给大局让路，保证国家首先集中力量把经济建设搞上去。",
+          "source_file": "网页-dangjian-邓小平新时期军队建设思想的伟大历史贡献_-_党建网.md",
+          "location": "素材正文正确处理国防建设同经济建设的关系段落"
+        },
+        {
+          "excerpt": "邓小平认识到，中国还穷，养兵太多会加重国家负担；中国又是一个大国，养兵太少会影响国家安全。他强调兵贵精不在多，鲜明指出质量问题是影响战争胜败的问题。",
+          "source_file": "网页-dangjian-邓小平新时期军队建设思想的伟大历史贡献_-_党建网_chunk2.md",
+          "location": "素材正文精兵利器合成高效段落"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 23,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-02T08:09:37.723943",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T01:33:57.148346",
+    "pre_merge_count": 28,
+    "post_merge_count": 13
+  }
+}

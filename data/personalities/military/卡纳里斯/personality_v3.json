@@ -1,0 +1,1387 @@
+{
+  "brief": "纳粹德国军事情报首脑，从信徒变为最隐秘的内部抵抗者",
+  "school": "实用主义间谍传统，道德觉醒的保守民族主义者",
+  "domains": [
+    "军事情报",
+    "抵抗运动",
+    "秘密外交"
+  ],
+  "stance_anchors": {
+    "core_belief": "爱国主义高于政权忠诚——当国家被暴政绑架时，真正的忠诚是反抗",
+    "methodology": "以敌国之情报机构为掩护，从内部瓦解暴政；欺骗与双面间谍作为核心手段",
+    "key_debates": [
+      "忠诚的对象是国家还是政权？",
+      "情报官员能否在效忠与背叛之间走钢丝？",
+      "消极抵抗与积极暗杀何者更有效？"
+    ],
+    "value_hierarchy": [
+      "德国的命运",
+      "人的基本道德",
+      "个人勇气",
+      "情报专业性"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "极度复杂、多层隐蔽——同时维持多个相互矛盾的身份和目的",
+    "reasoning_approach": "直觉型战略思维，擅长在模糊地带中寻找行动空间",
+    "typical_biases": [
+      "高估个人秘密行动改变历史的能力",
+      "对盟军善意回应的过度期待"
+    ],
+    "intellectual_strengths": [
+      "无与伦比的欺骗天赋",
+      "多语言能力（英法意俄西）",
+      "在权力夹缝中游走的政治嗅觉",
+      "将情报网络转化为道德工具的能力"
+    ],
+    "intellectual_blindspots": [
+      "抵抗运动实际效果有限，未能阻止大部分侵略行动",
+      "对自身隐蔽性的过度自信——日记最终暴露了一切"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "双面游戏框架",
+      "components": [
+        "维持表面忠诚",
+        "系统性泄露战略情报",
+        "保护内部抵抗力量"
+      ],
+      "application": "在极权体制内从事情报工作的同时进行道德抵抗"
+    },
+    {
+      "name": "情报机构渗透框架",
+      "components": [
+        "安插反纳粹军官到关键位置",
+        "利用官方渠道掩护秘密活动",
+        "将特工网络用于人道目的"
+      ],
+      "application": "将国家机器转化为抵抗工具"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "从一战间谍天才到纳粹信徒再到内部抵抗者，其思想轨迹由亲眼目睹的暴行和道德觉醒驱动",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "普鲁士军官团传统",
+          "nature": "思想继承",
+          "description": "对国家的忠诚高于对个人的忠诚，军人的荣誉感",
+          "source_ref": "帕齐格交班、卡普暴动经历"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "社会达尔文主义/反犹主义",
+          "original": "早期的右翼民族主义偏见",
+          "transformation": "在目睹纳粹暴行后彻底转变，积极拯救犹太人",
+          "source_ref": "波兰大屠杀目击、犹太人走私行动"
+        }
+      ],
+      "ruptured": [
+        {
+          "source": "对希特勒的个人崇拜",
+          "nature": "思想决裂",
+          "description": "1939年波兰大屠杀后从'希特勒主义的极端拥护者'转变为抵抗者",
+          "source_ref": "波兰目击、向凯特尔抗议被斥"
+        }
+      ],
+      "converged": [
+        {
+          "streams": [
+            "一战间谍经验",
+            "普鲁士军官荣誉感",
+            "反暴行的道德直觉"
+          ],
+          "product": "以情报机构为平台的隐蔽抵抗方法论",
+          "source_ref": "整个二战期间的行动轨迹"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1939年",
+        "title": "波兰大屠杀目击",
+        "narrative": "入侵波兰后亲眼目睹党卫军大屠杀，向凯特尔抗议被斥责。此事件彻底击碎了他对纳粹政权的幻想，从真正的信徒转变为抵抗者。",
+        "catalyst": "党卫军系统性屠杀平民",
+        "before_state": "希特勒主义的极端拥护者",
+        "after_state": "消极和积极抵抗者",
+        "significance": "其人格最根本的转折点",
+        "source_ref": "波兰目击、凯特尔抗议"
+      },
+      {
+        "period": "1935年",
+        "title": "出任阿勃维尔局长",
+        "narrative": "作为妥协候选人被任命，海军总司令雷德尔最初反对。上任初期仍是希特勒信徒，但这一职位为他后来的抵抗提供了唯一的平台。",
+        "catalyst": "帕齐格以提名陆军军官相威胁的政治博弈",
+        "before_state": "一战间谍英雄",
+        "after_state": "德国军事情报首脑",
+        "significance": "获得了后来进行抵抗的唯一组织基础",
+        "source_ref": "帕齐格提名、雷德尔让步"
+      },
+      {
+        "period": "1944年",
+        "title": "阿勃维尔解散与被捕处决",
+        "narrative": "2月阿勃维尔被并入党卫军，7月20日阴谋失败后被捕。日记被发现直接导致死刑。1945年4月9日在弗洛森比格被用屠夫钩吊死。",
+        "catalyst": "7月20日暗杀希特勒阴谋失败",
+        "before_state": "被软禁的前情报局长",
+        "after_state": "集中营囚犯，被处决",
+        "significance": "以叛徒的中世纪酷刑结局，其遗产在战后争议不断",
+        "source_ref": "弗洛森比格处决记录、日记发现"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "一战情报战",
+          "role": "海军情报军官，被俘后越狱翻越安第斯山",
+          "duration": "1914-1918",
+          "impact": "奠定了其间谍天赋和对欺骗战术的深刻理解",
+          "source_ref": "一战被俘逃亡经历"
+        },
+        {
+          "context": "阿勃维尔局长",
+          "role": "军事情报机构最高负责人",
+          "duration": "1935-1944",
+          "impact": "赋予他组织抵抗运动的唯一权力和掩护",
+          "source_ref": "阿勃维尔组织架构"
+        },
+        {
+          "context": "西班牙内战及二战外交",
+          "role": "希特勒的秘密特使",
+          "duration": "1936-1943",
+          "impact": "利用外交身份阻止德国军事计划（直布罗陀、瑞士）",
+          "source_ref": "西班牙弗朗哥会谈、瑞士绿松石行动"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "纳粹德国从崛起到崩溃",
+          "role": "参与者转为反抗者",
+          "impact": "亲身经历了极权体制从内部瓦解的全过程，其抵抗行动受限于体制的压迫性",
+          "source_ref": "整个生涯轨迹"
+        },
+        {
+          "context": "二战盟军与轴心国情报战",
+          "role": "双面间谍/秘密联络人",
+          "impact": "在盟军与纳粹之间建立秘密通讯渠道，试图以外交手段结束战争",
+          "source_ref": "孟席斯秘密通讯、伊斯坦布尔/桑坦德会谈"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "汉斯·奥斯特",
+        "nature": "互补型",
+        "product": "将阿勃维尔改造为抵抗运动大本营",
+        "significance": "奥斯特作为二号人物指挥所有军事抵抗计划，两人形成抵抗核心",
+        "source_ref": "奥斯特任命、阿勃维尔反纳粹网络"
+      },
+      {
+        "with": "英国孟席斯（军情六处）",
+        "nature": "对抗型/秘密合作",
+        "product": "建立秘密通讯渠道，传递战略情报",
+        "significance": "跨越敌对线的情报共享，试图以外交手段结束战争",
+        "source_ref": "孟席斯评价、暗杀否决、秘密通讯"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "社会达尔文主义和反犹主义",
+        "reason": "目睹纳粹暴行后道德觉醒",
+        "aftermath": "积极利用情报网络拯救犹太人，从偏见者转变为人道行动者",
+        "source_ref": "犹太人走私、道德转变轨迹"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "海德里希/希姆莱（党卫军/安全局）",
+        "axis": "情报权力与意识形态控制",
+        "dynamic": "持续的权力斗争，'十诫'协议不断被打破，握有海德里希犹太血统传言作为秘密筹码",
+        "source_ref": "十诫协议、帕齐格警告、海德里希血统传言"
+      },
+      {
+        "who": "希特勒",
+        "axis": "国家忠诚与个人崇拜",
+        "dynamic": "从信徒到秘密破坏者，利用情报局长身份系统性泄露战略计划，最终以生命为代价",
+        "source_ref": "战略情报泄露、牺牲性特工、安齐奥误导"
+      }
+    ],
+    "tension_explanation": {
+      "note": "卡纳里斯最大的内在张力在于同时扮演纳粹首席间谍和最危险的内部敌人——两种身份共享同一套技能，只是方向相反",
+      "tracing": "其间谍天赋来自一战经验，对国家的忠诚来自普鲁士传统，两者在纳粹暴行面前汇聚为一种独特的抵抗形态：用欺骗暴政者的方式来服务国家"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "极高——在盖世太保眼皮下进行系统性的叛国行为长达五年，记日记记录一切",
+    "information_processing": "直觉驱动、多源整合——同时从情报网络、外交渠道和抵抗圈子获取信息并交叉验证",
+    "temporal_orientation": "长期战略导向——从1939年就开始布局抵抗，而非被动等待",
+    "conflict_resolution": "隐蔽回避正面冲突——向凯特尔抗议被斥后再不正面抗议，转而用欺骗和秘密行动对抗"
+  },
+  "situational_triggers": {
+    "description": "当目睹系统性暴行或道德底线被突破时，从顺从转向反抗；在权力受威胁时以秘密筹码自卫",
+    "triggers": [
+      {
+        "condition": "目睹大规模暴行（波兰大屠杀）",
+        "behavioral_shift": "从忠诚执行者转变为积极抵抗者",
+        "confidence": "高",
+        "source_ref": "波兰目击、凯特尔抗议"
+      },
+      {
+        "condition": "海德里希试图吞并阿勃维尔",
+        "behavioral_shift": "动用秘密筹码（犹太血统传言）和政治手腕维持独立性",
+        "confidence": "高",
+        "source_ref": "十诫协议、帕齐格警告"
+      },
+      {
+        "condition": "希特勒要求残忍而非能力",
+        "behavioral_shift": "内心彻底决裂，开始系统性地从内部破坏",
+        "confidence": "中",
+        "source_ref": "希特勒1938年表态"
+      }
+    ],
+    "collapse_point": "当秘密活动的证据（日记）被盖世太保发现时，整个双面游戏瞬间崩塌",
+    "default_behavior": "在极端压力下保持冷静和欺骗——临刑前仍通过敲墙传递最后的信息",
+    "public_commitment_lock": "阿勃维尔局长的公开身份既是最大的掩护，也是最终致命的枷锁——被撤职后失去一切保护"
+  },
+  "communication_profile": {
+    "style": "极度含蓄、多层编码——同时代人说他'无处不在却又无处可去'，'只有通过一道细缝才能看到他真正的品格'",
+    "persuasion_tactics": [
+      "利用情报作为筹码",
+      "通过中间人传递秘密信息",
+      "以外交使节身份进行秘密谈判",
+      "制造虚假情报误导决策者"
+    ],
+    "rhetorical_devices": [
+      "反讽（'这就是结局了，严重地处理不当'）",
+      "含蓄暗示",
+      "沉默作为最强大的表达"
+    ],
+    "emotional_range": "外表冷静克制，内心激烈冲突——从早期的狂热信念到后期的深沉忧郁，最终以临刑前的平静坦然收场"
+  },
+  "evolution_trajectory": "一战间谍英雄→右翼民族主义者→纳粹信徒→波兰大屠杀后道德觉醒→利用情报机构进行系统抵抗→双面间谍向盟军泄露情报→秘密外交寻求和平→被处决成为殉道者。其思想核心始终是'对德国的忠诚'，但对忠诚对象的理解发生了根本转变：从忠诚于政权到忠诚于国家的真正利益。",
+  "key_aphorisms": [
+    "这就是结局了，严重地处理不当。我没有对德国做过任何事。——临刑遗言",
+    "该死的勇敢，该死的不幸。——孟席斯评价",
+    "无处不在却又无处可去。——吉塞维乌斯评价",
+    "只有通过一道细缝才能看到他真正的品格，如钟声般清晰。——魏茨泽克评价"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "卡纳里斯1935年作为妥协候选人出任阿勃维尔局长，初期是希特勒的真正信徒（'希特勒主义的极端拥护者'），但在1939年波兰目击党卫军大屠杀后彻底转变，从信徒变为抵抗者。其立场轨迹从早期右翼民族主义（1920年参与卡普暴动）到反犹主义，最终在战争中逆转为积极拯救犹太人——道德判断力超越了意识形态束缚。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "ris was approved in his role as Abwehr chief as a compromise candidate since the commander-in-chief of the German Navy, Admiral Erich Raeder, a staunch navy man, was initially opposed to his appointment but caved when Patzig manipulated the situation by suggesting an army officer for the post if Canaris was rejected. [",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第1段"
+        },
+        {
+          "excerpt": "onship with Canaris converted the latter into \"an extreme exponent of Hitlerism.\"",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "ris was approved in his role as Abwehr chief as a compromise candidate since the commander-in-chief of the German Navy, Admiral Erich Raeder, a staunch navy man, was initially opposed to his appointment but caved when Patzig manipulated the situation by suggesting an army officer for the post if Canaris was rejected.",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第1段"
+        },
+        {
+          "excerpt": "onship with Canaris converted the latter into \"an extreme exponent of Hitlerism.\"\n\nIn May 1935, Canaris first donned the uniform of a rear admiral, a promotion that coincided with his responsibility for shielding Germany's burgeoning rearmament program from enemy counterintelligence agents, which meant a significant expansion o",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "ris was approved in his role as Abwehr chief as a compromise candidate since the commander-in-chief of the German Navy, Admiral Erich Raeder , a staunch navy man, was initially opposed to his appointment but caved when Patzig manipulated the situation by suggesting an army officer for the post if Canaris was rejected.",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第1段"
+        },
+        {
+          "excerpt": "onship with Canaris converted the latter into \"an extreme exponent of Hitlerism.\" &#91; 42 &#93; In May 1935, Canaris first donned the uniform of a rear admiral, a promotion that coincided with his responsibility for shielding Germany's burgeoning rearmament program from enemy counterintelligence agents, which meant a significa",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "onship with Canaris converted the latter into \"an extreme exponent of Hitlerism.\" &#91; 42 &#93; In May 1935, Canaris first donned the uniform of a rear admiral, a promotion that coin",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "onship with Canaris converted the latter into \"an extreme exponent of Hitlerism.\" &#91; 42 &#93; In May 1935, Canaris first donned the uniform of a rear admiral, a promotion that coin\n\ncided with his responsibility for shielding Germany's burgeoning rearmament program from enemy counterintelligence agents, which meant a signifi",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "orter of Adolf Hitler and the Nazi Party, Canaris turned against Hitler and committed acts of both passive and active resistance during World War II following the German invasion of Poland in 1939. [...] Just a few weeks into his role as head of the Abwehr, Canaris met with Heydrich and some of his officials to parcel o",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "攻占直布罗陀。\n\n卡纳里斯也是党卫军杀害波兰平民的目击者。在贝德津，党卫军将200名犹太人推入了一座犹太教堂，然后放火焚烧，他们都被烧死了。卡纳里斯对此十分震惊。1939年9月10日，他前往前线视察德国军队的行动。无论他走到哪里，他的情报官员都会告诉他发生过的大屠杀事件。两天后，他前往位于上西里西亚的希特勒的元首专列“美国号”列车进行抗议。他首先见到的是最高统帅部的武装部队总司令威廉·凯特尔将军。“我有消息，”卡纳里斯告诉凯特尔，“波兰正在计划进行大规模处决，波兰贵族和神职人员已被挑选出来进行灭绝。”\n\n卡纳里斯还告诉凯特尔，“有一天，世界将追究国防军这些做法的责任，因为这些事情就发生在国防军的眼皮子底下。” 但凯特尔敦促卡纳里斯少",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "s of the anti-Hitler movement. Colonel Hans Oster turned against Hitler in 1934, and was involved in Operation Agular. He would be hanged on the same day as Canaris. Hans von Dohnanyi was also disturbed and angered by the Blomberg-Fritsch incident, and took part in Operation Seven. Ulrich von Hassell had been the German",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "orter of Adolf Hitler and the Nazi Party, Canaris turned against Hitler and committed acts of both passive and active resistance during World War II following the German invasion of Poland in 1939.\n\nBeing the head of Nazi Germany's military-intelligence agency, he was in a key position to participate in resistance and s",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "rter of Adolf Hitler and the Nazi Party , Canaris turned against Hitler and committed acts of both passive and active resistance during World War II following the German invasion of Poland in 1939 . Being the head of Nazi Germany's military-intelligence agency, he was in a key position to participate in resistance and s",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "a German Nationalist,  a social Darwinist, and an anti-Semite. [...] In a similar fashion, he gave false information directly to Hitler regarding an invasion of Switzerland, known as Operation Taunenbaum, a subject which I also covered in a previous episode. As a result of his efforts, the invasion",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Bolshevism that was his sworn enemy. The extreme\nanti-Semitism, no doubt given his later acts to save several Jews, would not have appealed\nto Canaris - himself a far from Aryan-looking German - but… the Communist left was still\nseen by the officer class in Germany, rightly or wrongly, as the prese",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "deology appealed to the Abwehr chief. Prompted by anti-Semitism, Canaris first suggested the use of the Star of David to identify Jews in 1935 to 1936, which was later used to set them apart from German citizens within the Reich, and eventually heralded their isolation, presaged their compulsory res",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "d to the Abwehr chief. &#91; 48 &#93; Prompted by anti-Semitism, Canaris first suggested the use of the Star of David to identify Jews in 1935 to 1936, which was later used to set them apart from German citizens within the Reich, and eventually heralded their isolation, presaged their compulsory res",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Prussian nationalist Wolfgang Kapp to overthrow the German government. Kapp’s goal was to overthrow the Weimar Republic and return Germany to her pre-World War I status as a monarchy. Canaris served a brief prison sentence after the unsuccessful coup.\n\nAs Hitler expanded his powe",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ement and participated in the Kapp Putsch.\n\nAnother aspect of the Nazis that attracted Canaris was their anticommunism. Many of his friends joined the Nazi crusade, and Canaris \"likewise came to be regarded as an enthusiastic National Socialist\". A former SS general, Werner Best,",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ement and participated in the Kapp Putsch . &#91; 29 &#93; Another aspect of the Nazis that attracted Canaris was their anticommunism. Many of his friends joined the Nazi crusade, and Canaris \"likewise came to be regarded as an enthusiastic National Socialist\". &#91; 30 &#93; A f",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "anders (Imperial German Navy) Kapp Putsch participants World War I spies for Germany Recipients of the clasp to the Iron Cross, 1st class Recipients of the Order of the Cross of Liberty, 1st Class with a Star Military personnel who died in Nazi concentration camps Nazi-era German",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "卡纳里斯与海德里希/希姆莱之间存在持续权力斗争。1936年达成'十诫'协议划分职责，但海德里希不断试图吞并阿勃维尔。卡纳里斯握有海德里希可能有犹太血统的传言作为秘密筹码。希特勒1938年'不要有能力的人而要残忍的人'的表态预示了不可调和的矛盾。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "the Abwehr, Canaris met with Heydrich and some of his officials to parcel out intelligence operations between the Abwehr, Gestapo, and SD. It is clear from sources that Canaris was then a true devotee to Hitler according to a former Gestapo officer, Gerhard Fischer, who claimed that the Führer's gentlemanly relationship with Canaris converted the latter into \"an extreme expone",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "empts by Himmler and Reinhard Heydrich to take over all German intelligence organizations. Heydrich, who headed the Sicherheitsdienst (SD) from 1931, had a negative attitude towards the Abwehr – shaped in part by his belief that Germany's defeat in the First World War was primarily attributable to failures of military intelligence, and by his ambitions to control all political",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "herheitsdienst (SD), Reinhard Heydrich, one of the most powerful men in Germany. The SD was a component of the SS. Heydrich was dubbed the “Hangman” for his brutal actions against the enemies of the state. One of his first major acts was to give the order for Kristallnacht, or the Night of the Broken Glass, in which gangs of Nazi thugs physically assaulted Germany’s Jewish popu",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "as reportedly distraught over Heydrich’s assassination in Prague in 1942.\n\nDespite his initial anti-semitism before the war, Canaris went out of his way to publically deny any Abwehr involvement in the persecution of Jews.\n\nIn fact, he saved hundreds of Jews by training them as Abwehr agents and giving them papers that would allow them to leave Germany.\n\nIn 1944, suspicions aga",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "一起策划暗杀希特勒。纽伦堡审判揭示了卡纳里斯为制止莱茵哈德·海德里希的特别行动队在苏联犯下的战争和种族灭绝罪行所作出的艰苦努力。据透露，卡纳里斯在突尼斯阻止了杀害被俘法国军官的事件，正如他在战争期间拯救了数百名犹太人一样。\n\n有一次，他亲自去找希姆莱，抱怨盖世太保正在逮捕他的特工，从而拯救了七名犹太人，使他们免于被送往集中营和必死无疑。这七人被移交给了德国国防军，并于之后偷偷离开德国。\n\n卡纳里斯曾不断向希特勒强调瑞士的抵抗意志以及瑞士的经济实力和地理优势。正是由于卡纳里斯的观点，希特勒放弃了将瑞士纳入他的新欧洲的计划。卡纳里斯任命他的朋友、反纳粹分子汉斯·奥斯特为阿勃维尔情报机构的二号人物。奥斯特在职期间联系了众多该政权的敌人，并将他们变成了国防军特工。奥斯特在国防军中建立了一个反纳粹的等级制度，很快他就指挥了抵抗运动的所有军事计划。他利用阿勃维尔",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "the assassination of Reinhard Heydrich (at least this is what his biographer Michael Mueller believes) —with the British killing Heydrich in order to help keep Canaris and the Abwehr in place.\n* He smuggled a large number of Jews out of Axis Europe under the threadbare excuse that he was using them as spies.\n* He funneled some unknown amount of intelligence to the Allies —enoug",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "the assassination of Reinhard Heydrich (at least this is what his biographer Michael Mueller believes) —with the British killing Heydrich in order to help keep Canaris and the Abwehr in place.\n* He smuggled a large numb",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "the assassination of Reinhard Heydrich (at least this is what his biographer Michael Mueller believes) —with the British killing Heydrich in order to help keep Canaris and the Abwehr in place.\n* He smuggled a large numb\n\ner of Jews out of Axis Europe under the threadbare excuse that he was using them as spies.\n* He funneled some unknown amount of intelligence to the Allies —eno",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "(SD), the ambitious Reinhard Heydrich. Before leaving his position, Captain Patzig recommended that Wilhelm Canaris replace him as the Abwehr’s director. Canaris not only had the qualifications for the job but, just as important, he had been friends with Reinhard Heydrich back in 1923, when Heydrich had been a 19-year-old naval cadet aboard Canaris’ training ship. Wilhelm Cana",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "起纳粹德国情报部门的领军人物，人们更多想到的应该是莱因哈特·海德里希，或者是海因里希·缪勒。但实际上，相比于这两个人，德国海军的军事谍报局局长威廉·弗兰茨·卡纳里斯也是不遑多让。卡纳里斯是一位真正的情报高手，在一战期间就是出色的情报人员，希特勒上台后更是主导了军事谍报局。卡纳里斯在很短的时间里就将这个原本只有一百五十人的小组织，短时间内变成了一个强大的情报组织。可以说，他是真正的间谍之王。\n\n然而正是这位间谍之王，在战争末期却因为反抗希特勒而被杀。有证据证明他直接策划了一系列反抗行动。但奇怪的是，也正是他当年帮助了希特勒夺得权利。如果没有他那决定性的一击，希特勒无论如何也不可能夺得德国总理的宝座，更无从谈起成为德国的元首。那么究竟是什么，让卡纳里斯做出这种事来？这位被人们知之甚少的间谍之王，他的背后又有多少的故事呢？今天我们就翻开历史，挖掘卡纳里斯那",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "dquarters, arrest Himmler and Heydrich, and then publish\nall captured evidence, which would force the Führer to back down on the Blomberg-Fritsch\nAffair, and compel him to abolish the Gestapo.\nBut they failed to persuade Raeder, von Rundstedt,\nList, von Kluge and Halder to join them, so the plot fell through. Canaris and Keitel\neven went to Göring and presented evidence that Fr",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "rincipally concerned Reinhard Heydrich, the head of the SS intelligence service known as the Sicherheitsdienst(SD) who was not well-disposed towards the Abwehr since he believed that Germany's defeat during the First World War was attributable to military intelligence failures by the organization. Moreover, Heydrich had aspirations to oversee all aspects of political intelligen",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ional surrender.\"\n\nSS General Heydrich was suspicious of the Abwehr. Not long after Heydrich was posted in Prague, he requested that Canaris place the Abwehr under SD and SS control, which pitted the two men against one another over jurisdictional control. Canaris handled the situation diplomatically, with no immediate effect on the Abwehr, but it did mean a greater degree of c",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Hitler's Hangman: The Life of Heydrich. New Haven, CT: Yale University Press. ISBN 978-0-30018-772-4.\n- Gilbert, Martin (2004). The Second World War: A Complete History. New York: Henry Holt. ISBN 978-0-80507-623-3.\n- Hildebrand, Klaus (1973). The Foreign Policy of the Third Reich. Berkeley and Los Angeles: University of California Press. ISBN 0-520-02528-8.\n- Hoffmann, Peter (",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "rincipally concerned Reinhard Heydrich , the head of the SS intelligence service known as the Sicherheitsdienst (SD) who was not well-disposed towards the Abwehr since he believed that Germany's defeat during the First World War was attributable to military intelligence failures by the organization. Moreover, Heydrich had aspirations to oversee all aspects of political intellig",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "empts by Himmler and Reinhard Heydrich to take over all German intelligence organizations. Heydrich, who headed the Sicherheitsdienst(SD) from 1931, had a negative attitude towards the Abwehr – shaped in part by his belief that Germany's defeat in the First World War was primarily attributable to failures of military intelligence, and by his ambitions to control all political i",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "nvolved in anti-Hitler plots. Heydrich ensured that the Abwehr and Canaris were closely monitored. The SS also accused Canaris of being defeatist in his intelligence assessments, especially on the Russian campaign, and the Abwehr was under investigation for treason related to the earlier attack on Belgrade.\n\n### Eastern Front\n\nFollowing the launch of Operation Barbarossa, an NK",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "938 reorganization.\n6. A view Heydrich acquired from Walter Nicolai's 1923 book, Geheime Mächte, in which the author argues that Imperial Germany lost the war as a result of not having a capable intelligence agency comparable to the ones operated by Britain and France.\n7. Sometimes referred to as the 'Brandenburgers' of 'Brandenburger Regiment', the Brandenburg Regiment was the",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "d have massive repercussions. Heydrich had sent\nan officer to pretend to be a German general who wanted to dispose of Hitler and negotiate\npeace with Britain. When two British agents reached the meeting point, Alfred Naujocks\n(the guy who had been part of the Gleiwitz Incident, covered in a previous video) led\nan assault team of SD men and captured the British agents. They were",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Hitler's Hangman: The Life of Heydrich. New Haven, CT: Yale University Press. ISBN 978-0-30018-772-4.\n- Goerlitz, Walter (1985) [1953]. History of the German General Staff, 1657–1945. New York: Barnes & Noble. ISBN 978-1-56619-914-8.\n- Hassell, Agostino von; MacRae, Sigrid; Ameskamp, Simone (2006). Alliance of Enemies. New York: Thomas Dunne Books. ISBN 978-0-31237-482-2.\n- Has",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "eople to nearly 1,000. He met Heydrich again on 21 December 1936, and the two men signed a document, which came to be known in their orbit as the \"Ten Commandments\". The agreement clarified the respective areas of counterespionage responsibilities between the Gestapo and the Abwehr.\n\nAccording to the biographer Heinz Höhne, Canaris subscribed to most of Hitler's views since Hit",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "t squeamishness were noted by Heydrich and added to his file on the \"political unreliability\" of the Abwehr. Canaris also worked to thwart the proposed Operation Felix, the German plan to seize Gibraltar.\n\nAt a conference of senior officers in Berlin, in December 1941, Canaris is quoted as saying that \"the Abwehr has nothing to do with the persecution of Jews.... no concern of",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "1,000. &#91; 45 &#93; He met Heydrich again on 21 December 1936, and the two men signed a document, which came to be known in their orbit as the \"Ten Commandments\". The agreement clarified the respective areas of counterespionage responsibilities between the Gestapo and the Abwehr . &#91; 46 &#93; According to the biographer Heinz Höhne , Canaris subscribed to most of Hitler's",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "t squeamishness were noted by Heydrich and added to his file on the \"political unreliability\" of the Abwehr. &#91; 82 &#93; Canaris also worked to thwart the proposed Operation Felix , the German plan to seize Gibraltar . &#91; 83 &#93; At a conference of senior officers in Berlin, in December 1941, Canaris is quoted as saying that \"the Abwehr has nothing to do with the persecu",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "&#91; 93 &#93; Not long after Heydrich was posted in Prague , he requested that Canaris place the Abwehr under SD and SS control, which pitted the two men against one another over jurisdictional control. &#91; 94 &#93; &#91; 95 &#93; Canaris handled the situation diplomatically, with no immediate effect on the Abwehr , but it did mean a greater degree of collaboration and SS co",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "and small arms to Himmler and Heydrich for their staged attack on a German radio station by 'Polish' forces; one act which Hitler used to justify his assault on Poland.\n\n## During World War II\n\nOKW secret radio service\n\n### Early successes\n\nUnder Canaris, the Abwehr expanded and proved to be efficient during the early years of the war. Its most notable success was Operation Nor",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "nvolved in anti-Hitler plots. Heydrich ensured that the Abwehr and Canaris were closely monitored. The SS also accused Canaris of being defeatist in his intelligence assessments, especially on the Russian campaign, and the Abwehr was under investigation for treason related to the earlier attack on Belgrade.\n\n### Eastern Front",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "t want men of intelligence under his command, but men of brutality, an observation which did not sit well with Canaris. Whether he was deeply troubled by Hitler's comment or not, Canaris and the Abwehr still busied themselves preparing the ideological groundwork for the annexation of Austria which occurred in March 1938. [...] | General der Nachric",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "t want men of intelligence under his command, but men of brutality, an observation which did not sit well with Canaris. Whether he was deeply troubled by Hitler's comment or not, Canaris and the Abwehr still busied themselves preparing the ideological groundwork for the annexation of Austria which occurred in March 1938.\n\nA month later, Canaris and",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "the OKW in February 1938, Hitler declared that he did not want men of intelligence under his command, but men of brutality, an observation which did not sit well with Canaris. Whether he was deeply troubled by Hitler's comment or not, Canaris and the Abwehr still busied themselves preparing the ideo",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "g of attempts by Himmler and Reinhard Heydrich to take over all German intelligence organizations. Heydrich, who headed the Sicherheitsdienst (SD) from 1931, had a negative attitude towards the Abwehr – shaped in part by his belief that Germany's defeat in the First World War was primarily attributable to failures of military intelligence, and by h",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "g of attempts by Himmler and Reinhard Heydrich to take over all German intelligence organizations. Heydrich, who headed the Sicherheitsdienst(SD) from 1931, had a negative attitude towards the Abwehr – shaped in part by his belief that Germany's defeat in the First World War was primarily attributable to failures of military intelligence, and by hi",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "卡纳里斯将阿勃维尔从军事情报机构改造为抵抗运动大本营：任命反纳粹的奥斯特为二号人物，在各办事处安插反纳粹军官，掩护密谋者活动，利用特工身份为犹太人提供离境文件拯救数百人，其人脉网络甚至间接保护了辛德勒工厂的犹太人。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "r, Admiral Canaris managed to smuggle several hundred Jews and other outcasts out of Nazi-occupied territory, right past the Gestapo. He also sent valuable information to the Allies and did everything possible to prevent Adolf Hitler from winning the war. And with a great deal of cunning and an equal amount of good luck, he managed to avoid being discovered. But his luck ran ou",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "斯也是党卫军杀害波兰平民的目击者。在贝德津，党卫军将200名犹太人推入了一座犹太教堂，然后放火焚烧，他们都被烧死了。卡纳里斯对此十分震惊。1939年9月10日，他前往前线视察德国军队的行动。无论他走到哪里，他的情报官员都会告诉他发生过的大屠杀事件。两天后，他前往位于上西里西亚的希特勒的元首专列“美国号”列车进行抗议。他首先见到的是最高统帅部的武装部队总司令威廉·凯特尔将军。“我有消息，”卡纳里斯告诉凯特尔，“波兰正在计划进行大规模处决，波兰贵族和神职人员已被挑选出来进行灭绝。”\n\n卡纳里斯还告诉凯特尔，“有一天，世界将追究国防军这些做法的责任，因为这些事情就发生在国防军的眼皮子底下。” 但凯特尔敦促卡纳里斯少管闲事。很快，梵蒂冈开始定期收到有关纳粹在波兰暴行的详细报告。这些信息都是阿勃维尔情报局特工按照卡纳里斯的命令收集的。\n\n卡纳里斯还派了他的另一",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "and the Abwehr in place.\n* He smuggled a large number of Jews out of Axis Europe under the threadbare excuse that he was using them as spies.\n* He funneled some unknown amount of intelligence to the Allies —enough so that he was registered as an agent with the OSS and was (I’m convinced) behind the Lucy spy ring, which was the critical conduit of German military information to",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "and the Abwehr in place.\n* He smuggled a large numb",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "and the Abwehr in place.\n* He smuggled a large numb\n\ner of Jews out of Axis Europe under the threadbare excuse that he was using them as spies.\n* He funneled some unknown amount of intelligence to the Allies —enough so that he was registered as an agent with the OSS and was (I’m convinced) behind the Lucy spy ring, which was the critical conduit of German military information t",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "sed his rank and authority to smuggle hundreds of refugees out of the Third Reich by disguising them as Abwehr intelligence agents. In 1941, he smuggled 500 Jews out of Nazi-occupied Holland to neutral Spain and Portugal and across the Atlantic Ocean to South America, Mexico, Panama, and other countries. According to some accounts, Canaris’ refugees also entered the United Stat",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "enged by the Gestapo. He even smuggled\nout of Poland one famous Rabbi who had a large following in the United States.\nHowever, at the same time, Canaris’ secret\npolice were handing over civilians to the Einsatzkommados in Poland. Canaris also helped\nplan the ‘war of extermination’ in the Soviet Union, at least regarding the execution\nof Jews and commissars. So Canaris wasn’t sq",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "many, he enlisted some of the anti-Hitler conspirators into the Abwehr and shielded their activities. He was transferred to the economic staff of the armed forces (February 1944) after an investigation of the Abwehr by the Schutzstaffel(SS); he remained there until after the abortive assassination attempt against Hitler (July 20",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "many, he enlisted some of the anti-Hitler conspirators into the Abwehr and shielded their activities. He was transferred to the economic staff of the armed forces (February 1944) after an investigation of the Abwehr by the Schutzstaffel (SS); he remained there until after the abortive assassination attempt against Hitler (July 2",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "out all the activities of the anti-Hitler conspirators. Possibly it may have been to record events for future historians; maybe it was to keep an official record of the corruption of Hitler and the Nazis for a post-war tribunal. Whatever the reason, the diaries have been one of the great mysteries of Admiral Canaris’ enigmatic l",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "被处死 &#91; 1 &#93; 。 他和阿勃維爾成員 舒特拉 的關係常被舒特拉使用來保護他工廠的猶太人免受黨衛軍迫害和處死 &#91; 2 &#93; &#91; 3 &#93; 。 参考资料 [ 编辑 ] ^ 《大不列颠百科全书：国际中文版·第二卷》 (M) 使用 &#124;format= 需要含有 &#124;url= ( 帮助 ) 1. 北京: 中国大百科全书出版社. 1999年4月: 116页. ISBN 7-5000-6060-2 . &",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ry 1944 | - |\n| Deputy | Hans Oster |\n| Preceded by | Conrad Patzig [de] |\n| Succeeded by | Georg Hansen |\n| Personal details | - |\n| Born | Wilhelm Franz Canaris, (1887-01-01)1 January 1887, Aplerbeck, Landkreis Dortmund, Province of Westphalia, Kingdom of Prussia, German Empire |\n| Died | 9 April 1945(1945-04-09) (aged 58), Flossenbürg concentration camp, Flossenbürg, Nazi Ge",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "with his deputy general, Hans Oster, the military jurist General Karl Sack, the theologian Dietrich Bonhoeffer, and military officer Ludwig Gehre, Canaris was led to the gallows naked and executed on 9 April, just weeks before the end of the European war.\n\nDuring the previous night, Canaris tapped out a farewell message in Morse code to Danish spy chief Hans Lunding in the next",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": ";12 February 1944 Deputy Hans Oster Preceded by Conrad Patzig &#160;&#91; de &#93; Succeeded by Georg Hansen Personal details Born Wilhelm Franz Canaris ( 1887-01-01 ) 1 January 1887 Aplerbeck , Landkreis Dortmund, Province of Westphalia , Kingdom of Prussia , German Empire Died 9 April 1945 (1945-04-09) (aged&#160;58) Flossenbürg concentration camp , Flossenbürg , Nazi Germany",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "hain of command. General Hans Oster of the Abwehr remained in regular contact with Dulles. Foreknowledge and penetration of the Abwehr was such that Dulles reported later in February 1944 that the Abwehr was going to be absorbed by the SD.\n\nThe SS continually undermined the Abwehr by putting its officers under investigation, believing them to be involved in anti-Hitler plots. H",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "rmacht supreme command\n- Hans Oster, Canaris' deputy\n- Operation Salaam, a long-range mission into British-held Egypt during World War II\n- Oskar Schindler, another Abwehr agent\n\n## References\n\n### Notes\n\n1. Originally formed in 1866, the early manifestation of the Prussian Abwehr predates the modern German state and originated to collect intelligence information for the Prussi",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "e time in the company of Hans Oster and also began formulating ways to forestall or prevent a European war. &#91; 54 &#93; Among the first to arrive in Vienna, Canaris had a special team seize records from the Austrian archives since he feared possible references to his Spanish Civil War arms supplier connections in London. He also absorbed as much of the Austrian intelligence",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "with his deputy general, Hans Oster, the military jurist General Karl Sack , the theologian Dietrich Bonhoeffer , and military officer Ludwig Gehre , Canaris was led to the gallows naked and executed on 9 April, just weeks before the end of the European war. &#91; 29 &#93; During the previous night, Canaris tapped out a farewell message in Morse code to Danish spy chief Hans Lu",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "he end of the war, along with Oster, his deputy. The functions of the Abwehr were then fully absorbed by Amt VI, SD-Ausland, a sub-office of the RSHA, which was part of the SS.\n\n### The Zossen documents\n\nDuring the war, the Abwehr assembled a secret dossier detailing many of the crimes committed in Eastern Europe by the Nazis, known as the Zossen documents. These files were gat",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "rmacht supreme command\n- Hans Oster, Canaris' deputy\n- Operation Salaam, a long-range mission into British-held Egypt during World War II\n- Oskar Schindler, another Abwehr agent\n\n## References\n\n### Notes",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "卡纳里斯拥有卓越的间谍天赋：一战期间被俘后杀死牧师穿其制服越狱，后翻越安第斯山脉从智利逃到阿根廷化装回国；掌握五种语言；二战前在英国安插250多名间谍渗透政府各层面，搞到法国总动员令等最高机密。帕齐格评价其在欺骗和诡计方面的天赋无人能及。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "e who had Canaris’ talent for deception and subterfuge – two vital attributes for an intelligence officer, especially in wartime. During the First World War, when he was intelligence officer of the cruiser Dresden, Lieutenant Canaris informed a radio station in Brazil that the Dresden would soon be returning to Germany. He knew that this message would be picked up by British In",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "累斯顿”号之外的所有德国舰船。“德累斯顿号”逃到智利附近水域，被追击而来的英国舰船击沉，包括卡纳里斯在内的数百名船员被俘虏，并被囚禁在智利的基里基群岛上。此后，卡纳里斯设法逃到了智利本土，又翻越陡峭的安第斯山脉进入亲近德国的阿根廷境内。他又化装成了英籍智利人，搭乘属于中立国荷兰的轮船顺利返回了德国。卡纳里斯的间谍天赋在这次成功的逃脱计划中首次显现出来。不负所望的鹰爪1933年，卡纳里斯正式上任德国情报局局长，他受到了希特勒的亲自接见。希特勒用他那极具蛊惑性和煽动性的语句鼓励道：“我想让你建立一个英国情报局那样的机构，团结一些有才干的人，满腔热情地去工作！”卡纳里斯果然不负所望，迅速在欧洲建立了一个庞大且严密的情报系统，严密的间谍网和反间谍网遍布世界各地，甚至将间谍活动渗透到了美洲和中东地区。1937年前希特勒禁止在英国进行大规模的间谍活动，但是在二战全面爆发前，卡纳里斯领导的德国情报机构很",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "间谍天赋第一次显现出来，他设法逃离了戒备森严的战俘营，然后离开了基里基纳岛，前往了智利本土。之后他不知道从哪弄了一匹马，一说是他偷来的，一说是他用身上的钱买来的，总之他骑着这匹马走了数百公里，在翻越了安第斯山脉后，进入了阿根廷境内。\n\n在这里他设法化装成了一名英国裔智利人，还奇迹般的搞到了一份护照，登上了中立国荷兰的轮船返回德国。期间船只曾经遇到了英国皇家海军的检查，但是登舰的英国人偏偏没有怀疑卡纳里斯，因为卡纳里斯装的实在是太像英国人了，所以根本没人怀疑他是个德国人。于是他就这样回到了德国，此时距离他逃离战俘营，已经过去两个多月了。\n\n二、间谍生涯的开始\n\n卡纳里斯这一奇迹般的逃脱行为，让德国海军的情报部门意识到了他的价值。于是卡纳里斯就被招入了的海军部担任联络官，并在1915年12月里奉命前往西班牙展开情报活动。此时卡纳里斯化名为雷德·罗萨斯在西班牙展开了工作，因为西班牙是亲德国的，所",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "勒禁止在英国进行大规模的间谍活动，但是在二战全面爆发前，卡纳里斯领导的德国情报机构很快就在英国安插了250多名各式各样的间谍，这些间谍渗透到了英国的各个方面，其中就包括英国政府重要岗位的工作人员和高级官员家里的佣人。卡纳里斯高效的工作效率和出色的领导能力令严谨至极的希特勒都感到震惊不已。他手下的德国间谍先后侦察到了英国东部的大部分重要机场，港口设施，军火工厂等军事设施的地址和防卫情况，这让德国总参谋部对英国的战争潜力了如指掌。甚至，法军的总动员令在法国海军司令达尔朗海军上将签署前就全文落到了卡纳里斯的手里，他还搞到了属于最高机密的英国陆空军协作计划，简直让人难以置信！“地下战线”的硝烟在希特勒紧锣密鼓地进行进攻西线荷比卢法四国的准备时，德国情报局依旧继续制造“西线无战事”的假象，以试图掩盖发",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "near the Swiss border. Canaris was imprisoned in Genoa, where he made a daring escape by killing a prison padre, putting on his uniform, and walking out of jail before the priest’s body could be found. Upon his return to Madrid, Canaris was put in command of a U-boat and served in the Imperial Navy",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "卡纳里斯在1940-1943年充当双面间谍：派往英国的间谍是故意留下破绽的'牺牲性特工'；向苏联释放过时海狮计划假象导致苏军开战时全面惨败；向盟军泄露几乎所有德国重要战略计划；误导希特勒相信盟军不会在1943年登陆安齐奥。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "cularly in 1940 and 1941 were sacrificial agents. They were meant to be caught. On a whole, they were poorly trained, lacked English skills and their identity papers and ration cards were full of glaring errors and omissions. For example, some identity cards had a continental “1” written on them (a 1 with a tail on it). The Abwehr documents division could imitate every ink, piece of paper, stamp or seal, and yet the papers on",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "1942 and 43, Canaris played a double agent. Via Spain and occupied France, he would make contact with British agents. He used these meetings to ask the allies for the conditions of surrender if Hitler were to be dethroned.\n\nHeydrich began to grow suspicious of Canaris and acted to gain control of the Abwehr.",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "间进行沟通。\n\n卡纳里斯海军上将和他的副手汉斯·奥斯特实际上帮助了盟军，同时也监督了所有德国间谍活动、反间谍活动和破坏活动。卡纳里斯向盟军透露了几乎所有有关德国的重要战略和作战计划。不管是希特勒即将对低地国家和法国发起的西部进攻，还是入侵英国的计划。他还曾误导希特勒相信盟军不会在1943年登陆安齐奥。\n\n同年4月，卡纳里斯与美国前宾夕法尼亚州州长、罗斯福驻伊斯坦布尔的巴尔干私人代表乔治·厄尔中校取得了联系。一天早上，有人敲响了厄尔酒店的房门，威廉·卡纳里斯上将穿着便服站在那里。纳粹德国情报局局长告诉厄尔，许多明智的德国人都认为希特勒正在带领他们的国家走上一条毁灭性的道路。卡纳里斯上将继续表示，可以安排德国军队向美军光荣投降。厄尔相信了卡纳里斯上将的诚意，立即通过外交邮递向华盛顿发出紧急信息，要求立即回复。一个月后，卡纳里斯按照约定打来电话，但厄尔说“",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "43 by none other than British double agent Kim Philby. In later years, when speaking about this incident, Menzies said of Canaris: “He did give me assistance. I liked and admired him. He was dammed brave.”\n\nThe British were not the only ones that kept a close watch on Canaris’s military progress. Rear Admiral Max Bastian, commander-in-chief of the ships of the line, wrote a glo",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "lavian named Dusko Popov as a double agent. He was originally recruited by the Abwehr to spy on the British. Instead, Popov became a double agent, working secretly for the British, who gave him the code name Tricycle. Once Popov was safely encased inside British intelligence, Menzies asked him to provide as much information as he could on the leading Abwehr officials, including",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "man who would later become a double agent for the Federal Bureau of Investigation(FBI), William Sebold. On 8 February 1940, Ritter sent Sebold to New York under the alias of Harry Sawyer and instructed him to set up a shortwave radio-transmitting station to establish contact with the German shortwave station abroad. Sebold was also instructed to use the codename TRAMP and to c",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "231-3.\n- Duffy, Peter (2014). Double Agent. New York: Scribner. ISBN 978-1-4516-6795-0.\n- Evans, Leslie (1 April 2014).\"Fritz Joubert Duquesne: Boer Avenger, German Spy, Munchausen Fantasist\". Boryanabooks. Retrieved 19 September 2016.\n- Evans, Richard (2006). The Third Reich in Power. New York: Penguin. ISBN 978-0-14303-790-3.\n- Gerwarth, Robert (2012). Hitler's Hangman: The L",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "man who would later become a double agent for the Federal Bureau of Investigation (FBI), William Sebold . On 8 February 1940, Ritter sent Sebold to New York under the alias of Harry Sawyer and instructed him to set up a shortwave radio-transmitting station to establish contact with the German shortwave station abroad. Sebold was also instructed to use the codename TRAMP and to",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "the war was converted into a double agent by British and Russian intelligence officers (working together in one of the few joint intelligence efforts of the war), who code-named him \"Kiss\". From late 1944 until the end of the war, Kiss, who was based out of the intelligence center in Baghdad, provided false information on Soviet and British troop movements in Iraq and Iran to",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "aufer(OSS Code name: Iris), a double agent who had also been working for the SD.\n\n### Undermining the regime\n\nSeveral examples demonstrate that some Abwehr members were opposed to the Nazi regime. In January 1944 for example, American statesman Allen Dulles revealed his knowledge of a coalescing resistance against the Nazis, an assemblage of intellectuals from military and gove",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "e British successfully ran 19 double agents through the Abwehr which fed them false information, duping the German intelligence service to the very end. Soviet infiltration into the Abwehr and NKVD successes against Abwehr agents also reflect poorly on German military intelligence efforts. Historian Albert Seaton makes an important observation regarding the German Army's failur",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "-231-3 . Duffy, Peter (2014). Double Agent . New York: Scribner. ISBN &#160; 978-1-4516-6795-0 . Evans, Leslie (1 April 2014). \"Fritz Joubert Duquesne: Boer Avenger, German Spy, Munchausen Fantasist\" . Boryanabooks . Retrieved 19 September 2016 . Evans, Richard (2006). The Third Reich in Power . New York: Penguin. ISBN &#160; 978-0-14303-790-3 . Gerwarth, Robert (2012). Hitler'",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Juan Pujol García, a Spanish double agent who worked for the British and whose acting was considered so good they codenamed him \" Garbo\". Garbo was highly successful in spreading disinformation to the Abwehr, primarily by creating a network of fictitious sub-agents and feeding them fabricated intelligence reports. These reports were carefully crafted to mislead the Germans abo",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "NKVD, who used Demyanov as a double agent. During the autumn of 1942, Demyanov informed his German handlers that he was working as a communications officer at the Soviet headquarters in Moscow, which would give him access to important intelligence, a ruse that managed to fool the German intelligence commander on the Russian front at the time, Reinhard Gehlen of the Fremde Heer",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "决定性胜利，希特勒可以腾出手来进攻苏联了。卡纳里斯的情报局故意制造德军即将进攻英国的假象，将过时的“海狮计划”送给苏联的情报机构。被俘的苏联官兵为了避免苏联对德国军队东调产生怀疑，卡纳里斯还让人向苏联当局进行所谓的“解释”，说东调行动是让西线的军队去波兰进行休整。卡纳里斯释放的这些烟雾弹让当时的苏联高层对德国短时间内不会入侵苏联深信不疑，直接导致了后来开战时苏军的全面惨败。结局：令人不解卡纳里斯的一生充满了神秘的传奇色彩，留下了许多未解之谜。美国情报局评价他是“现代历史上最勇敢的人，幻想在欧洲建立一个以英法德为首的美国”。德国情报局称他为“空中飞人杂技员”，德国军事情报局说他“诡计多端”。卡纳里斯复杂的个人经历，使他成为了一个不可捉摸的人。疑心很重的希特勒最终，卡纳里斯在刺杀希特勒的“女神行",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "盟军透露了几乎所有有关德国的重要战略和作战计划。不管是希特勒即将对低地国家和法国发起的西部进攻，还是入侵英国的计划。他还曾误导希特勒相信盟军不会在1943年登陆安齐奥。\n\n同年4月，卡纳里斯与美国前宾夕法尼亚州州长、罗斯福驻伊斯坦布尔的巴尔干私人代表乔治·厄尔中校取得了联系。一天早上，有人敲响了厄尔酒店的房门，威廉·卡纳里斯上将穿着便服站在那里。纳粹德国情报",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "anuary 1944, Admiral Canaris also contributed to the success of the landings at Anzio. He informed Feldmarschall Albert Kesselring that there was no need to fear an Allied invasion",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "卡纳里斯与英国军情六处处长孟席斯之间存在秘密通讯。他多次尝试与盟军建立联系：1943年在伊斯坦布尔联系美国代表提出投降方案，在西班牙桑坦德会见孟席斯和多诺万提出和平计划，但均被罗斯福拒绝。孟席斯评价他'该死的勇敢，该死的不幸'，并否决了暗杀他的计划。",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "and the head of MI6, Stewart Menzies. This has been suggested by several other authors.",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "counterpart, Mi6 head Stewart Menzies, after the war. \n\nIt is wildly unclear which activities Canaris was engaged in, but his biographers attribute at least some of the following to him. [...] Still, the figures of the resistance give off a fascinating light. Canaris kept a diary through the war — meant to be a record of the entirety of the Nazi crimes. That diary, which was un",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "名反希特勒分子，并支持他们的活动。甚至，时任英国情报局局长的孟席斯勋爵回忆说：“卡纳里斯是一个德国爱国者，他只是想拯救德国和欧洲免遭毁灭......”",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "天，卡纳里斯在西班牙桑坦德秘密会见了英国情报局局长斯图尔特·孟席斯将军和英国战略服务办公室主任威廉·多诺万。卡纳里斯向孟席斯和多诺万提出了他的和平计划：在西线停火，消灭或移交希特勒。尽管多诺万、孟席斯和卡纳里斯在这个提议的基础上达成了协议，但美国总统罗斯福却断然拒绝与这些“东德容克”谈判。因此，卡纳里斯的和平建议被拒绝了。\n\n直到1944年7月，在他们刺杀希特勒失败后，希特勒才清楚地意识到他被卡纳里斯误导了。卡纳里斯和其他许多人被逮捕。主要囚犯最终被关押在阿尔布雷希特王子大街的盖世太保地窖里，卡纳里斯在那里被单独监禁，并戴着铁链。　　在《卡纳里斯的阴谋》一书中，里边讲述了他的牢房门是如何打开的，灯是如何日夜不停地亮着的。他的口粮只有监狱正常口粮的三分之一，入冬后饥寒交迫，同时被迫做一些卑微的工作，例如擦洗监狱地板，所有的党卫军成员都在嘲笑他。\n\n19",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "counterpart, Mi6 head Stewart Menzies, after the war.\nIt is wildly unclear which activities Canaris was engaged in, but his biographers attribute at least some of the following to him.\n* He tipped off the British that Hitler’s bid for the Sudetenland was basically a bluff and that they could halt him by standing firm —a position that was voided with Neville Chamberlain’s decisi",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Captain and MI6 chief Stewart Menzies vetoed plans to assassinate Canaris, proposed in 1943 by none other than British double agent Kim Philby. In later years, when speaking about this incident, Menzies said of Canaris: “He did give me assistance. I liked and admired him. He was dammed brave.”\n\nThe British were not the only ones that kept a close watch on Canaris’s military pro",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ble with the German leaders.\n\nMenzies had a growing respect for Canaris, and he wanted to know as much information about him as possible. During the war, the British recruited a Yugoslavian named Dusko Popov as a double agent. He was originally recruited by the Abwehr to spy on the British. Instead, Popov became a double agent, working secretly for the British, who gave him the",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "between Canaris and MI6 under Menzies. In a daring move, Canaris sent his friend and ally Hans Bernd Gisevis to Switzerland, under cover as a vice consul, to aid Madame Szymanski in her anti-Hitler efforts. Gisevis had been a member of the German resistance and had been in constant contact with Dansey since 1939. Canaris met secretly with her in various places in Europe such as",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "rvant：The Life of Sir Stewart Menzies》\n\n特别声明：以上内容(如有图片或视频亦包括在内)为自媒体平台“网易号”用户上传并发布，本平台仅提供信息存储服务。\n\nNotice: The content above (including the pictures and videos if any) is uploaded and posted by a user of NetEase Hao, which is a social media platform and only provides information storage services.\n\n/阅读下一篇/\n\n下载网易新闻客户端\n\n\n热点推荐\n\n涉霍尔木兹海峡 马来西亚和新加坡吵了起来\n\n澎湃新闻 2026-04-10 08:05:06\n\n7459\n\n跟贴",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "on.\n\nThe head of MI6, Stewart Menzies, who shared Canaris's anticommunism, praised Canaris's courage and bravery at the end of the war. In December 1940, Hitler sent Canaris to Spain to conclude an agreement, through strong coercion if necessary, with Franco for Spanish support in the war against the Allies, but instead of prompting him to acquiesce to Hitler's desire, Canaris",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "The head of MI6, Stewart Menzies, who shared Canaris's anticommunism, praised Canaris's courage and bravery at the end of the war. In December 1940, Hitler sent Canaris to Spain to conclude an agreement, through strong coercion if necessary, with Franco for Spanish support in the war against the Allies, but instead of prompting him to acquiesce to Hitler's desire, Canaris",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "et Life of Sir Stewart Graham Menzies, Spymaster to Winston Churchill, 1987, Macmillan Publishing, New York, ISBN 0-02-517390-1.\n- Colvin, Ian. Chief of Intelligence, 1951, Victor Gollanz, London.\n- Fischer, Benjamin (2000).\"A.k.a. \"Dr. Rantzau\": The Enigma of Major Nikolaus Ritter\". Center for the Study of Intelligence Bulletin (11). Center for the Study of Intelligence. OCLC",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "班牙的马德里展开工作，在这里他遇到了自己的对手——斯图尔特·孟席斯勋爵。孟席斯和卡纳里斯的经历颇为类似，都是从一线岗位转入情报工作的高人。此时这位孟席斯勋爵还只是一个上尉，但日后的二战中他则成为了英国情报局局长，和日后成为了德国军事谍报局局长的卡纳里斯长期交锋。\n\n而西班牙的见面，是两个人的第一次交锋。彼时卡纳里斯刚到马德里没多久就患了病，他的同伴向国内发报，请求国内派潜艇来接卡纳里斯回国治疗。但很不幸的是，这份电报被英国海军部的情报部门截获，并且迅速的被破译了。\n\n英国海军部很清楚，对方要送走的这个人一定就是他们想要抓获的德国在西班牙的间谍网络负责人，如果能抓住这个人，必然能够破获德国人的情报网络。所以英国人一面派遣两艘潜艇准备伏击前往港口接走卡纳里斯的德国潜艇，一面急令孟席斯率领的英国驻马德里情报小组，密切调查卡纳里斯的动向。\n\n孟席斯不敢怠慢，",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "93; The head of MI6 , Stewart Menzies , who shared Canaris's anticommunism, praised Canaris's courage and bravery at the end of the war. In December 1940, Hitler sent Canaris to Spain to conclude an agreement, through strong coercion if necessary, with Franco for Spanish support in the war against the Allies, but instead of prompting him to acquiesce to Hitler's desire, Canaris",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "et Life of Sir Stewart Graham Menzies, Spymaster to Winston Churchill , 1987, Macmillan Publishing, New York, ISBN &#160; 0-02-517390-1 . Colvin, Ian. Chief of Intelligence , 1951, Victor Gollanz, London. Fischer, Benjamin (2000). \"A.k.a. \"Dr. Rantzau\": The Enigma of Major Nikolaus Ritter\" . Center for the Study of Intelligence Bulletin (11). Center for the Study of Intelligenc",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "allies for the conditions of surrender if Hitler were to be dethroned.\n\nHeydrich began to grow suspicious of Canaris and acted to gain control of the Abwehr.",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "务办公室主任威廉·多诺万。卡纳里斯向孟席斯和多诺万提出了他的和平计划：在西线停火，消灭或移交希特勒。尽管多诺万、孟席斯和卡纳里斯在这个提议的基础上达成了协议，但美国总统罗斯福却断然拒绝与这些“东德容克”谈判。因此，卡纳里斯的和平建议被拒绝了。\n\n直到1944年7月，在他们刺杀希特勒失败后，希特勒才清楚地意识到他被卡纳里斯误导了。卡纳里斯和其他许多人被逮捕。主要囚犯最终被关押在阿尔布雷希特王子大街的盖世太保地窖里，卡纳里斯在那里被单独监禁，并戴着铁链。　　在《卡纳里斯的阴谋》一书中，里边讲述了他的牢房门是如何打开的，灯是如何日夜不停地亮着的。他的口粮只有监狱正常口粮的三分之一，入冬后饥寒交迫，同时被迫做一些卑微的工作，例如擦洗监狱地板，所有的党卫军成员都在嘲笑他。\n\n1945年2月7日，卡纳里斯被带到弗洛森堡集中营，在那里经常受到虐待，并经常忍受党卫军",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "heir policy of ‘unconditional surrender,’ allowing Germany to retain its armed forces and negotiating with a military government that would develop out of the resistance.\nThere were, clearly, problems with this plan on the side of the German resistance —they didn’t manage to kill Hitler; and they probably underestimated the loyalty of the armed forces to Nazism —but there were",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "3, all Axis forces had either surrendered or had been withdrawn from North Africa. A little over a year later, in January 1944, Admiral Canaris also contributed to the success of the landings at Anzio. He informed Feldmarschall Albert Kesselring that there was no need to fear an Allied invasion anytime in the near future. At that exact moment, about 250 British and American shi",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "early hours of May 7, Germany surrendered unconditionally to the Allied powers and the Third Reich ceased to exist. The end came too late to save thousands of inmates who died in the concentration camps, but the mass murders had finally ended. Admiral Canaris could be well satisfied that he had done his part in saving many political and religious prisoners from places like Flos",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "alternative to ‘unconditional surrender’.\nRoosevelt stood by ‘unconditional surrender’ so all Canaris’ peace attempts fell through.\nI’m not going to go into detail about what\nhappened to end Canaris’s Abwehr and much of the German resistance, but I will sum it\nup. Basically, tensions rose between Canaris and Heydrich, and it was getting to the point\nwhere Heydrich was arresting",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "r, was simple: \"Unconditional surrender.\"\n\nSS General Heydrich was suspicious of the Abwehr. Not long after Heydrich was posted in Prague, he requested that Canaris place the Abwehr under SD and SS control, which pitted the two men against one another over jurisdictional control. Canaris handled the situation diplomatically, with no immediate effect on the Abwehr, but it did me",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "r, was simple: \"Unconditional surrender.\" &#91; 92 &#93; SS General Heydrich was suspicious of the Abwehr . &#91; 93 &#93; Not long after Heydrich was posted in Prague , he requested that Canaris place the Abwehr under SD and SS control, which pitted the two men against one another over jurisdictional control. &#91; 94 &#93; &#91; 95 &#93; Canaris handled the situation diplomat",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ead a policy of unconditional surrender for the Nazi government. Machinations against the National Socialists by the Abwehr were considerable in terms of the chain of command. General Hans Oster of the Abwehr remained in regular contact with Dulles. Foreknowledge and penetration of the Abwehr was such that Dulles reported later in February 1944 that the Abwehr was going to be a",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "r, was simple: \"Unconditional surrender.\" &#91; 92 &#93; SS General Heydrich w",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "r, was simple: \"Unconditional surrender.\" &#91; 92 &#93; SS General Heydrich w\n\nas suspicious of the Abwehr . &#91; 93 &#93; Not long after Heydrich was posted in Prague , he requested that Canaris place the Abwehr under SD and SS control, which pitted the two men against one another over jurisdictional control. &#91; 94 &#93; &#91; 95 &#93; Canaris handled the situation diplom",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "卡纳里斯通过外交干预阻止了多项德国军事计划：1940年亲自劝说佛朗哥不要允许德国攻占直布罗陀；持续向希特勒夸大瑞士的抵抗意志和地理优势，提供关于绿松石行动的虚假情报，成功阻止入侵瑞士。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "rman aid to General Francisco Franco during the Spanish Civil War. Believing that the Nazi regime would ultimately destroy traditional conservative values and that its foreign ambitions were dangerous to Germany, he enlisted some of the anti-Hitler conspirators into the Abwehr an",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "在 海军 服役。 西班牙内战 期间，负责德国对 弗朗西斯科·佛朗哥 的援助工作。他曾担任 帕斯特里欧斯行动 的首脑，还曾录用几名反 希特勒 密谋分子进入阿勃维尔，并掩护他们的活动，1944年2月他被调任军队的经济工作。 1944年7月20日暗杀希特勒 的计划失败后被捕，在 弗洛森比格集中营 被处死 &#91; 1 &#93; 。 他和阿勃維爾成員 舒特拉 的關係常被舒特拉使用來保護他工廠的猶太人免受黨衛軍迫害和處死 &#91; 2 &#93; &#91; 3 &#93; 。 参考资料 [ 编辑 ] ^ 《大不列颠百科全书：国际中文版·第二卷》 (M) 使",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "洛伐克，后来又扮演了积极的和平维护者的角色。卡纳里斯亲自找到佛朗哥，告诉他不要允许德国人攻占直布罗陀。\n\n卡纳里斯也是党卫军杀害波兰平民的目击者。在贝德津，党卫军将200名犹太人推入了一座犹太教堂，然后放火焚烧，他们都被烧死了。卡纳里斯对此十分震惊。1939年9月10日，他前往前线视察德国军队的行动。无论他走到哪里，他的情报官员都会告诉他发生过的大屠杀事件。两天后，他前往位于上西里西亚的希特勒的元首专列“美国号”列车进行抗议。他首先见到的是最高统帅部的武装部队总司令威廉·凯特尔将军。“我有消息，”卡纳里斯告诉凯特尔，“波兰正在计划进行大规模处决，波兰贵族",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "es in Poland.\n* He tipped off Franco to oppose any invasion of Gibraltar in 1940 or any attempt to enter the war on the Axis side —an intransigence that may well have saved the British Empire and that led Hitler, after his meeting with Franco, to exclaim that he would rather have",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "de Spanish Dictator Francisco Franco to cooperate in taking over the British Rock of Gibraltar. Canaris got the Spanish dictator to refuse to allow German troops on Spanish soil and to bar Spanish participation in any attack on Gibraltar. Canaris also tipped off Franco to the imp",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "war. He had previously earned Franco’s trust as a result of his actions during the\nSpanish Civil War, and now even advised Franco what to say to Hitler when they met face to\nface on the 23rd of October 1940. The meeting turned into a “fiasco”, and Hitler later\ntold Mussolini that",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ationalists, led by Francisco Franco, and the Republicans. In fact, Germany provided aid to Franco's side, with Canaris using his contacts at England's Vickers armaments manufacturing company to help supply the Nationalists with weapons.\n\nOne month before Hitler's annexation of A",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "g coercion if necessary, with Franco for Spanish support in the war against the Allies, but instead of prompting him to acquiesce to Hitler's desire, Canaris reported that Franco would not commit Spanish forces until Britain had been defeated. Conversations from the period betwee",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "tionalists , led by Francisco Franco , and the Republicans . &#91; 50 &#93; In fact, Germany provided aid to Franco's side, with Canaris using his contacts at England's Vickers armaments manufacturing company to help supply the Nationalists with weapons. &#91; 51 &#93; One month",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "December 1940, was a failure; Franco, for various political and military reasons, was not ready to join the German war effort. Canaris reported that Franco would not commit Spanish forces until England collapsed.\n\n### Underestimating the enemy and the Commissar Order\n\nInitial est",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "g coercion if necessary, with Franco for Spanish support in the war against the Allies, but instead of prompting him to acquiesce to Hitler's desire, Canaris reported that Franco would not commit Spanish forces until Britain had been defeated. &#91; 86 &#93; Conversations from th",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": ". He also persuaded Francisco Franco not to allow German forces to pass through Spain to invade Gibraltar(Operation Felix), but it may have been just as much the imposition of the SD. The SD was allegedly spreading rumors about the partition of Spain. SD operatives also establish",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "tler regarding an invasion of Switzerland, known as Operation Taunenbaum, a subject which I also covered in a previous episode. As a result of his efforts, the invasion never took place.\n\nHe then began to supply information directly to the Allies.\n\nThroughout 1942 and 43, Canaris played a double agent. Via Spain and occupied Fra",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "国防军，并于之后偷偷离开德国。\n\n卡纳里斯曾不断向希特勒强调瑞士的抵抗意志以及瑞士的经济实力和地理优势。正是由于卡纳里斯的观点，希特勒放弃了将瑞士纳入他的新欧洲的计划。卡纳里斯任命他的朋友、反纳粹分子汉斯·奥斯特为阿勃维尔情报机构的二号人物。奥斯特在职期间联系了众多该政权的敌人，并将他们变成了国防军特工。奥斯特在国防军中建立了一个反纳粹的等级制度，很快他就指挥了抵抗运动的所有军事计划。他利用阿勃维尔从盖世太保手中拯救人们，报道抵抗运动，帮助犹太人逃离德国，并在抵抗运动的不同圈子之间进行沟通。\n\n卡纳里斯海军上将和他的副手汉斯·奥斯特实际上帮助了盟军，同时也监督了所有德国间谍活动、反间谍活动和破坏活动。卡纳里斯向盟军透露了几乎所有有关德国的重要战略和作战",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ack to Berlin, Canaris met in Switzerland with a woman named Halina Szymanska, who had connections to British intelligence. When the Russians invaded Poland they captured Madame Szymanska and her husband, Colonel Antoni Szymanski, who served on the Polish General Staff. Using his powerful connections, Canaris had been able to ge",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "颇多的传奇故事，比如说在1916年初他奉命返回德国，但在途径瑞士和意大利边境时不幸被意大利人逮捕，差一点就被意大利人当做间谍交给法国特勤局处理。如果真的发生这种事的话，那么卡纳里斯一定会被法国特勤局给以间谍罪处死的。（当时间谍不受保护，被逮捕基本就死定了）但奇迹般的是卡纳里斯又一次的逃脱了，他的逃脱方式至今未明，有一个说法是他设法将监狱里的牧师骗进了牢房，然后突然发难杀害了这个牧师，然后换上牧师的行头，堂而皇之的离开了监狱。那些缺乏警惕之心的意大利狱卒们根本没有怀疑他，结果就这样被他跑掉了。\n\n而另一个传奇故事则是发生在1916年3月，他奉命再次返回西班牙的马德里展开工作，在这里他遇到了自己的对手——斯图尔特·孟席斯勋爵。孟席斯和卡纳里斯的经历颇为类似",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "hen being sent to Moscow from Switzerland. Canaris’\nagents may have also infiltrated the Dora Ring, and the Swiss and British were also\nfeeding information to them too. And they were all telling the Soviets where Hitler\nwould strike next.\nFrom September 1940, the German resistance\nhad informed London that Hitler was going East,",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ip with a Polish spy based in Switzerland, Halina Szymanska, who passed information from him to the Polish government-in-exile based in London and also put her at the disposal of the British and Americans, including Allen Dulles. A key piece of intelligence that passed from Canaris via Szymanska to the Allies was advance warning",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ip with a Polish spy based in Switzerland, Halina Szymanska , who passed information from him to the Polish government-in-exile based in London and also put her at the disposal of the British and Americans, including Allen Dulles . &#91; 85 &#93; A key piece of intelligence that passed from Canaris via Szymanska to the Allies wa",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "couraged Hitler from invading Switzerland (Operation Tannenbaum). He also persuaded Francisco Franco not to allow German forces to pass through Spain to invade Gibraltar(Operation Felix), but it may have been just as much the imposition of the SD. The SD was allegedly spreading rumors about the partition of Spain. SD operatives",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "mans to contact the Allies in Switzerland and elsewhere during 1944 are also documented in U.S. Department of State, Foreign Relations of the United States (FRUS), 1944, vol. 1, General (Washington, DC, 1966), pp. 484–579.\n19. For a long time, Hitler had found the Abwehr suspect in terms of performance; they had not apprised the",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Analysis of the Neutrality of Switzerland and other Neutral Nations during WW II. Berlin: LIT Verlag. ISBN 978-3-82581-914-9.\n- Reitlinger, Gerald (1989). The SS: Alibi of a Nation, 1922–1945. New York: Da Capo Press. ISBN 978-0-30680-351-2.\n- Reynolds, Nicholas (2022). Need to Know: World War II and the Rise of American Intelli",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "卡纳里斯命令特工收集纳粹在波兰暴行的详细情报定期发送梵蒂冈，派邦霍费尔牧师飞往瑞典与英国主教秘密会面通报纳粹罪行并保证德国国内抵抗力量日益增强。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "以色列 美国 瑞典 拉脱维亚 日本 捷克 希腊 荷兰 波兰 梵蒂冈 人物 德意志传记 其他 CONOR SNAC IdRef 这是一篇與 德國人物 相關的 小作品 。您可以通过 编辑或修订 扩充其内容。 查 论 编 检索自“ https://zh.wikipedia.org/w/index.php?title=威廉·卡纳里斯&amp;oldid=87729059 ” 分类 ：​ 1887年出生 1945年逝世 義大利裔德國人 第一次世界大战效力德国的间谍 德意志帝國海軍人物 7月20日密謀案遭處決者 7月20日密謀案相關人員 受军法审判者 德国自由军团成员 威斯特法伦省人 弗洛森比格集中营死亡人员 德國信義宗教徒 被纳粹德国以绞刑处死者 死于纳粹集中营的抵抗人员 死于纳粹集中营的军事人员 德国第一次世界大战军事人物 德國第二次世界大戰軍事人物 普鲁士",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "国防军的眼皮子底下。” 但凯特尔敦促卡纳里斯少管闲事。很快，梵蒂冈开始定期收到有关纳粹在波兰暴行的详细报告。这些信息都是阿勃维尔情报局特工按照卡纳里斯的命令收集的。\n\n卡纳里斯还派了他的另一位同事迪特里希·邦霍费尔牧师飞往瑞典，与奇彻斯特主教乔治·贝尔秘密会面，并向贝尔讲述了他的国家所犯下的罪行，同时向贝尔保证，德国对此类行为的抵制日益增强。\n\n1943年3月，卡纳里斯亲自飞往斯摩棱斯克，与苏联中央集团军群参谋人员一起策划暗杀希特勒。纽伦堡审判揭示了卡纳里斯为制止莱茵哈德·海德里希的特别行动队在苏联犯下的战争和种族灭绝罪行所作出的艰苦努力。据透露，卡纳里斯在突尼斯阻止了杀害被俘法国军官的事件，正如他在战争期间拯救了数百名犹太人一样。\n\n有一次，他亲自去找希姆莱，抱怨盖世太保正在逮捕他的特工，从而拯救了七名犹太人，使他们免于被送往集中营和必死无疑。这七",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Abwehr, Joseph Muller, to the Vatican to contact various British and Belgian diplomats. Muller was a brilliant lawyer by trade and was nicknamed “Joe the Ox” by his friends. He told the Dutch and Belgian ambassadors that Germany was planning to attack their nations around November 12. Once again the diplomats did not take Muller’s warnings seriously. However, they were saved wh",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "r once again showed up in the Vatican on May 1, 1940, and told a Belgian representative that the Germans were going to invade on May 10. The message was sent to Brussels but it was not believed. This cable was intercepted by the Gestapo, and Hitler was informed. He ordered Canaris to find out who sent the message, and he ordered Muller to investigate. Needless to say, there was",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "eydrich also had spies in the Vatican (including a Benedictine\nmonk) and was trying to connect the dots.\nThus, the British backed down, and Canaris\nhad to cover his tracks.\nOn the 21st of February 1940, Paul Thümmel\ninformed the British that there would be air attacks on Britain, that fuel consumption\nhad been cut by half, all private cars were confiscated, leave was suspended,",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ther via Spain and Gibraltar. Vatican contacts may have also provided a third route to his British counterparts. Canaris also intervened to save a number of victims from Nazi persecution, including Jews, by getting them out of harm's way. He was instrumental, for example, in getting 500 Dutch Jews to safety in May 1941. Many such people were given token training as Abwehr \"agen",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ther via Spain and Gibraltar. Vatican contacts may have also provided a third route to his British counterparts. &#91; 97 &#93; Canaris also intervened to save a number of victims from Nazi persecution, including Jews , by getting them out of harm's way. He was instrumental, for example, in getting 500 Dutch Jews to safety in May 1941. &#91; 98 &#93; Many such people were given",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "miral Canaris, as well as the Vatican and Fritsch papers.\n\n## Effectiveness and legacy\n\nMany historians agree that, in general, the Abwehr had a poor reputation for the quality of its work and its unusually decentralized organization. Some of the Abwehr's less than stellar image and performance was due to the intense rivalry it had with the SS, the RSHA and with the SD. Other f",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "- Bergbauernhilfe\n- Dietrich Bonhoeffer\n- Eddie Chapman, a prominent British double agent who infiltrated the Abwehr and fed intelligence to MI5 during World War II. He was trusted by the Germans and awarded the Iron Cross.\n- General der Nachrichtenaufklärung: The high command of the German Army (Wehrmacht) OKH/Chi cipher bureau.\n- German Resistance\n- Hermann Giskes—Leading li",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "卡纳里斯在战争期间坚持记日记记录纳粹全部罪行。1944年2月阿勃维尔被解散并入党卫军后他被撤职软禁。7月20日阴谋失败后日记被发现直接导致他被判处死刑。1945年4月9日在弗洛森比格集中营赤身裸体被用屠夫钩吊死——纳粹为叛徒保留的中世纪酷刑。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": ", Germany—died April 9, 1945, Flossenbürg concentration camp, Bavaria) was a German admiral, head of military intelligence(Abwehr) under the Nazi regime and a key participant in the resistance of military officers to Adolf Hitler.\n\n \n\nHaving served in the navy during World War I, Canaris was a member of the military tribunal that sentenced the murderers of the German communist",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "any\n\nDied:\n:   April 9, 1945, Flossenbürg concentration camp, Bavaria (aged 58)\n\nRole In:\n:   World War II\n\nSee all related content [...] Role In:\n:   World War II\n\nSee all related content\n\nAppointed head of the Abwehr (January 1935), he organized German aid to General Francisco Franco during the Spanish Civil War. Believing that the Nazi regime would ultimately destroy traditi",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "hung from a butcher’s hook at Flossenbürg concentration camp (a grisly, medieval execution that the Nazis reserved for traitors). Tresckow committed suicide. Stauffenberg, facing a firing squad, called out with his last breath, “Long live sacred Germany.” Those who survived — like Canaris’ associates Lahousen and Gisevius — went on to be [...] Canaris was an inscrutable and fas",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "945-04-09 ) （58歲） &#160; 納粹德國 弗洛森比格集中营 49°44′06″N 12°21′21″E &#xfeff; / &#xfeff; 49.734958°N 12.35577°E &#xfeff; / 49.734958; 12.35577 &#xfeff; ( Execution Site of 20 July 1944 Plot (Nazi Germany Resistance) ) 效命 &#160; 德意志帝國 &#160; 魏瑪共和國 &#160; 納粹德國 军种 &#160; 德意志帝國海軍 &#160; 魏玛国家海军 阿勃维尔 服役年份 1905年－1944年 军衔 海军上将 参与战争 第一次世界大战 科罗内尔海战 福克兰群岛海战 马萨铁拉岛海战 第二次世界大战 获得勋章 一级和二级铁十字勋章 銀質德國十字勳",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "hung from a butcher’s hook at Flossenbürg concentration camp (a grisly, medieval execution that the Nazis reserved for traitors). Tresckow committed suicide. Stauffenberg, facing a firing squad, called out with his last breath, “Long live sacred Germany.” Those who survived —like Canaris’ associates Lahousen and Gisevius —went on to be key witnesses detailing Nazi crimes at Nur",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "s of the German resistance at Flossenbürg concentration camp on April 9, 1945.\n\nErwin von Lahousen said that during the war Canaris kept a diary of what he saw and did while Abwehr chief. Although no physical copy of the diary has ever been found, a diary by Canaris would prove a boon to historians of the war. Von Lahousen said that Canaris hand wrote the entries until summer 1",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ral Canaris had been moved to Flossenbürg concentration camp, about a mile from the Czech border, at the beginning of February. Arranging for a quick trial and execution at Flossenbürg was a routine matter.\n\nAmerican soldiers stand at the gates of the Dachau concentration camp after its liberation. (Photo via 42nd “Rainbow” Infantry Division)\n\nWhat were Canaris’s personal relat",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ording to another prisoner at Flossenbürg, he died slowly and horribly. He was actually hanged twice – once with an iron collar around his neck, with the noose placed over the collar. After several minutes, he was taken down while still alive. The iron collar was then removed and he was hanged again. This time, he was left hanging until he was dead. Four other prisoners were al",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ght and Canaris was hanged in Flossenbürg concentration camp for high treason as the Allied forces advanced through Southern Germany.\n\n| Wilhelm Canaris | - |\n| --- | --- |\n| Canaris in 1940 | - |\n| 5th Chief of the Abwehr | - |\n| In office, 1 January 1935 – 12 February 1944 | - |\n| Deputy | Hans Oster |\n| Preceded by | Conrad Patzig [de] |\n| Succeeded by | Georg Hansen |\n| Per",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ll and execution\n\nMemorial at Flossenbürg concentration camp to the German resistance members executed on 9 April 1945\n\nThe evidence that Canaris was playing a double game grew, and at the insistence of Heinrich Himmler, Hitler dismissed Canaris and abolished the Abwehr in February 1944. Its functions were taken over by the Ausland-SD, part of the Reich Security Main Office and",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": ". (2008).\"U.S. Army Liberates Flossenburg Concentration Camp\". Carlisle Barracks, PA: US Army Heritage and Education Center. Retrieved 1 January 2026.\n- Delattre, Lucas (2006). A Spy at the Heart of the Third Reich. New York: Grove Press. ISBN 978-0-80214-231-3.\n- Duffy, Peter (2014). Double Agent. New York: Scribner. ISBN 978-1-4516-6795-0.\n- Evans, Leslie (1 April 2014).\"Frit",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "5 (1945-04-09) (aged&#160;58) Flossenbürg concentration camp , Flossenbürg , Nazi Germany 49°44′06″N 12°21′21″E &#xfeff; / &#xfeff; 49.734958°N 12.35577°E &#xfeff; / 49.734958; 12.35577 &#xfeff; ( Execution Site of 20 July 1944 Plot (Nazi Germany Resistance) ) Cause&#160;of&#160;death Execution by hanging Spouse Erika Waag &#32; &#8203; &#40; m. &#160;1919&#41; &#8203; Children",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "xecution [ edit ] Memorial at Flossenbürg concentration camp to the German resistance members executed on 9 April 1945 The evidence that Canaris was playing a double game grew, and at the insistence of Heinrich Himmler , Hitler dismissed Canaris and abolished the Abwehr in February 1944. &#91; 101 &#93; Its functions were taken over by the Ausland-SD , part of the Reich Securit",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ic staff of the armed forces (February 1944) after an investigation of the Abwehr by the Schutzstaffel(SS); he remained there until after the abortive assassination attempt against Hitler (July 20, 1944), when he was arrested and executed.\n\nBritannica QuizPop Quiz: 17 Things to Know About World War II \n\n The Editors of Encyclopa",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ic staff of the armed forces (February 1944) after an investigation of the Abwehr by the Schutzstaffel (SS); he remained there until after the abortive assassination attempt against Hitler (July 20, 1944), when he was arrested and executed. [...] Written and fact-checked by\n\nBritannica Editors\n\nEncyclopaedia Britannica's editors",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "The Abwehr was dissolved in February 1944, and its functions were absorbed into the SS. Canaris was dismissed and placed under house arrest. [...] Heydrich blamed the Abwehr for many of the failures during World War I and wanted to oversee all of the intelligence gathering in Germany.\n\nCanaris and Heydrich had an amicable rela",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "录用几名反 希特勒 密谋分子进入阿勃维尔，并掩护他们的活动，1944年2月他被调任军队的经济工作。 1944年7月20日暗杀希特勒 的计划失败后被捕，在 弗洛森比格集中营 被处死 &#91; 1 &#93; 。 他和阿勃維爾成員 舒特拉 的關係常被舒特拉使用來保護他工廠的猶太人免受黨衛軍迫害和處死 &#91; 2 &#93; &#91; 3 &#93; 。 参考资料 [ 编辑 ] ^ 《大不列颠百科全书：国际中文版·第二卷》 (M) 使用 &#124;format= 需要含有 &#124;url= ( 帮助 ) 1. 北京: 中国大百科全书出版社. 1999年4月: 116页. ISBN 7-5000-6060-2 . &#160; ^ Admiral",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "o officially fired Canaris in February 1944. The Abwehr became part of the SD, which was taken over by Himmler. Canaris was neither arrested nor charged in the matter.\n\nOne final attempt on Hitler’s life took place on July 20, 1944, in what was known as Operation Valkyrie. While Hitler was at his headquarters at Rastenburg, East",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "n office, 1 January 1935 – 12 February 1944 | - |\n| Deputy | Hans Oster |\n| Preceded by | Conrad Patzig [de] |\n| Succeeded by | Georg Hansen |\n| Personal details | - |\n| Born | Wilhelm Franz Canaris, (1887-01-01)1 January 1887, Aplerbeck, Landkreis Dortmund, Province of Westphalia, Kingdom of Prussia, German Empire |\n| Died | 9",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "s and abolished the Abwehr in February 1944. Its functions were taken over by the Ausland-SD, part of the Reich Security Main Office and led by SS- Brigadeführer Walter Schellenberg. Previous areas that had been the responsibility of the Abwehr were divided between Gestapo chief Heinrich Müller and Schellenberg. Some weeks later",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "1 January 1935&#160;–&#32;12 February 1944 Deputy Hans Oster Preceded by Conrad Patzig &#160;&#91; de &#93; Succeeded by Georg Hansen Personal details Born Wilhelm Franz Canaris ( 1887-01-01 ) 1 January 1887 Aplerbeck , Landkreis Dortmund, Province of Westphalia , Kingdom of Prussia , German Empire Died 9 April 1945 (1945-04-09",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "e Ministry of War in 1935—was dissolved and became the Oberkommando der Wehrmacht(OKW) with Hitler in direct command. The OKW formed part of the Führer's personal \"working staff\" from June 1938 and the Abwehr became its intelligence agency under Vice-Admiral Wilhelm Canaris. The Abwehr had its headquarters at 76/78 Tirpitzufer (",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "that Dulles reported later in February 1944 that the Abwehr was going to be absorbed by the SD.\n\nThe SS continually undermined the Abwehr by putting its officers under investigation, believing them to be involved in anti-Hitler plots. Heydrich ensured that the Abwehr and Canaris were closely monitored. The SS also accused Canari",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "7–1945) | 1 January 1935 | 12 February 1944 | 9 years, 42 days | Kriegsmarine | – |\n| 6 | Hansen, GeorgColonel Georg Hansen(1904–1944) | 13 February 1944 | 1 June 1944 | 109 days | German Army | – |\n| 7 | Schellenberg, WalterSS- Brigadeführer Walter Schellenberg(1910–1952) | 1 June 1944 | 4 May 1945 | 337 days | Schutzstaffel |",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "s and abolished the Abwehr in February 1944. &#91; 101 &#93; Its functions were taken over by the Ausland-SD , part of the Reich Security Main Office and led by SS- Brigadeführer Walter Schellenberg . &#91; 102 &#93; Previous areas that had been the responsibility of the Abwehr were divided between Gestapo chief Heinrich Müller",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "anaris on the spot, and on 18 February 1944, Hitler signed a decree that abolished the Abwehr. Its functions were taken over by the Reich Security Main Office(RSHA) and the senior RSHA official Walter Schellenberg replaced Canaris functionally within the RSHA. This action strengthened Himmler's control over the military.\n\nCanari",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "inating light. Canaris kept a diary through the war — meant to be a record of the entirety of the Nazi crimes. That diary, which was unearthed in the aftermath of the July 20 plot and resulted in a death sentence for Canaris, is one of the great missing documents of the Nazi period. Canaris, like most of the other figures of the resistance, died brave and horrible deaths. Canar",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "inating light. Canaris kept a diary through the war —meant to be a record of the entirety of the Nazi crimes. That diary, which was unearthed in the aftermath of the July 20 plot and resulted in a death sentence for Canaris, is one of the great missing documents of the Nazi period. Canaris, like most of the other figures of the resistance, died brave and horrible deaths. Canari",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "during the war Canaris kept a diary of what he saw and did while Abwehr chief. Although no physical copy of the diary has ever been found, a diary by Canaris would prove a boon to historians of the war. Von Lahousen said that Canaris hand wrote the entries until summer 1939, and after that dictated them to his secretary, Vera Schwarte. Both Oster and von Lahousen copied Canaris",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "my, are out,” he wrote in his diary. “Hitler himself becomes a sort of ‘Supreme War Lord,’ assuming the powers of Minister of Defense.”\n\nAdmiral Canaris was absolutely stunned by the news that Hitler had ruined the careers and lives of two of his most senior officers, all for the purpose of supreme command of German forces. Until the Blomberg-Fritsch incident, the admiral admir",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Fort Sumter: A Photographical Diary\n\nRead More\n\n \n\nLatest Posts\n\n##### Combat Soldier and Later, POW\n\nRead More\n\n \n\nWWII\n\n##### Important Women in World War 2: Virginia Hall\n\nRead More\n\n \n\nMilitary History\n\n##### Massacre In Morocco\n\nRead More",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ions, just acted as an\nintermediary, and tried to persuade the British that the German plotters were genuine. Hans\nOster also used the pope to inform the west about the invasion of the west, but Hitler\nfound out and demanded that Heydrich and Canaris hunt down those who had betrayed him. Unfortunately\nfor Canaris and the Abwehr, Heydrich also had spies in the Vatican (including",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "the plot. Canaris's personal diary was discovered in the Wehrmacht headquarters south of Berlin and presented to Hitler in early April 1945, which implicated him in the conspiracy. Canaris was placed on trial by an SS summary court, presided over by Otto Thorbeck with Walter Huppenkothen as prosecutor. He was charged with treason, convicted, and sentenced to death. Together wi",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "the plot. Canaris's personal diary was discovered in the Wehrmacht headquarters south of Berlin and presented to Hitler in early April 1945, which implicated him in the conspiracy. &#91; 109 &#93; Canaris was placed on trial by an SS summary court, presided over by Otto Thorbeck with Walter Huppenkothen as prosecutor. &#91; 110 &#93; He was charged with treason, convicted, and",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "en documents was the personal diary of Admiral Canaris, as well as the Vatican and Fritsch papers.\n\n## Effectiveness and legacy\n\nMany historians agree that, in general, the Abwehr had a poor reputation for the quality of its work and its unusually decentralized organization. Some of the Abwehr's less than stellar image and performance was due to the intense rivalry it had with",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ater President of Egypt).\n13. Diary of the Chief of Staff, Befehlhabers des Ersatzheeres, 20 March 1942, Imperial War Museum, MI 14/981/3.\n14. Garbo's case manager at MI5 was Tomás Harris\n15. Balfour's numbers do not match the figures put forth by historian Richard Breitman, who claims the organization consisted of \"more than twenty-one thousand officials in 1941, not including",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "同时代人描述卡纳里斯性格极其复杂：'无处不在却又无处可去'，'这个身材矮小、柔弱、有些胆怯的人在各方面都是局外人'，'只有通过一道细缝才能看到他真正的品格，如钟声般清晰'。美国情报局称其为'现代历史上最勇敢的人'，德国情报局称其为'空中飞人杂技员'。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "aris’ associates Lahousen and Gisevius — went on to be [...] Canaris was an inscrutable and fascinating figure. “Very rarely, and only through a small chink, one saw his true character, clear as a bell, the ethical and tragical depths of his personality,” wrote the diplomat Ernst von Weizsäcker. He had been a U-boat captain during World War I, was highly involved in the post-war Freikorps, may well have had a part in the murde",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "际上，法院又对受害者进行了重新定罪。卡纳里斯的一位朋友汉斯·吉塞维乌斯在其1947年出版的《走向痛苦的结局》一书中同样也描述了一个关于这位海军上将的故事：“卡纳里斯不仅憎恨希特勒和希姆莱，还憎恨将整个纳粹体系作为一种政治现象……他无处不在，却又无处可去。他所到之处，无论国内外，还是前线总是留下一阵迷茫……实际上，这个身材矮小、柔弱、有些胆怯的人在各方面都是一个局外人，纵容博览群书也依旧过于敏感。从举止和工作方式来看，他是最不擅长军事的人……”\n\n**感谢阅读，欢迎分享您的看法！**\n\n[军事](/topic/post-list?topic_id=133)[历史](/topic/post-list?topic_id=144)  [举报](#)\n\n点击展开全文\n\n[打开观察者网APP，阅读体验更佳](#)\n\n#### [武器与战争](/user/personal-homepage?uid=1342679)\n\n用文字剖析人物的内心，洞见自我的本真 |",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "uardian devil,” in Hans Bernd Gisevius’[phrase](https://archive.org/details/tobitterend00gise_0/page/n6/mode/1up?q=guardian), seemed to preserve Hitler’s life.\nAdmiral Wilhelm Canaris is, for me, the most striking of the figures in opposition to Hitler. He was the feared head of the Abwehr, the German intelligence agency, and given credit for many of the more daring German escapades in the ‘30s and in the early period of the w",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "zymanska. Abwehr officer Hans Gisevius, her German contact in Switzerland, was to figure prominently in German Resistance affairs, including the July 20, 1944, bomb plot against Hitler, and to become a secret contact of OSS officer Allan Dulles in Switzerland.”\n\nWhen Canaris took over the Abwehr, he put in position men of high talent, many of whom were anti-Nazi in their politics. For example, Hans Piekenbrock was chosen to ma",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "nel Hans Oster and Hans Bernd Gisevius, which wanted to use the crisis as an excuse for executing a putsch to overthrow the Nazi regime. The most audacious plan contemplated by Canaris, in collaboration with Ewald von Kleist-Schmenzin, was to capture and to unseat Hitler and the entire Nazi Party before the invasion of Czechoslovakia. At that particular moment, Kleist visited Britain secretly and discussed the situation with B",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "n von Lahousen and Hans Bernd Gisevius, two of Canaris's main subordinates, survived the war and testified during the Nuremberg trials about Canaris's courage in opposing Hitler. Lahousen recalled a conversation between Canaris and General Wilhelm Keitel in which Canaris warned Keitel that the German military would be held responsible for the atrocities in Poland. Keitel responded that they had been ordered by Hitler. Keitel,",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "nel Hans Oster and Hans Bernd Gisevius , which wanted to use the crisis as an excuse for executing a putsch to overthrow the Nazi regime. &#91; 56 &#93; The most audacious plan contemplated by Canaris, in collaboration with Ewald von Kleist-Schmenzin , was to capture and to unseat Hitler and the entire Nazi Party before the invasion of Czechoslovakia . At that particular moment, Kleist visited Britain secretly and discussed th",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "was Abwehr officer Hans Bernd Gisevius, who was stationed in Zurich as the German Vice Consul. Dulles communicated with the Abwehr concerning their intrigue against Hitler and even attempted discussions about a separate peace, but President Franklin D. Roosevelt would have none of it, preferring instead a policy of unconditional surrender for the Nazi government. Machinations against the National Socialists by the Abwehr were",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "n von Lahousen and Hans Bernd Gisevius, two of Canaris's main subordinates, survived the war and testified during the Nuremberg trials about Canaris's courage in opposing Hitler. Lahousen recalled a conversation between Canaris and General Wilhelm Keitel in which Canaris warned Keitel that the German military would be held responsible for the atrocities in Poland. Keitel responded that they had been ordered by Hitler. &#91; 79",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "结局：令人不解卡纳里斯的一生充满了神秘的传奇色彩，留下了许多未解之谜。美国情报局评价他是“现代历史上最勇敢的人，幻想在欧洲建立一个以英法德为首的美国”。德国情报局称他为“空中飞人杂技员”，德国军事情报局说他“诡计多端”。卡纳里斯复杂的个人经历，使他成为了一个不可捉摸的人。疑心很重的希特勒最终，卡纳里斯在刺杀希特勒的“女神行动”失败后被处以绞刑。据说，他在二战期间录用了几名反希特勒分子，并支持他们的活动。甚至，时任英国情报局局长的孟席斯勋爵回忆说：“卡纳里斯是一个德国爱国者，他只是想拯救德国和欧洲免遭毁灭......”",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    },
+    {
+      "claim": "卡纳里斯领导的阿勃维尔组织架构庞大，涵盖间谍、反间谍和破坏行动网络，他作为局长占据核心位置。但抵抗运动实际效果有限——虽积极密谋推翻希特勒，未能阻止纳粹的大部分侵略行动。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "March 1938. [...] | General der Nachrichtenaufklärung |  Erich Fellgiebel  Fritz Thiele  Wilhelm Gimmler  Hugo Kettler  Fritz Boetzel  Otto Buggisch  Fritz Menzer  Herbert von Denffer  Ludwig Föppl  Horst Schubert  Friedrich Böhm  Bruno von Freytag-Löringhoff  Johannes Marquart  Willi Rinow  Rudolf Kochendörffer  Hans",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "d the Iron Cross.\n- General der Nachrichtenaufklärung: The high command of the German Army (Wehrmacht) OKH/Chi cipher bureau.\n- German Resistance\n- Hermann Giskes—Leading light in the Abwehr Englandspiel operation in the Netherlands\n- Irish Republican Army–Abwehr collaboration\n- Luftnachrichten Abteilung 350: The OKL/C",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "stance?\n\n- Channel: TIKhistory\n- Length: 37:48\n- Views: 124.4K\n- Keywords: history, ww2, wwii, TIK, documentary, world war ii, world war 2, axis, allies, soviet, german resistance, wilhelm canaris, hans oster, ludwig beck, franco, hitler, canaris, abwehr, admiral wilhelm canaris, resistance movement ww2, resistance mov",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "Description部分"
+        },
+        {
+          "excerpt": "on, Spectre321, is: how effective was Wilhelm Canaris and the German resistance?\nAnd did they have an overall effect on the eventual collapse of the Third Reich? Let’s\nfind out.\nThe only force in the Third Reich with the capability of taking Hitler down was the Wehrmacht.\nBut not all of it was equal. The Luftwaffe was",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "Description部分"
+        }
+      ]
+    },
+    {
+      "claim": "1956年德国高等法院裁定对卡纳里斯等人的处决是'合法的'，因为纳粹拥有处决叛徒的权力——这一荒谬判决实际上对受害者进行了重新定罪，反映了战后德国对抵抗运动的复杂态度。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "没有对德国做过任何事。如果你还活着，请告诉我的妻子……”\n\n1956年，德国高等法院裁定，这些杀戮是“合法的”，因为纳粹拥有处决“叛徒”的权力。实际上，法院又对受害者进行了重新定罪。卡纳里斯的一位朋友汉斯·吉塞维乌斯在其1947年出版的《走向痛苦的结局》一书中同样也描述了一个关于这位海军上将的故事：“卡纳里斯不仅憎恨希特勒和希姆莱，还憎恨将整个纳粹体系作为一种政治现象……他无处不在，却又无处可去。他所到之处，无论国内外，还是前线总是留下一阵迷茫……实际上，",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "ayed in The Man Who Never Was(1956), played by Wolf Frees.\n- Zygmunt Hübner played Wilhelm Canaris in the 12. episode of Polish TV series More Than Life At Stake.\n\n## References\n\n### Notes\n\n1. Höhne contends it was \"doubtful\" that",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "aphy\n\n- Abshagen, Karl Heinz (1956). Canaris. London: Hutchinson. ASIN B001CD7LTW.\n- Altein, Rachel (2002). Eliezer Y. Zaklikovsky (ed.). Out of the Inferno: The Efforts That Led to the Rescue of Rabbi Yosef Schneersohn of Lubavit",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "yed in The Man Who Never Was (1956), played by Wolf Frees . Zygmunt Hübner played Wilhelm Canaris in the 12. episode of Polish TV series More Than Life At Stake . References [ edit ] Notes [ edit ] ^ Höhne contends it was \"doubtfu",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        },
+        {
+          "excerpt": "Schellenberg, Walter (2000) [1956]. The Labyrinth: Memoirs of Walter Schellenberg, Hitler's Chief of Counterintelligence. Translated by Louis Hagen. New York: Da Capo Press. ISBN 978-0306809279.\n- Schoonover, Thomas. Hitler's Man",
+          "source_file": "原文原文原文，不是转述）\",",
+          "location": "相关段落"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 14,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-03T14:55:18.319962",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T00:55:05.509171",
+    "pre_merge_count": 33,
+    "post_merge_count": 12
+  }
+}

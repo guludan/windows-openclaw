@@ -1,0 +1,2514 @@
+{
+  "brief": "社会影响与说服心理学奠基人，规范焦点理论创立者",
+  "school": "社会心理学 / 行为经济学",
+  "domains": [
+    "社会影响与说服",
+    "社会规范与从众行为",
+    "亲社会行为动机"
+  ],
+  "stance_anchors": {
+    "core_belief": "人类行为深刻受制于社会规范，但规范的影响取决于注意力的焦点——描述性规范和指令性规范是两种独立且可能对抗的力量，哪一种被凸显就决定行为方向。",
+    "methodology": "以精巧的田野实验（乱丢垃圾、酒店毛巾、公园盗窃等自然场景）验证社会心理学理论，强调外部效度优于实验室控制，用实证数据挑战直觉和常识。",
+    "key_debates": [
+      "描述性规范vs指令性规范的对立效应",
+      "共情驱动助人是利他还是利己（oneness替代解释）",
+      "科学心理学vs大众直觉的有效性之争"
+    ],
+    "value_hierarchy": [
+      "实证证据高于直觉与经验",
+      "理论精炼（区分规范类型）优于笼统概念",
+      "社会科学应指导公共政策而非凭经验试错"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "区分性思维——将模糊的'社会规范'概念拆解为描述性规范、指令性规范和个人规范三种独立类型，通过注意力焦点机制统一解释。",
+    "reasoning_approach": "演绎-实验循环：从理论出发提出精确实证预测（如对勾形函数、回旋镖效应），用田野实验验证，再回推修正理论。",
+    "typical_biases": [
+      "倾向用利己主义解释所有看似利他的行为",
+      "对社会科学改变实践的乐观可能高估（公园管理者拒绝更改标牌的教训）"
+    ],
+    "intellectual_strengths": [
+      "精巧的实验设计能力",
+      "将实验室理论转化为现实场景干预",
+      "挑战看似常识的直觉（如公益宣传的适得其反效应）",
+      "概念区分的精确性"
+    ],
+    "intellectual_blindspots": [
+      "对纯粹利他主义的系统性怀疑可能过于悲观",
+      "较少关注文化变量对规范效应的调节作用",
+      "对组织权力结构中服从的伦理分析深度不足"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "焦点规范理论（Focus Theory of Normative Conduct）",
+      "components": [
+        "描述性规范（多数人实际做什么）",
+        "指令性规范（多数人赞同/反对什么）",
+        "个人规范（内在道德标准）",
+        "注意力聚焦作为激活条件"
+      ],
+      "application": "预测和干预社会行为（环保、健康、合规等领域），解释为何同一规范在不同情境下产生相反效果"
+    },
+    {
+      "name": "六大顺从原则",
+      "components": [
+        "互惠",
+        "一致性/承诺",
+        "社会验证",
+        "权威",
+        "喜好",
+        "稀缺性"
+      ],
+      "application": "理解和影响服从行为，应用于调查参与、营销传播、组织管理"
+    },
+    {
+      "name": "负面状态缓解模型",
+      "components": [
+        "悲伤驱动的帮助行为",
+        "情绪可变性信念作为边界条件",
+        "利己主义替代解释"
+      ],
+      "application": "重新解释共情-利他范式中的助人行为，挑战无私动机的存在性"
+    },
+    {
+      "name": "Oneness（自我-他人融合）框架",
+      "components": [
+        "自我-他人身份重叠感知",
+        "概念性融合（非物理性混淆）",
+        "关系亲密程度与观点采择作为前因"
+      ],
+      "application": "解释助人行为的利己基础，替代共情-利他假说"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "从社会规范概念的理论精炼出发，通过注意力焦点机制整合描述性与指令性规范，同时以利己主义立场挑战利他主义假说，形成以'隐蔽的社会影响'为核心的研究纲领。",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "Heider平衡理论",
+          "nature": "理论继承",
+          "description": "BIRG现象用认知平衡解释：个体与成功来源的正向单位关系+正面评价→正面评价个体",
+          "source_ref": "paper_Basking in reflected glory"
+        },
+        {
+          "source": "Deutsch & Gerard (1955)",
+          "nature": "理论继承",
+          "description": "信息性影响与规范性影响的区分被发展为描述性规范与指令性规范的理论框架",
+          "source_ref": "paper_Social Influence_ Compliance and Conformity"
+        },
+        {
+          "source": "Nisbett & Wilson (1977)",
+          "nature": "理论继承",
+          "description": "人们对自身行为原因的无知被扩展为社会规范影响力的系统性低估",
+          "source_ref": "paper_Descriptive Social Norms as Underappreciated Sources"
+        },
+        {
+          "source": "Milgram服从实验/Asch从众实验",
+          "nature": "思想继承",
+          "description": "从显性社会压力转向微妙、无意识的影响过程",
+          "source_ref": "paper_Social Influence_ Compliance and Conformity"
+        },
+        {
+          "source": "Hamilton包容性适合度",
+          "nature": "思想继承",
+          "description": "用基因层面的自我利益瓦解自我-他人区分，为oneness框架提供进化论基础",
+          "source_ref": "paper_Reinterpreting the empathy–altruism relationship"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "Batson共情-利他假说",
+          "original": "共情关注直接驱动无私利他行为",
+          "transformation": "共情关注与oneness共变，控制oneness后共情关注不再预测助人——驱动助人的是自我-他人融合而非无私共情",
+          "source_ref": "paper_Reinterpreting the empathy–altruism relationship"
+        },
+        {
+          "source": "社会规范概念",
+          "original": "笼统的'社会规范影响行为'",
+          "transformation": "区分为描述性、指令性和个人规范三种类型，加上注意力聚焦条件，解决规范研究的矛盾性",
+          "source_ref": "paper_A Focus Theory of Normative Conduct"
+        }
+      ],
+      "ruptured": [],
+      "converged": [
+        {
+          "streams": [
+            "社会规范理论",
+            "注意力/聚焦研究",
+            "亲社会行为研究"
+          ],
+          "product": "焦点规范理论——整合规范类型区分与注意力机制，解释何时规范有效何时无效",
+          "source_ref": "paper_A Focus Theory of Normative Conduct系列"
+        },
+        {
+          "streams": [
+            "利他主义研究",
+            "自我概念研究",
+            "进化心理学"
+          ],
+          "product": "Oneness框架——用自我-他人概念融合替代共情作为助人的真正驱动力",
+          "source_ref": "paper_Reinterpreting the empathy–altruism relationship"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1976",
+        "title": "BIRG研究开启自我呈现与社会影响方向",
+        "narrative": "通过三系列足球场田野实验发现人们倾向于公开宣称与成功他人的关联。这一发现奠定了西奥迪尼对社会影响中'隐蔽动机'的长期兴趣——人们不会承认自己在'沐浴反射荣光'，但行为数据清晰表明他们在这样做。",
+        "catalyst": "对Heider平衡理论的实验验证需求",
+        "before_state": "关注基础社会认知过程",
+        "after_state": "转向研究人们无法自我报告的真实社会影响机制",
+        "significance": "建立了'人们不理解自己行为真正原因'这一贯穿其整个学术生涯的核心主题",
+        "source_ref": "paper_Basking in reflected glory"
+      },
+      {
+        "period": "1987-1990",
+        "title": "焦点规范理论的创立",
+        "narrative": "通过九项乱丢垃圾田野实验系统验证描述性规范与指令性规范的区分及注意力聚焦的作用。发现同一环境线索（如垃圾）在聚焦不同规范类型时可产生完全相反的行为效应。",
+        "catalyst": "对Iron Eyes Cody公益广告的规范性分析——发现其无意中传递了矛盾的规范信息",
+        "before_state": "社会规范概念模糊且充满争议",
+        "after_state": "建立了可实证检验的规范类型区分和激活条件框架",
+        "significance": "成为社会规范干预的奠基理论，影响环保、健康、公共政策等多个领域",
+        "source_ref": "paper_A Focus Theory of Normative Conduct系列"
+      },
+      {
+        "period": "1997",
+        "title": "挑战共情-利他假说",
+        "narrative": "通过负面状态缓解模型实验和oneness研究，对Batson的共情-利他假说提出系统的利己主义替代解释。发现控制oneness后共情关注不再预测助人行为。",
+        "catalyst": "对Batson逐个排除利己因素的方法论批评",
+        "before_state": "Batson的共情-利他假说被视为利他主义最强实验证据",
+        "after_state": "引发了关于助人动机本质的持续学术争论，利己替代解释获得实证支持",
+        "significance": "展示了其一贯的学术立场：用更简洁的利己解释替代看似利他的现象",
+        "source_ref": "paper_Empathy-based helping & paper_Reinterpreting the empathy–altruism relationship"
+      },
+      {
+        "period": "2003-2006",
+        "title": "规范干预的现实应用与回旋镖效应",
+        "narrative": "通过酒店毛巾实验和能耗实验发现描述性规范的回旋镖效应（低消耗者反而增加消耗），并验证加入指令性规范信息可消除此效应。同时发现地方规范比全局规范更有效。",
+        "catalyst": "将焦点规范理论从基础研究推向应用干预",
+        "before_state": "规范干预被认为简单有效",
+        "after_state": "揭示了规范干预的复杂边界条件和潜在副作用，建立了更精细的应用指南",
+        "significance": "为行为经济学中的nudge设计提供了关键理论警示和解决方案",
+        "source_ref": "paper_The Constructive, Destructive, and Reconstructive Power & paper_A Room with a Viewpoint"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "亚利桑那州立大学心理学教授",
+          "role": "研究者和理论家",
+          "duration": "数十年",
+          "impact": "提供了稳定的学术环境和学生团队进行大规模田野实验",
+          "source_ref": "全部论文"
+        },
+        {
+          "context": "石化林国家公园盗窃研究",
+          "role": "外部研究顾问",
+          "duration": "多年追踪",
+          "impact": "直接面对政策制定者拒绝接受实证证据的挫折，加深了对'科学vs直觉'张力的认识",
+          "source_ref": "paper_Managing social norms for persuasive impact & paper_Descriptive Social Norms"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "20世纪末行为经济学兴起",
+          "role": "先驱贡献者",
+          "impact": "其六大原则和规范研究为nudge理论和行为政策提供了科学基础",
+          "source_ref": "paper_Social Influence & 规范系列论文"
+        },
+        {
+          "context": "环保运动对公众行为改变的需求",
+          "role": "实证顾问",
+          "impact": "发现环保传播中的系统性错误（强化不良行为描述性规范），推动了基于证据的传播策略",
+          "source_ref": "paper_Crafting Normative Messages & paper_Managing social norms"
+        }
+      ]
+    },
+    "collaborations": [],
+    "renunciations": [],
+    "adversaries": [
+      {
+        "who": "Batson",
+        "axis": "利他主义vs利己主义",
+        "dynamic": "西奥迪尼对Batson的共情-利他假说提出oneness替代解释，引发持续方法论和理论争论",
+        "source_ref": "paper_Reinterpreting the empathy–altruism relationship"
+      },
+      {
+        "who": "公园管理者/实践者",
+        "axis": "科学证据vs直觉经验",
+        "dynamic": "即使实验证据清晰表明标牌增加盗窃，管理者仍拒绝更改，依赖'我知道什么不会让我想偷'的主观判断",
+        "source_ref": "paper_Managing social norms for persuasive impact"
+      }
+    ],
+    "tension_explanation": {
+      "note": "其学术生涯的核心张力是：科学发现的强大效果vs人们对这种效果的系统性无知和否认。规范影响巨大但未被检测，利他看似无私但可能是利己——这两条线索贯穿所有研究。",
+      "tracing": "从BIRG（人们不承认自己沐浴反射荣光）→规范研究（人们低估规范影响且搞反因果归因）→共情研究（人们将oneness驱动的助人误归因于无私共情）→传播实践（实践者拒绝科学证据而相信直觉）"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "理论上的激进（挑战利他主义基本假设）但方法上的保守（坚持田野实验的外部效度）",
+    "information_processing": "区分性处理——面对模糊概念时首先区分子类型而非接受笼统解释",
+    "temporal_orientation": "注重长期效果验证（规范干预4周后仍有效的追踪），反对短期速效方案",
+    "conflict_resolution": "用实证数据而非论辩来解决学术分歧，但对实践者的不接受保持无奈的记录"
+  },
+  "situational_triggers": {
+    "description": "当观察到人们系统性地误解自身行为原因或实践者基于直觉而非证据做决策时，研究动机最强。",
+    "triggers": [
+      {
+        "condition": "发现广泛传播的实践（公益广告、环保宣传）产生适得其反的效果",
+        "behavioral_shift": "从基础研究转向应用干预实验，急于向实践者展示正确做法",
+        "confidence": "高",
+        "source_ref": "paper_Managing social norms for persuasive impact"
+      },
+      {
+        "condition": "遇到看似利他的现象被广泛接受而无充分利己解释检验",
+        "behavioral_shift": "设计实验寻找利己替代解释，优先质疑看似美好的动机理论",
+        "confidence": "高",
+        "source_ref": "paper_Empathy-based helping & paper_Reinterpreting the empathy–altruism relationship"
+      },
+      {
+        "condition": "面对实践者（如公园管理者）拒绝接受实证证据",
+        "behavioral_shift": "在论文中记录这种拒绝作为教训，同时继续积累更多证据",
+        "confidence": "中",
+        "source_ref": "paper_Managing social norms for persuasive impact"
+      }
+    ],
+    "collapse_point": "当实证证据被实践者系统性忽视时可能感到挫败，但从未因此放弃实证取向",
+    "default_behavior": "回到实验室/田野设计更精巧的实验，用无可辩驳的数据回应质疑",
+    "public_commitment_lock": "坚信科学研究优于经验直觉，社会科学应该指导公共政策"
+  },
+  "communication_profile": {
+    "style": "清晰、系统、善用生动案例（诚实未婚妻的'趁现在拿一块'、Iron Eyes Cody的泪水），学术写作兼具可读性和严谨性",
+    "persuasion_tactics": [
+      "用反直觉发现引起注意（公益广告反而增加不良行为）",
+      "用精巧实验设计说服读者（对勾形函数、回旋镖效应）",
+      "区分清晰的概念框架作为组织工具",
+      "谦虚声明（'没有任何一对实验能解决如此根本性问题'）增强可信度"
+    ],
+    "rhetorical_devices": [
+      "反讽（'把柠檬水变成柠檬'的传播错误）",
+      "对比（人们自评动机vs实际行为数据）",
+      "累积证据（九项研究的逐步验证）",
+      "理论预测先行的演绎风格"
+    ],
+    "emotional_range": "学术写作中克制但偶尔流露无奈（对实践者拒绝证据）和幽默（石化林'良心堆'、诚实未婚妻的反应）"
+  },
+  "evolution_trajectory": "从自我呈现与社会影响的基础研究（BIRG），发展到社会规范的理论精炼（焦点规范理论），再到规范干预的应用与边界条件探索（回旋镖效应、地方规范），同时平行挑战利他主义假说（负面状态缓解→oneness），最终整合为以'隐蔽的社会影响'为核心的研究纲领。晚期研究更多关注社会影响的微妙、无意识过程和文化差异。",
+  "key_aphorisms": [
+    "人们不仅无法正确识别描述性规范对自己行为的影响，而且会完全搞反。",
+    "最有效的信息不是通过试错积累的'最佳实践'，而是基于科学心理学理解产生的。",
+    "没有任何一对实验能够解决利他主义动机本质如此根本性的问题。",
+    "社会规范确实系统而有力地影响人类行为，但其影响只能通过理论精炼来确立。",
+    "规范必须在行为时被聚焦（凸显）才能影响行为。"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "描述性规范（人们实际做什么）和指令性规范（人们赞成/反对什么）是两种独立的社会规范类型，各有独立的因果效应，通过不同认知机制（自动信息捷径vs道德评估）影响行为。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "injunctive norms (involving percep-tions of which behaviors are typi-cally approved or disapproved) and descriptive norms (involving percep-tions of which behaviors are typi-cally performed). Much research in-dicates that both kinds of norms motivate human action; people tend to do what is socially approved as well as what is popular. The wisdom of setting these two kinds of motiva-tions in line with (rather than in opposition to) one another within a communication has direct implica-tions for the development of pro-environmental messages.",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "DESCRIPTIVE VERSUS INJUNCTIVE NORMS段落"
+        },
+        {
+          "excerpt": "It is note-worthy that, despite a strong corre-lation (r = .79) between partici-pants' perceptions of the existing prevalence and approval of recy-cling, these two sources of motiva-tion had independent effects on re-cycling intentions. Such results affirm the theoretical distinction between descriptive and injunc-tive norms.",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "RECYCLING段落"
+        },
+        {
+          "excerpt": "One possibility is that because descriptive norms are based in the raw behavior of other individuals, it is relatively easy to accommodate to such norms with-out much cognitive analysis. In-deed, organisms with little cogni-tive capacity do so: Birds flock, fish school, and social insects swarm. Injunctive norms, however, are based in an understanding of the moral rules of the society (i.e., what other people are likely to approve), and should therefore require more cognitive analysis to operate suc-cessfully.",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "CONCLUSION段落，第二个研究问题"
+        },
+        {
+          "excerpt": "Whereas injunctive social norms mobilize people into action via social evaluation, descriptive social norms move them to act via social information—in particular, social information about what is likely to be adaptive and effective conduct in the setting. Descriptive social norms send the message \"If a lot of people are doing this, it's probably a wise thing to do,\" which serves to initiate norm-congruent behavior.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "The Role of Social Norms in Social Control段落"
+        },
+        {
+          "excerpt": "descriptive norms (sometimes called the norms of \"is\"), which refer to what is commonly done, and which motivate by providing evidence of what is likely to be effective and adaptive action... injunctive norms (sometimes called the norms of \"ought\"), which refer to what is commonly approved/disapproved, and which motivate by promising social rewards and punishments. Thus, whereas descriptive norms are said to inform behaviour via example, injunctive norms are said to enjoin it via informal sanctions.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "descriptive norms, which specify what is typically done in a given setting, and injunctive norms, which specify what is typically approved in society. ... Which of these two types of norms is focal (i.e., salient) at a particular time will direct an individual's immediate behavior, according to Cialdini et al.",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "引言第2段"
+        },
+        {
+          "excerpt": "The descriptive norm describes what is typical or normal. It is what most people do, and it motivates by providing evidence as to what will likely be effective and adaptive action: \"If everyone is doing it, it must be a sensible thing to do.\" Cialdini (1988) has argued that such a presumption offers an information-processing advantage and a decisional shortcut when one is choosing how to behave in a given situation.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "In contrast to descriptive norms, which specify what is done, injunctive norms specify what ought to be done. That is, rather than simply informing one's actions, these norms enjoin it through the promise of social sanctions.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "第3段后半部分"
+        },
+        {
+          "excerpt": "the injunctive meaning of a norm refers to what is approved or disapproved by others. Behaviors that are consistent with injunctive norms are socially sanctioned; those that are not are sanctioned. Thus, it could be argued that one reason people may be helpful in our society is to act in accord with the societal norm for helpfulness, which is positively sanctioned",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Injunctive Norms段落"
+        }
+      ]
+    },
+    {
+      "claim": "焦点规范理论的核心前提：规范只有在被注意力聚焦、进入意识时才直接影响行为；同一社会中矛盾的规范可以共存，哪个在行为时更凸显就更可能引导行为。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "the Focus Theory of Normative Conduct, which asserts that norms are only likely to influence behaviour directly when they are focal in attention and, thereby, salient in consciousness. The theory further holds that there are two distinct types of social norms, each of which affects conduct differently because each calls on a separate source of human motivation.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "第2-3段"
+        },
+        {
+          "excerpt": "we examined whether the two weak normative focus conditions differed from one another (5.53% versus 5.00%)—as expected, they did not, x2(1) < 1.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "RESULTS段落末尾"
+        },
+        {
+          "excerpt": "Our data indicate that under naturally occurring conditions, if there is no salience, behavior will be largely unguided by normative considerations. This helps resolve some of the puzzling inconsistencies in normative effects in the literature, and it is of great potential practical value to those who wish to arrange environments to increase normative conduct",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "General Discussion段"
+        },
+        {
+          "excerpt": "norms should motivate behavior primarily when they are activated (i.e, made salient or otherwise focused on); thus, persons who are dispositionally or temporarily focused on normative considerations are most likely to act in norm-consistent ways",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "第4段"
+        },
+        {
+          "excerpt": "in situations with clear-cut descriptive and injunctive norms, focusing individuals on is versus ought information should lead to behavior change that is consistent only with the now more salient type of norm.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "第4段末尾"
+        },
+        {
+          "excerpt": "Whether a particular norm will influence responding is dependent on the degree to which the respondent's attention is focused on that norm.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "B. THE IMPORTANCE OF NORMATIVE FOCUS段落"
+        },
+        {
+          "excerpt": "the simultaneous existence of incompatible social norms is no longer a damaging criticism of normative accounts if we assume that the conflicting norms may coexist within the same society but that the one that will produce congruent action is the one that is temporarily prominent in consciousness.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "B. THE IMPORTANCE OF NORMATIVE FOCUS段落"
+        },
+        {
+          "excerpt": "the crucial ingredient in any attempt to predict an individual's norm-relevant behavior is the ability to localize that individual's focus of attention within an intricate normative mix.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Conclusions末段"
+        }
+      ]
+    },
+    {
+      "claim": "描述性规范提供情境特定的适应性信息，其影响随离开原始情境迅速减弱；指令性规范涉及文化中普遍的赞同/反对标准，具有跨情境稳定性。描述性规范凸显仅在反社会行为不严重的情境中有效，在已被污染的环境中反而增加不良行为。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "the successful use of descriptive norm salience techniques appears limited to settings in which antisocial behavior is not much of a problem. That is, Cialdini et al. (1990) found that littering was reduced only when the descriptive norm was made salient in a clean environment. When the descriptive norm was made salient in littered environments littering increased above control levels.",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "引言第4段"
+        },
+        {
+          "excerpt": "First, it should cause a shift of attention away from evidence that antisocial behavior constitutes the descriptive norm for the setting. Second, it should lead individuals to attend to a motivational construct—social approval and disapproval—that directs behavior in a socially desirable direction regardless of what others may have done in the setting.",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "引言第5段"
+        },
+        {
+          "excerpt": "Descriptive norms appear to be more situation-specific in the information they provide. ... the influence of such norms may weaken precipitously as individuals move out of the environment in which the norms were made salient. ... Injunctive norms, on the other hand, involve perceptions of what is approved conduct within the culture in general, which should have substantial cross-situational relevance.",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "Study 2讨论段与Study 3引言"
+        },
+        {
+          "excerpt": "descriptive norms are designed to tell us what makes for adaptive/effective behavior, which can be influenced and changed by many situationally based factors. Injunctive norms, on the other hand, are designed to tell us what others have been socialized to approve/disapprove in the culture, which is likely to change relatively little from situation to situation.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 8前段落"
+        }
+      ]
+    },
+    {
+      "claim": "指令性规范焦点在实践上优于描述性规范焦点：描述性规范仅在环境基本干净时减少不良行为，在脏乱环境中反而增加；指令性规范无论环境状态都减少不良行为。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Salient injunctive norms resulted in decreases in littering regardless of the environment's status. This suggests that injunctive norm activation procedures can be valuable tools in the amelioration of socially undesirable behavior, even in settings where these undesirable behaviors predominate (e.g., fully littered environments, roads where most drivers speed, or political precincts with low voter turnout).",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "Study 1讨论段"
+        },
+        {
+          "excerpt": "Procedures that focus subjects on the descriptive norm will only reduce littering when the environment is wholly or virtually unspoiled. Indeed, as was suggested in the data of Study 1, a descriptive norm focus when the environment is substantially littered will tend to increase littering there",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Theoretical Implications-实践意义段落"
+        },
+        {
+          "excerpt": "By making the injunctive norm against littering more prominent, we should expect reduced littering even in a heavily littered environment.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Theoretical Implications-实践意义段落"
+        },
+        {
+          "excerpt": "If we are correct, focusing people on the injunctive norm, which is independent of the environmental conditions, should decrease littering in both littered and clean environments.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "B. FOCUSING ON INJUNCTIVE NORMS段落"
+        },
+        {
+          "excerpt": "Drawing an individual's attention to the descriptive norms of a situation should retard littering only in environments that are wholly or virtually unspoiled. Indeed, a focus on what others have done when the environment is widely littered could tend to increase littering there",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 7前段落"
+        },
+        {
+          "excerpt": "By making the injunctive norm against littering more prominent, we should see reduced littering no matter what the littered state of the ambient environment.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 7前段落"
+        }
+      ]
+    },
+    {
+      "claim": "激活指令性规范的关键机制是聚焦于'他人行为的认可/不认可'，且观察者须感到这种评价适用于自己；仅通过自身行为表达不认可（如自己不乱扔但未针对他人）不足以激活。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The behavior of the confederate who picked up another's litter was unambiguous as to its interpersonal message. It communicated that the confederate disapproved of and found littering by others (our subjects included) objectionable. In this way, subjects were focused on potential social sanctions, the central feature of injunctive norms, which increased their awareness of the society-wide rule against littering.",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "Study 3讨论段，社会制裁分析"
+        },
+        {
+          "excerpt": "subjects who saw litter thrown into a receptacle got a different message from the confederate, that is, \"I find littering objectionable within my own behavior,\" which did not remind them directly of social sanctions or, consequently, of injunctive norms.",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "Study 3讨论段，对比段"
+        },
+        {
+          "excerpt": "Another's demonstrated approval/disapproval for norm-related conduct may engage the full power of the relevant injunctive social norm in an observer only when the observer is actively made to think that the approval/disapproval would be applied to his or her relevant conduct.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "D. PICKING UP CONCEPTUAL IMPLICATIONS段落"
+        },
+        {
+          "excerpt": "expressing disapproval for counternormative action (e.g., cigarette smoking in an elevator, excessive alcohol consumption) in one's own behavior by visibly refraining from the action should not bring to bear on observers the full salutary impact of the injunctive social norm; instead, that impact should flow from the visible expression of disapproval for the action in others.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "D. PICKING UP CONCEPTUAL IMPLICATIONS段落"
+        }
+      ]
+    },
+    {
+      "claim": "指令性规范焦点可跨越情境边界产生行为影响（在一个环境中激活后在另一独立环境仍有效），而描述性规范的影响仅限于同一情境。Study 1干净环境中指令性规范(7%)和描述性规范(11%)乱扔率均低于控制组(37%)，脏乱环境中仅指令性规范(4%)有效。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "We had two main predictions: First, we expected that making the descriptive norm salient would be a successful litter reduction tactic only when the environment was clean. But, we expected, second, that making the injunctive norm salient would successfully reduce littering in both littered and unlittered environments.",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "Study 1预测段"
+        },
+        {
+          "excerpt": "the combined littering rate of the injunctive (7%) and the descriptive (11 %) norm-salience conditions was significantly lower than that of the relevant control (37%) condition, x2(l, N= 85) = 9.54, p < .01. ... their combination was significantly greater than the rate of the injunctive norm-salience condition (4%), x2(l, iV= 90) = 11.40, p < .01.",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "Study 1结果段"
+        },
+        {
+          "excerpt": "Only one significant effect emerged—the main effect for norm salience; subjects for whom the injunctive norm against littering was made salient littered less than control-condition subjects (6.7% vs. 22%), x2(l, N= 137) = 5.48, p < .01. Neither the main effect for type of environment nor, more importantly, its interaction with norm salience approached significance (x2s < 1).",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "Study 2结果段"
+        },
+        {
+          "excerpt": "in the different environment with a pair of orthogonal contrasts demonstrating that, although the littering rates of the descriptive norm-salience condition (36%) and its relevant control condition (33%) did not differ from one another (x2 < 1), their combination did differ significantly from the lower rate of the injunctive norm-focus condition (0%), x2(l, N=A0)= 7.62, p < .01.",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "Study 3结果段"
+        },
+        {
+          "excerpt": "Reasoning that this display would focus subjects on the concept of social disapproval for littering in our society, we expected that-by drawing attention to the injunctive norm against littering-the procedure would suppress littering rates whether the environment was clean or littered.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 7段落"
+        },
+        {
+          "excerpt": "Subjects who encountered the confederate who picked up litter were less likely than controls to litter no matter where they had witnessed the confederate's action. This was not the case, however, for subjects who saw the confederate throw litter into a trash receptacle; they littered less than controls only when that event had occurred in the same setting as their own opportunity to litter.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 8结果段落"
+        }
+      ]
+    },
+    {
+      "claim": "环境中垃圾数量与乱丢行为呈对勾形（checkmark-shaped）函数：完全无垃圾时较少乱丢，单件显眼垃圾时最少（凸显反乱丢描述性规范），随后随垃圾增加而递增。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The upshot of this pair of implications of our normative analysis is a nonintuitive prediction: The likelihood that an individual will litter into an environment bearing various pieces of perceptible, extant litter will be described by a checkmark-shaped function. Little littering should occur in a clean environment; still less should occur with a sole piece of litter in",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 2预测段落"
+        },
+        {
+          "excerpt": "The data pattern closely reflects the predicted checkmark shape of our normative analysis. The checkmark function hypothesis was tested in a two-step process. First, we constructed a planned comparison using trend weights that modeled the checkmark shape (-2, -4, -1,1, 2, 4). It proved significant",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 2结果段落"
+        },
+        {
+          "excerpt": "the consequence of such action—a single piece of litter lying in an otherwise clean environment—should have the same effect, because of its conspicuousness, by drawing attention to an environment whose descriptive norm (except for one aberrant litterer) was clearly antilitter.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 2预测段落"
+        },
+        {
+          "excerpt": "the drop in littering due to high norm salience in the clean environment was far from significant by itself. Of course, this lack of significance might well have occurred because of a floor effect, owing to the low level of littering (14%) in the low norm salience/clean environment condition",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 1讨论-地板效应"
+        },
+        {
+          "excerpt": "subjects were more likely to litter into a fully littered environment than into an unlittered one (26.7% vs. 10.7%), x2(l, N = 291) = 12.62, p < .001. Second, subjects were less likely to litter into an environment when it contained a single, salient piece of litter than when it was unlittered (3.6% vs. 10.7%), x2(l, N= 335) = 6.79, p < .01.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 3结果段落"
+        },
+        {
+          "excerpt": "we made a counterintuitive prediction that could be best described graphically as a checkmark-shaped relationship between amount of existing litter in the environment and the likelihood that subjects would litter into it.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 2假设段落"
+        }
+      ]
+    },
+    {
+      "claim": "扫拢的垃圾可同时传达矛盾规范信息（描述性：很多人乱扔；指令性：有人已清扫不赞许），当注意力被引向环境时扫拢条件显著降低乱扔行为。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "On one especially windy day, the litter we had distributed all around the garage floor in the fully littered environment condition was blown against an inside wall, as if someone had swept it there in a neat line. When a confederate dropped a handbill into that environment, virtually no subjects littered",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 4背景段落"
+        },
+        {
+          "excerpt": "the littering tendency of windy-day subjects may have declined when attention was called to the considerable litter in the environment because that litter gave the (mistaken) impression of having been swept—a clear disapproval cue.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 4背景段落"
+        },
+        {
+          "excerpt": "Swept litter, we thought, would provide information to subjects that even though many people littered here (abundant litter), it ought not to be done (disapproval was strong enough that the litter had been swept up).",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 4段落"
+        },
+        {
+          "excerpt": "shifting subjects' focus from descriptive (unswept litter) to injunctive (swept litter) normative cues resulted in differing behavioral tendencies that were nonetheless consistent with the type of normative information on which the subject had been focused.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 4结果段落"
+        }
+      ]
+    },
+    {
+      "claim": "认知启动可激活指令性规范：挡风玻璃上放置与反乱扔规范概念距离不同的信息，距离越近乱扔率越低，证明指令性规范可通过启动类效应被激活。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "only the predicted, linear trend (displayed in Figure 6) proved significant, x2(l, N = 259) = 5.48, p < .02. Within the five experimental message means, only one comparison was significant, that between the target, antilittering norm (10%) and the no-norm control message (25%)",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 5结果段落"
+        },
+        {
+          "excerpt": "we felt confident that the priminglike effects we anticipated were well within the range of priming-effect durations found by other investigators",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 5方法段落"
+        },
+        {
+          "excerpt": "From this pool and on the basis of the similarity scale ratings, we selected three norms to be close to, moderately close to, and far from the norm against littering. Those three norms and their rated distances from the norm against littering were, respectively, the norm for recycling (3.57), the norm for turning off lights when last to leave a room (5.74), and the norm for voting (7.12).",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 5 Selection of experimental norms段落"
+        },
+        {
+          "excerpt": "a significant linear trend was obtained, as predicted. This trend indicated that as the conceptual distance between the activated norm or concept and the target antilittering norm increased, littering also increased.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 5结果段落"
+        },
+        {
+          "excerpt": "The results of this study also ruled out the potential explanations that the reductions achieved in earlier studies were solely due to the subjects wishing to avoid negative association with the littering confederate.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 5讨论段落"
+        }
+      ]
+    },
+    {
+      "claim": "生理唤醒通过感知窄化增强规范启动效应：唤醒状态缩小注意力范围使被启动的规范更突出，当启动规范与目标规范接近时唤醒促进规范一致行为，远离时反而增加违规。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Because arousal leads individuals to focus more intently on dominant stimulus features of a situation, we expected that the linear trend found in the Cialdini et al. (1990) experiment would appear more powerfully among those individuals whose arousal had been heightened at the time of exposure to normative messages than among those individuals whose arousal had not been elevated.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 1介绍段"
+        },
+        {
+          "excerpt": "When focus was not present, no significant trend was apparent in the pattern of norm-consistent behavior based on the relatedness of the norm that participants read about. Without focus, apparently the relatedness of the norm to the target norm was not enough in and of itself to produce a reliable effect.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 1讨论段"
+        },
+        {
+          "excerpt": "At first glance, it may seem logical to assume that the littering level in the low arousal conditions should match the high arousal unrelated condition, which had a high litter rate of 57.6%. However, we can be reasonably confident that the high arousal unrelated condition participants were focused on nonnormative considerations, more so than the participants in the low arousal conditions because we more powerfully manipulated the high arousal unrelated condition participants' focus to nonnormative material.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 1讨论段"
+        },
+        {
+          "excerpt": "arousal causes perceptual narrowing, that is, it reduces the range of cues that an organism attends to and uses",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 6段落"
+        },
+        {
+          "excerpt": "if subjects were focused on a norm closely related to the antilittering norm and then mildly aroused, the salient normative information would remain in the foreground and the other nonnormative considerations would become less prominent in consciousness due to perceptual narrowing.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 6段落"
+        }
+      ]
+    },
+    {
+      "claim": "乱丢垃圾田野实验的核心发现：脏乱环境中看到他人丢垃圾产生最多乱丢行为，干净环境中看到他人丢垃圾反而产生最少乱丢行为。描述性规范的显著性操纵产生交叉交互效应：脏乱环境中注意环境状况增加乱扔，干净环境中减少乱扔——无法被模仿假设或损害评估假设解释。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the most littering occurred when participants saw a model drop trash into a littered environment; and, most tellingly, the least littering occurred when participants saw a model drop trash into a clean environment.",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "An Initial Experiment段落末尾"
+        },
+        {
+          "excerpt": "This last expectation distin-guished our normative account from explanations based on simple modeling processes in that we were predicting decreased littering after participants witnessed a model litter.",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "An Initial Experiment段落"
+        },
+        {
+          "excerpt": "we predicted an interaction such that subjects who saw the confederate litter into a fully littered environment would litter more than those who saw no such littering; whereas subjects who saw the confederate litter into a clean environment would litter less than those who saw no such littering.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 1预测段落"
+        },
+        {
+          "excerpt": "the size of the existing descriptive-norm effect when the confederate littered (6% vs. 54%), x2(l, N= 55) = 16.52, p < .001, was significantly greater than when the confederate did not litter (14% vs. 32%), x2(l, N = 84) = 3.99, p < .05; the resultant interaction was tested as a planned comparison that proved highly reliable",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Results and Discussion段落"
+        },
+        {
+          "excerpt": "this is so even when the behavior in question is governed by an injunctive norm—in this case, the antilittering norm—that is strongly and widely held in the society",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Results and Discussion末尾"
+        },
+        {
+          "excerpt": "It is this latter finding, showing the least littering among subjects in the high norm salience/clean environment condition, that seems the most provocative of our study and, therefore, worthy of pursuit.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 1结果讨论段落"
+        },
+        {
+          "excerpt": "the fact that the least littering occurred among subjects who observed prior littering into a clean environment is of considerable conceptual interest, as it supports norm focus predictions over those that spring from a straightforward imitation or environmental damage account.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 1结果讨论段落"
+        },
+        {
+          "excerpt": "There was more littering in the littered environment than in the clean environment, and this pattern was accentuated by our descriptive norm focus manipulation. That is, the most littering occurred in the littered environment when subjects saw a confederate throw down a handbill, and the smallest proportion of subjects littered after having witnessed the confederate throw down the handbill in a clean environment.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 1结果段落"
+        }
+      ]
+    },
+    {
+      "claim": "负面措辞会强化规范聚焦效果但方向取决于规范类型：负面措辞的指令性规范（'不要拿'）盗窃率最低（1.67%），负面措辞的描述性规范（'很多人损坏环境'）盗窃率最高（7.92%）。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "When presenting the \"ought\" norm, communicators would be best advised to instruct audience members in what they ought not to do... negatively worded appeals (with their accompanying intensified focus) should lead to the least theft in the case of injunctive normative messages, but to the most theft in the case of descriptive normative messages.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "第1-2段"
+        },
+        {
+          "excerpt": "In the negatively worded conditions, participants were informed that \"Many past visitors have removed the petrified wood from the park\"... accompanied by pictures of three visitors taking wood. In the positively worded condition, participants learned that \"The vast majority of past visitors have left the petrified wood in the park\"... accompanied by pictures of three visitors admiring and photographing a piece of wood. We depicted three visitors in these signs in order to convey the popularity of the addressed behaviour, as the concept of popularity is central to descriptive norms.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "Independent variables段落"
+        },
+        {
+          "excerpt": "the Injunctive/Strong Focus condition produced less theft than the combination of the other three conditions (1.67% versus 5.95%, respectively)—it did, x2(1, N = 1140) = 8.84, p = .003. The second test examined whether the Descriptive/Strong Focus condition produced more theft than the other three conditions combined (7.92% versus 4.00%, respectively)—it also did, x2(1, N = 1140) = 6.33, p = .012.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "RESULTS段落"
+        }
+      ]
+    },
+    {
+      "claim": "公共传播者常犯严重错误：突出不良行为的普遍性（描述性规范）而非社会的不赞成（指令性规范），如FDA宣布'300万青少年吸烟'、环保组织宣传'史上最多垃圾'，无意中强化了不良行为。",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "There is an understand-able, but misguided, tendency to try to mobilize action against a problem by depicting it as re-grettably frequent. Information campaigns emphasize that alco-hol and drug use is intolerably high, that adolescent suicide rates are alarming, and—that rampant polluters are spoiling the environment. Although these claims may be both true and well intentioned, the campaigns' creators have missed something critically important: Within the statement \"Many people are doing this undesirable thing\" lurks the powerful and under-cutting normative message \"Many people are doing this.\"",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "Abstract段落"
+        },
+        {
+          "excerpt": "Public service communicators should avoid the tendency to send the normatively muddled message that a targeted activity is socially disapproved but widespread. Norm-based persuasive communications are likely to have their best effects when communicators align de-scriptive and injunctive normative messages to work in tandem rather than in competition with one another.",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "CONCLUSION段落"
+        },
+        {
+          "excerpt": "there is an understandable but misguided tendency of public officials to try to mobilise action against socially disapproved conduct by depicting it as regrettably frequent, thereby inadvertently installing a counterproductive descriptive norm in the minds of their audiences.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "第4段"
+        },
+        {
+          "excerpt": "Very often, these organisations have sent normatively muddled messages to the public concerning environmental action. In a long-running print ad entitled \"Gross National Product\", the US Forest Service mascot, Woodsy Owl, proclaims, \"This year Americans will produce more litter and pollution than ever before\". Other organisations are equally guilty.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "第6段"
+        }
+      ]
+    },
+    {
+      "claim": "'把柠檬水变成柠檬'的错误广泛存在：饮食障碍教育后症状增多、自杀预防后青少年更倾向自杀、饮酒预防后学生高估同伴饮酒率——都在错误地强化描述性规范。",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "After a university-based eating disorder education programme featuring the testimony of many young women describing their harmful eating behaviours, participants showed more disorder symptoms than before (Mann et al., 1997). After a suicide prevention programme that informed New Jersey teenagers of the alarming number of adolescents who take their own lives, participants became more likely to see suicide as a potential solution to their own problems (Shaffer et al., 1991). After exposure to an alcohol-use deterrence programme that included exercises in which participants role-played resisting their classmates' repeated urgings to drink, junior high-school students came to believe that alcohol use was more common among their peers than they originally thought (Donaldson et al., 1995).",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "CODA段落"
+        },
+        {
+          "excerpt": "After a university-based eating disorder education programme featuring the testimony of many young women describing their harmful eating behaviours, participants showed more disorder symptoms than before (Mann, Nolen-Hoeksema, Burgard, Huang, Wright, & Hansen, 1997). After a suicide prevention programme that informed New Jersey teenagers of the alarming number of adolescents who take their own lives, participants became more likely to see suicide as a potential solution to their own problems (Shaffer, Garland, Vieland, Underwood, & Busner, 1991).",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "结论部分，倒数第二段"
+        },
+        {
+          "excerpt": "Persuasive interventions should employ information and techniques that marginalise rather than normalise undesirable conduct. In all, norm-based persuasive communications are likely to have their best effects when communicators align descriptive and injunctive normative messages to work in tandem rather than in competition with one another.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "结论段"
+        }
+      ]
+    },
+    {
+      "claim": "Iron Eyes Cody公益广告虽有效传递了反对乱扔的指令性规范（印第安人流泪），但同时呈现大量垃圾无意中传达了'很多人在乱扔'的描述性规范，两种规范相互冲突削弱效果。理论建议：将垃圾遍地场景改为干净环境。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "despite the fame and recognition value of the advertisement, our research suggests that it contains features that may be less than optimal, and perhaps even negative, in their impact on the littering actions of those who see it. That is, certain unintended and untoward effects may be produced in the audience that are contrary to the purposes of the advertisement and its sponsor.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "引言段落"
+        },
+        {
+          "excerpt": "No doubt the tear was a powerful reminder of the injunctive norm against littering in our culture. But accompanying the beneficial reminder was the potentially damaging message that many people do litter. Thus, the resultant impact of the injunctive norm against littering may have been undermined by the unintended presentation of a descriptive norm for littering.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Rethinking the Iron Eyes Cody Advertisement段落"
+        },
+        {
+          "excerpt": "Were we to advise the Keep America Beautiful organization on how to revise the Iron Eyes Cody advertisement, then, it would be to make the procedurally small but theoretically meaningful modification of changing the depicted environment from trashed to clean. Then, when the Indian cries, viewers would be focused on injunctive and descriptive norms working in concert to motivate the viewers against littering.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "广告修改建议段落"
+        }
+      ]
+    },
+    {
+      "claim": "有效的规范说服应让描述性规范和指令性规范协同运作：传递'期望行为被广泛执行且获普遍认可，不良行为相对罕见且被普遍反对'，将不良行为边缘化而非正常化。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Although highlighting descriptive norms is detrimental when envi-ronmentally harmful behavior is preva-lent, this approach should be effec-tive when the prevalent behavior is environmentally beneficial.",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "RECYCLING段落"
+        },
+        {
+          "excerpt": "the most effective norm-based persuasive approach under these circumstances would be one that enlists the conjoint influence of descriptive and injunctive norms.",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "RECYCLING段落"
+        },
+        {
+          "excerpt": "Often, the violation is not widespread at all. It only comes to seem that way by virtue of a vivid and impassioned presentation of the problem. Instead, it would be better to honestly inform the audience of the harm resulting from even a small amount of the undesirable conduct. Furthermore, when most people are behaving responsibly, public service communicators would be remiss if they failed to publicize that fact, as the information should both validate and stimulate the desired action.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "In sum总结段落"
+        },
+        {
+          "excerpt": "Persuasive interventions should employ information and techniques that marginalise rather than normalise undesirable conduct... norm-based persuasive communications are likely to have their best effects when communicators align descriptive and injunctive normative messages to work in tandem rather than in competition with one another.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "CODA段落末尾"
+        }
+      ]
+    },
+    {
+      "claim": "合规沟通策略规则：违规率低于50%时同时传递描述性和指令性规范；违规率超过50%时只传递指令性规范。石化林实验中描述性规范标语导致7.92%盗窃率，指令性规范标语仅1.67%。违规行为往往并不真正普遍，只是因生动呈现显得如此。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "As pre-dicted, the descriptive-norm message resulted in significantly more theft than the injunctive-norm message (7.92% vs. 1.67%).",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "ENVIRONMENTAL THEFT段落"
+        },
+        {
+          "excerpt": "If that percentage proved to be signiﬁcantly less than 50%... the ofﬁcials could honestly send the message in communication campaigns that the majority of the insured population adheres to the rules; moreover, they could add the injunctive message that \"If even a few persons violate the trust between the agency and the insured, this dishonesty can lead to greater surveillance and regulatory costs that will fall unfairly on the entire group.\" However, if among some other population sample the noncompliance percentage proved to be above 50%, then only the injunctive portion of the message should be sent to that population.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "应用建议段落"
+        },
+        {
+          "excerpt": "in situations characterised by high levels of socially censured conduct, it is a serious error to focus an audience on what is done there; instead, communicators attempting to reduce such conduct should focus the audience on what is approved/disapproved there. The theory makes a clear recommendation to the communicator in such situations: Induce a normative focus, but only on the injunctive norm. Any other combination of the options—inducing a descriptive norm focus or failing to induce a normative focus at all—will prove less effective.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "第5段"
+        },
+        {
+          "excerpt": "very few visitors remove pieces of wood from the park when given the opportunity—fewer than 5%. Still, because the park receives approximately a million visitors per year, the number of thefts is objectively high and the consequences are dire for the park environment.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "CODA段落"
+        }
+      ]
+    },
+    {
+      "claim": "规范干预的整体效果取决于目标行为在人群中的分布：如果大多数人已低于均值，描述性规范可能在总体上增加不良行为（如告诉学生'多数人喝4杯或更少'等于暗示不喝酒偏离常规）。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "the overall impact of a normative education campaign will depend on the distribution of the behavior in the population; a campaign could produce an increase, decrease, or no change in the behavior. For example, if the distribution of the target behavior is strongly skewed in the positive direction, such that more people are below the norm than above it, then a normative message might increase the behavior in aggregate.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "Discussion段落"
+        },
+        {
+          "excerpt": "telling students that a majority of their peers drink \"four or fewer drinks when they party\" sends the message that abstaining from drinking is deviant.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "Discussion段落"
+        }
+      ]
+    },
+    {
+      "claim": "描述性规范的回旋镖效应：告知平均使用量后低消耗家庭增加使用量（向均值靠拢），高消耗家庭减少——仅靠描述性规范可能导致部分受众做出更多不良行为。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Despite the widespread adoption of social-norms marketing campaigns, evidence for the success of such programs has been surprisingly mixed... In fact, some studies indicate that social-norms marketing campaigns have actually increased the undesirable behaviors and misperceptions they set out to decrease.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "第4段"
+        },
+        {
+          "excerpt": "As predicted, a descriptive normative message detailing average neighborhood usage produced either desirable energy savings or the undesirable boomerang effect, depending on whether households were already consuming at a low or high rate. Also as predicted, adding an injunctive message (conveying social approval or disapproval) eliminated the boomerang effect.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "ABSTRACT段落"
+        },
+        {
+          "excerpt": "the descriptive norm acts as a magnet for behavior for individuals both above and below the average. Consequently, a college campaign targeting alcohol consumption might motivate students who previously consumed less alcohol than the norm to consume more.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "第5段"
+        },
+        {
+          "excerpt": "For households that consumed more than the average during the baseline period, the descriptive-norm-only feedback produced a significant decrease in energy consumption relative to the baseline (M = 20.25, SE = 1.03 vs. baseline M = 21.47, SE = 0.89; n = 64)... This result illustrates the constructive potential of social norms.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "Results段落"
+        },
+        {
+          "excerpt": "for households that were below the mean on baseline energy consumption, the descriptive-norm-only message produced an increase in energy consumption from baseline (M = 11.27, SE = 0.46 vs. baseline M = 10.38, SE = 0.33; n = 79)... a clear example of the destructive potential of social norms.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "Results段落"
+        }
+      ]
+    },
+    {
+      "claim": "焦点规范理论的解决方案：在描述性规范可能产生回旋镖效应的场景中加入指令性规范信息（表情符号conveying approval/disapproval），可完全消除回旋镖效应且长期效果与短期一致。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Focus theory predicts that if only one of the two types of norms is prominent in an individual's consciousness, it will exert the stronger inﬂuence on behavior. Thus, in situations in which descriptive normative information may normally produce an undesirable boomerang effect, it is possible that adding an injunctive message indicating that the desired behavior is approved may prevent that effect.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "倒数第2段"
+        },
+        {
+          "excerpt": "households that consumed less than the average received a message displaying a positively valenced emoticon, whereas those that consumed more than the average received a message displaying a negatively valenced emoticon.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "The Current Research段落"
+        },
+        {
+          "excerpt": "households that were consuming less energy than average continued to consume at the desirable low rate (M = 10.58, SE = 0.38 vs. baseline M = 10.34, SE = 0.33; n = 81), t(80) = 1.04, n.s. That is, the undesirable boomerang effect of increased usage among households low in energy consumption was eliminated when an injunctive message was added to the descriptive normative information. This result highlights the reconstructive potential of social norms.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "Results-Short-Term Change段落"
+        },
+        {
+          "excerpt": "the combined injunctive-plus-descriptive message produced no change from baseline for low-consuming households (longer-term M = 10.14, SE = 0.37 vs. baseline M = 10.04, SE = 0.35; n = 70), t(69) = 0.64, n.s., again illustrating the reconstructive power of normative information when an injunctive element is added to the descriptive normative feedback.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "Results-Longer-Term Changes段落"
+        },
+        {
+          "excerpt": "As shown in Figure lb, the outcomes were nearly identical to those for the shorter-term measure.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "Longer-Term Changes段落"
+        },
+        {
+          "excerpt": "despite concerns that normative interventions have an effect for only a short time, the longer-term results indicate that the effects of the normative messages continued to be strong even 4 weeks after the initial intervention.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "Discussion段落"
+        }
+      ]
+    },
+    {
+      "claim": "正式监管控制往往比个人信念和社会网络因素的影响小——强力正式控制引起反感和心理逆反（如加大逃税惩罚后欺诈反而上升）。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "although regulatory enforcement efforts can make a difference in compliance with the rules, the difference is often dwarfed by the inﬂuence of personal and social network factors. This is the case for a pair of reasons. First, strong formal control efforts tend to produce feelings of resentment and reactance (Brehm & Brehm, 1981; Burgoon, Alvaro, Grandpre, & Voulodakis, 2002), leading to attempts to evade the agency's strictures. Second, when formal regulatory controls are strong, individuals come to believe that, if it is necessary to invoke stringent reg-ulations, those regulations must exist in opposition to the preferences that \"people like me\" hold.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "第3-4段"
+        },
+        {
+          "excerpt": "after government ofﬁcials publicly increase the penalties for tax cheating, tax fraud goes up not down (Kahan, 1997).",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "第4段末尾"
+        }
+      ]
+    },
+    {
+      "claim": "规范信息的一个关键局限：在行为需要执行的时刻规范信息往往已不在场（如PSA远离行为场景），将指令性规范与功能性记忆线索链接可在日后激活规范。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Often, the message is no longer present when the desired behavior must take place. For example, PSAs are typically radio, television, and print communica-tions that are encountered at times far removed from the opportuni-ties to perform the socially desir-able actions that the PSAs promote. A crucial question to be answered by future investigation is how communicators can structure their messages to maximize the likeli-hood that the motivational compo-nents of those messages will be sa-lient at the time for action.",
+          "source_file": "paper_Crafting Normative Messages to Protect the Environment.md",
+          "location": "CONCLUSION段落，第三个研究问题"
+        },
+        {
+          "excerpt": "the long-term efﬁcacy of persuasive communications such as public service announcements is threatened because normative information becomes less accessible over time.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "Goal of Accuracy末段"
+        },
+        {
+          "excerpt": "linking an injunctive normative message to a functional mnemonic cue would increase norm accessibility later by activation of the norm upon perception of the same or a similar cue.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "Goal of Accuracy末段"
+        }
+      ]
+    },
+    {
+      "claim": "政策制定者因低估描述性规范力量而犯两个错误：采用适得其反的策略（突出不良行为普遍性）和忽略可能高效的正向描述性规范策略（突出有多少人在做正确的事）。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Because they underappreciate the power of descriptive normative information, program developers can engage in tactics that are counterproductive. In addition, via the same judgment error, they may fail to implement tactics that can be highly productive. For example, instead of focusing on evidence that many people act to harm the environment, public service communicators would be well advised to focus on evidence that many people act to preserve it.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "People Frequently Ignore段落后半部分"
+        }
+      ]
+    },
+    {
+      "claim": "最有效的信息基于科学心理学理解而非试错积累的'最佳实践'——这表明需要依靠科学研究指导政策。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "the message that generated the most participation in the hotel's towel recycling program was the one that no hotel (to our knowledge) has ever used. Apparently, this simple but effective appeal didn't emerge from a history of trial and error to become a hotel \"best practice.\" Instead, it emerged from a scientiﬁcally based understanding of human psychology. This points out the need to call on scientiﬁc research to help advance sound policy.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "酒店实验讨论段落"
+        },
+        {
+          "excerpt": "the normative messages, which were messages that we have never seen used by hotel chains, fared significantly better at spurring participation in the hotel's environmental conservation program than did the type of message most commonly used by hotel chains—messages that focus on the importance of environmental protection and that make salient guests' identities as environmentalists. These findings highlight the utility of employing social science research and theory rather than business communicators' hunches, lay theories, or best guesses in crafting persuasive appeals.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Implications段"
+        }
+      ]
+    },
+    {
+      "claim": "社会规范营销的两个理论基础：(a)大多数人高估不良行为普遍性；(b)人们以感知到的同伴规范作为比较自身行为的标准。修正错误感知是规范营销核心策略。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The rationale for the social-norms marketing approach is based on two consistent ﬁndings: (a) The majority of individuals overestimate the prevalence of many undesirable behaviors, such as alcohol use among peers, and (b) individuals use their perceptions of peer norms as a standard against which to compare their own behaviors.",
+          "source_file": "paper_The Constructive, Destructive, and Reconstructive Power of S.md",
+          "location": "第3段"
+        }
+      ]
+    },
+    {
+      "claim": "负面效应大于正面效应的规律适用于规范信息：消极措辞获得更多注意和意识权重，类似ELM模型中深度加工增强好论据说服力但削弱差论据说服力。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "There is now quite a lot of research indicating that, over a wide range of instances, negative stimuli have more impact than positive stimuli... negative information is accorded greater attention, scrutiny, and weight in consciousness. Thus, negatively worded messages should be more focal for those exposed to them.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "IS IT BETTER TO USE POSITIVELY WORDED OR NEGATIVELY WORDED NORMATIVE MESSAGES段落"
+        },
+        {
+          "excerpt": "This implication is akin to that of research into the Elaboration Likelihood Model of attitude change, showing that procedures that stimulate fully considered processing of a message increase or decrease persuasion depending on the substance of the message. If the message contains good arguments, such procedures enhance desired change, but if the message contains poor arguments, the same procedures retard desired change.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "Discussion段落"
+        }
+      ]
+    },
+    {
+      "claim": "规范化操纵有效性得到独立验证：91.4%学生在想象他人捡起垃圾时聚焦指令性规范，87.2%在想象他人将垃圾扔进垃圾桶时聚焦描述性规范。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Picturing an individual who picked up a paper bag led the great majority of students to focus predominantly on the injunctive norm (91.4% vs. 8.6%, z = 13.48, p < .01). ... Picturing an individual who discarded a paper bag by throwing it in a trash barrel led the great majority of students to focus predominantly on the descriptive norm (87.2% vs. 12.8%, z = 12.48, p < .01).",
+          "source_file": "paper_The transsituational influence of social norms..md",
+          "location": "Tests of Norm-Focus Inductions段"
+        }
+      ]
+    },
+    {
+      "claim": "即使研究者报告了实验结果，公园管理者仍拒绝更改标牌——更相信游客主观判断而非实证证据，反映社会对社会科学研究缺乏理解和信任。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "after we reported the outcomes of the present study to park administrators, they decided not to change the relevant aspects of their signage. This decision was based on evidence from Park Ranger interviews with visitors, who felt that information indicating that the theft problem at the park was sizeable would not increase their likelihood of stealing wood, but would decrease it. We were disappointed—but, truth be told, not surprised—that park officials weighted visitors' subjective responses more than our empirical evidence in their signage decision.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "Discussion段落"
+        }
+      ]
+    },
+    {
+      "claim": "石化林'良心堆'——游客偷走后良心发现寄回的木块组成，管理员认为放回会扭曲自然分布。不到5%游客偷走木块但年游客量百万使盗窃总量客观很高。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "The wood was provided to us from the park's large \"conscience pile\", which consisted of pieces that had been stolen by visitors who later experienced attacks of conscience and sent them back by mail, often with profuse apologies. These pieces were considered useless by park administrators because replacing them in arbitrary locations would have distorted the naturally occurring wood distribution patterns, which are matters of historical and scientific interest.",
+          "source_file": "paper_Managing social norms for persuasive impact.md",
+          "location": "脚注1"
+        }
+      ]
+    },
+    {
+      "claim": "BIRG（沐浴反射荣光）：人们倾向于公开宣称与成功他人的关联，即使关联毫无因果贡献。体育领域最明显：冠军队球迷用'我们是第一'而非'他们是第一'声称分享荣耀。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "people appear to feel that they can share in the glory of a successful other with whom they are in some way associated; one manifestation of this feeling is the public trumpeting of the association. Such a phenomenon is not hard to understand when the one wishing to share in another's success has been instrumental to that success. However, the more intriguing form of the phenomenon occurs when the one who basks in the glory of another has done nothing to bring about the other's success.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "引言第2-3段"
+        },
+        {
+          "excerpt": "States and cities like to list the names of famous entertainers, statesmen, beauty contest winners, etc., who live or were born within their boundaries; the state of Indiana has even gone so far as to brag that more vice-presidents of the United States have come from Indiana than any other state. Other such connections involve ethnic or religious affiliation: Italians speak proudly of the ethnic background of Marconi, and Jews refer to Einstein's heritage.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "引言第4段"
+        },
+        {
+          "excerpt": "Fans of championship teams gloat over their team's accomplishments and proclaim their affiliation with buttons on their clothes, bumper stickers on their cars, and banners on their public buildings. Despite the fact that they have never caught a ball or thrown a block in support of their team's success, the tendency of such fans is to claim for themselves part of the team's glory; it is perhaps informative that the chant is always \"We're number one,\" never \"They're number one.\"",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 1引言段"
+        }
+      ]
+    },
+    {
+      "claim": "BIRG可用Heider平衡理论解释：个体与成功来源的正向单位关系+正面评价→认知平衡使观察者正面评价个体，因此个体有动机让关联尽可能可见。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Heider discussed two types of perceived relations between things: sentiment relations, which imply a feeling state between stimuli, and unit relations, which merely imply that things are connected in some manner. It is the unit relationship that seems akin to the noninstrumental connection that people tend to publicize between themselves and a successful or otherwise positive source.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 1讨论段"
+        }
+      ]
+    },
+    {
+      "claim": "BIRG效应在自尊受威胁时最强：失败后个体最倾向公开宣称与成功来源关联。且在观察者无法声称同样关联时（如校外机构vs校内）BIRG效应最强。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "if we are correct in proposing that one proclaims a connection with a positive source in an attempt to raise one's esteem in the view of others, then one should be most likely to declare such a connection when that esteem has recently been jeopardized.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 2假设推导"
+        },
+        {
+          "excerpt": "When an observer to a highly positive association can also lay claim to the association, the prestige of the connection is diffused and, consequently, reduced for anyone attempting to bask in its glory. It is when one's bond to a positive source is not shared by an audience that its prestige value is optimal.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 2讨论段"
+        },
+        {
+          "excerpt": "a resident of California is less likely to brag to fellow Californians about the favorable climate than to geographically distant others, especially those who cannot claim similarly pleasant weather.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 2讨论段，举例"
+        },
+        {
+          "excerpt": "It was predicted, first, that there would be an overall tendency for subjects to use we in their descriptions of a team victory and non-we in their descriptions of a team nonvictory. ... The third prediction was that Hypothesis 2 would hold most strongly when the observer was identified with an off-campus organization.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 3预测部分"
+        }
+      ]
+    },
+    {
+      "claim": "代词'we'的使用是BIRG倾向的优秀指标：学生描述球队胜利时更多用'we'，描述失败时用'they'——公开将自己与成功群体关联、与失败群体拉开距离。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "It was predicted that students at these schools would be more likely to announce publicly their connection with their universities after the varsity football teams had been successful than after the teams had not been successful. We decided to measure students' tendency to announce their university affiliation by means of an examination of wearing apparel.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 1方法描述"
+        },
+        {
+          "excerpt": "these indexes showed a generally consistent tendency for students to wear school-of-attendance apparel more after vic-torious than after nonvictorious outcomes. An overall test of this difference indicated that it was statistically significant",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Table 1及其后描述"
+        },
+        {
+          "excerpt": "By employing the pronoun we, one is publicly able to associate oneself with another person or group of persons. Through the use of some other designation, for example, they, one is able to distance oneself from (i.e., to weaken the perceived association with) another person or persons.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 2方法描述"
+        },
+        {
+          "excerpt": "Two factors were manipulated; a subject's personal outcome on the survey task (success or failure) and the affiliated football team's outcome in the game described (win or non-win). These factors combined to produce a 2 X 2 factorial design.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 2方法部分"
+        }
+      ]
+    },
+    {
+      "claim": "人们倾向于传播好消息而非坏消息，非出于内疚而是担心被收件人负面评价——即使所有人都知道传播者与坏消息毫无因果关系。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Johnson, Conlee, and Tesser (1974) found their subjects reluctant to communicate negative information not because they felt guilty about transmitting bad news but because they feared that they would be negatively evaluated by the recipient of such news; again, this was true even though all concerned knew that the communicators had in no way caused the bad news.",
+          "source_file": "paper_Basking in reflected glory_ Three (football) field studies..md",
+          "location": "Experiment 1讨论，信息传播研究段"
+        }
+      ]
+    },
+    {
+      "claim": "酒店毛巾实验：描述性规范消息（'大多数客人重复使用毛巾'）比传统环保诉求提升28.4%的毛巾重复使用率，几乎零成本。Experiment 1设计190间房间随机分配到传统环保呼吁vs描述性规范呼吁。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "What the card never says, however, is that the majority of guests do reuse their towels when given the opportunity. We suspected that this omission was costing the hotels—and the environment—plenty.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "酒店毛巾实验段落"
+        },
+        {
+          "excerpt": "Compared to the ﬁrst three messages, which didn't differ in their effectiveness, the ﬁnal (descriptive normative) message signiﬁcantly increased towel reuse—by an average of 28.4% (Goldstein, Cialdini, & Griskevicius, submitted).",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "酒店实验结果段落"
+        },
+        {
+          "excerpt": "the signiﬁcant increase in program participation was nearly costless... All that was required was to convey the facts about the preferred behavior of the majority.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "酒店实验讨论段落"
+        },
+        {
+          "excerpt": "\"JOIN YOUR FELLOW GUESTS IN HELPING TO SAVE THE ENVIRONMENT. Almost 75% of guests who are asked to participate in our new resource savings program do help by using their towels more than once. You can join your fellow guests in this program to help save the environment by reusing your towels during your stay.\"",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Experiment 1方法段"
+        }
+      ]
+    },
+    {
+      "claim": "地方规范（provincial norms）效应：与个体即时环境最匹配的规范比更大范围的'全局规范'更能驱动顺从行为。'住过这个房间的多数客人重复使用毛巾'产生最高遵从率（49.3%），即使参与者认为该身份群体个人意义最低。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Appeals employing descriptive norms (e.g., \"the majority of guests reuse their towels\") proved superior to a traditional appeal widely used by hotels that focused solely on environmental protection. Moreover, normative appeals were most effective when describing group behavior that occurred in the setting that most closely matched individuals' immediate situational circumstances (e.g., \"the majority of guests in this room reuse their towels\"), which we refer to as provincial norms.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "we examine whether the norm of hotel guests' immediate surroundings, which we refer to as the provincial norm, motivates conformity to the norm to a greater extent than the norm of guests' less immediate surroundings, which we refer to as the global norm. ... individuals might be more likely to follow the norms of a personally unimportant reference group than those of a more important one when the personally unimportant reference group is provincial in nature.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Research Overview段"
+        },
+        {
+          "excerpt": "a planned comparison revealed that all four descriptive norm messages combined (44.5%) fared significantly better than the standard environmental message (37.2%; χ²(1, N = 1,595) = 4.94, p = .03, φ = .06). That is, merely informing hotel guests that other guests generally reused their towels significantly increased towel reuse compared to focusing guests on the importance of environmental protection.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Experiment 2结果段"
+        },
+        {
+          "excerpt": "the same room identity descriptive norm condition yielded a significantly higher towel reuse rate (49.3%) than the other three descriptive norm conditions combined (42.8%; χ²(1, N = 1,318) = 4.18, p < .05, φ = .06). That is, even though the provincial norm for the frequency of guests' towel reuse in a particular hotel room is not any more diagnostic of effective or approved behavior than the other norms—and the same-room message references the norms of the least meaningful group in the experiment—this condition produced the highest level of towel reuse.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Experiment 2结果段"
+        },
+        {
+          "excerpt": "These other three descriptive norm conditions—the citizen identity descriptive norm (43.5%), the gender identity descriptive norm (40.9%), and the guest identity descriptive norm (44.0%)—did not differ from one another, all p's > .42",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Experiment 2结果段"
+        },
+        {
+          "excerpt": "we found that the towel reuse rates of the four descriptive normative message identities did not map onto the extent to which individuals consider those identities personally meaningful and important to them.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Experiment 2讨论段"
+        },
+        {
+          "excerpt": "consistent with predictions, but contrary to previous conceptualizations, we found that participation rates were actually highest for the reference group that participants felt was the least personally meaningful to them (but most physically proximate).",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Experiment 2讨论段"
+        },
+        {
+          "excerpt": "One possible explanation for why provincial norms might be especially influential stems from the fact that it is typically beneficial to follow the norms that most closely match one's immediate settings, situations, and circumstances. As a natural part of the learning process, individuals are attuned to the extent to which their inferences, decisions, and behaviors have led to adaptive outcomes in the past.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Provincial Norms机制段"
+        }
+      ]
+    },
+    {
+      "claim": "群体对个人身份的意义只是决定私下遵从社会规范的多个因素之一，其他因素包括规范显著性、不确定性水平和规范形成环境与当前环境的匹配程度。个体在新颖或不确定环境中会泛化过去的经验关联。",
+      "dim": "theory",
+      "evidence": [
+        {
+          "excerpt": "we are suggesting that the meaningfulness of the group to one's social identity is but one of several central determinants of consumers' private adherence to social norms. In addition to the factors of norm salience (Cialdini et al. 1991), the level of uncertainty (Festinger 1954), and the extent of meaningfulness/identification with the reference group (Deshpandé et al. 1986), another important factor is the degree of match among one's setting, situation, and circumstances and those in which the norms were formed.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Experiment 2讨论段"
+        },
+        {
+          "excerpt": "To make information processing and decision making more manageable in novel or uncertain circumstances, individuals often generalize the associations they learn from previous experiences (Zebrowitz 1990). Although such generalizations often lead to correct interpretations of stimuli, successful decisions, and effective behaviors, they occasionally lead to errors due to the unavailability of information or to the overgeneralization of their previous association (Zebrowitz and Collins 1997).",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Provincial Norms机制段"
+        },
+        {
+          "excerpt": "in order to optimize social identity effects, it is wise for communicators to ensure that an important social identity is not only salient but that the norms associated with the identity are known and also salient.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Implications段"
+        },
+        {
+          "excerpt": "managers, policy makers, and communicators implementing a descriptive normative component to their persuasive appeals or information campaigns should ensure that the norms of the reference group are as situationally similar as possible to the intended audience's circumstances or environment.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "Implications段"
+        }
+      ]
+    },
+    {
+      "claim": "酒店环保项目除直接节省成本外还有消费者奖励关注环保企业的双重经济激励。规范消息显著优于酒店业常用环保保护聚焦消息。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "In addition to the inherent benefit to the environment and to society, such programs are used by an increasing number of hotel chains because of the considerable economic benefits of enacting them. Besides the direct savings on costs such as labor, water, energy, and detergent, there is a burgeoning segment of consumers who reward businesses that address environmental concerns through their business practices.",
+          "source_file": "paper_A Room with a Viewpoint_ Using Social Norms to Motivate Envi.md",
+          "location": "引言段，经济激励讨论"
+        }
+      ]
+    },
+    {
+      "claim": "人们严重低估描述性规范的影响力：将'其他人在做什么'评为最不重要的节能动机但该因素与节能行为相关性最高（r=.45），环保保护被评为最重要但相关性最低（r=.06）。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "What's surprising, given the ubiquity and strength of the evidence, is how little note people take of this potent form of inﬂuence at two crucial compliance-relevant decision points: (1) when, as observers, they decide how to interpret the causes of their own actions; and (2) when, as tacticians, they decide how to inﬂuence the actions of others.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "The Role of Social Norms in Social Control段落末尾"
+        },
+        {
+          "excerpt": "When respondents were asked to rate the importance to them of several reasons for energy conservation—because it will help save the environments, because it will beneﬁt society, because it will save me money, or because other people are doing it—they rated these motivations in the order just listed, with the actions of others (the descriptive social norm, Cialdini et al., 1990) clearly in last place. However, when we examined the relationship between participants' beliefs in these reasons and their stated attempts to save energy, we found the reverse: The belief that others were conserving correlated twice as highly with reported energy saving efforts than did any of the reasons that had been rated as more important personal motivators.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "People Frequently Ignore段落"
+        },
+        {
+          "excerpt": "Other people are doing it: M=2.93, SD=.83, r=.45 ... Environmental protection: M=3.41, SD=.75, r=.06 ... Benefit to society: M=3.17, SD=.77, r=.23 ... Saving money: M=3.07, SD=.76, r=.03",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "Study 1结果表1"
+        },
+        {
+          "excerpt": "descriptive normative beliefs regarding energy conservation ... were the worst predictor of self-reported energy conservation ... Other people are doing it ... r = .45",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "Study 1结果段"
+        }
+      ]
+    },
+    {
+      "claim": "实验证实：居民将规范诉求评为最不可能激励节能的信息，但实际数据显示规范诉求比环保、社会利益、省钱等诉求都更有效。虽不相信他人行为应激励自己，但行为被其强有力地影响。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Interviews with participants revealed that those who received the normative appeals rated them as least likely to motivate their conservation behavior. Yet, when we examined actual energy usage (by recording participants' electricity meter readings), the normative appeal proved most helpful, resulting in signiﬁcantly more conservation than any of the other appeals (Schultz et al., in press).",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "People Frequently Ignore段落，实验部分"
+        },
+        {
+          "excerpt": "a planned contrast revealed that participants in the descriptive norm condition (Madj = 12.97, SE = .44, N = 46) used significantly less energy short term than did participants in the combined other conditions (Madj = 14.17, SE = .20), F(1, 268) = 5.99, p < .05.",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "Study 2结果段"
+        },
+        {
+          "excerpt": "Taken together, the results from the current studies show that normative information is a powerful but underdetected form of social influence. ... our results suggest that people hold incorrect beliefs about what motivates them to conserve and may not be able to predict which strategies will be the most effective.",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "General Discussion段"
+        },
+        {
+          "excerpt": "Although participants in the environment and social responsibility conditions were most likely to say that they had been influenced by the persuasive message they received, their energy consumption did not differ from the control group, whereas the descriptive norm condition did differ. These results suggest that people relied on their a priori theories of what should motivate someone to conserve energy.",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "General Discussion段"
+        },
+        {
+          "excerpt": "although people may not believe that the behavior of others should motivate them to conserve energy, their behavior was powerfully influenced by it nonetheless.",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "General Discussion段"
+        }
+      ]
+    },
+    {
+      "claim": "大量研究表明微妙的、不可感知的启动可产生强烈且可感知的行为变化。即使可能意识到因果刺激，人们也可能无法将其识别为后续行为的原因。朴素心理学提供了替代解释使人无法检测到社会规范的真实影响。",
+      "dim": "theory",
+      "evidence": [
+        {
+          "excerpt": "This research has produced unexpected results, showing that subtle, imperceptible primes can produce strong and perceptible changes in behavior. In the realm of social norms and conformity, research has shown that activating the goal of going to the library, which is associated with the situational norm of being quiet, led participants to lower their voices (Aarts & Dijksterhuis, 2003).",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "Nonconscious Influences段"
+        },
+        {
+          "excerpt": "These informal observations suggest that even in situations where the participant is likely to be aware of a causal stimulus, they may fail to identify this stimulus as the cause of their subsequent behavior. Cialdini (2005) has argued that given the ubiquity and strength of normative social influence, it is surprising how little note people take of this potent form of influence when, as observers, they decide how to interpret the causes of their own actions.",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "Nonconscious Influences段"
+        },
+        {
+          "excerpt": "People may have been unable to discern the influence that the presence of others had on their behavior because they had an existing cultural theory that provided them with a plausible alternative explanation for their behavior",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "Naive Psychology段"
+        }
+      ]
+    },
+    {
+      "claim": "关于自身行为的因果归因人们普遍犯错（Nisbett & Wilson），在识别'他人相似行为'作为因果前因时尤其无知——街头艺人实验中没有一个捐款者将行为归因于榜样的影响。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "when interviewed afterward, not one of the eight givers in the modeled help condition attributed his or her donation decision to the confederate's donation decision. Instead, they claimed that some other factor had been the cause—\"I liked the song he was playing,\" or \"I felt sorry for the guy\" or \"I had some extra change in my pocket.\"",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "街头艺人实验段落"
+        },
+        {
+          "excerpt": "When it comes to estimating the causes of their conduct, people seem especially blind to the large relative role of descriptive norms. They don't just fail to get this relative role right; they tend to get it precisely wrong.",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "总结段落"
+        }
+      ]
+    },
+    {
+      "claim": "诚实未婚妻轶事：西奥迪尼的研究生带诚实未婚妻参观石化林国家公园，她在读到警示牌（14吨/年被盗）后小声说'我们最好趁现在拿一块'——描述性规范信息瞬间瓦解了原本的道德约束。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "not long ago a graduate student of mine visited the Petriﬁed Forest National Park with his ﬁanc´ee—a woman he described as the most honest person he'd ever known, someone who had never taken a paperclip or rubber band without returning it. They quickly encountered the park sign warning visitors against stealing petriﬁed wood and decrying the 14 tons of pilfered wood each year. While still reading the sign, he was shocked to hear this otherwise wholly law-abiding woman whisper, \"We'd better get ours now.\"",
+          "source_file": "paper_Descriptive Social Norms as Underappreciated Sources of Soci.md",
+          "location": "脚注1"
+        }
+      ]
+    },
+    {
+      "claim": "Study 2节能实验设计：描述性规范消息基于真实调查数据（77%-99%居民确实报告了相应节能行为），比较门挂消息对家庭能源消耗的实际影响。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Three of the appeals used a nonnormative message based on one of the three reasons for saving energy that our Study 1 participants identified as most influential: to protect the environment, to benefit society, or to save money. A separate appeal simply communicated a descriptive norm indicating that the majority of residents in the community were conserving energy.",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "Study 2介绍段"
+        },
+        {
+          "excerpt": "the normative information presented on the doorhangers was factual. Using the survey data obtained as part of our larger statewide survey, we were able to identify a small number of completed surveys from the local region. These surveys served as the basis for our normative messages and, depending on the behavior, these percentages ranged from 77% to 99%.",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "Study 2方法段"
+        }
+      ]
+    },
+    {
+      "claim": "调查参与决策最适合用社会心理学中的服从、帮助倾向和意见改变三大领域来理解。社会人口学特征不直接导致参与决定，而是通过产生心理倾向间接影响。",
+      "dim": "theory",
+      "evidence": [
+        {
+          "excerpt": "We believe that full understanding of decisions to participate in a survey requires a theory that integrates the observed influences of sociodemographic and survey design factors, on the one hand, with the less observable impact of the psychological components of the relatively brief interactions between interviewer and respondent, on the other.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Factors Influencing Survey Participation段"
+        },
+        {
+          "excerpt": "the degree of social responsibility felt by a sample person may be affected by such factors as the legitimacy of societal institutions, the degree of social cohesion, and so on. Such factors not only influence the expectations that both interviewer and respondent bring to the interaction but also determine the particular persuasion strategies (on the part of the interviewer) and decision-making strategies (on the part of the respondent) that are used.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Societal-Level Factors段"
+        },
+        {
+          "excerpt": "We do not believe these factors are causal to the participation decision. Instead, they tend to produce a set of psychological predispositions that affect the decision.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Characteristics of the Sample Person段"
+        },
+        {
+          "excerpt": "We contend that an understanding of the interaction between respondent and interviewer, and of the behaviors, attitudes and expectations each brings to the interaction, are critical elements in the development of a theory of survey participation. Our search for a theoretical base for understanding survey participation has led us to the literatures on the social psychology of compliance, helping tendencies, and opinion change.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Respondent-Interviewer Interaction段"
+        },
+        {
+          "excerpt": "We do not believe these factors are causal to the participation decision. Instead, they tend to produce a set of psychological predispositions that affect the decision. They also affect the initial approach of the interviewer to the sample unit.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "CHARACTERISTICS OF THE SAMPLE PERSON段落"
+        },
+        {
+          "excerpt": "Research in social psychology that appears most relevant to the issue of survey participation can be divided into three areas: compliance with requests, helping tendencies, and opinion change. Each can be addressed in terms of the relation of its extant literature to the domain of survey participation. The work on compliance warrants our most concentrated focus, owing to its more direct connection to the decision to accede to a survey request.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Psychological Concepts Relevant to Survey Participation段落"
+        }
+      ]
+    },
+    {
+      "claim": "受访者在首次接触时通过匹配视觉和听觉线索来候选可能情境（销售、慈善等）判断访问者意图。经验丰富的访谈者携带更多被证明有效的行为组合获得更高合作率。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Observable sociodemographic characteristics of the interviewer (race, age, gender, etc.) are believed to affect the \"script\" evoked in the householder's mind at the first contact with the interviewer. At that moment, the householder is making judgments about the purposes of the visit. This occurs by considering the candidate possibilities (e.g., a sales call, an assault, a call for charitable contributions) and matching the pattern of visual and audio cues with those alternatives.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Attributes of the Interviewer段"
+        },
+        {
+          "excerpt": "We believe that experienced interviewers tend to achieve higher levels of cooperation because they carry with them a larger number of combinations of behaviors proven to be effective for one or more types of householders. We also deduce that the initial months and years of interviewing provide the largest gains to interviewers in providing them with new persuasion tools",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Attributes of the Interviewer段"
+        },
+        {
+          "excerpt": "the householder is making judgments about the purposes of the visit. This occurs by considering the candidate possibilities (e.g., a sales call, an assault, a call for charitable contributions) and matching the pattern of visual and audio cues with those alternatives. All attributes of the interviewer that help the householder discriminate the different scripts will be used to make the decision about the intent of the call.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "ATTRIBUTES OF THE INTERVIEWER段落"
+        }
+      ]
+    },
+    {
+      "claim": "访谈者的情感/心理状态（心情、成功、疲劳、动机）影响其与住户互动行为，受访者社会经济和人口特征通过心理倾向间接影响参与决策。",
+      "dim": "theory",
+      "evidence": [
+        {
+          "excerpt": "the affective or psychological state of the interviewer prior to the contact may have an impact on his or her behavior during the interaction with the householder. As with the potential respondent, an interviewer's mood, prior success that day or in that neighborhood, tiredness, motivation, etc., may all influence the interviewer's psychological predisposition.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Attributes of the Interviewer段"
+        }
+      ]
+    },
+    {
+      "claim": "潜在受访者通常没有强烈个人利益，倾向采用启发式而非系统性方式决定是否参与——这正是Cialdini六大顺从原则发挥作用的前提条件。外部干扰对说服的效果取决于论证强度，干扰在强论证时降低说服力但在弱论证时反而增强。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "It is our belief that the survey request situation most often favors a heuristic approach because the potential respondent typically does not have a large personal interest in survey participation and, consequently, is not inclined to devote large amounts of time or cognitive energy to the decision of whether to participate.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "COMPLIANCE WITH REQUESTS段落"
+        },
+        {
+          "excerpt": "when the topic of a persuasive communication is of high personal relevance, subjects will change their opinion on the basis of a systematic review of the communication's intrinsic features (i.e., the extent to which its arguments conform to the rules of logic and evidence); however, when the topic is of small personal import, they will change their opinions on the basis of a heuristic review of its extrinsic features, which include such interpersonal and societal factors as the authoritative manner, attractiveness, and credibility of the source",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "OPINION CHANGE段落"
+        },
+        {
+          "excerpt": "in the survey context it does appear that most potential respondents are likely to take a heuristic approach to that decision. That is, the act of participation in a survey is rarely of sufficient personal relevance to cause potential respondents to want systematically to review and incorporate all of the available information into their decision. Consequently, they are likely to base their decisions on one or two highly prominent and normally diagnostic considerations (e.g., the length of the survey or the authoritativeness of the interviewer). It might well be then that interviewer training that operated on the assumption of respondents' heuristic processing of survey-related information would be more effective.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "CONCLUSION段落"
+        }
+      ]
+    },
+    {
+      "claim": "互惠原则在调查中的四个可检验推论：(1)先给激励比完成后给更有效；(2)预先提供有价值信息提高配合度；(3)强调专门利益比附带效果更有效；(4)让步式请求比直接要求获得更多配合。当先前的行为被视为贿赂而非礼物时服从反而被抑制。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "One qualification of this relationship occurs when the earlier behavior received is not viewed as a gift or favor but as a bribe or an undue pressure to comply; under those circumstances, compliance is inhibited",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Reciprocation段落"
+        },
+        {
+          "excerpt": "surveys that provide the incentive before the survey request will show higher participation rates than if the gift were given contingent on completion of the questionnaire; (2) interviewers who give respondents informational letters, brochures, and so on prior to asking for participation will get better compliance... (3) interviewers who state that the survey provides information specifically intended to benefit the respondent will get greater participation... (4) interviewers who are refused in a request to complete a large questionnaire and who then retreat to a request to answer a smaller number of questions—thereby, offering a concession to the respondent—will get more compliance than if they had asked for completion of the smaller questionnaire alone",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Reciprocation推论段落"
+        }
+      ]
+    },
+    {
+      "claim": "社会交换视角解释低SES人群调查参与率低：认为自己从调查赞助者获得资源最少的人最不觉得有义务回报。交换分析承认不回应者有不合作的合理理由。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "those individuals least likely to want to participate in surveys, according to an exchange analysis, will be those who see themselves as least obligated to provide resources (e.g., information) to the sponsor in return for resources received. Such an analysis may help explain the low rates of survey participation among lower SES persons",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Reciprocation社会交换分析段落"
+        },
+        {
+          "excerpt": "One obvious value of this sort of exchange analysis as applied to survey methods is that it acknowledges that nonrespondents can have well-founded rationales for not cooperating with a survey request. In contrast to the view that nonrespondent actions are in some sense based on ignorance, the exchange approach attempts to identify costs and benefits of responding from their perspective.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Reciprocation社会交换分析段落"
+        }
+      ]
+    },
+    {
+      "claim": "一致性原则在调查中的应用：将参与与受访者已有承诺信念、态度和价值观联系起来获得更多配合。但参与一两次后个体可能感到已尽义务——这解释了'过度调查'效应。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "interviewers who draw connections between participating in a survey and the respondent's committed beliefs, attitudes, and values (e.g., efficiency in government, advancement of knowledge) will be more successful in gaining compliance. This should be especially true if the respondent has verbalized those commitments before the request for participation",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Consistency段落"
+        },
+        {
+          "excerpt": "the extent to which consistency pressures would direct behavior in the survey setting may well be limited by exchange theory considerations. That is, after participating in one or two surveys, an individual may get the feeling of already having done his or her part as a survey participant",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Consistency段落末尾"
+        }
+      ]
+    },
+    {
+      "claim": "社会验证原则在调查中的'搭便车'复杂因素：如果很多类似他人都准备参与，受访者为什么要自愿付出时间？权威原则双刃剑：合法权威（政府、教育机构）提高参与率，不被视为有地位的赞助方效果反转。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "For surveys there may be a complicating feature: if many similar others stand ready to participate, why should the respondent be the one to volunteer his or her time?",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Social validation段落"
+        },
+        {
+          "excerpt": "interviewers who emphasize the sponsor of their survey will be more successful in generating participation if the sponsor is generally seen as having legitimate authority to collect the information (e.g., government or educational institutions), but that (2) this effect will be reversed if the sponsor is not seen as having such status (e.g., certain commercial organizations).",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Authority段落"
+        }
+      ]
+    },
+    {
+      "claim": "感知到的合法权威可能降低隐私权在参与决策中的影响。稀缺性原则解释西方社会调查参与率下降：调查泛滥使人不再认为被征求意见是稀缺机会。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The perception of legitimate authority may reduce the impact of the right to privacy in the survey participation decision. In making a decision about survey participation, each sample person must balance a personal right to privacy against the benefits of providing the desired information to the requesting source. A testable implication is that information will be construed as less private as the perceived legitimacy of the survey source to have and use it grows.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Authority段落"
+        },
+        {
+          "excerpt": "This principle may also help explain the decline of survey participation in Western society coinciding with the proliferation of surveys. People may no longer consider the chance to have their opinions counted as an especially rare, and therefore valuable, event.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Scarcity段落"
+        }
+      ]
+    },
+    {
+      "claim": "喜好原则的六个增强因素（态度相似性、背景相似性、穿着相似性、赞美、合作和外在吸引力）在启发式处理模式下效果更强。社会责任规范（帮助有需要的人）是独立于一般服从的独特方差来源。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the following factors enhance liking: similarity of attitude, background, and dress; praise; cooperation; and physical attractiveness. An interviewer who brings one or more of these features to a survey request situation should generate more willing compliance, especially when the respondent is in a heuristic processing mode.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Liking段落"
+        },
+        {
+          "excerpt": "it is argued that a helping norm (sometimes called \"the norm of social responsibility\") exists in most cultures and motivates individuals to help others who are in need and who are dependent upon them for aid. A wet and cold interviewer standing on a doorstep in winter may elicit greater compliance. Thus, even a simple request to participate in a survey may be significantly more successful when it includes an appeal to the helping norm. For example, Mowen and Cialdini (1980) obtained a 19-percentage-point increase in survey participation by adding the words \"it would really help us out\" to the end of their request.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "HELPING TENDENCIES段落"
+        }
+      ]
+    },
+    {
+      "claim": "三种情绪状态对帮助决策的影响：愤怒减少服从，快乐增强帮助，悲伤效果取决于成本效益比。影响意见改变的六大原则与影响行为服从的原则完全相同，说明跨领域普适性。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "we might expect (1) anger generally to reduce compliance, (2) happiness generally to enhance compliance, and (3) sadness to reduce it under conditions of a relatively high response cost to benefit ratio (e.g., a long survey with small perceived impact or value) but to enhance it under conditions of a relatively low response cost to benefit ratio.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "HELPING TENDENCIES情绪状态段落"
+        },
+        {
+          "excerpt": "The same principles that have been shown to influence behavioral compliance with a request (reciprocity, consistency, social validation, authority, scarcity, and liking) have been shown to affect the willingness of a person to change an opinion on some topic.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "OPINION CHANGE段落"
+        }
+      ]
+    },
+    {
+      "claim": "外部干扰对说服的效果取决于论证强度：干扰在强论证时降低说服力，弱论证时反而增强。高个人相关性话题→系统审查论据特征；低相关性话题→启发式审查外在特征。同一社会中矛盾规范（如'要介入'vs'管好自己的事'）的冲突可以通过注意力焦点来解释。当个人规范与社会规范不一致时，哪种规范引导行为取决于个体倾向内部聚焦还是外部聚焦。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "the amount of external distraction that is present when a message is presented will decrease a recipient's ability to process it fully. Distraction, therefore, will decrease a message's persuasiveness when its arguments are strong but will increase its persuasiveness when its arguments are weak",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "OPINION CHANGE段落"
+        },
+        {
+          "excerpt": "such attentional shifts may explain the functioning of contradictory norms within the same society (e.g., the norm for getting involved and the norm for minding one's own business); which of the incompatible norms guides behavior is likely to be the one that is more focal at the time for action.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "General Discussion段"
+        },
+        {
+          "excerpt": "when an individual's personal norm is discrepant from the social norm of the culture, which type of norm will guide behavior may be determined by the extent to which the individual focuses naturally internally or externally, as assessed by such measures as Fenigstein, Scheier and Buss's (1975) Self-Consciousness Scale or Snyder's (1974) Self-Monitoring Scale.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "General Discussion段"
+        }
+      ]
+    },
+    {
+      "claim": "定制化（针对不同受访者使用不同穿着、行为、语言和说服策略）随访谈员经验增长，面对面比电话更多。预设脚本比自由发挥获得更高拒绝率。维持互动是实现定制化最大收益的手段。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the groups contributed to our thinking two important components of our theory: (1) tailoring—the use of different dress, physical behaviors, words, and strategies of persuasion for different sample persons, and (2) maintaining interaction—the use of interviewer behavior that tries to reduce the likelihood of the respondent terminating the discussion prematurely",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Contributions to Theory段落"
+        },
+        {
+          "excerpt": "She found that interviewers who were asked to use a prepared script got higher refusal rates than those allowed to develop their own approach. She concluded that \"imposing a script inhibited the natural skill of the interviewer in responding to the unfolding situation.\"",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "TAILORING段落"
+        },
+        {
+          "excerpt": "We believe the techniques of tailoring and maintaining interaction are used in combination. Maintaining interaction is the means to achieve maximum benefits from tailoring, for the longer the conversation is in progress, the more cues the interviewer will be able to obtain from the householder. However, maintaining interaction is also a compliance-promoting technique in itself, invoking the commitment principle as well as more general norms of social interaction. That is, as the length of the interaction grows, it becomes more difficult for one actor summarily to dismiss the other.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "MAINTAINING INTERACTION段落"
+        },
+        {
+          "excerpt": "the use of tailoring increases with interviewer experience, especially with diverse subpopulations. We might also deduce that initial tactics of interviewers upon contacting a sample household would concentrate on maintaining contact or rapport-building rather than on seeking compliance... Given the relative richness of cues in the face-to-face mode, we anticipate more tailoring there than in the telephone mode. Finally, we suspect that much of the manifestation of tailoring lies in the contrast evident among respondents, not contrasts within interactions with individual respondents.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "IMPLICATIONS FOR RESEARCH段落"
+        }
+      ]
+    },
+    {
+      "claim": "概率样本访谈员的目标与销售员根本不同：销售员聚焦识别买家忽略'浏览者'，而概率样本访谈员必须同时寻求感兴趣和不感兴趣者的配合。对受调查深度影响的人群理性选择理论更适用。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We note how similar the goals of a quota sample interviewer are to those of any salesperson, but how different are those of the probability sample interviewer. Given this, it is not surprising that many attempts to use sales techniques in probability sample surveys have not led to large gains in cooperation. The focus of the salesperson is identifying and serving buyers. The \"browser\" must be ignored when a known buyer approaches. In contrast, the probability sample interviewer must seek cooperation from both the interested and uninterested.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "MAINTAINING INTERACTION段落"
+        },
+        {
+          "excerpt": "in surveys of populations deeply affected by the outcome of the survey (e.g., surveys of members of organizations or special-interest groups about issues of high salience), a theory more akin to rational choice principles may apply. In mailed, self-administered surveys the influences of the interviewer on the actions of the sample persons are not present. Finally, surveys having organizations as their sampling and measurement units... are likely to govern their cooperation by formal rules and legal guidance not reflected in the theory above.",
+          "source_file": "paper_Understanding The Decision to Participate in a Survey.md",
+          "location": "Conclusions段落"
+        }
+      ]
+    },
+    {
+      "claim": "Cialdini对Batson共情-利他假说提出利己替代解释：观察者对受苦者的高共情带来增加的个人悲伤，驱动帮助的是利己地减轻自己的悲伤而非无私地减轻受苦者的痛苦。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We hypothesized that an observer's heightened empathy for a sufferer brings with it increased personal sadness in the observer and that it is the egoistic desire to relieve the sadness, rather than the selfless desire to relieve the sufferer, that motivates helping.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Abstract段落"
+        }
+      ]
+    },
+    {
+      "claim": "实验一核心发现：高共情被试同时报告更高的共情关注和悲伤，奖励干预可消除增强的悲伤但不影响共情关注——成功将二者分离。帮助行为由悲伤水平预测而非共情分数。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "when sadness and empathic emotion were separated experimentally, helping was predicted by the levels of sadness subjects were experiencing but not by their empathy scores.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Abstract段落"
+        },
+        {
+          "excerpt": "high-empathy-set subjects would show greater sadness than would low-empathy-set subjects. This prediction was confirmed, F(1, 61) = 5.73, p < .02 (Ms = 2.63 and 3.47, respectively). This outcome supports the contention that empathically oriented subjects experience a saddened mood when observing a suffering other.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Reported sadness段落"
+        },
+        {
+          "excerpt": "These results support the argument that rewards such as those of this study will cancel the saddened mood but not the empathic orientation of subjects empathizing with a suffering other.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Reported sadness段落末尾"
+        },
+        {
+          "excerpt": "the helping scores of the high-empathy-set subjects who did not receive a reward intervention (M = 4.19) were contrasted with the helping scores of the subjects in the other cells of the design... This contrast proved significant, F(1, 73) = 4.09, p < .05. Second, the helping scores of the high-empathy-set subjects who received a reward intervention (M = 2.45) were tested against those of the low-empathy-set subjects (M = 2.14) and, as predicted, were found to be no different, F(1, 73) < 1.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Helping段落"
+        }
+      ]
+    },
+    {
+      "claim": "实验一还发现第二个利己因素：共情取向条件下帮助行为与社会称许性量表正相关，表明共情取向除引发悲伤外还唤起对社会认可的关注。Cialdini反复断言愤怒、挫折、焦虑等不能通过善行减轻的负面情绪不会增加帮助。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Cialdini and his coworkers have argued that their data on negative mood effects implicate only temporary sadness in the enhancement of helping, and they have repeatedly asserted that other negative moods that are normally not reduced through benevolence (e.g., anger, frustration, agitation, anxiety) consequently would not be expected to increase helping.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Introduction后半部分"
+        },
+        {
+          "excerpt": "We found consistently positive relations between subjects' helping scores and their previously obtained social-desirability scores only when subjects were oriented empathically to the victim. This pattern suggests that an empathic orientation toward a sufferer brought with it attention to the social desirability of helping, leading those subjects with higher social-desirability concerns to help more. Thus, aside from the effects of personal sadness, it appears that a second egoistic concern—social approval/disapproval—was involved to some degree in our subjects' helping decisions.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Discussion段落"
+        }
+      ]
+    },
+    {
+      "claim": "实验二使用安慰剂程序（'Mnemoxine'）让被试相信情绪被固定无法改变，完美符合负面状态缓解模型：高共情/情绪可变条件帮助最多（M=1.30），高共情/情绪固定帮助极少（M=0.63）。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "subjects who were led to perceive that their moods could not be altered through helping (because of the temporary action of a \"mood-fixing\" placebo drug) were not helpful, despite high levels of empathic emotion.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Abstract段落"
+        },
+        {
+          "excerpt": "An earlier experiment (Manucia, Baumann, & Cialdini, 1984) used a placebo procedure to convince potential helpers that their helping actions could not change their mood states. In that experiment, subjects were given a placebo drug that they were led to believe would freeze their moods, that is, render them unchangeable by anything the subjects might do during the next half hour or so.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Experiment 2段落"
+        },
+        {
+          "excerpt": "the actual pattern of means closely resembling the one-versus-three pattern predicted by the Negative State Relief formulation. A planned comparison contrasting the high-empathy-set/labile-mood condition against the other three was significant, F(1, 31) = 6.96, p < .02, whereas pair-wise comparisons among these other three cells showed no significant differences (all Fs < 1).",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "Experiment 2 Results段落"
+        }
+      ]
+    },
+    {
+      "claim": "Cialdini谦虚声明：没有任何一对实验能解决利他主义动机本质如此根本性的问题，只是为第一个有力的纯粹利他主义实验证据提供了合理的利己主义替代解释。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We recognize fully that no mere pair of experiments is capable of resolving so fundamental a question as the motivational nature of benevolence; accordingly, we do not see our studies in such light. Instead, we view them as providing a plausible egoistic explanation for the first powerful experimental evidence for pure altruism.",
+          "source_file": "paper_Empathy-based helping_ Is it selflessly or selfishly motivat.md",
+          "location": "General Discussion段落"
+        }
+      ]
+    },
+    {
+      "claim": "Oneness（自我-他人融合）框架：引发共情关注的条件（关系亲密、观点采择）同时也增强了自我-他人重叠感知，因此共情条件下的助人可能并非无私而是指向扩大了的自我。融合是概念性的而非物理性的。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "they argue that the conditions that lead to empathic concern also lead to a greater sense of self-other overlap, raising the possibility that helping under these conditions is not selfless but is also directed toward the self.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "摘要段落"
+        },
+        {
+          "excerpt": "What is merged is conceptual, not physical. We are not suggesting that individuals with overlapping identities confuse their physical beings or situations with those of the other.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "自我-他人融合理论段落"
+        }
+      ]
+    },
+    {
+      "claim": "Batson承认共情-利他模型关键依赖自我与他人分离性。从进化论视角Hamilton的包容性适合度瓦解了自我-他人区分：'自我利益中的自我'可以存在于身体之外。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "accumulating evidence suggests that a merging of self and other identity can occur and that it is most likely under conditions linked by the empathy-altruism model to feelings of attachment and altruistic motivation: relationship closeness and perspective taking.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "自我-他人融合文献回顾段落"
+        },
+        {
+          "excerpt": "Hamilton's position, which is now widely accepted among evolutionary theorists, is that individuals do not so much attempt to ensure their own welfare and survival as to ensure the welfare and survival of their genes. This is a crucial point for conceptualizations of true altruism in that it implies that the self in self-interest can lie outside of one's body",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "The Self in the Other段落"
+        }
+      ]
+    },
+    {
+      "claim": "对Batson范式的方法论批评：逐个排除利己因素的序贯策略存在元方法论缺陷——从未同时检验所有利己变量，oneness正是被遗漏的关键利己因素。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "there is a problem with its one-at-a-time approach to dealing with egoistic alternatives. After all, the fundamental dispute the empathy-altruism model attempts to resolve is not between altruism, considered as a",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "A Methodological Rationale段落"
+        },
+        {
+          "excerpt": "there is a meta-methodological weakness in the overall approach. Consider the following sequence of experimentation. To examine whether a particular egoistic factor, concern about social approval, could account for seemingly selfless action, researchers conducted a set of studies that removed or controlled for the role of such concern and that still found evidence of selfless responding",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "A Methodological Rationale段落"
+        }
+      ]
+    },
+    {
+      "claim": "Oneness测量采用双指标：自我-他人包含量表（IOS，7对递增重叠圆圈）和'我们'词语使用程度评分。助人测量采用7个递增成本选项的加权量表。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the level of cost associated with each of these seven options was determined in pilot work in which 21 introductory psychology students rated (on a 0 to 100 scale) each of the options in terms of its cost to the helper. The resultant ratings (divided by 10) formed weights that were applied to each option.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Helping measure段落"
+        },
+        {
+          "excerpt": "The first item incorporated the Inclusion of Other in the Self (IOS) Scale used by Aron et al. (1992) to measure perceived self-other boundary overlap. It consisted of a set of seven pairs of increasingly overlapping circles. The second item asked participants to indicate on a 7-point scale the extent to which they would use the term we to describe their relationship with the evicted person.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Mediational measures段落"
+        }
+      ]
+    },
+    {
+      "claim": "研究1核心发现：共情关注对助人的效应在控制oneness后完全消失，而oneness在控制共情关注后仍显著——oneness是助人的功能性因果变量，共情关注仅是伴随现象。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "That analysis produced a supportive and highly significant effect, F(3, 82) = 33.28, p < .001. The helping means associated with each of the levels of relationship closeness are pre",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Study 1 Results段落"
+        },
+        {
+          "excerpt": "When the effect of oneness was extracted from the analysis, the empathy-altruism model's proposed source of altruistic motivation (empathic concern) no longer had any impact on helping. One implication of these findings is that empathic concern had appeared to motivate helping in past work only because it is a concomitant of oneness, which had not been measured or taken into account.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Study 1讨论段落"
+        }
+      ]
+    },
+    {
+      "claim": "研究2使用失去双亲的儿童情境（受害者无责、高共情诱发常用情境）验证结果普适性。研究3采用2×3因子设计（关系亲密×需求严重程度），路径分析确认oneness是唯一中介变量。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "To assure that the empathy-altruism hypothesis would have a good opportunity for support, we chose a type of victim that had been used frequently in studies confirming that hypothesis and that was likely to evoke a high degree of empathic concern: recently orphaned children.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Study 2引言段落"
+        },
+        {
+          "excerpt": "Two independent variables, relationship closeness and severity of need, were crossed in a 4 X 3 factorial design.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Study 3 Independent Variables段落"
+        },
+        {
+          "excerpt": "the phone call scenario was weighted 3.3, the eviction scenario was weighted 6.6, and the orphaned children scenario was weighted 8.8.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Study 3 severity weighting段落"
+        },
+        {
+          "excerpt": "oneness was the only explored predictor to mediate the effects of the manipulated variables on helping. Although relationship closeness and severity of need did indeed increase levels of empathic concern, personal distress, and sadness, these latter constructs did not influence helping when oneness was in the model.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Study 3路径分析结果段落"
+        }
+      ]
+    },
+    {
+      "claim": "三个研究核心一致性发现：共情关注始终预测助人且在控制个人痛苦/悲伤后仍显著，但引入oneness后共情关注效应完全消失。共情关注与oneness有共享方差（制造了共情中介作用的错觉），但两者明显不是同一构念。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Invariably, when a nonaltruistic factor that covaries with empathic concern was introduced to the analyses, it reduced the impact of empathic concern to nonsignificance. That nonaltruistic factor, oneness, reflects a sense of interpersonal unity, wherein the conceptions of self and other are not distinct but are merged to some degree.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "General Discussion段落"
+        },
+        {
+          "excerpt": "Empathic concern was influenced by severity of need whereas oneness was not, and empathic concern was linked tightly with personal distress and sadness whereas oneness was not. Although oneness and empathic concern apparently share some variance—shared variance that we believe has produced an illusion of empathic concern's mediating role—these variables are clearly not the same.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Discussion-区分构念段落"
+        }
+      ]
+    },
+    {
+      "claim": "共情-利他模型的根本困境：利他条件（人际亲密和观点采择）恰好也是增强自我-他人融合的条件，助人行为是否真正反映了利他主义所要求的无私性值得怀疑。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "If the circumstances specified in the model as leading to truly altruistic acts (interpersonal closeness and perspective taking instructions) are the same circumstances that enhance the merging of self and other, then one can doubt whether those helpful acts reflect the selflessness required of true altruism.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "General Discussion段落"
+        }
+      ]
+    },
+    {
+      "claim": "共情关注与oneness共同受关系亲密程度影响——关系越亲密越可能观点采择，同时促进共同性感知和同情心。但驱动助人的是共同性而非同情心。跨文化证据：非西方社会自我-他人重叠概念占主导，东方文化更愿帮助内群体。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "What strikes us as most instructive about our results is that it is the commonality, not the compassion, that generates helping. We believe that this is so because the primary role of empathic concern is to serve",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "Speculations and Connections段落"
+        },
+        {
+          "excerpt": "citizens of Eastern communal cultures, who imbibe more of their self-concepts into their groups, are more willing than Westerners to help in-group members and less willing to help out-group members",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "跨文化讨论段落"
+        }
+      ]
+    },
+    {
+      "claim": "否定纯粹利他主义不等于愤世嫉俗——人类发展出了将帮助动机延伸至远距离他人的系统（基于自我与他人交集），为强调共同性而非差异性的规范和教育信息提供了前景。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "we are much impressed by the reach of the system for distributing aid that spurs individuals to help not just close others but distant others with whom one can see a connection or share a perspective as well. That our species has adapted a system that extends helping motivation to remote victims strikes us as commendable and ennobling.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "A Final Word段落"
+        },
+        {
+          "excerpt": "it provides a rationale for assistance based on the intersection of self and others, such a system offers promising prospects for normative and educational messages that emphasize commonalities rather than differences among people.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "A Final Word段落"
+        }
+      ]
+    },
+    {
+      "claim": "社会规范概念在社会科学中长期存在争议：一派认为规范至关重要，另一派认为概念模糊、过度泛化、自相矛盾且不适合实证检验。焦点规范理论通过理论精炼回应了这一批评。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We argue that norms do have a substantial impact on human action; however, the impact can only be properly recognized when researchers (a) separate 2 types of norms that at times act antagonistically in a situation—injunctive norms (what most others approve or disapprove) and descriptive norms (what most others do)—and (b) focus Ss' attention principally on the type of norm being studied.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "摘要段落"
+        },
+        {
+          "excerpt": "it appears that norms can be influential in directing human action; however, in keeping with the spirit of prior criticism of normative explanations, it is necessary for norm theorists to be specific about both the type of norm (injunctive or descriptive) thought to be acting in a situation and about the conditions",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Theoretical Implications段落"
+        },
+        {
+          "excerpt": "there is no current consensus within social psychology about the explanatory and predictive value of social norms. On the one hand are those who see the concept as crucial to a full understanding of human social behavior...On the other hand are those who view the concept as vague and overly general, often contradictory, and ill-suited to empirical test",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "I. The Concept of Social Norms段落"
+        },
+        {
+          "excerpt": "two questions need to be answered: (1) Do behavioral patterns confirm our theorized distinction between descriptive and injunctive norms? and (2) is focus a critical mediator of which type of norm guides behavior?",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "理论验证框架段落"
+        }
+      ]
+    },
+    {
+      "claim": "九项乱丢垃圾研究全部在自然场景中进行以最大化外部效度，研究1证实描述性规范凸显显著增强其对乱丢行为的影响，干净环境中看到他人丢垃圾反而减少乱丢——支持规范焦点预测而非模仿或损害评估解释。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "we wanted to maximize our external validity in order to offer suggestions for litter-abatement programs. Thus we conducted the bulk of our research in field settings to increase our ability to generalize to such settings.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "方法论选择段落"
+        }
+      ]
+    },
+    {
+      "claim": "Study 2通过操控垃圾数量发现规范违反程度越大时规范聚焦抑制效果越强（高聚焦+两张传单条件乱扔率最低9.4%）。无规范聚焦时两张传单反而比一张导致更多乱扔。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The experimental design was a 2 × 4 between-participants design. The first factor, arousal, had two levels: high versus low. The second factor, relatedness, had four levels of conceptual relatedness to the antilittering norm: close, moderate, far, and unrelated, each with two exemplars.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 1方法段"
+        },
+        {
+          "excerpt": "Consistent with prior research indicating that the amount of litter in an environment is an important determinant of littering, pilot testing indicated that very few participants would litter if there was no litter present in the stairwell. Thus, the stairwell was prelittered for all participants.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 1方法段"
+        },
+        {
+          "excerpt": "if we are correct that norm-focus procedures activate the relevant norm to guide subsequent behavior in a norm-consistent direction, then it should be the case that the more a behavior countervenes a focal norm, the more it will be suppressed.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 2介绍段"
+        },
+        {
+          "excerpt": "the high norm-focus/two-handbill condition produced less littering (9.4%) than either the low norm-focus/two-handbill condition (42.5%), χ²(1, N = 149) = 9.72, p < .01, or the high norm-focus/one-handbill condition (25.6%), χ²(1, N = 149) = 3.11, p = .08.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 2结果段"
+        },
+        {
+          "excerpt": "rather than reducing littering as it had in the high norm-focus conditions (26% vs. 9%), the presence of two handbills increased littering somewhat in the low norm-focus conditions (34% vs. 43%). ... many of our participants seem to have responded to other, nonnormative aspects of the circumstances they encountered, such as the greater annoyance or inconvenience of having to deal with two identical handbills.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 2讨论段"
+        }
+      ]
+    },
+    {
+      "claim": "Study 3通过闭路电视操控自我聚焦检验个人规范：聚焦于自我时仅个人规范强的被试减少乱扔；聚焦于指令性社会规范时无论个人规范强弱都显著减少乱扔，即使独处无被检测可能。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Schwartz (1973, 1977) has argued persuasively that individuals possess personal norms (internal standards for particular conduct) and that these personal norms influence behavior powerfully. It seemed likely to us that individuals would differ in their personal norms regarding littering. It also seemed likely that these personal norms would be most directive of behavior when individuals were focused inwardly where the norms reside.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 3介绍段"
+        },
+        {
+          "excerpt": "To focus individuals on their personal norms regarding littering, we drew on procedures developed in research on self-awareness. Individuals who see themselves in mirrors or on television monitors experience increased self-awareness, which is characterized by greater attention to one's inner states and traits. ... we exposed them to a closed circuit TV picture of themselves (internal focus) or of geometric shapes (external focus)",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "Study 3方法段"
+        },
+        {
+          "excerpt": "our results show that it is not merely the extent of the focus but rather the character of the underlying norm when there is focus that is key in determining how normatively consistent or inconsistent behavior will be. For example, in Study 3, we manipulated norm focus but found that its influence on behavior depended on the strength of the target norm.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "General Discussion段"
+        },
+        {
+          "excerpt": "the social norm-focused subjects showed significantly retarded littering tendencies regardless of their personal norm status. It was only in the (injunctive) social norm-focused condition that even the weak personal norm subjects suppressed their littering.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 9结果段落"
+        },
+        {
+          "excerpt": "because subjects were alone with no chance of detection when making their littering decisions, the suppressed littering rates in the (injunctive) social norm-focus condition offer support for our first prediction that such a focus would be influential in the absence of the possibility of direct social sanctions.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 9结果段落"
+        }
+      ]
+    },
+    {
+      "claim": "高自我监控者主要依据他人认可（社会规范更凸显），低自我监控者主要依据个人标准（个人规范更凸显）。三种规范类型间存在感知联系，同时聚焦一种规范及其与另一种的联系可能同时激活两种。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "we are convinced that both constructs are importantly generative of normative conduct, but which one has the greater impact on action in any given setting will depend on whether the actor is focused on internal or external standards and sanctions for that action.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Study 9前段落"
+        },
+        {
+          "excerpt": "the low self-monitor, who tends to orient primarily to personal standards in the determination of his or her conduct, should find personal norms chronically more salient; whereas the high self-monitor, who tends to orient primarily to the approval of others in the determination of his or her conduct, should find injunctive and (to a lesser degree) descriptive social norms more salient.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Conclusions-未探索问题段落"
+        },
+        {
+          "excerpt": "there is normally a relationship between what most people do and what most people approve/disapprove, just as there is normally a relationship between societal and individual standards of conduct.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Conclusions-规范关系段落"
+        }
+      ]
+    },
+    {
+      "claim": "九项研究三点核心结论：(1)规范确实系统有力地影响人类行为；(2)至少存在三种独立规范类型；(3)行为随当前最凸显的规范类型而改变。实践启示：激活指令性社会规范在最多情境和人群中产生亲社会效果。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Cialdini, Reno, and Kallgren (1990) argued that social norms do affect human action systematically and powerfully but that the impact of these norms can only be established through the application of certain theoretical refinements that have not been traditionally or rigorously applied in the past. The first such refinement is definitional... Cialdini et al. (1990) called the first of these normative types descriptive norms (the norms of is) and called the second type injunctive norms (the norms of ought). ... The second theoretical refinement involves Cialdini et al.'s (1990) contention that a particular social norm—of either the descriptive or injunctive variety—is unlikely to influence behavior unless it is focal (i.e., salient) for an individual at the time of behavior.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "理论介绍段"
+        },
+        {
+          "excerpt": "norm-focus procedures will be more useful in producing desirable behavior if the relevant norm is injunctive in character (specifying what most people approve/disapprove) rather than descriptive (specifying what most people do). That is so because focal injunctive norms have been shown to stimulate prosocial conduct across a wider range of settings and circumstances than descriptive norms",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ When Norms Do and Do no.md",
+          "location": "研究目的段"
+        },
+        {
+          "excerpt": "of the three types of norms we have discussed, injunctive social norms-once activated-are likely to lead to beneficial social conduct across the greatest number of situations and populations.",
+          "source_file": "paper_A Focus Theory of Normative Conduct_ A Theoretical Refinemen.md",
+          "location": "Conclusions段落"
+        }
+      ]
+    },
+    {
+      "claim": "社会影响研究从经典显性压力范式（Milgram、Asch）转向关注微妙、间接、无意识的影响过程。三大核心动机：准确性、归属、积极自我概念。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "researchers have tended to concentrate their efforts on examining social inﬂuence processes that are subtle, indirect, and nonconscious.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "INTRODUCTION段落"
+        },
+        {
+          "excerpt": "three central motivations—to be accurate, to aﬃliate, and to maintain a positive self-concept—drive targets’ cognitions and behaviors in the areas of compliance and conformity.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "INTRODUCTION段落"
+        },
+        {
+          "excerpt": "we emphasized three core motivations that\nprovide the bases for targets’ responses to inﬂuence attempts: accuracy, afﬁliation,\nand the maintenance of a positive self-concept.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "CONCLUSION 段落"
+        },
+        {
+          "excerpt": "recent research has tended to favor social inﬂuence processes\nthat are subtle, indirect, heuristic-based, and outside of awareness.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "CONCLUSION 段落"
+        }
+      ]
+    },
+    {
+      "claim": "情感注入模型（AIM）：信息处理需努力性加工时目标情绪渗透到请求处理中，不寻常请求更容易受情绪影响。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "the processing of a request will be more sensitive to mood if the appeal is unconventional (requiring more substantive processing), and rather impervious to mood if it is conventional.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "Goal of Accuracy - AFFECT AND AROUSAL段落"
+        }
+      ]
+    },
+    {
+      "claim": "恐惧-然后-释然技术：先引发恐惧再消除恐惧提高顺从率，被试恐惧消除后以相对无意识方式行动因为认知资源被反事实思维分散。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Drivers who experienced apprehension followed by assuagement were more likely to comply with a request than those who continued to be anxious or those never made anxious in the ﬁrst place.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "fear-then-relief段落"
+        },
+        {
+          "excerpt": "fear-then-relief participants behaved in a relatively mindless manner, caused by a diversion of resources to cognitions and counterfactuals regarding the fear-provoking event.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "fear-then-relief段落"
+        }
+      ]
+    },
+    {
+      "claim": "That's-Not-All技术的锚点解释：初始请求提高锚点使修改后的更好交易落入接受范围。破坏-然后-重构（DTR）须先扰乱目标高层事件表征才能重新框架化，TNA是DTR特例。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "by ﬁrst elevating a prospective customer’s anchor point, the salesperson increases the likelihood that the better deal will fall into a range of acceptance that is based on this higher anchor point",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "THAT’S-NOT-ALL TECHNIQUE段落"
+        },
+        {
+          "excerpt": "In the case of an unreasonably large initial request, the excessively high anchor value may be perceived as completely out of the range of acceptance, leading to immediate rejection even before the solicitor has a chance to revise the request",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "THAT’S-NOT-ALL TECHNIQUE段落"
+        },
+        {
+          "excerpt": "a target’s general, high-order representation of the event (“I am being solicited”) must be disturbed before the issue can be reframed (“It’s a bargain”) for the target.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "RESISTANCE段落"
+        }
+      ]
+    },
+    {
+      "claim": "Alpha力（推动顺从）和Omega力（抑制抵抗力）可能是性质不同的力量，Omega策略研究严重不足。软策略（基于专家权力/个人因素）与硬策略（基于层级合法权力）的区分。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "forces drawing targets away from compliance (omega forces) in any given circumstance may be of a qualitatively different nature than those driving them toward compliance (alpha forces).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "RESISTANCE段落"
+        },
+        {
+          "excerpt": "supervisors’ usage of primarily soft strategies has been found to correlate positively with subordinates’ job satisfaction ratings, whereas there are indications that the reverse may be true when predominantly harsh tactics are employed",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "AUTHORITY AND OBEDIENCE段落"
+        }
+      ]
+    },
+    {
+      "claim": "权威对下属的公平尊重对待可提高自愿顺从水平，非强制与强制措施结合效果最佳（前提是不破坏非强制措施带来的态度性顺从）。组织中服从权威的规范根深蒂固，下属经常执行命令而很少考虑伦理后果。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "the level of volition associated with compliance is a function of the quality of the treatment subordinates receive",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "AUTHORITY AND OBEDIENCE段落"
+        },
+        {
+          "excerpt": "supervisors whose compliance-gaining repertoires included the use of both forceful and nonforceful techniques were most likely to elicit compliance with their requests.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "AUTHORITY AND OBEDIENCE段落"
+        },
+        {
+          "excerpt": "the norm is so well entrenched in organizational cultures that orders are regularly carried out by subordinates with little regard for potential deleterious ethical consequences of such acts",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "AUTHORITY AND OBEDIENCE段落"
+        }
+      ]
+    },
+    {
+      "claim": "归属动机驱动顺从：遵循互惠和社会交换规范建立、维持亲密度。喜欢启发式：越喜欢某人越愿意顺从，在认知负荷重时更可能自动使用该规则。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "we use approval and liking cues to help build, maintain, and measure the intimacy of our relationships with others. We also move closer to achieving these aﬃliation-oriented goals when we abide by norms of social exchange with others, such as the norm of reciprocity.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "Goal of Afﬁliation段落"
+        },
+        {
+          "excerpt": "Because we so often rely on the heuristic rule that the more we like someone with whom we have an existing relationship, the greater should be our willingness to comply with the request, we tend to use the rule automatically and unwittingly when the request comes from strangers, as well",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "LIKING段落"
+        }
+      ]
+    },
+    {
+      "claim": "留面子技术（DITF）的互惠让步机制：成功关键在于目标感知到请求者做出真正让步，让步大到被感知为真实后继续增大差距影响很小。当有理由怀疑使用销售技巧时效果减弱。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the success of the strategy hinges on the target’s perception that the requester has made a legitimate concession",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "DITF段落"
+        },
+        {
+          "excerpt": "any retreat sizeable enough to be perceived as a genuine concession will activate the mechanism for a concession in return. Thus, once a certain threshold is met...increasing the difference between the sizes of the requests would have little effect on the outcome.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "DITF段落"
+        },
+        {
+          "excerpt": "individuals in a DITF scenario will be less likely to fall victim to the technique when they have reason to suspect that the requester is employing a sales device",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "DITF段落"
+        }
+      ]
+    },
+    {
+      "claim": "登门坎技术（FITD）核心机制是自我知觉：同意初始小请求后根据近期行动给自己归因特质。自我概念清晰度高的个体更容易受影响。目标行为上履行初始请求时更可能顺从第二请求。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "after agreeing to the initial request, targets ascribe traits to themselves reﬂecting their recent actions, and this change in self-view helps direct future compliance.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "FITD段落"
+        },
+        {
+          "excerpt": "only those with clearer self-concepts would succumb to FITD; the results generally supported the hypothesis and were congruent with a self-perception account of FITD effects.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "FITD段落"
+        },
+        {
+          "excerpt": "targets are more likely to comply with the second request when the initial appeal is behaviorally fulﬁlled (or at least attempted), and less likely to comply when the ﬁrst request is so large that nearly everyone refuses.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "FITD段落"
+        }
+      ]
+    },
+    {
+      "claim": "主动承诺比被动承诺更持久、更极端，更费力的选择促使个体将决定归因于自身特质。公开承诺比私人承诺更持久，低价球技术的关键是承诺的公开性质。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "participants who made an active rather than a passive choice took a more extreme position toward their decision (even weeks later) and were more likely to show up if they had agreed to volunteer.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "CONSISTENCY AND COMMITMENT段落"
+        },
+        {
+          "excerpt": "more effortful displays of one’s choice spurred individuals to attribute their decisions to their traits, attitudes, and tendencies to a much greater extent than those who made passive commitments.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "CONSISTENCY AND COMMITMENT段落"
+        },
+        {
+          "excerpt": "Public commitments also tend to be more persistent than private commitments",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "CONSISTENCY AND COMMITMENT段落"
+        },
+        {
+          "excerpt": "the public nature of the commitment is the keystone of the low-ball technique’s efﬁcacy",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "CONSISTENCY AND COMMITMENT段落"
+        }
+      ]
+    },
+    {
+      "claim": "信息性从众与规范性从众的区分（Deutsch & Gerard）：前者基于形成准确现实解释的欲望，后者基于获得社会认可。强准确性目标可对抗规范性压力。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Deutsch & Gerard (1955) distinguished between informational and normative conformity motivations, the former based on the desire to form an accurate interpretation of reality and behave correctly, and the latter based on the goal of obtaining social approval from others.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "CONFORMITY段落"
+        },
+        {
+          "excerpt": "only those primed with a motivation to make accurate decisions and who were held accountable for their judgments would resist pressures to conform to the audience’s known but ﬂawed decision.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "Goal of Accuracy - Conformity段落"
+        }
+      ]
+    },
+    {
+      "claim": "多数派与少数派影响的两条理论路径（转换理论vs客观共识观点）并非互斥——个体先前态度强度决定哪条路径占主导。人们对偏见表达的意愿与感知到的他人认可程度近乎完美相关。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "when the target’s previously formed opinion is strongly opposed to the message being conveyed, the recipient’s motivation to avoid deviance from the majority group will hamper message elaboration...and instead focus the individual on the normative concerns of ﬁtting in",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "PERCEIVED CONSENSUS段落"
+        },
+        {
+          "excerpt": "Crandall et al.\n(2002) advocated a return to a social normative approach to study the phenomenon,\nﬁnding an almost perfect correlation between individuals’ likelihood of expressing\nor tolerating prejudice and their perceptions of the extent to which most others\napprove of those behaviors.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "PERCEIVED CONSENSUS 段落末尾"
+        }
+      ]
+    },
+    {
+      "claim": "高偏见参与者得知自己的态度被多数人共享后与非洲裔美国人就座距离进一步增大，说明感知到的共识强化了基于偏见的人际距离行为。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Sechrist & Stangor (2001) found that higher prejudiced\nparticipants sat at a greater distance from an African American confederate than\ndid those lower prejudiced participants; most interesting, however, was the ﬁnding\nthat this difference was heightened when the participants learned that their attitudes\nwere shared by a clear majority of other individuals.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "PERCEIVED CONSENSUS 段落"
+        }
+      ]
+    },
+    {
+      "claim": "动态社会影响理论(DSIT)预测社会系统出现四种自组织形式：态度聚集、多样性减少（固化）、聚类成员间态度相关性、持续多样性。少数派态度的聚类因局部多数优势而难以消解。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The model predicts\nfour core forms of self-organization emerging within the aggregate: (a) clustering\nof attitudes (or opinions, behavioral tendencies, etc.) in social space; (b) a reduc-\ntion in diversity via a consolidation of attitudes; (c) correlations across attitudes\npossessed by cluster members; and (d) continuing diversity (i.e., lack of complete\nconvergence) of attitudes.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "DYNAMICAL SYSTEMS 段落"
+        },
+        {
+          "excerpt": "Regarding this last point, clusters of individuals sharing\nthe minority attitude rarely dissolve because each member of that cluster is sur-\nrounded by a local numerical majority of individuals holding that same minority\nattitude; that is, as a general rule, the self-reinforcing nature of clusters tends to\nperpetuate their existence once they are formed.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "DYNAMICAL SYSTEMS 段落"
+        }
+      ]
+    },
+    {
+      "claim": "变色龙效应完全在意识觉察之外运作：个体无意识地模仿互动对象的面部表情和举止，被模仿者对模仿者产生更高好感。亲和目标受挫后再被激活时效应被增强。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Chartrand & Bargh (1999) found that participants nonconsciously conformed\ntheir facial expressions and mannerisms to closely mirror a confederate’s gestures.\nIn addition, individuals exposed to an interaction partner who mimicked their be-\nhaviors increased their afﬁnity for that person, which suggests that the process is\nfunctional in building rapport and promoting the development of social relation-\nships (Chartrand & Bargh 1999; see also Hess et al. 1999).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "BEHAVIORAL MIMICRY 段落"
+        },
+        {
+          "excerpt": "Furthermore, a second study revealed that the chameleon effect and its subsequent\nimpact on rapport building were augmented when participants’ nonconscious goals\nto afﬁliate were ﬁrst thwarted.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "BEHAVIORAL MIMICRY 段落"
+        }
+      ]
+    },
+    {
+      "claim": "行为模仿的介导机制是感知-行为链接：对他人感知表征无意识地直接激活特定举止的行为表征。增强对他人注意力时模仿更可能发生。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The authors argued\nthat the mediating mechanism responsible for the effect is the perception-behavior\nlink (see Dijksterhuis & Bargh 2001). That is, individuals’ perceptual representa-\ntions of others’ behaviors nonconsciously and directly activate mannerism-speciﬁc\nbehavioral representations that manifest themselves in the individuals’ mimicking\nactions. Thus, behavior matching is more likely to occur in circumstances that\nenhance a would-be imitator’s attentional focus on others (Gump & Kulik 1997)\nand less likely to occur in situations that diminish external focus (Sanchez-Burks\n2002) or speciﬁcally motivate internal focus (Johnston 2002).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "BEHAVIORAL MIMICRY 段落"
+        }
+      ]
+    },
+    {
+      "claim": "集体主义文化比个人主义文化更倾向从众。波兰参与者比美国参与者更倾向基于同伴行为决策。文化赋予从众和反从众不同含义：东亚反从众代表偏离，西方代表独特性。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Similarly, Cialdini et al. (1999) found that when considering whether\nto comply with a request, participants were more likely in a collectivistic country\n(Poland) than in an individualistic country (the United States) to base their de-\ncisions on the actions of their peers.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "GAINING SOCIAL APPROVAL 段落"
+        },
+        {
+          "excerpt": "Kim & Markus (1999) argued that cultures\nassign very different meanings to the concepts of conformity and nonconformity;\nspeciﬁcally, nonconformity represents deviance in East Asian cultures but unique-\nness in Western cultures. The authors demonstrated that the culturally assigned\nmeanings attached to these concepts are evident in each culture’s respective mag-\nazine ads, and manifested themselves in participants’ preferences and choices for\nobjects. For example, when asked to make a selection out of an array containing\npens of two colors—one color in the majority and the other color in the minority—\nEast Asians tended to pick the pen characterized by the majority color, whereas\nAmericans were inclined to choose the pen marked by the less common color.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "GAINING SOCIAL APPROVAL 段落"
+        }
+      ]
+    },
+    {
+      "claim": "即使在互联网匿名环境中被排斥也会导致自尊降低、归属需求增加和更多从众——即使排斥者与后续从众对象完全不同。仅观察他人被幽默嘲笑就足以增加从众行为。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Williams et al.\n(2000)demonstratedthepotentinﬂuenceofovertsocialexclusionovertheInternet,\na domain whose inherent anonymity suggests the negative effects of ostracism\nmight be attenuated. Despite the potentially mitigating role of privacy, the authors\nnonetheless found that participants who were ignored in a virtual ball toss game\nwere more likely to report lower self-esteem and a greater need for belongingness,\nandconformedmoretothejudgmentsofacompletelydifferentgroupinalatertask.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "GAINING SOCIAL APPROVAL 段落"
+        },
+        {
+          "excerpt": "participants who watched a videotape in which a person humorously ridiculed\nanother were more inclined than those who viewed other scenes (i.e., no humorous\nridicule or a person engaging in humorous self-ridicule) to match their opinions to\nthose of other ostensible participants (Janes & Olson 2000).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "GAINING SOCIAL APPROVAL 段落末尾"
+        }
+      ]
+    },
+    {
+      "claim": "通过让个体聚焦于自我价值内在基础来肯定自我概念可降低从众行为，聚焦于外在自尊来源则无此效果。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "individuals\nwho focused on a fundamental foundation of their self-worth, such as a self-\nattribute, were less likely to conform later to others’ opinions than were control\ncondition participants or those who focused on an external source of self-esteem,\nsuch as an achievement (Arndt et al. 2002).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "Goal of Maintaining a Positive Self-Concept 段落"
+        }
+      ]
+    },
+    {
+      "claim": "自我归类理论认为信息性影响和规范性影响的区分是虚假二分法，两者多数情况下相互关联。多数派和少数派影响的经典效应只在信息源是内群体成员时出现。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Self-categorization theory holds that the\nconventional distinction between informational and normative inﬂuence creates\na false dichotomy because the two processes are interrelated in most cases; nor-\nmativeness implies accuracy, and vice versa (David & Turner 2001).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "MAJORITY AND MINORITY INFLUENCE 段落"
+        },
+        {
+          "excerpt": "In support of self-categorization considerations, the classic effects\nof majority and minority inﬂuence have been found only in situations in which the\nsource is an ingroup member. When they are outgroup members, irrespective of\nsource status, participants tend to engage in no attitude change (Alvaro & Crano\n1997) or to move their opinions in the direction opposite of the advocated position\n(David & Turner 1996).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "MAJORITY AND MINORITY INFLUENCE 段落"
+        }
+      ]
+    },
+    {
+      "claim": "SIDE模型：去个体化不是无意识非理性行为而是可能基于有意义身份认同的有意识理性过程。匿名条件下个体遵从群体身份定义的局部规范。匿名群体成员被隐蔽启动特定群体规范后比可识别成员更可能遵从。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The SIDE model distinguishes itself from classical deindividuation accounts in\nthat “responsiveness to a group norm is not a mindless or irrational process reﬂect-\ning a reduced sense of self . . . but may be a conscious and rational process relating\nto a meaningful sense of identity” (Spears et al. 2001, p. 336). In support of the\npredictions laid out by the SIDE model, a meta-analysis conducted by Postmes &\nSpears (1998) revealed that rather than engage in antinormative activities, individ-\nuals subjected to deindividuation procedures instead conformed their behaviors to\nlocal, situation-speciﬁc norms deﬁned by the group identity.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "DEINDIVIDUATION EFFECTS 段落"
+        },
+        {
+          "excerpt": "Postmes et al. (2001) showed that\nmembers of anonymous groups unwittingly primed with a particular group norm\nwere more likely to follow (and socially transmit) that norm than were members of\nidentiﬁable groups, an effect mediated by their identiﬁcation with the group. It is\nnoteworthy, however, that these behaviors are related to cognitive processes rather\nthan strategic motives, in which self-presentational concerns would be paramount.\nThus, the differential effects of anonymity and identiﬁability may be reversed—\nthat is, identiﬁable individuals may be more likely to adhere to group norms than\nanonymous individuals—when group members face social sanctions for norm\ndeviance (Sassenberg & Postmes 2002).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "DEINDIVIDUATION EFFECTS 段落"
+        }
+      ]
+    },
+    {
+      "claim": "共同身份群体在匿名条件下比共同纽带群体表现出更高群体显著性和对群体规范的遵从。但当面临社会制裁时匿名与可识别的效应可能反转。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "common-identity groups\n(inwhichmembersperceiveacommonsocialidentitywiththeentiregroup)exhibit\ngreatergroupsalienceandaremorelikelytoinduceconformitytogroupnormsthan\nare common-bond groups (characterized by bonds between individual group mem-\nbers) when members are anonymous (Sassenberg 2002); some evidence suggests\nthat the opposite may be true when members are identiﬁable (Spears et al. 2001).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "DEINDIVIDUATION EFFECTS 段落"
+        }
+      ]
+    },
+    {
+      "claim": "内群体少数派引发间接态度改变（改变相关议题而非焦点议题），原因是信息接收者精细加工信息、避免与少数派认同、不愿贬低信息源并经历信念系统失衡。间接改变随时间引发认知失衡最终导致焦点态度也改变——两阶段认知纠偏过程。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "Alvaro & Crano (1997) suggested that an ingroup minority provokes\nindirect change—that is, change in a target’s attitude toward matters related to the\nfocal issue, but not toward the focal issue itself—because the message recipient\n(a) elaborately processes the information because of its distinctive source,\n(b) wishes to avoid identiﬁcation with the source, (c) is motivated not to denigrate\nthe source or counterargue the message in the name of ingroup solidarity, and\n(d) experiences an imbalance in the system of beliefs surrounding his or her focal\nattitude.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "MAJORITY AND MINORITY INFLUENCE 段落"
+        },
+        {
+          "excerpt": "Crano & Chen (1998) proposed that\nthis shift in related attitudes would provoke a further cognitive imbalance between\nthe newly changed related attitudes and the unmoved focal attitude; this cognitive\nincongruence would be redressed over time by eventually changing one’s focal at-\ntitude to comport with the recently shifted attitudes.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "MAJORITY AND MINORITY INFLUENCE 段落"
+        }
+      ]
+    },
+    {
+      "claim": "当个体先前态度强烈反对传达信息时避免偏离多数的动机阻碍精细加工；态度温和反对时更可能深入加工。信息源和议题都低相关且无先前态度时使用准确性启发式。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "when the target’s previously formed opinion is strongly opposed to the\nmessage being conveyed, the recipient’s motivation to avoid deviance from the\nmajority group will hamper message elaboration (unless a target’s self-interest is\nspeciﬁcally threatened) (Martin & Hewstone 2001) and instead focus the individ-\nual on the normative concerns of ﬁtting in, a process consistent with conversion\ntheory. On the other hand, when recipients hold moderately opposing attitudes\ntoward the message topic, they are more receptive to the position endorsed by the\nmajority, and therefore more likely to engage in extensive processing of the mes-\nsage and see the group with the numerically superior advantage as representing\nan objective consensus; this ﬁnding is congruent with Mackie’s (1987) account.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "PERCEIVED CONSENSUS 段落"
+        },
+        {
+          "excerpt": "When both the source and the issue were of low relevance to targets holding no\nprior attitudes on the subject, the targets applied little cognitive effort to process the\nmessage, often using an accuracy heuristic favoring the majority (Erb et al. 1998).",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "PERCEIVED CONSENSUS 段落"
+        }
+      ]
+    },
+    {
+      "claim": "启动实验显示不对称效应：从众相关概念启动增加从众，但非从众概念启动不一定增加偏离。双重文化身份的种族少数群体成员在镜中看到自身外貌（触发被排斥意识）后更倾向将艺术判断从众于主流文化群体。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Epley & Gilovich\n(1999) demonstrated that individuals primed with words conceptually related to\nconformity were more likely than those primed with neutral words to adhere to\nsubjective evaluations made by a group of confederates. Participants primed with\nnonconformity terms, however, were no more likely to deviate from the confeder-\nates’ responses than those primed with neutral terms.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "AUTOMATIC ACTIVATION 段落"
+        },
+        {
+          "excerpt": "They\nreported that Chinese Canadian participants were more likely to conform their\nsubjective judgments of artwork to those made by European Canadians (but not\nother Chinese Canadians) only after viewing their own reﬂections in a mirror; the\ndata suggest normative motives, in particular, had been activated.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "GAINING SOCIAL APPROVAL 段落"
+        }
+      ]
+    },
+    {
+      "claim": "内群体少数派在即时公开情境中施加压力使目标遵从多数立场，但紧迫性和公开性消退后目标参照框架扩展纳入外群体，开始感知内群体少数派与自我相似，在延迟私下测量上表现出少数派影响。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "When the immediacy and public nature of the circumstances is no longer\npressing, and the salience of that prior conﬂict wanes, the target’s frame of ref-\nerence expands to incorporate the outgroup, leading the target to perceive the\ningroup minority as similar to the self. The target is then more likely to manifest\nthese perspective changes (and the subsequent inﬂuence of the ingroup minor-\nity) on delayed, private, and less direct measures.",
+          "source_file": "paper_Social Influence_ Compliance and Conformity.md",
+          "location": "MAJORITY AND MINORITY INFLUENCE 段落"
+        }
+      ]
+    },
+    {
+      "claim": "规范焦点模型的关键理论贡献：即使在行为受强有力指令性规范约束的情况下，单纯凸显描述性规范也能产生与指令性规范相反的行为效应，证明两类规范可以对抗性地起作用。同一注意力聚焦程序可产生完全相反的行为效应。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "It should be noted that the second component of this predicted interaction adds important conceptual weight to our test in that it is contrary to what would be anticipated by rival accounts.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 1预测段落后半部分"
+        },
+        {
+          "excerpt": "only the (descriptive) norm focus/salience account predicts that observed littering will reduce subsequent littering in a clean environment.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 1预测段落末尾"
+        },
+        {
+          "excerpt": "when a dropped handbill drew attention to an unswept environment that, by its fully littered nature, gave evidence of a clear descriptive norm favoring littering there, littering tendencies rose (33% vs. 45%). However, when the same device drew attention to an environment that included a clearly conflicting injunctive norm cue as well, littering tendencies were reversed (29% vs. 18%).",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 4结果讨论段落"
+        },
+        {
+          "excerpt": "it supports our theoretical assertion that both descriptive and injunctive norms can elicit behavior change, with the prominence of one or the other type of norm accounting for the direction of the change.",
+          "source_file": "paper_A focus theory of normative conduct_ Recycling the concept o.md",
+          "location": "Study 4结果讨论段落"
+        }
+      ]
+    },
+    {
+      "claim": "Batson的共情-利他假说认为纯粹利可以通过特定心理状态——共情关注——可靠地发生。研究设计用关系亲密程度操控依恋程度，检验共情-利他模型与oneness替代解释。核心预测：共情关注对助人的预测力在控制oneness后将消失。说服性传播的长期效果受威胁：规范性信息随时间变得不可及，将指令性规范与功能性记忆线索链接可在日后激活规范。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "If people rely on their a priori or naive beliefs about energy conservation when answering this question, then they should report that the social responsibility doorhanger was most effective, regardless of its actual effect. If, on the other hand, people are consciously processing the information, comparing their behavior before and after delivery of the doorhangers, then their estimates of how motivated they were should correspond to estimates of actual energy conservation for each condition.",
+          "source_file": "paper_Normative Social Influence is Underdetected.md",
+          "location": "Study 2方法段"
+        },
+        {
+          "excerpt": "According to Batson's empathy-altruism hypothesis, purely altruistic action can occur reliably, provided that it is preceded by a specific psychological state: empathic concern for another. Empathic concern is defined as an emotional reaction characterized by such feelings as compassion, tenderness, softheartedness, and sympathy.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "引言第3段"
+        },
+        {
+          "excerpt": "we expected that empathic concern would no longer be predictive of helping after the influence of oneness was extracted but that oneness would be significantly predictive when empathic concern was partialed out.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "研究1预测段落"
+        },
+        {
+          "excerpt": "empathic concern is not the functional cause of increased helping under conditions of increased attachment but a concomitant of the functional cause: perceived oneness.",
+          "source_file": "paper_Reinterpreting the empathy–altruism relationship_ When one i.md",
+          "location": "研究1预测段落末尾"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 15,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-01T16:58:08.129572",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T12:30:46.738655",
+    "pre_merge_count": 269,
+    "post_merge_count": 107
+  }
+}

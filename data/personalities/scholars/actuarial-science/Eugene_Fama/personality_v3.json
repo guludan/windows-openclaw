@@ -1,0 +1,794 @@
+{
+  "brief": "有效市场假说之父，实证资产定价奠基人",
+  "school": "芝加哥经济学派 / 新古典金融学",
+  "domains": [
+    "资产定价",
+    "市场效率",
+    "投资组合理论"
+  ],
+  "stance_anchors": {
+    "core_belief": "市场价格充分反映所有可得信息，短期价格不可预测",
+    "methodology": "严格的实证检验，数据驱动的因子模型构建",
+    "key_debates": [
+      "有效市场 vs 行为金融",
+      "CAPM vs 多因子模型",
+      "市场风险溢价估计的可靠性"
+    ],
+    "value_hierarchy": [
+      "实证严谨性",
+      "模型简约性",
+      "理论可证伪性"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "实证主义，以数据为最终裁判",
+    "reasoning_approach": "从统计证据出发构建理论，而非从理论推导预测",
+    "typical_biases": [
+      "过度倾向市场有效性解释",
+      "对行为金融学发现持怀疑态度"
+    ],
+    "intellectual_strengths": [
+      "大规模实证研究设计",
+      "因子模型构建与检验",
+      "识别CAPM的结构性缺陷"
+    ],
+    "intellectual_blindspots": [
+      "对市场异常现象的容忍度较低",
+      "动量效应和低波动率异常未被纳入模型"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "有效市场假说（EMH）",
+      "components": [
+        "价格信息反映速度",
+        "预测误差序列随机性",
+        "风险调整后收益不可持续超额"
+      ],
+      "application": "评估市场信息效率和主动管理的价值"
+    },
+    {
+      "name": "Fama-French 多因子模型",
+      "components": [
+        "市场因子(MKT)",
+        "规模因子(SMB)",
+        "价值因子(HML)",
+        "盈利因子(RMW)",
+        "投资因子(CMA)"
+      ],
+      "application": "解释股票截面收益差异，评估投资组合风险暴露"
+    },
+    {
+      "name": "Fama-MacBeth 回归",
+      "components": [
+        "截面回归",
+        "时间序列平均",
+        "因子载荷估计误差修正"
+      ],
+      "application": "检验风险因子与预期收益的关系"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "继承芝加哥学派价格理论传统，通过实证方法改造资产定价理论",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "Harry Roberts / Merton Miller",
+          "nature": "思想继承",
+          "description": "继承了芝加哥学派对市场效率和理性预期的信念",
+          "source_ref": "NobelPrize.org; A Look Back at Modern Finance"
+        },
+        {
+          "source": "CAPM (Sharpe-Lintner)",
+          "nature": "思想继承",
+          "description": "继承了风险-收益正相关的基本框架，但实证中发现其不足",
+          "source_ref": "paper_The_Capital_Asset_Pricing_Model_Theory_and_Evidence.md"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "CAPM单因子模型",
+          "original": "市场beta完全解释预期收益",
+          "transformation": "实证证明beta无法解释截面收益，扩展为三因子、五因子模型",
+          "source_ref": "paper_The_Capital_Asset_Pricing_Model_Theory_and_Evidence.md; The_CrossSection_of_Expected_Stock_Returns.md"
+        }
+      ],
+      "ruptured": [],
+      "converged": [
+        {
+          "streams": [
+            "有效市场理论",
+            "ICAPM/APT多因子框架"
+          ],
+          "product": "Fama-French三因子模型，以理性定价解释市场异常",
+          "source_ref": "paper_Multifactor_Explanations_of_Asset_Pricing_Anomalies.md"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1960s",
+        "title": "提出有效市场假说",
+        "narrative": "通过博士论文和早期研究系统阐述市场效率概念，证明股票价格短期不可预测。",
+        "catalyst": "对股票价格行为和随机游走的实证研究",
+        "before_state": "市场效率仅是直觉性假设",
+        "after_state": "成为可检验的实证命题，定义了弱式、半强式、强式效率",
+        "significance": "奠定了现代金融学的理论基石",
+        "source_ref": "paper_Efficient_Capital_Markets_A_Review_of_Theory_and_Empirical_Work.md"
+      },
+      {
+        "period": "1992-1993",
+        "title": "挑战CAPM并建立三因子模型",
+        "narrative": "发现市场beta无法解释截面收益差异，规模和价值因子提供更好的解释力。与French合作提出三因子模型。",
+        "catalyst": "CAPM在解释小市值和高B/M股票收益时的持续失败",
+        "before_state": "CAPM被视为资产定价标准模型",
+        "after_state": "三因子模型成为新的实证基准",
+        "significance": "从根本上改变了资产定价实证研究的范式",
+        "source_ref": "paper_The_CrossSection_of_Expected_Stock_Returns.md; paper_Multifactor_Explanations_of_Asset_Pricing_Anomalies.md"
+      },
+      {
+        "period": "2015",
+        "title": "扩展为五因子模型",
+        "narrative": "在规模和价值因子基础上加入盈利(RMW)和投资(CMA)因子，进一步改善模型解释力。",
+        "catalyst": "三因子模型无法解释盈利和投资相关的收益模式",
+        "before_state": "三因子模型是主要实证工具",
+        "after_state": "五因子模型捕获更广泛的风险维度",
+        "significance": "展示了资产定价模型的渐进式改进方法",
+        "source_ref": "fama-french-5-factor-model; metricgate_fama_french_model.md"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "芝加哥大学Booth商学院",
+          "role": "教授与研究者",
+          "duration": "1960s至今",
+          "impact": "芝加哥的协作环境和学术自由促成了其研究产出",
+          "source_ref": "NobelPrize.org"
+        },
+        {
+          "context": "与Ken French的长期合作",
+          "role": "共同研究者",
+          "duration": "1990s至今",
+          "impact": "共同构建了多因子资产定价框架",
+          "source_ref": "A Look Back at Modern Finance; paper_Multifactor_Explanations_of_Asset_Pricing_Anomalies.md"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "1970-80年代金融学术快速发展期",
+          "role": "引领者",
+          "impact": "定义了实证金融学的研究范式",
+          "source_ref": "NobelPrize.org; literature_review_2024"
+        },
+        {
+          "context": "2008年金融危机",
+          "role": "观察者",
+          "impact": "坚持市场效率观点，反对政府救助金融机构",
+          "source_ref": "exa_0_Eugene_Fama_-_Econlib.md"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "Ken French",
+        "nature": "互补型",
+        "product": "三因子和五因子资产定价模型",
+        "significance": "重塑了实证资产定价研究",
+        "source_ref": "paper_The_CrossSection_of_Expected_Stock_Returns.md; fama-french-5-factor-model"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "CAPM单因子模型",
+        "reason": "实证证据表明beta无法解释截面收益",
+        "aftermath": "发展多因子替代模型",
+        "source_ref": "paper_The_Capital_Asset_Pricing_Model_Theory_and_Evidence.md"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "行为金融学派(Shiller, Thaler等)",
+        "axis": "市场效率 vs 非理性行为",
+        "dynamic": "Fama坚持异常现象可在理性框架内解释，批评行为金融缺乏统一理论",
+        "source_ref": "A Look Back at Modern Finance"
+      },
+      {
+        "who": "动量效应支持者",
+        "axis": "五因子模型是否完备",
+        "dynamic": "Fama-French五因子模型未纳入动量效应，被批评为理论缺憾",
+        "source_ref": "fama-french-5-factor-model"
+      }
+    ],
+    "tension_explanation": {
+      "note": "Fama在市场效率上的强硬立场与其对CAPM等模型缺陷的坦诚承认形成张力",
+      "tracing": "源于芝加哥学派对自由市场的信念与实证研究中发现的模型失败之间的持续对话"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "学术上激进（挑战主流模型），投资建议上保守（推荐被动投资）",
+    "information_processing": "严格依赖统计证据，拒绝未经验证的叙事解释",
+    "temporal_orientation": "长期视角，关注可持续的统计规律而非短期市场波动",
+    "conflict_resolution": "以实证证据回应批评，避免理论辩论中的哲学化"
+  },
+  "situational_triggers": {
+    "description": "当市场效率受到质疑或模型被挑战时的反应模式",
+    "triggers": [
+      {
+        "condition": "面对市场泡沫指控",
+        "behavioral_shift": "转向强调泡沫只能事后识别，事前无法定义",
+        "confidence": "高",
+        "source_ref": "exa_0_Eugene_Fama_-_Econlib.md"
+      },
+      {
+        "condition": "面对行为金融学挑战",
+        "behavioral_shift": "要求对方提供替代性的统一理论而非仅指出异常",
+        "confidence": "高",
+        "source_ref": "A Look Back at Modern Finance"
+      },
+      {
+        "condition": "模型无法解释新异常",
+        "behavioral_shift": "渐进式扩展因子模型而非放弃理性定价框架",
+        "confidence": "高",
+        "source_ref": "fama-french-5-factor-model"
+      }
+    ],
+    "collapse_point": "当实证证据系统性反对理性定价假设时，可能需要根本性范式转换",
+    "default_behavior": "以更多实证检验回应质疑，扩展而非替换现有框架",
+    "public_commitment_lock": "对市场效率的长期学术承诺使其难以接受市场系统非效率的证据"
+  },
+  "communication_profile": {
+    "style": "直接、数据驱动、避免修辞修饰",
+    "persuasion_tactics": [
+      "展示大规模实证证据",
+      "指出对手理论的逻辑缺陷",
+      "强调简约性原则"
+    ],
+    "rhetorical_devices": [
+      "反问（'你的替代理论是什么？'）",
+      "统计归纳"
+    ],
+    "emotional_range": "学术冷静，偶有对理论松散研究的尖锐批评"
+  },
+  "evolution_trajectory": "从市场效率假说的提出者，到CAPM的实证挑战者，再到多因子资产定价模型的构建者——始终以实证证据为导向，渐进式改进理论框架，同时坚守理性定价的基本信念。",
+  "key_aphorisms": [
+    "市场价格反映当前对未来价值的预期",
+    "泡沫往往是事后才能看到的",
+    "交易规则不奏效",
+    "如果市场是有效的，你无法战胜它"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "有效市场假说（EMH）认为市场价格充分反映所有可得信息，使通过历史数据预测未来价格变得困难。EMH有坚实的实证支持，直接影响了指数基金的广泛应用。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "his development of the Efficient Market Hypothesis, which provides the theoretical foundation for passive investing.",
+          "source_file": "Eugene Fama on 60 Years of Finance Research, Index Funds, and Market Efficiency",
+          "location": "在介绍其工作时提到"
+        },
+        {
+          "excerpt": "it concludes that markets become more efficient, when analysts believes that there are more inefficient and competes in the search of information in order to take advantage of that inefficiency.",
+          "source_file": "2017-eficiencia-mercados-financieros-prediccion-precios-activos",
+          "location": "摘要部分，分析Fama效率市场理论的结论"
+        },
+        {
+          "excerpt": "Normally analysts act on the basis of imperfect markets, using technical analysis, carrying out fundamental reviews and accepting that privilege information exists; this reality make markets more efficient.",
+          "source_file": "2017-eficiencia-mercados-financieros-prediccion-precios-activos",
+          "location": "摘要部分，描述分析师行为对市场效率的影响"
+        },
+        {
+          "excerpt": "In the 1960s, Eugene Fama demonstrated that stock price movements are impossible to predict in the short-term and that new information affects prices almost immediately, which means that the market is efficient.",
+          "source_file": "NobelPrize.org",
+          "location": "Work section"
+        },
+        {
+          "excerpt": "This review first explores the Efficient Market Hypothesis (EMH) proposed by Eugene Fama in 1970 and its empirical validation, which lays the foundation for understanding stock market dynamics.",
+          "source_file": "literature_review_2024",
+          "location": "摘要部分，第二段开头"
+        },
+        {
+          "excerpt": "Beginning in the 1960s, Eugene Fama and several collaborators demonstrated that stock prices are extremely difficult to predict in the short run, and that new information is very quickly incorporated into prices. These findings not only had a profound impact on subsequent research but also changed market practice. The emergence of so-called index funds in stock markets all over the world is a prominent example.",
+          "source_file": "exa_2_The_Prize_in_Economic_Sciences_2013_-_Press_release_-_NobelPrizeorg.md",
+          "location": "第4段"
+        },
+        {
+          "excerpt": "prices of stocks rapidly incorporate information that is publicly available. That happens because markets are so competitive: prices now move on earnings news within milliseconds.",
+          "source_file": "exa_0_Eugene_Fama_-_Econlib.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "\"I believe there is no other proposition in economics which has more solid empirical evidence supporting it than the Efficient Market Hypothesis.\"",
+          "source_file": "exa_0_Efficient_Markets_Hypothesis_Introduction.md",
+          "location": "pos"
+        }
+      ]
+    },
+    {
+      "claim": "市场效率是一个程度问题：现实市场并非完全有效，但至少在一定程度上有效。长期收益异常并不否定市场效率，市场效率的提升源于分析师对市场不效率的信念及其竞争性信息搜寻行为。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "Eugene Fama presents evidence which appears to be consistent with the joint hypothesis that the real rate of interest, ignoring taxes, is a constant and that the market for U.S. Treasury Bills is efficient in the sense of embodying rational expectations.",
+          "source_file": "OpenAlex",
+          "location": "第一段"
+        },
+        {
+          "excerpt": "the difference between the market interest rate and the subsequently observed rate of inflation, the ex post real interest rate, consists by definition of the ex ante real interest rate plus a pure forecasting error.",
+          "source_file": "OpenAlex",
+          "location": "第二段"
+        },
+        {
+          "excerpt": "Fama studied the correlation between a stock’s long-term returns and its dividend-stock price ratio. If stock price changes did follow a truly “random walk,” there would be no correlation. This was not the case: there was a positive correlation between the dividend to stock price ratio and long-term expected returns.",
+          "source_file": "exa_0_Eugene_Fama_-_Econlib.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "If markets were perfectly inefficient, a firm’s characteristics would have no influence or relation to its stock prices. This is unrealistic. A firm that is on the brink of going out of business could have a capital value higher than that of Apple or Exxon.",
+          "source_file": "exa_0_Eugene_Fama_-_Econlib.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "\"Market efficiency survives the challenge from the literature on long-term return anomalies. Consistent with the market efficiency hypothesis that the anomalies are chance results, apparent overreaction to information is about as common as underreaction, and post-event continuation of pre-event abnormal returns is about as frequent as post-event reversal. Most important, consistent with the market efficiency prediction that apparent anomalies can be due to methodology, most long-term return anomalies tend to disappear with reasonable changes in technique.\"",
+          "source_file": "exa_0_Efficient_Markets_Hypothesis_Introduction.md",
+          "location": "pos"
+        }
+      ]
+    },
+    {
+      "claim": "在市场效率假设下，预测误差必须是序列随机的。实际利率变化可能仅反映测量误差而非真实波动，国库券市场体现了理性预期。大额日价格变动后往往跟随大额变动但方向不可预测，价格对新信息的初始调整是无偏的。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "the hypothesis of market efficiency implies that these forecasting errors must be serially random. Thus, observing ex post real rates is equivalent to observing ex ante real rates with random measurement error.",
+          "source_file": "OpenAlex",
+          "location": "第二段"
+        },
+        {
+          "excerpt": "Fama [10] concludes that non-normal stable distributions are a better description of distributions of daily returns on common stocks than the normal",
+          "source_file": "paper_Efficient_Capital_Markets_A_Review_of_Theory_and_Empirical_Work.md",
+          "location": "400"
+        },
+        {
+          "excerpt": "Fama [10] shows that large daily price changes tend to be followed by large changes, but of unpredictable sign.",
+          "source_file": "paper_Efficient_Capital_Markets_A_Review_of_Theory_and_Empirical_Work.md",
+          "location": "415"
+        },
+        {
+          "excerpt": "This suggests that important information cannot be completely evaluated immediately, but that the initial first day's adjustment of prices to the information is unbiased, which is sufficient for the martingale model.",
+          "source_file": "paper_Efficient_Capital_Markets_A_Review_of_Theory_and_Empirical_Work.md",
+          "location": "415"
+        }
+      ]
+    },
+    {
+      "claim": "交易规则不奏效，泡沫往往只能事后识别，不能事前定义。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "many empirical studies have shown that “trading rules, technical systems, market newsletters and so on have essentially no power beyond that of luck to forecast stock prices.”",
+          "source_file": "exa_0_Eugene_Fama_-_Econlib.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "It’s easy to say prices went down, it must have been a bubble, after the fact. I think most bubbles are twenty-twenty hindsight.",
+          "source_file": "exa_0_Eugene_Fama_-_Econlib.md",
+          "location": "pos"
+        }
+      ]
+    },
+    {
+      "claim": "CAPM早期检验的成功（Black版CAPM）加上模型的简洁性和直觉吸引力使其成为金融学前沿，但后续证据表明beta与平均收益的关系过于平坦，市场beta无法完全解释预期收益。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "The evidence that the relation between beta and average return is too flat is confirmed in time-series tests, such as Friend and Blume (1970), Black, Jensen and Scholes (1972) and Stambaugh (1982). The intercepts in time-series regressions of excess asset returns on the excess market return are positive for assets with low betas and negative for assets with high betas.",
+          "source_file": "paper_The_Capital_Asset_Pricing_Model_Theory_and_Evidence.md",
+          "location": "p13"
+        },
+        {
+          "excerpt": "The success of the Black version of the CAPM in early tests produced a consensus that the model is a good description of expected returns. These early results, coupled with the model’s simplicity and intuitive appeal, pushed the CAPM to the forefront of finance.",
+          "source_file": "paper_The_Capital_Asset_Pricing_Model_Theory_and_Evidence.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "An important lesson from this discussion is that time-series and cross-section regressions do not, strictly speaking, test the CAPM. What is literally tested is whether a specific proxy for the market portfolio (typically a portfolio of U.S. common stocks) is efficient in the set of portfolios that can be constructed from it and the left-hand-side assets used in the test. One might conclude from this that the CAPM has never been tested, and prospects for testing it are not good because 1) the set of left-hand-side assets does not include all marketable assets, and 2) data for the true market portfolio of all assets are likely beyond reach (Roll, 1977; more on this later). But this criticism can be leveled at tests of any economic model when the tests are less than exhaustive or when they use proxies for the variables called for by the model.",
+          "source_file": "paper_The_Capital_Asset_Pricing_Model_Theory_and_Evidence.md",
+          "location": "pos"
+        }
+      ]
+    },
+    {
+      "claim": "传统风险度量不能决定预期收益。当使用不与规模高度相关的beta时，beta与平均收益之间没有可靠关系。允许与规模无关的beta变异会使beta-收益关系变得无法区分。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "Our results are disturbing in that, like Fama and French (1992), they suggest that traditional measures of risk do not determine expected returns.",
+          "source_file": "paper_Evidence_on_the_Characteristics_of_Cross_Sectional_Variation_in_Stock_Returns.md",
+          "location": "4:2"
+        },
+        {
+          "excerpt": "0 does not seem to help explain the cross-section of average stock returns, and the combination of size and book-to-market equity seems to absorb the roles of leverage and E/P in average stock returns, at least during our 1963-1990 sample period.",
+          "source_file": "paper_The_CrossSection_of_Expected_Stock_Returns.md",
+          "location": "439-443"
+        },
+        {
+          "excerpt": "Despite the wide range of 0s in each size decile, average returns show no tendency to increase with 0.",
+          "source_file": "The_Journal_of_Finance",
+          "location": "458"
+        },
+        {
+          "excerpt": "Thus, allowing for variation in 0 that is unrelated to size flattens the relation between average return and 0, to the point where it is indistinguishable from no relation at all.",
+          "source_file": "The_Journal_of_Finance",
+          "location": "458"
+        },
+        {
+          "excerpt": "The bivariate regressions (Table AIII) that use the 0s of the size-0 portfolios are more bad news for 0. The average slopes for ln(NIE) are close to the values in the univariate size regressions, and almost 4 standard errors from 0, but the average slopes for 0 are negative and less than 1 standard error from 0. The message from the bivariate regressions is that there is a strong relation between size and average return. But like the regressions in Table A111 that explain average returns with 0 alone, the bivariate regressions say that there is no reliable relation between 0 and average returns when the tests use 0s that are not close substitutes for size.",
+          "source_file": "The_Journal_of_Finance",
+          "location": "458"
+        },
+        {
+          "excerpt": "Thus, forming portfolios on size and 0 (Table AIII) produces a better description of the simple relation between average return and 0 than forming portfolios on size alone (Table AI). This improved description of the relation between average return and 6 is evidence that the 0 estimates for the two-pass size-0 portfolios capture variation in true 6s that is missed when portfolios are formed on size alone.",
+          "source_file": "The_CrossSection_of_Expected_Stock_Returns.md",
+          "location": "458"
+        },
+        {
+          "excerpt": "The flatter market lines in Table A111 have a cost, the emergence of a residual size effect. Grouped on the basis of ME for individual stocks, the average residuals from the univariate regressions of returns on the 0s of the 100 size-0 portfolios are strongly positive for small stocks and negative for large stocks (0.60% per month for the smallest ME group, IA, and -0.27% for the largest, 10B).",
+          "source_file": "The_CrossSection_of_Expected_Stock_Returns.md",
+          "location": "458"
+        },
+        {
+          "excerpt": "The average slopes for 0 are negative and less than 1 standard error from 0. The message from the bivariate regressions is that there is a strong relation between size and average return. But like the regressions in Table A111 that explain average returns with 0 alone, the bivariate regressions say that there is no reliable relation between 0 and average returns when the tests use 0s that are not close substitutes for size.",
+          "source_file": "The_CrossSection_of_Expected_Stock_Returns.md",
+          "location": "459"
+        }
+      ]
+    },
+    {
+      "claim": "使用排序前beta可以更好地捕获不同组合间的真实beta分布，有助于在资产定价检验中分离规模效应和beta效应。按规模和beta构建组合比仅按规模构建能更好描述beta-收益关系。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "sorted on size alone, the post-ranking Ps range from 1.44 for the smallest ME portfolio to 0.92 for the largest. This spread of ps across the 10 size deciles is smaller than the spread of post-ranking ps produced by the 0 sort of any size decile. For example, the post-ranking ps for the 10 portfolios in the smallest size decile range from 1.05 to 1.79. Across all 100 size-/3 portfolios, the post-ranking 0s range from 0.53 to 1.79, a spread 2.4 times the spread, 0.52, obtained with size portfolios alone.",
+          "source_file": "The_CrossSection_of_Expected_Stock_Returns.md",
+          "location": "430-431"
+        },
+        {
+          "excerpt": "To allow for variation in /3 that is unrelated to size, we subdivide each size decile into 10 portfolios on the basis of pre-ranking 0s for individual stocks. The pre-ranking 0s are estimated on 24 to 60 monthly returns (as available) in the 5 years before July of year t .",
+          "source_file": "The_CrossSection_of_Expected_Stock_Returns.md",
+          "location": "430-431"
+        },
+        {
+          "excerpt": "Thus, forming portfolios on size and 0 (Table AIII) produces a better description of the simple relation between average return and 0 than forming portfolios on size alone (Table AI). This improved description of the relation between average return and 6 is evidence that the 0 estimates for the two-pass size-0 portfolios capture variation in true /3s that is missed when portfolios are formed on size alone.",
+          "source_file": "The_Journal_of_Finance",
+          "location": "458"
+        },
+        {
+          "excerpt": "The lower correlation means that bivariate regressions of returns on 0 and ln(ME) are more likely to distinguish true size effects from true /3 effects in average returns.",
+          "source_file": "The_Journal_of_Finance",
+          "location": "458"
+        }
+      ]
+    },
+    {
+      "claim": "Fama-French三因子模型（市场、SMB、HML）优于CAPM，能解释按规模和账面市值比形成的组合的平均收益，揭示了先前被认为是选股技能(alpha)的收益实际可由规模和价值因子的系统性暴露解释。SMB和HML捕获了超越市场收益的协变异。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "empirically based asset pricing models such as his (with Ken French) 'three-factor' CAPM have produced much better results than the standard CAPM.",
+          "source_file": "A Look Back at Modern Finance: Accomplishments and Limitations",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "Fama and co-author Kenneth R. French developed a three-factor model of stock prices in response to the “anomaly” literature of the 1980s, which some economists saw as evidence against the EMH. The three-factor model introduces two new factors—company size and value—in addition to beta, as determinants of expected returns.",
+          "source_file": "exa_0_Eugene_Fama_-_Econlib.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "The model showed that much of what was previously considered stock-picking skill (alpha) could instead be explained by systematic exposure to size and value factors.",
+          "source_file": "exa_1_Fama-French_Factors__Three-Factor__Five-Factor_Model_Explained__Foxholm_Financia.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "The Fama and French Three-Factor Model, introduced in 1992 by Nobel Laureate Eugene Fama and researcher Kenneth French, enhances the traditional capital asset pricing model (CAPM) by incorporating size and value risk factors alongside market risk.",
+          "source_file": "exa_1_Fama_French_Three_Factor_Model_How_It_Works_Formula_and_Impact.md",
+          "location": "1"
+        },
+        {
+          "excerpt": "Fama and French (1993, 1996) find that the model captures much of the variation in average return for portfolios formed on size, book-to-market equity and other price ratios that cause problems for the CAPM.",
+          "source_file": "paper_The_Capital_Asset_Pricing_Model_Theory_and_Evidence.md",
+          "location": "37"
+        },
+        {
+          "excerpt": "FF (1993) show that there is indeed covariation in returns related to size and BE,ME (captured by loadings on SMB and HML), above and beyond the covariation explained by the market return.",
+          "source_file": "paper_Multifactor_Explanations_of_Asset_Pricing_Anomalies.md",
+          "location": "A. The Case for a Multifactor ICAPM or APT"
+        },
+        {
+          "excerpt": "FF (1993) find that the model describes the average returns on portfolios formed on size and BEME.",
+          "source_file": "paper_Multifactor_Explanations_of_Asset_Pricing_Anomalies.md",
+          "location": "A. The Case for a Multifactor ICAPM or APT"
+        }
+      ]
+    },
+    {
+      "claim": "Fama-French五因子模型在三因子基础上增加盈利(RMW)和投资(CMA)因子，比三因子和Carhart四因子模型有更强解释力，捕获了超越规模和价值的更丰富风险谱系。预测小市值、高盈利和价值型公司收益最高。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "Results reported by Fama and French (2015) indicates that the model is better able to explain stocks’ returns than the three factor model. Interestingly, Fama and French (2015) conclude that the companies that are small, profitable and value (i.e. have little growth prospects) will have the highest returns.",
+          "source_file": "fama-french-5-factor-model",
+          "location": "Fama-French 5 factor model definition"
+        },
+        {
+          "excerpt": "Developed by Eugene Fama and Kenneth French (2015), the model aims to explain portfolio returns more comprehensively by including firm-level profitability and capital investment behavior.",
+          "source_file": "metricgate_fama_french_model.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "It improves the explanatory power of asset pricing models like CAPM and Carhart Four-Factor Model, making it widely adopted in empirical finance and quantitative portfolio research.",
+          "source_file": "metricgate_fama_french_model.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "The Fama–French Five-Factor Model captures a richer spectrum of risks beyond size and value, offering a comprehensive view of portfolio performance drivers.",
+          "source_file": "metricgate_fama_french_model.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "By expanding the earlier three-factor framework, the model introduces additional drivers of stock performance based on corporate profitability and investment behavior.",
+          "source_file": "exa_3_The_Fama-French_Five-Factor_Model_A_More_Complete_Explanation_Of_Stock_Market_Re.md",
+          "location": "25"
+        }
+      ]
+    },
+    {
+      "claim": "因子载荷存在估计误差且影响因变量，Fama-MacBeth方法可能因此产生偏差，需用修正估计量。特征收益的标准Fama-MacBeth估计量也可能因因子实现与证券特征的相关性而产生偏差。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "while the factor loadings will be correlated with the security characteristics, there is no a priori reason to believe that errors in the estimated loadings will be correlated with the security characteristics, so the estimated coeﬃcient vector, cL t, is unbiased under the null hypothesis.",
+          "source_file": "paper_Alternative_factor_specifications_security_characteristics_and_the_cross-section.md",
+          "location": "356"
+        },
+        {
+          "excerpt": "a purged estimator, cL mp, was obtained for each of the characteristics as the constant term from the regression of the monthly coeﬃcient estimates on the time series of CK or FF factor realizations.",
+          "source_file": "paper_Alternative_factor_specifications_security_characteristics_and_the_cross-section.md",
+          "location": "356"
+        },
+        {
+          "excerpt": "While there is no a priori reason to believe that the errors in the estimated factor loadings will be correlated with the security characteristics, to the extent that they are correlated, the monthly estimates of the coeﬃcients of the ﬁrm characteristics, cL mt, will be correlated with the factor realizations, and therefore the mean of these estimates which is the Fama—MacBeth estimator will be biased by an amount that depends on the mean factor realizations.",
+          "source_file": "paper_Alternative_factor_specifications_security_characteristics_and_the_cross-section.md",
+          "location": "356"
+        },
+        {
+          "excerpt": "In the spirit of Fama and MacBeth (1973), we use averages of the annual slopes from Equation (4) and time-series standard errors of the averages to draw inferences.",
+          "source_file": "paper_Testing_Trade-Off_and_Pecking_Order_Predictions_About_Dividends_and_Debt.md",
+          "location": "20"
+        }
+      ]
+    },
+    {
+      "claim": "股票风险是多维度的，规模和账面市值比是不同风险维度的代理变量。HML的平均收益被解释为与相对困境相关的状态变量风险溢价。高B/M股票和小市值股票无论收益模式如何都有高平均收益。盈利-价格比、债务权益比和账面市值比等具体比率提供关于预期收益的额外信息。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "the idea is really 'how do you measure risk?' And if the market is pricing things correctly, what is the relation between the expected return, which is the compensation for risk, and the risk.",
+          "source_file": "NobelPrize.org",
+          "location": "Interview, December 2013"
+        },
+        {
+          "excerpt": "Interpret betas as exposures to each systematic risk and alpha as the manager’s skill-based return.",
+          "source_file": "metricgate_fama_french_model.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "There is a theme in the contradictions of the CAPM summarized above. Ratios involving stock prices have information about expected returns missed by market betas. On refection, this is not surprising. A stock’s price depends not only on the expected cash flows it will provide, but also on the expected returns that discount expected cash flows back to the present. Thus, in principle, the cross-section of prices has information about the cross-section of expected returns. (A high expected return implies a high discount rate and a low price.) The cross-section of stock prices is, however, arbitrarily affected by differences in scale (or units). But with a judicious choice of scaling variable X, the ratio X/P can reveal differences in the cross-section of expected stock returns. Such ratios are thus prime candidates to expose shortcomings of asset pricing models—in the case of the CAPM, shortcomings of the prediction that market betas sufﬁce to explain expected returns (Ball, 1978). The contradictions of the CAPM summarized above suggest that earnings-price, debt-equity and book-to-market ratios indeed play this role.",
+          "source_file": "paper_The_Capital_Asset_Pricing_Model_Theory_and_Evidence.md",
+          "location": "pos"
+        },
+        {
+          "excerpt": "FF (1993) interpret the average HML return as a premium for a state-variable risk related to relative distress.",
+          "source_file": "paper_Multifactor_Explanations_of_Asset_Pricing_Anomalies.md",
+          "location": "76"
+        },
+        {
+          "excerpt": "Similarly, after controlling for size and book-to-market ratios, a common share that 'acts like' a bond (i.e., has a low market beta) has the same expected return as other common shares with high market betas.",
+          "source_file": "paper_Evidence_on_the_Characteristics_of_Cross_Sectional_Variation_in_Stock_Returns.md",
+          "location": "4:3"
+        },
+        {
+          "excerpt": "If assets are priced rationally, our results suggest that stock risks are multidimensional. One dimension of risk is proxied by size, ME. Another dimension of risk is proxied by BE/ME, the ratio of the book value of common equity to its market value.",
+          "source_file": "paper_The_CrossSection_of_Expected_Stock_Returns.md",
+          "location": "434-438"
+        }
+      ]
+    },
+    {
+      "claim": "行为金融学缺乏基础理论连接，仅停留在异常现象挖掘层面。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "he describes behavioral finance as 'mostly just dredging for anomalies,' with no underlying theory and no testable predictions.",
+          "source_file": "A Look Back at Modern Finance: Accomplishments and Limitations",
+          "location": "Abstract"
+        }
+      ]
+    },
+    {
+      "claim": "大多数资产定价模型实证上未能成功。股票beta和行业beta缺乏可靠性，时间动态性导致无法稳定预测市场风险。市场风险溢价估计范围过大（2%-10%），质疑其实际应用价值。估算资本成本依然充满困难。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "most asset-pricing models have failed empirically. Estimating something as apparently simple as the cost of capital remains fraught with difficulty.",
+          "source_file": "A Look Back at Modern Finance: Accomplishments and Limitations",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "He dismisses betas for individual stocks as 'garbage,' and even industry betas are said to be unstable, 'too dynamic through time.'",
+          "source_file": "A Look Back at Modern Finance: Accomplishments and Limitations",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "The wide range of estimates for the market risk premium—anywhere from 2% to 10%—casts doubt on their reliability and practical usefulness.",
+          "source_file": "A Look Back at Modern Finance: Accomplishments and Limitations",
+          "location": "Abstract"
+        }
+      ]
+    },
+    {
+      "claim": "M&M无关性命题的核心问题（债务与税收、股息与税收）仍未实质性解决。高投资相对于盈利的公司自由现金流较低，对股息约束的需求较小，支持权衡模型预测。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "we still have no real resolution on the key questions of debt and taxes, or dividends and taxes.",
+          "source_file": "A Look Back at Modern Finance: Accomplishments and Limitations",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "In the trade-off model, firms with more investments relative to earnings have lower free cash flows and thus less need for discipline from dividends. Lower dividends for firms with more investments also help avoid the asset substitution and underinvestment problems that can arise if investment is instead financed with risky debt.",
+          "source_file": "paper_Testing_Trade-Off_and_Pecking_Order_Predictions_About_Dividends_and_Debt.md",
+          "location": "3.1.2 Results"
+        }
+      ]
+    },
+    {
+      "claim": "五因子模型未考虑动量效应和低波动率异常。时变beta和alpha显著，暗示模型仍有改进空间。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "Looking at the Fama-French 5 factor model, we notice that the model does not consider momentum and low volatility. Thus the model ignores or is unable to incorporate two anomalies that widely documented and that generate considerable returns.",
+          "source_file": "fama-french-5-factor-model",
+          "location": "Criticisms to model"
+        },
+        {
+          "excerpt": "We find strong evidence that the lagged market indicators enter as instruments for time-varying betas on the industry portfolios. The F-tests for 22 of the 25 portfolios produce p-values below 0.05, and a joint Bonferroni test strongly rejects the hypothesis that the three-factor betas are constant.",
+          "source_file": "paper_Conditioning_Variables_and_the_Cross_Section_of_Stock_Returns.md",
+          "location": "B. Results for Industry Portfolios"
+        }
+      ]
+    },
+    {
+      "claim": "资产定价是理性的，符合不可简化为CAPM的三因子ICAPM或APT框架。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "The first says that asset pricing is rational and conforms to a three-factor ICAPM or APT that does not reduce to the CAPM (FF (1993, 1994, 1995)).",
+          "source_file": "paper_Multifactor_Explanations_of_Asset_Pricing_Anomalies.md",
+          "location": "VI. Interpreting the Results"
+        }
+      ]
+    },
+    {
+      "claim": "股票拆分通常与更重要的基本面信息相关联，拆分股票的收益在拆分前数月偏离其与市场的正常关系。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "The presumption of FFJR is that splits may often be associated with the appearance of more fundamentally important information. The idea is to examine security returns around split dates to see first if there is any 'unusual' behavior, and, if so, to what extent it can be accounted for by relationships between splits and other more fundamental variables.",
+          "source_file": "The_Journal_of_Finance_estimated_j_are_roughly_consistent_with_17_in_the_sense_that_the_estimates_are_always_close_to_zero.md",
+          "location": "404"
+        },
+        {
+          "excerpt": "For all three dividend categories the cumulative average residuals rise in the 29 months prior to the split, and in fact the average residuals (not shown here) are uniformly positive.",
+          "source_file": "The_Journal_of_Finance_estimated_j_are_roughly_consistent_with_17_in_the_sense_that_the_estimates_are_always_close_to_zero.md",
+          "location": "405"
+        }
+      ]
+    },
+    {
+      "claim": "芝加哥大学富有成效的学术环境源于其协作互动的文化，人们互相帮助。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "we have good people – you need that, obviously (laughs). And it’s a very interactive environment; people help one another out a lot. I mean, I couldn’t do what I did without the help of my professors at the time and colleagues since then and students since then. It’s a very interactive place, where everybody contributes to everybody else.",
+          "source_file": "NobelPrize.org",
+          "location": "Interview, December 2013"
+        }
+      ]
+    },
+    {
+      "claim": "他未预料到会获得经济学奖，但如果获奖会非常高兴。他的工作核心是度量风险和理解市场中预期收益与风险的关系。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "I didn’t want to ever presume that I would win, so … I didn’t really think about it a long time (laughs). But I knew I’d be thrilled, of course. Who wouldn’t?",
+          "source_file": "NobelPrize.org",
+          "location": "Interview, December 2013"
+        }
+      ]
+    },
+    {
+      "claim": "日收益分布更符合非正态稳定分布而非正态分布。短期价格不可预测性与长期价格可预测性之间存在表面矛盾，为后续学者（如Shiller）探索长期价格波动规律奠定基础。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "There is no way to predict the price of stocks and bonds over the next few days or weeks. But it is quite possible to foresee the broad course of these prices over longer periods, such as the next three to five years. These findings, which might seem both surprising and contradictory, were made and analyzed by this year’s Laureates, Eugene Fama, Lars Peter Hansen and Robert Shiller.",
+          "source_file": "exa_2_The_Prize_in_Economic_Sciences_2013_-_Press_release_-_NobelPrizeorg.md",
+          "location": "第3段"
+        }
+      ]
+    },
+    {
+      "claim": "他反对政府救助金融机构。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "Eugene Fama strongly opposed the 2008 selective bailout of Wall Street firms, arguing that, without it, financial markets would have sorted themselves out within “a week or two.”",
+          "source_file": "exa_0_Eugene_Fama_-_Econlib.md",
+          "location": "pos"
+        }
+      ]
+    },
+    {
+      "claim": "ICT与创新之间存在强相关性，欧盟内部存在显著的ICT和创新鸿沟（北欧最好、东欧最差）。NRI和SII复合指标结构相似，均包含驱动因素和产出维度，在欧盟27国层面相关系数超过0.88。",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "We have tested the following unifactorial regression model: SII = <slope> * NRI + <intercept> The statistical results are presented in detail in Annex. Table1. The regression model found was: SII = 0.230*NRI - 0.629 Figure 3 proves the strong correlation between the two indicators, sustained by the high value of the coefficient of correlation: R= 0.885.",
+          "source_file": "paper_The_Adjustment_of_Stock_Prices_to_New_Information.md",
+          "location": "第3节a部分，第3-6段"
+        },
+        {
+          "excerpt": "As it can be noticed, there is a strong relationship between SII and NRI (coefficients of correlation greater than 0.88) in each of the 5 years of analysis.",
+          "source_file": "paper_The_Adjustment_of_Stock_Prices_to_New_Information.md",
+          "location": "第3节a部分，最后一段"
+        },
+        {
+          "excerpt": "The graphics in Figure 2 reveals the gap between the best performers in terms of ICT/innovation (the “Nordic” countries: Sweden, Finland, and Denmark) and the worst performers (Romania, Bulgaria, Latvia, Lithuania, Poland, and Slovakia). NRI shows the depth of the digital divide within the EU-27 Member States (e.g. Sweden is 1.53 times more performing in ICT than Bulgaria). At the same time, SII shows the “innovation divide”, the big differences in innovation performance among EU-27 economies (e.g. Sweden is 3.28 times more performing in innovation than Latvia, and 3.16 times more performing than Bulgaria).",
+          "source_file": "paper_The_Adjustment_of_Stock_Prices_to_New_Information.md",
+          "location": "第3节a部分，第2段"
+        },
+        {
+          "excerpt": "NRI is a composite index based on dimensions, pillars, and variables. NRI-2012 is a new, evolved framework comprising both the main drivers of ICT readiness, and a new added dimension related to the ICT impacts on the economy and society... The subindexes Environment, Readiness and Usage are ICT “Drivers”, while the Impact subindex reveals the effects (“outputs”/”results”) of ICT on the economy and society.",
+          "source_file": "paper_The_Adjustment_of_Stock_Prices_to_New_Information.md",
+          "location": "第2节，第1段"
+        },
+        {
+          "excerpt": "Similar to the NRI indicator, SII reflects both the drivers of innovation, and its effects/impacts on economy and society. SII is – like NRI – a composite index based on three categories (subindexes): the “Enablers” of innovation... the “Firm activities”... the “Outputs”...",
+          "source_file": "paper_The_Adjustment_of_Stock_Prices_to_New_Information.md",
+          "location": "第2节，第2段"
+        }
+      ]
+    },
+    {
+      "claim": "（原始素材中索引24为占位条目，无实质内容）",
+      "dim": "",
+      "evidence": [
+        {
+          "excerpt": "If I would explain my work, I started back in 1962 working on the general topic is how do prices incorporate new information. It’s called the efficient markets hypothesis, but that’s it basically, how do prices incorporate new information. I devised a lot of tests about how you go about doing that, that’s one branch of asset pricing for which the award was given. The other one is what we call the asset pricing models which are really stories about how you measure risk and then what is the relation between risk and expected return, so they are basically risk return story. Those are kind of the two main branches of asset pricing which I have been working on for the last 53 years.",
+          "source_file": "exa_2_Transcript_from_an_interview_with_Eugene_F_Fama_-_NobelPrizeorg.md",
+          "location": "pos"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 37,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-03T22:46:04.077942",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T02:24:33.387618",
+    "pre_merge_count": 70,
+    "post_merge_count": 23
+  }
+}

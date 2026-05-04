@@ -1,0 +1,1872 @@
+{
+  "brief": "认知科学出身的用户体验设计奠基人",
+  "school": "认知心理学/以人为中心的设计",
+  "domains": [
+    "认知心理学",
+    "人机交互",
+    "用户体验设计"
+  ],
+  "stance_anchors": {
+    "core_belief": "日常事物使用失败的责任应归于糟糕的设计而非用户自身",
+    "methodology": "以用户为中心的设计（UCD），用观察数据而非教条来理解用户",
+    "key_debates": [
+      "设计师责任 vs 用户责任",
+      "affordance vs 文化惯例",
+      "简单性 vs 复杂性"
+    ],
+    "value_hierarchy": [
+      "可理解性",
+      "可发现性",
+      "用户尊严",
+      "系统思维",
+      "商业可行性"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "跨学科整合型——将认知科学理论转化为设计实践，善于用日常例子阐明抽象概念",
+    "reasoning_approach": "自下而上的实证归纳，从具体失误案例中提炼通用理论模型",
+    "typical_biases": [
+      "对概念模型的理论偏好可能低估组织/商业约束",
+      "对惯例的尊重有时过于保守"
+    ],
+    "intellectual_strengths": [
+      "将认知科学理论应用于日常设计的转化能力",
+      "构建统一理论框架的能力（SAS模型、双存储模型、执行/评估鸿沟）",
+      "自我修正的诚实（承认affordance误用、从批评设计师到理解设计师）"
+    ],
+    "intellectual_blindspots": [
+      "早期缺乏对设计师实际工作约束的理解",
+      "对快速原型迭代可能牺牲质量的张力认识较晚"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "执行鸿沟与评估鸿沟",
+      "components": [
+        "语义距离（目标→意图）",
+        "表音距离（意图→动作）",
+        "评估输出表达与用户目标的关系"
+      ],
+      "application": "评估人机界面的直接性和易用性"
+    },
+    {
+      "name": "HCD七大原则",
+      "components": [
+        "可发现性",
+        "反馈",
+        "概念模型",
+        "示能性",
+        "意符",
+        "映射",
+        "约束"
+      ],
+      "application": "评估和指导可用设计的基石框架"
+    },
+    {
+      "name": "竞争调度+SAS模型",
+      "components": [
+        "图式激活值竞争",
+        "触发条件匹配",
+        "监管注意系统（SAS）偏向激活/抑制"
+      ],
+      "application": "解释行动失误、注意控制和行为选择的认知机制"
+    },
+    {
+      "name": "双存储记忆模型",
+      "components": [
+        "初级记忆（临时激活，干扰导致遗忘）",
+        "次级记忆（永久存储，复述转移）",
+        "独立概率组合R(i)=P(i)+S(i)-P(i)S(i)"
+      ],
+      "application": "解释系列位置效应和记忆提取过程"
+    },
+    {
+      "name": "联合活动设计（JAD）",
+      "components": [
+        "HCD方法（可发现性、反馈、概念模型）",
+        "CSE启发式（事件检测、意义建构、重规划、共享共识）"
+      ],
+      "application": "高赌注、高复杂性联合活动中的人机协作系统设计"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "从认知科学实验心理学出发，经工程心理学实践催化，将认知理论转化为设计方法论",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "J.J. Gibson",
+          "nature": "思想继承",
+          "description": "采纳了affordance概念但始终在感知机制上与Gibson存在根本分歧",
+          "source_ref": "paper_Affordance, conventions, and design.md"
+        },
+        {
+          "source": "Broadbent/Deutsch/Treisman",
+          "nature": "思想继承",
+          "description": "整合其注意选择理论形成统一框架",
+          "source_ref": "paper_Toward a theory of memory and attention..md"
+        },
+        {
+          "source": "Shallice",
+          "nature": "思想继承",
+          "description": "共同提出注意行为控制的SAS-竞争调度框架",
+          "source_ref": "paper_Attention to Action.md"
+        },
+        {
+          "source": "Reason",
+          "nature": "思想继承",
+          "description": "日记研究支持诺曼的捕获错误模型，二者在失误分类上互补",
+          "source_ref": "paper_Attention to Action.md"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "Gibson的affordance",
+          "original": "生态心理学中的真实affordance（行动者与物体间可能的关系）",
+          "transformation": "转化为设计中的'perceived affordance'，区分物理产品与屏幕界面中affordance的不同角色",
+          "source_ref": "paper_Affordance, conventions, and design.md"
+        },
+        {
+          "source": "认知心理学",
+          "original": "实验室内的人类信息加工研究",
+          "transformation": "转化为面向日常物品和界面设计的实用方法论",
+          "source_ref": "paper_The Psychology of Everyday Things.md"
+        }
+      ],
+      "ruptured": [
+        {
+          "source": "弗洛伊德失误理论",
+          "original": "将失误归因于无意识动机和压抑内容",
+          "transformation": "诺曼将其重新解读为处理机制和知识内容两个独立维度，理解失误机制不需要精神分析",
+          "source_ref": "paper_Categorization of action slips..md"
+        }
+      ],
+      "converged": [
+        {
+          "streams": [
+            "认知科学",
+            "工程设计",
+            "心理学"
+          ],
+          "product": "认知工程学——将科学知识应用于机器设计与建造，目标不是效率而是愉悦参与",
+          "source_ref": "exa_3_Internet FAX.md"
+        },
+        {
+          "streams": [
+            "HCD（以人为中心设计）",
+            "CSE（认知系统工程）"
+          ],
+          "product": "联合活动设计（JAD）——支持高复杂性场景中人机协作的新框架",
+          "source_ref": "paper_Joint Activity Design User_Centered.md"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1979年三里岛核事故",
+        "title": "从认知科学家到设计倡导者",
+        "narrative": "调查三里岛核事故时发现操作员并无过错，控制室设计缺陷才是根本原因——控制面板'像是故意设计来导致错误的'。",
+        "catalyst": "三里岛核事故调查",
+        "before_state": "纯认知科学研究者",
+        "after_state": "设计领域的公开倡导者，将认知科学应用于设计批评",
+        "significance": "催生了《The Design of Everyday Things》",
+        "source_ref": "exa_1_.md"
+      },
+      {
+        "period": "1980年代末Apple工作",
+        "title": "从批评设计师到理解设计约束",
+        "narrative": "在Apple工作后认识到没有'愚蠢的设计师'，糟糕设计源于孤立地解决问题，必须同时考虑国际市场、价格、兼容性等约束。",
+        "catalyst": "Apple实际工作经历",
+        "before_state": "将设计失败归咎于设计师的无能",
+        "after_state": "理解设计的多重约束，钦佩在约束中产出好设计的设计师",
+        "significance": "从批判者转变为建设性贡献者",
+        "source_ref": "exa_8_A Conversation with Don Norman.md"
+      },
+      {
+        "period": "2010年代",
+        "title": "从产品设计到系统设计",
+        "narrative": "从设计单个产品转向设计系统，关注复杂性而非简单性，最终探讨个体设计选择与系统性效应的耦合。",
+        "catalyst": "对运营(operations)的研究，认识到设计和运营是同一主题",
+        "before_state": "关注单一产品的可用性设计",
+        "after_state": "关注系统级设计和全球性问题",
+        "significance": "催生Design for a Better World和JAD框架",
+        "source_ref": "paper_Joint Activity Design User_Centered.md"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "Apple公司",
+          "role": "用户体验架构师",
+          "duration": "1990年代",
+          "impact": "从批评者变为实践者，理解商业约束对设计的影响",
+          "source_ref": "exa_8_A Conversation with Don Norman.md"
+        },
+        {
+          "context": "UCSD认知科学系",
+          "role": "教授/研究者",
+          "duration": "1970s-1980s",
+          "impact": "建立LNR研究组，发展主动结构网络模型和记忆/注意理论",
+          "source_ref": "paper_Explorations in Cognition.md"
+        },
+        {
+          "context": "三里岛核事故调查",
+          "role": "调查委员会成员",
+          "duration": "1979",
+          "impact": "发现人为错误实为设计缺陷，奠定其设计哲学基础",
+          "source_ref": "exa_7_Transcript_ A Chat with Don Norman.md"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "个人计算革命",
+          "role": "参与者和理论贡献者",
+          "impact": "将认知科学应用于人机交互，奠定UX设计基础",
+          "source_ref": "paper_Direct Manipulation Interfaces.md"
+        },
+        {
+          "context": "认知科学学科建立",
+          "role": "早期奠基者",
+          "impact": "LNR研究组的跨学科工作为认知科学提供了统一框架范例",
+          "source_ref": "paper_Explorations in Cognition.md"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "Rumelhart & Lindsay",
+        "nature": "互补型",
+        "product": "LNR研究组和《Explorations in Cognition》",
+        "significance": "早期认知科学的重要团队，发展了主动结构网络模型",
+        "source_ref": "paper_Explorations in Cognition.md"
+      },
+      {
+        "with": "Shallice",
+        "nature": "互补型",
+        "product": "注意行为控制的SAS-竞争调度理论框架",
+        "significance": "统一了自动加工和有意识控制的行动选择理论",
+        "source_ref": "paper_Attention to Action.md"
+      },
+      {
+        "with": "Hutchins & Hollan",
+        "nature": "互补型",
+        "product": "直接操控界面理论（执行鸿沟/评估鸿沟）",
+        "significance": "奠定人机交互理论基石",
+        "source_ref": "paper_Direct Manipulation Interfaces.md"
+      },
+      {
+        "with": "Waugh",
+        "nature": "师徒型",
+        "product": "初级记忆模型和双存储记忆理论",
+        "significance": "证明了遗忘的干扰理论，建立双存储模型的数学形式",
+        "source_ref": "paper_Primary memory..md"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "对'愚蠢设计师'的批评立场",
+        "reason": "在Apple工作后理解了设计师面临的多重压力和约束",
+        "aftermath": "转向建设性的设计方法论贡献",
+        "source_ref": "exa_8_A Conversation with Don Norman.md"
+      },
+      {
+        "what": "纯可用性导向的设计关注",
+        "reason": "对可用性工作感到厌倦，认为问题不再是新理论而是教育",
+        "aftermath": "转向情感化设计和系统级设计",
+        "source_ref": "designemotion_interview_emotional_design.md"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "Anderson & Bower",
+        "axis": "方法论严格性",
+        "dynamic": "批评LNR研究组缺乏实验数据支持，推测与实验比例偏高",
+        "source_ref": "paper_Explorations in Cognition.md"
+      },
+      {
+        "who": "图形设计师（滥用affordance概念者）",
+        "axis": "概念精确性",
+        "dynamic": "诺曼严厉批评将屏幕图标称为'affordance'的误用，坚持区分affordance、反馈和文化惯例",
+        "source_ref": "paper_Affordance, conventions, and design.md"
+      }
+    ],
+    "tension_explanation": {
+      "note": "诺曼的思想轨迹体现了一个持续张力：理论精确性与实践可及性之间的平衡",
+      "tracing": "从严格区分affordance与perceived affordance的学术争论，到提出折扣可用性工程的实用折衷，再到承认快速迭代的效率可能以质量为代价"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "中低——尊重既有惯例和标准化，反对违反惯例的设计创新",
+    "information_processing": "数据驱动——强烈主张用观察数据而非教条来了解用户",
+    "temporal_orientation": "持续前向——从不回头看已完成工作，每年学习新主题，不断转向新领域",
+    "conflict_resolution": "建设性整合——将对立视角（HCD+CSE、认知科学+设计）融合为统一框架"
+  },
+  "situational_triggers": {
+    "description": "诺曼在不同情境下的认知和行为模式",
+    "triggers": [
+      {
+        "condition": "遇到被归咎于'人为错误'的事故",
+        "behavioral_shift": "自动归因于设计缺陷，寻找系统层面的问题根源",
+        "confidence": "高",
+        "source_ref": "exa_1_.md"
+      },
+      {
+        "condition": "看到设计师滥用学术概念",
+        "behavioral_shift": "严厉批评并澄清概念边界（如affordance误用）",
+        "confidence": "高",
+        "source_ref": "paper_Affordance, conventions, and design.md"
+      },
+      {
+        "condition": "面对新学科或未理解的主题",
+        "behavioral_shift": "投入学习、写书、然后转向下一个主题",
+        "confidence": "高",
+        "source_ref": "exa_4_Design for Service.md"
+      },
+      {
+        "condition": "面对纯学术争论缺乏数据支持",
+        "behavioral_shift": "呼吁自然观察和实际用户研究，引用Nielsen的3-5用户法则",
+        "confidence": "高",
+        "source_ref": "paper_Affordance, conventions, and design.md"
+      }
+    ],
+    "collapse_point": "当多个图式激活值相近且SAS注意力不足时，产生捕获错误——这一认知机制既是其理论核心，也隐喻了其思想的运作方式",
+    "default_behavior": "跨学科整合：将认知科学理论转化为设计实践建议",
+    "public_commitment_lock": "承诺设计应为所有人服务，糟糕设计等于侮辱用户尊严"
+  },
+  "communication_profile": {
+    "style": "平易近人、善用日常案例（门、水龙头、录像机）、自嘲式幽默、即兴发挥",
+    "persuasion_tactics": [
+      "用日常物品的反例制造认知失调",
+      "引用重大事故（三里岛）展示设计缺陷的严重后果",
+      "坦诚承认自己的错误（如affordance误用）建立可信度"
+    ],
+    "rhetorical_devices": [
+      "类比（钢琴vs小提琴说明语义直接性）",
+      "反问（'如果简单的东西需要说明书，设计就失败了'）",
+      "自传式叙事（用个人转折点证明论点）"
+    ],
+    "emotional_range": "从学术严谨到热情倡导，从自我批评到公开批评，偶尔流露出对设计界的失望和厌倦"
+  },
+  "evolution_trajectory": "电气工程师→认知心理学家（记忆/注意/行动控制）→认知科学家（LNR研究组）→设计倡导者（POET/DOET）→Apple实践者→情感化设计→系统设计（JAD）→全球性议题（Design for a Better World）。每次转向都源于偶然机遇和'学完就写书走人'的模式。",
+  "key_aphorisms": [
+    "好的设计应让人无需说明书即可理解",
+    "当简单的东西需要图片、标签或说明时，设计就失败了",
+    "没有愚蠢的用户，只有愚蠢的设计",
+    "如果每年不做一个全新的、学习一个新主题，就会停滞",
+    "设计师不直接与用户对话——所有沟通都通过系统映像进行"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "好的设计应通过可发现性（示能、意符、约束、映射、反馈、概念模型六大理念）让产品无需说明书即可理解，简单东西需要说明书就是设计失败。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A good product should be easy to understand without a manual. Norman calls this **discoverability**, and he says good discoverability comes from six key ideas.",
+          "source_file": "uxmag_norman_six_principles.md",
+          "location": "开头第1段"
+        },
+        {
+          "excerpt": "\"When affordances are taken advantage of, the user knows what to do just by looking [...] Complex things may require explanation but simple things should not. When simple things need pictures, labels or instructions, the design has failed.\"",
+          "source_file": "exa_6_Norman Lecture.md",
+          "location": "Conceptual Models段落"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼的设计哲学核心是人性化信念：用户不应为日常物品的使用失败感到愚蠢，失败的责任归于设计而非用户。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Norman's principles are not about fancy theory — they are about something simple and human: we should be able to understand everyday things without feeling stupid.",
+          "source_file": "uxmag_norman_six_principles.md",
+          "location": "末段"
+        },
+        {
+          "excerpt": "Donald A. Norman's goal is to help relieve feelings of incompatibility by putting the blame on the poor design of everyday things in our environment rather than on ourselves. When we fail to deal appropriately with our environment of water faucets, doors, and VCRs, we usually blame ourselves.",
+          "source_file": "paper_The Psychology of Everyday Things.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "Donald A. Norman's goal is to help relieve feelings of incompatibility by putting the blame on the poor design of everyday things in our environment rather than on ourselves. When we fail to deal appropriately with our environment of water faucets, doors, and VCRs, we usually blame ourselves. Norman demonstrates that much of the blame should be placed on the designer",
+          "source_file": "paper_The Psychology of Everyday Things.md",
+          "location": "第2-3段"
+        },
+        {
+          "excerpt": "Most accidents are attributed to human error, but in almost all cases the human error was the direct result of poor design. The principles that guide a quality, human-centered design are not relevant just to a more pleasurable life—they can save lives.",
+          "source_file": "exa_1_.md",
+          "location": "Preface to the 2002 Edition，第3段"
+        },
+        {
+          "excerpt": "Good design will not remove the difficulties and challenges of everyday life. As members of Homo curiousitus, we seek out challenging and difficult puzzles to solve. Good design of everyday things will give us more time to confront things in a more meaningful and fulfilling way.",
+          "source_file": "paper_The Psychology of Everyday Things.md",
+          "location": "末段"
+        }
+      ]
+    },
+    {
+      "claim": "增加功能通常以增加复杂性为代价。诺曼后期从设计单个产品转向设计系统，关注复杂性而非简单性。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Added functionality generally comes at the cost of added complexity.",
+          "source_file": "exa_6_Norman Lecture.md",
+          "location": "Make Things Visible段落"
+        },
+        {
+          "excerpt": "Since 2010, Don Norman, author of The Design of Everyday Things, has shifted (or re-shifted) his focus from designing individual products to designing systems. Living with Complexity (2010) focused on dealing with the complexity of reality and course correcting from a focus on simplicity. His forthcoming book, Design for a Better World (2023), takes the scale even larger to focus on how individual design choices are coupled with larger systemic effects.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "INTRODUCTION段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼承认在设计领域误用'affordance'概念：他实际讨论的是'perceived affordance'而非Gibson意义上的真实affordance。在图形界面中，设计师只能控制感知到的示能，他计划在修订版中替换全部术语。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "I should have used the term \"perceived affordance,\" for in design, we care much more about what the user perceives than what is actually true. What the designer cares about is whether the user perceives that some action is possible (or in the case of perceived non-affordances, not possible).",
+          "source_file": "jnd_affordances_and_design.md",
+          "location": "PERCEIVED AFFORDANCE段落"
+        },
+        {
+          "excerpt": "In graphical, screen-based interfaces, all that the designer has available is control over perceived affordances.",
+          "source_file": "jnd_affordances_and_design.md",
+          "location": "PERCEIVED AFFORDANCE段落末"
+        },
+        {
+          "excerpt": "To my great surprise, the concept of affordance was adopted by the design community, especially graphical and industrial design. Alas, yes, the concept has caught on, but not always with complete understanding. My fault: I was really talking about perceived affordances, which are not at all the same as real ones.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk1第3段"
+        },
+        {
+          "excerpt": "POET was about \"perceived affordance.\" When I get around to revising POET, I will make a global change, replacing all instances of the word \"affordance\" with the phrase \"perceived affordance.\"",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk1第4段"
+        }
+      ]
+    },
+    {
+      "claim": "违反惯例的设计即使更优越也注定失败。诺曼强烈主张遵循既有用法，尊重文化惯例，因为惯例虽看似随意实则经过演化积淀，一旦采纳就难以改变。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Those who violate conventions, even when they are convinced that their new method is superior, are doomed to fail.",
+          "source_file": "jnd_affordances_and_design.md",
+          "location": "Four principles段落第1点"
+        },
+        {
+          "excerpt": "Conventions are not arbitrary: they evolve, they require a community of practice. They are slow to be adopted and, once adopted, slow to go away. So although the word implies voluntary choice, the reality is that they are real constraints on our behavior. Use them with respect. Violate them only with great risk.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk3第6段"
+        },
+        {
+          "excerpt": "How do you know if the user shares the conventions? Why, with data, of course. This is something that cannot be decided by arguments, logic, or theory. Cultural constraints and conventions are about what people believe and do, and the only way to find out what people do is to go out and watch them—not in the laboratories, not in the usability testing rooms, but in their normal environment.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk3第8段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼区分物理约束（与真实示能相关）、逻辑约束（推理确定选项）和文化约束（习得的共享惯例）三类行为约束，强调必须明确区分使用场景。图形设计中的大量'affordance'实际是文化约定。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In all scrolling bars I have seen, there is a physical constraint as well: the vertical scroll bar only moves vertically, not horizontally. All this is cultural convention, not affordances.",
+          "source_file": "jnd_affordances_and_design.md",
+          "location": "CULTURAL CONSTRAINTS段落"
+        },
+        {
+          "excerpt": "In POET, I introduced the distinctions among three kinds of behavioral constraints: physical, logical, and cultural. These are powerful design tools, so let's be clear where each is being used. Physical constraints are closely related to real affordances... Logical constraints use reasoning to determine the alternatives... Cultural constraints are conventions shared",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk2第5-8段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼以三里岛核事故调查为转折点，从认知科学家变为设计倡导者：发现操作员并无过错，根本原因是控制室设计缺陷——控制面板像是'故意设计来导致错误的'。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "To my surprise, we concluded that they were not to blame: the fault lay in the design of the control room. Indeed, the control panels of many power plants looked as if they were deliberately designed to cause errors.",
+          "source_file": "exa_1_.md",
+          "location": "The Hidden Frustrations段落"
+        },
+        {
+          "excerpt": "We decided that the operators were really quite intelligent and sensible and everything they did was sensible except that the design was so bad that if you wanted to cause people to make errors, you couldn't have done a better job. There were 4000 meters and controls laid out in a neat orderly way, so that you might have a bank of 20 switches and then if you flipped on in the middle wrong, people got mad at you.",
+          "source_file": "exa_7_Transcript_ A Chat with Don Norman.md",
+          "location": "Don回答第3段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼的生活哲学是持续向前：从不回头看已完成工作，每年学习一个新主题，喜欢教和讨论自己不理解的东西，理解后就写书转向下一个主题。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "I never look back at the stuff I've done. I look forward to where I'm going. [...] If I don't do a dramatically new thing each year and learn a new topic, then I'll stagnate. It's part of my philosophy of life, to always push off in different directions.",
+          "source_file": "exa_8_A Conversation with Don Norman.md",
+          "location": "第1段DN回答"
+        },
+        {
+          "excerpt": "What I'm going to do is stumble through what I'm thinking about. That's what I really like to do. I like to teach and think and talk about stuff I don't understand. And so I give crappy talks because I'm making it up as I go along. And when I do understand it, I write a book and then I'm bored with it and go on to the next topic.",
+          "source_file": "exa_4_Design for Service.md",
+          "location": "演讲开头第2段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼在Apple经历后从批评设计师转变为理解设计约束：认识到没有'愚蠢的决定'，糟糕设计源于孤立解决问题，必须同时考虑国际市场、价格、兼容性等。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "I actually very much remember my encounter with you, John, because I think you were the first real designer I ever met. [...] I realized that maybe I didn't understand the problems that designers face.",
+          "source_file": "exa_8_A Conversation with Don Norman.md",
+          "location": "第2段DN回答"
+        },
+        {
+          "excerpt": "There are no \"dumb decisions.\" Everybody has a problem to solve. What makes for bad design is trying to solve problems in isolation, so that one particular force, like time or market or compatibility or usabilility, dominates.",
+          "source_file": "exa_8_A Conversation with Don Norman.md",
+          "location": "第2段DN回答中"
+        },
+        {
+          "excerpt": "I've really come to appreciate the pressures put on design. [...] We have to worry about the international market, we have to worry about price, we have to worry about compatibility with the partners. So I've really come to broaden my appreciation for what goes on, which, in turn, increases my admiration for those good designs that are eventually produced.",
+          "source_file": "exa_8_A Conversation with Don Norman.md",
+          "location": "第4段DN回答"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼提出'认知工程学'：将科学知识应用于机器设计，目标不是效率而是令人愉悦的系统（'愉悦参与'）。正确概念模型可将困惑困难的任务转化为简单直接的任务。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Cognitive Engineering, a term invented to reflect the enterprise I find myself engaged in: neither Cognitive Psychology, nor Cognitive Science, nor Human Factors. It is a type of applied Cognitive Science, trying to apply what is known from science to the design and construction of machines.",
+          "source_file": "exa_3_Internet FAX.md",
+          "location": "PROLOGUE段落"
+        },
+        {
+          "excerpt": "To devise systems that are pleasant to use—the goal is neither efficiency nor ease nor power, although these are all to be desired, but rather systems that are pleasant, even fun: to produce what Laurel calls \"pleasurable engagement\"",
+          "source_file": "exa_3_Internet FAX.md",
+          "location": "PROLOGUE目标2段落"
+        },
+        {
+          "excerpt": "the comment reveals the power of the proper conceptual model of the situation: The correct conceptual model can transform confusing, difficult tasks into simple, straightforward ones. This is an important point that forms the theme of a later section.",
+          "source_file": "exa_3_Internet FAX.md",
+          "location": "AN ANALYSIS OF TASK COMPLEXITY段落"
+        }
+      ]
+    },
+    {
+      "claim": "心理变量与物理变量之间的根本差异是人机交互困难的核心：人的目标和意图是心理变量，但任务必须在物理系统上执行，需要双向翻译。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "There is a discrepancy between the person's psychologically expressed goals and the physical controls and variables of the task. The person starts with goals and intentions. These are psychological variables. [...] However, the task is to be performed on a physical system, with physical mechanisms to be manipulated",
+          "source_file": "exa_3_Internet FAX.md",
+          "location": "Psychological Variables Differ From Physical Variables段落"
+        }
+      ]
+    },
+    {
+      "claim": "设计师不直接与用户对话——所有沟通通过'系统映像'（system image）进行。如果系统映像不能清晰传达设计模型，用户就形成错误的心理模型。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The designer expects the user's model to be identical to the design model. But the designer doesn't talk directly with the user—all communication takes place through the system image. If the system image does not make the design model clear and consistent, then the user will end up with the wrong mental model.",
+          "source_file": "exa_0_.md",
+          "location": "Figure 6说明段落"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼的职业生涯充满偶然，从电气工程师到心理学家再到设计领域，每次转折源于意外机会。他认为工程学和心理学背景的结合是研究人类行为的绝佳组合。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Then by freak accident – actually most of my life has been accidental – and what I've learned to do is take advantage of these accidents and go into whole new fields and explore new territories.",
+          "source_file": "exa_7_Transcript_ A Chat with Don Norman.md",
+          "location": "Don回答第1段"
+        },
+        {
+          "excerpt": "That's when I started first of all working with NASA and aviation safety, and then consulting with the newly developing computer industry. [...] As I did more and more of that I got more and more interested in the activity going on in Silicon Valley so I retired from the university (I retired in 1993) and went up to Apple and became eventually a Vice President of the Advanced Technology Group",
+          "source_file": "exa_7_Transcript_ A Chat with Don Norman.md",
+          "location": "Don回答第3段末尾"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼在研究运营后提出设计和运营是同一主题，成为新著作的核心论点。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "So I've been reading about operations and I discovered that design and operations are the same topic. So, that's kind of what my new book is going to be about so let me see if I can explain it.",
+          "source_file": "exa_4_Design for Service.md",
+          "location": "演讲开头部分"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼认为设计界已理解如何做出好产品但糟糕设计仍大量存在，问题不再是新理论而是教育。他已对可用性工作厌倦，转向情感化设计：让产品不仅实用更令人愉悦有趣。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "I believe that we now do understand how to design so that the result truly fits people. [...] Lots of individual designers are still hopelessly inept. [...] having worked to make products easier to use for the past 15 years, I am getting bored.",
+          "source_file": "designemotion_interview_emotional_design.md",
+          "location": "Q1回答前半"
+        },
+        {
+          "excerpt": "Now it is time to move the focus from making things practical (they function well, they are understandable) to products and services that are enjoyable, that give pleasure, and even fun. That is the focus of Emotional Design: to make our lives more pleasurable.",
+          "source_file": "designemotion_interview_emotional_design.md",
+          "location": "Q1回答后半"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼强调设计师不能忽视商业层面：如果产品不成功或经济上不可行，设计再好也没人会用。艺术家可以忽略商业，但产品设计师不能。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Artists can ignore the business side of their work. Product designers cannot – a successful product must have successful business model. So, in my design courses, I teach net present value (NPV), ROI, and the essence of a good cost model",
+          "source_file": "designemotion_interview_emotional_design.md",
+          "location": "Q5回答"
+        }
+      ]
+    },
+    {
+      "claim": "真正的个性化和定制化能产生更大的情感依附：用户必须做出真正的投入——必须'拥有'这些改变，仅改变颜色或小细节不够。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We are much more emotionally attached to products for which we feel some involvement. So true personalization and customization makes a real difference. [...] just changing the color or other minor details will not be sufficient. The person has to make a real investment – they have to \"own\" the changes.",
+          "source_file": "designemotion_interview_emotional_design.md",
+          "location": "Q2回答"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼从认知心理学转向设计研究的起点是对行为失误（slips of action）和口误的研究，反映了心理学从内在信息加工向环境解释的范式转变。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Norman, a cognitive psychologist, appears to have been drawn to issues of design in his studies of slips of the tongue and slips of action (Norman, 1981). His treatment of performance slips reflects in many ways the growth of thinking in psychology over the last decade or two. At the height of information processing (Neisser, 1967), most explanations of behavior turned inward inside the performer's head. With the influence of Gibson (1979) and his followers, psychologists are looking to the environment for explanations.",
+          "source_file": "paper_The Psychology of Everyday Things.md",
+          "location": "第5段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼认为好的设计应将使用信息嵌入物体本身（如门的把手暗示推或拉），但也承认即使设计合理，若缺乏统一标准化仍难以完全成功。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "this information should be built into a well-designed door. The designer can eliminate much of the ambiguity by the design of the handle. A flat horizontal bar affords only pushing whereas a vertical bar extended further away from the door supposedly affords only pulling. However compatible these designs are, they will not be totally successful unless uniformly standardized.",
+          "source_file": "paper_The Psychology of Everyday Things.md",
+          "location": "第7段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼的以用户为中心的设计公式包含七项原则：利用世界中的知识、简化任务、让用户看到正在发生什么、使用自然映射、约束适当操作、系统处理错误、标准化。运用概念模型、示能性、约束和映射四个核心心理学概念分析设计成败。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Norman's formula for improving the quality of everyday things is user-centered design. He discusses seven principles for good design or transforming difficult tasks into simple ones: (a) Exploit knowledge in the world as well as in the head. (b) The task should be simplified as much as possible. (c) The user should see what is happening. (d) Natural mappings should be used. (e) The appropriate actions should be constrained as much as possible. (f) The system should be designed to handle errors. (g) Standardization works and should be used if possible.",
+          "source_file": "paper_The Psychology of Everyday Things.md",
+          "location": "后半部分user-centered design段落"
+        },
+        {
+          "excerpt": "His currency includes conceptual models, affordances, constraints, and mappings. A conceptual model is nothing more than a fancy term for the perceiver's representation of the device in question.",
+          "source_file": "paper_The Psychology of Everyday Things.md",
+          "location": "chunk2第3段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼最初反感Gibson的示能概念，但通过在La Jolla与Gibson长时间争论后逐渐接受affordance概念，尽管在感知信息加工机制上始终存在根本分歧——诺曼关注加工机制而Gibson将其视为无关。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "I originally hated the idea: it didn't make sense. I cared about processing mechanisms, and Gibson waved them off as irrelevant. Then Gibson started spending considerable time in La Jolla, and so I was able to argue with him for long hours (both of us relished intellectual arguments). I came to appreciate the concept of affordances, even if I never understood his other concepts, such as \"information pickup.\" He and I disagreed fundamentally about how the mind actually processes perceptual information (that phrase alone would infuriate him).",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "Affordances, Constraints, and Conceptual Models段落"
+        },
+        {
+          "excerpt": "I originally hated the idea: it didn't make sense. I cared about processing mechanisms, and Gibson waved them off as irrelevant. Then Gibson started spending considerable time in La Jolla, and so I was able to argue with him for long hours (both of us relished intellectual arguments). I came to appreciate the concept of affordances, even if I never understood his other concepts, such as \"information pickup.\"",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk1第8段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼认为成功设计最重要的部分是底层概念模型——这是最困难的部分。他观察到业界对概念模型只是口头接受，缺乏认真实践。最重要的设计工具是一致性和可理解性，通过明确的可感知概念模型实现。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "To me, the most important part of a successful design is the underlying conceptual model. This is the hard part of design: formulating an appropriate conceptual model and then assuring that everything else be consistent with it. I see lots of token acceptance of this idea, but far too little serious work.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "POET三维度讨论后"
+        },
+        {
+          "excerpt": "The most important design tool is that of coherence and understandability, which comes through an explicit, perceivable conceptual model. Affordances specify the range of possible activities, but affordances are of little use if they are not visible to the users. Hence, the art of the designer is to ensure that the desired, relevant actions are readily perceivable.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk3第11段"
+        },
+        {
+          "excerpt": "Personally, I believe that our reliance on abstract representations and actions is a mistake and that people would be better served if we would return to control through physical",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk3末段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼区分物理产品与屏幕界面中affordance的不同角色：物理产品中affordance重要，但屏幕界面中文化惯例远比affordance重要。严厉批评图形设计师将屏幕图标称为'添加affordance'的误用——这是符号交流，只有在遵循用户理解的约定时才有效。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "affordances, both real and perceived, play very different roles in physical products than they do in the world of screen-based products. In the latter case, affordances play a relatively minor role: cultural conventions are much more important.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk1第4段末"
+        },
+        {
+          "excerpt": "Far too often I hear graphic designers claim that they have added an affordance to the screen design when they have done nothing of the sort. Usually they mean that some graphical depiction suggests to the user that a certain action is possible. This is not affordance, either real or perceived. Honest, it isn't. It is a symbolic communication, one that works only if it follows a convention understood by the user.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "cultural constraint讨论后"
+        },
+        {
+          "excerpt": "The affordance exists independently of what is visible on the screen. Those displays are not affordances; they are visual feedback that advertise the affordances: they are the perceived affordances. The difference is important because they are independent design concepts: the affordances, the feedback, and the perceived affordances can all be manipulated independently of one another.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk2第3段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼警告不要混淆affordance与惯例：affordance是世界的属性，惯例是人为的习得的。设计师可以发明新的affordance但不能轻易改变已建立的社会惯例。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Please don't confuse affordances with perceived affordances. Don't confuse affordances with conventions. Affordances reflect the possible relationships among actors and objects: they are properties of the world. Conventions, conversely, are arbitrary, artificial, and learned. Once learned, they help us master the intricacies of daily life... Designers can invent new real and perceived affordances, but they can not so readily change established social conventions. Know the difference and exploit that knowledge.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk4末段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼强烈主张用数据而非争论来了解用户：了解文化约束和惯例的唯一方法是在用户的自然环境中观察他们，不是在实验室。他批评设计界充斥着关于用户'想要''相信'什么的教条却很少看到数据。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Cultural constraints and conventions are about what people believe and do, and the only way to find out what people do is to go out and watch them—not in the laboratories, not in the usability testing rooms, but in their normal environment.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "How do you know段落"
+        },
+        {
+          "excerpt": "I still hear far too much dogmatism about what people really \"want,\" what they \"believe,\" or how they \"really\" behave, but I see very little data. It doesn't take much data.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "How do you know段落末"
+        },
+        {
+          "excerpt": "I still hear far too much dogmatism about what people really \"want,\" what they \"believe,\" or how they \"really\" behave, but I see very little data. It doesn't take much data. My partner, Jakob Nielsen, has long argued that you can get these data at a discount: three to five people will give you enough for most purposes. But they need to be real people, doing real activities. Don't speculate. Don't argue. Observe.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk3第9-10段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼认为对抽象表征和操作的依赖是错误的方向，人们如果能回归通过物理对象（旋钮、滑块、按钮）来控制会得到更好的服务，但承认抽象命令将长期存在。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Personally, I believe that our reliance on abstract representations and actions is a mistake and that people would be better served if we would return to control through physical objects, to real knobs, sliders, buttons, to simpler, more concrete objects and actions. But that is a different story for a different time.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "Concluding Summary后半"
+        },
+        {
+          "excerpt": "Personally, I believe that our reliance on abstract representations and actions is a mistake and that people would be better served if we would return to control through physical objects, to real knobs, sliders, buttons, to simpler, more concrete objects and actions.",
+          "source_file": "paper_Affordance, conventions, and design.md",
+          "location": "chunk4倒数第2段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼与Rumelhart、Lindsay创立的LNR研究组提出'主动结构网络'模型，核心创新是将程序性信息嵌入网络结构中，使结构既是数据也是过程，将看似分散的研究统一在一个框架下。但被批评推测与实验比例偏高，缺乏足够实验支撑。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "According to the present researchers, their scheme differs from other proposed networks in that theirs includes active procedural information (i.e., programs dictating how a given task should be performed). Thus, the structures are called active structural networks. The word 'active' is used simply to mean that the structures are process as well as data.",
+          "source_file": "paper_Explorations in Cognition.md",
+          "location": "chunk1第8-9段"
+        },
+        {
+          "excerpt": "Its 14 chapters, each authored by one or more members of the LNR research group (LNR is an acronym for the research group conceived and directed by Peter Lindsay, Donald Norman, and David Rumelhart), are tied together by a common thread: the model of active structural networks.",
+          "source_file": "paper_Explorations in Cognition.md",
+          "location": "chunk1第5段"
+        },
+        {
+          "excerpt": "In Human Associative Memory, Anderson and Bower editorialized about the work of the LNR group at that time: \"perhaps the most disturbing aspect of the ... project is that a group of competent experimental psychologists have produced a model that seems to lack any supporting experimental data\" (p. 97). It is hard to tell whether the LNR group has taken this criticism to heart, since the present volume contains a very high ratio of speculation to experimentation.",
+          "source_file": "paper_Explorations in Cognition.md",
+          "location": "chunk2第2-3段"
+        }
+      ]
+    },
+    {
+      "claim": "高度自动化系统的复杂性正从受控工业环境扩散到普通人日常生活，HCD和CSE需要合并为联合活动设计（JAD）来应对这一范式转变。纯HCD方法可能无法产生支持跨单元协作的设计特征。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "JAD emerges as we enter a paradigm shift in which highly automated, and therefore highly complex, systems are not contained to controlled industrial settings which are managed by professionals with high levels of expertise. This complexity is creeping into the work and lives of nearly all people.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "INTRODUCTION段"
+        },
+        {
+          "excerpt": "The authors assume that without the consideration of factors related to joint activity, the application would most likely effectively support the ability of IPs to observe their own floors in isolation. Further, the high cost of development of the bespoke analogical representations (Timeline, Floor Overview, and Map View) would most likely lead to the elimination of these features under a standard HCD model. These elements are supported by the heuristics for designing for joint activity, but are not required for enhancing the usability of the application. Arguably, these features pose a detriment to overall usability, as they are not standard web widgets.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "DISCUSSION段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼推广的以人为中心的设计（HCD）自1980年代末以来一直是界面设计的基础框架，后经Alan Cooper等发展为交互设计（IxD），进而演变为用户体验设计（UX）。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Human-Centered Design (HCD), popularized by Don Norman in The Design of Everyday Things ( Norman 2013 ), has served as the foundational framework for interface design since the late 1980s. Later work from Alan Cooper and others built upon these frameworks to demonstrate HCD in practice as Interaction Design (IxD) ( Cooper 2014 ). User Experience Design (UX) has evolved to wrap these two frameworks into one practice and profession.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "BACKGROUND - Human-Centered Design段"
+        }
+      ]
+    },
+    {
+      "claim": "联合活动设计（JAD）将HCD和CSE的方法、视角和交付物合并，适用于高赌注、高复杂性和高不确定性的联合活动场景，支持机器成为好的团队成员。CSE的独特流程和制品能产出HCD方法单独无法实现的结果。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Together, HCD and CSE are a more robust team and support more resilient teams (Li et al 2022). This fusion is approached through teaching designers to support event detection, support sensemaking, support replanning, make the basic compact explicit, and design for shared common ground. Conversely, this relationship requires cognitive systems engineers to understand how to make features discoverable, provide feedback, support a conceptual model, and provide intuitive affordances, signifiers, mappings, and constraints, all within an understanding of modern user interface patterns and innovations.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "DISCUSSION段"
+        },
+        {
+          "excerpt": "We are calling this unified process Joint Activity Design, which supports designing for machines to be good team players.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "Abstract段"
+        },
+        {
+          "excerpt": "We introduce Joint Activity Design (JAD) as a new design framework that combines the methods, perspectives, and deliverables of these two design traditions. JAD is uniquely suited to the design of solutions in which joint activity is critically important, including high-stakes, high-complexity, and high-uncertainty settings.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "INTRODUCTION段"
+        },
+        {
+          "excerpt": "The unique process, artifacts, and heuristics of CSE have yielded distinctly different results than HCD methods and heuristics alone could. This has led to the creation of a novel user interface that supports work not only for individual IPs, but enables new collaboration and creation of common ground across the IP team and provides a solid foundation for integrating advanced analytics.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "CONCLUSION段"
+        }
+      ]
+    },
+    {
+      "claim": "设计联合活动的应用时，需结合用户访谈（HCD和CSE共用）和系统级分析制品（CSE特有），才能产出超越用户直接需求的系统级设计建议。为支持联合活动性能测试的界面迭代反而帮助精炼了团队协作设计。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "By using a combination of user interviews (used by both CSE and HCD) and artifacts for communicating analysis at a system level from CSE, the team was able to develop design recommendations that expanded beyond features requested by the IPs.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "METHODS段"
+        },
+        {
+          "excerpt": "the introduction of joint activity monitoring—the real-time continuous monitoring of performance over time and over varying challenges—is currently requiring further iteration in the interface design that was not anticipated. The requirement to support the ability to test joint performance in a team has helped refine the design to support such teaming.",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "METHODS段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼和Shallice提出注意在行为控制中的理论框架：围绕激活图式集，区分自动加工（竞争调度）和有意识控制（SAS）两种互补的行动选择过程。SAS在任务新颖或复杂且无现成图式时介入，通过额外激活/抑制偏向图式选择。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We propose a theoretical framework structured around the notion of a set of active schemas, organized according to the particular action sequences of which they are a part, awaiting the appropriate set of conditions so that they can become selected to control action.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "第1段"
+        },
+        {
+          "excerpt": "we suggest that two complementary processes operate in the selection and control of action. One is sufficient for relatively simple or well learned acts. The other allows for conscious, attentional control to modulate the performance.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "I. THEORY段"
+        },
+        {
+          "excerpt": "We propose that an additional system, the Supervisory Attentional System (SAS), provides one source of control upon the selection of schemas, but it operates entirely through the application of extra activation and inhibition to schemas in order to bias their selection by the contention-scheduling mechanisms.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "C. The Supervisory Attentional System段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼指出'automatic'一词在行为研究中有至少四种不同含义：无意识执行、无意图启动、自动注意定向、资源无关加工。五类任务情境需要刻意注意：计划决策、故障排除、不熟练动作、危险技术、克服强习惯。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "it refers to the way that certain tasks can be executed without awareness of their performance...Second, it refers to the way an action may be initiated without deliberate attention or awareness...Third, it is used in cases such as the orienting response, in which attention is drawn automatically to something...the term automatic is often defined operationally to refer to situations in which a task is performed without interfering with other tasks.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "1. They involve planning or decision making\n2. They involve components of troubleshooting\n3. They are ill-learned or contain novel sequences of actions\n4. They are judged to be dangerous or technically difficult\n5. They require the overcoming of a strong habitual response or resisting temptation.\nThe general principle involved is that these are special situations in which the uncontrolled application of an action schema is not desired for fear that it might lead to error.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "第5段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼提出竞争调度机制：潜在源图式相互竞争决定激活值，选择仅基于激活值——超过阈值时图式被选中，阈值随使用可降低。激活值受四类影响：竞争调度、触发条件、其他图式选择、垂直线程。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The basic mechanism, contention scheduling, which acts through activation and inhibition of supporting and conflicting schema, is proposed as the mechanism for avoiding conflicts in performance. Precise timing is handled by means of \"triggers\" that allow suitably activated schemas to be initiated at the precise time required.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "I. THEORY段"
+        },
+        {
+          "excerpt": "There are two basic principles of the contention scheduling mechanism: first, the sets of potential source schemas compete with one another in the determination of their activation value; second, the selection takes place on the basis of activation value alone-a schema is selected whenever its activation exceeds the threshold that can be specific to the schema and could become lower with use of the schema.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "A. Contention Scheduling段"
+        },
+        {
+          "excerpt": "We divide activational influences upon a schema into four types: influences from contention scheduling, from the satisfaction of trigger conditions, from the selection of other schemas, and from \"vertical thread\" influences. Trigger conditions specify under what conditions a schema should be initiated, thus allowing for precise environmental control of performance.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "B. Determination of Activation Values段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼的SAS模型预测前额叶病变的临床表现：SAS损伤可同时导致持续重复行为（图式激活过强）和注意力不稳定（多图式激活值相近），与前额叶患者表现高度一致。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "On the model, the failure of this single mechanism can give rise to the apparent contradiction between increased perseveration and increased distractability, depending on the pattern of trigger-schema relations. If one schema is more strongly activated than the others, it will be difficult to prevent it from controlling behavior. By contrast, when several schemas have similar activation values, one should obtain another clinical characteristic of frontal patients: an instability of attention and heightened distractability.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "A. Evidence for a Distinct Supervisory Attentional System段"
+        },
+        {
+          "excerpt": "It is well known in clinical neuropsychology that lesions confined to prefrontal structures leave the execution of basic skills such as the use of objects, speaking, and writing unaffected...The model does predict impairments in the performance of tasks that require error correction or planning, or are in some basic way novel-just the constellation of deficits that are observed clinically in the so-called frontal syndrome.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "A. Evidence段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼用捕获错误解释行动失误：当SAS指向别处时，不当图式在竞争调度中获得更高激活值从而'捕获'效应器系统。Reason的日记研究支持此模型——失误时人们通常感到'心不在焉'。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Occasionally, though, a schema that controls an incorrect action could become more strongly activated in contention scheduling than the correct schema and capture the effector systems. The supervisory system, being directed elsewhere, would not immediately monitor this, and a capture error would result.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "slips of action段"
+        },
+        {
+          "excerpt": "The data show that people typically rate themselves as being \"preoccupied\" and \"distracted\" in the situations wherein lapses occur. This would correspond in our model to the case in which no activation is being received for the \"appropriate\" schema from the supervisory system...both captured and capturing actions are rated as occurring \"very often\" and being \"automatic.\" Moreover, the captured and capturing actions were rated as having very similar stimulus characteristics.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "Findings from diary study段"
+        }
+      ]
+    },
+    {
+      "claim": "触发激活可比SAS激活更强大：Stroop效应等选择性注意现象是数据驱动的图式通过强触发条件在竞争调度中被选中的结果。注意资源主要在图式选择的关键时刻发挥作用，而非贯穿整个行动执行。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "despite one's desire to attend to one set of signals, if the trigger conditions of another are sufficiently well met, the other may be selected in contention scheduling despite the attention directed toward the one: triggering activation can be more powerful than activation from the Supervisory Attentional Mechanisms. A classic example of this difficulty is the Stroop phenomenon.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "Other factors段"
+        },
+        {
+          "excerpt": "One theme of the model is that attentional resources are relevant only at the specific points in an action where schema selection is required. Thus, control of a hand movement in response to a signal will usually require attentional resources twice: once to initiate the schemas that start the motion, once to initiate the schemas that control termination of the motion.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "C. Attentional Resources段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼将'意志'定义为SAS对图式选择施加注意激活的输出，沿量化维度变化——激活或抑制量越大意志体验越强。这解释了极端情况下意志与自动行为的清晰区分在微小注意努力时变得模糊。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In our view, will varies along a quantitative dimension corresponding to the amount of activation or inhibition required from the supervisory attentional mechanisms. The assumption that this activation value lies on a continuum explains why the distinction between willed and ideomotor actions seems quite clear in considering extreme actions but becomes blurred in considering those that require very little attentional effort.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "E. Will and Deliberate Conscious Control段"
+        },
+        {
+          "excerpt": "How an action is experienced is dependent upon what information about it is accessed by the Supervisory Attentional System and upon whether the supervisory system activates source schemas itself and, if so, how strongly. This, therefore, allows a variety of states of awareness of actions to exist.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "E. Will段"
+        },
+        {
+          "excerpt": "One type of error results following a decision not to do a step within a habitual sequence of actions. To eliminate the step requires deliberate (willful) inhibition of the relevant schema. If there is a momentary lapse of attention to the deliberate inhibition, the step may get done anyway. Closely related is the error that occurred to one of us, who decided not to take another bite of a delicious but extremely rich dessert; with only a brief lapse of attention, the cake got eaten.",
+          "source_file": "paper_Attention to Action.md",
+          "location": "E. Will段"
+        }
+      ]
+    },
+    {
+      "claim": "物体操作中的多阶规划：一阶规划根据即时任务调整抓握，二阶规划根据下一个任务调整当前抓握，表明认知前瞻性指导动作执行。研究物体操作为理解具身认知提供窗口——可从抓握方式推断心理状态和意图。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "First-order planning entails shaping one's object manipulation behavior according to immediate task demands...Second-order planning for object manipulation entails altering one's object manipulation behavior not just on the basis of immediate task demands but also on the basis of the next task to be performed. The paradigmatic example...is the observation that people generally take hold of an object to be inverted with the thumb pointing down rather than up; the inverted grasp permits a thumb-up orientation at the end of the rotation.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "INTRODUCTION段"
+        },
+        {
+          "excerpt": "If the same object is handled differently depending on a performer's mental state, then his or her mental state can be inferred from the way he or she handles the object.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "INTRODUCTION段"
+        }
+      ]
+    },
+    {
+      "claim": "心理学长期忽视运动控制研究，尽管运动控制正是心理生活转化为行为的手段，这种忽视部分源于心理学家认为难以通过心理学方法取得进展。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The dearth of motor control in psychology textbooks and psychology journals is ironic considering that psychology is the study of mental life and behavior. Motor control, meanwhile, is the study of the means by which mental life is translated into behavior. One reason for this neglect is the belief among many psychologists that it is difficult to make progress in the study of motor control by pursuing a psychological approach to it.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "INTRODUCTION段"
+        }
+      ]
+    },
+    {
+      "claim": "末端舒适效应：人们牺牲初始姿势舒适度换取任务结束时舒适姿势，表明动作规划以前瞻性方式为最终状态优化。反向实验证实这是系统性选择而非简单回避不适姿势。抓握选择首要决定因素可能是控制而非舒适——窄目标更可能导致不自然初始抓握，因为需要更高定位精度。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "All the participants grasped the dowel in a way that was consistent with the waiter's performance. They adopted an initially awkward posture for the sake of a less awkward posture at the end of the object transfer task...This final posture was more comfortable than the initial posture, at least by hypothesis. Accordingly, Rosenbaum et al. (1990) called this the end-state comfort effect.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "Initial Studies段"
+        },
+        {
+          "excerpt": "When the downward end of the dowel was supposed to be brought to the left end of the cradle with the right hand...most participants grasped the dowel with a thumb-down posture, the posture they avoided when they brought the dowel from the cradle to the target at that orientation...the posture that was avoided if it was the terminal posture was adopted if it was the initial posture.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "Confirmation Via Reversal段"
+        },
+        {
+          "excerpt": "Short and Cauraugh found that the probability of adopting awkward initial grasps prior to object rotations was greater for narrow targets than for wide targets. Because the final postures adopted for the narrow and wide targets were the same, Short and Cauraugh inferred that the desire for greater targeting control, as required for narrow targets, accounted for the grasp choices they observed.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "Control Rather Than Comfort段"
+        },
+        {
+          "excerpt": "oscillation rates were dramatically higher at the middle of the range of motion than at either end of the range, a result that fits with known facts about the power of the forearm at various portions of the pronation-supination axis...the highest oscillation rates were possible in the part of the range of motion that people preferred for aiming accords with the hypothesis that participants chose grasps that permitted greatest control in the phase of the movement when greatest control was required.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "Control Rather Than Comfort段"
+        }
+      ]
+    },
+    {
+      "claim": "抓握高度效应：计划放置位置越低初始抓握越高，反之亦然，表明空间规划遵循末端控制优化原则。返回动作依赖记忆（回忆）而非重新规划来选择抓握位置，以节省认知资源。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "the lower the planned placement of the plunger, the higher the grasp height; the higher the planned placement of the plunger, the lower the grasp height.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "The Grasp Height Effect段"
+        },
+        {
+          "excerpt": "the grasp heights for the return moves were close to what they had been for the home-to-target moves. Therefore, the return-move grasp heights diverged from the mean grasp height rather than converging toward the mean grasp height – just the opposite of what would have happened if the return-move grasp heights had reflected regression to the mean.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "grasp height段"
+        },
+        {
+          "excerpt": "Relying on memory to choose grasp heights for return moves can obviate \"figuring out\" what grasp heights to use. Saying this another way, relying on recall rather than planning may save cognitive resources.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "grasp height段"
+        }
+      ]
+    },
+    {
+      "claim": "人们在看到物体后很快决定抓握方式，通常在手开始移动之前就已选择好。无论实际抓握还是虚拟空间中仅口头报告抓握意图，选择和反应时模式高度一致，证明心理表征在动作开始前就已形成。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Rosenbaum, Vaughan, Barnes, and Jorgensen (1992) had participants reach out to move a dowel from one location to another...The participants' reaction times suggested that even before they moved their hands from the start position, they selected the grasps they would use.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "Choosing Forthcoming Grasps段"
+        },
+        {
+          "excerpt": "Participants called out the same names in the virtual grasp conditions as they used in the real grasp conditions...Reaction times also varied with dowel orientation in comparable ways in the real and virtual conditions...Mental representations of forthcoming grasp postures are available very quickly, even before movements are under way.",
+          "source_file": "paper_Cognition Action and Object Manipulation.md",
+          "location": "Choosing Forthcoming Grasps段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼在1980年代创造了'以用户为中心的设计'（UCD）一词，提出界面可用性指导方针，此后许多设计师在此基础上发展了各种方法论。许多优秀产品因界面糟糕而市场失败，平庸产品因界面友好而成功。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "User-centered design (UCD) is a design philosophy that seeks to place the end user at the center of the design process. The term was coined in the 1980s by Donald Norman who put forward guidelines that designers could follow in order for their interfaces to achieve good usability outcomes.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "User- and Human-Centered Design段"
+        },
+        {
+          "excerpt": "It has been observed that many otherwise excellent products have failed in the marketplace due to poor interface design, while mediocre products have flourished due to attractive and user-friendly interface design.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Connected Health Devices段"
+        }
+      ]
+    },
+    {
+      "claim": "互联健康行业快速迭代需求与传统HCD完整方法论存在张力，需要精简ISO 9241-210步骤以适应短产品生命周期。开发者往往更关注技术创新而非可用性。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "the connected health industry is seen as a fast-moving, highly competitive industry, highlighting a need not only for devices that achieve adequate levels of usability, but also for devices that can have rapid development cycles associated with them...This can mean that companies may not be able to incorporate a full HCD methodology into their product development cycle.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "The Need for a Methodology段"
+        },
+        {
+          "excerpt": "It has been previously observed that developers of connected health solutions are in many cases more engaged with the technical innovation in these systems rather than with their usability...it was identified that there is a need for guidelines on how to conduct the design and development process for connected health devices in terms of usability.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "The Need for a Guided Approach段"
+        }
+      ]
+    },
+    {
+      "claim": "HCD方法论推荐使用折扣可用性技术（启发式评估、认知走查）减轻资源负担，用例分析文档可同时充当多种数据收集工具，包含用户画像、场景描述、风险识别和故事板。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "This can be done using so-called discount usability techniques to ease the burden on time resources and to forgo expensive recruitment of end users...Usability inspection involves a multidisciplinary expert group inspecting the interface and attempting to identify usability and human factors problems. This can be in the form of a heuristic evaluation where the interface is compared to a set of predefined design guidelines or a cognitive walkthrough.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Phase 2: Expert Inspections and Walkthroughs段"
+        },
+        {
+          "excerpt": "in this way, the use case analysis acts like an interview, survey, and ethnographic exercise all in one, allowing for more rapid turnaround of information related to user requirements.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Phase 1 Activities - WIISEL case段"
+        },
+        {
+          "excerpt": "User profiles should be drawn up within the use case document of potential users, describing capabilities, requirements, and preferences.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Phase 1 Overview段"
+        },
+        {
+          "excerpt": "We utilized paper prototypes extensively in Phase 1 and usability inspections with small expert teams in Phase 2. This use of so-called discount usability engineering methods again allows for rapid turnaround times on prototypes and quick feedback to be sent to the design team. The use cases can be constructed in a matter of days, while a full use case analysis can be carried out with an end user or expert in an hour.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Discussion-Requirement 8段"
+        }
+      ]
+    },
+    {
+      "claim": "HCD第三阶段进行受控总结性用户测试，使用可用性指标（任务完成时间、错误数、完成率）和标准化问卷（ASQ、SUS）量化满意度。诺曼主张三阶段迭代：纸原型→专家检查→终端用户测试。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A number of usability metrics, such as time taken to complete task, errors made, and completion rate, were recorded during the walkthrough...The ASQ was employed after each scenario. The ASQ is a 7-point scale where a score of 7 indicates strong disagreement and 1 indicates strong agreement; a lower score indicates increased satisfaction with the interface.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Phase 2 Activities - expert walkthrough段"
+        },
+        {
+          "excerpt": "We have presented in detail the HCD methodology we consider to be a sensible and robust approach to designing interactive connected health devices. The three phases allow for design iteration and can be repeated if necessary. The phases where iteration is most likely to occur are Phase 2 and Phase 3, as these are the major testing phases with measurable outcomes, where outcome metrics can be compared when tests are repeated after prototypes have been updated.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Discussion段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼强调在将原型暴露给脆弱终端用户之前必须先经专家检查，既是安全原则也是成本控制。多学科专家参与设计过程很重要，不具备可用性背景的团队成员可通过启发式训练掌握分析能力。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "First, as a matter of principle in terms of ergonomic quality control and safety, we feel it is important to not expose a prototype to a potentially vulnerable user group, such as older adults in this case, until it has been fully inspected and walked through by experts. Second, the expert input in Phase 2 allowed for a fresh third-party perspective on the system and brought a level of expertise in areas of usability, human factors, and interface design. Finally, end user recruitment can be expensive, therefore Phase 2 acts as a way to remove many of the usability problems, however simple or complex they may be, before the prototype reaches end users.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Final Comments and Limitations段"
+        },
+        {
+          "excerpt": "We successfully integrated multidisciplinary inputs into our design, utilizing experts from various backgrounds such as computer science, medicine, nursing, gerontology, psychology, and design. The experts should be chosen based on the type of system being designed and who the target end user is. If the necessary experts are not available, then generic inspectors should inspect the prototype using pre-established heuristics.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Discussion-Requirements段"
+        },
+        {
+          "excerpt": "within a research group or enterprise, usability inspection groups can be formed from stakeholders, designers, and developers who may already be involved in a project or related projects. Those not experienced in usability can be trained in how to analyze prototypes using heuristics.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Final Comments段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼承认快速原型迭代的效率可能以质量为代价，但通过文档化和审查机制保障。方法论有效性难以直接度量，但制定标准化可复现的HCD流程本身就是有价值的贡献。可用性问题分类应采用自下而上聚类方法。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "A three-step process was employed: 1. Clustering Identified Problems: Using the compiled transcripts from the think-aloud protocol, we grouped explicit identification of problems on a scenario-by-scenario basis. Problems can be grouped according to a set of heuristics, making the problems easier to classify and track throughout the design cycle. In the case of the WIISEL mobile phone use case, the following set of heuristics (a-e) was used: (a) Consistency/Clarity of Task Structure (b) Completeness and Sufficiency of Task Meaning (c) Noticeability (d) Discernibility (e) Cognitive Directness.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Problem Classification段"
+        },
+        {
+          "excerpt": "One of the requirements of the methodology was to create an emphasis on rapid prototyping and evaluation, which is made possible in the methodology by introducing paper prototyping activities in Phase 1 and so-called discount usability engineering techniques in Phase 2. This emphasis on rapidity may lead to depreciation in quality. However, our methodology emphasizes the need for documentation and review after each phase. This will ensure that changes that have been recommended are disseminated, prioritized, and implemented before the next phase begins. Ultimately, the quality and design of the testing and evaluations will dictate the quality and efficiency of the user feedback and what changes need to be made; this is why having a dedicated usability engineer on a design team is important.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "Final Comments and Limitations段末尾"
+        },
+        {
+          "excerpt": "In terms of measurability, how do we know our methodology has provided any improvement or is measurably better than other methodologies? This is hard to measure and would only be realistic if we applied different methodologies to the design of the same product. However, we identified a lack of standardized and guided approaches. Therefore, we wanted to derive a methodology that was guided by the principles and steps described in ISO 9241-210 and that has explicitly described steps and activities that other designers and engineers can follow.",
+          "source_file": "paper_Human_Centered Design Methodology.md",
+          "location": "末尾段"
+        }
+      ]
+    },
+    {
+      "claim": "数字心理健康应用的高成本与低使用率矛盾（均耗42.5万美元但日活仅4%）突出忽视用户视角的后果。好的设计先于有效的科学——没有被使用的产品即使经科学验证也无用。设计不应是技术开发流程中的美化步骤。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "The average cost of developing a mobile health app is US $425,000—a cost-benefit ratio too high and unsustainable in the long run if we do not change how they are developed.",
+          "source_file": "paper_Human_Centered Design in Digital Mental Health.md",
+          "location": "Lack of Attention to User Perspectives段"
+        },
+        {
+          "excerpt": "Health technologies are useless if they are not used, even if they are validated by science. We urge health researchers and technology developers in e-mental health to consider human-centered design methods not as the form-giving step of a technology development process but as a comprehensive approach integrated at an early stage in close relation to the research strategy and vision.",
+          "source_file": "paper_Human_Centered Design in Digital Mental Health.md",
+          "location": "Good Design Comes Before Effective Science段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼的以用户为中心的设计被确认为现代工业设计、UX和交互设计的基础，核心原则——可供性的显著性——被视为产品可用性根基。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "User-centered design, also called human-centered design, was defined in the late 1980s by Don Norman in his book The Design of Everyday Things. It is used to design products that are readily usable and immediately understandable thanks to the observance of certain design principles, such as the salience of affordances (ie, when the user understands what to do just by looking).",
+          "source_file": "paper_Human_Centered Design in Digital Mental Health.md",
+          "location": "Human-Centered Design Approaches段"
+        }
+      ]
+    },
+    {
+      "claim": "设计师与工程师在原型阶段思维根本不同：工程师线性定义目标关注技术功能，设计师用原型创造性地探索设计空间中的新可能性。参与式设计常被错误简化为仅邀请用户做需求调研或可用性测试，真正参与式设计要求用户参与实际设计行为。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In the initial prototyping phases, engineers seek to define specific goals to be achieved and, following a linear way of thinking, focus on technical functioning. Designers, on the other hand, use prototypes to creatively explore the design space for novel possibilities.",
+          "source_file": "paper_Human_Centered Design in Digital Mental Health.md",
+          "location": "Designers and Engineers段"
+        },
+        {
+          "excerpt": "The approach is often implemented partially or even incorrectly, typically reduced to inviting end users to participate during the beginning of the process for research needs or at the end for usability testing. Gathering feedback from users via usability testing is not a form of participatory design since users are not involved in the actual designing act of the design process.",
+          "source_file": "paper_Human_Centered Design in Digital Mental Health.md",
+          "location": "Participatory design段"
+        }
+      ]
+    },
+    {
+      "claim": "数字心理健康领域约一半研究未定义设计方法，仅27%明确提到设计师参与，软件开发公司占47%，说明设计仍由技术驱动而非设计驱动。应在开发全过程系统引入交互设计师、UX设计师和服务设计师。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "This means that about half (14/30, 47%) of the studies did not cite or provide a definition for their chosen approach, include references, or mention the theoretical underpinnings of the design approach. Although it was the second most reported approach, co-design was never defined in the 6 studies that mentioned it.",
+          "source_file": "paper_Human_Centered Design in Digital Mental Health.md",
+          "location": "Design Approaches段"
+        },
+        {
+          "excerpt": "Designers were explicitly mentioned in only 8 studies, whereas software development companies were mentioned in 14. Regardless of the step of the process, only 8 studies mentioned designers, representing about 27% of all included studies.",
+          "source_file": "paper_Human_Centered Design in Digital Mental Health.md",
+          "location": "Involvement of Designers段"
+        },
+        {
+          "excerpt": "Researchers and technology developers in e-mental health should consider systematically hiring interaction designers, user interface designers, user experience designers, and service designers in their teams to fully implement the human-centered design approach they need and then increase user engagement and technology acceptance. They should also include co-design workshops with end users conducted by trained designers from the beginning to the end of the development process.",
+          "source_file": "paper_Human_Centered Design in Digital Mental Health.md",
+          "location": "Research Implications段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼与Waugh提出初级记忆模型：未排练的言语刺激因后摄干扰（非时间衰减）而快速遗忘，排练可将项目从有限初级记忆转移到更大更稳定的二级存储。探针数字实验证明了干扰理论。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Unrehearsed verbal stimuli tend to be quickly forgotten because they are interfered with by later items in a series and not because their traces decay in time, (b) Rehearsal may transfer an item from a very limited primary memory store to a larger and more stable secondary store, (c) A recently perceived item may be retained in both stores at the same time. The properties of these 2 independent memory systems can be separated by experimental and analytical methods.",
+          "source_file": "paper_Primary memory..md",
+          "location": "chunk1摘要段"
+        },
+        {
+          "excerpt": "Unrehearsed verbal stimuli tend to be quickly forgotten because they are interfered with by later items in a series and not because their traces decay in time.",
+          "source_file": "paper_Primary memory..md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "Rehearsal may transfer an item from a very limited primary memory store to a larger and more stable secondary store. A recently perceived item may be retained in both stores at the same time.",
+          "source_file": "paper_Primary memory..md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "It is a well-established fact that the longest series of unrelated digits, letters, or words that a person can recall verbatim after one presentation seldom exceeds 10 items. It is also true, however, that one can nearly always recall the most recent item in a series, no matter how long the series—but only if this item may be recalled immediately, or if it may be rehearsed during the interval between its presentation and recall.",
+          "source_file": "paper_Primary memory..md",
+          "location": "chunk2第2-3段"
+        },
+        {
+          "excerpt": "It is evident that there are consistent differences among subjects, but little interaction between subjects and serial positions. Furthermore, although there appears to be a slight interaction between relative frequency of recall, or R(i), and rate of presentation, it is clear that the effect of rate is relatively small compared to the effect of serial position. The main source of forgetting in our experiment was interference.",
+          "source_file": "paper_Primary memory..md",
+          "location": "Experiment 1结果段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼建立初级记忆的数学模型：R(i)=P(i)+S(i)-P(i)S(i)，回忆概率等于项目在初级和次级记忆中存在概率的独立组合。不同实验条件下的系列位置曲线高度一致性支持双存储模型，且初级存储容量在各种条件下保持不变。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the probability of recalling an item which has been followed by i subsequent items is given by the probability that it is in PM, in SM, or in both. Assuming that these probabilities combine independently, R(i)=P(i)+S(i) -P(i)S(i)",
+          "source_file": "paper_Primary memory..md",
+          "location": "chunk5中段"
+        },
+        {
+          "excerpt": "the probability of recalling an item which has been followed by i subsequent items is given by the probability that it is in PM, in SM, or in both. Assuming that these probabilities combine independently, R(i)=P(i)+S(i)-P(i)S(i) where R(i) is the probability that Item i will be recalled, P(i) is the probability that it is in PM, and S(i) the probability that it is in SM.",
+          "source_file": "paper_Primary memory..md",
+          "location": "数学模型段"
+        },
+        {
+          "excerpt": "the similarity between our probe-digit function and the various other, initially disparate, serial position curves shown in Figures 3-8 is consistent with the hypothesis that there is a primary memory store that is independent of any longer term store. The capacity of the primary store appears to be invariant under a wide variety of experimental conditions which do, however, affect the properties of the longer",
+          "source_file": "paper_Primary memory..md",
+          "location": "chunk7结论段"
+        },
+        {
+          "excerpt": "the similarity between our probe-digit function and the various other, initially disparate, serial position curves is consistent with the hypothesis that there is a primary memory store that is independent of any longer term store. The capacity of the primary store appears to be invariant under a wide variety of experimental conditions which do, however, affect the properties of the longer term store.",
+          "source_file": "paper_Primary memory..md",
+          "location": "综合讨论段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼与Bobrow区分数据受限与资源受限过程：性能下降是因为处理资源不足（资源受限）还是输入数据质量不够（数据受限）。数据限制分为信号限制和记忆限制，过程在资源投入达阈值后从资源受限转为数据受限。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "This paper analyzes the effect on performance when several active mental processes make demands upon a common, limited pool of processing resources.",
+          "source_file": "paper_On data-limited and resource-limited processes.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "There are two forms of data limitations to consider: those resulting from the signal and those from memory. Signal data-limits. When the task is something like the detection of a weak signal in a noisy environment, the limit to performance depends primarily upon the signal-to-noise ratio.",
+          "source_file": "paper_On data-limited and resource-limited processes.md",
+          "location": "Data Limits段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼提出验证数据/资源受限区分的方法：如两任务间存在不对称干扰，应能通过改变处理资源可用性来证明。数据受限中反应时间与准确率成反比，资源受限中两者成正比。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Wherever two tasks show an asymmetry in interference effect, it should be possible to demonstrate interfering effects on both by a sufficient change in the availability of processing resources. One can change the available resources either by increasing or reducing the demands of existing tasks or by adding or removing tasks.",
+          "source_file": "paper_On data-limited and resource-limited processes.md",
+          "location": "Asymmetry段"
+        },
+        {
+          "excerpt": "In a data-limited process, we expect reaction time to relate inversely to accuracy. If the input data happen to be of relatively high quality, then the analysis is simpler and a relatively more accurate response can be made quickly; for low quality input data, we would expect a slower and less accurate response. When a process is resource-limited, then we expect reaction time to be directly related to accuracy.",
+          "source_file": "paper_On data-limited and resource-limited processes.md",
+          "location": "Speed-Accuracy段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼提出整合知觉、注意和记忆的理论结构：存储系统有临时激活（短时/初级）和永久激活（长时/二级）两种模式，存储组织允许从感觉编码直接访问，初始感觉解释可自动完成，注意可基于意义和心理关联性被引导。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A storage system is proposed which has 2 different modes of activation: a temporary excitation, called short-term or primary storage, and a permanent excitation, called long-term or secondary storage. The storage is assumed to be organized so that access to stored information can be made directly from a sensory code. Thus, the initial interpretation of sensory events can be performed automatically, allowing attention to be directed to events on the basis of their meaning and momentary psychological pertinence.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "The problem of specifying the prop-\nerties of selection could be resolved if\nthe initial analysis of the signal were\nperformed automatically, without any\nneed for sophisticated cognitive proc-\nesses.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "Selection and Attention节"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼描述检索验证机制：存储输出只有当能自然回溯到原始查询时才被接受为有效，否则检索继续，用初始查询和中间输出共同引导搜索方向。记忆提取是递归过程：查询激活表征，输出按联想强度排序，可收敛、发散或循环。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A retrieval process is described to handle the problem of deciding when an item that is recovered from storage is that which was sought. The output from storage is accepted as valid only if it can lead back naturally to the original query of memory. If it cannot, the retrieval process continues, using the initial query together with each intermediate output to guide the direction of search.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "To determine whether\n[M]i is a satisfactory answer to the\nquery we can use it as an input to the\nstorage system. If [M]i contains the\nproper information, it should lead nat-\nurally back to the original query [Q]i.\nIf it does, the answer is sufficient; if it\ndoes not, we have to try again.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "RETRIEVAL节"
+        },
+        {
+          "excerpt": "Sometimes we search mem-\nory for long periods of time, contin-\nually dredging up answers that we\nknow are incorrect: The search is di-\nverging. Sometimes our memories\nseem to follow a pattern, repeating\nthemselves endlessly: The search is\nlooping. Often we come up with the\ncorrect answer: The search converges.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "RETRIEVAL节"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼提出记忆的三个处理阶段模型：注意机制在感觉信息激活存储表征之后进行选择；存储有临时和永久两种激活模式；提取通过反复查询直到获得满意输出。回忆中查询是上下文（重新生成目标项），再认中目标项已给出（判断上下文是否恰当），再认不需递归搜索。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Three differ-\nent stages or processing are described.\nFirst, an attention mechanism is de-\nscribed which selects among the vari-\nous sources of sensory information only\nafter they have activated their repre-\nsentation in storage. The process of\nchoosing among sources is, thus, com-\nbined with the process of interpreting\neach input. Second, a storage system\nis described which may be activated\ntemporarily (short-term or primary\nmemory) or more permanently (long-\nterm or secondary memory). Third.it\nis\nproposed\nthat retrieval\noccurs\nthrough repeated queries of the stor-\nage system until a satisfactory output\nis obtained.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "In a recall task, the initial\nquery consists of the context surround-\ning the sought-for item; the task is to\nregenerate the item given its context.\nIn recognition, the required task is just the reverse.\nHere the item itself is given; the question\nis whether the context surrounding the\nitem is appropriate.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "Recall and Recognition节"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼反对记忆的'箱子理论'（两种物理分离的存储系统），认为初级和次级存储应是同一物理设备的不同操作属性：初始激活产生临时痕迹，永久变化需要认知活动参与。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "A theory that\nrequires two separate physical storages\ncould be called a \"box\" theory; this im-\nplies that material is temporarily stored\nin one box (primary storage) before\nit can be transferred to the other. The\ntrouble with such a theory lies in the\nassumed separation between the two\nsystems.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "Storage节"
+        },
+        {
+          "excerpt": "Let second-\nary and primary storage be different\nproperties of the same physical device.\nInitial activation of the storage causes\ntemporary traces to appear which dis-\nsipate unless some action is taken to\nmaintain them. This activity is pri-\nmary memory. Permanent changes in\nstorage occur when there has been prior\nactivation of temporary (primary)\ntraces and, probably, cognitive action\nas well: for example, selection, atten-\ntion, and rehearsal.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "Storage节末段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼提出注意选择机制：被选中进入进一步处理的存储表征是同时获得最大关联性输入（pertinence）和感觉激活的表征。人名等特殊类别具有永久高相关性，大多数输入的相关性随当前事件持续波动。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The output of the\nstorage consists of the different levels\nof activation of any stored item being\ndetermined by the combination of sen-\nsory activation and pertinence (labeled\no-i and\nTTi, respectively, in Figure 1).\nThe outputs of the storage\nsystem\nwhich have the highest levels of activa-\ntion are then selected for further\nprocessing.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "SELECTION AND ATTENTION节"
+        },
+        {
+          "excerpt": "Certain\nclasses of inputs, such as the sound of\none's name, can be expected to have a\npermanently high level of pertinence,\nothers might have permanently low lev-\nels, but most will continually fluctuate\nwith the expectation and analyses of\nongoing events.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "SELECTION AND ATTENTION节"
+        },
+        {
+          "excerpt": "The item which is selected for further processing by an attention mechanism corresponds to the stored representation which received the greatest combination of pertinence and sensory activation",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "chunk4中段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼的注意模型整合了前人理论（Deutsch选择评估、Treisman可调阈值、Broadbent选择性过滤器）形成统一框架。当所有输入同等相关时退化为Broadbent原始过滤器，赋予不等相关性时可偏向特定输入。选择系统的要点：强度不等同于刺激强度，未被注意的输入仅被部分解释。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "If all possible input representations re-\nceive equal pertinence, the system re-\nduces exactly to Broadbent's (1958)\noriginal formulation. If unequal per-\ntinence levels are assigned, the system\ncan be biased towards certain inputs.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "SELECTION AND ATTENTION节"
+        },
+        {
+          "excerpt": "First,\nstrength, either of pertinence or sensory\ninput, should not be confused with\nstimulus intensity; there need be no\nrelationship. Second, raising the levels\nof the pertinence values for certain\nitems is completely equivalent to low-\nering the threshold for the sensory\ninputs corresponding to these items.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "SELECTION AND ATTENTION节后半部分"
+        },
+        {
+          "excerpt": "It fol-\nlows, however, as a logical outgrowth\nof suggestions by Deutsch and Deutsch\n(1963) that for proper assessment all\ninput information must have access\nto storage, suggestions by Treisman\nand Geffin (1967) that an adjustable\nthreshold presensitizes the organism to\nsensory information of high relevance\nor pertinence, and the selective filter\nmodel of Broadbent (1958), which\nnow appears as the selection-attention\nsystem.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "SELECTION AND ATTENTION节"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼承认其理论具有推测性，但认为组织一致的理论结构对引导思考有价值。提出分析-综合模型：对输入的分析基于期望（综合），须近实时进行，解释了'双重把握'现象。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Yet it is possible\nto organize theories of the various com-\nponents into one consistent structure\nwhich, even if not accurate, may be of\nsome use in guiding further thinking\nand exploration.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "引言段"
+        },
+        {
+          "excerpt": "The structure described here is a\nspecial form of an analysis by synthe-\nsis. It assumes that expectations (syn-\nthesis) of the incoming stimuli play\nan important role in our interpretation\nof them. This means that the analysis\nmust proceed almost in real time; we\nmust interpret events as they occur, not\nwait for them to be completed before\nwe start to analyze them.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "RETRIEVAL节前段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼提出反直觉观点：即使从未出现过的感觉输入在存储中也有表征。我们不存储个别项目，只存储项目间的联想。联想太少则某些输入无法到达目标，太多则产生噪音，获取新信息需要时间整合——这是前摄和倒摄干扰的根源。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "consider mantiness.\nWe know immediately that the word \"mantiness\"\ndoes not exist in our memory, not be-\ncause we have performed an exhaustive\nsearch, but rather because the form\nof the word dictates its proper storage\naddress, and that address is empty.\nAccording to this model, therefore,\nwe do not store individual items, we only\nstore the associations which relate them\nto one another.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "ORGANIZATION节"
+        },
+        {
+          "excerpt": "If insuffi-\ncient associations exist in storage, some\ninputs will be denied access to their\ngoal.\nIf too many associations exist,\nthen noise results, because every input\nquery can retrieve every item of infor-\nmation; the system might as well be a\ncompletely unorganized, random selec-\ntion device.",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "ORGANIZATION节"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼提出行为失误的图式理论（ATS系统）：行为序列由父图式和子图式控制，多个图式可同时活跃，每个有触发条件和激活值。slip定义为'执行了非意图行为'（不同于mistake——意图本身错误），多数失误是多因素决定的。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A theory of action is outlined in which an action sequence is represented by a parent schema and numerous child schemas, in which several action schemas can be active at any one time, and in which each schema has a set of triggering conditions and an activation value. The path from intention to action consists of the activation of the parent schema that corresponds to the intention, the activation of child schemas for the component parts of the action sequence, and then the appropriate triggering of schemas when the conditions match those required for their operations.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "chunk1第1-2段"
+        },
+        {
+          "excerpt": "A slip is the error that occurs when a person does an action that is not intended.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "chunk1第1段"
+        },
+        {
+          "excerpt": "Most slips\nhave multiple causes. Many sources of\ninformation are likely to be interacting\nto give rise to any particular action.\nWhen the act\nis an error, it is apt to be the result of nu-\nmerous underlying forces, so that the re-\nsulting slip is multiply determined and con-\nsistent with a number of constraints and\nexplanations.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "引言末段"
+        },
+        {
+          "excerpt": "The proposed model, an activation-trig-\nger-schema system (ATS), assumes that\naction sequences are controlled by sensori-\nmotor knowledge structures: schemas.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Outline of an Activation-Trigger-Schema System节"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼重新解读弗洛伊德对失误的贡献，区分为处理机制和知识内容两个认知维度，理解失误机制不需要弗洛伊德式的精神分析。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Freud's contribution can be\nreinterpreted in modern terminology by sep-\narating the two different aspects of cog-\nnitive machinery that he made use of: proc-\nessing and knowledge.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "引言第2-3段"
+        },
+        {
+          "excerpt": "Freud also was con-\ncerned with the particular knowledge con-\ntents of the memories and beliefs of his\npatients, but these analyses are not required\nfor the understanding of the mechanisms\nthat underlie slips.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "引言第3段末"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼认为熟练动作只需在最高层级指定意图，激活后子图式可自主完成序列无需持续干预。监测机制必须独立于行为选择和执行机制存在，因为人们常在失误发生时或发生前就捕捉到它。触发条件不需精确匹配，激活水平和条件匹配度间有权衡。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "A major assumption of the ATS theory\nfor slips is that skilled actions—actions\nwhose components are themselves all highly\nskilled—need only be specified at the highest\nlevels of their memory representations. Once\nthe highest-level schema is activated, the\nlower-level parent components of that action\nsequence complete the action, to a large ex-\ntent autonomously, without further need for\nintervention except at critical choice points.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Intention, Parent and Child Schemas节"
+        },
+        {
+          "excerpt": "For a slip to be started, yet caught,\nmeans that there must exist some monitoring\nmechanism of behavior—a mechanism that\nis separate from that responsible for the se-\nlection and execution of the act.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "引言末段"
+        },
+        {
+          "excerpt": "Exact match is not required—otherwise it\nwould not be possible to account for many\nof the observed slips—but we assume there\nis a trade-off between level of activation\nand the goodness-of-match to the trigger condi-\ntions.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Intention, Parent and Child Schemas节末段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼系统分类失误三大来源：意图形成错误、图式激活错误（含capture错误和数据驱动激活）、活跃图式的错误触发（含mode errors）。capture错误是强习惯序列劫持行为，尤其在SAS忙于其他心理活动时。数据驱动激活如Stroop效应。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A Classification of Slips Based on Their Presumed Sources\nSlips that result from errors in the formation of the intention\nSlips that result from faulty activation of schemas\nSlips that result from faulty triggering of active schemas",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "chunk4分类表"
+        },
+        {
+          "excerpt": "A capture error is a form of error of ac... sequence, the latter may capture control... habit and it will capture your behavior.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "chunk4中段"
+        },
+        {
+          "excerpt": "The basic classification of slips has three\nmajor headings, each corresponding to a dif-\nferent aspect of act formation or perfor-\nmance, and each contributing a source of\nerror. These three major sources of action\nslips are (a) the formation of the intention,\n(b) activation, and (c) triggering.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Application of the Theory of Action节"
+        },
+        {
+          "excerpt": "Like the Siren's call, some motor programs possess the\npower to lure us into unwitting action, particularly when\nthe central processor is occupied with some parallel\nmental activity. This power to divert action from some\nintention seems to be derived in part from how often\nand how recently the motor program is activated. The\nmore frequently (and recently) a particular sequence of\nmovements is set in train and achieves its desired\noutcome, the more likely it is to occur uninvited as a \"slip\nof action.\"",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Capture slips节，引用Reason 1979"
+        },
+        {
+          "excerpt": "In the\nclass of slips called \"data driven,\" the intru-\nsions result from the analysis of external\nevents: The environment forces an intrusion.\nThis class is similar to the other forms of\nactivation error, with the distinguishing\nfeature being that there is some obvious envi-\nronmental cause for the act.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "External activation (data driven)节"
+        }
+      ]
+    },
+    {
+      "claim": "模式错误（mode error）是最常见失误来源之一：情境被错误分类时动作对误认情境合适但对实际情境不恰当。描述错误：意图描述不够具体导致记忆选择歧义。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "When a situation is falsely classified, then\nthe resulting action may be one that was\nintended and appropriate for the analysis of\nthe situation but inappropriate for the actual\nsituation.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Mode Errors节"
+        },
+        {
+          "excerpt": "Some slips of selection occur either when\nall the relevant information needed to form\nthe appropriate intention is not available or\nwhen an appropriate intention has been for-\nmulated, but the description of the desired\nact is insufficient. This latter situation gives\nrise to what has earlier been called an in-\ncomplete description (Norman & Bobrow,\n1979), leading to ambiguity in the selection\nof information from memory.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Description Errors节"
+        }
+      ]
+    },
+    {
+      "claim": "激活丧失导致多种失误：忘记意图但仍继续序列、步骤错序、跳过或重复。混合错误：两个活跃图式同时触发产生合并。'思想替代行动'：心理操作被误认为实际行动。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "When the appropriate schemas for an ac-\ntion schema are activated, some may lose\nactivation as a result of the normal decay\nand interference properties of primary mem-\nory. The result shows up in several different\nways, depending upon the exact schema that\nwas lost and when in the temporal events of\nthe action the schema was lost.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Loss of Activation节"
+        },
+        {
+          "excerpt": "One form of error is to blend the com-\nponents of actions. Presumably, these errors\noccur when two or more active schemas are\ntriggered simultaneously, sometimes result-\ning in the merging of two schemas that are\nappropriate for the situation",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Slips That Result From Faulty Triggering节"
+        },
+        {
+          "excerpt": "A related class of errors comes from con-\nfusing thoughts with deeds. This is a lack of\naction rather than an intruded action, but\nthe cause is related: An activation in primary\nmemory was misused, in this case to substi-\ntute for the act.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Slips That Result From Faulty Triggering节"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼提出错误检测的多层级反馈系统：意图以抽象方式指定而动作以肌肉信号执行，不在同一描述层级，需在每个层级设置独立反馈比较。总结失误只源于三个原因：意图形成错误、图式激活错误、触发条件失败。自然观察法对失误研究有不可替代的价值。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The solution to this difficulty is for the\naction system to have many feedback com-\nparison processes, each monitoring different\nlevels of the operation of the system.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Levels of Feedback Systems节"
+        },
+        {
+          "excerpt": "There is much too large a\ndifference in the level of specification of the\nintention and the actual acts that get done:\nThe comparison mechanisms would have to\nbe horrendously complex.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Levels of Feedback Systems节"
+        },
+        {
+          "excerpt": "The collection and analysis of naturally\noccurring errors forces us to consider be-\nhavior that is not constrained by the limi-\ntations and artificiality of the experimental\nlaboratory. By examining errors, we are\nforced to demonstrate that our theoretical\nideas can have some relevance to real be-\nhavior.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Comments on Naturalistic Errors节"
+        },
+        {
+          "excerpt": "Slips occur for\nonly three reasons: the formation of the in-\ntention is in error; there is faulty activation\nof schemas; there is a failure in satisfying\nthe conditions for triggering.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Summary节"
+        },
+        {
+          "excerpt": "the moni-\ntoring function requires that the comparison of in-\ntention and action be done at the same level\nof specification. Because complex acts have\nmany differing levels of specification, each\nwith its own relevant schemas and opera-\ntions, the monitoring function must also be\nperformed at many different levels.",
+          "source_file": "paper_Categorization of action slips..md",
+          "location": "Summary节"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼与Hutchins、Hollan提出直接操控界面的两个核心维度：信息处理距离（任务认知努力）和感觉距离（界面表征与被表征物的距离）。直接操控的核心是让对象表征表现得像对象本身。'直接性'是一种印象，其根源在于认知资源投入更少。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "give rise to the feeling of directness. One deals with the information processing...vide representations of objects that behave as if they are the objects themselves.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "chunk1中段"
+        },
+        {
+          "excerpt": "We identify two underlying phenomena that\ngive rise to the feeling of directness. One deals\nwith the information processing distance between\nthe user's intentions and the facilities provided by the ma-\nchine. Reduction of this distance makes the interface\nfeel direct by reducing the effort required of the user\nto accomplish goals. The second phenomenon con-\ncerns the relation between the input and output vocabu-\nlaries of the interface language.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "ABSTRACT段"
+        },
+        {
+          "excerpt": "For us, the notion of \"direct manipulation\" is not a unitary concept, nor even\nsomething that can be quantified in itself.\nIt is an orienting notion. \"Direct-\nness* is an impression or a feeling about an interface.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "1.2 The Goal节"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼等人提出人机交互的两种基本隐喻：对话隐喻（界面是语言媒介讨论隐含世界）和模型世界隐喻（界面本身是可行动的世界）。执行鸿沟和评估鸿沟的概念：直接性感与跨越两鸿沟所需的认知努力成反比。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In a system built on the\nconversation metaphor, the interface is a language medium in which the\nuser and system have a conversation about an assumed, but not explicitly rep-\nresented world. In this case, the interface is an implied intermediary between\nthe user and the world about which things are said. In a system built on the\nmodel-world metaphor, the interface is itself a world where the user can act,\nand which changes state in response to user actions.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "2. TWO ASPECTS OF DIRECTNESS节"
+        },
+        {
+          "excerpt": "We suggest that the feeling of directness is inversely proportional to the\namount of cognitive effort it takes to manipulate and evaluate a system and.\nmoreover, that cognitive effort is a direct result of the gulfs of execution and\nevaluation. The better the interface to a system helps bridge the gulfs, the less\ncognitive effort needed and the more direct the resulting feeling of interaction.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "2.1 Distance节"
+        }
+      ]
+    },
+    {
+      "claim": "直接参与的本质是用户感觉直接控制语义对象而非程序或计算机。界面语言需满足'互指输入输出'：输出表达可被用作输入表达的组成部分。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The systems that best\nexemplify direct manipulation ail give the qualitative feeling that one is directly\nengaged with control of the objects- not with the programs, not with the com-\nputer, but with the semantic objects of our goals and intentions.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "2.2 Direct Engagement节"
+        },
+        {
+          "excerpt": "In a direct manipulation situation, we would feel that we had the\nfiles in front of us, that the program that \"listed\" the files actually placed the\nfiles before us. Any further operation on the files would take place upon the\nvery objects delivered by the directory-listing command.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "2.2 Direct Engagement节后半"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼等人区分语义距离和表音距离：语义距离关注界面语言意义与用户想说内容的关系；表音距离关注意义与物理形式的关系。执行鸿沟中含语义距离（目标→意图）和表达距离（意图→动作规范）。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Because of the relative inde-\npendence of meaning and form we describe separately two properties of inter-\nface languages: semantic distance and articulatory distance.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "3. TWO FORMS OF DISTANCE节"
+        },
+        {
+          "excerpt": "Forming an intention is the activity that spans semantic distance in the gulf of execution. The intention specifies the meaning of the input expression that is to satisfy the user's goal. Forming an action specification is the activity that spans articulatory distance in the gulf of execution. The action specification prescribes the form of an input expression having the desired meaning.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "chunk9中段Figure 6描述"
+        }
+      ]
+    },
+    {
+      "claim": "高级语言设计的根本矛盾：将界面语言匹配任务域使任务更易指定但丧失通用性。频繁使用即使设计糟糕的界面也能产生直接感，但这未减少语义距离——鸿沟仍在，只是用户跨越变得自动化。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "The result of matching a language to the task domain brings both good news\nand bad news. The good news is that tasks are easier to specify. The bad news is that the language has lost\ngenerality. Tasks that do not easily decompose into the terms of the language\nmay be difficult or impossible to represent.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "3.3 Reducing the Semantic Distance节"
+        },
+        {
+          "excerpt": "Automatization does not reduce the semantic distance\nthat must be spanned; the gulfs between a user's intentions and the interface\nmust still be bridged by the user. Although practice and the resulting expertise\ncan make the crossing less difficult, it does not reduce the magnitude of the\ngulfs.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "Automated Behavior Does Not Reduce Semantic Distance节"
+        }
+      ]
+    },
+    {
+      "claim": "用户可通过改变自身概念化来适应系统表征，但这可能根本性限制某些意图的产生。语义直接性取决于任务（钢琴vs小提琴类比），随技艺提升任务本身改变。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "While moving the interface closer to the users' intentions may make it difficult\nto realize some intentions, changing the users' conception of the domain may\nprevent some intentions from arising at all.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "The User Can Adapt to the System Representation节"
+        },
+        {
+          "excerpt": "For this simple task, the piano\nprovides the more direct interface because all one need do is find the key for\nmiddle-C and depress it, whereas on the violin, one must place the bow on the\nG string, place a choice of fingers in precisely the right location on that string,\nand draw the bow. However, when the task is playing a musical piece\nwell rather than simply producing notes, the directness of the interfaces can\nchange.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "Virtuosity and Semantic Distance节"
+        }
+      ]
+    },
+    {
+      "claim": "表音直接性可通过模仿实现：鼠标移动移动光标是表音直接的，图形显示比数字表格具有更高表音直接性。直接参与的最低要求：执行和评估都需语义和表音直接性、输入输出互指、响应迅速、界面不显眼。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "If we do this by moving a mouse, pointing with a finger or a light pen at the\nscreen, or otherwise mimicking the desired motion, then at the level of action\nexecution, these interactions all exhibit articulatory directness. The meaning\nof the intention is cursor movement and the action is specified by means of a\nsimilar movement.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "3.5 Articulatory Distance in the Gulfs节"
+        },
+        {
+          "excerpt": "Execution and evaluation should exhibit both semantic and articulatory\ndirectness.\nInput and output languages of the interface should be inter-referential,\nallowing an input expression to incorporate or make use of a previous\noutput expression.\nThe system should be responsive, with no delays between execution and\nthe results, except where those delays are appropriate for the knowledge\ndomain itself.\nThe interface should be unobtrusive, not interfering or intruding. If the\ninterface itself is noticed, then it stands in a third-person relationship to\nthe objects of interest, and detracts from the directness of the engage-\nment.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "4. DIRECT ENGAGEMENT节"
+        }
+      ]
+    },
+    {
+      "claim": "直接操作界面的根本问题：如果只构建允许做已能做的事的界面，就会错过新技术最令人兴奋的潜力——提供新的思考和交互方式。不要将直接性等同于易用性：如果界面真的隐形了，任务域的困难就直接转移给用户。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "But if we restrict ourselves to only build-\ning an interface that allows us to do things we can already do and to think in\nways we already think, we will miss the most exciting potential of new technol-\nogy: to provide new ways to think of and to interact with a domain.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "6. PROBLEMS WITH DIRECT MANIPULATION节"
+        },
+        {
+          "excerpt": "It is important not to equate directness with ease of use. Indeed, if the inter-\nface is really invisible, then the difficulties within the task domain get trans-\nferred directly into difficulties for the user. Suppose the user struggles to for-\nmulate an intention because of lack of knowledge of the task domain. The user\nmay complain that the system is difficult to use. But the difficulty is in the task\ndomain, not in the interface language.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "6. PROBLEMS WITH DIRECT MANIPULATION节"
+        }
+      ]
+    },
+    {
+      "claim": "评估鸿沟的核心是评估输出表达意义与用户目标的关系，空间隐喻可将非空间关系映射到空间关系降低认知负荷。直接操作在处理抽象概念时有局限：放弃对话隐喻也意味着放弃用描述来操作的能力。评价是审慎平衡：直接操作在某些用途上优秀强大，在其他用途上糟糕无力，取决于要完成的任务。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the gulf of evaluation. Evaluation assesses the relationship between the meaning of the output expression and...The mouse is useful for a wide variety of tasks not...of relationships (even ones that are not intrinsically spatial) on to spatial meta-",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "chunk10中段"
+        },
+        {
+          "excerpt": "When we give up the conversation metaphor,\nwe also give up dealing in descriptions, and in some contexts, there is great\npower in descriptions. As an interface to a programming task, direct manipu-\nlation interfaces are problematic.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "6. PROBLEMS WITH DIRECT MANIPULATION节末段"
+        },
+        {
+          "excerpt": "Direct manipulation interfaces are not a panacea.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "6. PROBLEMS WITH DIRECT MANIPULATION节"
+        },
+        {
+          "excerpt": "Will direct manipulation systems live up to their promise? Yes and no.\nBasically, the systems will be good and powerful for some purposes, poor and\nweak for others.",
+          "source_file": "paper_Direct Manipulation Interfaces.md",
+          "location": "文章末段"
+        }
+      ]
+    },
+    {
+      "claim": "任务难度受内部/外部维度性质影响，外部表征可以改变任务本质。不同表征方式（颜色、大小等）对认知加工的影响有显著差异。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "change the nature of a task. Norman (1991)",
+          "source_file": "paper_Representations in Distributed Cognitive Tasks.md",
+          "location": "chunk10中段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼描述记忆检索过程：激活水平由感觉激活和关联性激活共同决定，检索通过将最活跃的表征重新输入存储进行，若结果能自然回溯到原始查询则终止检索，否则继续搜索新的关联。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "storage consists of the level of activation of stored representatives resulting from both the receives the greatest activation—the shaded item in the figure—by reentering it into storage retrieval process is terminated. Otherwise the search is continued by examining new asso-",
+          "source_file": "paper_Toward a theory of memory and attention..md",
+          "location": "chunk5中段"
+        }
+      ]
+    },
+    {
+      "claim": "诺曼的HCD七大原则（可发现性、反馈、概念模型、示能性、意符、映射、约束）是评估可用设计的基石，也是Nielsen十大可用性启发式的基础。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Norman's seven principles for HCD—discoverability, feedback, conceptual model, affordances, signifiers, mappings, and constraints—serve as foundations for evaluating useful and usable designs ( Norman 2013 ). These are also the foundation for Nielsen's 10 usability heuristics, which are the standard usability heuristics used by professionals worldwide ( Nielsen 1990 ).",
+          "source_file": "paper_Joint Activity Design User_Centered.md",
+          "location": "BACKGROUND - Human-Centered Design段"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 21,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-01T13:18:34.751036",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T10:03:44.335688",
+    "pre_merge_count": 187,
+    "post_merge_count": 84
+  }
+}

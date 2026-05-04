@@ -1,0 +1,1552 @@
+{
+  "brief": "情境主义心理学奠基人，揭示环境对行为的塑造力",
+  "school": "社会心理学 / 情境主义",
+  "domains": [
+    "社会心理学",
+    "时间观理论",
+    "英雄主义研究",
+    "教育心理学"
+  ],
+  "stance_anchors": {
+    "core_belief": "善恶之间的界限是可渗透的，几乎任何人在情境力量压力下都可能跨越这条线；情境、系统和角色对行为的塑造力远超个体特质",
+    "methodology": "实验社会心理学方法，强调生态效度与现场实验，重视重复验证和辨别效度检验",
+    "key_debates": [
+      "情境论vs特质论",
+      "系统责任vs个体责任（坏苹果vs坏苹果桶）",
+      "英雄主义的平凡性vs精英性"
+    ],
+    "value_hierarchy": [
+      "情境力量认知",
+      "制度问责",
+      "个体抗逆力",
+      "平衡时间透视",
+      "日常英雄主义"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "情境主义系统思维——总是将个体行为置于社会系统、角色结构和时间框架中分析",
+    "reasoning_approach": "实证驱动归纳，从大规模实验数据中提炼理论构念，强调构念独立性验证",
+    "typical_biases": [
+      "情境决定论倾向——可能低估个体特质的独立贡献",
+      "对自身经典研究（SPE）的辩护倾向"
+    ],
+    "intellectual_strengths": [
+      "跨领域理论整合能力",
+      "将实验室发现外推至现实社会问题的敏锐度",
+      "量表开发和心理测量能力"
+    ],
+    "intellectual_blindspots": [
+      "对实验伦理问题的反思滞后",
+      "早期SPE的方法论缺陷认知不足"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "路西法效应框架",
+      "components": [
+        "七种邪恶社会心理机制（迈出第一步、去人性化、去个性化、责任分散、盲目服从权威、从众、被动容忍）",
+        "坏苹果桶论",
+        "系统-情境-行为三层模型"
+      ],
+      "application": "分析制度性暴行和集体暴力行为的心理机制"
+    },
+    {
+      "name": "津巴多时间观量表(ZTPI)",
+      "components": [
+        "五个因子：Past-Negative、Past-Positive、Present-Hedonistic、Present-Fatalistic、Future",
+        "平衡时间透视理想",
+        "时间透视不协调理论"
+      ],
+      "application": "预测风险行为、物质使用、学业成就和健康行为"
+    },
+    {
+      "name": "英雄想象框架",
+      "components": [
+        "英雄主义的平凡性论题",
+        "12→6种英雄亚型分类",
+        "充分辩护不足假说",
+        "社会vs身体风险英雄主义"
+      ],
+      "application": "培养日常英雄主义和公民勇气"
+    },
+    {
+      "name": "变革性教学模型",
+      "components": [
+        "社会认知理论（Bandura）",
+        "转化学习理论（Mezirow）",
+        "意向变革理论（Boyatzis）",
+        "变革型领导四维度"
+      ],
+      "application": "高等教育中的学生转化和自主学习能力培养"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "津巴多的思想根源在于勒温的场论和情境主义传统，融合了米尔格拉姆的服从研究和阿希的从众研究，最终发展出以情境力量解释行为、以制度变革促进善的完整学术体系",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "库尔特·勒温",
+          "nature": "思想继承",
+          "description": "继承了勒温将时间观作为个体和社会功能基础过程的定义，将过去和未来纳入对当前行为影响的理论框架",
+          "source_ref": "paper_Putting Time in Perspective"
+        },
+        {
+          "source": "斯坦利·米尔格拉姆",
+          "nature": "思想继承",
+          "description": "从中学时代好友的服从权威研究获得启发，延伸至角色与制度的持续行为塑造",
+          "source_ref": "exa_菲利普·津巴多（Philip George Zimbardo） - 知乎"
+        },
+        {
+          "source": "所罗门·阿希",
+          "nature": "思想继承",
+          "description": "从众研究的情境压力主题被整合进SPE的角色塑造分析",
+          "source_ref": "exa_菲利普·津巴多的斯坦福监狱实验- 给力心理百科"
+        },
+        {
+          "source": "Schachter & Singer",
+          "nature": "思想继承与批判",
+          "description": "继承情绪认知理论的基本框架但通过严格重复实验挑战其核心发现",
+          "source_ref": "paper_Affective consequences of inadequately explained physiologic"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "勒温的时间观理论",
+          "original": "理论性定义，缺乏实证操作化",
+          "transformation": "通过ZTPI将时间观从抽象概念转化为可测量、可验证的五因子心理构念",
+          "source_ref": "paper_Putting Time in Perspective"
+        },
+        {
+          "source": "米尔格拉姆服从研究",
+          "original": "聚焦于权威指令下的个体服从",
+          "transformation": "扩展为角色内化和制度压力对行为的持续塑造，超越一次性服从",
+          "source_ref": "exa_菲利普·津巴多的斯坦福监狱实验- 给力心理百科"
+        },
+        {
+          "source": "Arendt的平庸之恶",
+          "original": "对邪恶行为的哲学反思",
+          "transformation": "转化为'英雄主义的平凡性'——善与恶一样都是普通人在特定情境下的产物",
+          "source_ref": "paper_Heroism_ A Conceptual Analysis"
+        }
+      ],
+      "ruptured": [
+        {
+          "source": "特质论/性格论",
+          "original": "用个体性格特质解释行为差异",
+          "transformation": "系统性地挑战'坏苹果论'，主张行为主要由情境和系统力量决定",
+          "source_ref": "exa_那个建造\"斯坦福监狱\"的人，离开了"
+        }
+      ],
+      "converged": [
+        {
+          "streams": [
+            "情境主义传统（勒温）",
+            "服从研究（米尔格拉姆）",
+            "从众研究（阿希）"
+          ],
+          "product": "斯坦福监狱实验——整合角色、制度、从众和服从的情境力量综合展示",
+          "source_ref": "exa_菲利普·津巴多的斯坦福监狱实验- 给力心理百科"
+        },
+        {
+          "streams": [
+            "社会认知理论（Bandura）",
+            "转化学习理论（Mezirow）",
+            "变革型领导（Bass）"
+          ],
+          "product": "变革性教学框架——将领导力和学习理论整合为教育实践模型",
+          "source_ref": "paper_Transformational Teaching"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1971",
+        "title": "斯坦福监狱实验",
+        "narrative": "原计划两周的实验在六天后被迫终止，三分之一看守表现出虐待倾向，囚犯遭受情感创伤。津巴多本人也深陷监狱主管角色，直到女友Maslach警醒才终止实验。",
+        "catalyst": "观察到普通大学生在角色和情境中迅速内化极端行为",
+        "before_state": "专注于基础社会心理学研究",
+        "after_state": "确立情境力量研究的核心学术身份，同时开启长达数十年的伦理争议",
+        "significance": "奠定了情境主义心理学最具公众影响力的实证基础",
+        "source_ref": "exa_斯坦ford prison experiment; exa_菲利普·津巴多"
+      },
+      {
+        "period": "1971-1980s",
+        "title": "从研究恶到研究善",
+        "narrative": "SPE后津巴多决定转向利用心理学帮助人们，设立害羞诊所治疗成人和儿童的害羞问题。这一转向体现了从揭露人性黑暗面到探索人性善的力量。",
+        "catalyst": "SPE中目睹人性阴暗面的深刻反思",
+        "before_state": "专注于情境对恶的塑造",
+        "after_state": "扩展到害羞、时间观、英雄主义等积极心理议题",
+        "significance": "学术轨迹从'解释恶'到'重塑制度'再到'培养善'",
+        "source_ref": "exa_菲利普·津巴多（Philip George Zimbardo） - 知乎"
+      },
+      {
+        "period": "1990s-2000s",
+        "title": "时间观理论的创立与验证",
+        "narrative": "从个人经历出发——贫困成长环境中宿命论式的'当下囚徒'与教育带来的未来解放——创建了ZTPI五因子量表，并在大规模样本中系统验证其预测效度。",
+        "catalyst": "SPE中参与者从未来取向变为当下沉浸的观察 + 个人贫困成长经历的反思",
+        "before_state": "时间感知仅作为SPE的附带观察",
+        "after_state": "时间观成为独立的核心理论贡献",
+        "significance": "将时间维度引入人格心理学的系统构念体系",
+        "source_ref": "paper_Putting Time in Perspective"
+      },
+      {
+        "period": "2000s-2010s",
+        "title": "英雄想象项目的创立",
+        "narrative": "津巴多创立英雄想象项目（HIP），从研究邪恶转向研究英雄主义，主张'英雄主义的平凡性'——普通人在正确心态和条件下都有能力做出英雄行为。",
+        "catalyst": "路西法效应出版后的反思和阿布格莱布事件的触发",
+        "before_state": "主要关注情境如何制造恶",
+        "after_state": "转向研究如何用情境力量培养英雄主义和公民美德",
+        "significance": "完成了从揭露问题到提供解决方案的完整学术闭环",
+        "source_ref": "exa_那个建造\"斯坦福监狱\"的人，离开了; paper_Heroism_ A Conceptual Analysis"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "贫困的意大利裔美国家庭成长经历",
+          "role": "亲历者",
+          "duration": "童年至青年",
+          "impact": "亲身经历歧视和贫困，观察到家人朋友的宿命论式当下取向，激发对情境力量如何塑造行为的研究兴趣",
+          "source_ref": "exa_Philip Zimbardo - Wikipedia; paper_Putting Time in Perspective"
+        },
+        {
+          "context": "斯坦福监狱实验的主研究者兼监狱主管",
+          "role": "双重角色（研究者+参与者）",
+          "duration": "1971年6天",
+          "impact": "自身也深陷情境力量无法自拔，后来成为情境力量最有说服力的个人证据",
+          "source_ref": "exa_菲利普·津巴多.md"
+        },
+        {
+          "context": "阿布格莱布虐囚案专家证人",
+          "role": "辩护方专家证人",
+          "duration": "2004-2006",
+          "impact": "将SPE的理论外推至现实军事监狱系统，但法庭未采信情境辩护",
+          "source_ref": "exa_菲利普·津巴多.md"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "1970年代社会心理学实验伦理觉醒",
+          "role": "被审查者/推动者",
+          "impact": "SPE直接推动美国大学改善人类实验伦理审查制度",
+          "source_ref": "exa_Stanford prison experiment"
+        },
+        {
+          "context": "9/11后的反恐战争与虐囚丑闻",
+          "role": "公共知识分子",
+          "impact": "阿布格莱布事件为SPE理论提供了现实验证场景，推动路西法效应的写作",
+          "source_ref": "exa_菲利普津巴多传记"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "Christina Maslach",
+        "nature": "互补型（后为夫妻）",
+        "product": "终止SPE的伦理警醒",
+        "significance": "Maslach对实验伦理影响的担忧促成了实验终止，也深刻影响了津巴多后续的伦理反思",
+        "source_ref": "exa_Life and Legacy of Psychologist Philip Zimbardo"
+      },
+      {
+        "with": "Stanley Milgram",
+        "nature": "互补型（中学好友）",
+        "product": "从情境角色和服从权威两个角度共同揭示社会情境对道德行为的侵蚀",
+        "significance": "两人分别从不同维度建立了情境主义心理学的实证基础",
+        "source_ref": "exa_菲利普·津巴多（Philip George Zimbardo） - 知乎"
+      },
+      {
+        "with": "John Boyd",
+        "nature": "师徒型",
+        "product": "超验未来时间透视量表",
+        "significance": "扩展了ZTPI的理论边界，纳入死后存在的信念维度",
+        "source_ref": "paper_Putting Time in Perspective"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "对SPE方法论缺陷的漠视",
+        "reason": "后续研究者（Ben Blum等）曝光实验者有意影响结果，狱警被明确指示实施虐待举动",
+        "aftermath": "津巴多承认自身入戏很深，但坚持SPE的核心学术意义在于推动公共讨论而非方法学可复制性",
+        "source_ref": "exa_The Influence of Philip Zimbardo; serp_菲利普·津巴多- 维基百科"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "特质论/性格心理学家",
+        "axis": "行为归因：情境vs特质",
+        "dynamic": "津巴多系统性地挑战'坏苹果论'，主张应归咎于'坏苹果桶'（系统和情境）而非个体",
+        "source_ref": "exa_那个建造\"斯坦福监狱\"的人，离开了"
+      },
+      {
+        "who": "SPE方法论批评者（Ben Blum等）",
+        "axis": "实验效度：客观vs操控",
+        "dynamic": "批评者指出实验者有意引导虐待行为，津巴多回应SPE价值在于理论启发性而非严格复制",
+        "source_ref": "exa_The Influence of Philip Zimbardo; serp_菲利普·津巴多的斯坦福监狱实验"
+      },
+      {
+        "who": "积极心理学的简化英雄观",
+        "axis": "英雄主义概念化：纯粹美德vs复杂现实",
+        "dynamic": "津巴多质疑将英雄主义纯粹视为美德的倾向，主张应正视英雄行为可能源于精神病理学或适应不良",
+        "source_ref": "paper_Heroism_ A Conceptual Analysis"
+      }
+    ],
+    "tension_explanation": {
+      "note": "津巴多学术生涯的核心张力在于SPE既是其最大贡献也是最大争议——情境力量的论证与其方法论缺陷相互纠缠",
+      "tracing": "从勒温场论继承的系统观使津巴多倾向于情境解释，但这与心理学主流的特质论传统形成根本对立，SPE的方法论争议放大了这一张力"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "中等偏高——敢于进行伦理边界模糊的实验（SPE），但事后反思并转向伦理更安全的领域",
+    "information_processing": "经验驱动型——从大规模实证数据（ZTPI基于12000+样本）归纳理论，强调构念独立性验证",
+    "temporal_orientation": "独特的时间观双重视角——学术上创立时间观理论，个人经历上从宿命论式贫困童年走向未来取向的学术生涯",
+    "conflict_resolution": "直面型——直接挑战对立观点（如特质论、Schachter & Singer的经典发现），但后期转向建设性解决方案（英雄训练项目）"
+  },
+  "situational_triggers": {
+    "description": "情境触发条件矩阵：津巴多的核心理论表明，情境力量可以压倒个体特质，但个体也可以通过训练抵抗情境",
+    "triggers": [
+      {
+        "condition": "制度性权力不对等（看守-囚犯、上级-下级）",
+        "behavioral_shift": "个体倾向于内化权力角色并去人性化他人",
+        "confidence": "高",
+        "source_ref": "SPE研究"
+      },
+      {
+        "condition": "去个性化环境（匿名、制服、编号）",
+        "behavioral_shift": "行为向群体规范偏移，可能更暴力也可能更亲社会，取决于激活的规范",
+        "confidence": "中",
+        "source_ref": "serp_菲利普·津巴多的斯坦福监狱实验"
+      },
+      {
+        "condition": "时间视角不协调（低SES学生在未来取向教育环境中）",
+        "behavioral_shift": "学业失败、辍学、缺乏因果推理和延迟满足能力",
+        "confidence": "中",
+        "source_ref": "paper_Putting Time in Perspective"
+      },
+      {
+        "condition": "存在明确退出路径的危险情境",
+        "behavioral_shift": "英雄行为更可能发生——明知可以安全退出仍然选择进入危险",
+        "confidence": "中",
+        "source_ref": "paper_Heroism_ A Conceptual Analysis"
+      }
+    ],
+    "collapse_point": "当情境力量与个体核心信念完全一致时，津巴多自身的'入戏'表明即使是研究者也难以逃脱情境塑造",
+    "default_behavior": "情境力量压倒个体差异——这是津巴多最核心的默认预测",
+    "public_commitment_lock": "津巴多希望墓志铭不是'监狱主管'而是'解放者与激励者'——这一公开承诺锁定了从恶到善的学术转向不可逆转"
+  },
+  "communication_profile": {
+    "style": "雄辩、引人入胜、善于用戏剧性叙事包装学术发现，善于公共传播",
+    "persuasion_tactics": [
+      "实验叙事化（SPE的故事讲述）",
+      "现实案例映射（阿布格莱布→SPE）",
+      "二元对立框架（善vs恶、苹果vs苹果桶）",
+      "悖论呈现（英雄主义的三个悖论）"
+    ],
+    "rhetorical_devices": [
+      "隐喻（'牢笼'、'监狱'、'苹果桶'）",
+      "对称结构（'平庸之恶'vs'英雄主义的平凡性'）",
+      "悖论（提升与否定、公共与私人、利他与英雄）",
+      "渐进论证（'所有邪恶始于15伏特'）"
+    ],
+    "emotional_range": "从揭露邪恶的沉重到激励英雄的振奋，从学术严谨的冷静到公共演讲的热忱"
+  },
+  "evolution_trajectory": "贫困童年→耶鲁博士→SPE情境力量发现→害羞诊所转向→时间观理论创立→路西法效应综合→英雄想象项目→变革性教学——从'解释恶'到'培养善'的完整学术闭环，贯穿始终的是情境力量对行为的塑造这一核心信念",
+  "key_aphorisms": [
+    "所有邪恶始于15伏特",
+    "不要低估环境对个体的影响，它可以决定你是谁；也不要低估自己对自身的影响，别让别人决定你是谁",
+    "抵抗去个性化，坚持个体性，不让他人将你归类、物化为客体",
+    "英雄主义不是少数精英的特权，而是普通人普遍可及的能力"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "斯坦福监狱实验（SPE）是社会情境扭曲个人身份和道德价值观的经典证明：普通大学生在分配的看守角色中迅速内化权力身份，三分之一表现出虐待倾向，囚犯遭受情感创伤，角色内化速度和深度超出预期导致实验提前终止。该实验由美国海军研究办公室资助，目的是理解军事看守与囚犯的冲突。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Zimbardo's most famous study was the 1971 Stanford Prison Experiment, which was a classic demonstration of the power of social situations to distort personal identities and long-held values and morality. The purpose was to understand the development of norms and the effects of roles, labels, and social expectations in a simulated prison environment. In this study, participants internalized identities in their roles as prisoners and guards.",
+          "source_file": "exa_Stanford Prison Experiment - Philip G. Zimbardo.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "Zimbardo asserts that his fellow researcher explicitly instructed the guards not to inflict physical harm on the prisoners, but at the same time make the prisoners feel that they were in an actual prison. Asking a person role-playing a guard in a prison simulation to be \"firm\" and \"in the action\" is mild compared to the pressure exerted by actual wardens and superior officers in real-life prison and military settings, where guards failing to participate fully can face disciplinary hearings, demotion, or dismissal.",
+          "source_file": "exa_Stanford prison experiment.md",
+          "location": "Orientation章节"
+        },
+        {
+          "excerpt": "The study was funded by the US Office of Naval Research to understand antisocial behavior. The United States Navy and the United States Marine Corps wanted to investigate conflict between military guards and prisoners.",
+          "source_file": "exa_Stanford prison experiment.md",
+          "location": "Funding and methodology章节"
+        },
+        {
+          "excerpt": "这些学生很快就进入所扮演的角色，\"看守\"显示出虐待狂病态人格，而\"囚犯\"显示出极端被动和沮丧。囚犯和看守很快适应了自己的角色，一步步地超过了预设的界限，通向危险和造成心理伤害的情形。三分之一的看守被评价为显示出\"真正的\"虐待狂倾向，而许多囚犯在情感上受到创伤，有2人不得不提前退出实验。",
+          "source_file": "exa_菲利普·津巴多（Philip George Zimbardo） - 知乎.md",
+          "location": "人物介绍-实验描述段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多认为多重力量塑造人类行为（内部/外部、历史/当代、文化/个人），理解这些动态复杂交互有助于促进人性中最好的方面。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "\"Multiple forces shape human behavior: they are internal and external, historical and contemporary, cultural and personal. The more we understand all of these dynamics and the complex way they interact with each other, the better we will be at promoting what is best in human nature.\"",
+          "source_file": "exa_Stanford Prison Experiment - Philip G. Zimbardo.md",
+          "location": "津巴多引言段"
+        }
+      ]
+    },
+    {
+      "claim": "SPE直接推动了美国大学改善人类实验伦理审查制度，但后续研究者难以在伦理约束下复现该研究。SPE的核心学术意义不在于方法学上可无争议复制，而在于推动了以制度与情境解释行为的公共讨论。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The experiment has been referenced and critiqued as an example of an unethical psychological experiment, and the harm inflicted on the participants in this and other experiments during the post-World War II era prompted American universities to improve their ethical requirements and institutional review for human experiment subjects in order to prevent them from being similarly harmed. Other researchers have found it difficult to reproduce the study, especially given those constraints.",
+          "source_file": "exa_Stanford prison experiment.md",
+          "location": "开头第1段"
+        },
+        {
+          "excerpt": "斯坦福监狱实验在心理学史上的意义，更多体现在它推动了\"以制度与情境解释行为\"的公共讨论，并促使研究伦理规范进一步收紧；而不是作为一个方法学上可无争议复制的\"标准实验\"。",
+          "source_file": "serp_菲利普·津巴多的斯坦福监狱实验.md",
+          "location": "学习要点段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多认为阿布格莱布监狱虐囚事件是SPE中观察到同样情境力量的真实案例，表明情境对行为的强大塑造力具有现实外推性。他为此案看守作证时主张从轻判刑，认为很少有人能抵御监狱的情境压力，但法庭未采信。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "在阿布格莱布囚犯虐待伊拉克的报道成为公众的知识后，这项研究成为最近感兴趣的话题。 包括津巴多在内的许多人认为，阿布格莱布的虐待行为可能是津巴多实验中观察到的同样结果的真实例子。",
+          "source_file": "exa_菲利普津巴多传记：他对心理学的影响.md",
+          "location": "津巴多的职业和研究-他对心理学的贡献段"
+        },
+        {
+          "excerpt": "2004年，津巴多出席美国国防部军事法庭，为阿布格莱布监狱的一名看守伊万·弗里德里克（Ivan Frederick）中士作证，他认为鉴于弗里德里克的情况，判刑应该从轻，他解释说很少有人能够抵御监狱强大的情境压力，尤其是在没有适当的训练和监督的情况下。显然法官没有采信津巴多的证词，判处弗里德里克最高刑期：8年徒刑。",
+          "source_file": "exa_菲利普·津巴多.md",
+          "location": "其他研究段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多从研究人性黑暗面转向推动日常英雄主义，创立英雄想象项目；此前先设立害羞诊所治疗成人和儿童害羞。学术轨迹从'解释恶'到'重塑制度'再到'培养善'——相信合适环境可促使人发挥善的力量，后期转向英雄主义训练，强调训练使旁观者变为行动者。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "最近，津巴多还是英雄想象项目的创始人，这是一个旨在了解和促进日常英雄主义的非营利组织。",
+          "source_file": "exa_菲利普津巴多传记：他对心理学的影响.md",
+          "location": "简介段"
+        },
+        {
+          "excerpt": "该组织推动研究，教育和媒体举措，旨在激励普通人充当社会变革的英雄和代理人。",
+          "source_file": "exa_菲利普津巴多传记：他对心理学的影响.md",
+          "location": "津巴多的职业和研究段"
+        },
+        {
+          "excerpt": "在进行了著名的斯坦福监狱实验之后，津巴多决定寻找利用心理学帮助人们的途径，于是他设立了害羞诊所，专门治疗成人和儿童的害羞。",
+          "source_file": "exa_菲利普·津巴多（Philip George Zimbardo） - 知乎.md",
+          "location": "人物介绍段"
+        },
+        {
+          "excerpt": "他相信治疗方法合适，环境可以促使人发挥内心有善的力量，在揭露人性恶的一面后，他仍然在探索人性的道路上继续努力。",
+          "source_file": "exa_\"当代心理学的形象与声音\"——永远缅怀菲利普·津巴多教授.md",
+          "location": "中国讲座段"
+        },
+        {
+          "excerpt": "津巴多后来强调，与其只讨论\"人为何作恶\"，不如研究如何在关键时刻做出道德行动。例如通过训练\"旁观者变行动者\"（bystander to upstander）的技能：识别情境压力、延迟冲动、寻求同伴支持、使用可行的制度性申诉渠道等。",
+          "source_file": "serp_菲利普·津巴多的斯坦福监狱实验.md",
+          "location": "当代应用段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多早年遭受的歧视和贫困经历激发了他对人类行为的好奇心，深刻影响了日后研究方向——关注情境力量如何塑造行为。ZTPI的创建也源于个人经历：SPE中参与者从未来取向变为当下沉浸，成长于贫困使他认识到家人朋友都是宿命论式当下的'囚徒'，而教育将他解放到更未来取向的存在领域。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Early in life he experienced discrimination and prejudice, growing up poor on welfare in the South Bronx, and being Italian. Zimbardo said these experiences early in life started his curiosity about people's behavior, and later influenced his research in school.",
+          "source_file": "exa_Philip Zimbardo - Wikipedia.md",
+          "location": "Early life and education段"
+        },
+        {
+          "excerpt": "The initial impetus for developing this individual-differences measure came from early life experiences of Philip G. Zimbardo and his observations of the dramatic alterations in TP that occurred during the weeklong Stanford Prison Experiment (Zimbardo et al. 1973 ). One aspect of the power of the situation demonstrated by that study was the alteration in the subjective time sense of many of the participants from being relatively future-oriented college students to being totally immersed prisoners of the present moment, without concern for their shared past or any interest in the future after they were released. Growing up in poverty led Zimbardo to realize that his family and friends were prisoners of a fatalistic present. Education liberated him, and others, into a more future-oriented realm of existence.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk2 ZTPI Scale Construction Overview段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多归纳了导致邪恶行为的七种社会心理机制：迈出第一步、去人性化、去个性化、责任分散、盲目服从权威、从众、被动容忍。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Mindlessly taking the first small step\n- Dehumanization of others\n- De-individuation of self (anonymity)\n- Diffusion of personal responsibility\n- Blind obedience to authority\n- Uncritical conformity to group norms\n- Passive tolerance of evil through inaction or indifference",
+          "source_file": "exa_Philip Zimbardo - Wikipedia.md",
+          "location": "Psychology of evil - The Lucifer Effect列表"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多的核心研究关切是个体行为如何被社会系统、情境和语境所塑造，这一贯穿始终的学术主题连接了从监狱实验到英雄想象项目的全部工作。善恶之间的界限是可渗透的，几乎任何人在情境力量压力下都可能跨越这条线。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Philip Zimbardo was a psychologist known for his research in how individual behavior is shaped by social systems, situations and contexts.",
+          "source_file": "exa_Philip Zimbardo - Wikipedia.md",
+          "location": "Research段首句"
+        },
+        {
+          "excerpt": "The line between good and evil is permeable and almost anyone can be induced to cross it when pressured by situational forces.",
+          "source_file": "exa_Life and Legacy of Psychologist Philip Zimbardo.md",
+          "location": "FAQ-quotes段"
+        }
+      ]
+    },
+    {
+      "claim": "SPE因伦理问题受到批评，包括缺乏知情同意、对参与者造成心理伤害、津巴多同时担任研究者和监狱主管的双重角色损害实验效度。后续考证发现狱卒受到实验方明确指示实施虐待举动，记者Ben Blum的曝光报道指出实验者有意影响了实验和结果，严重影响了实验客观性和可信度。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "The Stanford Prison Experiment, while groundbreaking, has been criticized for its ethical shortcomings, including the lack of informed consent and the psychological harm inflicted on participants. Critics argue that the study's design and Zimbardo's dual role as both researcher and prison superintendent compromised its validity and raised significant ethical concerns.",
+          "source_file": "exa_Life and Legacy of Psychologist Philip Zimbardo.md",
+          "location": "Challenges and Controversies段"
+        },
+        {
+          "excerpt": "但后来历经考究发现，整体实验狱卒受到实验主办方明确指示，要求对囚犯实施一系列虐待举动，严重影响整体实验的客观性，整体实验真实性有待商榷。",
+          "source_file": "serp_菲利普·津巴多- 维基百科，自由的百科全书.md",
+          "location": "斯坦福监狱实验段末"
+        },
+        {
+          "excerpt": "recent findings indicate that the experiment lacked credibility and authenticity. In an exposé titled \"The Lifespan of a Lie,\" journalist Ben Blum reported that the experimenters intentionally influenced the experiment and the results.",
+          "source_file": "exa_The Influence of Philip Zimbardo on Psychology - Verywell Mi.md",
+          "location": "Stanford Prison Experiment章节"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多的妻子Christina Maslach在结束SPE中起了关键作用，她表达了对实验伦理影响的担忧，促使实验终止。津巴多承认自己在SPE中入戏很深，是女友马斯拉奇警醒才终止实验，这一反思揭示了研究者自身也难以逃脱情境力量的影响。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "He is married to Christina Maslach, a fellow psychologist who played a crucial role in ending the Stanford Prison Experiment by expressing her concerns about the ethical implications of the study.",
+          "source_file": "exa_Life and Legacy of Psychologist Philip Zimbardo.md",
+          "location": "Personal Life段"
+        },
+        {
+          "excerpt": "津巴多在《津巴多口述史》一书中回顾斯坦福监狱实验时也承认自己当时入戏很深，是女友马斯拉奇（津巴多教授当时的恋人，后来成为了津巴多先生的夫人）警醒他才及时终止这个实验。",
+          "source_file": "exa_菲利普·津巴多.md",
+          "location": "研究课题-斯坦福监狱实验段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多提出两个核心学术命题：不要低估环境对个体的影响，它可以决定你是谁；也不要低估自己对自身的影响，别让别人决定你是谁。他呼吁个体抵抗去个性化，坚持个体性，不让他人将你归类、物化为客体。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "菲利普津巴多的一生，有两个极其关键的学术课题。第一个是，不要低估环境对你的影响，它有时可以决定你是谁。第二个是，更不要低估你自己对自己的影响，别让别人决定你是谁。",
+          "source_file": "exa_\"当代心理学的形象与声音\"——永远缅怀菲利普·津巴多教授.md",
+          "location": "结论段"
+        },
+        {
+          "excerpt": "不要允许其他人将你去个体化，不要让他们把你放入某个分类、某个盒子、某个自动贩卖机里，不要让他们把你变成一个客体，一样东西。请坚持你的个体性，礼貌地告诉他们你的名字，大声地让他们清楚你是谁。",
+          "source_file": "exa_\"当代心理学的形象与声音\"——永远缅怀菲利普·津巴多教授.md",
+          "location": "结尾引言段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多与米尔格拉姆是中学时代好友，两人分别从情境角色和服从权威两个角度揭示了社会情境对道德行为的强大侵蚀力。津巴多提出'所有邪恶始于15伏特'呼应米尔格拉姆实验，强调邪恶的渐进性。SPE不仅是关于服从命令，更是关于角色与制度如何持续塑造行为，将阿希从众研究和米尔格拉姆服从研究的主题进行了延伸。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "斯坦福监狱实验经常被拿来与米尔格拉姆实验进行比较，米尔格拉姆实验是于1961年在耶鲁大学，由津巴多中学时代的好友斯坦利·米尔格拉姆进行的。",
+          "source_file": "exa_菲利普·津巴多（Philip George Zimbardo） - 知乎.md",
+          "location": "实验比较段"
+        },
+        {
+          "excerpt": "\"所有的邪恶都始于那15伏特。\"",
+          "source_file": "exa_那个建造\"斯坦福监狱\"的人，离开了.md",
+          "location": "时间悖论段"
+        },
+        {
+          "excerpt": "津巴多的斯坦福监狱实验可被视为对同一主题的延伸：不仅是\"服从命令\"，更是\"角色与制度\"如何持续塑造行为（Haney, Banks, & Zimbardo, 1973）。",
+          "source_file": "exa_菲利普·津巴多的斯坦福监狱实验- 给力心理百科.md",
+          "location": "历史语境段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多批判'坏苹果论'，认为历史上的暴行不是因为个别坏人，而是系统或文化力量创建了不良环境——是'坏苹果桶'在助长恶行。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "他批判了\"坏苹果论\"，认为历史上的许多暴行并非因为个别的\"坏人\"，而是因为系统性或文化力量创建了不良的环境，正是这些\"坏苹果桶\"在助长恶行。",
+          "source_file": "exa_那个建造\"斯坦福监狱\"的人，离开了.md",
+          "location": "时间悖论段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多认为英雄主义与路西法效应是同一枚硬币的两面：在适当情境和支持下，普通人既可能做出邪恶行为，也可能成为英雄。他希望墓志铭不只是'斯坦福监狱的监狱主管'，而是'他把人们从害羞的牢笼、无知的牢笼、自我膨胀的牢笼中解放出来，激励每个年轻人成为平凡日常中的英雄'。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "不希望墓志铭只写着\"他是那座斯坦福监狱的监狱主管\"。如果有一个很大的墓碑，可以这样写：他把人们从害羞的牢笼、无知的牢笼、自我膨胀的牢笼中解放出来。他做得兴致勃勃，同时也激励每个年轻人去成为\"平凡日常中的英雄\"。",
+          "source_file": "exa_那个建造\"斯坦福监狱\"的人，离开了.md",
+          "location": "自传引言段"
+        },
+        {
+          "excerpt": "津巴多教授认为，英雄主义与路西法效应是同一枚硬币的两面。在适当的情境和支持下，普通人既可能做出邪恶的行为，也可能成为英雄。",
+          "source_file": "exa_那个建造\"斯坦福监狱\"的人，离开了.md",
+          "location": "英雄主义段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多提出社会强度综合症（SIS）理论来描述军事文化和社交化如何影响士兵和退伍军人，研究表明该构念是军事社交化的准确衡量。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Zimbardo also developed a social intensity syndrome (SIS) theory to describe how military culture and socialization affect soldiers and military veterans. Research has demonstrated that the construct is an accurate measure of military socialization. Zimbardo and his colleagues suggest that SIS may be an important way to gain better insight into military culture's positive and negative effects.",
+          "source_file": "exa_The Influence of Philip Zimbardo on Psychology - Verywell Mi.md",
+          "location": "Social Intensity Syndrome章节"
+        }
+      ]
+    },
+    {
+      "claim": "去个性化并不必然导向更坏的行为，也可能导向更符合群体规范的行为，关键在于情境激活的规范是什么——现代研究对津巴多原始理论提出了更精细的修正。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "去个性化并不必然导向\"更坏\"，也可能导向\"更符合群体规范\"的行为；关键在于情境所激活的规范是什么。现代研究对去个性化的方向性提出了更精细的理论修正。",
+          "source_file": "serp_菲利普·津巴多的斯坦福监狱实验.md",
+          "location": "去个性化段"
+        }
+      ]
+    },
+    {
+      "claim": "人们有不同的时间视角（对过去、现在和未来的态度），这些时间视角作为过滤器影响人们如何编码、存储和回忆经验，以及如何设定目标和做出选择。津巴多识别了五种时间视角：过去消极、过去积极、现在享乐主义、现在宿命主义和未来导向。津巴多延续勒温的传统，将时间视角宽泛地定义为个体和社会功能的基础过程——一个通常无意识的过程，将持续的个人和社会经验流分解到选定的过去、现在和未来时间类别中。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "According to Zimbardo, people have different time perspectives that reflect their attitudes toward the past, present, and future. These time perspectives act as filters that shape how people encode, store, and recall experiences as well as how they set goals and make choices.",
+          "source_file": "exa_Time Perspective Theory - Dr. Philip G. Zimbardo.md",
+          "location": "Time Perspective Theory章节第1段"
+        },
+        {
+          "excerpt": "Zimbardo argued that having a balanced time perspective is optimal for psychological health and success. However, most people tend to favor one temporal bias over others.",
+          "source_file": "exa_Time Perspective Theory - Dr. Philip G. Zimbardo.md",
+          "location": "五种时间视角描述之后"
+        },
+        {
+          "excerpt": "Zimbardo developed the concept of time perspective, which examines how individuals' perceptions of time influence their thoughts, feelings, and actions. He identified different time perspectives, such as past-positive, past-negative, present-hedonistic, present-fatalistic, and future-oriented, and explored their impact on behavior and well-being.",
+          "source_file": "exa_Life and Legacy of Psychologist Philip Zimbardo.md",
+          "location": "Research Areas-Time Perspective Theory段"
+        },
+        {
+          "excerpt": "Time perspective is the often nonconscious process whereby the continual flow of personal and social experiences are decomposed or allocated into selected temporal categories or frames that help give order, coherence, and meaning to those events. These past, present, and future temporal frames are used in encoding, storing, and recalling experienced events, as well as in forming expectations, goals, contingencies, and imaginative scenarios.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Time Perspective理论阐述段"
+        }
+      ]
+    },
+    {
+      "claim": "ZTPI五个因子的详细定义：(1)Past-Negative反映对过去的负面厌恶态度；(2)Present-Hedonistic反映享乐主义、冒险态度；(3)Future反映未来取向和目标追求；(4)Past-Positive反映对过去的温暖、怀旧态度；(5)Present-Fatalistic反映宿命论、无助态度。因子结构纯经验驱动，无事先理论预测，由特征陈述池和反复因子分析决定，在三个不同大学独立样本中得到复制。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "There was no a priori theoretical prediction of the number or characteristics of the factors that we would obtain; their nature was determined solely by the pool of characteristic statements and repeated factor analyses of this pool. After the stability of the ﬁ ve-factor structure had been established, individual items were analyzed and revised to maximize factor loadings and increase the internal consistency of the subscales.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk3 Refinement of the ZTPI段"
+        },
+        {
+          "excerpt": "The scale's ﬁ ve-factor structure and relative loadings were replicated recently in an independent test with samples of respondents from three very different colleges ( N = 612; variance explained, 34 %), with only minimal changes found in factor loadings of speciﬁ c items (Holman and Zimbardo 1999 ).",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk3 第5段"
+        },
+        {
+          "excerpt": "Past-Negative, reﬂ ects a generally negative, aversive view of the past... Because of the reconstructive nature of the past, these negative attitudes may be due to actual experiences of unpleasant or traumatic events, to negative reconstruction of benign events, or to a mix of both.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk4 The Five ZTPI Factors - Past-Negative段"
+        },
+        {
+          "excerpt": "Present-Hedonistic, reﬂ ects a hedonistic, risk-taking, \"devil may care\" attitude toward time and life... It suggests an orientation toward present pleasure with little concern for future consequences.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk4 Present-Hedonistic段"
+        },
+        {
+          "excerpt": "Present-Fatalistic... reveals a fatalistic, helpless, and hopeless attitude toward the future and life",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk4 Present-Fatalistic段"
+        }
+      ]
+    },
+    {
+      "claim": "时间视角理论提出平衡的时间视角允许在最合适的情境中灵活转换时间导向，但特定导向使用过度会导致'偏见'。津巴多提出'平衡时间透视'理想：心理能力灵活地在不同TP间切换——未来聚焦给予成就翅膀，过去积极聚焦建立传统根基和身份认同，现在享乐聚焦滋养日常生活，三者协调运作才能充分发挥人类潜能。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The theory suggests that a balanced time perspective allows flexible transition among the temporal orientations that are most situationally appropriate. However, specific orientations may be used too much, and others may be used too little, leading people to become \"biased\" in their time perspective.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Time Perspective理论段"
+        },
+        {
+          "excerpt": "This conjecture leads us to promote the ideal of a \"balanced TP\" as most psychologically and physically healthy for individuals and optimal for societal functioning. Balance is deﬁ ned as the mental ability to switch ﬂ exibly among TPs depending on task features, situational considerations, and personal resources rather than be biased toward a speciﬁ c TP that is not adaptive across situations. The future focus gives people wings to soar to new heights of achievement, the past (positive) focus establishes their roots with tradition and grounds their sense of personal identity, and the present (hedonistic) focus nourishes their daily lives with the playfulness of youth and the joys of sensuality.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk12 A Balanced TP段"
+        }
+      ]
+    },
+    {
+      "claim": "以往单维度量表的致命缺陷：假设未来取向得分低等同于现在取向得分高，但数据表明这种互反等价性是错误的；同时这些量表完全缺乏对'过去'的表征。ZTPI五因子间的相关模式证明五个时间取向维度并非简单的互反关系。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Moreover, they assume, incorrectly, that scoring low on a scale of future orientation is equivalent to scoring high on a scale of present orientation or that scoring low on a measure of the present is equivalent to being future oriented. (We present data later that challenge such reciprocal equivalencies.) Notably absent from these scales is any representation of the past.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk2 第5段"
+        },
+        {
+          "excerpt": "Past-Negative... Present-Fatalistic .38***; Future... Present-Hedonistic -.29***, Present-Fatalistic -.26***; Present-Hedonistic... Present-Fatalistic .32***",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk5 Table 3 Intercorrelations"
+        }
+      ]
+    },
+    {
+      "claim": "ZTPI不是'新瓶装旧酒'：联合因子分析显示Past-Negative与抑郁量表高度相关(.69)但保持独立因子，Future与尽责性量表高度相关(.73)但也保持独立因子，证明时间透视是区别于抑郁和尽责性的独立心理维度。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The Past-Negative subscale of the ZTPI correlated (disattenuated for measurement error) highly with the depression scale at .69, whereas our Future subscale correlated with the Big Five Questionnaire conscientiousness scale at a solid .73. We used these relationships as a test case for the discriminant validity of the ZTPI by separately factor analyzing each of our scales with the relevant personality scale.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk7 Additional Tests of Discriminant Validity段"
+        },
+        {
+          "excerpt": "although the Past-Negative subscale of the ZTPI and depression are strongly correlated, they remain distinct and not entirely overlapping constructs.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk7 Past-Negative与depression分析段末"
+        },
+        {
+          "excerpt": "In the case of Future TP and conscientiousness, the evidence more strongly supports the discriminant validity of the ZTPI. Although the items from the conscientiousness scale do not form a coherent factor, the items from the Future subscale of the ZTPI do. The Future factor appears more coherent and explains more variance than does the conscientiousness scale.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk7 Future与conscientiousness分析段"
+        }
+      ]
+    },
+    {
+      "claim": "ZTPI的创建始于《Psychology Today》杂志超过12,000名回答者的便利样本，受篇幅限制最初仅关注现在与未来差异。四周重测信度在.70-.80之间，Future因子最高(.80)，Past-Negative最低(.70)。局限性包括主要基于大学生样本、可能更适合个人主义社会，以及早期多样化样本曾发现Future有四个子因子但ZTPI只保留一个。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "a convenience sample of more than 12,000 respondents to a Psychology Today questionnaire that we had prepared on the basis of our exploratory investigations (Gonzalez and Zimbardo 1985 ; Zimbardo and Gonzalez 1984 ). Because of magazine space limitations and our primary interest at that time in differences between present-oriented and future-oriented individuals, we did not include items that might have tapped into a past orientation. However, factor analysis revealed a number of distinct temporal factors within the present and future domains, along with interesting correlations with many occupations and other lifestyle variables.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk3 第4段"
+        },
+        {
+          "excerpt": "Test–retest reliabilities of the ﬁ ve subscales of the ZTPI were established with 58 Stanford introductory psychology students over a 4-week period. Reliabilities ranged from .70 to .80. The Future scale demonstrated the best test–retest reliability (.80), followed by Present-Fatalistic (.76), Past-Positive (.76), Present-Hedonistic (.72), and Past-Negative (.70).",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk4 Test-Retest Reliability段"
+        },
+        {
+          "excerpt": "Perhaps the greater range of ages, backgrounds, and career diversity of that normative sample contributed to the resulting four subfactors of the Future factor (Future-Work Motivation–Perseverance, Future-Goal Seeking–Long-Term Planning, Future-Speciﬁ c Daily Planning, and Future-Pragmatic Action for Later Gain). By contrast, the ZTPI has but one Future TP... A further limitation of the generalizability of our scale may lie in its cultural relevance to individualist societies and their ambitions, tasks, and demands rather than to more collectivist, interdependent societies",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk12 Limits and Extensions段"
+        }
+      ]
+    },
+    {
+      "claim": "Past-Negative与抑郁(.59)、攻击性(.49)、焦虑显著正相关，与情绪稳定性(-.45)、自尊负相关。Past-Positive则与攻击性、抑郁、焦虑显著负相关，与自尊正相关，但与现在或未来取向构念无显著相关，是独立于时间取向维度的健康心理变量。Present-Fatalistic与攻击性(.48)、焦虑(.47)、抑郁(.45)显著正相关，与未来后果考虑强负相关(-.72)，反映既无目标感也无享乐、相信未来已被预定的状态。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Past-Negative... Aggression .49***, Depression .59***, Emotional stability -.45***",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk5 Table 4"
+        },
+        {
+          "excerpt": "Previous research has shown that negative rumination is associated with depression (Lyubomirsky and Nolen-Hoeksema 1995; Nolen-Hoeksema and Morrow 1993). Therefore, Past-Negative scores were predicted to be associated with depression",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk5 Past-Negative验证段"
+        },
+        {
+          "excerpt": "This factor is characterized by a glowing, nostalgic, positive construction of the past. Its opposition to the Past-Negative factor should lead to negative associations with all of the behaviors typical of those high on the Past-Negative factor... it correlated signiﬁ cantly and negatively with aggression, r(200) = -.19, p < .05; depression, r(203) = -.20, p < .05; and anxiety, r(205) = -.30, p < .01. Each of these correlations was opposite to that found for the Past-Negative factor. The factor also correlated signiﬁ cantly with self-esteem, r(315) = .33, p < .01... It did not correlate signiﬁ cantly with present-oriented or future-oriented constructs such as novelty seeking, sensation seeking, and preference for consistency.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk8 Past-Positive验证段"
+        },
+        {
+          "excerpt": "it reveals a belief that the future is predestined and uninﬂ uenced by individual actions, whereas the present must be borne with resignation because humans are at the whimsical mercy of \"fate.\"... this factor correlated signiﬁ cantly and strongly with aggression, r(200) = .48, p < .01; anxiety, r(205) = .47, p < .01; and depression, r(203) = .45, p < .01. It correlated negatively with consideration of future consequences, r(205) = -.72, p < .01.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk6 Present-Fatalistic验证段"
+        }
+      ]
+    },
+    {
+      "claim": "Future因子与尽责性(.57)、未来后果考虑(.66)强正相关，与攻击性(-.31)和感觉寻求(-.34)负相关。Present-Hedonistic与自我控制不足(.75)、新异性寻求(.72)、感觉寻求(.72)强正相关，与一致性偏好负相关，但与过去或未来取向构念无显著相关，证明现在享乐取向是独立维度。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Future... Conscientiousness .57***, Consideration of future consequences .66***, Aggression -.31***, Sensation seeking -.34***",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk5 Table 4"
+        },
+        {
+          "excerpt": "robust correlations emerged with ego undercontrol, r(205) = .75, p < .01; novelty seeking, r(204) = .72, p < .01; sensation seeking, r(205) = .72, p < .01; and (negatively) preference for consistency, r(205) = -.51, p < .01. In contrast to these predicted strong correlations, the scale did not correlate signiﬁ cantly with any of the past-oriented or future-oriented constructs",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk6 Present-Hedonistic验证段"
+        }
+      ]
+    },
+    {
+      "claim": "独立研究者的Big Five研究发现：Present-Hedonistic与精力正相关但与尽责性和情绪稳定性负相关；Future与尽责性和精力强正相关；Past-Negative与情绪稳定性、精力、尽责性、宜人性均显著负相关。女性在Future因子上得分显著高于男性。Past-Negative存在显著种族差异：非裔美国人得分最高，白人最低。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Women scored signiﬁ cantly higher than men, F(1, 585) = 16.20, p < .01, η2 = .03 (women, M = 3.54, SD = 0.51; men, M = 3.36, SD = 0.51). ...We were surprised that the Future factor did not decompose into several subfactors as had been found earlier (Gonzalez and Zimbardo 1985 ). However, that earlier sample included many older respondents in business and noncollege occupations whose future representations included their children, retirement, legacy, and other long-term factors not common in the thoughts of college students.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk4 Future段"
+        },
+        {
+          "excerpt": "the Present-Hedonistic factor correlated positively and signiﬁ cantly with energy but negatively with conscientiousness and emotional stability. The Future factor correlated very strongly with conscientiousness as well as energy. The Present-Fatalistic factor correlated negatively with energy, conscientiousness, openness, and emotional stability. The Past-Positive factor correlated positively with energy and agreeableness, whereas the Past-Negative factor was related signiﬁ cantly but negatively to emotional stability, energy, conscientiousness, and agreeableness",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk8 The Big Five Questionnaire段"
+        },
+        {
+          "excerpt": "Signiﬁ cant ethnic differences were found, F(4, 559) = 8.50, p < .01, η2 = .06. African Americans scored highest on the Past-Negative scale ( M = 3.20, SD = 0.75), followed by Asians ( M = 3.10, SD = 0.69), those of \"other\" ethnic backgrounds ( M = 3.10, SD = 0.73), Hispanics ( M = 3.10, SD = 0.67), and Caucasians ( M = 2.80, SD = 0.69).",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk4 Past-Negative段"
+        }
+      ]
+    },
+    {
+      "claim": "ZTPI预测效度案例研究：访谈者不知TP类型的情况下，14/31被正确识别。Past-Negative高分者朋友少、锻炼少、爱赌博。Present-Hedonistic高分者酒精使用更多、未来目标不明确、不信教。Future高分者制作待办清单、使用日程规划器、平衡支票簿，获得更高GPA却牺牲社交生活，承受高压力。Present-Fatalistic高分者GPA更低，希望活得更短，性伴侣更多，预示STD/HIV风险。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Although unaware of the TP factor bias of the participants, 14 of 31 interviewers correctly identiﬁ ed the TP for which their interviewee had been selected, χ²(1) = 12.3, p < .01.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk9 Results段"
+        },
+        {
+          "excerpt": "Those scoring high on this factor present a potentially disturbing portrait. In general, their interpersonal relationships are minimal and unsatisfactory, and they are not motivated to work for future rewards. They reported having fewer close friends both at Stanford, r(30) = -.40, p < .05, and elsewhere, r(30) = -.38, p < .05.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk9 Past-Negative case study段"
+        },
+        {
+          "excerpt": "Our interviews revealed that future-oriented TP students were highly organized, ambitious goal seekers who felt pressed for time but were willing to sacriﬁ ce present enjoyment to achieve their career objectives... ambition, organization, striving, and stress result in higher GPAs, r(27) = .40, p < .05, and fewer course \"incompletes,\" r(30) = -.39, p < .05",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk9 Future case study段"
+        },
+        {
+          "excerpt": "These students present a puzzling problem because they are intelligent young men and women living in a generally optimistic environment that encourages a sense of personal efﬁ cacy, yet they do not believe that anything they do, or will do, is likely to make a difference in their lives... Perhaps most telling about the depth of the fatalism embraced by these students is the fact that they wanted to live shorter lives than did the other students we interviewed, r(28) = -.46, p < .05.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk10 Present-Fatalistic case study段"
+        }
+      ]
+    },
+    {
+      "claim": "现在时间视角是危险驾驶行为的最显著预测因子，其预测力超过未来时间观且独立于后者。在2863名参与者的三个独立重复实验中，PTP在对抗感觉寻求、冲动性和攻击性等九个其他变量后仍是独立预测因子。在五个不同样本中PTP与危险驾驶正相关(r=0.22-0.36)，效应不局限于大学生。PTP与感觉寻求相关(r=0.33)但控制后仍独立预测(r=0.27)，且在控制自我控制不足后仍能预测额外方差。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "present time perspective is significantly correlated with reported risky driving behaviors. Its effect is greater than, and independent of, the negative correlations between future time perspective and risky driving. Additionally, males are more present-oriented and report taking more risks than females, while females are more future-oriented.",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Summary段"
+        },
+        {
+          "excerpt": "Across three separate replications, with 2863 participants, present time perspective is significantly correlated with reported risky driving behaviors. Its effect is greater than, and independent of, the negative correlations between future time perspective and risky driving.",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Summary段"
+        },
+        {
+          "excerpt": "Although the present and future scales are negatively correlated, they are not merely mirror or conceptual opposites. Rather, their effects on risky driving are independent, as shown by the continued significant impact of PTP on risky driving after controlling for FTP and the regression analysis establishing PTP as the primary predictor variable of risky driving.",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Study 1 Discussion第1段"
+        },
+        {
+          "excerpt": "The correlations between risky driving and the present subscale ranged from 0.22 to 0.36 across the samples (not including the small CYA sample), and when the samples were pooled, r(916)=0.32, p<0.01, supporting the conclusion that present-oriented people are more likely to report risky driving.",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Study 2 Results第1段"
+        },
+        {
+          "excerpt": "The correlation between present time perspective and sensation seeking was 0.33... To investigate whether time perspective uniquely predicts any of the variance of the risky driving scale, we partialled out the total sensation seeking score from the correlation between time perspective and risky driving. When controlling for SSS, we found that a significant correlation still remained between PTP and risky driving (r(142) =0.27, p=0.01).",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Study 2 Discriminant validity段"
+        },
+        {
+          "excerpt": "None of these scales were significant predictors of the risky driving scale: Aggression, Impulse Control, Novelty Seeking, Reward Dependence, nor Consideration of Future Consequences, or Family Income.",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Study 3 Variables not predictive段"
+        },
+        {
+          "excerpt": "Both SSS and PTP contributed significantly to the model, with sensation seeking a statistically more important predictor of risky driving than was present time perspective (SSS: t (201)=5.46, p<0.01); (PTP: t(201)=2.28,p<0.05). Along with the effects of gender (t(201)= 5.11,p<0.01), and the interaction between gender and present time perspective (t(201) = 2.25, p <0.05), these variables accounted for 34% of the variance",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Study 3 Sensation seeking段"
+        },
+        {
+          "excerpt": "Although EC dominated the PTP scale in predicting risky driving, with additional statistical analysis, we showed that a significant portion of the variance in risky driving can still be predicted by PTP over and above that shown by EC.",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Study 3 Discussion段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多得出结论：时间视角是危险驾驶的显著独立预测因子，理想的预测组合应包括PTP加上自我控制量表和感觉寻求量表。PTP和FTP可能差异性影响个体行为，聚焦于不同时间导向可以更充分理解复杂社会行为的动力学。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The robust, consistent pattern of results reported across these three studies encourages us to conclude that time perspective is a significant and independent predictor of risky driving... an ideal predictive composite includes PTP along with Ego Control (Block & Kremen, 1996) and Sensation Seeking (Zuckerman, 1994).",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "General Discussion第1段"
+        },
+        {
+          "excerpt": "It demonstrated that PTP and FTP may differentially affect individuals' behaviors. This suggests that focusing on these different temporal orientations may provide a more adequate understanding of the dynamics of such complex social behaviors.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "General Discussion第1段"
+        }
+      ]
+    },
+    {
+      "claim": "男性在每个样本中PTP得分更高（加权平均效应量=-0.50），女性FTP得分更高（平均效应量=0.23）。加入PTP后，性别不再是物质使用的显著预测因子——以往研究中的性别差异可能实际反映了时间视角差异。有趣的是，在交通违规者驾校样本中FTP与危险驾驶呈正相关，津巴多推测这是为按时上班赴约而超速。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "males are more present-oriented and report taking more risks than females, while females are more future-oriented.",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Summary段"
+        },
+        {
+          "excerpt": "men reported consistently higher present scores than did the women in every one of the samples. The average effect size (weighted by sample sizes) for the difference between men and women on the Present scale was –0.50... Women reported higher future scores in all of the samples than did men",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Time Perspective Across Samples段"
+        },
+        {
+          "excerpt": "Our results, however, contradict this literature and suggest that time perspective, had it been examined in the previous studies, may have contributed more to the variance in reported substance use than sex. We speculate further that in other studies, had time perspective been measured, women would have been lower on PTP than the men, and it would have been this difference in time perspective that would have accounted for some of the sex difference in alcohol consumption.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Discussion段"
+        },
+        {
+          "excerpt": "Incidentally, the only positive correlation between future orientation and driving risk was found among adult traffic violators in driving school, which appeared from personal reports to be due to speeding, running yellow lights, and failure to stop-in order to get to work and appointments on time.",
+          "source_file": "paper_Present time perspective as a predictor of risky driving.md",
+          "location": "Study 2 Results第2段"
+        }
+      ]
+    },
+    {
+      "claim": "现在时间观是物质使用（吸烟、饮酒、吸毒）的显著预测因子，在所有样本中均有效，而未来时间观在高水平时可以减弱现在时间观与药物使用的关联。控制FTP后PTP与物质使用的相关性仍然显著，回归分析显示PTP一致地比FTP解释更多方差。在所有人格变量同时竞争的情况下仅自我控制显著增加方差解释，而PTP保持显著(R²=0.29)，证明PTP不是感觉寻求等已有变量的新名称。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "PTP was a significant predictor of substance use in all of the eight samples. Interestingly, sex contributed to the prediction of substance use in only one of the samples, and the interaction between future and PTP predicted substance use in two of the samples. Scatterplots of the data suggest that at high levels of PTP and FTP, the high future score attenuated the relation between PTP and drug use.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "chunk9结果段"
+        },
+        {
+          "excerpt": "the correlations between the PTP and the Substance Use scales remained very high across all of the sample after partialing out FTP scores. Additionally, the following multiple regression analysis illustrates that PTP consistently accounted for more substance use variance than FTP.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Results-Independence检验段"
+        },
+        {
+          "excerpt": "those higher on PTP reported more substance use, r(205) = .37, p < .001. In addition, those higher on FTP reported less substance use than did those lower on FTP, r(205) = –.19, p < .01. Controlling for FTP did not substantially weaken the relationship between PTP and risky driving",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Study 2 Results第1段"
+        },
+        {
+          "excerpt": "PTP was the only significant predictor of reported substance use, R2 = .17, F(6, 195) = 6.86, p < .0001; standardized beta = .36, t(201) = 5.28, p < .01.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Study 2 Results第1段"
+        },
+        {
+          "excerpt": "None of the following scales were significant predictors of the substance use scale when entered at the same time as PTP: Conscientiousness, Consideration of Future Consequences, Ego Resiliency, Family Income, Impulse Control, Novelty Seeking, Reward Dependence, and State-Trait Anxiety.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Variables not predictive段"
+        },
+        {
+          "excerpt": "In an additional analysis, we compared the predictive ability of PTP to all of the other personality variables within the same analysis... Only ego control significantly added to the variance accounted for, and PTP remained a significant predictor: R2 = .29, F(7, 184) = 10.77, p < .0001; ego control: β = .41, t(201) = 5.49, p < .0001; PTP: β = .15, t(201) = 1.96, p = .05.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Time perspective versus all other段"
+        }
+      ]
+    },
+    {
+      "claim": "津巴多强调时间视角知识可应用于物质使用风险评估和治疗方案开发——治疗方案应考虑到主要关注当下行为情境者与生活在抽象未来或过去者之间截然不同的认知导向。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "This promising relation should be further explored, so that this knowledge can be successfully applied to the assessment of risk for using and abusing substances. It can also provide valuable information for the development of new substance use treatment programs, which could take account of the very different cognitive orientations of those who are primarily focused on the present behavioral setting in contrast to peers who live more in the abstract future or the past.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "General Discussion结论段"
+        }
+      ]
+    },
+    {
+      "claim": "现在时间透视在控制了多种人格变量后仍是风险行为的独立预测因子；现在TP与风险变量强正相关与未来TP的弱负相关形成对比，再次证明两个因子不应被假设为互反。在两项大规模研究(N>2600)中，现在时间透视与危险驾驶、更频繁的吸烟饮酒和药物使用高度相关。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In two large-scale companion studies ( N = >2,600), present TP was highly related to risky driving (Zimbardo et al. 1997 ) and also to more frequent smoking, consumption of alcohol, and drug use (Keough et al. 1999 ).",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk6 Risk Taking and Substance Use段"
+        },
+        {
+          "excerpt": "TP remained an independent predictor of risk and substance use even after controlling for the effects of many of the personality measures previously reported as associated with these classes of outcome measures. In addition, the strongly positive correlations between present TP and each of the risk and substance use variables contrast with their weakly negative associations to Future TP. That contrast speaks to the relative independence of these temporal factors and to the caution against assuming that low values of one of these factors imply high values of the other factor.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk7 Risk Taking and Substance Use段末"
+        }
+      ]
+    },
+    {
+      "claim": "个体评估自己的时间视角时是相对于环境中其他人比较的——斯坦福学生相对于同样高未来导向的同学评估，少年犯相对于同龄犯人评估。因此时间导向程度可能由社会环境和社会比较决定。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "These findings suggest that when individuals assess their time perspective, they do so relative to others in their environment. For example, Stanford students would answer the questions assessing how future oriented they are relative to their friends, roommates, and classmates, most of whom are probably highly future oriented... Thus the degree to which one is present or future oriented may be dictated by the social environment and the social comparisons made to other people in that environment.",
+          "source_file": "paper_Who's Smoking, Drinking, and Using Drugs_ Time Perspective a.md",
+          "location": "Discussion段-局限性讨论"
+        }
+      ]
+    },
+    {
+      "claim": "未来取向与西方社会中许多积极后果相关（更高的社会经济地位、更优学业成就、更少感觉寻求和健康风险行为），而主导的现在取向则与心理健康问题、青少年犯罪、犯罪和成瘾等消极后果相关。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "In general, future orientation has been related to many positive consequences for individuals in Western society, such as higher socioeconomic status, superior academic achievement, less sensation seeking, and fewer health risk behaviors. The opposite holds for those with a dominant present orientation, who are seen as at risk for many negative life consequences, among them mental health problems, juvenile delinquency, crime, and addictions, when they function in a predominantly future-oriented society",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk2 State of Research on TP段"
+        }
+      ]
+    },
+    {
+      "claim": "时间观和情绪智力都与幸福感、健康、冒险行为等心理变量相关，两者都是积极心理学的关键特征，延迟满足是两者的核心共同特征。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Both measures are associated with a variety of psychological variables and processes, such as happiness, health, risk taking and psychoactive substance use. Both are related to cognitive functioning (e.g., perception, reasoning) as well as emotional functioning. Dimensions of both TP and EI are depicted as key characteristics of positive psychology.",
+          "source_file": "paper_Time perspective, emotional intelligence and discounting of.md",
+          "location": "Introduction段"
+        }
+      ]
+    },
+    {
+      "claim": "Past-Positive TP通过家庭传统建立通往未来的功能桥梁，与践行传统、计划践行家庭传统、包含更多代际描述正相关。Past-Negative则与践行传统负相关。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Past-positive TP was positively correlated with practicing traditions, planning to practice family traditions, including more generations in describing important family events, seeing family members for everyday events or for no particular reason, and writing about routine family events. In contrast, Past-Negative TP was negatively correlated with practicing traditions and writing about routine family events but positively correlated with writing about rare family events. The authors made a strong case for the importance of the positive past temporal orientation as contributing to developing a sense of personal continuity over time and thus feeding into a richer Future perspective",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk13 Power of Past TP段"
+        }
+      ]
+    },
+    {
+      "claim": "'超验未来时间透视'(Transcendental Future)：Boyd & Zimbardo(1996)开发了独立量表测量死后存在信念。女性高于男性、50岁以上高于20多岁、宗教信仰高者最高，与两个Past因子和Present-Fatalistic相关但与传统Future和Present-Hedonistic无关。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Respondents who score high on the Transcendental Future scale believe that they will be rewarded or punished for their present behavior, just as those high on the traditional Future scale do, but for the former reinforcement comes only after their death... Moreover, when factor analyzed with the 132 items of the Big Five Questionnaire, Transcendental Future remained a distinct factor, suggesting that it is an individual-differences dimension unaccounted for by traditional personality analyses.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk12 Transcendental Future TP段"
+        }
+      ]
+    },
+    {
+      "claim": "'时间透视不协调'理论：低SES学生高辍学率更多是TP不协调而非智力缺陷——他们在只认可未来取向语言的教育环境中'说着现在取向的方言'。津巴多呼吁研究'诱惑的心理学'：确定的即时快乐vs可能的延迟痛苦——这种不对称最可能困住现在取向个体。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We have come to believe that high dropout rates among students of low socioeconomic status at all levels of schooling are more a consequence of \"TP discordance\" than deﬁ cits in intelligence or intellectual abilities. Those high on present TP may be \"speaking a present-oriented dialect\" in a setting that recognizes only the meaning and value of future-oriented language. Children from families and communities where present fatalism and hedonism predominate will not be as prepared as their peers to think in terms of causalities, probabilities, and if–then sequences or to tolerate boring lessons even if they may reap a payoff later.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk13 The Present-Oriented Child段"
+        },
+        {
+          "excerpt": "Our investigation into the dynamics of TP has made us aware of a completely neglected area of psychological research, that of the psychology of temptation. The classical biblical situation of acting now to get immediate pleasures of the ﬂ esh while failing to recognize the \"wages of sin\" that will lead to damnation has not been studied by psychological researchers. It is quite different from the research protocol of delay of gratiﬁ cation studies... because in temptation the choice is certain pleasure now and probable pain later.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk13 psychology of temptation段"
+        }
+      ]
+    },
+    {
+      "claim": "健康相关研究发现：童年癌症幸存者中Future TP与乐观正相关，写未来能提升悲观者乐观度17%。女性囚犯中Future高分者更少有HIV风险行为。Future TP与主动问题解决应对强相关(r=.41)，Past-Negative预测更多社会冲突，Past-Positive预测更少社会冲突。无家可归者中Future TP高分者持续时间更短、更可能入学。美国空军学院中军官Future得分最高，证明情境力量能塑造TP。研究参与中未来取向学生比现在取向早7.2天开始参与且放鸽子率低3倍。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Future TP was positively correlated with optimism ( r = .35, p < .05)... Writing about the future led to signiﬁ cant increases in optimism ( M = 10.6 %, z = 2.08, p < .05), writing about the present had no effect, and writing about the past decreased optimism... Pessimists were most helped by writing about the future; their optimism increased by 17 % relative to 3 % for the optimists, t(13) = 2.14, p < .05.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk10 Health-Relevant Research段"
+        },
+        {
+          "excerpt": "As a group, these female prisoners scored a standard deviation higher on present TP than did female students... Female prisoners who scored high on the Future subscale were less likely to have had an intravenous-drug-using sex partner, to have had large numbers of sex partners, or to have been \"high\" on drugs or alcohol during sex than peers who scored low on this scale.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk10 HIV risk段"
+        },
+        {
+          "excerpt": "Future TP was strongly associated with active problem-solving coping, r(125) = .41, p < .001, and emotional growth coping, r(125) = .27, p < .01. Present-Fatalistic TP was negatively associated with active problem-solving coping, r(125) = -.21, p < .05. Past-Positive TP was associated with positive emotional growth coping, r(125) = .29, p < .001, and Past-Negative TP was negatively associated with emotional growth coping, r(125) = -.24, p < .01. Present-hedonistic TP was associated with avoidance coping, r(125) = .22, p < .05.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk11 Holman and Zimbardo coping段"
+        },
+        {
+          "excerpt": "Ofﬁ cers were much lower than cadets of any level on Present-Fatalistic, Past-Negative, and Present-Hedonistic TP. On the Future factor, ofﬁ cers were highest (3.8), seniors were lower (3.5), and freshmen were lowest (3.3). Past-Positive scores showed a systematic increase over each of the 4 years of military training, from 3.7 in the freshman year up to 4.0 in the senior year.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk11 Influence of Roles and Status段"
+        },
+        {
+          "excerpt": "future-oriented students began participating sooner than present-oriented peers by 7.2 days ( p < .05), a substantial disparity in a quarter system of only 9 weeks... present-oriented students were three times as likely as future-oriented students to be \"no-shows\" even after they had signed up for given studies ( p < .05)... The Big Five Questionnaire trait of conscientiousness... had no effect on any of the three research times, and when it was covaried out of the data, results remained signiﬁ cant",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk11 Research Participation Timing段"
+        },
+        {
+          "excerpt": "Those higher on Future TP had shorter durations of homelessness, were more likely to enroll in school, and were more likely to report learning from and gaining positive beneﬁ ts from their predicament. In contrast, those higher on present TP used more avoidant coping strategies, spending more time watching TV and eating, working less, and not saving money. Efﬁ cacy predicted time spent searching for housing and employment, but neither TP nor efﬁ cacy predicted obtaining stable housing, a social–economic–political issue beyond the realm of individual-differences effects.",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "chunk12 Coping With Homelessness段"
+        }
+      ]
+    },
+    {
+      "claim": "儿童的早期亲社会行为（合作、帮助、分享、安慰）是预测5年后学业成就和社会偏好的强有力指标，在控制早期亲社会性后，早期攻击性和早期学业成绩对后期学业成就均无显著贡献。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Prosocialness had a strong positive impact on later academic achievement and social preferences, but early aggression had no significant effect on either outcome. The conceptual model accounted for 35% of variance in later academic achievement, and 37% of variance in social preferences. Additional analysis revealed that early academic achievement did not contribute to later academic achievement after controlling for effects of early prosocialness.",
+          "source_file": "paper_Prosocial Foundations of Children's Academic Achievement.md",
+          "location": "Abstract段"
+        },
+        {
+          "excerpt": "Remarkably, early prosocialness was the prime predictor of later achievement. Partial regression coefficients (beta weights) revealed that neither early aggression nor early achievement made a significant contribution to the variance in later academic achievement after the effects of early prosocialness were statistically controlled.",
+          "source_file": "paper_Prosocial Foundations of Children's Academic Achievement.md",
+          "location": "Predictiveness段"
+        }
+      ]
+    },
+    {
+      "claim": "Marshall和Zimbardo重新检验Schachter和Singer(1962)的情绪两因素理论，发现不足解释的肾上腺素引发的生理唤醒并未增强被试对社会环境情绪线索的易感性，反而倾向于产生负性情感。仅告知被试可能产生肾上腺素型症状就能产生负性情感反应和心率增加，这意味着'准确信息'操控本身可能制造了情感变化。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "reports of affective state by placebo-injected and epinephrine-injected subjects, who were misinformed about possible somatic effects and exposed to a euphoric confederate, did not differ. Closer inspection of the Schachter and Singer results also indicates a failure of inadequately explained epinephrine-produced physiological arousal to enhance affective susceptibility to the social environment. Additional evidence provided by the present study reveals a tendency for inadequately explained epinephrine-induced physiological arousal to produce negatively toned reports of affect.",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "Abstract段"
+        },
+        {
+          "excerpt": "In the present study, reports of affective state by placebo-injected and epinephrine-injected subjects, who were misinformed about possible somatic effects and exposed to a euphoric confederate, did not differ.",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "Additional evidence provided by the present study reveals a tendency for inadequately explained epinephrine-induced physiological arousal to produce negatively toned reports of affect.",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "No significant change in affect was found for subjects who were comparable to Schachter and Singer's unexplained arousal group. This suggests the possibility that the group differences they obtained were actually due to changes by their accurately informed epinephrine subjects.",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "chunk10讨论段"
+        },
+        {
+          "excerpt": "Placebo subjects who were told to expect the somatic effects associated with epinephrine reported relatively more negative affect prior to the injection and had a relatively greater increase in heart rate in anticipation of the injection.",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "chunk10讨论段"
+        },
+        {
+          "excerpt": "This information about possible effects of the injection seems to have produced a negative affective response by itself. This response appears to have dissipated over the course of the experiment, presumably because the anticipated effects did not occur (since in fact they received an injection of a placebo).",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "chunk10第4段"
+        }
+      ]
+    },
+    {
+      "claim": "Zimbardo采用严格实验控制策略：在学生健康中心进行、配备医生监控生理功能、筛选排除异常反应被试，体现了对被试安全的高度重视。他主张重复研究不仅验证原始发现是否可靠，还能厘清理论适用范围。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The precautions we took of screening for potential overreactions, availability of a cardiologist, and continuous monitoring of physiological functioning proved to be sufficient safeguards and should be used in further investigations of the psychological effects of this drug in normal populations.",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "Some support for this constraint on the latitude of emotional plasticity comes from Nisbett and Schachter's (1966) inability to manipulate the emotion of subjects in a high-fear state, obtaining the misattribution effect only for subjects in a low-fear condition. Such clarification of the range or areas of applicability of a theory is another contribution of replication studies.",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "chunk12第1-2段"
+        }
+      ]
+    },
+    {
+      "claim": "Zimbardo的核心结论：肾上腺素相关生理唤醒并不提供'情绪可塑性'，而是始终与负性情感相关；真实情绪比Schachter和Singer所暗示的更理性确定、更不易受情境因素左右。他尖锐批评Schachter和Singer用修辞技巧将本不显著的实验结果包装为经典发现。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The general picture that emerges from the present study, the companion study by Maslach (1979), and a reexamination of the Schachter and Singer (1962) study indicates that epinephrine-related physiological arousal does not provide \"emotional plasticity,\" but rather shows a consistent association with negative affect.",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "chunk11第2段"
+        },
+        {
+          "excerpt": "It is somewhat reassuring, especially considering their possible adaptive significance, that our true emotions may be more rationally determined and less susceptible to transient or whimsical situational determinants than has been suggested by Schachter and Singer. Perhaps we social psychologists should better appreciate our biological \"hardware\" or, to paraphrase a frequent media message, \"It's not so easy to fool Mother Nature.\"",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "chunk11第2段末尾"
+        },
+        {
+          "excerpt": "Schachter and Singer sometimes use their considerable literary talent to misdirect the reader's attention toward inadequately justified conclusions such that what was \"never found\" becomes one of the most cited findings in psychology textbooks.",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "chunk12第3段"
+        },
+        {
+          "excerpt": "A one-sentence (cautiously worded) disclaimer of their findings can indeed be found... This lean statement is sandwiched between an opening sentence that proclaims, \"The pattern of data, then, falls neatly in line with theoretical expectations,\" and the following forceful conclusion",
+          "source_file": "paper_Affective consequences of inadequately explained physiologic.md",
+          "location": "chunk12第4-5段"
+        }
+      ]
+    },
+    {
+      "claim": "Zimbardo提出'英雄主义的平凡性'(Banality of Heroism)论点：与'平庸之恶'相对应，大多数人在正确心态和特定条件下都有能力做出英雄行为——英雄主义不是少数精英的特权，而是普通人普遍可及的能力。他认为心理学家迄今对英雄主义的研究过于间接，用替代概念回避直接面对英雄主义。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We have proposed a largely situationist view of heroism, asserting that contrary to the idea of the heroic elect (Hughes-Hallet, 2004), most people are capable of heroism with the right mindset and under certain conditions that call for heroic action.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk4第1段"
+        },
+        {
+          "excerpt": "The banality of heroism argument takes us in the opposite moral direction, but similarly asks the question, \"what if the capability to act heroically is also fundamentally ordinary and available to all of us?\"",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk4第1段"
+        },
+        {
+          "excerpt": "To date, psychologists have seemed almost reluctant to confront heroism directly, instead discussing the phenomenon in terms of civil courage, courageous resistance, extreme altruism, moral courage, and the like. While some of these terms focus more on physical heroes and others on what Eagly and Becker (2005) termed \"cultural heroes,\" we assert that each of these concepts point to a shared, core idea of heroic action.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk4第2段"
+        }
+      ]
+    },
+    {
+      "claim": "英雄主义代表公民将公民美德转化为最高形式的公民行动，接受身体危险或社会牺牲。英雄主义与利他主义和旁观者干预有表面相似性但存在重要差异。研究揭示三个悖论：提升与否定英雄行动的矛盾冲动、公众赋予英雄地位与内在英雄决策的对比、英雄主义与利他主义表面相似但实质不同。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Heroism represents the ideal of citizens transforming civic virtue into the highest form of civic action, accepting either physical peril or social sacrifice. While implicit theories of heroism abound, surprisingly little theoretical or empirical work has been done to better understand the phenomenon.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "Abstract段"
+        },
+        {
+          "excerpt": "we explore three apparent paradoxes that surround heroism—the dueling impulses to elevate and negate heroic actors; the contrast between the public ascription of heroic status versus the interior decision to act heroically; and apparent similarities between altruism, bystander intervention and heroism that mask important differences between these phenomena.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "Abstract段"
+        }
+      ]
+    },
+    {
+      "claim": "悖论一'提升与否定'：旁观者对英雄行为存在矛盾反应——远处的观察者倾向于赞颂，而实际在场的利益相关者可能排斥英雄（如举报人被同事厌恶）。悖论二'公共舞台与内在决策'：英雄身份赋予是公共社会建构过程，但英雄决策几乎完全是私人内在过程，最英雄的行为常发生在无法获得公开认可的条件下。悖论三'利他vs英雄'：英雄主义涉及的风险远高于利他主义最低阈值；利他主义是'每个人都应该行动但只有一些人这样做了'，英雄主义是'没有人应该行动但少数人仍然这样做了'。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "The actions of the \"moral rebel\" can be conceptualized as offering implicit reproach toward her coworkers. In turn, the \"rebel\" is rejected for not being in communion with others in the organization—an almost preemptive move on the part of observers that stabilizes feelings of moral adequacy despite inaction (Monin et al., 2008).",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk6 Paradox 1第3段"
+        },
+        {
+          "excerpt": "There is a constant tension between the desire to elevate and the desire to castigate the actions of heroes—especially social heroes because their actions are easily viewed as threatening, but also with physical risk heroes who have a checkered history.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk6 Paradox 1末段"
+        },
+        {
+          "excerpt": "the decision to act in a heroic manner does not necessarily emanate from prosocial motivation, nor does it require an audience. In fact, the decision to act is almost always a private, interior process that occurs before and in the absence of public knowledge about what is about to unfold.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk7 Paradox 2第3段"
+        },
+        {
+          "excerpt": "The intensely public nature of the ascription of heroic status—perhaps viewed by millions as a viral video on the Internet—belies the profound interiority of the decision to act in a heroic manner.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk7 Paradox 2第4段"
+        },
+        {
+          "excerpt": "the level of risk incurred in altruism is considerably lower than the minimum risk threshold for heroic status.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk8 Paradox 3第2段"
+        },
+        {
+          "excerpt": "Thus, we can say in contrast to altruism, heroism is a situation in which, \"no one is should act, but a few do anyway.\"",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk8 Heroic Status段末"
+        }
+      ]
+    },
+    {
+      "claim": "身体风险英雄主义与社会牺牲英雄主义存在关键差异：社会英雄主义通常不具戏剧性、持续时间长、常在私下进行，但代价是确定会发生的。长期社会抗争可能带来隐性身体伤害。物理风险英雄被公众视为最具原型性——平民火灾救援被96%视为英雄行为，但10种社会英雄主义中仅4种被主要视为英雄。'延伸忽视'可能是机制：观察者忽视社会英雄主义的持续时间、范围和累积风险。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Social heroism is typically less dramatic, unfolds over a much longer time period, and is frequently undertaken in private rather than public settings. Yet, the costs associated with social heroism are often certain to occur and are willingly engaged in over these extended time frames.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk5第2段"
+        },
+        {
+          "excerpt": "From this perspective, it has been argued that social heroism should be viewed as more heroic than physical risk forms of heroism (Howerth, 1935; Peterson & Seligman, 2004).",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk5第2段"
+        },
+        {
+          "excerpt": "although physical peril is not the most prominent feature of this form of heroism, involvement in prolonged social heroics may lead to eventual or insidious physical risk (Glazer & Glazer, 1999).",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk5第1段"
+        },
+        {
+          "excerpt": "while we identified 10 forms of social heroism only 4 of these situations were supported as predominately heroic by the study participants. These included politico-religious figures, good Samaritans, individuals fighting an unjust bureaucracy, and whistleblowers. Six categories did not meet the criteria of being predominantly viewed as heroic.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk9 Results段"
+        },
+        {
+          "excerpt": "In contrast to our assertions, the descriptive results offer clear support for the notion advanced by Becker and Eagly (2004) that physical risk heroes are viewed as most prototypically heroic. Social courageousness items were marked as heroic less frequently, showed greater overlap with altruism.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk10 Hypothesis 2段"
+        },
+        {
+          "excerpt": "A subtle alternative to risk-type as the primary driving force in prototypicality judgments may involve the observer's tendency to focus on the averaged risk and the peak/end risks associated with civil and martial heroism, while neglecting the duration, scope, and summative risks associated with social heroism (Kahneman, 2002).",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk13第4段"
+        }
+      ]
+    },
+    {
+      "claim": "Zimbardo区分了身体风险英雄主义（瞬间决定性反应）与利他行为（数秒到数分钟深思熟虑）在决策速度上的根本差异——'同一行为太早或太晚执行可能使人成为傻瓜而非英雄'。英雄行为的决策源于个体对内在行为标准的审视：内化的标准被视为不可侵犯，即使在危险面前也驱使行动。旁观者干预更可能在心理上无法退出时发生，而英雄行动通常在存在明确退出路径时进行——明知可以安全退出仍选择进入危险。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "For many heroes, engaging heroically may have more to do with the individual's examination of their own deeply held standards for behavior in a given situation, and that despite profound reservations about the actions they are about to take, these internalized standards are considered to be so inviolable as to compel action even in the face of peril.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk7 Paradox 2第3段"
+        },
+        {
+          "excerpt": "anecdotal accounts of physical risk heroism suggest that individuals are impelled to engaged in split-second decisions that propel action despite situational complexity.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk8 Paradox 3第4段"
+        },
+        {
+          "excerpt": "Klapp (1954) observed, \"the same act performed too soon or too late . . . may make a person a fool rather than a hero\" (p. 59).",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk8 Paradox 3第4段"
+        },
+        {
+          "excerpt": "where possible most bystanders will resolve conflicting avoidance impulses by \"finding ways to avoid having to choose a course of action\"—bystander intervention is much more likely to occur when psychological exit of the situation is not easy. In contrast, heroic action is often undertaken in the presence of clear paths to exit the situation and despite the factors that are typically associated with the diffusion of responsibility.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk8 Paradox 3第5段"
+        }
+      ]
+    },
+    {
+      "claim": "英雄身份的赋予机制基于'充分辩护不足'：观察者目睹一个人在有明显退出途径和高进入壁垒的情况下进入危险情境，会因行为者的选择理由不易被外部获取而产生认知失调——成功则被赞为英雄，失败则被视为傻瓜。回归分析证实风险类型加感知合理性比单独风险类型更好预测英雄身份赋予，多解释约10%方差。97.5%受访者认为英雄主义与利他主义有区别。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Witnessing a heroic act—in which an individual enters a dangerous situation despite clear avenues for exit and substantial barriers to entry—must leave the observer with mixed feelings, indeed the action may seem irrationally risky. Further, because the actor's choice is deeply interior, the rationale is not readily accessible to the observer, leaving the impression that the action was not sufficiently justified.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk8 Heroic Status段"
+        },
+        {
+          "excerpt": "If the actor is unsuccessful, he is quickly deemed a fool for having risked so much. However, in the very same situation in which chance looks favorably upon the actor, she is lauded as a hero for having succeeded despite the apparently unacceptable level of risk taken. Either interpretation successfully resolves the dissonance the situation has produced in observers.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk8 Heroic Status段"
+        },
+        {
+          "excerpt": "The global test of the model was significant, F(2, 33) = 20.22, p = .0001, and physical peril significantly predicted mean ratings of heroism. Moreover, as predicted, the covariate for justified risk was significant, with those in the justiﬁed risk category being rated as less heroic as compared to those in the unjustiﬁed risk condition. This model explained about 10% more of the variance than one involving risk type as a single predictor of ascription of heroic status.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk10 Hypothesis 3回归结果段"
+        },
+        {
+          "excerpt": "The overwhelming majority responded that there was a difference (n = 2,347 or 97.5%), while just 58 participants said they saw no difference between these two concepts.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk10 Hypothesis 4段"
+        },
+        {
+          "excerpt": "representative responses included sentiments such as, \"Altruism you are helping others out of morality and unselﬁshness. Heroism is the same except in more extreme situations such as saving a life,\" ...and \"While heroic acts are always in some sense altruistic, an act of altruism isn't always heroic.\"",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk10 Hypothesis 4段"
+        },
+        {
+          "excerpt": "First, it demonstrates that there are central criteria beyond risk type that are important in the public's ascription of heroic status—as risk type alone explained less than half of the variance in the model. Second, it begins to meaningfully constrain the original taxonomy of 12 proposed heroic subtypes.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk12 Justification of Risk Constrains the Taxonomy段"
+        }
+      ]
+    },
+    {
+      "claim": "Zimbardo提出12种英雄亚型分类法，后精简为四类（军事/民事/挑战系统/挑战现实），最终缩减为六种主要类型（民事英雄、军事英雄、好撒玛利亚人、政治宗教人物、吹哨人、挑战官僚体系者），保留类别共同具有'感知到的不合理风险'。有犯罪背景者为保护他人冒生命危险可被重新评价为英雄，但义务警员不被视为英雄。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Table 1\nTwelve Heroic Subtypes and Situations That Call Forth Heroic Action",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk6 Table 1"
+        },
+        {
+          "excerpt": "While the benevolent criminal was viewed as a heroic actor, the vigilante clearly was not. This suggests that in some situations individuals with negative personal histories can be positively re-appraised as heroic figures, while in others the contextual information overrides the heroic aspects of current actions.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk9 Results段"
+        },
+        {
+          "excerpt": "Social heroism was reconceptualized as having two primary forms—those who defy systems (e.g., a bureaucracy hero) and those who \"defy reality,\" that is, the limits of the known world. ...those who defy systems are more similar to nonduty-bound physical risk heroes as they typically are not prepared for this type of engagement before a presenting problem that forces a decision about whether or not to take action and often there is no established path that guides behavior toward heroism.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk11 Hypothesis 3段"
+        },
+        {
+          "excerpt": "Broadly speaking, the descriptive and inferential results suggest that the taxonomy can be reduced to six primary heroic types: civil, martial, good Samaritans, politico-religious figures, whistleblowers, and those who challenge problematic bureaucracies. The social heroism categories that remain in this condensed taxonomy have in common the perception of unjustified risk.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk13第2段"
+        }
+      ]
+    },
+    {
+      "claim": "英雄主义研究中存在'命名谬误'——将某种行为称为'英雄主义'并不等于解释了该现象。回顾性英雄研究存在根本缺陷：'英雄化'过程可能强大到影响人格，用重大奖项回顾性识别英雄将系统性地遗漏重要典范（甘地被提名五次诺贝尔和平奖从未获奖）。社会英雄的死亡或伤害具有消解认知失调的功能——在世时引发争议，死亡后才被正面重新评价。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "In particular, early efforts to characterize heroism (including our own) suffer from the nominal fallacy (calling something \"heroism\" does not explain the phenomenon), a lack of acknowledgment of subtle steps in the ascription of heroic status (which we begin to elucidate further in the first and second paradoxes), and unjustified extension of familiar concepts to an unfamiliar domain (addressed in detail in the third paradox).",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk6第1段"
+        },
+        {
+          "excerpt": "The process of \"heroization\" points to one obvious problem with retrospective studies—these efforts capture information about the hero at the end of a transformation toward intrepidity—one that may be powerful enough to affect personality. Further, utilizing major awards to retrospectively identify heroes rather than independently defining and identifying heroic actors will inevitably fail to detect important exemplars who may systematically differ from those obtaining awards.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk15第1段"
+        },
+        {
+          "excerpt": "Mohandas Ghandi, one of the most widely acclaimed heroes of the 20th century, did not receive the Nobel Prize despite being nominated five times—probably because of cultural differences or political pressures felt by the Nobel committee.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk15第1段"
+        },
+        {
+          "excerpt": "While we have a historical appreciation of the controversy surrounding heroic political and religious figures like Dr. Martin Luther King, Jr., Gandhi, and Jesus, we easily forget the visceral reactions these individuals engendered in their time. ...it was not until some time had passed that the full extent of their impact was understood, positively reappraised by society—ultimately leading to the label \"hero\" being posthumously accepted widely.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk15 Resolution of Dissonance段"
+        }
+      ]
+    },
+    {
+      "claim": "Zimbado质疑积极心理学将英雄主义纯粹视为美德的看法：英雄行为不一定总是正面的，有恶意行为历史的人也可能做出英雄行为；同时应检验英雄行为可能是精神病理学症状的可能性。研究承认样本过度代表白人美国年轻成年男性，大多数英雄范例取自美国历史。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "the sample largely overrepresents the views of a White American young adult males, limiting the generalizability of the results to the broader population. Another critique offered by participants was the American-centric viewpoint as the majority heroic exemplars in the survey were drawn from American history and were not as familiar to international participants.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk12 Study Limitations段"
+        },
+        {
+          "excerpt": "Positive psychology has advanced a largely virtuous, prosocial view of heroism. The picture is probably more nuanced. While most newsworthy heroes comport with a fairly \"clean\" ideal of the heroic actor, the range of individuals who engage in heroic acts includes people who routinely engaged in malicious behavior, but in this particular instance did something positive.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk14 Is Heroism Always Positive段"
+        },
+        {
+          "excerpt": "the possibility that heroic action is actually a symptom of psychopathology or maladjustment should be seriously examined. For example, Pallone and Hennessey (1998) advanced the notion of \"heroic rescue fantasy\" as a motivating factor, and personality characteristics such as narcissism might also account for some proportion of civil heroism.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk14 Is Heroism Always Positive段"
+        }
+      ]
+    },
+    {
+      "claim": "时间观研究的理论脉络从康德、詹姆斯到勒温的整合视角，ZTPI是对勒温时间观定义的实证操作化。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "Lewin's life space model included the influence of both the past and the future on current behavior. Lewin (1951) defined time perspective (TP) as \"the totality of the individual's views of his psychological future and psychological past existing at a given time\" (p. 75).",
+          "source_file": "paper_Putting Time in Perspective_ A Valid, Reliable Individual-Di.md",
+          "location": "理论背景段"
+        }
+      ]
+    },
+    {
+      "claim": "变革性教学整合了主动学习、以学生为中心、协作学习、体验式学习和问题导向学习等方法，教师作为智力教练创建学生团队共同掌握知识体系。五大方法共享建构主义理论根源，形成层级结构，共享三个核心特征：提高学生参与和责任、源于建构主义、旨在转化学生学习倾向。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Transformational teaching involves creating dynamic relationships between teachers, students, and a shared body of knowledge to promote student learning and personal growth. From this perspective, instructors are intellectual coaches who create teams of students who collaborate with each other and with their teacher to master bodies of information.",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "Abstract段"
+        },
+        {
+          "excerpt": "At the heart of all types of active and student-centered learning, for example, is the constructivist notion that students generate knowledge and meaning best when they have experiences that lead them to realize how new information conﬂ icts with their prevailing understanding of a concept or idea (Piaget 1926; Vygotsky 1978).",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk2 Contemporary Approaches: Differences and Similarities段"
+        },
+        {
+          "excerpt": "The importance of social interactions is also embedded in each of these ﬁ ve major contemporary approaches to learning and classroom instruction. This emphasis derives from social constructivism, or the notion that a person's beliefs and understanding of the world are shaped to a signiﬁ cant extent by his or her historical, social, and culture context (Vygotsky 1978, 1986)",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk2 社会建构主义段"
+        },
+        {
+          "excerpt": "some may argue that these ﬁ ve approaches form a hierarchy of modern teaching strategies, with active learning and student-centered learning at the top and, nested within these principles, collaborative learning, experiential learning, and problem-based learning... each of these approaches aims to increase students' involvement in, and their responsibility for, shaping and guiding the learning experience... each of these approaches focuses on transforming students' disposition toward learning by, for example, increasing students' academic self-efﬁ cacy, improving students' self-regulatory capabilities, instilling in students self-directed learning skills, enhancing students' learning-related attitudes and values",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk6 approaches related段"
+        }
+      ]
+    },
+    {
+      "claim": "变革性教学四大理论基础：(1)社会认知理论（Bandura）——学生成功由多重期望源决定，高效能教师时间管理更好、面对挑战更坚持；(2)转化学习理论（Mezirow）——通过修正'参考框架'改善理解，教师作为促进者推动转变；(3)意向变革理论（Boyatzis）——五步发现循环（理想自我→真实自我→学习计划→实验→支持关系）；(4)变革型领导四维度（理想化影响、激励性动机、智力刺激、个性化关怀）应用于教学。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Beauchamp and colleagues investigated the effects of transformational teaching in the context of physical education... they demonstrated that transformational teaching increases students' motivation and positive beliefs toward physical activity (Morton et al. 2010), that self-determined motivation in this realm is explained by students' perceptions of their teachers' transformational behaviors (Beauchamp et al. 2010), and that an intervention designed to teach transformational teaching behaviors can increase such behaviors and result in higher student-reported motivation, self-efﬁ cacy, and intentions to remain physically active (Beauchamp et al. 2011).",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk7 Beauchamp studies段"
+        },
+        {
+          "excerpt": "There are, however, other theoretical perspectives that are not always highlighted in contemporary approaches to learning and classroom instruction, but which help form the conceptual basis for transformational teaching. These perspectives address important aspects of student learning and instructional leadership, and derive from the literatures on social cognitive theory (Bandura 1986...), transformative learning theory (Cranton 2006; ...Mezirow 1978...), intentional change theory (Boyatzis 2006a, b, c, 2009), and transformational leadership (Avolio and Bass 1995; Bass 1985...).",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk8 Theoretical Underpinnings段"
+        },
+        {
+          "excerpt": "student success is determined by multiple sources and that, to promote transformational teaching goals, instructors must work to manage several sets of expectations, including (a) students' own beliefs regarding their likelihood of success, (b) the beliefs that others (e.g., peers, parents, and principals) harbor regarding students' potential for success, and (c) the instructor's own beliefs regarding both students' likelihood of success and their own likelihood of success.",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk8 Social cognitive theory段末"
+        },
+        {
+          "excerpt": "According to transformative learning theory, adult learners improve their understanding of the world by revising their \"frames of reference,\" which include their habits of mind (e.g., broad, abstract habitual ways of thinking, feeling, and acting) and points of view (e.g., speciﬁ c attitudes, values, beliefs, or judgments; Mezirow 1997)... Mezirow (2000) proposed that students can learn in four different ways. First, they can elaborate on existing frames of reference; second, they can learn new frames of reference; third, they can transform habits of mind; and fourth, they can transform points of view.",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk9 Transformative learning theory段"
+        },
+        {
+          "excerpt": "Intentional change theory... proposes that a desirable, sustainable change in an individual's behavior, thoughts, feelings, or perceptions involves ﬁ ve steps, or \"discoveries,\" which function as an iterative cycle (Boyatzis 2006a, b, c). First, individuals must establish an ideal self and a personal vision for the future... Second, they must identify their \"real self,\" which includes an honest assessment of strengths and weaknesses, and then compare it to their ideal self... Third, they must devise a tailored learning plan... Fourth, they need to engage in activities that allow them to experiment or practice with new behaviors, thoughts, feelings, or perceptions. And ﬁ nally, they must develop and maintain close, personal relationships with people who can help them move through these steps",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk9 Intentional change theory段"
+        },
+        {
+          "excerpt": "According to Bass and Riggio (2006), transformational leadership involves \"inspiring followers to commit to a shared vision and goals for an organization or unit, challenging them to be innovative problem solvers, and developing followers' leadership capacity via coaching, mentoring, and provision of both challenge and support\" (p. 4).",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk10 Transformational leadership段"
+        },
+        {
+          "excerpt": "idealized influence occurs when leaders serve as role models who demonstrate high standards of ethical and moral excellence... Inspirational motivation involves promoting optimism and enthusiasm... Intellectual stimulation takes place when leaders instill more ﬂ exible and creative patterns of thinking by prompting individuals to think independently, challenge commonly held assumptions, and view problems from different perspectives. Finally, individualized consideration occurs when leaders provide challenges and empathetic, supportive feedback that is tailored for each individual",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk10 four dimensions段"
+        }
+      ]
+    },
+    {
+      "claim": "Slavich(2005)首次提出变革性教学概念：教师将课程视为'上演改变人生体验的舞台'，通过小组活动让学生体验课程概念并反思过程——不只是传递信息，而是改变学生学习和生活的方式。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "The term \"transformational teaching\" was ﬁ rst used by Slavich (2005, 2006a) to describe the belief that instructors can promote meaningful change in students' lives if they view courses as stages upon which life-changing experiences can occur... these experiences do not just \"impart information to students but rather [change] something about how students learn and live\" (Slavich 2005, p. 3).",
+          "source_file": "paper_Transformational Teaching_ Theoretical Underpinnings, Basic.md",
+          "location": "chunk7 Slavich段"
+        }
+      ]
+    },
+    {
+      "claim": "研究使用3696名成年人的网络调查数据发现：平民火灾救援被96%的被试视为英雄行为（是所有类别中最\"纯粹\"的英雄行为），而最典型的军事英雄行为（士兵牺牲自己让他人逃脱）则被88%视为英雄行为——没有具体职责时的行动被赋予更多英雄价值",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "civilian fire rescue was viewed as the most \"purely\" heroic, with 96% of participants ascribing the heroism category to this type of activity, while just 4% saw it as altruistic, and less than 1% saw it as fitting in neither category. In contrast, one of the most archetypal forms of military heroism—a solider laying down his life to allow others to escape, was seen by 88% of respondents as heroic.",
+          "source_file": "paper_Heroism_ A Conceptual Analysis and Differentiation between H.md",
+          "location": "chunk9 Results Hypothesis 1段"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 20,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-01T18:18:58.673961",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T09:46:48.260977",
+    "pre_merge_count": 143,
+    "post_merge_count": 57
+  }
+}

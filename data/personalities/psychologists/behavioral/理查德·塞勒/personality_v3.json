@@ -1,0 +1,3155 @@
+{
+  "brief": "行为经济学奠基人，用心理账户与助推重塑经济决策理论",
+  "school": "行为经济学派（芝加哥学派异端）",
+  "domains": [
+    "行为经济学",
+    "行为金融学",
+    "消费者行为",
+    "公共政策设计"
+  ],
+  "stance_anchors": {
+    "core_belief": "人类决策系统性地偏离理性选择模型的预测，这些偏离是可预测、可利用、可修正的",
+    "methodology": "用心理学证据挑战经济学标准假设，再基于行为原理设计可验证的干预方案",
+    "key_debates": [
+      "理性选择 vs 有限理性",
+      "标准生命周期假说 vs 行为生命周期假说",
+      "有效市场 vs 行为金融",
+      "反家长制 vs 自由意志家长制"
+    ],
+    "value_hierarchy": [
+      "描述性准确性",
+      "可检验预测",
+      "政策实用性",
+      "理论简约性"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "反直觉的实证主义者——从日常反常现象出发，用实验和田野数据构建理论",
+    "reasoning_approach": "类比推理（将个体类比组织、将自控力类比为委托-代理问题）与实证归纳并重",
+    "typical_biases": [
+      "对反常现象的敏感度极高",
+      "善于用日常轶事构建理论直觉",
+      "倾向于用行为原理解释一切异象"
+    ],
+    "intellectual_strengths": [
+      "识别经济学理论与现实行为的系统性差距",
+      "将心理学发现转化为经济模型",
+      "设计精巧的实验和田野研究",
+      "用幽默和直觉使学术发现可传播"
+    ],
+    "intellectual_blindspots": [
+      "对理性选择模型的偶尔过度否定",
+      "部分理论（如编码原则）在损失域与实验结果不一致",
+      "早期SMarT研究缺乏随机分配实验"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "心理账户理论",
+      "components": [
+        "结果感知与编码四原则",
+        "交易效用vs获得效用",
+        "预算规则与自控力"
+      ],
+      "application": "消费者行为、储蓄决策、营销策略、公共政策设计"
+    },
+    {
+      "name": "Planner-Doer模型",
+      "components": [
+        "远见计划者",
+        "短视执行者",
+        "偏好修正成本",
+        "规则与习惯"
+      ],
+      "application": "自控力问题、储蓄行为、生命周期消费"
+    },
+    {
+      "name": "自由意志家长制",
+      "components": [
+        "默认选项设计",
+        "选择架构",
+        "退出自由",
+        "福利导向"
+      ],
+      "application": "退休储蓄、器官捐献、公共政策"
+    },
+    {
+      "name": "行为生命周期假说",
+      "components": [
+        "三账户心理分类（收入/资产/未来）",
+        "差异边际消费倾向",
+        "意志力成本",
+        "框架效应"
+      ],
+      "application": "储蓄率预测、养老金政策、消费行为"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "塞勒将Kahneman-Tversky的前景理论从心理学引入经济学，结合Adam Smith的自控力思想和组织理论的委托-代理框架，开创了行为经济学",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "Kahneman & Tversky/前景理论",
+          "nature": "思想继承",
+          "description": "继承参考点依赖、损失厌恶、价值函数S形曲线作为心理账户的理论基础",
+          "source_ref": "paper_Mental Accounting and Consumer Choice.md; paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md"
+        },
+        {
+          "source": "Adam Smith/Theory of Moral Sentiments",
+          "nature": "思想继承",
+          "description": "继承双自我自控力模型的思想传统，Smith最早使用类似的两自我框架",
+          "source_ref": "paper_An Economic Theory of Self-Control.md"
+        },
+        {
+          "source": "Herbert Simon/有限理性",
+          "nature": "思想继承",
+          "description": "继承人类判断中系统性认知偏差是常态而非例外的思想",
+          "source_ref": "paper_Toward a positive theory of consumer choice.md"
+        },
+        {
+          "source": "Irving Fisher/跨期选择",
+          "nature": "思想继承",
+          "description": "继承收入越低对当期收入偏好越高的洞见，并形式化为意志力成本模型",
+          "source_ref": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "Strotz/变味偏好文献",
+          "original": "跨期偏好变化模型",
+          "transformation": "改为同一时点内两套冲突偏好（planner vs doer），将自控力问题形式化为委托-代理问题",
+          "source_ref": "paper_An Economic Theory of Self-Control.md"
+        },
+        {
+          "source": "Friedman-Savage/as-if辩护",
+          "original": "人们'仿佛'在最优化的台球比喻",
+          "transformation": "用台球比喻反驳：普通消费者是中等水平台球手，使用启发式而非最优化计算",
+          "source_ref": "paper_Toward a positive theory of consumer choice.md"
+        }
+      ],
+      "ruptured": [],
+      "converged": [
+        {
+          "streams": [
+            "前景理论价值函数",
+            "组织委托-代理理论"
+          ],
+          "product": "Planner-Doer模型——将个体内部冲突建模为企业所有者与管理者的代理问题",
+          "source_ref": "paper_An Economic Theory of Self-Control.md"
+        },
+        {
+          "streams": [
+            "损失厌恶",
+            "心理物理学Weber-Fechner定律"
+          ],
+          "product": "消费者搜索行为遵循比例而非绝对金额的心理物理定律",
+          "source_ref": "paper_Toward a positive theory of consumer choice.md"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1980",
+        "title": "从反常现象到正理论",
+        "narrative": "发表'Toward a Positive Theory of Consumer Choice'，首次系统提出用前景理论解释消费者行为中的系统性偏差，标志行为经济学的诞生",
+        "catalyst": "发现标准经济学将规范性与描述性模型混为一谈",
+        "before_state": "将行为异象视为孤立特例",
+        "after_state": "构建统一的描述性消费者理论",
+        "significance": "奠定了心理账户、禀赋效应等核心概念的实证基础",
+        "source_ref": "paper_Toward a positive theory of consumer choice.md"
+      },
+      {
+        "period": "1981",
+        "title": "Planner-Doer模型的提出",
+        "narrative": "与Shefrin合作发表自控力的经济理论，首次在经济学中系统性形式化双自我模型",
+        "catalyst": "圣诞储蓄俱乐部等反常现象无法用标准经济学解释",
+        "before_state": "自控行为被视为套套逻辑",
+        "after_state": "将自控力形式化为可检验的委托-代理模型",
+        "significance": "为行为生命周期假说和SMarT计划奠定理论基础",
+        "source_ref": "paper_An Economic Theory of Self-Control.md"
+      },
+      {
+        "period": "1985",
+        "title": "心理账户理论的系统化",
+        "narrative": "发表'Mental Accounting and Consumer Choice'，整合编码四原则、交易效用和预算规则为统一框架",
+        "catalyst": "发现消费者行为中大量违反货币可替代性原则的现象",
+        "before_state": "心理账户概念零散分布",
+        "after_state": "形成系统的理论框架，包含可检验的预测",
+        "significance": "成为行为经济学最具影响力的理论之一，广泛应用于营销和公共政策",
+        "source_ref": "paper_Mental Accounting and Consumer Choice.md"
+      },
+      {
+        "period": "2003",
+        "title": "SMarT计划的成功实施",
+        "narrative": "与Benartzi合作实施的Save More Tomorrow计划取得惊人效果，储蓄率从3.5%升至13.6%",
+        "catalyst": "退休储蓄不足的现实困境和对行为经济学实用性的质疑",
+        "before_state": "行为经济学被批评为实验室研究",
+        "after_state": "证明行为原理可以设计有效的真实世界干预方案",
+        "significance": "行为经济学从学术理论走向政策实践的关键转折",
+        "source_ref": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "康奈尔大学和芝加哥大学的学术环境",
+          "role": "行为经济学研究者",
+          "duration": "1970s至今",
+          "impact": "在主流经济学重镇坚持异端观点，面临学科压力也获得资源支持",
+          "source_ref": "multiple papers"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "美国退休储蓄危机和401(k)制度转型",
+          "role": "参与者和政策设计者",
+          "impact": "SMarT计划直接回应了从确定给付向确定缴费转变带来的储蓄不足问题",
+          "source_ref": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md"
+        },
+        {
+          "context": "新古典经济学对行为方法的敌意",
+          "role": "反抗者",
+          "impact": "促使塞勒注重实验设计和证据强度，避免被批评为事后解释",
+          "source_ref": "paper_Does the Stock Market Overreact_.md"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "Cass Sunstein",
+        "nature": "互补型",
+        "product": "自由意志家长主义理论和《Nudge》",
+        "significance": "将行为经济学从学术推向主流政策话语",
+        "source_ref": "paper_Libertarian Paternalism.md"
+      },
+      {
+        "with": "Shlomo Benartzi",
+        "nature": "互补型",
+        "product": "SMarT（Save More Tomorrow）计划",
+        "significance": "行为经济学最成功的政策实践",
+        "source_ref": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md"
+      },
+      {
+        "with": "Hersh Shefrin",
+        "nature": "互补型",
+        "product": "Planner-Doer模型和行为生命周期假说",
+        "significance": "为行为经济学提供核心理论框架",
+        "source_ref": "paper_An Economic Theory of Self-Control.md; paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md"
+      },
+      {
+        "with": "Werner De Bondt",
+        "nature": "互补型",
+        "product": "股市过度反应假说",
+        "significance": "行为金融学的奠基之作",
+        "source_ref": "paper_Does the Stock Market Overreact_.md"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "标准经济学的理性人假设",
+        "reason": "大量实证证据表明人们系统性地偏离理性选择",
+        "aftermath": "发展描述性理论而非推翻规范性标准",
+        "source_ref": "paper_Toward a positive theory of consumer choice.md"
+      },
+      {
+        "what": "显示偏好等于福利的假设",
+        "reason": "人们可能做出自己承认是次优的选择（如储蓄不足）",
+        "aftermath": "提出自由意志家长制，在保留选择自由的前提下引导更好决策",
+        "source_ref": "paper_Libertarian Paternalism.md"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "有效市场假说支持者",
+        "axis": "市场有效性",
+        "dynamic": "用过度反应假说和loser组合超额收益挑战EMH，提供预测性而非仅事后解释的证据",
+        "source_ref": "paper_Does the Stock Market Overreact_.md"
+      },
+      {
+        "who": "反家长主义者",
+        "axis": "干预正当性",
+        "dynamic": "论证家长制不可避免（食堂排列顺序），提出保留选择自由的自由意志家长制作为折中",
+        "source_ref": "paper_Libertarian Paternalism.md"
+      }
+    ],
+    "tension_explanation": {
+      "note": "塞勒在理论上挑战理性选择但在政策上保持温和，在学术上坚持实证严谨但传播上注重通俗幽默",
+      "tracing": "从早年发现消费者选择的反常现象→提出描述性理论→设计政策干预，保持了建设性而非纯粹破坏性的立场"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "中低——强调损失厌恶（2:1比率）是基本偏好特征而非可消除的错误",
+    "information_processing": "情境依赖——决策受框架效应、参考点和心理账户分类的强烈影响",
+    "temporal_orientation": "关注当期偏差——认为双曲贴现和拖延是决策的核心特征",
+    "conflict_resolution": "实用主义折中——用自由意志家长制调和反家长制与干预主义"
+  },
+  "situational_triggers": {
+    "description": "塞勒的核心行为预测建立在特定情境触发条件上",
+    "triggers": [
+      {
+        "condition": "当决策涉及时间维度时（正/负投资品）",
+        "behavioral_shift": "自控力冲突激化，预承诺需求增加",
+        "confidence": "高",
+        "source_ref": "paper_Toward a positive theory of consumer choice.md"
+      },
+      {
+        "condition": "当选择以默认选项形式呈现时",
+        "behavioral_shift": "现状偏误使默认选择'粘住'，参与率从49%升至86%",
+        "confidence": "高",
+        "source_ref": "paper_Libertarian Paternalism.md"
+      },
+      {
+        "condition": "当结果可被框架为损失或收益时",
+        "behavioral_shift": "损失框架下的反应强度约为收益框架的2倍",
+        "confidence": "高",
+        "source_ref": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md"
+      },
+      {
+        "condition": "当加薪时机到来时",
+        "behavioral_shift": "因货币幻觉和名义损失厌恶，增加储蓄的心理成本最低",
+        "confidence": "高",
+        "source_ref": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md"
+      }
+    ],
+    "collapse_point": "当行为干预被质疑为家长制或操纵时，塞勒退回到'保留退出自由'的底线",
+    "default_behavior": "用实验数据和田野证据回应批评，避免纯理论辩论",
+    "public_commitment_lock": "公开承诺行为经济学是建设性而非破坏性的——目标是改善而非推翻标准经济学"
+  },
+  "communication_profile": {
+    "style": "幽默直观，善用日常轶事和自嘲（'这个想法现在已成为我们的禀赋'）",
+    "persuasion_tactics": [
+      "用日常反常现象引发认知冲突",
+      "用实验数据而非理论推导说服",
+      "用生动的比喻（台球手、海滩啤酒）降低理解门槛"
+    ],
+    "rhetorical_devices": [
+      "反讽自嘲",
+      "生活轶事",
+      "思想实验",
+      "归纳推理"
+    ],
+    "emotional_range": "理性幽默为主，偶尔流露对经济学建制派的不满和对实际改善人们生活的热情"
+  },
+  "evolution_trajectory": "从发现消费者选择反常现象（1980）→提出心理账户和planner-doer模型（1981-85）→挑战有效市场假说（1985）→系统化行为生命周期假说（1988）→发展自由意志家长主义（2003）→设计SMarT等政策干预（2004+），始终坚持用实证证据和可检验预测推进行为经济学",
+  "key_aphorisms": [
+    "这个想法现在已成为我们的禀赋，我们自然更倾向于保留它。",
+    "问题不是是否家长制，而是如何选择家长制方案。",
+    "正是导致人们无限拖延储蓄的惰性，一旦加入计划后反过来阻止他们退出。",
+    "经济学消费者理论将规范性模型与描述性模型混为一谈。",
+    "反驳不是最有效的方式，因为任何社会科学理论都能被证明是错的。"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "跨期选择中个人折现率系统性地随奖励规模增大、等待时间延长而下降，且损失的折现率远低于收益，这可用'等待的固定心理成本'和符号效应统一解释，严重质疑了标准跨期选择理论的描述有效性",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Individual discount rates are estimated from survey evidence. For gains, they are found to vary inversely with the size of the reward and the length of time to be waited. Rates are found to be much smaller for losses that for gains.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "This hypothesis is derived from viewing intertemporal choice as problem in self-control. Waiting for a reward requires some mental effort. If this effort does not increase proportionally with the size of the rewards (if there are some fixed psychic costs to waiting) then the hypothesized result will be present.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Introduction段"
+        },
+        {
+          "excerpt": "losses are different than gains. According to economic theory a person should be willing to pay the same amount to receive $100 a month sooner or to postpone paying $100 for a month. Yet it was not expected that this would be empirically validated.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Introduction段"
+        },
+        {
+          "excerpt": "The implicit discount rate for losses will be lower than for gains. Even someone who appears very impatient to receive a gain may nevertheless take a 'let's get it over with' attitude toward losses.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Introduction段"
+        },
+        {
+          "excerpt": "Clearly if the results of this preliminary investigation are taken seriously, they cast considerable doubt on the descriptive validity of the standard theory of intertemporal choice. The standard theory would predict that the discount rates in each cell of each table would be equal for any given person, and differences among persons would only reflect differences in borrowing or lending rates.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Discussion段"
+        },
+        {
+          "excerpt": "both the time and size effects can be 'explained' by introducing a 'fixed cost to waiting'. Yet the scenario used made the actual costs minimal. Thus if it is a fixed cost which yields these results, it is clearly a fixed psychic cost rather than some transactions cost.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Discussion - Size effects段"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒用苹果选择实验揭示动态不一致性：近期的 impatient 选择与远期的 patient 选择矛盾，心理物理学上今天与明天的差异远大于一年后与一年零一天后的差异",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "(A) Choose between: (A.l) One apple today. (A.2) Two apples tomorrow. (B) Choose between: (B.l) One apple in one year. (B.2) Two apples in one year plus one day. While some people may be tempted to select (A.1) no one would select (B.1). Yet if the rate of discount is constant (as it 'should be') then the choices are formally identical.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Introduction段"
+        },
+        {
+          "excerpt": "the psychophysics of time suggests that the difference between today and tomorrow will seem greater than the difference between a year from now and a year plus one day. Yet an exponential discount rate requires that these differences be perceived to be equal.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Discussion - Length of time段"
+        }
+      ]
+    },
+    {
+      "claim": "收益与损失的不对称性源于机会成本与实际支出成本的不等价：错过收益被低估（机会成本），推迟损失被高估（实际支出），这与前景理论一致",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "The psychophysical concept of the just noticeable difference also seems to come into play here. For small amounts, the rate of return must be substantial before the gain seems worth the wait.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Discussion - Size effects段"
+        },
+        {
+          "excerpt": "An interesting side effect of this result is that subjects' actions are closer to the normative model, the larger are the stakes. This is consistent with the usual economists view that people get the big decisions right.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Discussion - Size effects段"
+        },
+        {
+          "excerpt": "opportunity costs are generally not equated to out-of-pocket costs. Specifically, opportunity costs tend to be underweighted relative to out-of-product costs. [The same result appears in Kahneman and Tversky's 'Prospect Theory' (1979).] Since failure to wait for a reward creates an opportunity cost while postponing a loss incurs an out-of-pocket cost it should be expected that implicit discount rates will be higher for gains as we observe.",
+          "source_file": "paper_Some empirical evidence on dynamic inconsistency.md",
+          "location": "Discussion - Sign effects段"
+        }
+      ]
+    },
+    {
+      "claim": "自由意志主义家长制不是矛盾修辞：组织者必须做出影响他人选择的设计决策，不存在'不干预'的中立选项，反家长制立场根本上是不连贯的——当家长制看似缺席时，只是因为起点显得自然不可见",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We believe that the anti-paternalistic fervor expressed by many economists is based on a combination of a false assumption and at least two misconceptions. The false assumption is that people always (usually?) make choices that are in their best interest. This claim is either tautological, and therefore uninteresting, or testable. We claim that it is testable and false—indeed, obviously false.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "开篇段"
+        },
+        {
+          "excerpt": "Consider the problem facing the director of a company cafeteria who discovers that the order in which food is arranged influences the choices people make. To simplify, consider three alternative strategies: (1) she could make choices that she thinks would make the customers best off; (2) she could make choices at random; or (3) she could maliciously choose those items that she thinks would make the customers as obese as possible. Option 1 appears to be paternalistic, which it is, but would anyone advocate options 2 or 3?",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "When paternalism seems absent, it is usually because the starting point appears so natural and obvious that its preference-shaping effects are invisible to most observers. But those effects are nonetheless there. Of course it is usually good not to block choices, and we do not mean to defend non-libertarian paternalism here. But in an important respect, the anti-paternalistic position is incoherent.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section II末尾"
+        }
+      ]
+    },
+    {
+      "claim": "家长制定义为以增进受影响方福利为目标而选定的政策，不等同显示偏好与福利，承认人们可能做出次优选择",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "a policy counts as \"paternalistic\" if it is selected with the goal of inﬂuencing the choices of affected parties in a way that will make those parties better off. We intend \"better off\" to be measured as objectively as possible, and we clearly do not always equate revealed preference with welfare.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "第4段"
+        },
+        {
+          "excerpt": "we emphasize the possibility that in some cases individuals make inferior choices, choices that they would change if they had complete information, unlimited cognitive abilities, and no lack of willpower.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "第4段"
+        }
+      ]
+    },
+    {
+      "claim": "大量行为经济学证据反驳理性选择假设：人们不遵循贝叶斯法则、使用导致系统性错误的启发式、存在偏好反转、框架效应和跨期选择中的动态不一致",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "People do not exhibit rational expectations, fail to make forecasts that are consistent with Bayes' rule, use heuristics that lead them to make systematic blunders, exhibit preference reversals (that is, they prefer A to B and B to A) and make different choices depending on the wording of the problem",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section I: Are Choices Rational?"
+        }
+      ]
+    },
+    {
+      "claim": "自主选择未必带来更好结果：员工对自己选择的投资组合评价并不优于中位数组合，仅20%更偏好自己的组合",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "On average, the subjects rated the average portfolio equally with their own portfolio, and they judged the median portfolio to be signiﬁcantly more attractive than their own. Indeed, only 20 percent of the subjects preferred their own portfolio to the median portfolio. Apparently, people do not gain much by choosing investment portfolios for themselves.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section I"
+        }
+      ]
+    },
+    {
+      "claim": "默认选项产生巨大效果是因为承载某种'合法性'（似乎经过深思熟虑）和惯性（改变需要精力，拖延症患者尤为明显）——即使'强制选择'本身也是一种家长制行为",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Brigitte Madrian and Dennis Shea (2001) found that initial enrollments jumped from 49 percent to 86 percent, and Choi et al. (2002) ﬁnd similar results for other companies.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section II: Is Paternalism Inevitable?"
+        },
+        {
+          "excerpt": "Employers could avoid choosing a default if they required employees to make a choice, either in or out. But some thought reveals that this is not at all a way out of the dilemma; rather, it is simply another option among many that the employer can elect. Furthermore, the very requirement that employees make a choice has a paternalistic element. Many employees do not want to have to make a choice (and would choose not to have to do so).",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section II"
+        },
+        {
+          "excerpt": "the designated default plan apparently carries a certain legitimacy for many employees, perhaps because it seems to have resulted from some conscious thought about what makes most sense for most people. But there is a separate explanation, involving inertia. For any employee, a change from any status quo entails time and effort, and many people seem to prefer to avoid both of these, especially if they are prone to procrastination.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section II"
+        }
+      ]
+    },
+    {
+      "claim": "超越'不可避免的家长制'的自由意志干预：如将甜点移到别处提高交易成本但不禁止选择；Save More Tomorrow是自由意志家长制的成功实践",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "A more intrusive step would be to place the desserts in another location altogether, so that diners have to get up and get a dessert after they have ﬁnished the rest of their meal. This step raises the transactions costs of eating dessert, and according to a standard economic analysis the proposal is unattractive...But once self-control costs are incorporated, we can see that some diners would prefer this arrangement, namely, those who would eat a dessert if it were put in front of them but would resist temptation if given a little help.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section III"
+        },
+        {
+          "excerpt": "In the ﬁrst company to use this plan, the employees who joined increased their savings rates from 3.5 percent to 11.6 percent in a little over two years (three raises). Very few of the employees who join the plan drop out. This is successful libertarian paternalism in action.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section III末尾"
+        }
+      ]
+    },
+    {
+      "claim": "自由意志家长制的三个工具：模仿市场策略、强制选择策略、最小化退出率策略；核心理念是保留选择自由但引导人们走向增进福利的方向",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "First, the libertarian paternalist might select the approach that the majority would choose if explicit choices were required and revealed.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section IV: The Toolbox"
+        },
+        {
+          "excerpt": "Second, the libertarian paternalist might select the approach that would force people to make their choices explicit.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section IV"
+        },
+        {
+          "excerpt": "Third, the libertarian paternalist might select the approach that minimizes the number of opt-outs.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section IV"
+        },
+        {
+          "excerpt": "Our goal here has been to defend libertarian paternalism, an approach that preserves freedom of choice but that authorizes both private and public institutions to steer people in directions that will promote their welfare. Some kind of paternalism is likely whenever such institutions set out arrangements that will prevail unless people afﬁrmatively choose otherwise. In these circumstances, the goal should be to avoid random, arbitrary, or harmful effects and to produce a situation that is likely to promote people's welfare, suitably deﬁned.",
+          "source_file": "paper_Libertarian Paternalism.md",
+          "location": "Section V: Conclusion"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒将过度反应假说引入金融市场：人们在修正信念时过度加权近期信息、遵循代表性启发式而非贝叶斯法则，导致股价系统性overshoot后反转",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Research in experimental psychology suggests that, in violation of Bayes' rule, most people tend to \"overreact\" to unexpected and dramatic news events. This study of market efficiency investigates whether such behavior affects stock prices.",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "In revising their beliefs, individuals tend to overweight recent information and underweight prior (or base rate) data. People seem to make predictions according to a simple matching rule...This rule-of-thumb, an instance of what Kahneman and Tversky call the representativeness heuristic, violates the basic statistical principal that the extremeness of predictions must be moderated by considerations of predictability.",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Introduction第2段"
+        }
+      ]
+    },
+    {
+      "claim": "过度反应假说的两个可检验推论（极端运动后反向后续运动、越极端调整越大）意味着弱式市场有效性失效",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "(1) Extreme movements in stock prices will be followed by subsequent price movements in the opposite direction. (2) The more extreme the initial price movement, the greater will be the subsequent adjustment. Both hypotheses imply a violation of weak-form market efficiency.",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Introduction末尾"
+        }
+      ]
+    },
+    {
+      "claim": "仅存在部分理性代理人不足以保证含准理性代理人的经济体达到理性预期均衡，为行为金融学奠定理论基础",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "They conclude that the existence of some rational agents is not sufficient to guarantee a rational expectations equilibrium in an economy with some of what they call quasi-rational agents.",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Introduction倒数第2段"
+        }
+      ]
+    },
+    {
+      "claim": "过度反应假说不仅事后解释已知异象而且是预测性的——用行为原则预测新的市场异象",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "our goal is to test whether the overreaction hypothesis is predictive. In other words, whether it does more for us than merely to explain, ex post, the P/E effect or Shiller's results on asset price dispersion. The overreaction effect deserves attention because it represents a behavioral principle that may apply in many other contexts.",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Section I前段"
+        }
+      ]
+    },
+    {
+      "claim": "loser组合在36个月后跑赢市场平均19.6%，winner落后5.0%，极端组合差异24.6%（t=2.20），支持过度反应假说",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the overreaction hypothesis, on the other hand, suggests that E(twt I Ft1) < 0 and E(kLt I Ft-1) > 0.",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Section I"
+        },
+        {
+          "excerpt": "Over the last half-century, loser portfolios of 35 stocks outperform the market by, on average, 19.6%, thirty-six months after portfolio formation. Winner portfolios, on the other hand, earn about 5.0% less than the market, so that the difference in cumulative average residual between the extreme portfolios, [ACARL,36- ACARW,36] equals 24.6% (t-statistic: 2.20).",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Section II.A: Main Findings"
+        }
+      ]
+    },
+    {
+      "claim": "过度反应效应不对称：loser反转幅度远大于winner回落，且大部分超额收益在一月实现（'一月效应'）；loser组合的beta显著低于winner，意味着使用市场调整收益实际上低估了效应——loser不仅回报更高且风险更低",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "the overreaction effect is asymmetric; it is much larger for losers than for winners. Secondly, consistent with previous work on the turn-of-the-year effect and seasonality, most of the excess returns are realized in January. In months t = 1, t = 13, and t = 25, the loser portfolio earns excess returns of, respectively, 8.1% (t-statistic: 3.21), 5.6% (3.07), and 4.0% (2.76).",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Section II.A"
+        },
+        {
+          "excerpt": "the average betas of the securities in the winner portfolios are significantly larger than the betas of the loser portfolios. For example, for the three-year experiment illustrated in Figure 1, the relevant numbers are respectively, 1.369 and 1.026 (t-statistic on the difference: 3.09). Thus, the loser portfolios not only outperform the winner portfolios; if the CAPM is correct, they are also significantly less risky.",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Section II.A后段"
+        }
+      ]
+    },
+    {
+      "claim": "loser组合的一月超额收益在组合形成后第五个一月仍显著，质疑了税收亏损出售假说；小公司效应实质上是'亏损公司效应'在年末的体现",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "if in early January selling pressure disappears and prices \"rebound\" to equilibrium levels, why does the loser portfolio—even while it outperforms the market—\"rebound\" once again in the second January of the test period? And again, in the third and fourth Januaries?",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Section II.B"
+        },
+        {
+          "excerpt": "Blume and Stambaugh [6], Keim [16], and Reinganum [21] have studied the interaction between the small firm and January effects. Their findings largely redefine the small firm effect as a \"losing firm\" effect around the turn-of-the-year. Our own results lend further credence to this view. Persistently, losers earn exceptionally large January returns while winners do not. However, the companies in the extreme portfolios do not systematically differ with respect to market capitalization.",
+          "source_file": "paper_Does the Stock Market Overreact_.md",
+          "location": "Section II.B"
+        }
+      ]
+    },
+    {
+      "claim": "禀赋效应：人们放弃物品要求的补偿远高于获得同一物品愿支付的金额，与损失厌恶和现状偏误密切相关",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Thaler (1980) called this pattern—the fact that people often demand much more to give up an object than they would be willing to pay to acquire it—the endowment effect. The example also illustrates what Samuelson and Zeckhauser (1988) call a status quo bias, a preference for the current state that biases the economist against both buying and selling his wine. These anomalies are a manifestation of an asymmetry of value that Kahneman and Tversky (1984) call loss aversion—the disutility of giving up an object is greater that the utility associated with acquiring it.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Introduction段"
+        }
+      ]
+    },
+    {
+      "claim": "咖啡杯市场实验证明禀赋效应在市场环境中持续存在、不受学习和重复试验影响：实物交易量显著低于理论预测，卖价约为买价两倍",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "These markets contained no grist for the anomaly mill. On each trial, the market clearing price was exactly equal to the intersection of the induced supply and demand curves, and the volume of trade was within one unit of the predicted quantity. These results demonstrate that the subjects understood the task, and that the market mechanism used did not impose high transactions costs.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Mug experiment段"
+        },
+        {
+          "excerpt": "The 50 percent predicted volume of trade did not materialize. There were 22 mugs and pens distributed so the predicted number of trades was 11. In the four mug markets the number of trades was 4, 1, 2, and 2 respectively. In the pen markets the number of trades was either 4 or 5. In neither market was there any evidence of a trend over the four trials.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Mug experiment results段"
+        },
+        {
+          "excerpt": "For mugs, the median owner was unwilling to sell for less than $5.25, while the median buyer was unwilling to pay more than $2.25-$2.75. The market price varied between $4.25 and $4.75. In the market for pens the ratio of selling to buying prices was also about 2.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Mug experiment results段"
+        },
+        {
+          "excerpt": "there was no indication that buying and selling prices converged over repeated market trials, though full feedback was provided at the end of each trial. The undertrading observed in these experiments appears to reflect a true difference in preferences between the potential buyers and sellers.",
+          "source_file": "paper_Experimental Tests of the Endowment Effect and the Coase The.md",
+          "location": "Section VII Discussion"
+        }
+      ]
+    },
+    {
+      "claim": "经济学家藏酒、信用卡定价、工资削减等生动案例说明禀赋效应、框架效应和货币幻觉在日常中的普遍性",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "A wine-loving economist we know purchased some nice Bordeaux wines years ago at low prices. The wines have greatly appreciated in value, so that a bottle that cost only $10 when purchased would now fetch $200 at auction. This economist now drinks some of this wine occasionally, but would neither be willing to sell the wine at the auction price nor buy an additional bottle at that price.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Introduction开头"
+        },
+        {
+          "excerpt": "Imposing a surcharge (which is likely to be judged a loss) is considered more unfair than eliminating a discount (a reduction of a gain). This distinction explains why firms that charge cash customers one price and credit card customers a higher price always refer to the cash price as a discount rather than to the credit card price as a surcharge.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Fairness段"
+        },
+        {
+          "excerpt": "a 7 percent cut in real wages is judged reasonably fair when it is framed as a nominal wage increase, but quite unfair when it is posed as a nominal wage cut.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Wage cut fairness段"
+        }
+      ]
+    },
+    {
+      "claim": "Seller/Chooser/Buyer三组对比证明低交易量主要由卖家不愿放弃禀赋造成，禀赋效应不是增强拥有物吸引力而是增加放弃它的痛苦",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "the Sellers and the Choosers are in objectively identical situations, deciding at each price between the mug and that amount of money. Nevertheless, the Choosers behaved more like Buyers than like Sellers. The median reservation prices were: Sellers, $7.12; Choosers, $3.12; Buyers, $2.87.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Seller/Chooser/Buyer实验段"
+        },
+        {
+          "excerpt": "there was a pronounced endowment effect. The pen was preferred by 56 percent of those endowed with it, but only 24 percent of the other subjects chose a pen. However, when making the attractiveness ratings, the subjects endowed with pens did not rate them as more attractive. This suggests that the main effect of endowment is not to enhance the appeal of the good one owns, only the pain of giving it up.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Instant endowment effects段"
+        }
+      ]
+    },
+    {
+      "claim": "损失厌恶导致无差异曲线不可逆：拥有x时对x和y无差异的人，拥有y时不一定对y和x无差异，无差异曲线可能交叉，违反微观经济学基本定理",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "if an individual owns x and is indifferent between keeping it and trading it for y, then when owning y the individual should be indifferent about trading it for x. If loss aversion is present, however, this reversibility will no longer hold.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Indifference curve段"
+        },
+        {
+          "excerpt": "the pens were worth more money to those subjects who started with pens than to those who started with money. As a result, the curves intersect.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Crossing indifference curves段"
+        }
+      ]
+    },
+    {
+      "claim": "损失厌恶的直接推论是现状偏误：离开现状的损失感大于获得的收益感，Samuelson和Zeckhauser实验证明当选项被标记为'现状'时被选择概率显著更高",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "One implication of loss aversion is that individuals have a strong tendency to remain at the status quo, because the disadvantages of leaving it loom larger than the advantages.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Status Quo Bias段首"
+        },
+        {
+          "excerpt": "Their results implied that an alternative became significantly more popular when it was designated as the status quo. Also, the advantage of the status quo increases with the number of alternatives.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Status Quo Bias段 - Samuelson&Zeckhauser实验"
+        }
+      ]
+    },
+    {
+      "claim": "新泽西/宾夕法尼亚汽车保险天然实验和加州电力消费者调查证明现状偏误在真实世界中存在：不同默认框架导致30%差异，两组互为镜像",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "In the high reliability group, 60.2 percent selected their status quo as their first choice, while only 5.7 percent expressed a preference for the low reliability option currently being experienced by the other group, though it came with a 30 percent reduction in rates. The low reliability group, however, quite liked their status quo, 58.3 percent of them ranking it first.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Status Quo Bias段 - Hartman电力调查"
+        },
+        {
+          "excerpt": "Of those subjects offered the New Jersey plan, only 23 percent elected to buy the right to sue whereas 53 percent of the subjects offered the Pennsylvania plan retained that right.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "NJ/PA auto insurance段"
+        }
+      ]
+    },
+    {
+      "claim": "损失厌恶的核心证据：价值函数在原点处斜率急剧变化，损失痛苦约为同等收益效用的2倍，效用载体是相对参考点的变化而非财富状态本身",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "the significant carriers of utility are not states of wealth or welfare, but changes relative to a neutral reference point. Another central result is that changes that make things worse (losses) loom larger than improvements or gains. The choice data imply an abrupt change of the slope of the value function at the origin. The existing evidence suggests that the ratio of the slopes of the value function in two domains, for small or moderate gains and losses of money, is about 2: 1",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Loss Aversion段"
+        }
+      ]
+    },
+    {
+      "claim": "参考点理论解释禀赋效应：卖家参考点是'拥有'（失去=损失），选择者参考点是'没有'（获得=收益），同一差异从不同参考点看大小不同",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "if good Y is a mug and good X is money, the reference points for the sellers and the choosers in the mugs experiment are A and C. Loss aversion implies that the difference between the states of having a mug and not having one is larger from A than from C, which explains the different monetary values that subjects attach to the mug in these conditions.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Loss Aversion段 - reference points"
+        }
+      ]
+    },
+    {
+      "claim": "损失厌恶不适用于所有交易：在正常商业交易中卖家出售不构成损失，主要影响为使用而非转售而持有的物品；对于以转售为目的持有的商品不存在禀赋效应",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Loss aversion does not affect all transactions. In a normal commercial transaction, the seller does not suffer a loss when trading a good. Furthermore, the evidence indicates that buyers do not value the money spent on normal purchases as a loss, so long as the price of the good is not thought to be unusually high. Loss aversion is expected to primarily affect owners of goods that had been bought for use rather than for eventual resale.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Loss Aversion段 - footnote 3"
+        },
+        {
+          "excerpt": "There are some cases in which no endowment effect would be expected, such as when goods are purchased for resale rather than for utilization. A particularly clear case of a good held exclusively for resale is the notional token typically traded in experimental markets.",
+          "source_file": "paper_Experimental Tests of the Endowment Effect and the Coase The.md",
+          "location": "Section I, 第6段"
+        }
+      ]
+    },
+    {
+      "claim": "参考点效应在求职实验中得到验证：同一对选项在不同参考点下选择率截然不同，人们对相对于参考点的'损失维度'更敏感",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "The proportion of subjects choosing job A was 70 percent in the first version, 33 percent in the second. Subjects are more sensitive to the dimension in which they are losing relative to their reference point.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Job choice experiment段"
+        }
+      ]
+    },
+    {
+      "claim": "WTP和WTA的差距在某些情境下可达数量级差异：疫苗和杀虫剂实验显示'作为'与'不作为'之间的责任不对称，自愿承担额外风险的责任成本远高于未能消除现有风险",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "For most subjects the two prices differed by more than an order of magnitude.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Vaccine experiment段"
+        },
+        {
+          "excerpt": "In households without children, the mean WTP to eliminate both risks was $3.78. The respondents were also asked to state the price reduction they would require to accept an increase of 1/10,000 in each of the two risks. The results were dramatic: 77 percent of respondents in this condition said they would refuse to buy the product at any positive price.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Insecticide experiment段"
+        },
+        {
+          "excerpt": "The striking difference between WTA and WTP in these studies probably reflects the large difference in the responsibility costs associated with voluntary assumption of additional risk, in contrast to a mere failure to reduce or eliminate existing risk. The asymmetry between omission and commission is familiar in legal doctrine, and its impact on judgments of responsibility has been confirmed by psychological research.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Responsibility cost段"
+        }
+      ]
+    },
+    {
+      "claim": "禀赋效应的推论：人们对待机会成本不同于实际支出成本，这种不对称深刻影响公平判断",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "An implication of the endowment effect is that people treat opportunity costs differently than \"out-of-pocket\" costs. Foregone gains are less painful than perceived losses. This perception is strongly manifested in people's judgments about fair behavior.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Judgments of Fairness段"
+        }
+      ]
+    },
+    {
+      "claim": "公平判断实验证明框架效应：同是$200差额，取消折扣仅42%认为不公平，加价$200则71%认为不公平——损失/收益框架决定公平感知",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "A dealer has been selling these cars at list price. Now the dealer prices this model at $200 above list price. N = 130 Acceptable 29 percent Unfair 71 percent",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Question 1a"
+        },
+        {
+          "excerpt": "A dealer has been selling these cars at a discount of $200 below list price. Now the dealer sells this model only at list price. N = 123 Acceptable 58 percent Unfair 42 percent",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Question 1b"
+        }
+      ]
+    },
+    {
+      "claim": "法律体系中深植着禀赋效应逻辑：侵权法区分实际支出损失和未获利，合同法中为避免损失而违约比获取意外收益而违约更易被宽容",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "A party that breaches a contract is more likely to be held to the original terms if the action is taken to make an unforeseen gain than if it is taken to avoid a loss.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Law段"
+        }
+      ]
+    },
+    {
+      "claim": "理论修正方案：放弃稳定的偏好序，代之以依赖当前参考水平的偏好序，经济分析应区分有利变化和不利变化，价格上升和下降的响应不是镜像关系",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The amendments are not trivial: the important notion of a stable preference order must be abandoned in favor of a preference order that depends on the current reference level. A revised version of preference theory would assign a special role to the status quo, giving up some standard assumptions of stability, symmetry and reversibility which the data have shown to be false. But the task is manageable.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Commentary段"
+        },
+        {
+          "excerpt": "models that ignore loss aversion predict more symmetry and reversibility than are observed in the world, ignoring potentially large differences in the magnitude of responses to gains and to losses. Responses to increases and to decreases in price, for example, might not always be mirror images of each other. The possibility of loss aversion effects suggests, more generally, that treatments of responses to changes in economic variables should routinely separate the cases of favorable and unfavorable changes.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Commentary段"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒以幽默自嘲结束禀赋效应研究：'这个想法现在已成为我们的禀赋，我们自然更倾向于保留它'",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "After more than a decade of research on this topic we have become convinced that the endowment effect, status quo bias, and the aversion to losses are both robust and important. Then again, we admit that the idea is now part of our endowment, and we are naturally keener to retain it than others might be to acquire it.",
+          "source_file": "paper_Anomalies_ The Endowment Effect, Loss Aversion, and Status Q.md",
+          "location": "Commentary段末尾"
+        }
+      ]
+    },
+    {
+      "claim": "Planner-Doer模型将个人建模为一个组织，包含关注终身效用的远见'计划者'和只活在当下的短视'执行者'，两者冲突类似企业委托-代理问题，这是经济学中首个对两自我经济人的系统性正式处理",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the individual as an organization. At any point in time the organization consists of a planner and a doer. The planner is concerned with lifetime utility, while the doer exists only for one period and is completely selfish, or myopic.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section I: The Model"
+        },
+        {
+          "excerpt": "The idea of self-control is paradoxical unless it is assumed that the psyche contains more than one energy system, and that these energy systems have some degree of independence from each other.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section I引言"
+        },
+        {
+          "excerpt": "The concept of self-control is incorporated in a theory of individual intertemporal choice by modeling the individual as an organization. The individual at a point in time is assumed to be both a farsighted planner and a myopic doer.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "The resulting conflict is seen to be fundamentally similar to the agency conflict between the owners and managers of a firm.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "Nonetheless, to the best of our knowledge our work is the first systematic, formal treatment of a two-self economic man.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section I"
+        }
+      ]
+    },
+    {
+      "claim": "圣诞储蓄俱乐部、存折贷款、戒烟诊所等反常现象是自控技术的体现——个体愿意支付溢价以约束短视行为；自控的概念在没有'心理包含多个能量系统'假设下是悖论性的",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "For many years Christmas clubs paid no interest. Members deposited money each week but could only withdraw the money on December 1. The clubs were very popular, although they seemed to be dominated by simply depositing money in an interest-bearing savings account.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Introduction段"
+        },
+        {
+          "excerpt": "These loans allow an individual with $5,000 in a savings account earning 5 percent interest to borrow at 9 percent using the balance as collateral, instead of at 10 percent with no collateral. Obviously the individual could simply withdraw the money from his savings account at an (opportunity) cost of only 5 percent.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Introduction段"
+        },
+        {
+          "excerpt": "Passbook loans do still exist. These loans allow an individual with $5,000 in a savings account earning 5 percent interest to borrow at 9 percent using the balance as collateral, instead of at 10 percent with no collateral. Obviously the individual could simply withdraw the money from his savings account at an (opportunity) cost of only 5 percent.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "引言段"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒的框架与Strotz文献不同：建模同一时点上两组偏好的冲突而非跨时偏好变化，使自控问题可被理解为委托-代理问题；反对将自控行为简化为效用函数的套套逻辑",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "Our framework differs from the changing-tastes literature in that we model man as having two sets of preferences that are in conflict at a single point in time.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section I"
+        },
+        {
+          "excerpt": "We agree with the remarks above and therefore offer a model that says more about these institutions than the fact that the demand for their services will be negatively related to price. We do so by proposing a simple extension of orthodox models, using orthodox tools, that permits such behavior to be viewed as rational.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "引言后半段"
+        }
+      ]
+    },
+    {
+      "claim": "个体使用三类方法改变doer激励：直接修改偏好、监控输入、改变激励结构；通过规则限制选择集（如禁止借贷）来缓解冲突",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Individuals use three basic techniques to alter the doer's incentives. First, the doer's preferences can be modified directly. Some individuals consider saving a good in and of itself...Second, inputs to a saving or dieting program can be explicitly monitored via weekly budgets or calorie counting...Third, incentives can be explicitly altered: Alcoholics take the drug Antabuse which makes them ill if they take a drink; academics agree to give a paper at a conference to provide a proximate incentive to write it.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section IIA"
+        },
+        {
+          "excerpt": "A simple first departure from pure discretion is a ban on borrowing, the so-called debt ethic. A somewhat weaker rule which seems common is to prohibit borrowing except for specific purchases, like houses and automobiles. Another rule of thumb is a prohibition on dissaving combined with limits on borrowing.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section IIB"
+        }
+      ]
+    },
+    {
+      "claim": "Adam Smith在Theory of Moral Sentiments中就使用了类似两自我模型，自控概念有悠久思想传统",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "This idea is certainly not new. Adam Smith used a two-self model much like ours in his Theory of Moral Sentiments (1759). More recently Schelling (1960, 1978) and Buchanan (1975) have recognized the importance of simultaneous conflict in understanding self-control problems.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section I"
+        }
+      ]
+    },
+    {
+      "claim": "偏好修正有成本且边际成本递增，planner需在储蓄收益与修正成本之间权衡；也可通过规则改变预算约束避免修正成本，但规则本身不完美",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "the lower the desired ct is, the more modification will be required. Furthermore, aZVtI9t is negative; that is, modification reduces short-run utility and is therefore costly. Finally, we assume that the marginal cost of modification increases with 0.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section I, 纯自由裁量段落"
+        },
+        {
+          "excerpt": "This allows the planner to reduce c, without incurring modification costs. However, since available rules are imperfect (see next section), the planner will have to trade off modification costs with the opportunity costs associated with using second-best-type rules.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section I, 规则段落"
+        }
+      ]
+    },
+    {
+      "claim": "自控的内部冲突本质上类似企业中委托-代理冲突，个体和企业使用相同技术缓解冲突；自控规则从父母和榜样习得而非纯理性选择",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We have characterized self-control as an internal conflict resembling the principal-agent conflict between the owner and manager of a firm. In this section we describe the actual techniques used by individuals and firms to mitigate these conflicts.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section II开头"
+        },
+        {
+          "excerpt": "it is useful to consider these rules as learned as much as chosen. Rules like the debt ethic are learned from parents and other models, which suggests that there will be differences in the use of rules depending on social class, education, and age.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section II末尾"
+        }
+      ]
+    },
+    {
+      "claim": "规则会逐渐变成习惯，打破规则反而需要修正成本，可解释吝啬等现象",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "rules of thumb are likely to become habits. By establishing a routine, the doer decision process can be avoided. Third, to the extent that the rules do become habits, there will be rigidities built into the individual's behavior.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section II末尾"
+        }
+      ]
+    },
+    {
+      "claim": "模型预测强制性养老金不会完全挤出其他储蓄（养老金储蓄不需心理修正成本）；收入形态影响储蓄策略：奖金制比月薪制更有利于储蓄",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Our model has a different prediction: The pension plan produces saving at no psychic cost. Modification costs occur only when saving is voluntarily withheld. This is what we call 'discretionary saving.' Thus since the marginal cost of saving is lower at the old saving level, we expect total saving to go up.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section IIIA"
+        },
+        {
+          "excerpt": "We believe that for the typical individual much of the bonus will end up being saved, especially through the purchase of durable goods. By paying the bonus the firm is acting as an external self-control device (much like parents who tell children that money gifts at Christmas must go into a savings account).",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section IIIB"
+        }
+      ]
+    },
+    {
+      "claim": "运动员等收入递减型个体面临严重自控问题，家庭背景是预测结果的重要因素",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Their declining income stream creates a difficult self-control problem in the high-income years. Some athletes hire agents to invest their incomes and limit their current spending, and many of them become rich. Others rely on discretionary strategies and end up bankrupt. The best predictors of which individuals will fall into which groups are probably related to family background, since the family is the most likely place for the individual to learn (or not learn) the rules and norms necessary to overcome the self-control problems.",
+          "source_file": "paper_An Economic Theory of Self-Control.md",
+          "location": "Section IIIB"
+        }
+      ]
+    },
+    {
+      "claim": "标准经济学消费者理论将规范性模型与描述性模型混为一谈，做出系统性的可预测的错误预测",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "This paper argues that exclusive reliance on the normative theory leads economists to make systematic, predictable errors in describing or forecasting consumer choices.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 1 Introduction"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒借用Simon的有限理性概念和Kahneman-Tversky的前景理论，提出系统性认知偏差（mental illusions）是常态而非例外",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Research on judgment and decision making under uncertainty, especially by Daniel Kahneman and Amos Tversky (1974, 1979), has shown that such mental illusions should be considered the rule rather than the exception.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 1 Introduction"
+        }
+      ]
+    },
+    {
+      "claim": "禀赋效应解释体育市场谜团：球迷将被交易球员视为损失而强烈抵触，但对自由球员离队更容易接受",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "When a player is drafted he becomes part of the fans' endowment. If he is sold or traded this will be treated by the fans as a loss. However, when a player is declared a free agent he drops out of the endowment, and the fans will recognize that he can only be regained at substantial out-of-pocket expense.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 3, 禀赋效应应用段"
+        }
+      ]
+    },
+    {
+      "claim": "消费者不能有效忽略沉没成本：暴风雪天坚持前往已付门票的比赛；沉没成本效应在多部定价中具有重要应用——提高会员费可能反而增加使用率",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "A family pays $40 for tickets to a basketball game to be played 60 miles from their home. On the day of the game there is a snowstorm. They decide to go anyway, but note in passing that had the tickets been given to them, they would have stayed home.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Example 4"
+        },
+        {
+          "excerpt": "Rather, I suggest the alternative hypothesis that paying for the right to use a good or service will increase the rate at which the good will be utilized, ceteris paribus. This hypothesis will be referred to as the sunk cost effect.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 4 开头"
+        },
+        {
+          "excerpt": "Those in the severe initiation group reported enjoying the subsequent group discussion (which, in fact, was deadly dull) more than those in the other group.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 4, Aronson-Mills实验描述"
+        },
+        {
+          "excerpt": "If the sunk cost effect is valid then the analysis of effect (ii) must be changed. The sunk cost effect will increase utilization, which is in the opposite direction of the income effect. If the sunk cost effect is large enough in magnitude, then raising the membership fee could increase total utilization.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 4.2"
+        }
+      ]
+    },
+    {
+      "claim": "消费者搜索行为遵循Weber-Fechner心理物理定律：搜索持续到节省金额占总价格比例达到临界值，而非绝对金额等于搜索成本",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The alternative theory states that search for any purchase will continue until, the expected amount saved as a proportion of the total price equals some critical value. This hypothesis is a simple application of the Weber-Fechner law of psychophysics.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 5"
+        }
+      ]
+    },
+    {
+      "claim": "消费者有时主动选择不选择，因为选择本身产生心理成本（遗憾、内疚、责任）；医疗保险中低免赔额的流行可用遗憾厌恶解释",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "whenever choice can induce regret consumers have an incentive to eliminate the choice. They will do so whenever the expected increase in utility (pleasure) derived from making their own choices is less than the expected psychic costs which the choices will induce.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 6, 选择不选择段"
+        },
+        {
+          "excerpt": "Most consumers find decisions involving tradeoffs between health care and money very distasteful. This is especially true when the decision is made for someone else like a child. A high deductible policy would force individuals to make many such decisions, at considerable psychic costs.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 6, 医疗保险段"
+        }
+      ]
+    },
+    {
+      "claim": "自控问题在正投资品（教育、锻炼）和负投资品（烟酒）中最严重，是最需要预承诺的领域",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "The concept of self-control suggests the existence of a controller and a controllee. To capture this, the individual can be modeled as an organization with a planner and a series of doers, one for every time period. Conflict arises because the current doer's preferences are always myopic relative to the planner's.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 7"
+        },
+        {
+          "excerpt": "self-control problems will be most important for those consumption activities which have a time dimension...goods whose benefits accrue later than their costs (such as education and exercise) are termed positive investment goods, while those with the opposite time structure (such as tobacco and alcohol) are termed negative investment goods.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 7"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒用台球比喻反驳Friedman-Savage的'as if'辩护：标准模型是专家级模型，普通消费者更像中等水平台球手——理性但使用启发式",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "What I have argued in this paper is that the orthodox economic model of consumer behavior is, in essence, a model of robot-like experts. As such, it does a poor job of predicting the behavior of the average consumer...This is not because the average consumer is dumb, but rather that he does not spend all of his time thinking about how to make decisions.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 8, 台球比喻段"
+        }
+      ]
+    },
+    {
+      "claim": "新手和中等水平消费者并非不理性，而是拥有不同的决策技术；呼吁发展描述性理论来解释人类决策者如何在复杂世界中行动",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "It is important to stress that both the novice and intermediate players described above behave rationally. They choose different shots than the expert does because they have different technologies.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "Section 8"
+        },
+        {
+          "excerpt": "Prospect theory and the planner-doer model attempt to describe human decision-makers coping with a very complex and demanding world. Failure to develop positive theories such as these will leave economists wondering why people are frequently aiming at the balls lined up right in front of the pockets rather than at the three ball carom their computer model has identified as being optimal.",
+          "source_file": "paper_Toward a positive theory of consumer choice.md",
+          "location": "文章末尾结论段"
+        }
+      ]
+    },
+    {
+      "claim": "禀赋效应是损失厌恶的表现形式：物品被视为损失时估值高于被视为收益时，导致WTA系统性大于WTP，减少互利交易可能性",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Thaler (1980) labeled the increased value of a good to an individual when the good becomes part of the individual's endowment the \"endowment effect.\" This effect is a manifestation of \"loss aversion,\" the generalization that losses are weighted substantially more than objectively commensurate gains in the evaluation of prospects and trades.",
+          "source_file": "paper_Experimental Tests of the Endowment Effect and the Coase The.md",
+          "location": "Section I, 第5段"
+        }
+      ]
+    },
+    {
+      "claim": "双边谈判实验中代币交易率83%而巧克力棒仅40%，禀赋效应在真实市场环境中持续存在",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Of the 35 pairs of participants, 29 agreed to an exchange (V/V* = .83). The average price paid for the 29 tickets was $4.09...Results of the chocolate bar bargains once again suggest reluctance to trade. Rather than the 17.5 trades expected from the random allocations, only seven were observed (V/V* = .4).",
+          "source_file": "paper_Experimental Tests of the Endowment Effect and the Coase The.md",
+          "location": "Section V, 双边谈判实验结果"
+        }
+      ]
+    },
+    {
+      "claim": "禀赋效应前提是商品与货币间缺乏严格可通约性，这种估值模糊性为损失厌恶创造了条件",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In these conditions, the cancellation of the loss of the object against the dollars received is not possible because the good and money are not strictly commensurate. The valuation ambiguity produced by this lack of commensurability is necessary, although not sufficient, for both loss aversion and a buying-selling discrepancy.",
+          "source_file": "paper_Experimental Tests of the Endowment Effect and the Coase The.md",
+          "location": "Section VII Discussion"
+        }
+      ]
+    },
+    {
+      "claim": "损失厌恶解释房价下跌时交易量萎缩和股票下跌时交易量低于上涨股的现象",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "The reluctance to sell at a loss, owing to a perceived entitlement to a formerly prevailing price, can explain two observations of apparent undertrading...when housing prices fall, volume also falls...the volume for stocks that have declined in price is lower than the volume for stocks that have increased in value (Shefrin and Statman 1985), although tax considerations would lead to the opposite prediction.",
+          "source_file": "paper_Experimental Tests of the Endowment Effect and the Coase The.md",
+          "location": "Section VII, 市场应用段"
+        }
+      ]
+    },
+    {
+      "claim": "禀赋效应和损失不应被视为可消除的错误，而应被视为偏好的基本特征",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "the evidence reported here offers no support for the contention that observations of loss aversion and the consequential evaluation disparities are artifacts; nor should they be interpreted as mistakes likely to be eliminated by experience, training, or \"market discipline.\" Instead, the findings support an alternative view of endowment effects and loss aversion as fundamental characteristics of preferences.",
+          "source_file": "paper_Experimental Tests of the Endowment Effect and the Coase The.md",
+          "location": "Section VII 结论段"
+        }
+      ]
+    },
+    {
+      "claim": "心理账户系统导致违反货币可替代性：300美元意外收益促成奢华晚餐但等额年薪增加不会；既是主题性的也是时间性的",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Example 1 violates the principle of fungibility. Money is not supposed to have labels attached to it. Yet the couples behaved the way they did because the $300 was put into both \"windfall gain\" and \"food\" accounts. The extravagant dinner would not have occurred had each couple received a yearly salary increase of $150, even though that would have been worth more in present value terms.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Section 1, Example 1分析"
+        },
+        {
+          "excerpt": "Example 2 illustrates that accounts may be both topically and temporally specific. A player's behavior in a poker game is altered by his current position in that evening's game, but not by either his lifetime winnings or losings nor by some event allocated to a different account altogether such as a paper gain in the stock market.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Section 1, Example 2分析"
+        }
+      ]
+    },
+    {
+      "claim": "家庭用高息贷款购车而保留低息储蓄账户，是对自控问题的理性应对——担心储蓄账户一旦被提取就不会被补回",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "In example 3 the violation of fungibility (at obvious economic costs) is caused by the household's appreciation for their own self-control problems. They are afraid that if the vacation home account is drawn down it will not be repaid, while the bank will see to it that the car loan is paid off on schedule.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Section 1, Example 3分析"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒用前景理论价值函数替代标准效用函数：基于参考点的损益评估、收益凹损失凸的S形曲线、损失函数比收益函数更陡峭",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "First, the function v is defined over perceived gains and losses relative to some natural reference point, rather than wealth or consumption as in the standard theory...Second, the value function is assumed to be concave for gains and convex for losses...Third, the loss function is steeper than the gain function (v(x) < -v(-x), x > 0). This notion that losses loom larger than gains captures what I have elsewhere called the endowment effect.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Section 2.1"
+        }
+      ]
+    },
+    {
+      "claim": "收益与损失的编码四原则：分离收益、整合损失、用较大收益抵消较小损失、在大损失中分离小收益（silver lining原则）——源自价值函数的凹凸性和损失厌恶",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The previous analysis can be summarized by four principles: (a) segregate gains, (b) integrate losses, (c) cancel losses against larger gains, (d) segregate (silver lining) small gains from larger losses.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Section 2.3"
+        },
+        {
+          "excerpt": "Multiple Gains...Since v is concave v(x) + v(y) > v(x + y), so segregation is preferred. Moral: don't wrap all the Christmas presents in one box.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Section 2.2, Principle 1"
+        },
+        {
+          "excerpt": "Multiple Losses...since v(-x) + v(-y) < v(-(x + y)) integration is preferred. For example, one desirable feature of credit cards is that they pool many small losses into one larger loss and in so doing reduce the total value lost.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Section 2.2, Principle 2"
+        },
+        {
+          "excerpt": "Segregation is preferred if v(x) > v(x-y)-v(-y). This is more likely the smaller is x relative to y. Intuitively, with a large loss and a small gain, e.g., (+$40,-$6000) segregation is preferred since v is relatively flat near -6,000. This will be referred to as the \"silver lining\" principle.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Section 2.2, Principle 4 (Mixed Loss)"
+        },
+        {
+          "excerpt": "The previous analysis can be summarized by four principles: (a) segregate gains, (b) integrate losses, (c) cancel losses against larger gains, (d) segregate \"silver linings.\"",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§2.3 Evidence on Segregation and Integration段"
+        }
+      ]
+    },
+    {
+      "claim": "康奈尔大学学生实验验证了四原则：多重收益分离更快乐、多重损失整合更不痛苦、混合收益整合更快乐、银线效应成立",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "a small experiment was conducted using 87 students in an undergraduate statistics class at Cornell University. The idea was to present subjects with pairs of outcomes either segregated or integrated and to ask them which frame was preferable.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§2.3 实验设计段"
+        },
+        {
+          "excerpt": "For each item, a large majority of the subjects chose in a manner predicted by the theory.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§2.3 实验结果总结段"
+        },
+        {
+          "excerpt": "with a large loss and a small gain, e.g., ($40,−$6,000) segregation is preferred since v is relatively ﬂat near −6,000. This will be referred to as the \"silver lining\" principle.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§2 混合损失分析段"
+        }
+      ]
+    },
+    {
+      "claim": "信用卡将多个小额损失整合为一个大额损失，利用价值函数凸性减少总心理损失感；人们会主动选择使自己最快乐的编码方式",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "one desirable feature of credit cards is that they pool many small losses into one larger loss and in so doing reduce the total value lost.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§2 Multiple Losses分析段"
+        },
+        {
+          "excerpt": "if a situation is sufficiently ambiguous how will individuals choose to code outcomes? To some extent people try to frame outcomes in whatever way makes them happiest.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§2 联合结果编码分析段"
+        }
+      ]
+    },
+    {
+      "claim": "交易效用理论的两阶段模型：判断过程评估潜在交易，决策过程批准或否决，构成心理账户从感知到决策的完整链条",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A two-stage process is proposed. First, individuals evaluate potential transactions. Second, they approve or disapprove of each potential transaction. The first stage is a judgment process while the second is a decision process.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3 Transaction Utility Theory段"
+        }
+      ]
+    },
+    {
+      "claim": "心理账户编码选择可用四原则解释（扑克玩家报告输赢的方式）；参考结果概念扩展了编码原则的应用范围",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "A group of friends who play poker together regularly had an outing in which they played poker in a large recreational vehicle while going to and from a race track. There were significant asymmetries in the way people (honestly) reported their winnings and losings from the two poker games and racetrack bets. Whether the outcomes were reported together or separately could largely be explained by the analysis that follows.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "脚注3"
+        },
+        {
+          "excerpt": "When the situation is structured in a neutral or ambiguous manner then the same four principles determine whether segregation or integration is preferred: (1) An increase in a gain should be segregated. (2) An increase in (the absolute value of) a loss should be integrated. (3) A decrease in a gain should be integrated (cancellation). (4) A small reduction in (the absolute value of) a loss should be segregated (silver lining).",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§2.4 Reference Outcomes段"
+        }
+      ]
+    },
+    {
+      "claim": "购买效用分解为获得效用（商品价值vs价格）和交易效用（实际价格vs参考价格）——总效用是两者之和",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "two kinds of utility are postulated: acquisition utility and transaction utility. The former depends on the value of the good received compared to the outlay, the latter depends solely on the perceived merits of the \"deal.\"",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.1 Evaluating Transactions段"
+        },
+        {
+          "excerpt": "w(z,p,p*) = v(p̄−p) + v(−p−p*)",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.1 公式(2)"
+        }
+      ]
+    },
+    {
+      "claim": "获得效用中成本不被编码为损失，因为损失函数在参考点附近特别陡峭，将日常开销编码为损失在享乐上是低效的",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Since v(p̄−p) will generally be coded as the integrated outcome v(p̄)−p, the cost of the good is not treated as a loss. Given the steepness of the loss function near the reference point, it is hedonically inefficient to code costs as losses, especially for routine transactions.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.1 acquisition utility定义段"
+        }
+      ]
+    },
+    {
+      "claim": "纽约租房故事说明交易效用独立于获得效用：即使房间值得但得知室友付更少仍感不公平；参考价格的最重要决定因素是公平感，而公平感在很大程度上取决于卖方成本",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "My sister just found out that for a $235 per month sublet she shares with another woman, she pays $185 per month. The other woman justifies her $50 per month rent two ways: one, she is doing my sister a favor letting her live there given the housing situation in New York City, and, two, everyone with a room to sublet in NYC will cheat her at least as badly. Her reasons are undeniably true, and that makes them quadruply disgusting.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.1 电影评论引用段"
+        },
+        {
+          "excerpt": "The most important factor in determining p* is fairness. Fairness, in turn, depends in large part on cost to the seller.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.1 p*决定因素段"
+        },
+        {
+          "excerpt": "the price people would charge a friend would be a good proxy for their estimate of a fair price. For each question, three prices were available as possible anchors upon which people could base their answers: the price marked on the ticket, the market price, and the price paid by the seller, i.e., cost.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.1 hockey ticket问卷设计段"
+        },
+        {
+          "excerpt": "the modal answers in the friend condition are equal to the seller's costs except in the unusual case where seller's cost was above market price. In contrast, the modal answers in the stranger condition are equal to market price with the same lone exception.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.1 hockey ticket结果分析段"
+        }
+      ]
+    },
+    {
+      "claim": "海滩啤酒实验揭示交易效用影响支付意愿：在度假酒店买啤酒中位出价$2.65远高于杂货店$1.50，即使消费体验相同",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "The median price given in the fancy resort hotel version was $2.65 while the median for the small run-down grocery store version was $1.50. This difference occurs despite the following three features of this example: 1. In both versions the ultimate consumption act is the same—drinking one beer on the beach. The beer is the same in each case.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.1 啤酒实验结果段"
+        },
+        {
+          "excerpt": "While paying $2.50 for a beer is an expected annoyance at the resort hotel, it would be considered an outrageous \"rip-off\" in a grocery store. Paying $2.50 a bottle is $15.00 a six-pack, considerably above the reference price.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.1 啤酒实验解释段"
+        }
+      ]
+    },
+    {
+      "claim": "心理账户的多账户购买决策模型：消费者按时间和类别设预算，按w(z,p,p*)/p≥k规则逐项评估，违反经济学可替代性原则",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "the consumer responds to local temporal budget constraints. That is, the budget constraint that most influences behavior is the current income flow rather than the present value of lifetime wealth. ... The tendency to group purchases by category can violate the economic principle of fungibility.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.2 Purchase Decisions—Multiple Accounts段"
+        }
+      ]
+    },
+    {
+      "claim": "家庭预算管理是心理账户的运作：按类别分组支出并在类别内评估；心理账户是自控力问题的解决方案——限制月支出不超过月收入的规则虽非最优但可防止债务陷阱",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Families that take their monthly pay and put it into various use-specific envelopes to be allocated during the month are explicitly behaving in the manner described here. Most families simply use a less explicit procedure.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.2 预算过程描述段"
+        },
+        {
+          "excerpt": "The whole mental accounting apparatus being presented here can be thought of as part of an individual's solution to these problems. For example, the rule of thumb to restrict monthly expenditures to no more than monthly income is clearly nonoptimal. Yet, when borrowing is permitted as a method of smoothing out monthly k's, some families find themselves heavily in debt. Restrictions on borrowing are then adopted as a second-best strategy.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.2 自控力与心理账户段"
+        }
+      ]
+    },
+    {
+      "claim": "自控力技术往往意味着完全禁止而非适度控制（如吸烟者几乎不存在一天只抽1-5支的情况）",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "The technology of self-control often implies outright prohibitions because allowing a little bit eventually leads to excesses. (Although smoking cigarettes is undoubtedly subject to diminishing marginal utility, almost no one smokes between 1 and 5 cigarettes a day. That level, while probably preferred by many smokers and former smokers to either zero or 20, is just unattainable.)",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.2 自控力技术段"
+        }
+      ]
+    },
+    {
+      "claim": "心理账户理论的营销应用：分离收益（展示多种用途和赠品）和整合损失（附加成本并入更大损失中降低感知）",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "The most vivid examples of this are the late-night television advertisements for kitchen utensils. The principle is used at two levels. First, each of the items sold is said to have a multitude of uses, each of which is demonstrated. Second, several \"bonus\" items are included \"if you call right now.\" These ads all seem to use the same basic format and are almost a caricature of the segregation principle.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.1 Segregate Gains段"
+        }
+      ]
+    },
+    {
+      "claim": "银线原则解释汽车行业广泛使用返现而非直接降价：返现强烈暗示将节省分离编码；整合损失原则解释昂贵商品附加配置（汽车、房屋）的高利润",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "A rebate strongly suggests segregating the saving. This can be further strengthened for those consumers who elect to have the rebate mailed to them from the corporate headquarters rather than applied to the down payment.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.1 silver lining与rebates段"
+        },
+        {
+          "excerpt": "In the first year that rebates were widely used, one manufacturer reported (to me in personal communication) that about one-third of the customers receiving rebates chose the option of having the check sent separately.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.1 脚注10"
+        },
+        {
+          "excerpt": "sellers have a distinct advantage in selling something if its cost can be added on to another larger purchase. Adding options to an automobile or house purchase are classic, well-known examples. More generally, whenever a seller is dealing with an expensive item the seller should consider whether additional options can be created since the buyers will have temporarily inelastic demands for these options.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.1 Integrate Losses段"
+        }
+      ]
+    },
+    {
+      "claim": "对诱惑性/成瘾性商品的k值特别高，对长期有益商品的k值特别低，反映自控力在心理账户中的不对称",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Unusually high category specific k's are most likely to be observed for goods that are particularly seductive or addictive. Unusually low k's are observed for goods viewed to be particularly desirable in the long run such as exercise or education.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§3.2 k值差异段"
+        }
+      ]
+    },
+    {
+      "claim": "预扣税机制利用取消原则：大额收益的减少是最不令人厌恶的损失类型",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "The principle of cancellation states that losses will be integrated with larger gains where plausible. The best example of this is withholding from paychecks. In the present framework the least aversive type of loss is the reduction of a large gain. ... Income taxes would be perceived as much more aversive (in addition to being harder to collect) if the whole tax bill were due in April.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.1 取消原则段"
+        }
+      ]
+    },
+    {
+      "claim": "交易效用理论解释市场无法出清之谜：超级碗门票等商品定价偏低是因为市场出清价远高于参考价格且买卖双方存在持续金钱关系",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The concept of transaction utility provides a coherent, parsimonious answer. The key to understanding the puzzle is to note that the under-pricing only occurs when two conditions are present. First, the market clearing price is much higher than some well-established normal (reference) price. Second, there is an ongoing pecuniary relationship between the buyer and the seller. Pure scarcity is not enough.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.2 Sellouts and Scalping段"
+        },
+        {
+          "excerpt": "price of tickets should be closer to the market clearing price, the larger is the share of total revenues the seller captures from the event in question. At one extreme are league championships such as the World Series and the Super Bowl. Ticket sales for these events are a tiny share of total league revenue. ... At the other extreme is a major championship fight. A boxing championship is a one-time affair ... There is no significant long-run relationship between the sellers and boxing fans.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.2 体育赛事定价分析段"
+        }
+      ]
+    },
+    {
+      "claim": "黄牛票存在的两个原因：高价产生的交易负效用不归因于原始卖方；卖方通过其他渠道获得超过面值的收入",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "First, the transaction disutility generated by a high black market price is not attributed to the original seller. The NFL sets a \"fair\" price; it is the scalper who is obtaining the immoral rents. Second, in many cases the seller is really getting more than the face value of the tickets.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.2 黄牛票分析段"
+        }
+      ]
+    },
+    {
+      "claim": "三种不产生负交易效用的提价策略：提高感知参考价格、增加最低购买量或捆绑、模糊参考价格",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "The theory provides three kinds of strategies that can be tried. First, steps can be taken to increase the perceived reference price. ... A second general strategy is to increase the minimum purchase required and/or to tie the sale of the product to something else. ... The third strategy is to try to obscure p* and thus make the transaction disutility less salient.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.2 Methods of Raising Price段"
+        }
+      ]
+    },
+    {
+      "claim": "建议零售价的真实功能是充当'建议参考价格'，让较低实际售价产生正交易效用，在不常购买且质量难判断的商品上最成功",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "is being offered by the seller as a \"suggested reference price.\" Then a lower selling price will provide positive transaction utility. ... deep discounting relative to SRP should usually be observed for infrequently purchased goods whose quality is hard to judge. Some examples include phonograph cartridges which usually sell at discounts of at least 50%, home furniture which is almost always \"on sale,\" and silver flatware where \"deep discounting—selling merchandise to consumers at 40% to 85% below the manufacturer's 'suggested retail price' has become widespread in the industry.\"",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.2 Suggested Retail Price段"
+        }
+      ]
+    },
+    {
+      "claim": "送礼理论：人们倾向于买收礼者不会为自己买的东西，因为心理账户中奢侈品类别的k值高（自控力限制），送礼解决了'想吃禁果'的问题",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "the standard theory implies that G should choose something that is already being consumed in positive quantities by R. How does this compare with common practice? Casual observation and some informal survey evidence suggest that many people try to do just the opposite, namely buy something R would not buy for himself. ... Categories that are viewed as luxuries will tend to have high k's. An individual would like to have a small portion of the forbidden fruit, but self-control problems prevent that. The gift of a small portion solves the problem neatly.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.3 A Theory of Gift Giving段"
+        },
+        {
+          "excerpt": "Another result of this analysis is that people may sometimes prefer to receive a gift in kind over a gift in cash, again violating a simple principle of microeconomic theory. This can happen if the gift is on a \"forbidden list.\" ... Since most Tupperware dealers are women who are second-income earners, the gifts may be a way for a dealer to: (1) mentally segregate her earnings from total family income; (2) direct the extra income toward luxuries; and (3) increase her control over the spending of the extra income.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.3 实物vs现金礼物段"
+        }
+      ]
+    },
+    {
+      "claim": "NFL全明星赛和特百惠经销商案例说明心理账户在激励设计中的应用：将激励打包为'礼物'形式的优势",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "For years the league had trouble getting players to come to the year-end All-Star game. Many players would beg off, reporting injuries. A few years ago the game was switched to Hawaii and a free trip for the player's wife or girlfriend was included. Since then, no-shows have been rare.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.3 NFL All-Star game例子段"
+        },
+        {
+          "excerpt": "Transferring the transaction disutility is often a good strategy. One way this can be done is to turn over an item for sale to an agent who will sell it at auction. The seller then bears less responsibility for the price.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.2 脚注11"
+        }
+      ]
+    },
+    {
+      "claim": "广告商利用心理账户的低k值类别设计营销：暗示特定场合可以放松自控力限制",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Advertisers may wish to suggest other occasions that should qualify as legitimate excuses for indulgence. One example is Michelob's theme: \"Weekends are made for Michelob.\" ... Lowenbrau's ads stress a different category, namely, what beer to serve to company. ... again the theme is to designate specific occasions when the beer k should be relaxed enough to purchase a high cost beer.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "§4.3 广告与心理账户段"
+        }
+      ]
+    },
+    {
+      "claim": "心理账户理论的三个组成部分（编码规则、交易效用、预算规则）代表经济学与心理学的杂交，营销学是发展这一组合最合逻辑的领域",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "This paper has developed new concepts in three distinct areas: coding gains and losses, evaluating purchases (transaction utility), and budgetary rules. ... the theory presented here represents a hybrid of economics and psychology that has heretofore seen little attention. I feel that marketing is the most logical field for this combination to be developed.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Conclusion段"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒坦诚理论不足：编码原则在损失域与不确定性实验中结果不一致，预算过程证据来自小样本，需要更系统的研究",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The two paradigms do not always lead to the same results, particularly in the domain of losses (Johnson and Thaler 1985). The reasons for the differences are interesting and subtle, and need further investigation.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Conclusion段-编码规则"
+        },
+        {
+          "excerpt": "Both the theory and the evidence on the budgetary processes are less well developed than the other topics presented here. The evidence comes from a small sample of households that will not support statistical tests. A more systematic study of household decision making, perhaps utilizing UPC scanner data, should be a high priority.",
+          "source_file": "paper_Mental Accounting and Consumer Choice.md",
+          "location": "Conclusion段-预算过程"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT（Save More Tomorrow）计划核心：让人们提前承诺将未来加薪分配到退休储蓄中，首次实施78%加入、80%坚持到第四次加薪，储蓄率从3.5%升至13.6%",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The essence of the program is straightforward: people commit in advance to allocating a portion of their future salary increases toward retirement savings.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "(1) a high proportion (78 percent) of those offered the plan joined, (2) the vast majority of those enrolled in the SMarT plan (80 percent) remained in it through the fourth pay raise, and (3) the average saving rates for SMarT program participants increased from 3.5 percent to 13.6 percent over the course of 40 months.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "Of the 207 participants who were unwilling to accept the saving rate proposed by the investment consultant, 162 (78 percent) agreed to join the SMarT plan. ... the vast majority of the participants (80 percent) have remained in the plan through four pay raises.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.A 参与数据段"
+        }
+      ]
+    },
+    {
+      "claim": "美国家庭退休财富主要靠三种'低意志力'储蓄机制积累：社会保障、养老金和房屋净值；塞勒将低储蓄定性为'错误'——人们自己也会承认",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "the typical middle-class American household accumulates retirement wealth primarily in three forms: social security, pensions, and home equity. Neither social security nor defined-benefit pension plans require willpower on the part of participants, and once a home is purchased, the monthly mortgage bill provides a useful discipline in building up equity.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§I Introduction段"
+        },
+        {
+          "excerpt": "By calling their low-saving behavior a mistake, we mean that they might characterize the action the same way, just as someone who is 100 pounds overweight might agree that he or she weighs too much.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§I Introduction段"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒用Raiffa的三种分析框架定位SMarT为'好的处方性储蓄建议'——不是简单处方（瞄准左边）而是帮助球手打直",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Raiffa (1982) suggested that economists and other social scientists could benefit from distinguishing three different kinds of analyses: normative, descriptive, and prescriptive. ... This paper is an attempt at good prescriptive savings advice.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II Prescriptive Approach段"
+        },
+        {
+          "excerpt": "For a golfer who hits a slice (in which the ball tails off to the right) when he would prefer to hit the ball straight, simple prescriptive advice might be to aim to the left. Better prescriptive advice would help the golfer hit the ball straight. This paper is an attempt at good prescriptive savings advice.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II Prescriptive Approach段"
+        }
+      ]
+    },
+    {
+      "claim": "储蓄不足的三个原因：计算正确储蓄率困难、缺乏自控力（三分之二401k参与者认为储蓄率太低）、拖延症（35%打算增加但86%四个月后仍未行动）",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "two-thirds of their sample of 401(k) participants think that their savings rate is \"too low.\" ... 35 percent express an intention to increase their savings rate in the next few months, but 86 percent of these well-intended savers have made no changes to their plan four months later.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II 储蓄不足原因分析段"
+        }
+      ]
+    },
+    {
+      "claim": "双曲贴现的两种代理人类型：精明型（意识到问题并采取措施）和天真型（未充分认识严重性），实际行为最可能介于两者之间",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Sophisticated agents (modeled by Laibson) realize that they have hyperbolic preferences and take steps to deal with the problem, whereas naive agents fail to appreciate at least the extent of their problem (see O'Donoghue and Rabin 1999, 2001). Actual behavior is likely best described by something between naivete and sophistication.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II 双曲贴现模型段"
+        }
+      ]
+    },
+    {
+      "claim": "TIAA-CREF数据显示退休储蓄中的极端惯性：参与者一生中资产配置变更次数中位数为零",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "Samuelson and Zeckhauser report on the behavior of the 1987 participants of TIAA-CREF ... Their analysis reveals that the median number of changes in the asset allocation over the lifetime was zero! In other words, more than half the participants in TIAA-CREF reached retirement with the same asset allocation as the day they became eligible for the plan.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II 现状偏见段"
+        }
+      ]
+    },
+    {
+      "claim": "自动加入计划的悖论：参与率从49%升至86%但默认储蓄率（3%）降低了许多人本会选择的更高比率",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "automatic enrollment plans have proved to be remarkably successful in increasing enrollments. In one plan studied by Madrian and Shea (1999), participation rates for newly eligible workers increased from 49 percent to 86 percent. But there is a downside to automatic enrollment. The very inertia that explains why automatic enrollment increases participation rates can also lower the saving rates of those who do participate.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II 自动加入计划段"
+        }
+      ]
+    },
+    {
+      "claim": "标准经济学预测自动加入应几乎无效（填表成本相对于财富积累收益微不足道），但行为经济学正确预测了惯性的巨大影响",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Standard economic theory would predict that this change would have virtually no effect on saving behavior. The costs of actively joining the plan (typically filling out a short form) are trivial compared with the potential benefits of the tax-free accumulation of wealth.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II 自动加入计划段"
+        }
+      ]
+    },
+    {
+      "claim": "损失厌恶应用于储蓄：家庭习惯特定可支配收入后将减少视为损失；损失厌恶与货币幻觉结合使加薪时成为增加储蓄的理想时机",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Loss aversion affects savings because once households get used to a particular level of disposable income, they tend to view reductions in that level as a loss. Thus households may be reluctant to increase their contributions to the savings plan because they do not want to experience this cut in take-home pay.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II 损失厌恶与储蓄段"
+        },
+        {
+          "excerpt": "One group of subjects was told that there was no inflation in the community and was asked whether a 7 percent wage cut was \"fair.\" A majority, 62 percent, judged the action to be unfair. Another group was told that there was 12 percent inflation and was asked to judge the perceived fairness of a 5 percent raise. Here, only 22 percent thought the action was unfair. ... The combination of loss aversion and money illusion suggests that pay increases may provide a propitious time to try to get workers to save more.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II 货币幻觉与储蓄时机段"
+        }
+      ]
+    },
+    {
+      "claim": "储蓄不足的四个行为因素：有限理性、自控力不足、拖延（产生惯性）、名义损失厌恶——SMarT瞄准的是知道自己应多存但拖延的家庭",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "the behavioral analysis stresses four factors that are important explanatory factors: bounded rationality, self-control, procrastination (which produces inertia), and nominal loss aversion. These households are not sure how much they should be saving, though they realize that it is probably more than they are doing now; but they procrastinate about saving more now, thinking that they will get to it later.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§II 总结段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT四个核心要素：加薪前较长时间邀请、加薪后第一个工资单开始增加、每次加薪持续增加直至上限、随时可退出；许多参数需通过实际实施来学习",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The plan has four ingredients. First, employees are approached about increasing their contribution rates a considerable time before their scheduled pay increase. Because of hyperbolic discounting, the lag between the sign-up and the start-up dates should be as long as feasible. Second, if employees join, their contribution to the plan is increased beginning with the first paycheck after a raise. This feature mitigates the perceived loss aversion of a cut in take-home pay. Third, the contribution rate continues to increase on each scheduled raise until the contribution rate reaches a preset maximum. ... Fourth, the employee can opt out of the plan at any time.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III The SMarT Program段"
+        },
+        {
+          "excerpt": "It is not possible to say on theoretical grounds which features are most important, nor can theory tell us the ideal levels to select for many of the parameters that must be picked ... In this type of field research, we, the academic investigators, have quite limited control over many of the details, especially if compared with a laboratory environment. Nevertheless, it is not possible to study actual household savings behavior in a lab.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III 参数不确定性段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT首次实施背景：中等规模制造公司，低薪员工的低储蓄率拖累了高薪员工的缴费上限；投资顾问的经验说明标准储蓄建议对靠工资过活的普通工人无效",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "management was concerned that some of the workers might not be saving enough to support themselves when they retired. Second, the company was being constrained by U.S. Department of Labor nondiscrimination rules that restrict the proportion of benefits that can be paid to the higher-paid employees in the firm. Since the lower-paid workers were the ones who were typically saving little or nothing, the executives were not able to contribute the maximum normally allowed to their own plan.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.A First Implementation段"
+        },
+        {
+          "excerpt": "In most cases with rank and file workers, the computer program calculates that workers contribute the maximum and makes that recommendation. As a practical matter, when the average worker receives this recommendation from the computer program or the \"financial planner,\" s/he shuts down and does nothing. ... the majority of workers live paycheck to paycheck and can barely make ends meet, and they tell you that immediately.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.A 投资顾问引用段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT退出模式：第一次加薪前仅2%退出，多数退出者受同一个不赞成SMarT的主管管理，暗示社会影响在储蓄决策中起重要作用；即使退出者也保留已达到的储蓄率",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "even those who withdrew from the plan did not reduce their contribution rates to the original levels; they merely stopped the future increases from taking place. So, even these workers are saving significantly more than they were before joining the plan.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.A 退出行为段"
+        },
+        {
+          "excerpt": "Only three participants (2 percent) dropped out of the plan prior to the second pay raise, with 23 more (14 percent) dropping out between the second and third pay raises and six more (4 percent) between the third and forth pay raises.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.A 退出数据段"
+        },
+        {
+          "excerpt": "most of the employees who dropped out between the second and third pay raises worked for a single supervisor who apparently disapproved of the SMarT plan.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.A 脚注8"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT研究虽非随机分配，但两个理由排除了'储蓄偏好'解释：SMarT参与者在加入前储蓄极少；SMarT仅提供给不愿立即增加储蓄的人群",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the SMarT participants had been saving very little before joining the plan, so one would have to believe that their taste for saving was newly acquired. Second, recall that the SMarT plan was offered only to those employees who were unwilling to increase their savings rate immediately by 5 percent.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.A 自选择偏误讨论段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT参与者储蓄率远超接受即时建议者（13.6% vs 8.8%），信息本身不能解释效应——所有员工获得相同信息",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "Those who were unwilling to accept the advice were, not surprisingly, starting from a lower base of 3.5 percent and so would find the advice harder to adopt. Once they got their first pay raise, however, their saving rate jumped to 6.5 percent, and after three more raises, it was up 13.6 percent. Those participating in the SMarT plan ended up with a much higher saving rate than those who accepted the consultant's recommendation.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.A 储蓄率结果段"
+        },
+        {
+          "excerpt": "All the employees who agreed to meet with the consultant received this information, however, including those who accepted the consultant's advice to increase their savings rate immediately. We find it difficult to construct an information-based explanation for the subsequent increases in savings rates for those enrolled in the SMarT plan.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.A 排除替代解释段"
+        }
+      ]
+    },
+    {
+      "claim": "Ispat Inland钢铁公司极简实施（仅联名信和海报）仍有18%加入；飞利浦实施显示允许自选增长率时54%选择最低1%，印证现状偏见",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "there was no financial consultant hired to meet one on one with employees. Instead, employees received a letter sent jointly by the human resources department and the union inviting them to join the SMarT program. There were no follow-up letters, no financial education seminars, and no other expenditures other than that single invitation letter and a few posters displayed in the cafeteria. ... 615 (18.1 percent) joined the SMarT plan.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.B Ispat Inland实施段"
+        },
+        {
+          "excerpt": "First, increases in savings were not necessarily linked to pay raises. Instead, employees were told that if they joined the plan, their saving rates would go up on April 1 of each year whether or not they received a pay raise. ... Second, employees were allowed to pick the rate at which their savings would increase: one, two, or three percentage points per year. ... Fifty-four percent of the SMarT enrollees elected an annual increase of 1 percent, 35 percent elected the default of 2 percent, and the remaining 11 percent elected 3 percent.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.C Philips设计变化段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT对未参加401k的员工也有吸引力（8.2%通过SMarT加入计划），可吸引原本完全不储蓄的人群",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "In addition, 165 employees joined SMarT who were not yet enrolled in the 401(k) plan; this was 8.2 percent of those employees who were eligible to participate in the 401(k) plan but had not yet enrolled.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.B Ispat参与数据段"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒讨论提供选择vs强制默认的两难：允许选择的好处是适配，坏处是增加复杂性可能阻碍加入",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "There are pros and cons to offering this choice to participants, as opposed to just picking a single rate of increase. The obvious advantage is that employees can select the rate of increase they like best. The disadvantage is that simply being forced to make such a choice adds another layer of complexity that could discourage some potential enrollees. We included the default 2 percent rate of increase with the goal of mitigating this potential impediment to enrolling. Only a controlled experiment will be able to determine whether the pros of offering choice outweigh the cons.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.C 脚注12"
+        }
+      ]
+    },
+    {
+      "claim": "飞利浦研究非完美对照实验（两部门业务和地理差异），但仍可合理地与28个控制部门比较；强制参加研讨会的部门SMarT参与率远高于自愿部门",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Division A is in the technology business, is located in the desert Southwest, and was suffering through a severe recession at the time of the implementation, whereas Division O focuses on consumer products, is located in the Pacific Northwest, and has been doing well economically. Thus the two divisions do not represent a true controlled experiment in comparison with each other, though they can reasonably be compared with the other control divisions, at least in terms of saving rates.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.C 部门可比性讨论段"
+        },
+        {
+          "excerpt": "Whether because of the \"requirement\" or other reasons, 60 percent of the employees attended the seminar, whereas only 40 percent did so in Division A.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.C 出席率段"
+        }
+      ]
+    },
+    {
+      "claim": "控制组储蓄率仅从2.90%微升至3.29%，SMarT参与组约翻倍；存在同伴效应溢出——即使未加入SMarT的员工也提高了储蓄率",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "As expected, not much is happening at the remaining 28 divisions of Philips Electronics that served as our control group. In contrast, saving rates for those who were already enrolled in the 401(k) plan and joined the SMarT plan went up, as expected, by about 1.5 percent (the weighted-average proportional increase was 48 percent).",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.C 结果段"
+        },
+        {
+          "excerpt": "there also seemed to be a spillover effect on those who did not join the SMarT plan. In the two experimental divisions in which SMarT was introduced, even those employees who did not join SMarT increased their savings rates more than was observed in the control group.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.C 溢出效应段"
+        }
+      ]
+    },
+    {
+      "claim": "一对一财务顾问的惊人效果：81%加入SMarT，但选择性问题使精确因果推断不可能",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "41.8 percent of the employees at Division O met with the financial planner, and 81 percent of those who attended such a meeting actually joined SMarT. Of course, electing to meet with the planner might by itself signal a desire to save, so it is not possible to ascertain the incremental effect of the financial planner on either saving rates or SMarT participation.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.C 财务顾问效果段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT参与者画像：性别和年龄不重要，年收入低于$50,000的员工参与率更高——恰好帮助了最需要帮助的低收入群体",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Neither gender nor age appears to be an important determining factor. Employees with four to five years of tenure working for Philips were the most likely to join, as were those with annual incomes of less than $50,000.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.C 参与者画像段"
+        }
+      ]
+    },
+    {
+      "claim": "从飞利浦经验中提炼的教训：储蓄增加与加薪挂钩虽理想但可能非必须；一对一财务顾问是极有效但昂贵的招募工具",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "First, the SMarT design feature linking savings increases to pay increases, while desirable, may not be essential. This is important, since some firms find it difficult to coordinate the savings plan with the salary increases. Second, one-on-one meetings with a financial planner appear to be a very effective (though costly) recruitment tool, though selection problems make it difficult to parse out the precise value of this intervention.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§III.C 初步教训段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT对退休收入替代率的影响模拟：替代率显著提升（如25岁$25k收入者从57%升至108%），几乎没有过度储蓄证据",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "This raises the question of what effect SMarT has on savings adequacy. Is this increase enough to make a substantial difference in the standard of living the participants will have in retirement? If so, is it possible that we have been \"too successful\" and have somehow duped the participants into saving too much?",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§IV SMarT and Savings Adequacy段"
+        },
+        {
+          "excerpt": "most economists writing on this issue consider replacement rates near 100 percent adequate and judge replacement rates below 70 percent to be too low.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§IV 替代率标准段"
+        },
+        {
+          "excerpt": "We assume that employees are saving 4 percent in the 401(k) plan when they join the SMarT plan and that saving rates are capped at 14 percent. We also assume that the employer matches the employee's contributions at a 50 percent rate on the first 6 percent of employee contributions ... we assume that non-401(k) employee savings are half the existing balance in the 401(k) account ... employees choose a portfolio mix of 60 percent stocks and 40 percent bonds.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§IV 假设段"
+        },
+        {
+          "excerpt": "Panel A of table 6 shows the expected income replacement rates for our employees before they join the SMarT plan, all of which are between 43 and 57 percent...Panel B shows that replacement income rates are considerably higher with the SMarT plan, especially for those joining the plan when young.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Table 6之后分析段"
+        },
+        {
+          "excerpt": "expected replacement rates exceed 100 percent in just one cell (108 percent replacement for those making $25,000 per year who join the plan at age 25), so there does not appear to be evidence that we have induced people to save too much.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Table 6分析段末尾"
+        }
+      ]
+    },
+    {
+      "claim": "家庭实际偏好递增消费曲线，因此即使100%替代率也可能不够",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "One might think that a 100 percent replacement rate would be too high, suggesting that agents are very patient. However, survey evidence suggests that households desire an increasing consumption profile. Laibson (1999) offers a cogent discussion of this issue and reports that economists also prefer rising profiles for themselves. If agents want a rising profile, then even a 100 percent replacement rate may be too low.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "§IV 脚注14"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT参与率受财务顾问接触的强烈影响（81% vs 7.5%），教育研讨会影响巨大（参加46% vs 未参加5.6%）",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Participated in education seminar: No 5.6%, Yes 46.0%. Met with financial advisor: No 7.5%, Yes 81.0%.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Table 5"
+        },
+        {
+          "excerpt": "Met with financial advisor:\nNo 213 213 16 7.5\nYes 153 153 124 81.0",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Table 5, Met with financial advisor部分"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒刻意回避对政策好坏的价值判断，聚焦于SMarT能否实质性贡献提高储蓄率的实证问题",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We do not take any stand on whether such policies are good for the economy but, instead, ask a different question. If it were desirable to increase the personal savings rate, could widespread adoption of the SMarT plan make a substantial contribution to meeting this goal?",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Section V开头段"
+        }
+      ]
+    },
+    {
+      "claim": "三种SMarT推广策略模拟：自动注册结合SMarT效果最佳（Plan C，五年内储蓄率从5%升至10.9%），远超一对一咨询和直邮方案",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Plan A is based on the first implementation, which used one-on-one interactions with a financial consultant...we assume that 80 percent of those who are currently participating in the savings program will join the SMarT plan...Plan B is based on the experience at Ispat, where the SMarT plan was marketed to employees only with a single direct-mail campaign rather than personal contact...we project 20 percent enrollment rates...Plan C is to combine the SMarT program with automatic enrollment...we estimate that 90 percent of the employees would join the program in this design",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Plan A/B/C描述段"
+        },
+        {
+          "excerpt": "In all the simulations, we assume that 5 percent of enrollees drop out of SMarT each year, leaving their savings rate at the level they had obtained up to that point.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "模拟假设段"
+        },
+        {
+          "excerpt": "if employees were automatically enrolled in the program, as in plan C, the average saving rate is projected to increase from 5.0 percent to 10.9 percent within ﬁve years (see panel C).",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Table 7讨论段，Plan C结果"
+        },
+        {
+          "excerpt": "we calculate that each one-percentage-point increase in the employee saving rate would translate into $250 million of additional annual contributions for the Hewitt sample. Extrapolating from our sample of half a million individuals to the universe of 50–60 million individuals with access to 401(k) plans, we estimate roughly $25 billion of additional annual contributions for each 1 percent increase. So if a 5 percent increase were obtained, this would increase personal saving by $125 billion per year.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "储蓄率影响估算段"
+        },
+        {
+          "excerpt": "With plan A, which uses one-on-one interaction with a financial consultant and the 2 percent per year rate of increase, the SMarT program could boost the overall saving rate from 5.0 percent to 9.7 percent within five years (see panel A). When one switches to the cheaper method of one-shot mailing, the effects are much smaller (see panel B).",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Table 7分析段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT利用惯性和拖延倾向——正是这些行为特征导致人们推迟储蓄，SMarT将其反过来为己所用",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Of course, one reason why the SMarT plan works so well is that inertia is so powerful. Once people enroll in the plan, few opt out. The SMarT plan takes precisely the same behavioral tendency that induces people to postpone saving indeﬁnitely (i.e., procrastination and inertia) and puts it to use.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "VI. Conclusions段落"
+        },
+        {
+          "excerpt": "Of course, one reason why the SMarT plan works so well is that inertia is so powerful. Once people enroll in the plan, few opt out. The SMarT plan takes precisely the same behavioral tendency that induces people to postpone saving indefinitely (i.e., procrastination and inertia) and puts it to use.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Section VI Conclusions第2段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT的大部分储蓄增量来自原本几乎不储蓄的人群，因此可以认为是'新储蓄'而非从其他储蓄形式的替代",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "much of the gains from the SMarT program come from those who are saving little or nothing now. This means that the increase can be presumed to be virtually all \"new\" savings, as opposed to substitution from other (possibly taxable) forms.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "储蓄率影响估算段"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒积极辩护自由意志家长主义：SMarT和自动注册虽是家长主义的但不涉及强制，只是改变默认预设",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We agree that these plans are paternalistic, but since no coercion is involved, they constitute what Sunstein and Thaler (2003) call \"libertarian paternalism.\" Libertarian paternalism is a philosophy that advocates designing institutions that help people make better decisions but do not impinge on their freedom to choose.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "VI. Conclusions末段"
+        },
+        {
+          "excerpt": "Neither arrangement infringes on choice (so both are libertarian), but one produces higher savings rates and so might be considered paternalistic. The SMarT plan is even less intrusive than automatic enrollment since participants have to take some action to enroll, and it is even more successful at getting people to save.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Section VI Conclusions第4-5段"
+        }
+      ]
+    },
+    {
+      "claim": "SMarT是对行为经济学批评的有力回应：不只是实验室小赌注研究或事后解释异常现象，而是用行为原理设计干预方案并在真实世界验证",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Finally, we hope that this study serves as a valid reply to two frequent critiques of behavioral economics: the reliance on laboratory studies using modest stakes and the ex post explanation of anomalous facts, drawing on what is alleged to be a limitless store of potential behavioral explanations. Here, we have used behavioral principles to design a plan to increase savings rates and tested the idea in the real world.",
+          "source_file": "paper_Save More Tomorrow™_ Using Behavioral Economics to Increase.md",
+          "location": "Section VI末段"
+        }
+      ]
+    },
+    {
+      "claim": "1/n多元化策略：投资者将缴费平均分配到所有基金选项，导致资产配置高度取决于可选基金组合而非个人风险偏好；有悠久历史渊源甚至可追溯到《塔木德》",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We show that some investors follow the \"1/n strategy\": they divide their contributions evenly across the funds offered in the plan. Consistent with this naive notion of diversification, we find that the proportion invested in stocks depends strongly on the proportion of stock funds in the plan.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "The use of the 1/n rule has a long history in asset allocation. In fact, it was recommended in the Talmud. Writing in about the fourth century, a Rabbi Issac bar Aha gave the following asset-allocation advice: \"A man should always place his money, a third into land, a third into merchandise, and keep a third at hand.\"",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Introduction第4段"
+        }
+      ]
+    },
+    {
+      "claim": "评估投资决策质量的间接方法：不从个案判断最优性，而是寻找基于天真多元化概念的系统性证据",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "We do not attempt to evaluate asset allocations on an individual case-by-case basis because nearly any combination of stocks and bonds could, in principle, be consistent with the maximization of some utility function. Rather, in this paper we look for evidence that participants make decisions that seem to be based on naive (or confused) notions of diversification.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Introduction第3段"
+        }
+      ]
+    },
+    {
+      "claim": "TIAA-CREF最流行的缴费分配是50-50，连马科维茨本人也承认使用这一规则——说明1/n启发式是深层的认知默认策略",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "By far, the most common allocation of contributions was 50-50; about half of the participants chose this precise allocation of new funds (William Samuelson and Richard J. Zeckhauser, 1988). Indeed, Harry Markowitz, a pioneer in the development of modern portfolio theory, reports that he used this rule himself. He justifies his choice on psychological grounds: \"My intention was to minimize my future regret. So I split my contributions fifty-fifty between bonds and equities\"",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Introduction第5段"
+        }
+      ]
+    },
+    {
+      "claim": "万圣节糖果实验展示多元化偏差：同时选择时100%选不同糖果，依次选择时仅48%，尽管糖果最终都倒进同一个袋子",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The results showed a strong diversification bias in the simultaneous choice condition: every child selected one of each candy. In contrast, only 48 percent of the children in the sequential choice condition picked different candies. This result is striking since in either case the candies are dumped into a bag and consumed later. It is the portfolio in the bag that matters, not the portfolio selected at each house.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Introduction第7段"
+        }
+      ]
+    },
+    {
+      "claim": "基金选项构成对投资配置有惊人影响：TWA飞行员（5股票1债券）75%投股票，加州大学（1股票4债券）仅34%投股票",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "The TWA plan offers five core stock funds and one core bond fund...The participants in this plan invest 75 percent of their money in stocks which is well above the national average of 57 percent...The University of California plan, on the other hand, offers one stock fund and four bond funds, and employees in this plan invest only 34 percent in stocks, well below the national average.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Introduction倒数第3段"
+        }
+      ]
+    },
+    {
+      "claim": "对照实验排除风险偏好解释：同一批员工面对不同基金组合时改变配置，证明是选项结构而非风险偏好驱动决策",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "We find that when they chose from a set of mostly bond funds the UC employees selected an asset allocation heavy in bonds, but when they chose from a mostly stock mix as in the TWA plan they chose to invest mostly in stocks.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Introduction倒数第3段"
+        }
+      ]
+    },
+    {
+      "claim": "Kahneman合作的未发表实验显示多元化偏差的顽固性：在赔率不等的抛硬币游戏中大多数人仍均匀分配，即使重复20次也不改变",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In unpublished research, Daniel Kahneman and Thaler ran a similar experiment. The experimenter had two envelopes, one labeled Heads, the other Tails. Each envelope contained 20 numbered cards. Subjects were given a form with two rows of numbers, also labeled Heads and Tails. They were told to circle five numbers...rational subjects should only circle numbers in the Heads row but most subjects circled three numbers in the Heads row and two in the Tails row. Repeating the game 20 times did not help.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "脚注3"
+        }
+      ]
+    },
+    {
+      "claim": "问卷实验证实1/n策略的双重表现：50-50分配始终是众数，但最终配置强烈依赖于基金组合",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "In every condition there was a substantial group that elected the 50-50 allocation. In the first two conditions the 50-50 allocation is the modal choice, attracting 34 percent of the contributions in the first (stocks and bonds) condition and 21 percent in the second (stocks and balanced)...Note that the popularity of the 1/n allocation is not very sensitive to the funds offered.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Section I.B 结果段"
+        },
+        {
+          "excerpt": "When choosing between stocks and bonds, the mean allocation to stocks is 54 percent. When choosing between a stock fund and a balanced fund the allocation to stocks rises to 73 percent, whereas when choosing between the bond fund and the balanced fund the mean percent in stocks falls to 35 percent.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Section I.B 结果段"
+        },
+        {
+          "excerpt": "In condition 2 the implied allocation to the stock fund is 21 percent but they put 46 percent of their money in this fund. In condition 3 the implied allocation to the balanced fund is 87 percent but the",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Section I结果分析段"
+        }
+      ]
+    },
+    {
+      "claim": "图形化历史收益的复制实验排除了'无知解释'：即使清楚看到收益差异，1/n启发式依然存在",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "describe the investment options. Subjects might have ended up with the 50-50 allocation, simply because they do not know the difference between stocks and bonds. We have therefore replicated",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Section I图形实验引入段"
+        },
+        {
+          "excerpt": "retirement contributions between five funds labeled Fund A, B, C, D, and E. The manipulation in this experiment is the proportion of fixed-income and stock funds. In condition 1, there are",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Section I五基金实验段"
+        }
+      ]
+    },
+    {
+      "claim": "实际退休计划中基金选项结构会无意中影响配置：为资深投资者提供大量股票基金可能让天真新参与者投入过多股票",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "investors who want lots of choices can find that naive new participants are investing more in stocks simply because there are proportionally more equity options available.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Section II引言段"
+        }
+      ]
+    },
+    {
+      "claim": "170个计划的横截面分析证实股票基金相对数量与股票投资比例正相关；回归分析显示将一只债券基金换为股票基金可提高股票配置3.67-6.31%",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Consistent with the diversification heuristic, there is a positive correlation between the relative number of equity funds and the percentage invested in equities. An ANOVA test for the",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Section II横截面分析段"
+        },
+        {
+          "excerpt": "fixed-income and equity funds and a total of ten funds. Replacing one of the fixed-income funds with an equity fund is expected to increase the allocation to equities by 3.67 percent to 6.31",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Section II回归分析段"
+        },
+        {
+          "excerpt": "preferences of the employees) is greatly reduced if we switch from cross-sectional analysis across firms to a time-series analysis of changes in the asset mix within plans. To this end we",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Section II时间序列分析引入段"
+        }
+      ]
+    },
+    {
+      "claim": "员工将公司股票单独分类而非归入股票类，导致含公司股票的计划中股权配置比例远高于不含的计划",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "It appears that the mental accounting of these investments involves putting the company stock into its own category separate from other equities. The diversiﬁcation heuristic then pushes people toward the ubiquitous 50-50 split of the remaining assets. The result is that employees in plans that offer company stock have over 71 percent of their assets in equities (including the company stock) while those in plans without company stock have about 49 percent in stock.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Summary前段"
+        }
+      ]
+    },
+    {
+      "claim": "天真分散化的代价主要不在于偏离有效前沿（1/n通常也能获得合理分散），而在于沿有效前沿选择了不恰当的风险点，长期可导致25-40%效用损失",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "The cost of the ﬁrst type of error is almost certainly quite small. Even the very naive 1/n strategy will usually end up with a well-diversiﬁed portfolio that is reasonably close to some point on the frontier... In contrast, the second inefﬁciency—i.e., picking an inappropriate point on the efﬁcient frontier—can potentially be quite signiﬁcant.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Is Naive Diversification Costly?段"
+        },
+        {
+          "excerpt": "Using a 20-year investment horizon, an individual who switched from an equity-rich plan that led to an 80-percent investment in stocks to a bond-rich plan that produced a 30-percent allocation to stocks would suffer a utility loss of 25 percent. If the horizon is increased to 30 years then the welfare loss can be as much as 35–40 percent.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Is Naive Diversification Costly?段"
+        }
+      ]
+    },
+    {
+      "claim": "天真分散化的核心发现总结：1/n启发式使计划提供的基金组合强烈影响最终资产配置；计划设计面临提供过多债券或股票基金的根本困境",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "One such rule is the diversiﬁcation heuristic or its extreme form, the 1/n heuristic. Consistent with the diversiﬁcation heuristic, the experimental and archival evidence suggests that some people spread their contributions evenly across the investment options irrespective of the particular mix of options in the plan. One of the implications is that the array of funds offered to plan participants can have a strong inﬂuence on the asset allocation people select; as the number of stock funds increases, so does the allocation to equities.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Summary and Discussion段"
+        },
+        {
+          "excerpt": "What is the right mix of ﬁxed-income and equity funds to offer? If the plan offers many ﬁxed-income funds the participants might invest too conservatively. Similarly, if the plan offers many equity funds the employees might invest too aggressively.",
+          "source_file": "paper_Naive Diversification Strategies in Defined Contribution Sav.md",
+          "location": "Summary and Discussion段"
+        }
+      ]
+    },
+    {
+      "claim": "心理账户的定义：个体和家庭用于组织、评估和追踪财务活动的认知操作集合，包含结果感知、资金分类标记和账户评估频率三个核心组件；核心意义在于违反经济学可替代性原则",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Mental accounting is the set of cognitive operations used by individuals and households to organize, evaluate, and keep track of ﬁnancial activities. Three components of mental accounting receive the most attention. This ﬁrst captures how outcomes are perceived and experienced, and how decisions are made and subsequently evaluated. A second component of mental accounting involves the assignment of activities to speciﬁc accounts. The third component of mental accounting concerns the frequency with which accounts are evaluated and `choice bracketing'.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "ABSTRACT段"
+        },
+        {
+          "excerpt": "Each of the components of mental accounting violates the economic principle of fungibility. As a result, mental accounting inﬂuences choice, that is, it matters.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "ABSTRACT段"
+        },
+        {
+          "excerpt": "They do so because mental accounting violates the economic notion of fungibility. Money in one mental account is not a perfect substitute for money in another account. Because of violations of fungibility, mental accounting matters.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "INTRODUCTION段"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒用生活轶事（教授从慈善捐款扣除意外损失、瑞士演讲费抵消高物价、被褥促销）生动说明心理账户运作",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A former colleague of mine, a professor of ﬁnance, prides himself on being a thoroughly rational man. Long ago he adopted a clever strategy to deal with life's misfortunes. At the beginning of each year he establishes a target donation to the local United Way charity. Then, if anything untoward happens to him during the year, for example an undeserved speeding ticket, he simply deducts this loss from the United Way account.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "轶事段1"
+        },
+        {
+          "excerpt": "My wife and I comforted ourselves that I had received a fee for the talk that would easily cover the outrageous prices for hotels and meals. Had I received the same fee a week earlier for a talk in New York though, the vacation would have been much less enjoyable.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "轶事段2"
+        },
+        {
+          "excerpt": "My friend bought the king-size quilt and was quite pleased with her purchase, though the quilt did hang a bit over the sides of her double bed.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "轶事段3"
+        }
+      ]
+    },
+    {
+      "claim": "心理账户并非中性规则，账户分类、是否合并结果、多久结账都会改变人们对选择的评价",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "understanding mental accounting processes helps us understand choice because mental accounting rules are not neutral. That is, accounting decisions such as to which category to assign a purchase, whether to combine an outcome with others in that category, and how often to balance the `books' can affect the perceived attractiveness of choices.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "INTRODUCTION末段"
+        }
+      ]
+    },
+    {
+      "claim": "塞勒用前景理论价值函数解释心理账户中的结果感知：参考点依赖、收益凹损失凸、损失厌恶",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The value function has three important features, each of which captures an essential element of mental accounting: (1) The value function is deﬁned over gains and losses relative to some reference point... (2) Both the gain and loss functions display diminishing sensitivity... (3) Loss aversion. Losing $100 hurts more than gaining $100 yields pleasure",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "The value function段"
+        }
+      ]
+    },
+    {
+      "claim": "夹克与计算器实验证明心理账户是主题性的（topical）：省5美元的意愿取决于商品价格背景而非绝对节省额",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "most people say that they will travel to save the $5 when the item costs $15 but not when it costs $125. If people were using a minimal account frame they would be just asking themselves whether they are willing to drive 20 minutes to save $5, and would give the same answer in either version.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Decision frames段"
+        }
+      ]
+    },
+    {
+      "claim": "享乐框架四原则：分开报告收益、合并报告损失、将小损失与大收益合并、将小收益与大损失分开",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "(1) Segregate gains (because the gain function is concave). (2) Integrate losses (because the loss function is convex). (3) Integrate smaller losses with larger gains (to offset loss aversion). (4) Segregate small gains (silver linings) from larger losses (because the gain function is steepest at the origin, the utility of a small gain can exceed the utility of slightly reducing a large loss).",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Hedonic framing段"
+        }
+      ]
+    },
+    {
+      "claim": "框架效应在现实中有效正是因为人们做决策是碎片化的、受情境影响的，而非采用基于财富的综合分析",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "This example illustrates an important general point - the way a decision is framed will not alter choices if the decision maker is using a comprehensive, wealth-based analysis. Framing does alter choices in the real world because people make decisions piecemeal, inﬂuenced by the context of the choice.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Decision frames段"
+        }
+      ]
+    },
+    {
+      "claim": "享乐编辑假说在收益方面成立但在损失方面不成立——人们倾向于将损失也分开体验而非合并，与价值函数凸性预测矛盾",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "For gains, the hedonic editing hypothesis was supported. A large majority of subjects thought temporal separation of gains produced more happiness. But, in contrast to the hedonic editing hypothesis, subjects thought separating losses was also a good idea.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "The failure of the hedonic editing hypothesis段"
+        },
+        {
+          "excerpt": "By wishing to spread out losses, subjects seem to be suggesting that they think that a prior loss makes them more sensitive towards subsequent losses, rather than the other way around. In other words, subjects are telling us that they are unable to simply add one loss to another (inside the value function parentheses).",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "The failure of the hedonic editing hypothesis段"
+        }
+      ]
+    },
+    {
+      "claim": "购买决策中存在获得效用（消费者剩余）和交易效用（划算感）两种效用；享乐框架原则在营销中有实用价值（如返现vs降价）",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "I proposed that consumers get two kinds of utility from a purchase: acquisition utility and transaction utility. Acquisition utility is a measure of the value of the good obtained relative to its price, similar to the economic concept of consumer surplus. Transaction utility measures the perceived value of the `deal'. It is deﬁned as the difference between the amount paid and the `reference price' for the good.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Transaction utility段"
+        },
+        {
+          "excerpt": "These principles are quite useful in thinking about marketing issues... For example, framing a sale as a `rebate' rather than a temporary price reduction might facilitate the segregation of the gain in line with principle (4).",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Hedonic framing段末"
+        }
+      ]
+    },
+    {
+      "claim": "沙滩啤酒实验和买鞋思想实验说明交易效用和支付折旧的概念",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "You are lying on the beach on a hot day... A companion gets up to go make a phone call and offers to bring back a beer from the only nearby place where beer is sold (a fancy resort hotel) [a small, run-down grocery store]. He says that the beer might be expensive and so asks how much you are willing to pay for the beer.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Transaction utility段"
+        },
+        {
+          "excerpt": "(1) The more you paid for the shoes, the more times you will try to wear them... (2) Eventually you stop wearing the shoes, but you do not throw them away. The more you paid for the shoes, the longer they sit in the back of your closet before you throw them away... (3) At some point, you throw the shoes away, regardless of what they cost, the payment having been fully `depreciated'.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Advance purchases段"
+        }
+      ]
+    },
+    {
+      "claim": "红酒收藏者调查显示超过一半认为喝升值红酒'不花钱'或'赚钱'，揭示了心理账户将投资型消费转化为'免费'体验的倾向",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We gave the respondents ﬁve answers to choose from: $0, $20, $20 plus interest, $75, and -$55... The percentages of respondents choosing each answer were 30, 18, 7, 20 and 25. Most of the respondents who selected the economically correct answer ($75) were in fact economists... More than half the respondents report that drinking the bottle either costs nothing or actually saves them money!",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "红酒收藏者调查段"
+        }
+      ]
+    },
+    {
+      "claim": "支付折旧概念：沉没成本影响随时间递减，全价购买者上半季出席率显著更高但下半季无差异",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "In the ﬁrst half of the season, those who paid full price attended signiﬁcantly more plays than those who received discounts, but in the second half of the season there was no difference among the groups. People do ignore sunk costs, eventually.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Advance purchases段"
+        }
+      ]
+    },
+    {
+      "claim": "支付解耦：预付或打包定价将购买与消费在时间上分离，降低感知成本（Club Med、健身月费、信用卡）",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Perhaps the best decoupling device is the credit card... A credit card decouples the purchase from the payment in several ways. First, it postpones the payment by a few weeks... Rather, the simple separation of purchase and payment appears to make the payment less salient.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Payment decoupling段"
+        }
+      ]
+    },
+    {
+      "claim": "消费者偏好固定费率而非按次计费（flat rate bias），因为按次计费产生'计价器在跑'的不适感",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "consumers don't like the experience of `having the meter running'. This contributes to what has been called the `ﬂat rate bias' in telecommunications. Most telephone customers elect a ﬂat rate service even though paying by the call would cost them less.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Payment decoupling段"
+        }
+      ]
+    },
+    {
+      "claim": "预算系统既是理性资源配置工具也是自控装置：支出按类别分预算，越紧张的家庭越明确严格；Heath和Soll实验证明预算不可替代性",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Dividing spending into budget categories serves two purposes. First, the budgeting process can facilitate making rational trade-offs between competing uses for funds. Second, the system can act as a self-control device... As a rule, the tighter the budget, the more explicit are the budgeting rules.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "BUDGETING段"
+        },
+        {
+          "excerpt": "Those who had already gone to the basketball game were signiﬁcantly less likely to go to the play than those who had gotten the parking ticket.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Implications of violations of fungibility段"
+        }
+      ]
+    },
+    {
+      "claim": "自控问题下的礼物经济学：当自设预算限制高k值类别时，奢侈品礼物比等额现金更有价值，颠覆'现金礼物最优'的传统建议",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "This analysis is precisely the opposite of the usual economic advice (which says that a gift in kind can be at best as good as a gift of cash, and then only if it were something that the recipient would have bought anyway). Instead the mental accounting analysis suggests that the best gifts are somewhat more luxurious than the recipient normally buys.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Self-control and gift giving段"
+        }
+      ]
+    },
+    {
+      "claim": "财富账户的诱惑层级：流动资产>流动投资>房屋净值>未来收入，边际消费倾向从接近1递减到接近0",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The most tempting class of accounts is in the `current assets' category... Less tempting to spend is money in the `current wealth' category... Next in the hierarchy is home equity... Finally, in the least tempting category of funds lies the `future income' account... the marginal propensity to spend a dollar of wealth in the current income account is nearly 1.0, whereas the propensity to spend a dollar of future income wealth is close to zero.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Wealth accounts段"
+        }
+      ]
+    },
+    {
+      "claim": "行为生命周期模型：将资金转移到更不易花费的心理账户会增加长期储蓄，已被实证验证",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Households who contribute to retirement savings plans display steady increases in the funds in these accounts with no apparent reduction in the funds in other accounts. That is, they save more.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Wealth accounts段"
+        }
+      ]
+    },
+    {
+      "claim": "收入来源标签化：不同来源资金有不同边际消费倾向，构成违反可替代性的第三类来源；'每天几分钱'定价策略利用零用现金类别不入账的特点",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "A third class of violations can be produced by the source of the income",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Income accounting段（文末）"
+        },
+        {
+          "excerpt": "One possibility is that 27 cents is clearly in the petty cash category, so when the expense is framed this way it tends to be compared to other items that are not booked. In contrast, a $100 membership is large enough that it will surely be booked and posted, possibly running into binding budget constraints in the charitable giving category.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Consumption categories段"
+        }
+      ]
+    },
+    {
+      "claim": "庄家钱效应：先前收益刺激同一心理账户内风险偏好增加；先前损失不一定会刺激风险偏好，除非赌局提供回本机会",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "a prior gain can stimulate risk seeking in the same account. We called this phenomenon the `house money' effect since gamblers often refer to money they have won from the casino as house money... one often sees gamblers who have won some money early in the evening put that money into a different pocket from their `own' money; this way each pocket is a separate mental account.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Prior outcomes and risky choice段"
+        },
+        {
+          "excerpt": "prior losses did not stimulate risk seeking unless the gamble offered a chance to break even.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Prior outcomes and risky choice段"
+        },
+        {
+          "excerpt": "betting on long shots increases on the last race of the day, when the average bettor is (i) losing money on the day, and (ii) anxious to break even.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "Prior outcomes and risky choice段"
+        }
+      ]
+    },
+    {
+      "claim": "用心理账户解释股权溢价之谜：损失厌恶投资者若以约13个月为周期评估则对股票与债券无差异；Samuelson赌注悖论需损失厌恶与逐次评估的结合来解决",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We refer to this behavior as myopic loss aversion. The disparaging term `myopic' seems appropriate because the frequent evaluations prevent the investor from adopting a strategy that would be preferred over an appropriately long time horizon.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "equity premium puzzle段"
+        },
+        {
+          "excerpt": "Rabin (1998) shows that expected utility theory implies that someone who turns down Samuelson's bet should also turn down a 50% chance to lose $200 and a 50% chance to win $20,000. More generally, he shows that expected utility theory requires people to be virtually risk neutral for `small' bets. To explain the fact that many people do reject attractive small bets (such as Samuelson's), we need a combination of loss aversion and one-bet-at-a-time mental accounting.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "equity premium puzzle段前"
+        }
+      ]
+    },
+    {
+      "claim": "分散化偏差和1/n启发式扩展到退休投资：同时选择时倾向多样化，但最终资产配置取决于可选基金组合而非风险偏好",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The results showed a strong diversiﬁcation bias in the simultaneous choice condition: every child selected one of each candy. In contrast, only 48% of the children in the sequential choice condition picked different candies. This result is striking, since in either case the candies are dumped into a bag and consumed later.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "diversiﬁcation bias段"
+        },
+        {
+          "excerpt": "we ﬁnd some evidence for an extreme version of this bias that we call the 1/n heuristic. The idea is that when an employee is offered n funds to choose from in her retirement plan, she divides the money evenly among the funds offered... Thus, in a plan that offered one stock fund and one bond fund, the average allocation would be 50% stocks, but if another stock fund were added, the allocation to stocks would jump to two thirds.",
+          "source_file": "paper_Mental accounting matters.md",
+          "location": "diversiﬁcation bias段"
+        }
+      ]
+    },
+    {
+      "claim": "行为生命周期假说（BLC）通过自控力、心理账户和框架效应修正标准生命周期理论，核心假设是家庭将财富视为不可完全替代的三个心理账户：当前收入、当前资产和未来收入",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The key assumption of the BLC theory is that households treat components of their wealth as nonfungible, even in the absence of credit rationing. Specifically, wealth is assumed to be divided into three mental accounts: current income, current assets, and future income. The temptation to spend is assumed to be greatest for current income and least for future income.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "ABSTRACT段"
+        }
+      ]
+    },
+    {
+      "claim": "标准生命周期模型的修正是特设性的，BLC能以更简约的方式解释生命周期模型无法匹配的数据",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Various alterations to the theory have been proposed to help it accommodate the data... These modifications often appear to be ad hoc, since different assumptions are necessary to explain each anomalous empirical result. This paper suggests that the data can be explained in a parsimonious manner by making modifications to the life-cycle theory that are quite different in spirit from those cited above, namely modifications aimed at making the theory more behaviorally realistic.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "INTRODUCTION段"
+        }
+      ]
+    },
+    {
+      "claim": "框架效应引入储蓄理论：财富增量的描述方式影响储蓄率，一次性奖金即使完全可预期也被区别对待于常规收入",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Framing: An implication of the differential temptation of various mental accounts is that the saving rate can be affected by the way in which increments to wealth are `framed' or described. Our model predicts that income paid in the form of a lump sum bonus will be treated differently from regular income even if the bonus is completely anticipated.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "INTRODUCTION段"
+        }
+      ]
+    },
+    {
+      "claim": "Planner-Doer双重偏好结构建模自控力冲突：计划者关注长期最优，执行者极度短视；与脑科学联系（前额叶vs边缘系统）",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Individuals are assumed to behave as if they have two sets of coexisting and mutually inconsistent preferences: one concerned with the long run, and the other with the short run. We refer to the former as the planner and the latter as the doer.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "II. THE MODEL - Self-Control段"
+        },
+        {
+          "excerpt": "The doer is assumed to be pathologically myopic, concerned only with current period consumption.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "II. THE MODEL段"
+        },
+        {
+          "excerpt": "The planner in our model represents the prefrontal cortex. The prefrontal cortex continually interfaces with the limbic system, which is responsible for the generation of emotions. The doer in our model represents the limbic system. It is well known that self-control phenomena center on the interaction between the prefrontal cortex and the limbic system.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "脚注2"
+        }
+      ]
+    },
+    {
+      "claim": "储蓄模型必须包含内在冲突、诱惑和意志力三个被传统经济学忽略的要素",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Incorporating the effort that is present in self-control contexts involves three elements normally excluded from economic analyses: internal conflict, temptation, and willpower. The very term `self-control' implies that the trade-offs between immediate gratification and long-run benefits entail a conflict that is not present in a choice between a white shirt and a blue one.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "II. THE MODEL段"
+        }
+      ]
+    },
+    {
+      "claim": "心理账户系统与大学会计系统惊人相似：区分经常账户和捐赠基金，小额捐赠归收入、大额归捐赠基金、遗嘱捐赠不入账",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "While the mental accounting system described above may seem bizarre to economists, it is remarkably similar to the accounting systems used by most private universities. A typical private university will distinguish between money in the `current' account which can be spent immediately, and money in the endowment.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.616"
+        }
+      ]
+    },
+    {
+      "claim": "意志力成本与消费诱惑成反比：一美元的消费诱惑取决于其在心理账户中的位置（收入>资产>未来财富）",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "the temptation to spend a (marginal) dollar of wealth depends on the location of that dollar in the mental accounting system, with current income being the most tempting, followed by current assets, and then future wealth.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.616-617"
+        }
+      ]
+    },
+    {
+      "claim": "三账户心理模型的边界规则：小额意外收入归当前收入，大额归资产；养老金归未来收入；房屋净值处理因家庭而异",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Small windfalls are likely to be coded as current income, while larger windfalls are placed into A. We assume that pension wealth is framed as future retirement income... Similarly, there will be variation in the way in which households treat home equity: some will treat home equity as if it were part of F (and will not take out home equity loans), others as if it were part of A.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.616"
+        }
+      ]
+    },
+    {
+      "claim": "MBA学生问卷验证差异MPC假说：等值$2400，按月发$1200/年，一次发$785/年，5年后发$0——MPC随心理账户从收入→资产→未来收入递减",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The median annual MPCs for the three questions are $1200, $785, and $0 respectively. These medians were the same for the whole sample as well as for the subset of ninety-three subjects that reported having at least $5000 in liquid assets, so liquidity constraints are not an issue.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.620"
+        }
+      ]
+    },
+    {
+      "claim": "当前资产MPC极高（约25%/年）暗示高正时间偏好率，但未来财富MPC极低甚至暗示负贴现率——这在标准生命周期框架下不可能同时成立",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "They report being astonished by the difference in the estimated marginal propensities to consume from these two accounts, since no difference is expected in the LC framework. They estimated the MPC out of current assets to be very high, implying that households consume approximately 25 percent of their existing assets every year... Yet the MPC out of future wealth was found to be considerably lower, in fact suggesting a negative discount rate.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.620"
+        }
+      ]
+    },
+    {
+      "claim": "圣诞储蓄俱乐部作为准理性行为的典型：人们明知放弃利息但判断比圣诞节钱不够更划算",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "People who join Christmas clubs, for example, probably know that they are giving up interest, convenience, and liquidity in return for external enforcement of willpower. They may judge that trade sensible if the perceived alternative is to have too little money for Christmas presents. But what would be downright stupid would be to join a Christmas club and then borrow against the subsequent payout. We believe few people are that silly.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.621"
+        }
+      ]
+    },
+    {
+      "claim": "Cagan和Katona的开创性发现：加入养老金计划的人其他储蓄反而增加（'认知效应'）——参加养老金让人更意识到退休储蓄需求",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "He obtained the surprising result that membership in a pension plan increased other forms of saving, i.e., dDS/dPS > 0. He attributed this result to what he called the recognition effect. Membership in a pension plan was thought to increase the awareness of the need to save for retirement and thus encourage other saving.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.622"
+        }
+      ]
+    },
+    {
+      "claim": "意志力成本随收入递减：高收入者更容易控制消费冲动，因此养老金储蓄对高收入者自发储蓄的挤出效应更大",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The change in discretionary saving with respect to a change in pension saving increases (in absolute value) with income or wealth... This prediction arises because the cost of exercising willpower is taken to decline with income. Willpower becomes increasingly difficult to exercise when income (and therefore consumption) diminishes.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "PREDICTION 2, p.621-622"
+        }
+      ]
+    },
+    {
+      "claim": "Barro关于社保不挤出储蓄的遗赠动机论证对私人养老金不适用，因此零抵消效应应归因于自控力而非代际转移",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Thus the fact that people do not offset increases in pension wealth suggests that similar findings in the Social Security arena are due to self-control reasons rather than intergenerational transfers. Thus Barro is likely to be proven empirically right, though for the wrong reasons.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.624"
+        },
+        {
+          "excerpt": "the fact that people do not offset increases in pension wealth suggests that similar findings in the Social Security arena are due to self-control reasons rather than intergenerational transfers. Thus Barro is likely to be proven empirically right, though for the wrong reasons.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "社会保障文献讨论段"
+        }
+      ]
+    },
+    {
+      "claim": "跨30年三国的养老金抵消估计从微正值到约-0.5，无一接近-1.0（完全抵消），强支持BLC模型",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "While the estimates of the offset vary between mildly positive (i.e., wrong sign) to nearly -.5, in no case is the estimated offset close to -1.0... it is difficult to explain a zero (much less positive) offset within any neoclassical framework.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.624-625"
+        },
+        {
+          "excerpt": "The papers reported here used data sets spanning three decades and three countries. While the estimates of the offset vary between mildly positive (i.e., wrong sign) to nearly -.5, in no case is the estimated offset close to -1 .O. While selectivity bias could explain these results, we find that argument unconvincing, especially in light of Green's results using only pension recipients.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Evaluation段，养老金抵消效应综述"
+        }
+      ]
+    },
+    {
+      "claim": "BLC预测没有足够大社保和养老金时退休消费将低于退休前消费——因为诱惑诱导短视使储蓄不足",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "PREDICTION 3: In the absence of sufficiently large Social Security and pension programs, retirement consumption will be less than preretirement consumption... Prediction 3 is derived from the model using inequality (4), which is the formal representation of the principle that temptation induces impatience.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.625"
+        },
+        {
+          "excerpt": "PREDICTION 3: In the absence of sufficiently large Social Security and pension programs, retirement consumption will be less than preretirement consumption.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "V. SAVING ADEQUACY，Prediction 3"
+        }
+      ]
+    },
+    {
+      "claim": "Kotlikoff等发现没有社保和养老金时退休消费降低约40%；Diamond和Hausman发现30%的45-69岁男性几乎无财富——几乎所有退休储蓄都通过制度化机制完成",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "in the absence of Social Security and private pensions, consumption in old age relative to lifetime consumption would be about 40 percent lower for the average person.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.627"
+        },
+        {
+          "excerpt": "Diamond and Hausman [1984] found that half of the National Longitudinal Survey (NLS) sample of men aged forty-ﬁve to sixty-nine had wealth-to-income ratios of less than 1.6 if Social Security and pension wealth were excluded. Moreover, 30 percent had essentially zero nonpension wealth.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "V. SAVING ADEQUACY，事实陈述段"
+        }
+      ]
+    },
+    {
+      "claim": "退休期消费下降：Hamermesh发现1973年54%退休家庭消费收入比超过1.1；塞勒的解释与生命周期模型完全不同——退休后下降是因为收入减少且意识到储蓄不足",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "In 1973, 54 percent of the retired households had consumption-to-income ratios exceeding 1.1... Hamermesh also found that between 1973 and 1975 the elderly reduced their real consumption by about 5 percent per year.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.627"
+        },
+        {
+          "excerpt": "Consumption rises while young because real income (and thus temptation) is also rising. Consumption falls during retirement because (a) real income falls since most pension benefits are not indexed, and (b) the elderly grow to realize that their resources are inadequate and gradually adapt to a reduced standard of living.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Courant et al.结果讨论段"
+        }
+      ]
+    },
+    {
+      "claim": "BLC预测储蓄率随永久收入递增——推翻比例性原理。Fisher早已指出低收入者更偏好现期收入，塞勒将其形式化为意志力成本模型。Mayer（1972）全面综述否定比例性假说",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "PREDICTION 4 The saving rate increases with permanent income... In general, it may be said that, other things being equal, the smaller the income, the higher the preference for present over future income... This result is partly rational, because of the importance of supplying present needs in order to keep up the continuity of life... and partly irrational, because the presence of present needs blinds one to the needs of the future.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "p.628 (Fisher 1930, 72)"
+        },
+        {
+          "excerpt": "PREDICTION 4 The saving rate increases with permanent income.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "VI. NON-PROPORTIONALITY"
+        },
+        {
+          "excerpt": "The marginal cost of exercising willpower is very high at low consumption levels, but falls off as consumption increases. Therefore willpower costs fall off as income (and therefore consumption) increases. To the poor, saving is a luxury.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "VI. NON-PROPORTIONALITY，模型解释段"
+        },
+        {
+          "excerpt": "There are many tests which disconfirm the proportionality hypothesis. What is even more persuasive, of all the many tests which have been undertaken by friends of the hypothesis, not a single one supports it. I therefore conclude that the proportionality hypothesis is definitely invalidated (p. 348).",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Mayer综述引用段"
+        }
+      ]
+    },
+    {
+      "claim": "Diamond和Hausman面板数据彻底否定比例性：收入每增加$1000，储蓄/收入比在各收入段均显著增加",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The results implied that for incomes less than $4770, each extra $1000 of permanent income raises the ratio by 3.3 percent; beyond $4770 it rises by 5.7 percent for each extra $1000, and beyond $12,076 it rises by 14.2 percent. The differences are all statistically significant.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Diamond和Hausman比例性检验段"
+        }
+      ]
+    },
+    {
+      "claim": "Hall和Mishkin估计暂时性收入MPC为0.29，远高于生命周期模型预测，暗示个人贴现率0.33-0.50——永久收入模型只有约两年视野",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "when they estimated fl, for food consumption using the Panel Study of Income Dynamics from 1969 to 1975 the estimated value for fl, turned out be .29. This is consistent with the model only at interest rates higher than those given in the table. We take this to be a reconfirmation of the earlier Friedman-Holbrook estimates of discount rates in the .33 - .50 range.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Hall和Mishkin结果讨论段"
+        },
+        {
+          "excerpt": "Holbrook 11966, 7541 concluded that ... the shorter the horizon, the better is permanent income approximated by current income. When permanent income equals current income, the only significant special assumption of the PIH remaining is that of unitary-income elasticity of consumption. Therefore, the shorter the horizon, the smaller is the distinction between the PIH and what might be called the \"current income hypothesis\".",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Holbrook估计段"
+        }
+      ]
+    },
+    {
+      "claim": "BLC预测退休家庭消耗非年金财富速度慢于生命周期模型——年金收入归入当期收入被更自由消费，而长期储蓄规则难以转变",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "since annuity income is placed in the current income account, it will be spent more freely than the annuity value of other assets. Even though it makes sense for the retired to relax their rules that restrict access to savings, many households appear to have trouble making this transition.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Do the Retired Dissave Enough?段"
+        }
+      ]
+    },
+    {
+      "claim": "老年人不愿动用房屋净值消费——反向抵押贷款市场反应冷淡，这更像是自我施加的借贷约束而非市场约束",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Their failure to do so must be considered at least partially a self-imposed borrowing constraint rather than credit rationing. Indeed, \"reverse mortgages\" have been offered in some areas with very little consumer response.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "退休者动用房屋净值讨论段"
+        },
+        {
+          "excerpt": "the elderly appear reluctant to consume out of their \"home equity\" account, even during retirement.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Venti and Wise结果段"
+        }
+      ]
+    },
+    {
+      "claim": "消费超敏感更可能源于自我施加的借贷禁令而非市场信贷配给——许多家庭有未使用的信贷来源",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "we judge the hypersensitivity observed by Friedman and by Hall and Mishkin more plausibly explained by self-imposed borrowing prohibitions than by market-imposed quantity constraints.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Hypersensitivity Evaluation段"
+        },
+        {
+          "excerpt": "Mark Warshawsky [1987] finds that many life insurance policy holders fail to take advantage of the possibility of borrowing against their insurance policy, even when the interest rate is lower than the rate at which the individual could invest.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "未使用信贷来源证据段"
+        }
+      ]
+    },
+    {
+      "claim": "奖金MPC低于常规收入（日本数据：0.437 vs 0.685）；即使区分奖金的永久性和暂时性成分两者MPC都约0.46——直接否定PIH解释",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The marginal propensity to consume bonus income was estimated to be .437 while the corresponding figure for nonbonus income was .685. The difference is significant.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "日本奖金研究段"
+        },
+        {
+          "excerpt": "Bonuses are a nice illustration of a framing effect. In a standard economic model, a completely anticipated bonus is simply income with another name.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "奖金框架效应段"
+        },
+        {
+          "excerpt": "the MPC out of the transitory component of bonus income was approximately the same as the MPC out of the permanent component. Both were estimated to be .46.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Ishikawa和Ueda奖金预期数据段"
+        }
+      ]
+    },
+    {
+      "claim": "意外之财的MPC随金额增大而递减：最大意外之财（年收入66%）MPC约23%，最小（7%）MPC超过2.0",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "For the group with the largest windfalls (about 66 percent of annual income) the MPC was about 23 percent, while the group receiving the smallest windfalls (about 7 percent of annual income) had MPC's in excess of 2.0. Small windfalls were spent twice!",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Landsberger意外之财研究段"
+        }
+      ]
+    },
+    {
+      "claim": "意外之财的心理账户解释：越大越像'财富'，越可能归入少诱惑的资产账户",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "People tend to consume from income and leave perceived \"wealth\" alone. The larger is a windfall, the more wealth-like it becomes, and the more likely it will be included in the less tempting Assets account. A corollary is that changes in perceived wealth (such as increases in the value of home equity) are saved at a greater rate than windfalls considered \"income.\"",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "IX. WINDFALLS，心理账户解释段"
+        }
+      ]
+    },
+    {
+      "claim": "BLC政策建议：未完全调整预扣的减税增储蓄、鼓励企业养老金、鼓励日式奖金薪酬制度",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "A tax cut not accompanied by (complete) changes in withholding rates should increase saving more than an equivalent tax cut fully reflected in withholding.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "X. POLICY IMPLICATIONS"
+        },
+        {
+          "excerpt": "firms could be encouraged to use Japanese-style bonuses as part of their compensation scheme. This form of payment is no more costly to firms (it might even be cheaper on a present value basis) and would, according to our analysis, increase saving.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "X. POLICY IMPLICATIONS，建议(3)"
+        }
+      ]
+    },
+    {
+      "claim": "BLC与LC的关系类比为前景理论与期望效用理论——后者是规范性标准，前者是更具预测力的描述性模型",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The relationship between the self-control model and the LC model is similar to the relationship between Daniel Kahneman and Amos Tversky's [1979] prospect theory and expected utility theory.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "XI. CONCLUSION段"
+        }
+      ]
+    },
+    {
+      "claim": "Hurd发现退休家庭10年间仅消耗13.9%可遗赠财富——对LC模型明显太低",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Hurd found that retired households dissaved 13.9 percent of their total bequeathable (that is, nonannuity) wealth over the period 1969-79, and 27.3 percent of their bequeathable wealth excluding housing wealth. The former figure is clearly too low (by LC standards), while the latter figure might be considered reasonable.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Hurd退休消储行为段"
+        }
+      ]
+    },
+    {
+      "claim": "BLC的可检验新预测：持有住房增加退休财富；继承收入MPC取决于形式（现金>股票>房地产）；股息收入MPC大于股票升值",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "PREDICTION 8. Holding lifetime income constant, home ownership will increase retirement wealth.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "XI. CONCLUSION，新预测段"
+        },
+        {
+          "excerpt": "PREDICTION 9. The marginal propensity to consume inheritance income will depend on the form in which the inheritance is received. The more the inheritance resembles \"income\" rather than \"wealth,\" the greater will be the MPC.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "XI. CONCLUSION，新预测段"
+        },
+        {
+          "excerpt": "PREDICTION 10. The marginal propensity to consume dividend income is greater than the marginal propensity to consume increases in the value of stock holdings.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "XI. CONCLUSION，新预测段"
+        }
+      ]
+    },
+    {
+      "claim": "BLC是建设性而非破坏性的——自控力考量使人能识别经济学通常忽略但对行为有重要影响的变量",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "This paper is intended to be constructive rather than destructive, and to show that the consideration of self-control problems enables us to identify variables that are usually ignored in economic analyses but which have an important influence on behavior.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "XI. CONCLUSION末段"
+        }
+      ]
+    },
+    {
+      "claim": "BLC与标准方法的三个关键差异：与单一效用函数不可调和的行为一致；允许'无关'因素影响消费；实际选择可严格在预算集内部",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "It differs from a standard approach in three important ways. (1) It is consistent with behavior that cannot be reconciled with a single utility function. (2) It permits \"irrelevant\" factors (i.e., those other than age and wealth) to affect consumption. Even the form of payment can matter. (3) Actual choices can be strictly within the budget set (as a Christmas club).",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "XI. CONCLUSION段"
+        }
+      ]
+    },
+    {
+      "claim": "心理账户中的进入惩罚层级解释同时借贷和持有流动资产的矛盾行为——F账户进入惩罚高于A账户",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "we also assume that the entry penalty into the F account is larger than the entry penalty into the A account. Therefore, the individual would never wish to borrow from the F account while the A account has a positive balance.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "APPENDIX段"
+        },
+        {
+          "excerpt": "some households take out automobile loans, despite having a positive balance in a saving account earmarked for their children's education.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "APPENDIX，同时借贷讨论"
+        }
+      ]
+    },
+    {
+      "claim": "增加养老金扣除率降低收入账户边际诱惑从而使消费下降、退休储蓄增加——与LC模型预测的c(s)不随s变化形成鲜明对比",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Suppose that c,(s) < It so that date t consumption is financed solely from the income account. Observe that inequality (8) implies that the impact of As is to cause a decrease in the marginal temptation to consume at level c,(s). However, the marginal utility of retirement consumption cds) remains unchanged. Therefore As causes the marginal utility of c,(s) to fall below its retirement counterpart, thereby leading date t consumption to be decreased in response. Consequently unlike the LC prediction, c(s) is nonconstant in s.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "APPENDIX，养老金扣除率影响推导段"
+        }
+      ]
+    },
+    {
+      "claim": "年轻人零抵消效应源于：年轻人储蓄最困难（资产账户余额近零）且未来收入账户不可访问",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "In Prediction 1, the zero offset for the young results from two assumptions. Assumption 4 indicates that discretionary (retirement) saving is most difficult for the young (low t). Hence the young typically have asset account balances which are (virtually) zero. We also assume that the F account is inaccessible. Lending institutions do not issue loans to young people against future pension income. Therefore the introduction of a pension causes consumption for the young to fall by the amount of the pension deduction.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "APPENDIX，Prediction 1解释段"
+        }
+      ]
+    },
+    {
+      "claim": "BLC预测消费跟踪收入：意志力成本通过将消费仅从收入账户融资而降低，最优计划下每期整个收入账户被消费",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "PREDICTION 5 . Holding wealth constant, consumption tracks income.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "VII. HYPERSENSITIVITY，Prediction 5"
+        },
+        {
+          "excerpt": "willpower effort costs are reduced by having consumption financed only out of the income account, with savings allocated directly to the asset accounts. In the first-best plan the entire income account is consumed at each date.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Prediction 5解释段"
+        }
+      ]
+    },
+    {
+      "claim": "储蓄充裕性的证据矛盾：Blinder等估计y=0.45远低于1.0，而Kotlikoff等发现超90%样本R或RA≥0.8，但老年人几乎全部财富在社保、养老金和房屋净值中。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "nearly all the wealth the elderly possess is in Social Security, pensions, and home equity. Slightly more than one-third of couples reported levels of net worth that represent less than 10 percent of their total future resources.",
+          "source_file": "paper_THE BEHAVIORAL LIFE‐CYCLE HYPOTHESIS.md",
+          "location": "Kotlikoff et al.结果讨论"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 24,
+    "model": "Qwen3-8B",
+    "timestamp": "2026-05-01T15:42:14",
+    "version": "v3-regenerated",
+    "regenerated_via": "siliconflow-qwen3-8b",
+    "regenerated_at": "2026-05-04T09:39:00.247942",
+    "pre_merge_count": 298,
+    "post_merge_count": 192
+  }
+}

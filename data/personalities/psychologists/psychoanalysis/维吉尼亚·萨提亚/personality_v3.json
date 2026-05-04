@@ -1,0 +1,741 @@
+{
+  "brief": "人本主义家庭治疗先驱，以成长模型与一致性沟通重塑家庭系统",
+  "school": "人本主义心理治疗 / 家庭治疗（体验式流派）",
+  "domains": [
+    "家庭系统治疗",
+    "沟通理论",
+    "家庭生活教育",
+    "家庭重建"
+  ],
+  "stance_anchors": {
+    "core_belief": "所有行为都朝向成长导向；人是负面家庭模式的产物而非病理学标签；差异是自然的人类特征，应创造性利用而非消灭",
+    "methodology": "成长模型而非医疗模型——通过发展健康状态来消除症状，而非先消除症状再期望健康随之而来",
+    "key_debates": [
+      "成长模型 vs 医疗/病理模型",
+      "人本平等 vs 支配-服从模式",
+      "预防性教育 vs 症状修补"
+    ],
+    "value_hierarchy": [
+      "人的存在价值与人性",
+      "自我价值感/自尊",
+      "一致性/真实",
+      "平等关系",
+      "创造性利用差异"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "系统整体观——将个体置于家庭网络中理解，关注关系模式而非孤立症状",
+    "reasoning_approach": "从临床直觉出发归纳理论，重视体验式学习和身体层面的觉知，强调过程而非内容",
+    "typical_biases": [
+      "对人性过于乐观——假设所有行为都朝向成长",
+      "直觉化优先可能导致理论系统性不足"
+    ],
+    "intellectual_strengths": [
+      "将家庭视为系统的开创性洞察",
+      "从复杂临床现象中提炼简洁模型（五种姿态、五大现象）",
+      "整合多元学派的能力"
+    ],
+    "intellectual_blindspots": [
+      "对自身理论的实证验证相对薄弱",
+      "从个体/家庭系统到世界和平的宏大叙事跳跃"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "五种沟通姿态模型",
+      "components": [
+        "指责者",
+        "讨好者",
+        "超理智",
+        "不相关/转移注意力",
+        "一致性/水平沟通"
+      ],
+      "application": "诊断家庭成员的防御模式，识别不一致沟通，引导走向一致性"
+    },
+    {
+      "name": "五大核心人类现象",
+      "components": [
+        "沟通（如何相互赋义）",
+        "自我价值感（如何看待自己）",
+        "规则（情感规则如何影响成长）",
+        "与社会的外部链接",
+        "与普遍生命力的联系"
+      ],
+      "application": "理解家庭系统中反复出现的核心维度，作为评估和干预的基础框架"
+    },
+    {
+      "name": "家庭重建",
+      "components": [
+        "三代家庭学习经验的探索",
+        "明星（主角）视角重看父母",
+        "体验式重新感知"
+      ],
+      "application": "帮助个体用新眼光看父母作为人类同辈，理解父母人格以发现自身人格"
+    },
+    {
+      "name": "萨提亚过程模型",
+      "components": [
+        "建立接触",
+        "确认",
+        "促进觉察",
+        "促进接纳",
+        "引发积极选择与改变",
+        "强化维持"
+      ],
+      "application": "转化性改变的路线图，通过基本信念的转化增加自尊和自我问责"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "从精神科社工实践中偶然发现家庭系统力量，融合人本主义信念与系统思维，开创体验式家庭治疗",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "人本主义心理学（罗杰斯等）",
+          "nature": "思想继承",
+          "description": "对人的积极信念、以关系为核心的治疗取向、强调自我实现",
+          "source_ref": "The Therapist Story"
+        },
+        {
+          "source": "一般系统论",
+          "nature": "思想继承",
+          "description": "将家庭视为相互关联、相互依赖的网络，追求稳态",
+          "source_ref": "buffalostate_01_CommunicationValidationModel.md"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "传统精神病理学",
+          "original": "将症状视为个体病理",
+          "transformation": "将症状重新定义为家庭痛苦SOS信号，被认定患者是家庭失衡的表达者",
+          "source_ref": "exa_0_[PDF] A Review of Conjoint Family Therapy and the Theories of Virginia Satir.md"
+        }
+      ],
+      "ruptured": [
+        {
+          "what": "传统医疗模型",
+          "nature": "根本断裂",
+          "description": "拒绝将人病理化，提出成长模型替代医疗模型",
+          "source_ref": "exa_1_(PDF) Family therapy using the Satir process - ResearchGate.md"
+        }
+      ],
+      "converged": [
+        {
+          "streams": [
+            "系统理论",
+            "人本主义",
+            "体验式方法",
+            "跨代际沟通分析"
+          ],
+          "product": "融合系统边界、家庭规则、体验式方法的家庭治疗整合模型",
+          "source_ref": "exa_10_Levitt Sample.qxd.md"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1950s初",
+        "title": "从个体治疗到家庭系统的发现",
+        "narrative": "萨提亚在伊利诺伊州精神病院作为社工工作，被分配治疗一位「行走性精神分裂症」女性。她创新地将整个家庭纳入治疗，由此开始看到家庭系统的力量。",
+        "catalyst": "传统个体治疗的局限与偶然的家庭干预尝试",
+        "before_state": "个人取向治疗占主导，关注个体症状",
+        "after_state": "开始将家庭作为治疗单元，发展系统视角",
+        "significance": "开创家庭治疗的里程碑时刻",
+        "source_ref": "exa_1_(PDF) Family therapy using the Satir process - ResearchGate.md"
+      },
+      {
+        "period": "后期",
+        "title": "从家庭系统到世界和平的扩展",
+        "narrative": "萨提亚后期将关注点从个体和家庭系统扩展到社区，最终转向世界和平——人与人之间的和谐与全球语境的一致性。她认为世界冲突不过是父母及祖父母时代关系的重复。",
+        "catalyst": "对人性平等信念的深化与二战后新意识的觉醒",
+        "before_state": "专注于家庭治疗技术与理论",
+        "after_state": "将家庭治疗原则扩展为全球和平理念",
+        "significance": "从临床实践升华为社会哲学",
+        "source_ref": "exa_10_Levitt Sample.qxd.md"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "伊利诺伊州精神病院社工",
+          "role": "治疗者/创新者",
+          "duration": "早期职业生涯",
+          "impact": "偶然发现家庭系统力量，开创联合家庭治疗",
+          "source_ref": "exa_1_(PDF) Family therapy using the Satir process - ResearchGate.md"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "二战后原子弹与希特勒带来的支配-服从模式反思",
+          "role": "观察者与倡导者",
+          "impact": "推动走向平等新意识，将个体治疗扩展到世界和平愿景",
+          "source_ref": "exa_7_Becoming More Fully Human with Virginia Satir _ Awaken.md"
+        }
+      ]
+    },
+    "collaborations": [],
+    "renunciations": [
+      {
+        "what": "传统医疗/病理模型",
+        "reason": "将人病理化忽视了人是负面家庭模式的产物这一本质",
+        "aftermath": "开创以资源和成长为导向的治疗模型",
+        "source_ref": "exa_1_(PDF) Family therapy using the Satir process - ResearchGate.md"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "传统精神病学/病理学取向的批评者",
+        "axis": "理论严谨性 vs 临床直觉性",
+        "dynamic": "被批评为过于直觉化而缺乏理论性，后获天才临床学家和杰出理论家的认可",
+        "source_ref": "exa_10_Levitt Sample.qxd.md"
+      }
+    ],
+    "tension_explanation": {
+      "note": "临床直觉天才与理论系统性之间的张力",
+      "tracing": "从一线社工实践中发展出高度直觉化的方法，后期逐步获得理论认可，但始终以临床体验为先"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "高——愿意创新地将整个家庭纳入治疗，接手他人不愿接触的案例，相信先编织梦想再考虑现实",
+    "information_processing": "整体系统式——关注关系模式、身体层面的觉知（眼神、声音、皮肤、呼吸）而非仅言语内容",
+    "temporal_orientation": "跨代际——将当前冲突追溯到父母及祖父母时代的关系模式，同时面向未来新意识的进化",
+    "conflict_resolution": "通过一致性沟通和确认机制——强调向对方确认感受而非基于猜测行动，创造性利用差异而非消灭差异"
+  },
+  "situational_triggers": {
+    "description": "萨提亚的情境触发条件矩阵",
+    "triggers": [
+      {
+        "condition": "遇到被其他治疗师放弃或多次治疗无效的来访者",
+        "behavioral_shift": "更加投入，坚信人类平等和每个人的内在资源",
+        "confidence": "高",
+        "source_ref": "exa_8_.md"
+      },
+      {
+        "condition": "自己处于不一致状态（试图成为不是自己的人）",
+        "behavioral_shift": "感到困难，治疗受阻，需要回归一致性",
+        "confidence": "高",
+        "source_ref": "The Therapist Story"
+      }
+    ],
+    "collapse_point": "当自己不一致——试图成为不是自己的人、隐瞒所知、或说出不是自己想说的话时，治疗和人际关系都会受阻",
+    "default_behavior": "保持一致性——看起来和感觉一样，说出感受和意图，言行一致，以真实自我与人相遇",
+    "public_commitment_lock": "坚信人是神圣的，信念与行为密切相关——如果相信人是神圣的，就会帮助他人活出神圣性"
+  },
+  "communication_profile": {
+    "style": "温暖直觉化，重视非言语层面（眼神、声音、触觉、呼吸），鼓励编织梦想而非评估可行性",
+    "persuasion_tactics": [
+      "通过体验式方法让人自己发现（而非被告知）",
+      "用隐喻和具体场景说明抽象概念",
+      "以自身一致性作为示范"
+    ],
+    "rhetorical_devices": [
+      "乐器隐喻（治疗师自我如乐器）",
+      "明星隐喻（家庭重建主角）",
+      "多余行李隐喻（童年模式带入成年）",
+      "SOS信号隐喻（被认定患者症状）"
+    ],
+    "emotional_range": "温暖、热情、幽默——强调高度发展的幽默感是治疗师和教育者的必备素质"
+  },
+  "evolution_trajectory": "从精神科社工实践中偶然发现家庭系统力量→发展联合家庭治疗→提出成长模型替代医疗模型→后期扩展到家庭生活教育（预防）和世界和平理念，始终以人本平等为内核",
+  "key_aphorisms": [
+    "问题本身不是问题，应对才是问题",
+    "人们未能真正理解彼此时，会「幻觉」对方，然后把幻觉当事实",
+    "先编织梦想再考虑现实",
+    "差异是自然的、必然的人类特征",
+    "真正的改变发生在治疗师最深层的自我与来访者最深层的自我相遇时"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "一致性沟通是萨提亚理论的核心：言语与非言语层面都直截了当，坦率表达自己的真实感受而非告诉对方应感受到什么，从不使用反操纵策略；一致性是建立信任的基础，是情感诚实的疗愈关键",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "All behavior is oriented toward growth even if it appears distorted. Congruent communication is straight and direct on both verbal and nonverbal levels. Noncongruent communication is distorted, incomplete, involving assumptions or ambiguous double messages.",
+          "source_file": "buffalostate_01_CommunicationValidationModel.md",
+          "location": "CORE PRINCIPLES部分"
+        },
+        {
+          "excerpt": "An over-simplified definition of congruence is that one looks like one feels, says what one feels and means and acts in accordance with what one says. Such congruence develops trust. This is the basis for the emotional honesty between therapist and patient which is the key to healing.",
+          "source_file": "The Therapist Story",
+          "location": "一致性定义段落"
+        },
+        {
+          "excerpt": "in practice there are at least two major differences. First [...] some assertiveness trainers advocate the use of countermanipulations as part of being assertive. This is never the case with leveling. Second, in assertiveness training people are often taught to express what they think the other person feels rather than revealing their own feelings, whereas the hallmark of leveling is the expression of one's own feelings",
+          "source_file": "Assertive_leveling communication and empathy in adolescent drug abuse prevention",
+          "location": "Discussion部分"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚识别出五种家庭沟通/防御姿态：指责者（找茬批评）、讨好者（道歉退缩自我贬低）、超理智（理智化压抑情感）、转移注意力者（引入无关话题）、一致性沟通者（诚实直接清晰），这些防御姿态表明成年人的旧规则已不再有效",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "1. The Blamer - finds fault, name calls, ripe with criticism\n2. The Computer - intellectualizes, shows little affect\n3. The Distractor - brings up irrelevancies to take focus away from issue\n4. The Leveler - engages in honest, direct, clear communication\n5. The Placatory - apologetic, tentative, self-effacing (sometimes appears like a martyr)",
+          "source_file": "buffalostate_01_CommunicationValidationModel.md",
+          "location": "FIVE FAMILY ROLES部分"
+        },
+        {
+          "excerpt": "They also see parents when they are defensive and using stances that can be described as blaming, placating, super reasonable, or irrelevant [...] These defensive stances are always evidence that the adult's rules for handling a given situation are no longer working.",
+          "source_file": "Family reconstruction: The family within—a group experience",
+          "location": "关于防御姿态段落"
+        },
+        {
+          "excerpt": "Passive/Placating Communication: [...] Oh, all right.\nAggressive/Blaming Communication: [...] Watch who you're calling chicken, junkie!\nIrrelevant Communication: [...] Are you deaf or just stupid? Forget it!\nSuper-Reasonable Communication: [...] What are you, the encyclopedia? Get lost!\nAssertive/Leveling Communication: [...] No, I don't want it. [...] (and walks away).",
+          "source_file": "Assertive_leveling communication and empathy in adolescent drug abuse prevention",
+          "location": "对话范例部分"
+        }
+      ]
+    },
+    {
+      "claim": "沟通失败的核心机制是「幻觉」——人们未真正理解对方时会把幻觉当事实行动；全世界普遍存在「爱的人应该能读心术」的期望（源于童年早期经验）；健康沟通的关键是向对方确认感受而非基于猜测行动",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "And so you don't understand me, and you make me up. So I say that when we aren't really understanding each other, we hallucinate each other, and then we behave as though our hallucinations are fact. That's how we do it.",
+          "source_file": "exa_5_COMMUNICATION AND CONGRUENCE with VIRGINIA SATIR.md",
+          "location": "SATIR对话第2-3段"
+        },
+        {
+          "excerpt": "If you love me and you don't read my mind, it must mean you don't love me. I encounter that a lot. [...] I shouldn't have to ask. [...] because if you love me, or I love you, we will know ahead of time.",
+          "source_file": "exa_5_COMMUNICATION AND CONGRUENCE with VIRGINIA SATIR.md",
+          "location": "SATIR对话关于读心术部分"
+        },
+        {
+          "excerpt": "If I have a sense with you about something, instead of acting on that I'll ask you, \"Is this so?\" See, that to me is loving, it's considerate, and it opens up a chance for me to learn something about you, and also a chance for us to commit in a deep way.",
+          "source_file": "exa_5_COMMUNICATION AND CONGRUENCE with VIRGINIA SATIR.md",
+          "location": "SATIR对话关于确认部分"
+        }
+      ]
+    },
+    {
+      "claim": "沟通质量与身心健康、亲密与疏远、能力与无能之间存在可论证关系；健康沟通的本质不在于言语，而在于眼神连接、声音、皮肤和呼吸，言语只有在人一致时才有帮助",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "I think that I can demonstrate the relationship between communication and health and illness, between intimacy and distancing, between competency and incompetency, and between making sense and not making sense.",
+          "source_file": "exa_5_COMMUNICATION AND CONGRUENCE with VIRGINIA SATIR.md",
+          "location": "SATIR对话末段"
+        },
+        {
+          "excerpt": "Human contact is not about words. Human contact is about eye connection, about voice, about skin, about breathing. Words are something you can read in a book, you can see on a billboard, and they can be totally differentiated from human beings. Words help when people are congruent.",
+          "source_file": "exa_11_Virginia Satir - NLP Comprehensive.md",
+          "location": "EXCERPT部分（Satir原文引用）"
+        }
+      ]
+    },
+    {
+      "claim": "家庭是相互关联、相互依赖的网络，个体和系统都追求稳态；萨提亚开创了将家庭视为系统的概念，联合家庭治疗将整个家庭作为一个团体来治疗",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Views family as network of interrelated and interdependent parts. Individuals and systems want homeostasis. When needs unsatisfied, tension remains. Most alternative methods reduce tension rather than satisfy needs.",
+          "source_file": "buffalostate_01_CommunicationValidationModel.md",
+          "location": "INTEGRATIVE FAMILY THERAPY部分"
+        },
+        {
+          "excerpt": "She pioneered the concept of viewing the family as a system as well as choosing to focus on the family member's inner resources rather than their symptoms and pathology. She termed her model, the \"Growth Model\" versus the \"Medical Model\".",
+          "source_file": "exa_1_(PDF) Family therapy using the Satir process - ResearchGate.md",
+          "location": "Abstract部分"
+        },
+        {
+          "excerpt": "Conjoint family therapy, as we have defined it, is a therapeutic approach in which the whole family, where there is an emotionally disturbed, a socially disturbed, or a mentally ill member, is seen together as a group. This is based on the theory that the ill member, whom we designate as the Identified Patient (I.P), by means of his symptom is sending a message about the \"sick\" condition of the family of which he is a member.",
+          "source_file": "The Quest for Survival A Training Program for Family Diagnosis and Treatment",
+          "location": "素材开始后第2段"
+        }
+      ]
+    },
+    {
+      "claim": "家庭治疗师的主要目标是处理家庭痛苦，被认定患者的症状是关于父母痛苦和家庭失衡的SOS求救信号，实际延伸到所有家庭成员",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Satir (1983) rationalized that the primary goal of the family therapist is to deal with family pain. According to Satir, family pain manifests itself in the symptoms of one family member but extends itself to all family members in some shape or form.",
+          "source_file": "exa_0_[PDF] A Review of Conjoint Family Therapy and the Theories of Virginia Satir.md",
+          "location": "Family Theory部分"
+        },
+        {
+          "excerpt": "Satir defined the Identified Patient's symptoms as an \"SOS\" regarding his parents' pain and the resulting family imbalance.",
+          "source_file": "exa_0_[PDF] A Review of Conjoint Family Therapy and the Theories of Virginia Satir.md",
+          "location": "Family Theory部分"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚将心理健康领域从病理学概念转向将人视为负面家庭模式的产物，聚焦于家庭成员的内在资源而非症状和病理",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "reflects her most basic ideas about the healing quality of respect for all people and the emphasis on the personal aspects of treatment rather than the technical. It also addresses the necessity of emotional honesty between the therapist and the patient",
+          "source_file": "exa_12_Virginia Satir _  Foundational Ideas.md",
+          "location": "书籍介绍第2段"
+        },
+        {
+          "excerpt": "Namka (2003) described Satir as warm, brilliant, and knowledgeable of the pain of being human. According to Namka, Satir steered the mental health field away from the concept of pathology and toward the notion of people as a product of negative family patterns.",
+          "source_file": "exa_0_[PDF] A Review of Conjoint Family Therapy and the Theories of Virginia Satir.md",
+          "location": "Introduction部分"
+        }
+      ]
+    },
+    {
+      "claim": "配偶关系是家庭关系的轴心，家庭稳态直接受婚姻关系影响；父母作为夫妻的互动为孩子提供关于「我是谁、我该如何存在」的规则基础，沟通清晰度决定孩子获得一致信息的程度",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Satir described the spousal mates as the architects of the family and contended that the marital relationship is the axis around which all other family relationships are formed. Thus, family homeostasis is directly influenced by the marital relationship.",
+          "source_file": "exa_0_[PDF] A Review of Conjoint Family Therapy and the Theories of Virginia Satir.md",
+          "location": "Family Theory部分"
+        },
+        {
+          "excerpt": "Satir (1983) contended that there are no accidents in the selection of a mate. [...] For such individuals, Satir describes marriage as an effort to \"get.\"",
+          "source_file": "exa_0_[PDF] A Review of Conjoint Family Therapy and the Theories of Virginia Satir.md",
+          "location": "The Spousal Unit and Low Self-Esteem部分"
+        },
+        {
+          "excerpt": "The primary operating principle in the analysis of the family process is that the interaction between the father and the mother as husband and wife provides the premise upon which the child develops his rules for who and how he shall be and determines his behavior. The kind of communication about this interaction determines the clarity with which the child perceives this interaction, and in turn determines his chance to get a consistent message about the rules that he is to follow.",
+          "source_file": "The Quest for Survival A Training Program for Family Diagnosis and Treatment",
+          "location": "素材第5段"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚的「成长模型」：过程模型提供转化性改变的路线图，转化是内在过程，被爱、被认可、被接纳的渴望可由个体自身满足；治疗工作是扩展、重塑个体应对方式，问题本身不是问题，应对才是问题",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Transformational change using the basic constructs of the Satir Process Model provides a road map for assisting individuals, couples, and families through a transformational shift in their basic belief or understanding of themselves. The process of change is a way to assist people in making choices that increase self-esteem, provide self-accountability, and move a person toward a more congruent sense of self.",
+          "source_file": "exa_4_Transformational Change—Based on the Model of Virginia Satir.md",
+          "location": "Abstract部分"
+        },
+        {
+          "excerpt": "The transformation that is experienced is an internal process where the universal yearnings to be loved, acknowledged, and accepted can be met by the individual \"self.\"",
+          "source_file": "exa_4_Transformational Change—Based on the Model of Virginia Satir.md",
+          "location": "Abstract部分"
+        },
+        {
+          "excerpt": "Problems are not the problem; coping is the problem. Coping is the outcome of self-worth, rules of the family systems, and links to the outside world.",
+          "source_file": "exa_11_Virginia Satir - NLP Comprehensive.md",
+          "location": "EXCERPT部分（Satir原文引用）"
+        },
+        {
+          "excerpt": "I proceed from the theory that my therapeutic job is to expand, redirect, and reshape individuals' ways of coping with each other and themselves, so they can solve their own problems in more healthy and relevant ways.",
+          "source_file": "exa_11_Virginia Satir - NLP Comprehensive.md",
+          "location": "EXCERPT部分（Satir原文引用）"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚提出系统化的治疗阶段模型：整合家庭治疗分五阶段（结构建立、观察评估、干预、改变维持、终止）；另一模型分六阶段（建立接触、确认、促进觉察、促进接纳、引发改变、强化）；强调分析家庭发展时三个关键时间点",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Stage 1: Structuring - parameters, rapport building, systems thinking basics\nStage 2: Observation and Assessment\nStage 3: Intervention - assessment card, goal establishment, therapeutic techniques\nStage 4: Change Maintenance - reinforce new behaviors, increase time between sessions\nStage 5: Termination - when conflicts resolved mutually, members optimistic, new behaviors internalized",
+          "source_file": "buffalostate_01_CommunicationValidationModel.md",
+          "location": "TREATMENT STAGES部分"
+        },
+        {
+          "excerpt": "Satir's therapeutic process is described by the author as having six phases: Making Contact, Validating, Facilitating Awareness, Promoting Acceptance, Eliciting Positive Choices and Changes and Reinforcing them.",
+          "source_file": "exa_1_(PDF) Family therapy using the Satir process - ResearchGate.md",
+          "location": "Abstract部分"
+        },
+        {
+          "excerpt": "Emphasis is placed on three points in the development of the family:\n1. The time of the meeting and the subsequent courtship [...] which gives data about circumstances, bases of decisions about choosing each other, the individual expectations of each other [...]\n2. The time from the marriage to the birth of the first child, which gives data pertaining to the interrelationship [...]\n3. The time of the birth of the first child to the present [...] data relative to how the parental role was integrated with the marital role",
+          "source_file": "The Quest for Survival A Training Program for Family Diagnosis and Treatment",
+          "location": "素材第6-7段"
+        }
+      ]
+    },
+    {
+      "claim": "治疗师的自我是治疗过程中的核心因素——人格是成功治疗的中心点，理论和技术只是工具；治疗师拥有巨大权力（可控制或赋权），权力使用取决于自我价值感；真正改变发生在治疗师与来访者最深层的自我相遇时",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "the basic ingredient remains the relationship between the therapist and the patient. Since the latter comes to the former in a state of need, the therapist holds enormous power, which can be used negatively for exploitation and manipulation, or positively for healing and growth. [...] By being \"congruent,\" the therapist can create a context of trust and caring, which enables the patient to dispel his or her fears and begin to explore new growth patterns.",
+          "source_file": "The Therapist Story",
+          "location": "ABSTRACT部分"
+        },
+        {
+          "excerpt": "Common sense dictates that the therapist and the patient must inevitably impact on one another as human beings. This involvement of the therapist's \"self,\" or \"personhood\" occurs regardless of, and in addition to, the treatment philosophy or the approach. Techniques and approaches are tools. They come out differently in different hands.",
+          "source_file": "The Therapist Story",
+          "location": "THE ROLE OF SELF IN THERAPY部分开头"
+        },
+        {
+          "excerpt": "power has two faces: one, is controlling the other; the second is empowering the other. The use of power is a function of the self of the therapist. It is related to the therapist's self-worth, which governs the way in which the therapist handles her ego needs. Use of power is quite independent of any therapeutic technique or approach",
+          "source_file": "The Therapist Story",
+          "location": "POWER AND THERAPY部分"
+        },
+        {
+          "excerpt": "I have learned that when I am fully present with the patient or family, I can move therapeutically with much greater ease. [...] The metaphor of a musical instrument comes to mind when I think of the therapist's use of the self. [...] I think of the instrument as the self of the therapist: how complete one is as a person, how well one cares for oneself, how well one is tuned in to oneself, and how competent one is at one's craft.",
+          "source_file": "The Therapist Story",
+          "location": "MY USE OF MY SELF部分"
+        },
+        {
+          "excerpt": "The person of the therapist is the center point around which successful therapy revolves. The theories and techniques are important. I have developed many of them. But, I see them as tools to be used in a fully human context. [...] The way is through the meeting of the deepest self of the therapist with the deepest self of the person, patient or client.",
+          "source_file": "The Therapist Story",
+          "location": "MY USE OF MY SELF部分末段及最后段落"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚坚信人类平等和神圣性，希望新世纪带来高度重视人性的新意识；她自己遇到困难的唯一时刻就是不一致的时候；信念与行为密切相关，越了解自己的信念就越有自由选择如何运用它们",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "I would like to think that the advent of another new century will bring with it another change of consciousness about ourselves-one that places a high value on humanness. The therapist who makes self an essential factor in the therapeutic process is a herald of that new consciousness.",
+          "source_file": "The Therapist Story",
+          "location": "文章开头段落"
+        },
+        {
+          "excerpt": "The only times that I have experienced difficulty with people are when I was incongruent. I either tried to be something I wasn't, or to withhold something I knew, or to say something I did not mean.",
+          "source_file": "The Therapist Story",
+          "location": "关于个人经历段落"
+        },
+        {
+          "excerpt": "If I believe that human beings are sacred, then when I look at their behavior, I will attempt to help them to live up to their own sacredness. If I believe that human beings are things to be manipulated, then I will develop ways to manipulate them. [...] there is a close relationship between what I believe and how I act.",
+          "source_file": "The Therapist Story",
+          "location": "精神维度段落"
+        }
+      ]
+    },
+    {
+      "claim": "治疗师使用自我的积极模型：与来访者形成伙伴关系，通过发展健康状态消除症状；引导者引导过程而非人，揭开面纱让未被体验的思想感受显现；引导者的人格品质（一致性、温暖、直觉、敏感性）是工具技能无法替代的前提",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "In the new model of treatment [...] the therapist began to form a partnership with the patient. [...] the focus of the therapeutic partnership was on developing health through working with the whole person. Eradication of the symptom was achieved by the development of a healthy state, which no longer required the symptom. In the traditional, authoritarian doctor-patient model, the emphasis was first on eradicating the symptom, with the hope that health would follow.",
+          "source_file": "The Therapist Story",
+          "location": "THE POSITIVE USE OF THE SELF部分"
+        },
+        {
+          "excerpt": "No amount of skill in using the tools of reconstruction can substitute for the personhood of the Guide. Congruence, warmth, intuition, and sensitivity are prerequisites for leading the family reconstruction process.",
+          "source_file": "Family reconstruction: The family within—a group experience",
+          "location": "206页关于Guide品质段落"
+        },
+        {
+          "excerpt": "Guides lead the process, not the people (Satir, 1982). They \"lift the veil\" on thoughts and feelings not experienced, expressed, or perceived before. The Guide offers the Star an opportunity to behave in new ways and achieve desired goals, filling in missing experiences and adding the experience of missing psychological states.",
+          "source_file": "Family reconstruction: The family within—a group experience",
+          "location": "206页关于Guide角色段落"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚认为世界问题的根源在于缺乏人性，核心关键词是「人」；社会产生太多孤立、疏远和痛苦；她后期将关注点从家庭扩展到社区和世界和平，认为世界冲突是支配-服从关系的重复，二战后人类开始走向平等新意识",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Amid these [world] changes is the growing conviction that human beings must evolve a new consciousness that places a high value on being human, that leads toward cooperation, that enables positive conflict resolution, and that recognizes our spiritual foundations. Can we accept as a given that the self of the therapist is an essential factor in the therapeutic process?",
+          "source_file": "exa_12_Virginia Satir _  Foundational Ideas.md",
+          "location": "书籍介绍引用Satir 1987原文"
+        },
+        {
+          "excerpt": "Eventually, Satir's focus on the individual and the family system expanded to community and ultimately turned her attention to world peace (the congruence between people and the global context).",
+          "source_file": "exa_10_Levitt Sample.qxd.md",
+          "location": "BACKGROUND AND LEADING FIGURE部分第2段"
+        },
+        {
+          "excerpt": "we continue to develop the same kinds of things that have happened to us as children, and therefore what is going on today is only a repeat of what went on with our parents and their parents before them [...] What is it? It is looking at relationship as being an experience in dominance and submission",
+          "source_file": "exa_7_Becoming More Fully Human with Virginia Satir _ Awaken.md",
+          "location": "SATIR对话关于Hatfields and McCoys部分"
+        },
+        {
+          "excerpt": "What's new now, and it started after World War II [...] when we faced the demise of the democratic way of living, through Hitler and all of that. [...] many, many people, never want to repeat that Hitler business again, which was the ultimate of the dominance-submission model.",
+          "source_file": "exa_7_Becoming More Fully Human with Virginia Satir _ Awaken.md",
+          "location": "SATIR对话关于二战后变化部分"
+        },
+        {
+          "excerpt": "If there is a key word in this article I would have to say it is \"human.\" It is the lack of humanness that I believe has contributed so heavily to the world's problems, and it is that very humanness which is such an essential and integral part of family life education as I see it.",
+          "source_file": "Family Life Education-a Perspective On the Educator",
+          "location": "[3]开头"
+        },
+        {
+          "excerpt": "Up to now, our society produces too much isolation, alienation, pain, destruction, and wasted human beings. Something has been wrong with the way we have approached training for humanness. For years we spent more money on raising pigs than we did on raising children.",
+          "source_file": "Family Life Education-a Perspective On the Educator",
+          "location": "[5]部分"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚坚信人类平等，早期职业生涯经常接手他人不愿接触的人，治疗多次治疗无效的来访者；她的热忱在于让多个家庭成员一起接受治疗，在个人取向治疗时代实现系统层面干预",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Believing deeply in human equality, early on in her career Satir \"often saw people with whom nobody else wanted to work\" and \"treated clients who had not moved beyond their predicaments despite how many hours of other therapy\"",
+          "source_file": "exa_8_.md",
+          "location": "Introduction部分第2段"
+        },
+        {
+          "excerpt": "Her passion for seeing multiple family members together in the era of the individual approach, \"helped her to intervene at the systems level\"",
+          "source_file": "exa_8_.md",
+          "location": "Introduction部分第1段"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚的家庭治疗模型融合了所有家庭治疗学派的主要理念——系统的边界与层级、跨代际的沟通模式与家庭规则、体验式方法；她被一些人视为过于直觉化缺乏理论性，但后来获认可为天才临床学家和杰出理论家",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "In fact Satir so (seemingly) effortlessly understood and attended to the pulse of people's affective emotional experience [...] that in her early years as a family therapy theorist she was viewed by some as being atheoretical and too intuitive to immolate. In the following years Satir finally garnered well-deserved respect as a gifted clinician and brilliant theorist.",
+          "source_file": "exa_10_Levitt Sample.qxd.md",
+          "location": "BACKGROUND AND LEADING FIGURE部分第3段"
+        },
+        {
+          "excerpt": "Her approach embodies major tenets of all the schools of family therapy. Her work with triads and subsystems dealing with boundary and hierarchical issues in the family touches on work central to the systems approach. Her attention to intergenerational and multigenerational issues [...] gives her work a family of origin perspective [...] Her use of bodily proximity and touch, sculpting, and psychodrama incorporates aspects of an experiential approach.",
+          "source_file": "exa_10_Levitt Sample.qxd.md",
+          "location": "PHILOSOPHICAL, CONCEPTUAL, AND THEORETICAL UNDERPINNINGS部分"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚早期在精神病院作为社工工作时创新地将整个家庭纳入治疗，由此发现家庭系统力量",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "She began her career as a social worker at the Illinois State Psychiatric Hospital in Chicago, Illinois, and was assigned to work with a woman who was diagnosed with \"ambulatory schizophrenia\". Initially she worked with her individually but decided to be innovative and bring in her whole family and it was in that work that she began to see the impact of family systems and the power of working with the family as a unit.",
+          "source_file": "exa_1_(PDF) Family therapy using the Satir process - ResearchGate.md",
+          "location": "INTRODUCTION部分"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚批评传统育儿方式（按时喂养vs按需喂养）本质上是将孩子人性放入束缚衣；发现很多人把角色当成自己（如成为「母亲」后不再是「人」），角色与自我不是同一回事",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "until recently good child-rearing practice meant keeping a rigid schedule for a child. He was fed by the clock instead of by his stomach. [...] In actuality, it was a way of putting his human part in a straitjacket and telling him that his humanness did not count-that what counted was how he could deny, destroy, or ignore everything about himself except what was acceptable to the outside.",
+          "source_file": "Family Life Education-a Perspective On the Educator",
+          "location": "[4]部分"
+        },
+        {
+          "excerpt": "My role is not the same as \"me,\" but many people seem to behave as if it were so. For instance, after one becomes a \"mother\" she is no longer a \"person.\"",
+          "source_file": "Family Life Education-a Perspective On the Educator",
+          "location": "[7]部分"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚主张通过良好的家庭教育来丰富和预防，而非等症状出现后修补；家庭生活教育者应具备理解人性、践行人性、保持一致性等素质；人们在清晰、信任、支持、诚实的情境中学习效果最好",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "I would look for a person who is fully knowledgeable about the literal development of human beings from birth to death, who understands what humanness is and what it means, who is experienced in the practice of his own humanness, who can listen to and comment on anything, who enjoys his own life and those who are close to him, who has a highly developed sense of humor [...] and above all, who is congruent.",
+          "source_file": "Family Life Education-a Perspective On the Educator",
+          "location": "[5]-[6] TEACHING FAMILY LIFE EDUCATION部分"
+        },
+        {
+          "excerpt": "I believe that people learn best in a clear, trusting, supporting, honest, alive, stimulating, emotional, and intellectual context. The teacher is the initiator and the model for developing this context.",
+          "source_file": "Family Life Education-a Perspective On the Educator",
+          "location": "[6]部分"
+        },
+        {
+          "excerpt": "We do not have to wait until people develop symptoms when we are in the process of repair, which is commonly called therapy. If we want to, through good family education we can enrich and prevent through education. Then we will not need as much repair.",
+          "source_file": "Family Life Education-a Perspective On the Educator",
+          "location": "[8]末段"
+        }
+      ]
+    },
+    {
+      "claim": "差异是自然的、必然的人类特征，问题不在是否存在差异，而在如何利用；将差异视为坏事物加以消灭与承认差异并创造性利用是完全不同的",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Looking at difference as bad and stamping it out is very, very different from seeing it as a natural human aspect that is acceptable and can be used constructively. [...] The question is not whether or not there are differences. The question is what are they and how can they be used?",
+          "source_file": "Family Life Education-a Perspective On the Educator",
+          "location": "[7]部分"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚识别出五个核心人类现象：沟通（赋义）、自我价值感、规则（情感规则影响成长）、与社会的外部链接、与普遍生命力的联系；人类出生第一个体验是恐惧，儿童无助时常以愤怒回应并引发成年人强烈反应；父母倾向于制定规则应对一切，但儿童将规则听成绝对的（必须/永远不），旧规则终将失效；旧的未受挑战的画面强烈影响人——至少两代人的学习经验像多余行李被带入成年",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The same phenomena kept coming up over and over again. Communication-how people make meaning with one another, the concept of self-worth, how people feel about themselves, their rules, how much of their humanness they permit themselves, links to society [...] and how they were relating to a universal life force.",
+          "source_file": "Family Life Education-a Perspective On the Educator",
+          "location": "[8]第六来源部分"
+        },
+        {
+          "excerpt": "The first experience that children have at birth is fear. They are moving from what is known, familiar, and safe (the womb) into an unknown and complex world in which needs are not instantly gratified. With the few resources they have, they immediately start to cope, searching for anything that will make this new world familiar-a heartbeat, food intake, the experience of a mother's skin.",
+          "source_file": "Family reconstruction: The family within—a group experience",
+          "location": "第4段"
+        },
+        {
+          "excerpt": "Perhaps the most common reaction in children to helplessness is the expression of anger and sometimes rage. When these strong emotions are expressed, they inevitably trigger equally strong reactions in adults.",
+          "source_file": "Family reconstruction: The family within—a group experience",
+          "location": "第6段"
+        },
+        {
+          "excerpt": "Unfortunately, all children learn these rules when they are little, when all rules are heard as absolute (You must . . . !) and impossible (always or never). For example, \"You must never get angry!\" \"You must always do your best.\" In these forms, the usefulness of rules inevitably breaks down, and stress in the family goes up.",
+          "source_file": "Family reconstruction: The family within—a group experience",
+          "location": "关于家庭规则段落"
+        },
+        {
+          "excerpt": "Old pictures have a strong influence when they are left unchallenged. When parents act in strange ways, that behavior contains, but does not manifest, at least two generations of learning and experience that are unavailable to children. [...] the fears, helplessness, anger, rules, defenses, and faulty communications associated with early life are carried into adult life like so much excess baggage.",
+          "source_file": "Family reconstruction: The family within—a group experience",
+          "location": "202页第1-2段"
+        }
+      ]
+    },
+    {
+      "claim": "家庭重建中每个人是内心家庭戏剧的「明星」，通过重建有机会用新眼光看父母作为人类同辈；理解父母人格是发现自身人格的开始",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Each person is the \"Star\" of the family drama within them. Through family reconstruction, the Star gets a chance to see parents with new eyes, a chance to see them as peers in the human race. To understand the personhood of parents is to begin the process of discovering the Star's own personhood.",
+          "source_file": "Family reconstruction: The family within—a group experience",
+          "location": "202页第3段"
+        }
+      ]
+    },
+    {
+      "claim": "SIS训练让青少年在自己的互动中发现最有效的沟通方式（自信/坦率型），成功体现在受训学生酒精/药物相关停学率显著降低；讨好/被动型说「不」几乎总被施压最终说「是」（1500名青少年无一例外）；转移话题策略在接收者中引发压倒性愤怒和沮丧",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Satir's clinical observations suggest that youngsters prefer strategies which enhance their self-esteem and elicit respect from their peers.",
+          "source_file": "Assertive_leveling communication and empathy in adolescent drug abuse prevention",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "Youngsters described themselves as feeling good and having high self-respect/esteem only when they said \"no\" in an assertive/leveling way.",
+          "source_file": "Assertive_leveling communication and empathy in adolescent drug abuse prevention",
+          "location": "ABSTRACT部分"
+        },
+        {
+          "excerpt": "Rather than telling youngsters the most effective means of communicating, SIS training gives them the opportunity to discover this for themselves in their own interactions. The success of this approach is reflected in the significantly lower frequency of alcohol/drug related school suspensions incurred during the 1983-84 school year by the 1,564 6th-9th graders who have been trained [...] as compared to the 1,295 remaining 6th-9th graders in the same city who did not receive this training.",
+          "source_file": "Assertive_leveling communication and empathy in adolescent drug abuse prevention",
+          "location": "第6段"
+        },
+        {
+          "excerpt": "The results reported here indicate that changing the subject, which is taught as an assertive strategy in some adolescent substance abuse prevention programs [...] elicited overwhelmingly angry and frustrated feelings in the receiver and feelings of being pressured, scared and stupid in the sender.",
+          "source_file": "Assertive_leveling communication and empathy in adolescent drug abuse prevention",
+          "location": "Discussion部分"
+        },
+        {
+          "excerpt": "In our experience with over 1,500 youngsters, saying \"no\" in a passive/placating manner was almost invariably followed by further pressure. The youngster who originally said \"no\" almost always finished by saying \"yes.\"",
+          "source_file": "Assertive_leveling communication and empathy in adolescent drug abuse prevention",
+          "location": "Discussion部分末段"
+        }
+      ]
+    },
+    {
+      "claim": "萨提亚鼓励人们先编织梦想再考虑现实，认为许多人因先评估可行性而扼杀了梦想",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Spend at least fifteen minutes a day weaving dreams. And if you weave a hundred, at least two of them will have a life. [...] Many people have killed their dreams by figuring out whether they could do them or not before they dream them.",
+          "source_file": "exa_11_Virginia Satir - NLP Comprehensive.md",
+          "location": "EXCERPT部分（Satir原文引用）"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 14,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-01T07:48:20.262368",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T02:42:31.767716",
+    "pre_merge_count": 65,
+    "post_merge_count": 24
+  }
+}

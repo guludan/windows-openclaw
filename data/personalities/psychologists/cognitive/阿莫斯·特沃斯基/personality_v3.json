@@ -1,0 +1,1276 @@
+{
+  "brief": "认知心理学巨匠，揭示人类决策系统性偏差",
+  "school": "认知心理学 / 行为经济学",
+  "domains": [
+    "判断与决策",
+    "风险选择",
+    "相似性认知",
+    "概率直觉"
+  ],
+  "stance_anchors": {
+    "core_belief": "人类在不确定性下的判断和决策系统性地偏离理性模型，这些偏离是可预测、有结构且可理论化的",
+    "methodology": "通过精心设计的假设性选择实验揭示认知偏差，用描述性模型（前景理论）替代规范性模型（期望效用理论）",
+    "key_debates": [
+      "描述性模型 vs 规范性模型",
+      "有限理性 vs 完全理性",
+      "启发式的适应性价值 vs 系统性偏差"
+    ],
+    "value_hierarchy": [
+      "实证真实性优先于理论优雅",
+      "心理现实性优先于数学简化",
+      "描述准确优先于规范辩护"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "精于设计简洁有力的实验悖论，用最少假设解释最多现象",
+    "reasoning_approach": "从系统性违反出发构建替代理论，而非修补现有模型",
+    "typical_biases": [],
+    "intellectual_strengths": [
+      "实验设计的直觉与简洁",
+      "跨领域整合能力",
+      "形式化建模能力",
+      "用日常直觉对抗数学假设"
+    ],
+    "intellectual_blindspots": [
+      "对情绪因素的关注较少",
+      "对个体差异关注有限",
+      "依赖假设性而非真实经济决策"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "前景理论",
+      "components": [
+        "参考点依赖的价值函数",
+        "非线性概率权重函数",
+        "编辑阶段",
+        "评估阶段"
+      ],
+      "application": "风险决策的描述性建模"
+    },
+    {
+      "name": "累积前景理论",
+      "components": [
+        "累积概率权重",
+        "双匹配公理",
+        "收益/损失分离评估",
+        "随机占优"
+      ],
+      "application": "修正原始前景理论的缺陷，支持多结果前景"
+    },
+    {
+      "name": "对比模型（Contrast Model）",
+      "components": [
+        "共同特征函数",
+        "独特特征函数",
+        "方向性权重",
+        "诊断性"
+      ],
+      "application": "相似性判断的形式化建模"
+    },
+    {
+      "name": "启发式与偏差框架",
+      "components": [
+        "可得性启发式",
+        "代表性启发式",
+        "锚定与调整",
+        "认知偏差分类"
+      ],
+      "application": "概率和频率判断的直觉机制分析"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "从期望效用理论的系统性违反出发，构建以参考点、损失厌恶和认知启发式为核心的描述性决策理论",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "冯·诺依曼-摩根斯顿期望效用理论",
+          "nature": "批判起点",
+          "description": "继承其形式化框架但挑战其描述有效性",
+          "source_ref": "paper_Prospect Theory_ An Analysis of Decision under Risk.md"
+        },
+        {
+          "source": "Allais",
+          "nature": "批判起点",
+          "description": "继承Allais悖论对确定效应的揭示",
+          "source_ref": "paper_Prospect Theory_ An Analysis of Decision under Risk.md"
+        },
+        {
+          "source": "Savage/Raiffa",
+          "nature": "框架化思想",
+          "description": "继承通过重新框架化揭示不变性违反的方法",
+          "source_ref": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md"
+        },
+        {
+          "source": "Wittgenstein家族相似性",
+          "nature": "概念基础",
+          "description": "继承自然范畴由家族相似性而非充分必要条件定义的思想",
+          "source_ref": "paper_Features of similarity..md"
+        },
+        {
+          "source": "Rosch原型理论",
+          "nature": "实验方法",
+          "description": "借鉴原型性假说验证相似性方向性",
+          "source_ref": "paper_Features of similarity..md"
+        },
+        {
+          "source": "Chapman虚假相关研究",
+          "nature": "实证基础",
+          "description": "复制并扩展虚假相关现象，用可得性启发式统一解释",
+          "source_ref": "paper_Availability_ A heuristic for judging frequency and probabil.md"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "期望效用理论",
+          "original": "效用定义在最终资产上，概率线性加权",
+          "transformation": "将价值载体改为收益/损失，用非线性决策权重替代概率",
+          "source_ref": "paper_Prospect Theory_ An Analysis of Decision under Risk.md"
+        },
+        {
+          "source": "几何相似性模型",
+          "original": "相似性作为度量空间中的距离",
+          "transformation": "提出基于特征的对比模型，允许非对称和非传递相似性",
+          "source_ref": "paper_Features of similarity..md"
+        }
+      ],
+      "ruptured": [],
+      "converged": [
+        {
+          "streams": [
+            "认知心理学",
+            "经济学"
+          ],
+          "product": "行为经济学——用心理学实验挑战经济学理性假设",
+          "source_ref": "exa_阿莫斯·特沃斯基_-_美国艺术与科学院院士_-_湛庐APP.md"
+        },
+        {
+          "streams": [
+            "风险决策理论",
+            "认知偏差研究"
+          ],
+          "product": "前景理论——统一解释确定性效应、反射效应和框架效应",
+          "source_ref": "exa_.md"
+        },
+        {
+          "streams": [
+            "可得性研究",
+            "虚假相关研究"
+          ],
+          "product": "统一的可得性偏差理论——用联想强度机制解释频率判断中的多种偏差",
+          "source_ref": "paper_Availability_ A heuristic for judging frequency and probabil.md"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1969-1979",
+        "title": "与卡尼曼的合作与启发式研究",
+        "narrative": "特沃斯基与卡尼曼在希伯来大学开始合作，先研究启发式与偏差，后转向风险决策。1979年发表前景理论。",
+        "catalyst": "对人类判断中系统性错误的共同兴趣",
+        "before_state": "各自从事独立的认知研究",
+        "after_state": "形成判断与决策心理学的研究纲领",
+        "significance": "奠定了行为经济学的理论基础",
+        "source_ref": "exa_阿莫斯·特沃斯基_-_美国艺术与科学院院士_-_湛庐APP.md"
+      },
+      {
+        "period": "1977",
+        "title": "相似性对比模型的提出",
+        "narrative": "发表《Features of Similarity》，质疑几何模型，提出基于特征的对比模型，揭示方向性和非传递性。",
+        "catalyst": "对度量空间假设的不满",
+        "before_state": "几何模型为主导",
+        "after_state": "特征匹配范式成为主流",
+        "significance": "为分类和判断研究奠定基础",
+        "source_ref": "paper_Features of similarity..md"
+      },
+      {
+        "period": "1992",
+        "title": "累积前景理论的发表",
+        "narrative": "在原始前景理论基础上发展累积前景理论，引入累积概率权重保证随机占优，参数估计显示高度稳定性。",
+        "catalyst": "原始前景理论违反随机占优",
+        "before_state": "前景理论存在技术缺陷",
+        "after_state": "成为风险决策标准描述性模型",
+        "significance": "获得更严格的数学基础",
+        "source_ref": "paper_Advances in prospect theory_ Cumulative representation of un.md"
+      }
+    ],
+    "grounding": {
+      "embodied": [],
+      "contextual": []
+    },
+    "collaborations": [
+      {
+        "with": "丹尼尔·卡尼曼",
+        "nature": "互补型",
+        "product": "启发式与偏差理论、前景理论、框架效应、合指谬误",
+        "significance": "20世纪社会科学最具影响力的合作之一",
+        "source_ref": "exa_阿莫斯·特沃斯基_-_美国艺术与科学院院士_-_湛庐APP.md"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "期望效用理论作为描述性模型",
+        "reason": "大量实验证据表明人们系统性违反其公理",
+        "aftermath": "提出前景理论作为替代描述性模型",
+        "source_ref": "paper_Prospect Theory_ An Analysis of Decision under Risk.md"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "理性选择理论家",
+        "axis": "描述有效性 vs 规范辩护",
+        "dynamic": "理性模型辩护者声称违反仅限于无意义问题、会被市场消除或被专家避免；特沃斯基用证据逐一反驳",
+        "source_ref": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md"
+      }
+    ],
+    "tension_explanation": {
+      "note": "核心张力：既承认规范性模型的数学优雅，又坚信必须用心理学上真实的描述性模型替代它",
+      "tracing": "源于期望效用理论在实证中的系统性失败"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "在理论建构上大胆，在结论推广上审慎",
+    "information_processing": "倾向于寻找模式违反而非确认证据",
+    "temporal_orientation": "关注当下决策的认知过程而非长期结果优化",
+    "conflict_resolution": "用精巧的实验设计而非论战来回应批评"
+  },
+  "situational_triggers": {
+    "description": "触发特沃斯基研究兴趣的情境条件",
+    "triggers": [
+      {
+        "condition": "观察到传统理论无法解释的直觉判断现象",
+        "behavioral_shift": "设计实验量化该偏差，构建替代理论",
+        "confidence": "高",
+        "source_ref": "paper_Prospect Theory_ An Analysis of Decision under Risk.md"
+      },
+      {
+        "condition": "面对理性模型辩护者的反驳",
+        "behavioral_shift": "用新实验数据回应，展示违反的稳健性",
+        "confidence": "高",
+        "source_ref": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md"
+      },
+      {
+        "condition": "发现不同领域中的同构偏差",
+        "behavioral_shift": "提炼跨领域的一般性理论框架",
+        "confidence": "高",
+        "source_ref": "exa_佛光大學心理實驗專區_-_心理大師_-_Amos_Tversky.md"
+      }
+    ],
+    "collapse_point": "当实验设计无法区分不同理论解释时，倾向于搁置而非强行解释",
+    "default_behavior": "回到最简洁的实验范式重新验证基本效应",
+    "public_commitment_lock": "坚持认为偏差是认知系统的结构性特征而非可消除的噪音"
+  },
+  "communication_profile": {
+    "style": "清晰、精确、以实验为中心，避免过度阐释",
+    "persuasion_tactics": [
+      "展示直觉悖论",
+      "用实验数据说话",
+      "类比知觉系统"
+    ],
+    "rhetorical_devices": [
+      "悖论式提问",
+      "知觉类比",
+      "简洁的形式化表达"
+    ],
+    "emotional_range": "冷静理性，偶尔流露出对人类认知局限性的幽默感"
+  },
+  "evolution_trajectory": "从相似性认知的基础研究出发，经与卡尼曼的合作转向判断启发式研究，随后聚焦风险决策并创建前景理论，最终发展出累积前景理论。始终围绕一个核心：用心理学实验揭示人类认知的结构性特征。",
+  "key_aphorisms": [
+    "人们不是无理性的，而是他们的理性有别于经济学家假设的理性。",
+    "错觉既存在于视觉中也存在于判断中，了解其中一个有助于理解另一个。"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "特沃斯基与卡尼曼合作奠定了行为经济学基础，主要研究不确定状况下的判断和风险决策，对经济学、心理学、医学、法学、公共政策等领域产生了深远影响。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "多年来，特沃斯基专注于人类决策领域的研究，研究方向主要集中于不确定状况下的判断、风险决策和理性选择。",
+          "source_file": "exa_阿莫斯·特沃斯基_-_美国艺术与科学院院士_-_湛庐APP.md",
+          "location": "人物简介段落"
+        },
+        {
+          "excerpt": "特沃斯基也是诺贝尔经济学奖得主丹尼尔·卡尼曼的重要学术伙伴，两人合作多年，共同提出了前景理论，奠定了行为经济学的基础，对经济学、心理学、医学、法学、公共政策等领域都产生了巨大影响。",
+          "source_file": "exa_阿莫斯·特沃斯基_-_美国艺术与科学院院士_-_湛庐APP.md",
+          "location": "人物简介段落"
+        }
+      ]
+    },
+    {
+      "claim": "风险偏好不对称：获益情境下人们倾向风险规避，损失情境下倾向风险寻求。这种偏差在金钱和生命等不同领域均稳定存在，构成前景理论四重模式的核心观察。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Daniel Kahneman和 Amos Tversky訪問一群受試者，看他喜歡哪一種選擇：穩定拿到手的八十美元，或者百分之八十五的機會拿一百美元，當然，這表示有百分之十五的可能是什麼也拿不到，大部分人願意拿八十美元。Daniel Kahneman和 Amos Tversky做出結論，人們一般『不願冒風險』：他們情願拿到確定的東西，即使另一個風險值得孤注一擲。Daniel Kahneman和 Amos Tversky問另一群人說，他們喜歡肯定賠出八時美元，或是喜歡百分之八十五的可能賠一百美元，這當然表示有百分之十五的可能是一分錢也不賠。這次，大部分人寧願賭一賭，而不願照賠，儘管一般而言，這場賭局的代價更大。Daniel Kahneman和 Amos Tversky做以下的結論：當在獲取中進行選擇時，人們不願意冒險；當在受損中進行選擇時，人們會找機會嘗試冒一下險—在這兩種情況下，他們都有可能做出錯誤判斷。",
+          "source_file": "exa_佛光大學心理實驗專區_-_心理大師_-_Amos_Tversky.md",
+          "location": "URL: http://www.fgu.edu.tw/~psychology/know/data/personal/AmosTversky.htm"
+        },
+        {
+          "excerpt": "後來在一項研究中，他們讓大學生在兩種解決公共衛生問題的提案中做出選擇。這兩種辦法在數學上是相等的，但措辭略有不同。第一版本是： 假設美國正在準備防禦一種罕見的亞洲疾病的迅速蔓延，他估計會使六百人喪失。有人提出了兩種方案來對付該疾病。針對這些方案的後果進行的準確科學估計如下： 如果採納A方案，則有可能會拯救200人。 如果採納B方案，則有三分之一的可能性使600人全部獲救，亦即有三分之二的可能這600人一個也就不了。 你喜歡那一種方案？ 第二個版本的故事和前面一樣只是措辭略有不同： 如果採納C方案，400人會喪命。 如果採納D方案，則有三分之一的可能性是沒有人會死去。但有三分之二的可能是600人全部死去。 受試者對這兩個版本的問題反應差別極大：百分之七十二的人選擇方案A而不是方案B，但百分之七十八的人（另一小組）選擇方案D而不是方案C。Daniel Kahneman和 Amos Tversky的解釋：在第一版本中，結果是以獲取（拯救的生命）來描述的，在第二版中是以損失（損失的生命）來描述的。這與上述的金錢實驗是同樣的偏見，受試者的判斷受到扭曲，在處於生命關頭和處於賭桌上的金錢是一樣的。",
+          "source_file": "exa_佛光大學心理實驗專區_-_心理大師_-_Amos_Tversky.md",
+          "location": "URL: http://www.fgu.edu.tw/~psychology/know/data/personal/AmosTversky.htm"
+        },
+        {
+          "excerpt": "Rational choice and the framing of decisions\nUniversity of British Columbia.) The majority choice in decision (i) is risk averse,\nwhile the majority choice in decision (ii) is risk seeking.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 102"
+        }
+      ]
+    },
+    {
+      "claim": "相似性判断具有方向性不对称：主体与参照物的比较方向影响判断结果。更突出的参照物其独特特征被赋予更高权重。实验证实s(q,p)显著高于s(p,q)。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Tversky proved that, if the distinctive features of the subject are weighted more heavily than those of the referent, then s(a, b) >s (b, a) if and only if f(B – A) > f(A – B), which means that a appears more similar to b than b does to a if and only if the distinctive features of b are more salient than those of a, and this is generally the case when b is more prominent than a.",
+          "source_file": "exa_Tversky,_Amos_Encyclopedia.com.md",
+          "location": "Tversky, Amos | Encyclopedia.com"
+        },
+        {
+          "excerpt": "hat the average s(q,p) across all subjects and\npairs was significantly higher than the average\ns(p,q). A t test for correlated samples yielded\n/(IS) = 2.94, p < .01.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 139"
+        }
+      ]
+    },
+    {
+      "claim": "多属性决策中，标准价值最大化模型不能准确反映有限理性决策者的行为——人们按属性重要性分层决策而非加权平均。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "According to the standard value-maximization model of multiattribute choice, a decision maker choosing between alternatives with multiple attributes forms a weighted average of each alternative's attribute values, the weights corresponding to perceived attribute importance, and then chooses the alternative with the highest average weighted value. But there are reasons to doubt that this model accurately reflects the behavior of decision makers with bounded rationality facing complex choices. Suppose a decision maker has to choose between two travel agencies a1 and a2 offering tours to two different destinations d1 (Greece) and d2(South Africa). Agency a1 offers only d1, whereas agency a2 offers both d1 and d2. There are three feasible combinations of travel agency and destination, a1d1, a2d1, and a2d2, and if the decision maker is equally attracted by Greece and South Africa and is also indifferent between the travel agencies, then each combination should have the same probability of being chosen, according to the standard value-maximization model. But it seems intuitively obvious that most people would choose first between the destinations and only then between the travel agencies, because destination is a more important attribute of a trip than travel agency.",
+          "source_file": "exa_Tversky,_Amos_Encyclopedia.com.md",
+          "location": "Tversky, Amos | Encyclopedia.com"
+        }
+      ]
+    },
+    {
+      "claim": "对比模型替代几何相似性模型：相似性是共同特征和独特特征的加权线性函数。三角不等式不一定成立，反驳了度量空间假设。Wittgenstein的家族相似性思想为此提供了哲学基础。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Tversky pointed out that our representations of stimuli are rich and complex, including attributes associated with appearance, function, relation to other objects, and further attributes inferred from general world knowledge. Objects or stimuli, he proposed, are represented by a collection of features, with some features necessarily attended to more than others, depending on the nature of the task. In his theory, each object a is denoted by a set A of features, and the similarity of a to b, denoted by s(a, b), is a weighted linear function of three arguments, namely the features that a and b share in common, denoted by A ÇB, the distinctive features of a, denoted by A? B, and the distinctive features of b, denoted by B – A. Similarity increases with the measures of the common features and decreases with the measures of the distinctive features.",
+          "source_file": "exa_Tversky,_Amos_Encyclopedia.com.md",
+          "location": "Tversky, Amos | Encyclopedia.com"
+        },
+        {
+          "excerpt": "Psychological Review\nJ\nV O L U M E 84\nN U M B E R 4\nJULY 1977\nFeatures of Similarity\nAmos Tversky\nHebrew University\nJerusalem, Israel\nThe metric and dimensional assumptions that underlie the geometric represen-\ntation of similarity are questioned on both theoretical and empirical.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 133"
+        },
+        {
+          "excerpt": "ames) casts some doubts on the psychological\nvalidity of this assumption.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 136"
+        },
+        {
+          "excerpt": "ect a, and let NX de-\nnote the number of objects that share feature\nX.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 141"
+        },
+        {
+          "excerpt": "- B) - f(B - A)\n= 0f (A C\\ B) + 2f (A C\\ B) - f (A - B)\n-f(B -A) - 2f(AHB)\n= (6 + 2)f (A n B) - f (A) - f (B)\nsince f(A) = f(B) for all a,b in A. Under the\npresent assumptions, therefore, similarity be-\ntween objects is a linear function of the mea-\nsure of their common features.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 144"
+        },
+        {
+          "excerpt": "ction of critical\nfeatures, Wittgenstein (1953) argued that\nseveral natural categories (e.g., a game) do\nnot have any attribute that is shared by all\ntheir members, and by them alone.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 145"
+        }
+      ]
+    },
+    {
+      "claim": "确定性效应：人们相对于概率性结果超重确定性结果，导致涉及确定收益时风险规避、涉及确定损失时风险寻求。这是Allais悖论的核心。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "一是他們發現和確定性的結果相比個人會低估概率性結果，他們稱之為確定性效應(Certainty Effect)。KT還指出確定性效應導致了當選擇中包含確定性收益時的風險厭惡以及當選擇中包含確定性損失的風險尋求。",
+          "source_file": "exa_阿莫斯·特沃斯基_-_MBA智库百科.md",
+          "location": "特沃斯基的理論"
+        },
+        {
+          "excerpt": "Choices among risky prospects exhibit several pervasive effects that are inconsistent with the basic tenets of utility theory. In particular, people underweight outcomes that are merely probable in comparison with outcomes that are obtained with certainty. This tendency, called the certainty effect, contributes to risk aversion in choices involving sure gain.",
+          "source_file": "exa_.md",
+          "location": "摘要部分"
+        },
+        {
+          "excerpt": "Choices among risky prospects exhibit several pervasive effects that are inconsistent with the basic tenets of utility theory. In particular, people underweight outcomes that are merely probable in comparison with outcomes that are obtained with certainty. This tendency, called the certainty effect, contributes to risk aversion in choices involving sure",
+          "source_file": "exa_.md",
+          "location": "标题下方摘要"
+        },
+        {
+          "excerpt": "Jun 2017 at 13:39:52, subject to the Cambridge Core terms of use, available at https:/www.cambridge.org/core/terms.\n190\nQUESTIONABLE RULES OF RATIONALITY\nSecond, recall that the preferences between the positive prospects\nin Table 11.",
+          "source_file": "paper_Prospect Theory_ An Analysis of Decision under Risk.md",
+          "location": "chunk 125"
+        }
+      ]
+    },
+    {
+      "claim": "反射效应：正负前景之间选择呈现镜像关系——收益域风险规避，损失域风险寻求。挑战期望效用理论，促使提出前景理论。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "三是KT發現了反射效應(Reflection Effect)，當正負前景的前景絕對值相等時，在負前景之間的選擇和在正前景之間的選擇呈現鏡像關係。為了補償這些VMUT所不能解釋的關於個人行為的特征，KT提出了新模型PT。",
+          "source_file": "exa_阿莫斯·特沃斯基_-_MBA智库百科.md",
+          "location": "特沃斯基的理論"
+        }
+      ]
+    },
+    {
+      "claim": "框架效应在负面情境中表现显著：同一决策问题的不同描述方式导致系统性偏好反转，违反不变性公理。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "而當從人員的死亡這方面來描述如果就會不同，如果被告知如果方案A被採用400人會喪生，而方案B被採用1／3的機會沒人會死，2／3的機會600人會死，這樣被實驗者就會選擇方案B。在負面情況要出現時，大部分會傾向不肯定的方案。",
+          "source_file": "exa_阿莫斯·特沃斯基_-_MBA智库百科.md",
+          "location": "特沃斯基與克赫曼"
+        }
+      ]
+    },
+    {
+      "claim": "启发式与偏差理论揭示了人类判断中系统性地依赖直觉捷径（可得性、代表性、锚定），挑战了理性人假设。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "2002年，卡尼曼以其与阿莫斯·特沃斯基（Amos Tversky）共同完成的启发式与偏差（Heuristics and biases）、预期理论、框架效应等判断与决策心理学系列研究成果 ...",
+          "source_file": "serp_丹尼尔·卡尼曼的主要学术贡献.md",
+          "location": "URL: https://www.cssn.cn/skgz/bwyc/202406/t20240605_5757132.shtml"
+        },
+        {
+          "excerpt": "2002年，卡尼曼以其与阿莫斯·特沃斯基（Amos Tversky）共同完成的启发式与偏差（Heuristics and biases）、预期理论、框架效应等判断与决策心理学系列研究成果",
+          "source_file": "serp_丹尼尔·卡尼曼的主要学术贡献.md",
+          "location": "URL: https://www.cssn.cn/skgz/bwyc/202406/t20240605_5757132.shtml"
+        }
+      ]
+    },
+    {
+      "claim": "前景理论的核心：价值载体是收益和损失而非最终资产；概率被非线性决策权重替代。价值函数对收益凹、对损失凸、损失比收益更陡峭。低概率被超重，中高概率被低重。评估公式V=π(p)v(x)+π(q)v(y)。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "An alternative theory of choice is developed, in which value is assigned to gains and losses rather than to final assets and in which probabilities are replaced by decision weights. The value function is normally concave for gains, commonly convex for losses, and is generally steeper for losses than for gains. Decision weights are generally lower than the corresponding probabilities, except in the range of low probabilities. Overweighting of low probabilities may contribute to the attractiveness of both insurance and gambling.",
+          "source_file": "exa_.md",
+          "location": "摘要部分"
+        },
+        {
+          "excerpt": "Journal of Risk and Uncertainty, 5:297-323 (1992)\nAdvances in Prospect Theory:\nCumulative Representation of Uncertainty\nAMOS TVERSKY\nStanford University, Department of Psychology, Stanford, CA 94305-2130\nDANIEL KAHNEMAN*\nUniversity of California at Berkeley, Department of Psychol.",
+          "source_file": "paper_Advances in prospect theory_ Cumulative representation of un.md",
+          "location": "chunk 89"
+        },
+        {
+          "excerpt": "Rational choice and the framing of decisions\nv( •), defined on gains and losses, and decision weights n{ •), defined on stated\nprobabilities, \nsuch \nthat \nthe \noverall \nvalue \nof \nthe \nprospect \nequals\n7i(p)v(x) + n{q)v(y).",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 104"
+        }
+      ]
+    },
+    {
+      "claim": "期望效用理论作为规范模型被广泛接受，基于期望原则、资产整合和风险规避三个信条，其公理受到实验系统性挑战。不变性要求等价描述产生相同偏好，但人们系统性违反。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The present paper describes several classes of choice problems in which preferences systematically violate the axioms of expected utility theory. In the light of these observations we argue that utility theory, as it is commonly interpreted and applied, is not an adequate descriptive model, and we propose an alternative account of choice under risk.",
+          "source_file": "exa_.md",
+          "location": "第1节引言"
+        },
+        {
+          "excerpt": "If people are reasonably accurate in predicting their choices, the presence of common and systematic violations of expected utility theory in hypothetical problems provides presumptive evidence against that theory.",
+          "source_file": "exa_.md",
+          "location": "第2节批评，方法讨论部分"
+        },
+        {
+          "excerpt": "EXPECTED UTILITY THEORY has dominated the analysis of decision making under risk. It has been generally accepted as a normative model of rational choice [24], and widely applied as a descriptive model of economic behavior, e.g. [15, 4]. Thus, it is assumed that all reasonable people would wish to obey the axioms of the theory [47, 36], and that most people actually do, most of the time.",
+          "source_file": "exa_.md",
+          "location": "第1节引言"
+        },
+        {
+          "excerpt": "The application of expected utility theory to choices between prospects is based on the following three tenets. (i) Expectation: U(X1, Pi; ... ; Xn, Pn) = pi u (x1) +... +PnU (Xn) ... (ii) Asset Integration: (xi, Pi; ... ; Xn, P) is acceptable at asset position w iff U(w +x1, pl; ... ; w +Xn, Pn) > u(w). ... (iii) Risk Aversion: u is concave (u\" < 0).",
+          "source_file": "exa_.md",
+          "location": "第2节批评，三个信条部分"
+        },
+        {
+          "excerpt": "The application of expected utility theory to choices between prospects is based on the following three tenets. (i) Expectation: U(X1, Pi; ... ; Xn, Pn) = pi u (x1) +... +PnU (Xn) That is, the overall utility of a prospect, denoted by U, is the expected utility of its outcomes. (ii) Asset Integration: (xi, Pi; ... ; Xn, P) is acceptable at asset position w iff U(w +x1, pl; ... ; w +Xn, Pn) > u(w). That is, a prospect is acceptable if the utility resulting from integrating the prospect with one's assets exceeds the utility of those assets alone. Thus, the domain of the utility function is final states (which include one's asset position) rather than gains or losses. (iii) Risk Aversion: u is concave (u\" < 0). A person is risk averse if he prefers the certain prospect (x) to any risky prospect with expected value x. In expected utility theory, risk aversion is equivalent to the concavity of the utility function.",
+          "source_file": "exa_.md",
+          "location": "第2节批评"
+        },
+        {
+          "excerpt": "RATIONAL CHOICE AND THE\nFRAMING OF DECISIONS\nAMOS TVERSKY AND DANIEL KAHNEMAN\nThe modern theory of decision making under risk emerged from a logical\nanalysis of games of chance rather than from a psychological analysis of risk and\nvalue.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 97"
+        },
+        {
+          "excerpt": "Rational choice and the framing of decisions\nsame choice problem should yield the same preference. That is, the preference\nbetween options should be independent of their description.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 99"
+        },
+        {
+          "excerpt": "11. Prospect theory: An analysis of\ndecision under risk\nDaniel Kahneman and Amos Tversky\n1. Introduction\nExpected utility theory has dominated the analysis of decision making\nunder risk.",
+          "source_file": "paper_Prospect Theory_ An Analysis of Decision under Risk.md",
+          "location": "chunk 122"
+        }
+      ]
+    },
+    {
+      "claim": "采用假设性选择问题作为主要实验方法，常引入金钱激励增强认真程度。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The reliance on hypothetical choices raises obvious questions regarding the validity of the method and the generalizability of the results. We are keenly aware of these problems. However, all other methods that have been used to test utility theory also suffer from severe drawbacks. ... By default, the method of hypothetical choices emerges as the simplest procedure by which a large number of theoretical questions can be investigated.",
+          "source_file": "exa_.md",
+          "location": "第2节批评，方法讨论部分"
+        },
+        {
+          "excerpt": "Rational choice and the framing of decisions\nas first noted by Allais (1953). The next series of problems (Tversky and\nKahneman, 1981, p. 455) illustrates the phenomenon discovered by Allais and its\nrelation to the weighting of probabilities and to the framing of chance events.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 112"
+        }
+      ]
+    },
+    {
+      "claim": "参考点依赖偏好：标准经济理论假设偏好独立于参考状态，但实验证据一致违反。个体选择应由一族索引偏好顺序描述。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Because the standard theory does not recognize the special role of the reference state, it implicitly assumes reference independence; that is, x r y iff x _^ s y for all x,y,r,s E X. This property, however, was consistently violated in the preceding experiments. To accommodate these observations, we describe individual choice not by a single preference order but by a family or a book of indexed preference orders 1 ^ r : r E XI.",
+          "source_file": "paper_Loss Aversion in Riskless Choice_ A Reference-Dependent Mode.md",
+          "location": "第1047页，第2段"
+        }
+      ]
+    },
+    {
+      "claim": "损失厌恶：损失比等量收益影响更大。参考点变化将收益转为损失导致偏好逆转，解释禀赋效应和现状偏见。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The basic intuition concerning loss aversion is that losses (outcomes below the reference state) loom larger than corresponding gains (outcomes above the reference state). Because a shift of reference can turn gains into losses and vice versa, it can give rise to reversals of preference, as implied by the following definition.",
+          "source_file": "paper_Loss Aversion in Riskless Choice_ A Reference-Dependent Mode.md",
+          "location": "第1047页，第4段"
+        },
+        {
+          "excerpt": "The present notion of loss aversion accounts for the endowment effect and the status quo bias described in the preceding section. Consider the effect of different reference points on the preference between x and y, as illustrated in Figure II. Loss aversion entails that a decision maker who is indifferent between x and y from t will prefer x over y from x, and y over x from y. That is, x =, y implies that x > x y and y > y x. This explains the different valuations of a good by sellers and choosers and other manifestations of the status quo bias.",
+          "source_file": "paper_Loss Aversion in Riskless Choice_ A Reference-Dependent Mode.md",
+          "location": "第1048页，第3段"
+        },
+        {
+          "excerpt": "A reference structure satisfies sign dependence if for all x,y,r,s in X x _^_ r y iff x ^ s y whenever (i) x and y belong to the same quadrant with respect to r and with respect to s, and (ii) r and s belong to the same quadrant with respect to x and with respect to y. This condition implies that reference independence can be violated only when a change in reference turns a gain into a loss or vice versa. It is easy to verify that sign dependence is equivalent to constant sensitivity. Although sign dependence may not hold in general, it serves as a useful approximation whenever the curvature induced by the reference state is not very pronounced.",
+          "source_file": "paper_Loss Aversion in Riskless Choice_ A Reference-Dependent Mode.md",
+          "location": "第1049页，第2段"
+        }
+      ]
+    },
+    {
+      "claim": "敏感性递减：边际价值随与参考点距离增加而减小。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Recall that, according to the value function of Figure I, marginal value decreases with the distance from the reference point. For example, the difference between a yearly salary of $60,000 and a yearly salary of $70,000 has a bigger impact when current salary is $50,000 than when it is $40,000. A reference structure satisfies diminishing sensitivity (DS) if the following condition holds for all x,y,s,t in X. Suppose that x 1 > y 1 ) y2 > X2) LOSS AVERSION IN RISKLESS CHOICE 1049 s2 = t2, and either y, ^ s, ^ t1 or t 1 ^ s, ^ x 1; see Figure III. Then y =, x implies that y ^ , x; the same holds if the subscripts 1 and 2 are interchanged throughout.",
+          "source_file": "paper_Loss Aversion in Riskless Choice_ A Reference-Dependent Mode.md",
+          "location": "第1048页，第4段至第1049页第1段"
+        },
+        {
+          "excerpt": "It is important to distinguish between the present notion of diminishing sensitivity, which pertains to the effect of the reference state, and the standard assumption of diminishing marginal utility. Although the two hypotheses are conceptually similar, they are logically independent. In particular, diminishing sensitivity does not imply that the indifference curves are concave below the reference point.",
+          "source_file": "paper_Loss Aversion in Riskless Choice_ A Reference-Dependent Mode.md",
+          "location": "第1049页，第1段"
+        }
+      ]
+    },
+    {
+      "claim": "可得性启发式的核心机制：人们通过评估实例回忆或联想的难易程度来估计频率和概率。可得性在生态学上是有效线索，但无关因素也会导致偏差。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "This paper explores a judgmental heuristic in which a person evaluates the frequency of classes or the probability of events by availability, i.e., by the ease with which relevant instances come to mind.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "In general, availability is correlated with ecological frequency, but it is also affected by other factors. Consequently, the reliance on the availability heuristic leads to systematic biases.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "That associative bonds are strengthened by repetition is perhaps the oldest law of memory known to man. The availability heuristic exploits the inverse form of this law, that is, it uses strength of association as a basis for the judgment of frequency.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Availability is an ecologically valid clue for the judgment of frequency because, in general, frequent events are easier to recall or imagine than infrequent ones. However, availability is also affected by various factors which are unrelated to actual frequency. If the availability heuristic is applied, then such factors will affect the perceived frequency of classes and the subjective probability of events.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "COGNlTTIVE PSYCHOLOGY 5, 207-232\n(1973)\nAvailability:\nA Heuristic\nfor Judging\nFrequency\nand\nProbability122\nAMOS\nTVERSKY\nAND\nDANIEL\nKAHNEMAN\nThe Hebrew University\nof Jerusalem and the Oregon Research Institute\nThis paper\nexplores\na judgmental\nheuristic\nin which\na person evaluates\nthe frequency\nof cla",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Introduction section, 第1-2段"
+        },
+        {
+          "excerpt": "The mean number of words produced varied from 1.3 (for XUZONLCJM) to 22.4 (for TAPCERHOB), with a grand mean of 11.9. The mean number estimated varied from 4.9 to 16.0 (for the same two problems), with a grand mean of 10.3. The product-moment correlation between estimation and production, over the sixteen problems, was 0.96.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "The mean number of instances produced varied from 4.1 (city names beginning with F) to 23.7 (four-legged animals), with a grand mean of 11.7. The mean number estimated varied from 6.7 to 18.7 (for the same two categories), with a grand mean of 10.8. The product-moment correlation between production and estimation over the 16 categories was 0.93.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Since, at every stage in the construction of a path (i.e., in each row of the diagram) there are many more X’s than O’s, it is easier to construct paths consisting of six X’s than paths consisting of, say, five X’s and one 0, although the latter are, in fact, more numerous. Accordingly, we predicted that subjects would erroneously judge paths of 6 X’s and no 0 to be the most numerous.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Median estimates of the relative frequency of all path-types are presented in Fig. 2a, along with the correct binomial values. The results confirm the hypothesis. Of the 73 subjects, 54 erroneously judged that there are more paths consisting of six X’s and no 0 than paths consisting of five X’s and one 0, and only 13 regarded the latter as more numerous than the former (p < .001, by sign test).",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        }
+      ]
+    },
+    {
+      "claim": "人们能快速准确地评估可得性——相关系数高达0.96和0.93。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Results. The mean number of words produced varied from 1.3 (for XUZONLCJM) to 22.4 (for TAPCERHOB), with a grand mean of 11.9. The mean number estimated varied from 4.9 to 16.0 (for the same two problems), with a grand mean of 10.3. The product-moment correlation between estimation and production, over the sixteen problems, was 0.96.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Results. The mean number of instances produced varied from 4.1 (city names beginning with F) to 23.7 (four-legged animals), with a grand mean of 11.7. The mean number estimated varied from 6.7 to 18.7 (for the same two categories), with a grand mean of 10.8. The product-moment correlation between production and estimation over the 16 categories was 0.93.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "COGNlTTIVE PSYCHOLOGY 5, 207-232\n(1973)\nAvailability:\nA Heuristic\nfor Judging\nFrequency\nand\nProbability122\nAMOS\nTVERSKY\nAND\nDANIEL\nKAHNEMAN\nThe Hebrew University\nof Jerusalem and the Oregon Research Institute\nThis paper\nexplores\na judgmental\nheuristic\nin which\na person evaluates\nthe frequency\nof cla",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 1 Results"
+        },
+        {
+          "excerpt": "The product-moment correlation between production and estimation over the 16 categories was 0.93.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 2 Results"
+        }
+      ]
+    },
+    {
+      "claim": "字母频率判断中的可得性偏差：人们系统高估首字母位置出现频率，因为首字母单词更易回忆。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Suppose you sample a word at random from an English text. Is it more likely that the word starts with a K, or that K is its third letter? According to our thesis, people answer such a question by comparing the availability of the two categories, i.e., by assessing the ease with which instances of the two categories come to mind. It is certainly easier to think of words that start with a K than of words where K is in the third position. If the judgment of frequency is mediated by assessed availability, then words that start with K should be judged more frequent. In fact, a typical text contains twice as many words in which K is in the third position than words that start with K.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Among the 152 subjects, 105 judged the first position to be more likely for a majority of the letters, and 47 judged the third position to be more likely for a majority of the letters. The bias favoring the first position is highly significant ( p < 691, by sign test). Moreover, each of the five letters was judged by a majority of subjects to be more frequent in the first than in the third position. The median estimated ratio was 2:1 for each of the five letters. These results were obtained despite the fact that all letters were more frequent in the third position.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "COGNlTTIVE PSYCHOLOGY 5, 207-232\n(1973)\nAvailability:\nA Heuristic\nfor Judging\nFrequency\nand\nProbability122\nAMOS\nTVERSKY\nAND\nDANIEL\nKAHNEMAN\nThe Hebrew University\nof Jerusalem and the Oregon Research Institute\nThis paper\nexplores\na judgmental\nheuristic\nin which\na person evaluates\nthe frequency\nof cla",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 3 Results"
+        },
+        {
+          "excerpt": "Among the 152 subjects, 105 judged the first position to be more likely for a majority of the letters, and 47 judged the third position to be more likely for a majority of the letters. The bias favoring the first position is highly significant ( p < 691, by sign test), Moreover, each of the five letters was judged by a majority of subjects to be more frequent in the first than in the third position, The median estimated ratio was 2:1 for each of the five letters. These results were obtained despite the fact that all letters were more frequent in the third position.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        }
+      ]
+    },
+    {
+      "claim": "路径/结构判断中的可得性偏差：更易可视化的路径被判断为更多，即使金钱奖励也无法纠正。同一数学结构的卡片问题却诱发代表性启发式产生正确判断——问题表述控制启发式选择。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Most readers will probably share with us the immediate impression that there are more paths in A than in B. Our subjects agreed: 46 of 54 respondents saw more paths in A than in B (p < 601, by sign test). The median estimates were 40 paths in A and I8 in B. In fact, the number of paths is the same in both structures, for S3 = 2g = 512.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Why do people see more paths in A than in B? We suggest that this result reflects the differential availability of paths in the two structures. There are several factors that make the paths in A more available than those in B. First, the most immediately available paths are the columns of the structures. There are 8 columns in A and only 2 in B. Second, among the paths that cross columns, those of A are generally more distinctive and less confusable than those in B. Two paths in A share, on the average, about ?i of their elements, whereas two paths in B share, on the average, half of their elements. Finally, the paths in A are shorter and hence easier to visualize than those in B.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Since, at every stage in the construction of a path (i.e., in each row of the diagram) there are many more X's than O's, it is easier to construct paths consisting of six X's than paths consisting of, say, five X's and one 0, although the latter are, in fact, more numerous. Accordingly, we predicted that subjects would erroneously judge paths of 6 X's and no 0 to be the most numerous.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Of the 73 subjects, 54 erroneously judged that there are more paths consisting of six X's and no 0 than paths consisting of five X's and one 0, and only 13 regarded the latter as more numerous than the former (p < .OOl, by sign test).",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "n Study\n8 were\nsimilarly\nrecruited\nat Stanford\nUni-\nversity.\nSubjects\nin Studies\n5, 6 and 7 were students\nin the 10th and 11 grades of\nseveral\ncollege-preparatory\nhigh schools in Israel.\n210\nTVERSKY\nAND\nKAHNEMAN\ncould produce in 2 min. For eight other problems, he constructed words\nwithout\nprior\nest",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 7 Results"
+        },
+        {
+          "excerpt": "The significant majority of subjects (38 of 50, p < .001, by sign test) again selected the former outcome as more frequent. Erroneous intuitions, apparently, are not easily rectified by the introduction of monetary payoffs.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 7 follow-up test"
+        },
+        {
+          "excerpt": "Median estimates of the relative frequency of all path-types are presented in Fig. 2a, along with the correct binomial values. The results confirm the hypothesis. Of the 73 subjects, 54 erroneously judged that there are more paths consisting of six X's and no 0 than paths consisting of five X's and one 0, and only 13 regarded the latter as more numerous than the former (p < .OOl, by sign test).",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "In the card problem, on the other hand, the population proportion is explicitly stated and no mention is made of individual instances. Consequently, we hypothesize that the outcomes in the card problem will be evaluated by the degree to which they are representative of the composition of the deck rather than by the availability of individual instances. In the card problem, the outcome \"five X's and one 0\" is the most representative, because it matches the population proportion (see Kahneman & Tversky, 1972). Hence, by the representativeness heuristic, this outcome should be judged more frequent than the outcome \"six x's and no 0,\" contrary to the observed pattern of judgments in the path problem.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "The judgments of 71 of 82 subjects who answered the card problem conformed to this prediction. In the path problem, only 13 of 73 subjects had judged these outcomes in the same way; the difference between the two versions is highly significant (p < .OOl, by a x2 test).",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        }
+      ]
+    },
+    {
+      "claim": "组合问题中的可得性偏差：高估更易构建的小规模子集数量，低估大规模子集。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Consider a group of ten people who have to form committees of r members, where r is some number between 2 and 8. How many different committees of T members can they form? The correct answer to this problem is given by the binomial coefficient 10 0 r which reaches a maximum of 252 for T = 5. Clearly, the number of committees of T members equals the number of committees of 10 - T members because any elected group of, say, two members defines a unique nonelected group of eight members. According to our analysis of intuitive estimation, however, committees of two members are more available than committees of eight. First, the simplest scheme ...",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "COGNlTTIVE PSYCHOLOGY 5, 207-232\n(1973)\nAvailability:\nA Heuristic\nfor Judging\nFrequency\nand\nProbability122\nAMOS\nTVERSKY\nAND\nDANIEL\nKAHNEMAN\nThe Hebrew University\nof Jerusalem and the Oregon Research Institute\nThis paper\nexplores\na judgmental\nheuristic\nin which\na person evaluates\nthe frequency\nof cla",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 5 Combinations"
+        },
+        {
+          "excerpt": "According to our analysis of intuitive estimation, however, committees of two members are more available than committees of eight. First, the simplest scheme for constructing committees is a partition of the group into disjoint subsets, Thus, one readily sees that there are as many as five disjoint committees of two members, but not even two disjoint committees of eight. Second, committees of eight members are much less distinct, because of their overlapping membership; any two committees of eight share at least six members. This analysis suggests that small committees are more available than large committees. By the availability hypothesis, therefore, the small committees should appear more numerous.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Median estimates of the number of committees are shown in Fig. 1, with the correct values. As predicted, the judged numerosity of committees decreases with their size.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Four groups of subjects (total N = 118) estimated the number of possible committees of T members that can be formed from a set of ten people. The different groups, respectively, evaluated the following values of T: 2 and 6; 3 and 8; 4 and 7; 5. Median estimates of the number of committees are shown in Fig. 1, with the correct values. As predicted, the judged numerosity of committees decreases with their size.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        }
+      ]
+    },
+    {
+      "claim": "阶乘估算中的锚定效应：降序估算值远高于升序，两者均严重低估正确值。初始步骤锚定后续判断。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "in a structure\nis a line that connects an element in the\ntop row to an element in the bottom row, and passes through\none and only one element in each row.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 6 Extrapolation Results"
+        },
+        {
+          "excerpt": "Because the results of the first few steps of multiplication (performed from left to right) are larger in the descending sequence than in the ascending sequence, the former expression is judged larger than the latter.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 6 discussion"
+        },
+        {
+          "excerpt": "We asked subjects to estimate, within 5 set, a numerical expression that was written on the blackboard, One group of subjects (N = 87) estimated the product 8 X 7 X 6 X 5 X 4 X 3 X 2 X 1, while another group (N = 114) estimated the product 1 X 2 x 3 x 4 x 5 x 6 x 7 x 8. The median estimate for the descending sequence was 2,250. The median estimate for the ascending sequence was 512. The difference between the estimates is highly significant (p < ,001, by median test). Both estimates fall very short of the correct answer, which is 40,320.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Both the underestimation of the correct value and the difference between the two estimates support the hypothesis that people estimate 81 by extrapolating from a partial computation. The factorial, like other combinatorial expressions, is characterized by an ever-increasing rate of growth. Consequently, a person who extrapolates from a partial computation will grossly underestimate factorials.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Both the underestimation of the correct value and the difference between the two estimates support the hypothesis that people estimate 81 by extrapolating from a partial computation. The factorial, like other combinatorial expressions, is characterized by an ever-increasing rate of growth. Consequently, a person who extrapolates from a partial computation will grossly underestimate factorials. Because the results of the first few steps of multiplication (performed from left to right) are larger in the descending sequence than in the ascending sequence, the former expression is judged larger than the latter.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        }
+      ]
+    },
+    {
+      "claim": "名气-频率分离实验：著名名字更易回忆导致高估频率。当名气与数量反向关联时，被试仍判断著名性别更多——可得性压倒实际频率（99名中80人误判）。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "n Study\n8 were\nsimilarly\nrecruited\nat Stanford\nUni-\nversity.\nSubjects\nin Studies\n5, 6 and 7 were students\nin the 10th and 11 grades of\nseveral\ncollege-preparatory\nhigh schools in Israel.\n210\nTVERSKY\nAND\nKAHNEMAN\ncould produce in 2 min. For eight other problems, he constructed words\nwithout\nprior\nest",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 8 introduction"
+        },
+        {
+          "excerpt": "On the average, subjects recalled 12.3 of the 19 famous names and 8.4 of the 20 less famous names.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 8 Recall Results"
+        },
+        {
+          "excerpt": "Famous names are generally easier to recall. Hence, if frequency judgments are mediated by assessed availability, then a class consisting of famous names should be judged more numerous than a comparable class consisting of less famous names.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Among the 99 subjects who compared the frequency of men and women in the lists, 80 erroneously judged the class consisting of the more famous names to be more frequent (p < .OOl, by sign test).",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "Among the 99 subjects who compared the frequency of men and women in the lists, 80 erroneously judged the class consisting of the more famous names to be more frequent (p < .001, by sign test).",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "gn test).\n(b)\nFrequency.\nAmong the 99 subjects who compared the frequency\nof men and women in the lists, 80 erroneously\njudged the class consist-\ning of the more famous names to be more frequent\n(p < .OOl, by sign\ntest).",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "chunk 85"
+        }
+      ]
+    },
+    {
+      "claim": "虚假相关的可得性解释：系统高估语义关联词对共现频率，因为联想强度被误作频率线索。高关联词对线索回忆率(.85)远高于无关联词对(.41)。非相关设计中也存在。偏差极为顽固。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "in a structure\nis a line that connects an element in the\ntop row to an element in the bottom row, and passes through\none and only one element in each row.\nIn which\nof the two structures are there more paths?\nHow many paths do you think there are in each structure?”\nMost readers will probably\nshare w",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Frequency of Co-occurrence"
+        },
+        {
+          "excerpt": "It persisted even when the actual correlation between the associates was negative. Finally, the illusory correlation effect prevented the judges from detecting correlations that were in fact present in the test material.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Chapman illusory correlation discussion"
+        },
+        {
+          "excerpt": "Availability provides a natural explanation for illusory correlation. We propose that an assessment of the associative bond between two items is one of the processes that mediate the judged frequency of their co-occurrence.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "For example, Zion-tiger was incorrectly judged to have been shown more often than lion-eggs, and bacon-eggs was judged more frequent than bacon-tiger.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "The judges markedly overestimated the co-occurrence of pairs that were judged to be natural associates by an independent group of subjects. For example, “suspiciousness” had been rated as calling to mind “eyes” more than any other part of the body. Correspondingly, the judges greatly overestimated the frequency of the co-occurrence of suspiciousness with peculiar drawing of the eyes in the Draw-a-Person test.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "h\np = 516 and\nn = 6. People, of course, can neither\nintuit\nthe correct\nanswers nor\nenumerate\nall relevant\ninstances. Instead,\nwe propose, they glance at\nthe diagram and estimate the relative frequency of each path-type by the\nease with\nwhich\nindividual\npaths of this type could be constructed.\nSince,",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "After Chapman discussion, Section IV"
+        },
+        {
+          "excerpt": "h\np = 516 and\nn = 6. People, of course, can neither\nintuit\nthe correct\nanswers nor\nenumerate\nall relevant\ninstances. Instead,\nwe propose, they glance at\nthe diagram and estimate the relative frequency of each path-type by the\nease with\nwhich\nindividual\npaths of this type could be constructed.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 9 Results, Cued recall"
+        },
+        {
+          "excerpt": "A 2 × 2 analysis of variance showed that the HR pairs were judged more frequent than the UR pairs (t = 4.62, 67 df, p < .001), although they were, in fact, equally frequent.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 9 Results, Judged frequency"
+        },
+        {
+          "excerpt": "lability\nprovides\na natural\nexplanation\nfor illusory\ncorrelation.\n224\nTVERSKY\nAND\nKAHNEMAN\nWe propose that an assessment of the associative bond between two items\nis one of the processes that mediate the judged frequency\nof their\nCO-\noccurrence.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "chunk 86"
+        }
+      ]
+    },
+    {
+      "claim": "问题表述控制启发式选择：个体实例被强调时诱发可得性，总体特征被凸显时诱发代表性，同一概率问题可产生相反判断。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The following alternative formulation of the same problem was devised in order to test the generality of the findings: ... Four new groups of subjects (total N = 178) answered this question, for r=2, . . ., 8, following the same design as above. Median estimates of the number of stops are shown in Fig. 1. As in the committee problem, the apparent number of combinations generally decreases with T, in accordance with the prediction from the availability hypothesis, and in marked contrast to the correct values.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "n Study\n8 were\nsimilarly\nrecruited\nat Stanford\nUni-\nversity.\nSubjects\nin Studies\n5, 6 and 7 were students\nin the 10th and 11 grades of\nseveral\ncollege-preparatory\nhigh schools in Israel.\n210\nTVERSKY\nAND\nKAHNEMAN\ncould produce in 2 min. For eight other problems, he constructed words\nwithout\nprior\nest",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 7 Binomial discussion"
+        },
+        {
+          "excerpt": "The judgments of 71 of 82 subjects who answered the card problem conformed to this prediction. In the path problem, only 13 of 73 subjects had judged these outcomes in the same way; the difference between the two versions is highly significant (p < .001, by a χ² test).",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Study 7 Results comparison"
+        },
+        {
+          "excerpt": "In the path problem, individual instances were emphasized by the display, and the population proportion (i.e., the proportion of X’s in each row) was not made explicit. In the card problem, on the other hand, the population proportion is explicitly stated and no mention is made of individual instances. Consequently, we hypothesize that the outcomes in the card problem will be evaluated by the degree to which they are representative of the composition of the deck rather than by the availability of individual instances.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "The judgments of 71 of 82 subjects who answered the card problem conformed to this prediction. In the path problem, only 13 of 73 subjects had judged these outcomes in the same way; the difference between the two versions is highly significant (p < .001, by a x2 test).",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "The contrast between Figs. 2a and 2b supports the hypothesis that different representations of the same problem elicit different heuristics. Specifically, the frequency of a class is likely to be judged by availability if the individual instances are emphasized and by representativeness if generic features are made salient.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        }
+      ]
+    },
+    {
+      "claim": "金钱激励无法有效纠正可得性偏差，表明认知偏差具有顽固性和自动性。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "We also observed that the introduction of payoffs for accuracy in the within-subject design had no effect whatsoever.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "The subjects were run individually, and they were promised a $1 bonus for a correct judgment. The significant majority of subjects (38 of 50, p < .001, by sign test) again selected the former outcome as more frequent. Erroneous intuitions, apparently, are not easily rectified by the introduction of monetary payoffs.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil"
+        },
+        {
+          "excerpt": "rationalized in terms of\nthe cost of thinking. We agree with Smith and Walker (1992) that monetary incentives\ncould improve performance under certain conditions by eliminating careless errors.",
+          "source_file": "paper_Advances in prospect theory_ Cumulative representation of un.md",
+          "location": "chunk 93"
+        }
+      ]
+    },
+    {
+      "claim": "频率判断的双重机制：可通过回忆具体出现次数或评估项目-列表关联强度来估计。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "in a structure\nis a line that connects an element in the\ntop row to an element in the bottom row, and passes through\none and only one element in each row.\nIn which\nof the two structures are there more paths?\nHow many paths do you think there are in each structure?”\nMost readers will probably\nshare w",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Frequency of Repetitions section"
+        },
+        {
+          "excerpt": "Underwood (1969b) showed that items are judged more frequent under conditions of distributed rather than massed practice, and Hintzman (1969) showed that the apparent frequency of an item increases with the spacing between its repetitions in the list.",
+          "source_file": "paper_Availability_ A heuristic for judging frequency and probabil.md",
+          "location": "Frequency of Repetitions"
+        }
+      ]
+    },
+    {
+      "claim": "累积前景理论的公理化基础：基于双匹配公理，将前景分解为收益和损失部分分别评估。决策权重定义为累积概率变换，保证随机占优。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Journal of Risk and Uncertainty, 5:297-323 (1992)\nAdvances in Prospect Theory:\nCumulative Representation of Uncertainty\nAMOS TVERSKY\nStanford University, Department of Psychology, Stanford, CA 94305-2130\nDANIEL KAHNEMAN*\nUniversity of California at Berkeley, Department of Psychol.",
+          "source_file": "paper_Advances in prospect theory_ Cumulative representation of un.md",
+          "location": "chunk 87"
+        },
+        {
+          "excerpt": "ns of this theory: 1) the carriers of value are gains and\nlosses, not final assets; and 2) the value of each outcome is multiplied by a decision\nweight, not by an additive probability.",
+          "source_file": "paper_Advances in prospect theory_ Cumulative representation of un.md",
+          "location": "chunk 88"
+        },
+        {
+          "excerpt": "lds in cumu-\nlative prospect theory, and it plays an important role in the characterization of this\ntheory, as will be shown below. Cumulative prospect theory satisfies an additional prop-\nerty, called double matching: for all f, g ~ F, iff + ~ g + and f- ~ g-, thenf ~ g.",
+          "source_file": "paper_Advances in prospect theory_ Cumulative representation of un.md",
+          "location": "chunk 94"
+        }
+      ]
+    },
+    {
+      "claim": "概率权重函数呈倒S形：小概率被超重、中高概率被低重。超重涉及确定性和不可能性的概率差异。后悔理论蕴含权重函数的次可加性。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "probabilities and underweight moderate and high probabilities. As a consequence, peo-\nple are relatively insensitive to probability difference in the middle of the range.",
+          "source_file": "paper_Advances in prospect theory_ Cumulative representation of un.md",
+          "location": "chunk 92"
+        },
+        {
+          "excerpt": "further analyzed by\nChew (1989), Segal (1989), and Wakker (1990). An earlier axiomatization of this model\nin the context of income inequality was presented by Weymark (1981).",
+          "source_file": "paper_Advances in prospect theory_ Cumulative representation of un.md",
+          "location": "chunk 90"
+        },
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\nNontransparent dominance\nThe major characteristic of the weighting function is the overweighting of\nprobability differences involving certainty and impossibility, for example,\nTC(I.O) — n(.9) or TT(.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 109"
+        }
+      ]
+    },
+    {
+      "claim": "累积前景理论参数估计高度稳定：γg≈0.61, γl≈0.69, λ≈2.25。四重模式数据确认跨域模式。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "in terms of regret theory.\nThe common consequence effect implies the subadditivity of W+ and of w+.\nOther violations of expected utility theory imply the subadditivity of W + and of w +\nfor small and moderate probabilities.",
+          "source_file": "paper_Advances in prospect theory_ Cumulative representation of un.md",
+          "location": "chunk 91"
+        },
+        {
+          "excerpt": "rationalized in terms of\nthe cost of thinking. We agree with Smith and Walker (1992) that monetary incentives\ncould improve performance under certain conditions by eliminating careless errors. How-\never, we maintain that monetary incentives are neither necessary nor sufficient to",
+          "source_file": "paper_Advances in prospect theory_ Cumulative representation of un.md",
+          "location": "chunk 95"
+        }
+      ]
+    },
+    {
+      "claim": "参考点位移的多种方式：风险和无风险成分的不同分解、结果标签改变、假设性财富状态设定。参考点位移改变结果编码和风险态度。名义框架还影响公平性判断（货币幻觉）。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\nProblem 4(N = 128): Assume yourself richer by $500 than you are today.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 105"
+        },
+        {
+          "excerpt": "Rational choice and the framing of decisions\nShifts of reference can be induced by different decompositions of outcomes into\nrisky and riskless components, as in the above problems.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 106"
+        },
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\nvariations in form. In particular, a difference that favors outcome A over\noutcome B can sometimes be framed either as an advantage of A or as a\ndisadvantage of B by suggesting either B or A as the neutral reference point.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 107"
+        },
+        {
+          "excerpt": "Rational choice and the framing of decisions\nThe company decides to [decrease wages and salaries 7 %/increase salaries only\n5%] this year.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 108"
+        }
+      ]
+    },
+    {
+      "claim": "医疗决策框架效应：存活率vs死亡率框架产生偏好反转，改变医生和患者选择。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\nof survival rates. The respondents then indicated their preferred treatment. The\ninformation was presented as follows.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 101"
+        },
+        {
+          "excerpt": "Rational choice and the framing of decisions\nTreatment B: certainty of a normal life, with an expected longevity of 18 years.\n[65%]\nCase 2\nTreatment C: 80% chance of imminent death and 20% chance of normal life,\nwith an expected longevity of 30 years.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 114"
+        }
+      ]
+    },
+    {
+      "claim": "透明性效应：占优关系透明时被占优前景被直接拒绝，非透明框架中多数违反。类似视觉系统自动检测。合并相同结果使占优更透明。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Rational choice and the framing of decisions\nhighly transparent, so the dominated prospect is rejected without further\nprocessing.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 110"
+        },
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\na green marble), (iv) The discrepancy preferences are consistent with the\nsubadditivity of decision weights. The role of transparency may be illuminated\nby a perceptual example. Figure 9.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 111"
+        },
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\ntransparent (as in the aggregated version of problem 2 and in problem 7),\npractically everyone selects the dominant prospect.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 117"
+        }
+      ]
+    },
+    {
+      "claim": "学习无法消除决策偏差的三原因：结果延迟不易归因、环境方差大、缺乏反事实信息。对理性模型违反的常见辩护均不成立。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Rational choice and the framing of decisions\nobserved violation of the model.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 118"
+        },
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\naction; (ii) variability in the environment degrades the reliability of the feedback,\nespecially where outcomes of low probability are involved; (iii) there is often no\ninformation about what the outcome would have been if another decision had\nbee.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 119"
+        }
+      ]
+    },
+    {
+      "claim": "框架分析源于Savage和Raiffa对Allais问题的重新框架化。实证违反及解释模型构成系统化知识。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\nThe present concept of framing originated from the analysis of Allais's\nproblems by Savage (1954, pp. 101-4) and Raiffa (1968, pp. 80-6), who reframed\nthese examples in an attempt to make the application of cancellation more\ncompelling.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 115"
+        },
+        {
+          "excerpt": "Rational choice and the framing of decisions\nTable 9.1.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 116"
+        }
+      ]
+    },
+    {
+      "claim": "前景理论编辑阶段：组织和重构选项以简化评估。不同分解产生不变性违反。分离评估公式中决策权重仅应用于值差（风险成分）。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "and focus on the\ncomponents that distinguish them (Tversky, 1972).",
+          "source_file": "paper_Prospect Theory_ An Analysis of Decision under Risk.md",
+          "location": "chunk 126"
+        },
+        {
+          "excerpt": "he editing phase is to organize and reformulate the\noptions so as to simplify subsequent evaluation and choice. Editing\nconsists of the application of several operations that transform the\noutcomes and probabilities associated with the offered prospects.",
+          "source_file": "paper_Prospect Theory_ An Analysis of Decision under Risk.md",
+          "location": "chunk 127"
+        }
+      ]
+    },
+    {
+      "claim": "价值函数参数约束：偏好不等式约束函数形状。Allais类型违反由权重函数次确定性和次比例性共同产生。特定金额附加后果可在收益区产生凸区域。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "attitudes to money, since it could\nbe affected by additional consequences associated with specific\namounts. Such perturbations can readily produce convex regions in the\nvalue function for gains and concave regions in the value function for\nlosses.",
+          "source_file": "paper_Prospect Theory_ An Analysis of Decision under Risk.md",
+          "location": "chunk 129"
+        },
+        {
+          "excerpt": "references in Problems 1 and 2 yields, respectively,\ni>(2400) > IT(.66M2400) + IT(.33)I;(2500),\ni.e.,\n[1 - Tr(.66)y(2400) > ir(.33)^(2500)\nand\nTT(.33)Z;(2500) > TT(.34)Z;(2400);\nhence,\n1 —ir(.66) > ir(.34),\nor\nTT(.66) + ir(.34) < 1.",
+          "source_file": "paper_Prospect Theory_ An Analysis of Decision under Risk.md",
+          "location": "chunk 130"
+        },
+        {
+          "excerpt": ". This analysis shows that an Allais-type violation will occur\nwhenever the u-ratio of the two non-zero outcomes is bounded by the\ncorresponding ir-ratios.\nProblems 3 through 8 share the same structure, hence it suffices to\nconsider one pair, say Problems 7 and 8.",
+          "source_file": "paper_Prospect Theory_ An Analysis of Decision under Risk.md",
+          "location": "chunk 131"
+        }
+      ]
+    },
+    {
+      "claim": "对比模型的实证支持：独立性公理验证。自然刺激下自由列举特征法也支持对比模型。人工刺激中特征空间不够自然时被试难以评估。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "').",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 137"
+        },
+        {
+          "excerpt": "ase with natural stimuli,\nwe can still test several predictions of the\ncontrast model ^which involve only general\nqualitative assumptions about the feature\nstructure of the objects.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 138"
+        },
+        {
+          "excerpt": "ce.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 142"
+        }
+      ]
+    },
+    {
+      "claim": "Rosch原型性假说验证：从原型到变体的感知距离大于反向，在颜色、线方向和数字三个域中一致。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "variant is greater than the perceived dis-\ntance from the variant to the prototype. To\ntest these hypotheses, Rosch (1975) used three\nstimulus domains: color, line orientation, and\nnumber. Prototypical colors were focal (e.g.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 140"
+        }
+      ]
+    },
+    {
+      "claim": "诊断性假说：上下文中更具诊断性的特征被赋予更高权重，改变相似性判断模式。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Poland\n15%\na\nAustria\nq\nNorway\n26%\nc\nHungary\n36%\nc\nHungary\n60%\nFigure 5. Two sets of countries used to test the diagnos-\nticity hypothesis. The percentage of subjects who se-\nlected each country (as most similar to Austria) is\npresented below the country.",
+          "source_file": "paper_Features of similarity..md",
+          "location": "chunk 143"
+        }
+      ]
+    },
+    {
+      "claim": "合指谬误的核心机制：人们系统性违反合指概率不超过成分概率的基本法则。自然评估锚定并同化要求的判断——将概率误解为代表性。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Psychological Review\nVOLUME 90 NUMBER 4 OCTOBER 1983\nExtensional Versus Intuitive Reasoning:\nThe Conjunction Fallacy in Probability Judgment\nAmos Tversky\nDaniel Kahneman\nStanford University\nUniversity of British Columbia, Vancouver,\nBritish Columbia, Canada\nPerhaps the simplest a.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 146"
+        },
+        {
+          "excerpt": "nd fail to distinguish\nthe required judgment from the natural as-\nsessment that the problem evokes. Second, the\nnatural assessment may act as an anchor to\nwhich the required judgment is assimiliated,\neven when the judge does not intend to use\nthe one to estimate the other.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 148"
+        }
+      ]
+    },
+    {
+      "claim": "代表性判断的诊断性使用：65%被试认为好莱坞女演员'离婚超4次'比'投票民主党'更具代表性——诊断性特征被误用为概率指标。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "mple, 65% of the subjects (N = 105)\nstated that it is more representative for a Hol-\nlywood actress \"to be divorced more than 4\ntimes\" than \"to vote Democratic.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 149"
+        }
+      ]
+    },
+    {
+      "claim": "合指谬误的实验稳健性：间接测试中发生率88%。统计训练可减少但不能消除（36%犯谬误）。小组讨论中被试面对自己的谬误不辩护。金钱激励下框架效应仍存在。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "tests is 88%, which virtually coincides\nwith the incidence of the corresponding pat-\ntern in judgments of representativeness, and\n(d) there is no effect of statistical sophistication\nin either indirect or direct tests.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 150"
+        },
+        {
+          "excerpt": "e first time in this series\nof studies, the mean rating for T&F (3.5) was\nlower than the rating assigned to T (3.8), and\nonly 36% of respondents committed the fallacy.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 151"
+        },
+        {
+          "excerpt": ", partic-\nipated in a group discussion in which they\nwere confronted with their conjunction fal-\nlacies in the same questionnaire. The respon-\ndents did not defend their answers, although\nsome references were made to \"the nature of\nclinical experience.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 152"
+        },
+        {
+          "excerpt": ") choice problem in which Sequence\n2 was replaced by RGRRRG. This new sequence\nwas preferred over Sequence 1, RGRRR, by\n63% of the respondents, although the first five\nelements of the two sequences were identical.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 153"
+        }
+      ]
+    },
+    {
+      "claim": "合指谬误的两种实验范式示意图：展示A→B和A∩B的不同认知路径。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "the A —» B paradigm,\nTHE M —A\nPARADIGM\nTHE A—B\nPARADIGM\nFigure 1. Schematic representation of two experimental\nparadigms used to test the conjunction rule.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 154"
+        }
+      ]
+    },
+    {
+      "claim": "情景在规划和决策中起重要作用，其合理性影响重大决策。研究情景概率评估具有实际意义。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "xt of planning, and their plausibility influ-\nences significant decisions. Scenarios for the\npast are also important in many contexts, in-\ncluding criminal law and the writing of history.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 155"
+        }
+      ]
+    },
+    {
+      "claim": "频率估计中的合指谬误：55岁以上男性有心脏病发作的平均估计(59%)显著高于心脏病发作本身估计值，违反合指规则。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "ong the men surveyed who are over 55 years old, what\npercentage have had one or more heart attacks?\nThe mean estimate was 59% (N = 55).",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 156"
+        }
+      ]
+    },
+    {
+      "claim": "人们能将统计原理应用于日常问题，但原理可及性随问题内容变化并随训练增加。合指规则的应用依赖类似的原理可及性。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "eople can apply certain statistical\nprinciples (e.g., the law of large numbers) to\neveryday problems and that the accessibility\nof these principles varied with the content of\nthe problem and increased significantly with\nthe sophistication of the respondents.",
+          "source_file": "paper_Extensional versus intuitive reasoning_ The conjunction fall.md",
+          "location": "chunk 157"
+        }
+      ]
+    },
+    {
+      "claim": "理性选择与决策框架：现代风险决策理论源于博弈的逻辑分析。规范表征类比视觉系统自动生成稳定表征，但决策中构建规范表征并非自动过程。伪确定性效应的两阶段博弈展示了违反期望效用理论的现象。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\nlargely of canonical representations: objects do not appear to change in size,\nshape, brightness, or color when we move around them or when illumination\nvaries.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 103"
+        },
+        {
+          "excerpt": "Amos Tversky and Daniel Kahneman\nBecause there is one chance in four to move into the second stage, prospect E\noffers a .25 probability of winning $30, and prospect F offers a .25 x .80 = .20\nprobability of winning $45.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 113"
+        },
+        {
+          "excerpt": "Rational choice and the framing of decisions\nNOTES\nThis work was supported by contract N00014-84-K-0615 from the Office of Naval Research to\nStanford University.",
+          "source_file": "paper_RATIONAL CHOICE AND THE FRAMING OF DECISIONS.md",
+          "location": "chunk 120"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 21,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-02T00:51:19.190373",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T09:56:26.005989",
+    "pre_merge_count": 134,
+    "post_merge_count": 47
+  }
+}

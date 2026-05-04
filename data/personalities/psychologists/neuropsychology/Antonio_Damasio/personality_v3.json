@@ -1,0 +1,1526 @@
+{
+  "brief": "具身认知先驱：情绪是理性的基石",
+  "school": "神经心理学 / 具身认知 / 生物学意识理论",
+  "domains": [
+    "神经科学",
+    "情绪心理学",
+    "意识哲学",
+    "决策科学"
+  ],
+  "stance_anchors": {
+    "core_belief": "情绪和感受是理性决策不可或缺的基础，而非理性的敌人——'我们需要感受才能思考'",
+    "methodology": "基于脑损伤患者的临床分离研究，结合神经影像学和实验心理学，构建跨物种的进化连续性论证",
+    "key_debates": [
+      "情绪vs理性二分法",
+      "一阶vs高阶情绪意识理论",
+      "外周体感反馈vs中枢表征的因果地位",
+      "意识的无意识前驱问题"
+    ],
+    "value_hierarchy": [
+      "有机体整体性（身体-大脑不可分割）",
+      "进化连续性（从简单生命到人类文化）",
+      "实证约束（临床证据优先于哲学思辨）",
+      "稳态作为生命 organizing principle"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "渐进式建构——从最基础的生物功能出发，逐层叠加复杂性，建立进化上较老与较新功能之间的连续性",
+    "reasoning_approach": "基于临床分离研究的逆向推理：通过脑损伤导致的功能丧失来推断正常功能机制",
+    "typical_biases": [
+      "对外周体感反馈因果地位的过度强调",
+      "对自我概念定义可能过于宽泛",
+      "倾向将复杂心理现象还原到生物学基底"
+    ],
+    "intellectual_strengths": [
+      "跨学科整合能力（神经病学、进化生物学、哲学）",
+      "临床证据驱动的理论建构",
+      "从简单到复杂的渐进建模策略",
+      "挑战学术正统的勇气"
+    ],
+    "intellectual_blindspots": [
+      "对体感标记假说的替代解释回应不够充分",
+      "理论机制规格有时不够明确（简约性问题）",
+      "对文化和社会建构因素的关注相对有限"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "体感标记假说（Somatic Marker Hypothesis）",
+      "components": [
+        "身体回路（body loop）",
+        "仿佛身体回路（as-if body loop）",
+        "腹内侧前额叶皮层（VMPFC）整合",
+        "情绪标记的有意识/无意识双路径"
+      ],
+      "application": "解释情绪如何在不确定决策中通过身体状态的标记信号引导选择，尤其适用于经济决策和社会行为分析"
+    },
+    {
+      "name": "三层自我模型",
+      "components": [
+        "原自我（protoself）——稳定的身体图像与原始感受",
+        "核心自我（core self）——原自我被外部对象修改产生无言叙事",
+        "自传自我（autobiographical self）——跨时间的整合身份"
+      ],
+      "application": "解释意识从最基本的生命调节到复杂的人类自我意识的渐进建构过程"
+    },
+    {
+      "name": "稳态-情绪-感受-文化链条",
+      "components": [
+        "稳态（homeostasis）作为生命调节的根本指令",
+        "情绪作为稳态的组成部分",
+        "感受作为情绪的意识体验",
+        "社会文化稳态作为进化突破"
+      ],
+      "application": "从生物学根源解释人类文化演化的驱动力，挑战智力/语言中心论"
+    },
+    {
+      "name": "情绪处理三阶段模型",
+      "components": [
+        "情绪状态（可非意识触发）",
+        "感受状态（可非意识表征）",
+        "被意识到的感受"
+      ],
+      "application": "区分情绪的不同加工层次，解释无意识情绪加工与意识感受的关系"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "Damasio的思想根植于William James的情绪感知理论和Darwin的进化论，通过神经临床证据将具身认知从哲学猜想提升为实证科学，并开创性地将情绪研究延伸到决策、意识和文化领域",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "William James",
+          "nature": "思想继承",
+          "description": "情绪是对身体变化的感知这一核心观点，James-Lange理论的传统",
+          "source_ref": "paper_Gut_reactions_a_perceptual_theory_of_emotion.md; exa_1_untitled.md"
+        },
+        {
+          "source": "Charles Darwin",
+          "nature": "思想继承",
+          "description": "进化连续性视角——从简单生命形式到人类的渐进式功能建构",
+          "source_ref": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md"
+        },
+        {
+          "source": "Wernicke-Geschwind传统",
+          "nature": "思想继承",
+          "description": "脑损伤-功能丧失的分离研究方法，离断机制假说",
+          "source_ref": "paper_THE_ANATOMICAL_BASIS_OF_CONDUCTION_APHASIA.md"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "James-Lange理论",
+          "original": "情绪是对身体变化的被动感知",
+          "transformation": "将体感反馈扩展到主动决策领域——体感标记不仅感知情绪，还主动引导决策选择",
+          "source_ref": "exa_1_untitled.md"
+        },
+        {
+          "source": "Descartes的心身二元论",
+          "original": "心智与身体的分离",
+          "transformation": "彻底反转：心智是身体的生物产物，理性依赖情绪，意识根植于身体表征",
+          "source_ref": "paper_Descartes_error__emotion_reason_and_the_human_brain.md"
+        }
+      ],
+      "ruptured": [
+        {
+          "source": "20世纪认知科学主流",
+          "original": "大脑与身体割裂的计算主义范式",
+          "transformation": "提出大脑必须被视为复杂生命有机体的一部分，身体-神经系统具有不可分割的整合性",
+          "source_ref": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md"
+        }
+      ],
+      "converged": [
+        {
+          "streams": [
+            "神经精神病学临床方法",
+            "进化生物学",
+            "哲学意识理论"
+          ],
+          "product": "基于实证的意识生物学理论——三层自我模型",
+          "source_ref": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1980s-1990s",
+        "title": "从失语症解剖学到情绪神经科学的转向",
+        "narrative": "Damasio早期工作聚焦于传导性失语症的解剖基础和脑损伤定位。通过对Elliot等前额叶损伤患者的观察，他发现情感处理能力丧失导致决策缺陷，这成为体感标记假说的起点。",
+        "catalyst": "Elliot案例——腹内侧前额叶损伤患者智力完好但决策能力崩溃",
+        "before_state": "传统神经心理学将情绪与认知分离研究",
+        "after_state": "开创性地将情绪置于认知和决策研究的核心",
+        "significance": "催生Descartes' Error和体感标记假说",
+        "source_ref": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md"
+      },
+      {
+        "period": "1994-1999",
+        "title": "从决策到意识的拓展",
+        "narrative": "Descartes' Error确立了情绪-决策关系后，Damasio将研究拓展到意识本身。The Feeling of What Happens提出意识的三层模型，将意识与情绪共同根植于身体表征。",
+        "catalyst": "对意识与情绪共享身体表征基础的洞察",
+        "before_state": "体感标记假说限于决策领域",
+        "after_state": "构建完整的意识生物学理论",
+        "significance": "从神经科学角度为意识研究开辟了新路径",
+        "source_ref": "paper_The_feeling_of_what_happens_body_and_emotion_in_the_making_of_consciousness.md"
+      },
+      {
+        "period": "2010s",
+        "title": "理论修正——从皮层到皮层下的重心转移",
+        "narrative": "Damasio修正了其早期理论中过度强调皮层体感区域的立场，转而认为核心感受是接收身体初级感觉信号的皮层下回路的产物。这一修正使理论与自主神经功能衰竭和述情障碍患者的证据更为一致。",
+        "catalyst": "新的临床证据（自主神经功能衰竭、述情障碍患者）与原理论的张力",
+        "before_state": "强调皮层体感区域对感受产生的关键作用",
+        "after_state": "强调皮层下回路在核心感受产生中的首要地位",
+        "significance": "理论自我修正，回应批评，增强解释力",
+        "source_ref": "paper_A_higher-order_theory_of_emotional_consciousness.md"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "Iowa大学神经logy临床实践",
+          "role": "神经学家/临床研究者",
+          "duration": "1980s-2000s",
+          "impact": "大量脑损伤患者案例（Elliot、Phineas Gage类型）为理论提供核心实证基础",
+          "source_ref": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md"
+        },
+        {
+          "context": "Iowa Gambling Task实验设计",
+          "role": "实验设计者",
+          "duration": "1990s",
+          "impact": "开创性地用行为实验证明体感标记在决策中的作用，皮肤电导反应成为关键生理指标",
+          "source_ref": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "20世纪认知科学对身体和情绪的忽视",
+          "role": "反抗者",
+          "impact": "挑战计算主义范式，重新将身体和情绪纳入认知科学核心",
+          "source_ref": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md"
+        },
+        {
+          "context": "理性选择理论在经济学和政治学中的主导地位",
+          "role": "挑战者",
+          "impact": "提供神经科学证据证明情绪是理性决策的基础，推动行为经济学发展",
+          "source_ref": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "Hanna Damasio",
+        "nature": "互补型",
+        "product": "神经影像学方法（PET扫描）在脑损伤研究中的应用",
+        "significance": "为理论提供精确的解剖学证据",
+        "source_ref": "paper_THE_ANATOMICAL_BASIS_OF_CONDUCTION_APHASIA.md"
+      },
+      {
+        "with": "Daniel Tranel",
+        "nature": "互补型",
+        "product": "面部表情识别的皮层系统研究、自主神经反应与情绪的关系",
+        "significance": "确立右半球在情绪加工中的核心地位",
+        "source_ref": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "Descartes的心身二元论",
+        "reason": "神经学证据证明心智与身体不可分离",
+        "aftermath": "构建完全基于生物学的一元论意识理论",
+        "source_ref": "paper_Descartes_error__emotion_reason_and_the_human_brain.md"
+      },
+      {
+        "what": "情绪作为低级神经层次的传统观点",
+        "reason": "临床证据表明情绪丧失导致理性崩溃",
+        "aftermath": "将情绪重新定位为高级认知的必要基础",
+        "source_ref": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "Edmund Rolls",
+        "axis": "体感反馈的因果地位",
+        "dynamic": "Rolls批评外周体感反馈效率极低且噪声大，认为眶额皮层和杏仁核中的强化关联已足以解释情绪学习，无需经过身体回路的'弯路'",
+        "source_ref": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md"
+      },
+      {
+        "who": "LeDoux和Brown (HOTEC理论)",
+        "axis": "情绪意识的产生机制——一阶vs高阶理论",
+        "dynamic": "HOTEC认为Damasio的皮层下表征是产生非意识一阶表征，而非直接产生现象性意识感受；损伤皮层下回路应减弱但不消除恐惧感受",
+        "source_ref": "paper_A_higher-order_theory_of_emotional_consciousness.md"
+      },
+      {
+        "who": "主流经济学理性选择理论",
+        "axis": "决策中情绪的必要性",
+        "dynamic": "理性选择模型排除情感，Damasio用神经科学证据证明情感是理性的内在组成部分",
+        "source_ref": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md"
+      }
+    ],
+    "tension_explanation": {
+      "note": "Damasio理论的内部张力集中在其后期修正中",
+      "tracing": "早期强调皮层体感区域对感受的因果作用，后期修正为皮层下回路的首要地位——这一张力反映了他对自主神经功能衰竭等新证据的诚实回应，但也引发了对理论核心主张稳定性的质疑"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "中等偏保守——强调情绪标记对风险行为的约束作用，认为缺乏情绪引导的决策者倾向于短视风险承担",
+    "information_processing": "具身化信息处理——身体状态的反馈信号构成决策的隐式知识来源，在意识和无意识层面同时运作",
+    "temporal_orientation": "进化时间尺度与个体时间尺度并重——从数十亿年的生命调节到当下的决策瞬间",
+    "conflict_resolution": "通过更高层次的整合解决——社会文化稳态是解决生物稳态无法应对的冲突的进化方案"
+  },
+  "situational_triggers": {
+    "description": "Damasio的理论核心在于不同情境如何触发特定层次的情绪-感受-决策回路",
+    "triggers": [
+      {
+        "condition": "面临不确定结果的复杂决策",
+        "behavioral_shift": "体感标记被激活，在意识觉察之前自动筛选选项，缩小决策空间",
+        "confidence": "高",
+        "source_ref": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md"
+      },
+      {
+        "condition": "身体反馈回路受损（如VMPFC损伤）",
+        "behavioral_shift": "决策能力崩溃，反复做出不利选择，无法从错误中学习",
+        "confidence": "高",
+        "source_ref": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md"
+      },
+      {
+        "condition": "压力反应激活（儿茶酚胺释放）",
+        "behavioral_shift": "前额叶高级认知功能被关闭，行为转向杏仁核控制的快速反应模式",
+        "confidence": "中",
+        "source_ref": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md"
+      },
+      {
+        "condition": "社会文化环境中的价值判断",
+        "behavioral_shift": "感受作为文化发明的监控者——根据积极/消极感受取舍文化实践",
+        "confidence": "中",
+        "source_ref": "exa_3_Antonio_Damasio_What_is_the_strange_order_of_things_-_YouTube.md"
+      }
+    ],
+    "collapse_point": "当身体反馈系统与认知系统同时脱耦时（如严重的弥漫性脑损伤），既无法产生适当的情绪标记，也无法进行有效的理性分析——决策能力完全崩溃",
+    "default_behavior": "在健康状态下，大脑持续利用身体状态的历史记录（体感标记）来隐式评估选项，引导决策走向有利于有机体生存的方向",
+    "public_commitment_lock": "Damasio公开承诺的核心主张：理性没有情绪无法运作，意识是身体的生物产物——这一立场贯穿其全部著作，从未动摇"
+  },
+  "communication_profile": {
+    "style": "科学与人文的融合——既有严谨的临床描述，又善于运用隐喻和文学化的表达（如'事物的奇异秩序'、'发生之事的感受'）",
+    "persuasion_tactics": [
+      "标志性临床案例叙事（Phineas Gage、Elliot）",
+      "渐进式论证（从简单到复杂）",
+      "跨物种类比（细菌合作→人类文化）",
+      "挑战常识的反直觉发现"
+    ],
+    "rhetorical_devices": [
+      "隐喻（'关联胶水'、'仲裁者和谈判者'）",
+      "历史反转（笛卡尔的'错误'）",
+      "渐进式建构叙事",
+      "临床案例戏剧化呈现"
+    ],
+    "emotional_range": "从冷静的临床观察到对生命奥秘的深切敬畏——对简单生物的智能表现出惊叹，对人类文化的生物学根源充满激情"
+  },
+  "evolution_trajectory": "从失语症解剖学→情绪-决策关系（体感标记假说）→意识生物学（三层自我模型）→稳态-文化演化（社会文化稳态）→理论修正（皮层到皮层下重心的转移）——总体趋势是从具体的临床发现逐步扩展到宏大的生命哲学，同时保持对实证证据的忠诚",
+  "key_aphorisms": [
+    "我们需要感受才能思考",
+    "意识就是'发生之事的感受'",
+    "笛卡尔的错误：'我思故我在'应为'我存在故我思'",
+    "没有身体就没有意识",
+    "事物的奇异秩序——无心智的生命已拥有智能",
+    "感受是文化过程的监控者",
+    "稳态不仅维持秩序，还将其提升到新水平"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "情绪和感受是理性决策不可或缺的基础，感受缺失导致理性能力崩溃——VMPFC损伤患者智力完好但决策失效",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Antonio Damasio is one of the most influential neuroscientists of his generation. He has pioneered several of the themes the define the field, including the importance of emotion - we need to feel in order to think - and the embodied nature of the brain.",
+          "source_file": "exa_2_Self_Comes_To_Mind.md",
+          "location": "正文第1段"
+        },
+        {
+          "excerpt": "Consider a seminal experiment designed by Damasio, Antoine Bechara and colleagues. It's known as the Iowa Gambling Task",
+          "source_file": "exa_2_Self_Comes_To_Mind.md",
+          "location": "正文第1段末尾"
+        },
+        {
+          "excerpt": "Antonio Damasio contends that rational decisions are not the product of logic alone - they require the support of emotion and feeling. Drawing on his experience with neurological patients affected with brain damage, Dr Damasio shows how absence of emotions and feelings can break down rationality.",
+          "source_file": "paper_Descartes_error__emotion_reason_and_the_human_brain.md",
+          "location": "摘要第1段"
+        },
+        {
+          "excerpt": "The instruments usually considered necessary and sufficient for rational behavior were intact in him. He had the requisite knowledge, attention, and memory; his language was flawless; he could perform calculations; he could tackle the logic of an abstract problem. There was only one significant accompaniment to his decision-making failure: a marked alteration of the ability to experience feelings. Flawed reason and impaired feelings stood out together as the consequences of a specific brain lesion, and this correlation suggested to me that feeling was an integral component of the machinery of reason.",
+          "source_file": "exa_0_untitled.md",
+          "location": "Introduction部分，描述Phineas Gage类患者"
+        },
+        {
+          "excerpt": "reason may not be as pure as most of us think it is or wish it were, that emotions and feelings may not be intruders in the bastion of reason at all: they may be enmeshed in its networks, for worse and for better. The strategies of human reason probably did not develop, in either evolution or any single individual, without the guiding force of the mechanisms of biological regulation, of which emotion and feeling are notable expressions.",
+          "source_file": "exa_0_untitled.md",
+          "location": "Introduction部分，第2段"
+        },
+        {
+          "excerpt": "even after reasoning strategies become established in the formative years, their effective deployment probably depends, to a considerable extent, on a continued ability to experience feelings.",
+          "source_file": "exa_0_untitled.md",
+          "location": "Introduction部分，第2段"
+        },
+        {
+          "excerpt": "It is thus even more surprising and novel that the absence of emotion and feeling is no less damaging, no less capable of compromising the rationality that makes us distinctively human and allows us to decide in consonance with a sense of personal future, social convention, and moral principle.",
+          "source_file": "exa_0_untitled.md",
+          "location": "Introduction部分，第3段"
+        },
+        {
+          "excerpt": "Damasio draws the conclusion that \"reason\" as we typically think of it is not an abstract process, but a fundamentally embodied one: the brain and the body are in constant communication, and the brain uses feedback from the body to evaluate, prune, and select for further exploration the branches of a decision tree that, for even the most minor of problems (\"when should we get together next?\") would be otherwise unmanageably large.",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "Sean的评论"
+        },
+        {
+          "excerpt": "Patients with neocortical damage in prefrontal cortex of brain are unique cases of \"functional beings without any affects\" -- they maintain their IQ and all relevant physiological control, except the use of emotions. This results in alienation in all social circumstances. They essentially become social deviants, unable to make any effective (or acceptable) decisions in any situations.",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "Tina的评论"
+        },
+        {
+          "excerpt": "Antonio Damasio shows how the center of emotion is essential for us to make rational decisions.",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "Luís的评论"
+        },
+        {
+          "excerpt": "Ultimately, Damasio demonstrates that a degree of subjectivity is essential for effective behavior.",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "Luís的评论"
+        },
+        {
+          "excerpt": "Rather, I suggest that emotion is part of rationality itself, and that the two are intimately intertwined and interconnected processes, psychologically and neurologically. From this perspective, emotion remains endogenous to rationality itself.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "论证段落"
+        }
+      ]
+    },
+    {
+      "claim": "体感标记假说的核心思想：源自身体的基于情绪的偏向信号在VMPFC等脑区整合，标记不同行为选项为有利或不利，在意识和无意识层面同时运作",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The key idea of this hypothesis is that decision-making is a process that is influenced by marker signals that arise in bioregulatory processes, including those that express themselves in emotions and feelings. This influence can occur at multiple levels of operation, some of which occur consciously, and some of which occur non-consciously.",
+          "source_file": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "The somatic-marker hypothesis is a neurobiological theory of how decisions are made in the face of uncertain outcome. This theory holds that such decisions are aided by emotions, in the form of bodily states, that are elicited during the deliberation of future consequences and that mark different options for behavior as being advantageous or disadvantageous.",
+          "source_file": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md",
+          "location": "Related paper: The Role of Emotion in Decision Making, Naqvi 2006"
+        },
+        {
+          "excerpt": "The somatic marker hypothesis (SMH) proposes that emotion-based biasing signals arising from the body are integrated in higher brain regions, in particular the ventromedial prefrontal cortex (VMPFC), to regulate decision-making in situations of complexity.",
+          "source_file": "exa_1_untitled.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "Antonio Damasio has recently extended the influence of somatic processes to the regulation of decision-making as well as emotion in his influential somatic marker hypothesis. The SMH proposes that 'somatic marker' biasing signals from the body are represented and regulated in the emotion circuitry of the brain, particularly the ventromedial prefrontal cortex (VMPFC), to help regulate decision-making in situations of complexity and uncertainty",
+          "source_file": "exa_1_untitled.md",
+          "location": "Section 1.1, Development of the SMH"
+        },
+        {
+          "excerpt": "The somatic marker hypothesis, formulated by Antonio Damasio and associated researchers, proposes that emotional processes guide (or bias) behavior, particularly decision-making. \"Somatic markers\" are feelings in the body that are associated with emotions, such as the association of rapid heartbeat with anxiety or of nausea with disgust.",
+          "source_file": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md",
+          "location": "正文开头"
+        },
+        {
+          "excerpt": "In the first pathway, emotion can be evoked by changes in the body that are projected to the brain – called the \"body loop\"... In the second pathway, cognitive representations of the emotions can be activated in the brain without being directly elicited by a sensory stimulus – called the \"as-if body loop\". Thus, the brain can anticipate expected bodily changes, which allows the individual to respond faster to external stimuli without waiting for an event to actually occur.",
+          "source_file": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md",
+          "location": "Hypothesis部分"
+        },
+        {
+          "excerpt": "Emotions, as defined by Damasio, are changes in both body and brain states in response to stimuli. Physiological changes (such as muscle tone, heart rate, endocrine activity, posture, facial expression, and so forth) occur in the body and are relayed to the brain where they are transformed into an emotion",
+          "source_file": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md",
+          "location": "Hypothesis部分"
+        },
+        {
+          "excerpt": "somatic markers probably increase the accuracy and efficiency of the decision making process and their absence reduces them they can guide personal and social decisions and responses like who to befriend how to design a basement so that it doesn't flood which turn to take off the road they select what enters into our working memory and our attention and they can also be conscious or unconscious acting at a conscious level somatic states would mark outcomes",
+          "source_file": "exa_1_Descartes_Error_Antonio_Damasios_Somatic_Marker_Hypothesis.md",
+          "location": "Transcript末段"
+        }
+      ]
+    },
+    {
+      "claim": "情绪和感受是对身体状态的直接感知，是连接身体生存调节与意识的桥梁；情绪在进化上先于意识出现",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "He also offers a new perspective on what emotions and feelings actually are: a direct view of our own body states; a link between the body and its survival-oriented regulation on the one hand, and consciousness on the other.",
+          "source_file": "paper_Descartes_error__emotion_reason_and_the_human_brain.md",
+          "location": "摘要第1段"
+        },
+        {
+          "excerpt": "This thesis, pioneered by William James and resuscitated by Antonio Damasio, has been widely criticized for failing to acknowledge that emotions are meaningful insofar as they represent concerns, not respiratory function and blood pressure.",
+          "source_file": "paper_Gut_reactions_a_perceptual_theory_of_emotion.md",
+          "location": "摘要第1段"
+        },
+        {
+          "excerpt": "He argues that emotions are embodied appraisals-they are perceptions of the body, but, through the body, they also allow us to literally perceive danger, loss, and other matters of concern.",
+          "source_file": "paper_Gut_reactions_a_perceptual_theory_of_emotion.md",
+          "location": "摘要第1段"
+        },
+        {
+          "excerpt": "Where vision reveals the identity of objects in a given situation, emotion reveals how that situation bears on our well-being.",
+          "source_file": "paper_Gut_reactions_a_perceptual_theory_of_emotion.md",
+          "location": "摘要末段"
+        },
+        {
+          "excerpt": "I separate three stages ofprocessing along a continuum: a state of emotion, which can be triggered and executed nonconsciously; a state offee/ina. which can be represented nonconsciously; and a state ofJeelina made conscious, i.e., known to the organism having both emotion and feeling.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "ONCE MORE WITH EMOTION章节第4段"
+        },
+        {
+          "excerpt": "consciousness must be present if feelings are to influence the subject having them beyond the immediate here and now.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "ONCE MORE WITH EMOTION章节第5段"
+        },
+        {
+          "excerpt": "Emotion was probably set in evolution before the dawn of consciousness and surfaces in each of us as a result of inducers we often do not recognize consciously; on the other hand, feelings perform their ultimate and longer-lasting effects in the theater of the conscious mind.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "ONCE MORE WITH EMOTION章节第5段"
+        }
+      ]
+    },
+    {
+      "claim": "意识是身体的生物产物而非独立实体——Damasio批判心身二元论，主张心智和身体不可分离",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "In Self Comes to Mind, he goes against the long-standing idea that consciousness is somehow separate from the body, presenting compelling new scientific evidence that consciousness - what we think of as a mind with a self - is in fact a biological process created by a living organism.",
+          "source_file": "paper_Self_comes_to_mind__constructing_the_conscious_brain.md",
+          "location": "摘要第1段"
+        },
+        {
+          "excerpt": "Consciousness is the feeling of what happens-our mind noticing the body's reaction to the world and responding to that experience. Without our bodies there can be no consciousness, which is at heart a mechanism for survival that engages body, emotion, and mind in the glorious spiral of human life.",
+          "source_file": "paper_The_feeling_of_what_happens_body_and_emotion_in_the_making_of_consciousness.md",
+          "location": "摘要第1段"
+        },
+        {
+          "excerpt": "Antonio Damasio argues persuasively that that mind is inextricably linked to brain - when you change the physical brain in specific, measurable ways, you induce specific and measurably changes in mind - personality and behavior.",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "Dwight Cates的评论"
+        },
+        {
+          "excerpt": "For the curious, Descarte's \"error\" was the separation of mind and body, and consequently, an artificial dichotomy between rationality and emotion. Damasio makes an excellent case on neurological grounds that rationality simply doesn't work without emotion.",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "Corey Butler的评论"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio的三层自我模型：原自我（身体图像与原始感受）→核心自我（无言叙事）→自传自我（跨时间整合身份），意识的三条件为清醒、运作中的心智和自我功能",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Damasio's model of consciousness is intriguing and well worth exploring. He builds it up in three stages; (i) our proto-consciousness, that us based on the basic regulatory functions for governing the body, (ii) our core-consciousness, aware of stimuli as they arrive and finally (iii) the extended-consciousness that involves the auto-biography, the self generated by referring to memory and future plans.",
+          "source_file": "exa_3_The_Feeling_of_What_Happens_Body_Emotion_and_the_Making_of_Consciousness.md",
+          "location": "第2条评论"
+        },
+        {
+          "excerpt": "Damasio argues that brains are constant cartographers, making maps and forming representations of the body and of the entities the body interacts with. Damasio observes that having the body ''in mind'' helps govern behaviour when life is threatened, but is also the means by which we get to know our own body and the world around us.",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review第3段"
+        },
+        {
+          "excerpt": "For Damasio, consciousness is a state of mind in which there is knowledge of one's own existence and of the existence of one's surroundings (he calls these primordial feelings). Conscious states always have content, and are felt. The conditions for consciousness are: (a) being awake; (b) having an operational mind; and (c) having a sense of self as protagonist of the experience.",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review第5段"
+        },
+        {
+          "excerpt": "He distinguishes between two types of consciousness, narrow scope and broad scope. The narrow scope type (which he calls core consciousness) is about the here and now; the broad scope type (autobiographical consciousness) is about the self in time, one's autobiographical memories and projections into the future.",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review第10段"
+        },
+        {
+          "excerpt": "The self is built in stages: The protoself is made of relatively stable images of the body which give rise to primordial feelings; the core self emerges when the protoself is modified by interaction with external objects and it gives rise to a (wordless) narrative sequences of images; the autobiographical self emerges when aspects of the core self are modified by objects in one's biography and are integrated in a coherent pattern.",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review第11段"
+        }
+      ]
+    },
+    {
+      "claim": "稳态不仅是维持内部稳定的消极过程，而是确保有机体繁荣的强大不自觉指令——对抗熵增，不仅维持秩序还提升到新水平",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "calling homeostasis \"the powerful, unsought, unspoken imperative\" that ensures an organism will both endure and prevail. More subtly, it ensures that life will be regulated within a span that is not merely compatible with survival, but also \"conducive to flourishing, to a projection of life into the future of an organism or a species.\"",
+          "source_file": "exa_3_The_Strange_Order_of_Things_Life_Feeling_and_the_Making_of_Cultures.md",
+          "location": "书评第4-5段"
+        },
+        {
+          "excerpt": "it counteracts entropy, the tendency of things to drift into disorder. But it doesn't just maintain a previous state of order: It raises it to a new level.",
+          "source_file": "exa_3_The_Strange_Order_of_Things_Life_Feeling_and_the_Making_of_Cultures.md",
+          "location": "书评第6段"
+        },
+        {
+          "excerpt": "Damasio argues that homeostasis reaches back to the biological roots of human cultures. It is the basis of emotions—unlearned, automatic behaviors that play themselves out. Feelings serve as \"arbiters and negotiators.\"",
+          "source_file": "exa_3_The_Strange_Order_of_Things_Life_Feeling_and_the_Making_of_Cultures.md",
+          "location": "书评第7-8段"
+        },
+        {
+          "excerpt": "At its most fundamental, homeostasis is the motivating force behind everything that we think and do",
+          "source_file": "exa_3_The_Strange_Order_of_Things_Life_Feeling_and_the_Making_of_Cultures.md",
+          "location": "书评第9段"
+        },
+        {
+          "excerpt": "emotions are part and parcel of the regulation we call homeostasis. It is senseless to discuss them without understanding that aspect of living organisms and vice versa. In this book, I propose that homeostasis is a key to the biology of consciousness",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "A Historical Aside章节，homeostasis段落"
+        }
+      ]
+    },
+    {
+      "claim": "感受是文化过程的监控者和驱动力——文化发明能否存续取决于它是否产生积极感受，文化发展的真正驱动力是痛苦或快乐的感受而非仅是智力",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "something that is missing in that very straightforward response is the idea of affect, the idea of feelings, the idea of the emotions and feelings that drive you to do things. So my take is that in fact what has motivated cultural invention, cultural developments, is affect, is the process of feeling, specifically feelings of pain or suffering or feelings of pleasure or sometimes even just the possibility of pleasure.",
+          "source_file": "exa_3_Antonio_Damasio_What_is_the_strange_order_of_things_-_YouTube.md",
+          "location": "Transcript第2-3段"
+        },
+        {
+          "excerpt": "once there is an invention that is cultural, that invention is going to stick or not, is going to remain or not, depending on whether or not it works, and whether or not it works depends on how we feel about it",
+          "source_file": "exa_3_Antonio_Damasio_What_is_the_strange_order_of_things_-_YouTube.md",
+          "location": "Transcript第4段"
+        },
+        {
+          "excerpt": "the negotiation that we do in order to maintain or discard a cultural invention is not made exclusively on the basis of knowledge and intellect, it is not on the basis of reasoning alone. In other words it is not about reason only. It is also about effect, it is also about emotion and feeling",
+          "source_file": "exa_3_Antonio_Damasio_What_is_the_strange_order_of_things_-_YouTube.md",
+          "location": "Transcript第5段"
+        }
+      ]
+    },
+    {
+      "claim": "具身认知：心智源于大脑与身体的互动，而非仅大脑；稳态指令存在于最早的生命形式中",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Along the way Damasio emphasizes embodied cognition, the notion that the mind does not arise solely from the brain but from the interaction of the entire nervous system with the physical body. He also reverses the common belief that life began with the chance evolution of genes, arguing instead that the homeostatic imperative existed in the very first life forms, to be followed later on by genetic material.",
+          "source_file": "exa_3_The_Strange_Order_of_Things_Life_Feeling_and_the_Making_of_Cultures.md",
+          "location": "书评倒数第3段"
+        },
+        {
+          "excerpt": "feelings are grounded in a near fusion of body and brain networks, and first emerge from the historically old and humble brain stem rather than from the modern cerebral cortex.",
+          "source_file": "exa_2_Self_comes_to_mind__constructing_the_conscious_brain_-_Internet_Archive.md",
+          "location": "BOOK JACKET描述部分"
+        }
+      ]
+    },
+    {
+      "claim": "社会文化稳态是进化中的根本性突破，其蓝图是基因层面已确立的基本稳态——价值管理者在简单生命形式中已存在数十亿年",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Damasio suggests that the brain's development of a human self becomes a challenge to nature's indifference and opens the way for the appearance of culture, a radical break in the course of evolution and the source of a new level of life regulation--sociocultural homeostasis.",
+          "source_file": "exa_2_Self_comes_to_mind__constructing_the_conscious_brain_-_Internet_Archive.md",
+          "location": "BOOK JACKET描述部分"
+        },
+        {
+          "excerpt": "the blueprint for the work-in-progress he calls sociocultural homeostasis is the genetically well-established basic homeostasis, the curator of value that has been present in simple life-forms for billions of years.",
+          "source_file": "exa_2_Self_comes_to_mind__constructing_the_conscious_brain_-_Internet_Archive.md",
+          "location": "BOOK JACKET描述部分"
+        }
+      ]
+    },
+    {
+      "claim": "事物的奇异秩序：无神经系统的简单生物已展现类似文化的复杂社会策略，这些行为源于无心智的稳态调节但拥有智能",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "we have creatures without nervous systems in which we would not expect to have enormous abilities in terms of their social life already behaving socially with strategies of cooperation or conflict for example, strategies of grouping or separation that would seem to be the result of a mind which seemed to come from creature with a nervous system, with an intelligence, and with consciousness that were highly developed, when in fact what you do have is no mind, no consciousness, no nervous system although you have intelligence.",
+          "source_file": "exa_3_Antonio_Damasio_What_is_the_strange_order_of_things_-_YouTube.md",
+          "location": "Transcript第6-7段"
+        }
+      ]
+    },
+    {
+      "claim": "快乐与悲伤等情绪是生存基石，内在调节过程不仅维持生命还创造文化成就",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Descartes' Error leads us to conclude that human organisms are endowed from their very beginning with a spirited passion for making choices, which the social mind can then use to build rational behaviour.",
+          "source_file": "paper_Descartes_error__emotion_reason_and_the_human_brain.md",
+          "location": "摘要末段"
+        },
+        {
+          "excerpt": "he shows how joy and sorrow are cornerstones of our survival. As he investigates the cerebral mechanisms behind emotions and feelings, Damasio argues that the internal regulatory processes not only preserve life within ourselves, but they create, motivate, and even shape our greatest cultural accomplishments",
+          "source_file": "paper_Looking_for_Spinoza__Joy_Sorrow_and_the_Feeling_Brain.md",
+          "location": "摘要第1段"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio区分情绪处理的三阶段连续体：情绪状态→感受状态→被意识到的感受，三者是渐进的生物过程",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "I separate three stages ofprocessing along a continuum: a state of emotion, which can be triggered and executed nonconsciously; a state offee/ina. which can be represented nonconsciously; and a state ofJeelina made conscious, i.e., known to the organism having both emotion and feeling.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "ONCE MORE WITH EMOTION章节第4段"
+        }
+      ]
+    },
+    {
+      "claim": "意识对感受产生持久影响是必要条件——情绪在进化上先于意识，但感受的持久效应发生在意识的心智剧场中",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "consciousness must be present if feelings are to influence the subject having them beyond the immediate here and now.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "ONCE MORE WITH EMOTION章节第5段"
+        },
+        {
+          "excerpt": "Emotion was probably set in evolution before the dawn of consciousness and surfaces in each of us as a result of inducers we often do not recognize consciously; on the other hand, feelings perform their ultimate and longer-lasting effects in the theater of the conscious mind.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "ONCE MORE WITH EMOTION章节第5段"
+        }
+      ]
+    },
+    {
+      "claim": "意识与情绪共享身体表征的基础，两者底层机制相连",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "I propose that, just like emotion, consciousness is aimed at the organism's survival, and that, just like emotion, consciousnessis rooted in the representation of the body. I also call attention to an intriguing neurological fact: when consciousness is suspended, from core consciousness on up, emotion is usually suspended as well, suggesting that although emotion and consciousness are different phenomena, their underpinnings may be connected.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "ONCE MORE WITH EMOTION章节第6段"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio批判20世纪科学界对情绪的忽视和将情绪降格到低级神经层次的做法",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Throughout most of the twentieth century, emotion was not trusted in the laboratory. Emotion was too subjective, it was said. Emotion was too elusive and vague. Emotion was at the opposite end from reason, easily the finest human ability, and reason was presumed to be entirely independent from emotion. This was a perverse twist on the Romantic view of humanity.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "A Historical Aside章节"
+        },
+        {
+          "excerpt": "The notion of an integrated organism - the idea of an ensemble made up of a body proper and a nervous system - was available in the work of thinkers such as Ludwig von Bertalanffy, Kurt Goldstein, and Paul Weiss but had little impact in shaping the standard conceptions of mind and brain.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "A Historical Aside章节末段"
+        },
+        {
+          "excerpt": "Aspects of brain and mind have been discussed as if designed recently, as needed, to produce a certain effect - a bit like the installation of antilock brakes in a proper new car - without any regard for the possible antecedents of mental and brain devices.",
+          "source_file": "exa_3_PDF_The_Feeling_of_What_Happens_-_Rutgers_Center_for_Cognitive_Science.md",
+          "location": "A Historical Aside章节，evolution段落"
+        }
+      ]
+    },
+    {
+      "claim": "感受具有特权地位：在多个神经层面被表征，因与身体的不可分割联系而最早发展，微妙地渗透整个精神生活",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "As Damasio writes, \"I see feelings as having a truly privileged status. They are represented at many neural levels. . . . [B]ecause of their inextricable ties to the body, they come in first in development and retain a primacy that subtly pervades our mental life.\"",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "Damasio引文段落"
+        }
+      ]
+    },
+    {
+      "claim": "Iowa Gambling Task是体感标记假说的关键实验证据：健康参与者产生预期性皮肤电导反应，VMPFC损伤患者缺乏这些标记信号且表现较差",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Evidence for the SMH is largely based on the performance on the Iowa Gambling Task, linking anticipatory skin conductance responses (SCRs) to successful performance on a decision-making paradigm in healthy participants. These 'marker' signals were absent in patients with VMPFC lesions and were associated with poorer IGT performance.",
+          "source_file": "exa_1_untitled.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "Even more interestingly, such subjects learned to make correct decisions long before they could say why they were doing so. Although none of the unimpaired subjects reported consciously calculating the outcome in the midst of the game, the good decks \"felt right\" to them after a few trials. Skin conductance tests demonstrated that the unimpaired subjects received physiological feedback as they played, while the subjects with brain lesions did not experience much stress or nervousness.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "赌博实验结果段落"
+        }
+      ]
+    },
+    {
+      "claim": "对SMH的实验批评：IGT具有认知可渗透性、心理生理数据解释存在歧义、缺乏外周反馈与表现之间的因果证据、存在更简约的替代模型",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "the current article reviews the IGT findings, arguing that their interpretation is undermined by the cognitive penetrability of the reward/punishment schedule, ambiguity surrounding interpretation of the psychophysiological data, and a shortage of causal evidence linking peripheral feedback to IGT performance. Further, there are other well-specified and parsimonious explanations that can equally well model the IGT data.",
+          "source_file": "exa_1_untitled.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "Alternative mechanisms potentially underlying IGT task performance... Working memory... Reversal learning/inhibition... Risk-taking... Insensitivity to rewarding and punishing outcomes... Apathy",
+          "source_file": "exa_1_untitled.md",
+          "location": "目录部分2.8节"
+        },
+        {
+          "excerpt": "conceptual reservations about the novelty, parsimony and specification of the SMH are raised. It is concluded that while presenting an elegant theory of how emotion influences decision-making, the SMH requires additional empirical support to remain tenable.",
+          "source_file": "exa_1_untitled.md",
+          "location": "Abstract末段"
+        },
+        {
+          "excerpt": "First, the claim that it assesses implicit learning as the reward/punishment design is inconsistent with data showing accurate knowledge of the task possibilities and that mechanisms such as working-memory appear to have a strong influence. Second, the claim that this knowledge occurs through preventive marker signals is not supported by competing explanations of the psychophysiology generated profile. Lastly, the claim that the impairment is due to a 'myopia for the future' is undermined by more plausible",
+          "source_file": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md",
+          "location": "Criticism部分末段"
+        }
+      ]
+    },
+    {
+      "claim": "Rolls的批评：使用外周体感反馈影响行为效率极低，眶额皮层和杏仁核的强化关联已足以解释情绪学习，无需身体回路弯路",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Edmund Rolls(1999) stated that; \"it would be very inefficient and noisy to place in the execution route a peripheral response, and transducers to attempt to measure that peripheral response, itself a notoriously difficult procedure\" (p. 73). Reinforcement association located in the orbitofrontal cortex and amygdala, where the incentive value of stimuli is decoded, is sufficient to elicit emotion-based learning and to affect behavior",
+          "source_file": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md",
+          "location": "Criticism部分"
+        }
+      ]
+    },
+    {
+      "claim": "体感标记假说延续了James-Lange理论传统但将其扩展到决策领域，挑战主流经济学的演绎主义方法论",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "The somatic marker hypothesis, developed by Damasio and others working closely with him, will be suggested as an alternative framework for conceptualising the emergence of social behaviour from a neurobiological substrate.",
+          "source_file": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md",
+          "location": "Related paper: Can neuroscience inform economics, Martins 2011"
+        },
+        {
+          "excerpt": "These controversial models argued that emotion experience arises directly from the perception of change in the body: when we run from a bear in the woods, we are afraid because we run rather than we run because we are afraid",
+          "source_file": "exa_1_untitled.md",
+          "location": "Section 1.1, 历史回顾部分"
+        }
+      ]
+    },
+    {
+      "claim": "现代经济理论忽视情绪对决策的影响，但神经科学证据表明合理决策依赖于先前的准确情绪处理",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Modern economic theory ignores the influence of emotions on decision-making. Emerging neuroscience evidence suggests that sound and rational decision making, in fact, depends on prior accurate emotional processing.",
+          "source_file": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "Daniel Bernoulli argued that people established their values for wealth on the basis of the pain and pleasure that it would give them. Because these assessments differed from absolute valuations of wealth, he called them utilities. Jeremy Bentham later drew on Bernoulli's ideas to conceive of utility as a balance of pleasure and pain as well. Notions of pleasure and pain were eliminated from the understanding of utility when utility was changed from a psychological to an economic construct. To the extent that current models of expected utility theory exclude emotion, they betray their intellectual foundations.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "效用理论历史段落"
+        },
+        {
+          "excerpt": "Emotional drives can help explain where preferences come from and how they might shift over time or in response to particular situations. In this way, preferences need not be thought of as fixed and given—uncaused causes—as they currently are in rational choice theory; rather, they can be understood as changing dynamically in response to emotional cues.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "情感理性段落"
+        },
+        {
+          "excerpt": "To the extent that emotions function as motivators and directors of attention, memory, and information processing, they must be considered integral to any comprehensive model of rational choice.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "情感与理性选择模型段落"
+        }
+      ]
+    },
+    {
+      "claim": "情感理性概念：情感不是理性的对立面而是理性决策的基础和内在组成部分，情感内生于理性之中",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We consider affective processing to be an evolutionary antecedent to more complex forms of information processing; but higher cognition requires the guidance provided by affective processing.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "引言部分，Adolphs & Damasio引文"
+        },
+        {
+          "excerpt": "In this article, I posit a view of decision making that rests on an integrated notion of emotional rationality.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "摘要/引言段"
+        },
+        {
+          "excerpt": "emotion exerts an impact on political decisions in decisive and significant ways. While its importance in political science has frequently been either dismissed or ignored in favor of theories that privilege rational reasoning, emotion can provide an alternate basis for explaining and predicting political choice and action.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "Thus the brain’s structural makeup requires that emotional information exert an influence before, and sometimes instead of, higher-level cognitive functioning. This means that rationality, as we understand it, often requires emotional processing first.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "大脑结构段落"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio的标志性临床方法：以Phineas Gage和Elliot案例为起点，展示脑损伤如何改变人格和行为，证明心智与大脑不可分割",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Damasio has spent decades following amnesiacs down hospital corridors, waiting for comatose patients to awaken, and devising ingenious research using PET scans to piece together the great puzzle of consciousness.",
+          "source_file": "paper_The_feeling_of_what_happens_body_and_emotion_in_the_making_of_consciousness.md",
+          "location": "摘要第1段"
+        },
+        {
+          "excerpt": "This book starts with the story of Phineas Gage, the famous 19th-century case of behavioral change that followed brain damage",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "书籍描述"
+        },
+        {
+          "excerpt": "Demasio turns out to build one of the more compelling set of explanations based mostly on evidence from his years of research in dissociation studies in neurology.",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "Nathan的评论"
+        },
+        {
+          "excerpt": "He invites readers to challenge assumptions about the distinctiveness of human mental processes and he uses recent evidence from a variety of relevant empirical sciences (among which neuropsychiatry, neuroanatomy, and evolutionary biology) to constrain conceptions of the self. This approach cannot but bear fruit.",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review末段（Lisa Bortolotti总结）"
+        }
+      ]
+    },
+    {
+      "claim": "VMPFC损伤患者外表正常、智力记忆无损，但丧失情感处理后无法做出合理社交和生活决策，无法延迟满足",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Damasio determined that Elliot suffered damage to his ventromedial prefrontal cortex—the same place that Gage had sustained damage—which left him unable to properly negotiate his personal and social world despite an intact intelligence.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "Elliot案例段落"
+        },
+        {
+          "excerpt": "For example, Elliot takes half an hour to choose one of two dates for making his next appointment, using sophisticated \"rational\" strategies involving cost-benefit calculations. While this process might be optimal in making difficult and important life decisions, it is not effective for everyday tasks.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "Elliot决策困难段落"
+        },
+        {
+          "excerpt": "These people appear normal, do well on intelligence and memory tests, and usually have no impairments in attention, memory, or language skills. They demonstrate little emotion, however, and though they have access to appropriate social information, which they can apply to relevant situations, they repeatedly make very bad social real-life decisions. This appears to result from their inability to envision future consequences. They cannot delay short-term gratification for the purpose of long term gain.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "脑损伤患者实验描述段"
+        }
+      ]
+    },
+    {
+      "claim": "情绪系统为快速决策提供隐式或显式知识；体感标记通过身体回路和仿佛身体回路两条路径运作",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "emotions are a major factor in the interaction between environmental conditions and human decision processes, with these emotional systems providing valuable implicit or explicit knowledge for making fast and advantageous decisions.",
+          "source_file": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md",
+          "location": "Abstract末段"
+        },
+        {
+          "excerpt": "persons with intact decision-making abilities are better able to rely on past emotional experiences when weighing risks, than are persons who are deficient in such abilities",
+          "source_file": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md",
+          "location": "Application to risky behavior部分"
+        }
+      ]
+    },
+    {
+      "claim": "药物成瘾者的情绪反应系统整体性受损，对愉快和不愉快图像均表现出减弱反应",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Addicts showed lesser responses to both pleasant and unpleasant images, suggesting that they may have a diminished emotional response.",
+          "source_file": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md",
+          "location": "Application to risky behavior部分"
+        }
+      ]
+    },
+    {
+      "claim": "体感标记作为'直觉'在前言语阶段指导决策——正常受试者在能言语表达原因之前已做出正确选择",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Damasio generalizes these experimental results into a somatic marker hypothesis. He posits that information received through physical senses creates emotions, which then serve as the basis for our future decisions by providing a sense of what is good and bad, and what causes pleasure or pain, on the basis of prior learning and experiences.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "躯体标记假说段落"
+        },
+        {
+          "excerpt": "Damasio argues that it is precisely these sorts of emotional lessons that provide us with the \"hunches\" his control subjects receive from internal cues, telling them that one deck of cards is good and another bad, but that his brain-injured patients are incapable of receiving.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "前言语情感记忆段落"
+        }
+      ]
+    },
+    {
+      "claim": "McDermott的'affect-as-information'模型：情感提供无意识过程反馈，判断可被无关情感力量不当影响",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "This model suggests that emotion exists to provide feedback to the person about unconscious processes. Judgments can thus prove susceptible to persuasion and manipulation because they can be unduly influenced by unrelated emotional forces. For example, voters' responses to particular candidates can be affected if they are emotionally moved by symbolic features associated with a campaign, such as flag waving, patriotic music, or the happy facial expression of an attractive candidate.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "affect-as-information模型段落"
+        }
+      ]
+    },
+    {
+      "claim": "不同情绪引发不同决策模式：快乐促进社会模仿，悲伤促进冷静分析；恐惧导致悲观风险判断，愤怒导致乐观判断",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "Happy players mimic the strategy of their opponent, while sad players make their moves on the basis of detached analysis of the game itself. Happy players are thus more socially engaged and interactive than sad players.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "情绪与博弈策略段落"
+        },
+        {
+          "excerpt": "Fear leads to relatively pessimistic judgments of risk in future events, whereas—at least in this analysis—anger leads to relatively optimistic judgments. So, for example, in a national emergency, it is better for the government to encourage anger rather than fear in order to promote positive feelings about the future.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "恐惧vs愤怒段落"
+        }
+      ]
+    },
+    {
+      "claim": "历史类比的使用受情绪一致性驱动——焦虑的领导者对敌方信息更敏感",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "I believe that the use of historical analogies in decision making conforms to models of mood-congruence. For example, an anxious leader may be sensitive to the emotional content of an enemy's hostile rhetoric, ultimatums, and graphic pictures of military build-ups than to objective probabilities about the actual likelihood of threat or attack. Learning from history can thus be driven by affect as well as by rational thought about probabilities or utility assessments.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "历史类比与情绪一致性段落"
+        }
+      ]
+    },
+    {
+      "claim": "脑损伤患者无法准确判断面孔可信度，对最不可信的面孔给予正面评价——情感处理对社会判断至关重要",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Further studies found that brain-damaged subjects were not able to accurately judge the trustworthiness and approachability of faces. Specifically, brain-damaged patients showed a disproportionately positive bias toward faces that unimpaired individuals judged to be the least trustworthy and accessible.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "面孔可信度判断段落"
+        }
+      ]
+    },
+    {
+      "claim": "压力反应关闭前额叶高级认知，迫使依赖杏仁核控制行为；战斗老兵保留特别清晰的战斗记忆",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "These chemicals cause us to feel disorganized and distracted, make our unrelated memories darker, and force us to rely on habitual responses. As noted earlier, these chemicals shut down the prefrontal cortex, which houses higher-level cognitive functioning, and encourage primary reliance on the amygdala, or the emotional center, to control behavior.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "压力认知效应段落"
+        }
+      ]
+    },
+    {
+      "claim": "人们在预测未来情感反应方面极差且不会随时间改善；峰终理论显示人们最记住情感体验的峰值和结尾",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Daniel Gilbert and his fellow researchers found that while a group of junior professors all believed that getting tenure would make them happy, there was no difference in happiness among those who had received, as opposed to those who had been denied, tenure five years later.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "情感预测段落"
+        },
+        {
+          "excerpt": "Systematic work by Daniel Kahneman, Barbara Fredrickson, and their colleagues demonstrates that people tend to best remember the peak intensity and the end of an emotional experience; they pay little attention to the duration of the experience. As a result, they often make choices that involve more rather than less pain, depending on the pattern by which pain rises and falls during an event.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "峰终理论段落"
+        }
+      ]
+    },
+    {
+      "claim": "右半球两个离散区域（右下顶叶皮层、前胼胝体下皮层）的损伤与面部情绪识别障碍最相关，左半球损伤不导致此类障碍",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "First, no impairment in the processing of facial expressions of emotion was found in subjects with lesions restricted to left hemisphere; only damage in right hemisphere was ever associated with an impairment. Second, most of the impaired processing of facial expressions of emotion correlated with damage to two discrete regions in right neocortex: (1) the right inferior parietal cortex on the lateral surface, and (2) the anterior infracalcarine cortex on the mesial surface (Fig. 6).",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "Discussion第1段"
+        },
+        {
+          "excerpt": "We found that all subjects recognized happy expressions normally but that some subjects were impaired in recognizing negative emotions, especially fear and sadness. The cortical surface regions that best correlated with impaired recognition of emotion were in the right inferior parietal cortex and in the right mesial anterior infracalcarine cortex.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "no impairment in the processing of facial expressions of emotion was found in subjects with lesions restricted to left hemisphere; only damage in right hemisphere was ever associated with an impairment.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "DISCUSSION第1段"
+        },
+        {
+          "excerpt": "impairments in the recognition of emotional facial expressions occur relative to discrete and specific visual and somatosensory cortical system components, and that processing different emotions draws on different sets of such components.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "DISCUSSION第1段"
+        }
+      ]
+    },
+    {
+      "claim": "恐惧面部表情识别损伤最为一致，快乐表情识别从未受损且与其他情绪识别无相关性，表明快乐表情加工方式独特",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We found that recognition of fear tends to be more consistently impaired by speciﬁc brain lesions than does recognition of other negative emotions and that recognition of happiness is never impaired.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "chunk8开头段落"
+        },
+        {
+          "excerpt": "Recognition scores on happy expressions did not correlate with the recognition of any other emotion for any group of subjects, suggesting that happy expressions are processed differently from all other expressions.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "chunk8第3段"
+        }
+      ]
+    },
+    {
+      "claim": "面部情绪识别损伤不能归因于一般视觉知觉缺陷——ANCOVA控制面部辨别分数后效应仍然显著",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Importantly, there was no correlation between performance on our experimental task and performance on visuoperceptual discrimination tasks (compare Fig. 5), showing that the impairments in emotion recognition cannot be attributed to impaired perception but, instead, reﬂect a difﬁculty in recognizing the emotion signalled by the perceived face.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "chunk8回归分析段"
+        },
+        {
+          "excerpt": "An ANCOVA showed that these results cannot be explained on the basis of impaired visuoperceptual function but, instead, are specific to processing facial expressions of emotion.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "DISCUSSION第1段"
+        }
+      ]
+    },
+    {
+      "claim": "右半球专门负责处理负性情绪而非正性情绪，恐惧识别损伤不能用加工难度解释",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Our ﬁndings are also consistent with EEG studies that suggest the right hemisphere may be specialized for processing negative, but not positive, emotions (Davidson and Fox, 1982; Davidson, 1992).",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "Different emotions段"
+        },
+        {
+          "excerpt": "Additionally, there is no evidence from normal subjects to suggest that fear is any more difﬁcult to process than other emotional expressions (Ekman, 1976) (our unpublished observations). Instead, we believe that there are right hemisphere systems dedicated to processing stimuli that signal fear.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "Different emotions段末尾"
+        }
+      ]
+    },
+    {
+      "claim": "面部情绪识别的损伤可能源于视觉皮层与体感皮层之间白质通讯的破坏，而不仅是灰质损伤",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The impaired recognition of emotion that we report might also be a consequence of damage to essential white matter communications between visual and somatosensory cortices. It is probable, in fact, that most lesions we reported in either infracalcarine or inferior parietal cortices also disrupt underlying white matter.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "Discussion白质段"
+        }
+      ]
+    },
+    {
+      "claim": "面部表情识别的工作假说：知觉表征触发从多种神经系统中检索信息，直接引用Damasio的体感假说",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Our working hypothesis regarding the recognition of expressions of emotion proposes that perceptual representations of facial expressions (in early visual cortices) normally leads to the retrieval of information from diverse neural systems (located \"downstream\"), including those that represent pertinent past states of the organism's body, and those that represent factual knowledge associated with certain types of facial expressions during development and learning (Damasio, 1994, 1995; Adolphs et al., 1995).",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "Networks段"
+        }
+      ]
+    },
+    {
+      "claim": "杏仁核在发育期对面部恐惧识别网络的建立至关重要，但网络一旦建立后可独立于杏仁核运作",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We have described previously a subject who acquired bilateral amygdala damage early in life and who was impaired in recognizing facial expressions of fear (Adolphs et al., 1994, 1995). We subsequently reported in a collaborative study that two subjects who acquired bilateral amygdala damage in adulthood did not show the same impairment (Hamann et al., 1996).",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "acquisition and retrieval段"
+        },
+        {
+          "excerpt": "Our previous data (Adolphs et al., 1994, 1995; Hamann et al., 1996) suggest that the amygdala is required during development so as to establish the networks that permit recognition of facial expressions of fear. Once established, however, these networks may function independently of the amygdala.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "acquisition and retrieval段末尾"
+        }
+      ]
+    },
+    {
+      "claim": "右半球在调节情绪的自主神经和躯体内脏成分方面具有重要作用",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "right posterior hemisphere damage leads to impaired autonomic responses to emotionally charged stimuli (Morrow et al., 1981; Zoccolotti et al., 1982; Tranel and Damasio, 1994).",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "情绪识别与右半球段"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio假设皮层下'情绪行动'系统控制先天行为但非意识运作，基本感受来自身体反应反馈在'身体感知'脑区的表征",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Similar to Panksepp, Antonio Damasio builds on the idea that subcortical circuits (what he calls \"emotional action\" systems) control innate behaviors and related physiological responses. Unlike Panksepp, though, Damasio assumes that these subcortical action systems operate nonconsciously. For him, basic/core phenomenal feelings result when feedback from the body responses is represented in \"body sensing\" areas of the brain to create emotion-specific \"body states\" or \"somatic markers\" (6, 117).",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "Emotions in Light of the First- vs. Higher-Order Debate段"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio理论的重大修正：从强调皮层体感区域修正为强调皮层下回路，但自主神经功能衰竭证据更符合身体反馈起调节而非因果作用",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Initially, Damasio emphasized the importance of body sensing areas of the cortex in giving rise to feelings, but more recently he has revised his view, arguing that core feelings are products of subcortical circuits that receive primary sensory signals from the body (118). The subcortical sensory representations are genuine first-order sensory states that, in the theory, account for phenomenal experiences of basic emotions. Then, through cognitive processing in cortical areas, including the insular, somatosensory, and various prefrontal regions, introspectively accessible experiences emerge. Findings from patients with autonomic failure and alexithymia (119), although superficially supportive, primarily show quantitative changes in subjective experience, more consistent with a modulatory role of body feedback.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "Damasio理论描述段"
+        }
+      ]
+    },
+    {
+      "claim": "LeDoux和Brown认为Damasio的皮层下表征是非意识一阶表征，间接影响而非直接产生意识感受",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "In our opinion, the subcortical circuits proposed by Panksepp and Damasio are better interpreted as contributing nonconscious first-order representations that indirectly influence the higher-order assembly of conscious feelings by the GNC.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "皮层下表征评价段"
+        }
+      ]
+    },
+    {
+      "claim": "体感标记假说被视为一阶情绪理论：皮层下感觉表征通过皮层区域认知加工才产生可内省体验",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The subcortical sensory representations are genuine first-order sensory states that, in the theory, account for phenomenal experiences of basic emotions. Then, through cognitive processing in cortical areas, including the insular, somatosensory, and various prefrontal regions, introspectively accessible experiences emerge.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "Damasio理论描述段"
+        }
+      ]
+    },
+    {
+      "claim": "自我表征是信息处理的整合枢纽——'关联胶体'，情绪关键依赖将自我作为高阶状态的一部分来表征",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Self-representations have been described as integrated hubs for information processing, a kind of \"associative glue\" (156). This notion becomes especially important in emotional states that, we argue, crucially depend on representation of the self as part of the higher-order state that constitutes the felt experience.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "self-representations段"
+        }
+      ]
+    },
+    {
+      "claim": "HOTEC核心主张：没有自我就没有情绪——恐惧、爱、喜悦都依赖自我",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Particularly important to our HOT of emotional consciousness (HOTEC) is the notion that emotions depend on the self. Without the self there is no fear or love or joy. If some event is not affecting you, then it is not producing an emotion. When your friend or child suffers you feel it because they are part of you. When the suffering of people you don't know affects you emotionally, it is because you empathize with them (put yourself in their place, feel their pain): no you, no emotion.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "A Higher-Order Theory of Emotional Consciousness段"
+        }
+      ]
+    },
+    {
+      "claim": "HOTEC预测损伤皮层下回路应减弱但不消除恐惧感受，与Damasio的体感标记假说形成对比",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "An important prediction of our theory is that damage to first-order subcortical circuits, such as a defensive survival circuit or body-sensing circuits, should mute but not eliminate feelings of fear. Evidence consistent with exists (43, 44).",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "HOTEC预测段"
+        },
+        {
+          "excerpt": "feedback to the brain from the amygdala-triggered body responses (as in Damasio) also change processing in many relevant circuits, including the GNC, arousal circuits, and survival circuits, creating loops that sustain the reaction.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "defensive circuits段"
+        },
+        {
+          "excerpt": "This information, together with the observation that amygdala damage (see above) does not eliminate fear experiences, suggest that fear can exist independent of the lower-order inputs.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "amygdala stimulation段"
+        }
+      ]
+    },
+    {
+      "claim": "杏仁核触发的身体反应反馈改变GNC等多个回路加工，创造维持反应的循环回路",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Amygdala outputs also trigger behavioral and physiological responses in the body that help cope with the dangerous situation; feedback to the brain from the amygdala-triggered body responses (as in Damasio) also change processing in many relevant circuits, including the GNC, arousal circuits, and survival circuits, creating loops that sustain the reaction.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "defensive survival circuits段"
+        }
+      ]
+    },
+    {
+      "claim": "情绪图式是童年期习得的信息集合，随情绪经验增加而分化",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Emotion schema are learned in childhood and used to categorize situations as one goes through life. As one becomes more emotionally experienced, the states become more differentiated: fright comes to be distinguished from startle, panic, dread, and anxiety. When an emotion schema is present as part of a HOR, it biases the content of the experience that the HOR will support.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "emotion schema段"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio的'as-if loops'允许在不实际暴露于情绪刺激的情况下对情绪体验进行符号表征",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Damasio's (6, 117) notion of \"as-if loops\" and Rolls's \"if-then syntactic thoughts\" (169) are consistent with this idea. Although the ability to imagine emotions is useful, this can also become a vehicle for excessive rumination, worry, and obsessions.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "language and emotion段"
+        }
+      ]
+    },
+    {
+      "claim": "HOTEC推论：情绪永远不可能是无意识的——如果你不知道自己害怕，你就没有在害怕",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "One implication of our view is that emotions can never be unconscious. Responses controlled by subcortical survival circuits that operate nonconsciously sometimes occur in conjunction with emotional feelings but are not emotions. An emotion is the conscious experience that occurs when you are aware that you are in particular kind of situation that you have come, through your experiences, to think of as a fearful situation. If you are not aware that you are afraid, you are not afraid; if you are not afraid, you aren't feeling fear.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "emotions never unconscious段"
+        }
+      ]
+    },
+    {
+      "claim": "恐惧感受可由防御性生存回路以外的其他回路活动引发——可恐惧饿死、脱水或冻死",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "However, the feeling of fear can occur in response to activity in other survival circuits as well (e.g., energy, fluid balance, thermoregulatory circuits); in relevant circumstances, you can fear dying of starvation, dehydration, or freezing to death. We call these fears (or \"anxieties\") because they are triggered by specific stimuli and interpreted in terms of stored schemas related to danger and harm to well-being.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "fear beyond defensive circuits段"
+        }
+      ]
+    },
+    {
+      "claim": "情绪在GNC中组装后可参与决策和对未来情绪的想象，Damasio和Rolls的决策理论与此一致",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Our proposal that emotions are cognitive states is consistent with the idea that once they are assembled in the GNC they can contribute to decision making (6, 117, 169), as well as to imaginations about one's future self and the emotions it may experience, and about decisions and actions one's future self might take when these emotions occur.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "function of fear段"
+        },
+        {
+          "excerpt": "One advantage of our theory is that the conscious experience of all emotions (basic and secondary) (2–5), and emotional and nonemotional states of consciousness, are all accounted for by one system (the GNC).",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "Relation of HOTEC to Other Theories段"
+        }
+      ]
+    },
+    {
+      "claim": "恐惧体验可以伴随身体反应，也可以是纯粹认知或存在性的，超越Damasio强调的体感回路框架",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Furthermore, existential fear/anxiety about the meaningless of life or the eventuality of death may not engage survival circuits at all. Our theory can thus potentially account for all forms of fear: those accompanied by brain arousal and bodily responses and those that are purely cognitive and even existential.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "Conclusion段"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio的两部核心著作Descartes' Error和The Feeling of What Happens是体感标记假说和意识感受理论的奠基文献",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "6. Damasio A (1994) Descarte's Error: Emotion, Reason, and the Human Brain (Gosset/Putnam, New York).\n117. Damasio AR (1999) The Feeling of What Happens: Body and Emotion in the Making of Consciousness (Harcourt Brace, New York).",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "参考文献列表"
+        },
+        {
+          "excerpt": "118. Damasio A, Carvalho GB (2013) The nature of feelings: Evolutionary and neurobiological origins. Nat Rev Neurosci 14(2):143–152.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "参考文献列表"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio采用多元实证方法（PET扫描、脑损伤病变分析）建构跨物种心理连续性",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Antonio Damasio has spent the past thirty years studying and writing about how the brain operates, and his work has garnered acclaim for its singular melding of the scientific and the humanistic.",
+          "source_file": "paper_Self_comes_to_mind__constructing_the_conscious_brain.md",
+          "location": "摘要第1段"
+        },
+        {
+          "excerpt": "It's not really that Damasio is presenting a theory of consciousness. Really, Damasio is just presenting some data and some considerations for a potential theory of consciousness, and then referring to several philosophical theories in order to try to see which best reflects his data. That is a totally reasonable approach, and actually much less audacious than what many of his colleagues are attempting to do.",
+          "source_file": "exa_3_The_Feeling_of_What_Happens_Body_Emotion_and_the_Making_of_Consciousness.md",
+          "location": "第一条评论"
+        },
+        {
+          "excerpt": "Damasio backs this up with positive and negative examples, referring to clinical patients who have suffered different insults to their CNS.",
+          "source_file": "exa_3_The_Feeling_of_What_Happens_Body_Emotion_and_the_Making_of_Consciousness.md",
+          "location": "第2条评论"
+        },
+        {
+          "excerpt": "One of the most impressive aspects of the book is that Damasio reconstructs the architecture of the distinctively human by building on what is shared with other species.",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review第12段"
+        },
+        {
+          "excerpt": "We hypothesized that the cortical systems most responsible for the recognition of emotional facial expressions would draw on discrete regions of right higher-order sensory cortices and that the recognition of specific emotions would depend on partially distinct system subsets of such cortical regions.",
+          "source_file": "paper_Cortical_Systems_for_the_Recognition_of_Emotion_in_Facial_Expressions.md",
+          "location": "Abstract"
+        }
+      ]
+    },
+    {
+      "claim": "后内侧皮层（PMCs）是自传自我的协调中枢——活动低下时自传自我丧失（麻醉、深睡、阿尔茨海默病、昏迷）",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Damasio suggests that the posteromedial cortices (PMCs) play the coordinating role. To support this hypothesis, he uses evidence from a variety of sources, where the low activity or atrophy of the PMCs is correlated with a loss of autobiographical self (anaesthesia, deep sleep, advanced Alzheimer's disease, coma, and vegetative state).",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review第7段"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio辩护意识在决策中的重要性：决策只能在意识反复引导之后才能自动化",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "There is much nonconscious processing going on and such processing exercises control over our decisions, but it would be a mistake to downplay the importance of consciousness in making choices. Decision-making processes can become automated (as in expert choice) only after conscious deliberation has repeatedly guided them.",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review第9段"
+        }
+      ]
+    },
+    {
+      "claim": "记忆因无法存储身体与外界所有互动的完整记录而永远不可能完全忠实",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "due to the impossibility of storing records of all interactions between body and outer entities, memory is never perfectly faithful.",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review第3段末尾"
+        }
+      ]
+    },
+    {
+      "claim": "批评者认为Damasio对核心自我的定义过于宽泛——无言的、无需连贯的叙事可能不足以支撑拥有感和能动性",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "It seems to me that the core self falls short of what we would expect from any self. The narrative that brings together the interactions of the brain with other entities is nonverbal, it does not need to be coherent, it does not require coordination, and although it does have a protagonist, this is not a protagonist who can stretch in time.",
+          "source_file": "paper_Self_comes_to_mind_Constructing_the_conscious_brain.md",
+          "location": "Book Review第14段"
+        }
+      ]
+    },
+    {
+      "claim": "Damasio定位传导性失语症的解剖基础：弓状束损伤与该综合征强关联，岛叶损伤可能是相关因素",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "In summary, 5 cases show compromise of the insular region, and 5 cases show variable degree of involvement of the superior temporal gyrus and an extension of the lesion into the inferior parietal region. In all cases the lesion is deep and compromises the white matter corresponding to the aforementioned regions. In no case is there involvement of the angular gyrus (area 39), or of the posterior portion of the second and third temporal gyri (area 37) or of Broca's area (areas 44 and 45).",
+          "source_file": "paper_THE_ANATOMICAL_BASIS_OF_CONDUCTION_APHASIA.md",
+          "location": "SUMMARY段落"
+        },
+        {
+          "excerpt": "Consideration of the above findings supports the notion that conduction aphasia is associated with a highly distinctive structural pattern, and that damage to the arcuate fasciculus is strongly associated with the syndrome.",
+          "source_file": "paper_THE_ANATOMICAL_BASIS_OF_CONDUCTION_APHASIA.md",
+          "location": "DISCUSSION第1段"
+        },
+        {
+          "excerpt": "conduction aphasia should probably be defined, in anatomical terms, by the pattern of intactness or damage of certain portions of the left auditory complex as much as by damage to the left arcuate fasciculus. In fact, since damage to both auditory complex and arcuate fasciculus is shared by other aphasias (for example, Wernicke's, Broca's) it is the specific pattern of compromise to either structure that",
+          "source_file": "paper_THE_ANATOMICAL_BASIS_OF_CONDUCTION_APHASIA.md",
+          "location": "DISCUSSION第3段"
+        },
+        {
+          "excerpt": "We suspect, however, that damage to the insula and to its underlying matter can be a pertinent factor in the production of the syndrome. More than the insular cortex itself, the decisive pathological element must be the destruction of white matter in the extreme capsule which, most certainly, contains vital cortico-cortical connections linking temporo-parietal",
+          "source_file": "paper_THE_ANATOMICAL_BASIS_OF_CONDUCTION_APHASIA.md",
+          "location": "DISCUSSION，岛叶损伤讨论段"
+        },
+        {
+          "excerpt": "the present anatomical evidence supports, in good measure, both Wernicke's original prediction and Geschwind's now classical anatomical account of the syndrome.",
+          "source_file": "paper_THE_ANATOMICAL_BASIS_OF_CONDUCTION_APHASIA.md",
+          "location": "DISCUSSION末段"
+        }
+      ]
+    },
+    {
+      "claim": "当代理性选择模型排除情感背叛了其智识根基——Bernoulli和Bentham的效用概念本基于快乐与痛苦的情感评估",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "Daniel Bernoulli argued that people established their values for wealth on the basis of the pain and pleasure that it would give them. Because these assessments differed from absolute valuations of wealth, he called them utilities. Jeremy Bentham later drew on Bernoulli's ideas to conceive of utility as a balance of pleasure and pain as well. Notions of pleasure and pain were eliminated from the understanding of utility when utility was changed from a psychological to an economic construct. To the extent that current models of expected utility theory exclude emotion, they betray their intellectual foundations.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "效用理论历史段落"
+        }
+      ]
+    },
+    {
+      "claim": "政治科学对生物政治学的抵触源于社会达尔文主义的种族主义历史关联，但新模型值得重新审视",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Somit and Peterson trace political scientists' objections to biopolitics and evolutionary explanations to earlier association of biopolitics with social Darwinism, and the subsequent impalement of social Darwinism on the stake of racist associations. New evolutionary and neurocognitive models no longer rest on questionable assertions of social desirability; rather, they rest on the most recent technological advances in brain science, genetics, and biochemistry and warrant reconsideration.",
+          "source_file": "paper_The_Feeling_of_Rationality_The_Meaning_of_Neuroscientific_Advances_for_Political.md",
+          "location": "生物政治学段落"
+        }
+      ]
+    },
+    {
+      "claim": "HOROR理论认为现象性意识是拥有对低阶信息的适当高阶表征，其中低阶不必是感觉的",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "HOROR posits that phenomenal consciousness consists of having the appropriate HOR of lower-order information, where lower-order does not necessarily mean sensory, but instead refers to a prior higher-order state that is rerepresented (Fig. 4A). This second HOR is thought-like and, in virtue of this, instantiates the phenomenal, introspectively accessed experience of the external sensory stimulus.",
+          "source_file": "paper_A_higher-order_theory_of_emotional_consciousness.md",
+          "location": "HOROR theory段"
+        }
+      ]
+    },
+    {
+      "claim": "感受在关于人类智力和文化演化的讨论中很少被提及，这是一个令人好奇的遗漏",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "he finds it a curious omission that feelings \"rarely earn a mention\" in discussions about the evolution of human intellect and culture.",
+          "source_file": "exa_3_The_Strange_Order_of_Things_Life_Feeling_and_the_Making_of_Cultures.md",
+          "location": "书评第13段"
+        }
+      ]
+    },
+    {
+      "claim": "杏仁核、内侧前额叶皮层和VMPFC在情绪处理中起核心作用进而影响决策；VMPFC损伤者不是好的决策者",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "His research has helped to elucidate the neural basis for the emotions and has shown that emotions play a central role in social cognition and decision-making. Damásio has formulated the somatic markers hypothesis.",
+          "source_file": "exa_3_The_Feeling_of_What_Happens_Body_Emotion_and_the_Making_of_Consciousness.md",
+          "location": "About the author部分"
+        },
+        {
+          "excerpt": "Neurological studies show ventromedial prefrontal cortex lesions impair advantageous choices despite intact intellect.",
+          "source_file": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md",
+          "location": "Key takeaways第2条"
+        },
+        {
+          "excerpt": "the amygdala, medial prefrontal cortex, and ventromedial prefrontal cortex play a central role in processing of emotion which in turn influence decision-making process. While individuals with lesion in the ventromedial prefrontal cortex which is responsible for emotional responses toward risk, reward, and decision-making are not good decision-makers.",
+          "source_file": "exa_1_PDF_The_somatic_marker_hypothesis_A_neural_theory_of_economic_decision.md",
+          "location": "Related paper: Neural Correlates of Emotion, Baharun 2021"
+        },
+        {
+          "excerpt": "Frontal lobe damage, particularly to the vmPFC, results in impaired abilities to organize and plan behavior and learn from previous mistakes, without affecting intellect in terms of working memory, attention, and language comprehension and expression. vmPFC patients also have difficulty expressing and experiencing appropriate emotions.",
+          "source_file": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md",
+          "location": "Background部分"
+        }
+      ]
+    },
+    {
+      "claim": "情绪被定义为对身体和大脑状态变化的刺激响应，随时间积累成为与特定情境相关的体感标记",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Emotions, as defined by Damasio, are changes in both body and brain states in response to stimuli. Physiological changes (such as muscle tone, heart rate, endocrine activity, posture, facial expression, and so forth) occur in the body and are relayed to the brain where they are transformed into an emotion",
+          "source_file": "exa_1_Somatic_marker_hypothesis_-_Wikipedia.md",
+          "location": "Hypothesis部分"
+        }
+      ]
+    },
+    {
+      "claim": "一定程度的主观性是有效行为的必要条件——情绪中心对做出理性决策至关重要",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Antonio Damasio shows how the center of emotion is essential for us to make rational decisions.",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "Luís的评论"
+        },
+        {
+          "excerpt": "Ultimately, Damasio demonstrates that a degree of subjectivity is essential for effective behavior.",
+          "source_file": "exa_0_Descartes_Error_Emotion_Reason_and_the_Human_Brain_by_António_Damásio__Goodreads.md",
+          "location": "Luís的评论"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 17,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-01T09:24:39.471652",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T09:52:56.678188",
+    "pre_merge_count": 133,
+    "post_merge_count": 69
+  }
+}

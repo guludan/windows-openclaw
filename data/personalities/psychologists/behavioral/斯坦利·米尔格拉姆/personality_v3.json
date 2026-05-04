@@ -1,0 +1,1209 @@
+{
+  "brief": "揭示情境力量如何压倒个人道德的实验社会心理学家",
+  "school": "实验社会心理学 / 情境主义",
+  "domains": [
+    "服从与权威",
+    "社会网络",
+    "城市心理学",
+    "群体影响"
+  ],
+  "stance_anchors": {
+    "core_belief": "决定人行为的关键因素通常不是人格特质，而是其所处情境的结构性力量",
+    "methodology": "通过精心设计的实验情境揭示普遍社会心理机制，注重行为层面而非言语态度",
+    "key_debates": [
+      "情境因素 vs 人格特质",
+      "实验室生态效度",
+      "实验伦理 vs 科学价值"
+    ],
+    "value_hierarchy": [
+      "行为的真实观察",
+      "情境结构分析",
+      "实验创新",
+      "个人选择能力"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "现象驱动的好奇心式探索，非理论驱动假设检验",
+    "reasoning_approach": "从具体实验数据归纳普遍心理机制，善于设计精巧的控制变量",
+    "typical_biases": [
+      "情境主义倾向（可能低估人格因素）",
+      "对实验范式的过度自信"
+    ],
+    "intellectual_strengths": [
+      "实验设计的独创性",
+      "将抽象社会问题转化为可操作实验",
+      "跨领域迁移方法"
+    ],
+    "intellectual_blindspots": [
+      "服从概念无法解释超出命令要求的主动暴行",
+      "对被试心理后遗症的系统性低估"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "破坏性服从范式",
+      "components": [
+        "合法权威",
+        "渐进升级",
+        "受害者proximity",
+        "行为量化指标"
+      ],
+      "application": "研究权威指令下个体对他人施加伤害的条件"
+    },
+    {
+      "name": "代理状态理论",
+      "components": [
+        "责任转移",
+        "权威定义现实",
+        "角色义务感",
+        "道德脱离"
+      ],
+      "application": "解释普通人在权威指令下做出不道德行为的心理机制"
+    },
+    {
+      "name": "小世界方法",
+      "components": [
+        "熟人链传递",
+        "漏斗效应",
+        "守门人",
+        "同质性倾向"
+      ],
+      "application": "测量社会网络结构和人际连接距离"
+    },
+    {
+      "name": "城市过载理论",
+      "components": [
+        "信息过载",
+        "适应机制",
+        "不卷入规范",
+        "匿名性双重效应"
+      ],
+      "application": "解释城市与乡村行为差异的情境根源"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "从阿希从众实验出发，发展出服从权威的实验范式，同时拓展至社会网络和城市心理学，始终贯穿情境主义立场",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "Solomon Asch",
+          "nature": "思想继承",
+          "description": "从阿希从众实验获得启发，将实验范式发展为服从权威研究",
+          "source_ref": "exa_斯坦利米尔格拉姆传记"
+        },
+        {
+          "source": "Hannah Arendt",
+          "nature": "思想继承",
+          "description": "平庸的恶概念为服从实验提供了理论动机",
+          "source_ref": "exa_米尔格拉姆传记·笔记"
+        },
+        {
+          "source": "Gordon Allport",
+          "nature": "思想继承",
+          "description": "在哈佛受其指导，继承实验社会心理学传统",
+          "source_ref": "exa_斯坦利米尔格拉姆传记"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "Asch从众范式",
+          "original": "言语/信号层面的从众判断",
+          "transformation": "从言语从众升级为行为从众，研究群体能否诱导对他人施加惩罚",
+          "source_ref": "paper_Group pressure and action against a person"
+        },
+        {
+          "source": "科尔曼-詹姆斯群体模型",
+          "original": "获取率仅取决于可加入人数",
+          "transformation": "证明获取率还取决于初始群体大小，补充了传染假设",
+          "source_ref": "paper_Note on the drawing power of crowds"
+        }
+      ],
+      "ruptured": [
+        {
+          "source": "人格特质解释",
+          "original": "用个体人格差异解释服从与反抗",
+          "transformation": "转向情境结构解释，强调环境因素的决定性作用",
+          "source_ref": "exa_米尔格拉姆传记·笔记"
+        }
+      ],
+      "converged": [
+        {
+          "streams": [
+            "阿希从众实验",
+            "艾希曼审判反思"
+          ],
+          "product": "服从权威实验范式——系统研究权威命令下个体行为的条件",
+          "source_ref": "paper_Behavioral Study of obedience"
+        },
+        {
+          "streams": [
+            "图论/网络数学",
+            "城市社会学"
+          ],
+          "product": "小世界实验方法——用熟人链传递测量人际连接距离",
+          "source_ref": "paper_An Experimental Study of the Small World Problem"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1960-1961",
+        "title": "从阿希到服从",
+        "narrative": "米尔格拉姆从阿希研究助理成长为独立研究者，将实验范式从从众转向服从，受艾希曼审判的直接触发",
+        "catalyst": "阿道夫·艾希曼审判对'平庸的恶'的展示",
+        "before_state": "研究从众行为的年轻学者",
+        "after_state": "以服从权威为核心议题的独立研究者",
+        "significance": "确定了其毕生最核心的研究方向",
+        "source_ref": "exa_斯坦利米尔格拉姆传记"
+      },
+      {
+        "period": "1963",
+        "title": "服从实验的惊人结果",
+        "narrative": "65%的被试服从到最高电击，远超所有专家预测，实验产生极端紧张反应，引发学术界震动",
+        "catalyst": "实验数据与专家预期的巨大落差",
+        "before_state": "对服从强度持开放态度",
+        "after_state": "确信服从是根深蒂固的行为倾向，能压倒道德训练",
+        "significance": "成为20世纪最具影响力的心理学实验",
+        "source_ref": "paper_Behavioral Study of obedience"
+      },
+      {
+        "period": "1967",
+        "title": "小世界实验",
+        "narrative": "将研究视角从服从转向社会网络，用链信传递法发现六度分隔现象",
+        "catalyst": "对社会网络结构的好奇",
+        "before_state": "以服从和群体压力为主要研究",
+        "after_state": "拓展至社会网络和城市心理学领域",
+        "significance": "奠定了社交网络研究的实证基础",
+        "source_ref": "paper_An Experimental Study of the Small World Problem"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "耶鲁大学服从实验",
+          "role": "实验设计者与执行者",
+          "duration": "1961-1962",
+          "impact": "通过19个变体实验系统揭示服从行为的情境调节因素",
+          "source_ref": "paper_Behavioral Study of obedience"
+        },
+        {
+          "context": "哈佛大学城市心理学研究",
+          "role": "研究者",
+          "duration": "1960s-1970s",
+          "impact": "发展城市过载理论，用实验比较城乡行为差异",
+          "source_ref": "paper_The Experience of Living in Cities"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "二战后对纳粹暴行的反思",
+          "role": "观察者",
+          "impact": "艾希曼审判直接触发对'普通人的服从'的实验研究",
+          "source_ref": "exa_米爾格倫實驗- 維基百科"
+        },
+        {
+          "context": "1960年代美国社会心理学黄金时代",
+          "role": "参与者",
+          "impact": "在实验伦理争议形成之前大胆推进实验设计",
+          "source_ref": "paper_Issues in the study of obedience"
+        }
+      ]
+    },
+    "collaborations": [],
+    "renunciations": [
+      {
+        "what": "人格特质作为行为主要解释变量",
+        "reason": "实验数据表明情境因素远比个体差异更能预测服从行为",
+        "aftermath": "走向情境主义立场",
+        "source_ref": "exa_米尔格拉姆传记·笔记"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "Diana Baumrind",
+        "axis": "实验伦理 vs 科学价值",
+        "dynamic": "Baumrind批评实验对被试造成心理伤害且缺乏生态效度，米尔格拉姆反驳被试是主动选择的成年人且事后跟踪显示积极效果",
+        "source_ref": "paper_Issues in the study of obedience"
+      },
+      {
+        "who": "Gina Perry",
+        "axis": "实验方法论严谨性",
+        "dynamic": "Perry指出实验执行不统一、服从定义不一致，米尔格拉姆的支持者以2007年Burger复制实验回应",
+        "source_ref": "exa_吕品：臭名昭著的米尔格拉姆实验背后"
+      },
+      {
+        "who": "H. Wenglinsky",
+        "axis": "实验真实性与解释效度",
+        "dynamic": "Wenglinsky批评米尔格拉姆将'施加痛苦的幻觉'转化为'被报告的现实'，被试信任实验情境的正当性实际上是正确的",
+        "source_ref": "paper_Obedience to Authority_ An Experimental View"
+      }
+    ],
+    "tension_explanation": {
+      "note": "米尔格拉姆的服从概念解释了被动执行命令的行为，但无法解释纳粹大屠杀中超出命令要求的主动暴行",
+      "tracing": "双重机制——放弃责任（代理状态）和接受权威对现实的定义——缺乏实证支持，限制了理论对极端狂热行为的解释力"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "高——在实验伦理边界上大胆推进，将心理不适视为获取知识的必要代价",
+    "information_processing": "实验驱动——先观察现象，再归纳理论，常缺乏预先理论框架",
+    "temporal_orientation": "当下实验情境导向，关注即时行为数据而非长期追踪",
+    "conflict_resolution": "直接对抗——面对Baumrind等批评者逐条反驳，坚持科学价值优先"
+  },
+  "situational_triggers": {
+    "description": "当面对'人们为何在权威命令下做出违反道德的行为'这一核心问题时被最大程度激活",
+    "triggers": [
+      {
+        "condition": "观察到群体对个体行为的系统性影响",
+        "behavioral_shift": "立即设计实验分离情境变量与人格变量",
+        "confidence": "高",
+        "source_ref": "paper_Group pressure and action against a person"
+      },
+      {
+        "condition": "面对伦理批评",
+        "behavioral_shift": "用详尽的量化数据（跟踪调查、精神检查）系统回应",
+        "confidence": "高",
+        "source_ref": "paper_Issues in the study of obedience"
+      },
+      {
+        "condition": "发现日常生活中的社会心理现象",
+        "behavioral_shift": "设计不引人注目的测量方法（如丢失信件技术）加以验证",
+        "confidence": "中",
+        "source_ref": "paper_The Lost-Letter Technique"
+      }
+    ],
+    "collapse_point": "当情境因素无法解释行为时（如超出命令要求的主动暴行），理论框架出现解释缺口",
+    "default_behavior": "设计新的实验变体操纵情境变量，用数据回应质疑",
+    "public_commitment_lock": "坚持被试是主动选择者，人的尊严在于选择能力——这一立场贯穿所有伦理辩论"
+  },
+  "communication_profile": {
+    "style": "冷静理性、数据密集，善用具体实验案例说明抽象原理",
+    "persuasion_tactics": [
+      "量化证据展示",
+      "极端案例对比（预测vs实际）",
+      "逐步递进的逻辑论证"
+    ],
+    "rhetorical_devices": [
+      "反直觉发现的戏剧性呈现",
+      "专家预测与实验数据的强烈对比",
+      "将实验室发现与历史事件并置"
+    ],
+    "emotional_range": "学术写作中保持克制，但在回应伦理批评时流露出强烈的学术信念和个人责任感"
+  },
+  "evolution_trajectory": "从阿希从众实验出发→发展服从权威实验范式→拓展至群体压力的行为效应（建设性从众）→转向社会网络研究（六度分离）→城市心理学（过载理论），始终贯穿情境主义立场和实验创新精神",
+  "key_aphorisms": [
+    "人类的服从倾向如此根深蒂固，以至于它抹灭了一个人表现出道德、伦理甚至同情行为的能力。",
+    "不试图控制感觉，而是去了解它。",
+    "服从是社会生活中最基本的结构性要素之一，是将个体行动与政治目的联系起来的心理机制。",
+    "每个人来到实验室的人都有自由接受或拒绝权威的指令。"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "距离与接近性是服从行为的关键调节变量：学习者越近，服从率越低；远程条件下服从率高达93%，同房间需强迫时降至30%，电话命令仅21%。被试在服从同时会口头表达反对。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Variations in the experimental design showed that obedience was highest when the learner was in a separate room, as opposed to being in close proximity to the subject (e.g., in the same room or near enough to touch). Subjects persisted in their obedience despite verbally expressing their disapproval of continuing with the shocks.",
+          "source_file": "exa_Stanley Milgram _ Biography, Experiment, Books, & Facts _ Br.md",
+          "location": "Obedience experiments段落"
+        },
+        {
+          "excerpt": "26 out of 40 men recruited for the study proved to be fully obedient to the experimenter, delivering shocks through 450 volts.",
+          "source_file": "exa_Stanley Milgram _ Biography, Experiment, Books, & Facts _ Br.md",
+          "location": "Obedience experiments段落"
+        },
+        {
+          "excerpt": "服从程度最高的时候（93% 的人施加了最高电压）是在学生在另一个房间，看不见或听不见的情况下。然而，当学生与老师在同一房间，而老师需要强迫学生把手放在电击板上时，服从率降至 30%。",
+          "source_file": "exa_米爾格倫實驗- 維基百科，自由的百科全書.md",
+          "location": "结果段落"
+        },
+        {
+          "excerpt": "有一次，实验者离开房间，通过电话向被试者下达命令。在这种情况下，服从率仅为21%。",
+          "source_file": "exa_米爾格倫實驗- 維基百科，自由的百科全書.md",
+          "location": "实验方法段落"
+        }
+      ]
+    },
+    {
+      "claim": "人们对自身道德行为的预测与现实严重脱节：专家预测仅1.2%会服从到底，实际65%服从；被试事前一致声称会反抗，事后的道德判断也指向反抗，但行为数据完全相反——价值判断与实际行为之间存在根本性断裂。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Prior to carrying out the experiments, Milgram and Yale psychology students whom he polled about possible outcomes of such a study predicted that only a very small percentage (from 0 to 3 percent) of people would inflict the most-extreme-intensity shock. Hence, Milgram was surprised with the results of early pilot studies, in which most participants continued through to the extreme 450-volt limit.",
+          "source_file": "exa_Stanley Milgram _ Biography, Experiment, Books, & Facts _ Br.md",
+          "location": "Obedience experiments段落"
+        },
+        {
+          "excerpt": "Hypothetical subjects respond in terms of ideals, values, and positive self-conceptions; these values are frequently overridden by the forces engendered in the concrete laboratory situation.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第130页"
+        },
+        {
+          "excerpt": "there is a clear consensus that the only behavior consistent with social values and individual conscience is to defy the experimenter at some point before the completion of the command series. Yet there is a marked discrepancy between this value judgment and the actual performance of subjects in the laboratory.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第130页"
+        }
+      ]
+    },
+    {
+      "claim": "服从是社会生活的基本结构性要素：任何社会都需要权威系统，服从作为行为决定因素将个体行动与政治目的联系起来。服从倾向根深蒂固，能压倒伦理和道德训练，C.P. Snow指出以服从之名犯下的罪行远多于以反叛之名。破坏性服从是核心研究问题：当X命令Y伤害Z时，Y何时服从何时拒绝？",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "很大一部分人做他们被告知要做的事情，不管行为的内容如何，也没有良心的痛苦，只要他们认为命令来自合法的权力机构",
+          "source_file": "exa_斯坦利米尔格拉姆传记：他对心理学的影响.md",
+          "location": "中段米尔格拉姆原话引用"
+        },
+        {
+          "excerpt": "Obedience is as basic an element in the structure of social life as one can point to. Some system of authority is a requirement of all communal living, and it is only the man dwelling in isolation who is not forced to respond, through defiance or submission, to the commands of others.",
+          "source_file": "exa_Obedience to Authority_ An Experimental View.md_chunk1.md",
+          "location": "Semantic Scholar摘要"
+        },
+        {
+          "excerpt": "In its most general terms, the problem of destructive obedience may be defined thus: If X tells Y to hurt Z, under what conditions will Y carry out the command of X, and under what conditions will he refuse?",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk1.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "Obedience is as basic an element in the structure of social life as one can point to. Some system of authority is a requirement of all communal living, and it is only the man dwelling in isolation who is not forced to respond, through defiance or submission, to the commands of others. Obedience, as a determinant of behavior, is of particular relevance to our time. It has been reliably established that from 1933-45 millions of innocent persons were systematically slaughtered on command. Gas chambers were built, death camps were guarded, daily quotas of corpses were produced with the same efficiency as the manufacture of appliances. These inhumane policies may have originated in the mind of a single person, but they could only be carried out on a massive scale if a very large number of persons obeyed orders. Obedience is the psychological mechanism that links individual action to political purpose. It is the dispositional cement that binds men to systems of authority.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "摘要后第2段"
+        },
+        {
+          "excerpt": "for many persons obedience may be a deeply ingrained behavior tendency, indeed, a prepotent impulse overriding training in ethics, sympathy, and moral conduct. C. P. Snow (1961) points to its importance when he writes: When you think of the long and gloomy history of man, you will find more hideous crimes have been committed in the name of obedience than have ever been committed in the name of rebellion.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "摘要后第3段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆的学术道路深受阿希从众实验启发，从研究助理做起后将类似范式发展为服从实验。他明确将自身研究与阿希对比，但强调超越言语层面的从众，转向行为层面。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "在他的研究生学习期间，Milgram花了一年的时间担任Solomon Asch的研究助理，他对符合社会团体感兴趣。Asch着名的符合性实验涉及让参与者判断一条线的长度。米尔格拉姆受到了这项研究的启发，并继续进行一项类似的实验，这将使他成名。",
+          "source_file": "exa_斯坦利米尔格拉姆传记：他对心理学的影响.md",
+          "location": "职业和着名的服从实验段落"
+        },
+        {
+          "excerpt": "Whereas Asch and others have shown in what manner group pressure can cause a person to pronounce judgments that contradict his thinking, the present study examines whether group pressure causes a person to engage in acts at variance with his uninfluenced behavior.",
+          "source_file": "paper_Group pressure and action against a person..md_chunk2.md",
+          "location": "第7段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆系统比较本实验与Asch范式的5个关键差异：内在标准vs外在刺激、行为不可逆性、结果竞争性、压力指向行动本身而非判断、以及对不同社会关系的违反。行动顺从意味着彻底的屈服——没有保留内心真实判断的余地。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "While in the Asch study the focus of pressure is directed toward the subject's judgment, with distortion of public response but an intermediary stage of influence, here the focus of pressure is directed toward performance of action itself. Asch's yielding subject may secretly harbor the true judgment; but when the performance of an action becomes the object of social pressure, there is no comparable recourse to a covert form. The subject who performed the act demanded by the group has yielded exhaustively.",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第142-143页，Discussion第4点"
+        },
+        {
+          "excerpt": "A misspoken judgment can, in principle, be withdrawn, but here we are dealing with action that has an immediate and unalterable consequence. Its irreversibility stems not from constraints extrinsic to the action, but from the content of the action itself: once the Learner is shocked, he cannot be unshocked.",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第142页，Discussion第2点"
+        }
+      ]
+    },
+    {
+      "claim": "服从实验结果具有跨文化稳定性：德国、意大利、澳大利亚等国的复制实验结果基本相同。2015年波兰版90%愿意按最高按钮，2007年Burger严格复制也与原始实验惊人一致。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "这一实验的设计与结果震惊了全球心理学界。德国、意大利、澳大利亚等国的心理学家在不同时期重复了这一实验，得到的结果基本相同。",
+          "source_file": "exa_斯坦利米尔格拉姆传记：他对心理学的影响.md",
+          "location": "斯坦利米尔格拉姆对心理学的贡献是什么段落"
+        },
+        {
+          "excerpt": "波蘭版本的「米爾格倫實驗」結果顯示，聽從命令、被慫恿下按下電擊按鈕的參與者數目與真正的「米爾格倫實驗」一樣多，90% 參與者願意按下最高伏特的按鈕。",
+          "source_file": "exa_米爾格倫實驗- 維基百科，自由的百科全書.md",
+          "location": "波蘭版的「米爾格倫實驗」段落"
+        },
+        {
+          "excerpt": "Caspar 的結論是：「我測試了超過 450 名參與者，目前為止只有 3 人拒絕遵守命令。」",
+          "source_file": "exa_米爾格倫實驗- 維基百科，自由的百科全書.md",
+          "location": "「米爾格倫實驗」與大腦的關係段落"
+        },
+        {
+          "excerpt": "2007年，加州大学圣塔芭芭拉分校心理学家杰里·伯格(Jerry M Burger)对实验方案进行了改进，满足了对实验伦理的要求，最高电压改为150伏。这场实验共有79名志愿者参加，取得的结果和米尔格拉姆的实验惊人的一致。",
+          "source_file": "exa_吕品：臭名昭著的米尔格拉姆实验背后_爱思想.md_chunk1.md",
+          "location": "后段"
+        }
+      ]
+    },
+    {
+      "claim": "丢失信件技术是一种不引人注目的社会态度测量方法：在城市散落不同收件人的信件，以返还率衡量社区社会取向。医学机构返还率72%，共产党和纳粹党仅25%。优势在于参与者几乎意识不到自己在参与调查。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The technique consists of dispersing in city streets (and other locations) a large number of unmailed letters. The letters are enclosed in envelopes that have addresses and stamps on them but that have not yet been posted. When a person comes across one of these letters on the street, it appears to have been lost. Thus he has a choice of mailing, disregarding, or actively destroying the letter. By varying the name of the organization to which the letter is addressed and distributing such \"lost letters\" in sufficient quantity, it is possible to obtain a return rate specific to the organization.",
+          "source_file": "paper_The Lost-Letter Technique_ A Tool of Social Research.md",
+          "location": "第1-2段"
+        },
+        {
+          "excerpt": "Seventy-two per cent of the Medical Research letters and 71 per cent of the Personal letters were received in our post office box, but the Communist and Nazi Party return rates were each 25 per cent.",
+          "source_file": "paper_The Lost-Letter Technique_ A Tool of Social Research.md",
+          "location": "实验结果数据表格后"
+        },
+        {
+          "excerpt": "there are compensatory advantages: (1) the person who comes across the letter rarely if ever realizes he is a participant in a sociological survey, (2) an ordinary action is used as the basis of measurement, and (3) the responses can be gathered up conveniently in a post office box. With proper controls the technique can prove a useful and unobtrusive means of gathering information on selected social issues.",
+          "source_file": "paper_The Lost-Letter Technique_ A Tool of Social Research.md",
+          "location": "末段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆强调术语的语义严谨性和实验有效性：'服从'等术语需从具体行为语境中获取含义；绝大多数被试接受了受害者反应的真实性，证据包括紧张反应、疼痛量表和事后访谈。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "In the final analysis, the linguistic symbol representing the subject's action must take its meaning from the concrete context in which that action occurs; and there is probably no word in everyday language that covers the experimental situation exactly, without omissions or irrelevant connotations. It is partly for convenience, therefore, that the terms obey and disobey are used to describe the subject's actions.",
+          "source_file": "exa_Some Conditions of Obedience and Disobedience to Authority.md",
+          "location": "注释段落"
+        },
+        {
+          "excerpt": "There is overwhelming evidence that the great majority of subjects, both obedient and defiant, accepted the victims' reactions as genuine. The evidence takes the form of: (a) tension created in the subjects (see discussion of tension); (b) scores on 'estimated pain' scales filled out by subjects immediately after the experiment; (c) subjects' accounts of their feelings in post-experimental interviews; and (d) quantifiable responses to questionnaires distributed to subjects several months after their participation in the experiments.",
+          "source_file": "exa_Some Conditions of Obedience and Disobedience to Authority.md",
+          "location": "注释7"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆区分了实验的预期目的与被试的意外反应：产生压力并非预设目的，极端紧张完全出乎意料，事前同事和被试讨论都未预见到。独立精神科医生检查40名被试，未发现任何人因参与实验受到伤害。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "At the outset, Baumrind confuses the unanticipated outcome of an experiment with its basic procedure. She writes, for example, as if the production of stress in our subjects was an intended and deliberate effect of the experimental manipulation. There are many laboratory procedures specifically designed to create stress (Lazarus, 1964), but the obedience paradigm was not one of them. The extreme tension induced in some subjects was unexpected.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk1.md",
+          "location": "第7段"
+        },
+        {
+          "excerpt": "none was found by this interviewer to show signs of having been harmed by his experience. . . . Each subject seemed to handle his task [in the experiment] in a manner consistent with well established patterns of behavior. No evidence was found of any traumatic reactions.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk3.md",
+          "location": "精神科医生检查段落"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆通过系统事后程序保护被试：告知真相、与受害者和解、延长讨论、支持反抗者、安抚服从者。跟踪显示84%被试高兴参与，80%支持更多此类实验，许多被试报告实验增强了道德反思。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "At the very least all subjects were told that the victim had not received dangerous electric shocks. Each subject had a friendly reconciliation with the unharmed victim, and an extended discussion with the experimenter. The experiment was explained to the defiant subjects in a way that supported their decision to disobey the experimenter. Obedient subjects were assured of the fact that their behavior was entirely normal and that their feelings of conflict or tension were shared by other participants.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk2.md",
+          "location": "PROCEDURES AND BENEFITS段落"
+        },
+        {
+          "excerpt": "84% of the subjects stated they were glad to have been in the experiment; 15% indicated neutral feelings, and 1.3% indicated negative feelings.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk2.md",
+          "location": "Table 1后段落"
+        },
+        {
+          "excerpt": "This experiment has strengthened my belief that man should avoid harm to his fellow man even at the risk of violating authority.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk3.md",
+          "location": "被试来信引用"
+        }
+      ]
+    },
+    {
+      "claim": "面对生态效度批评，米尔格拉姆论证正因为被试在实验情境中自然表现出服从，这个情境恰恰是研究服从的理想场域。面对Perry的方法论批评（执行不统一、定义不一致），支持者以Burger的严格复制回应。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "她指出\"服从实验\"的执行过程不统一，共做了24组不同参数的实验，\"实验者\"对\"老师\"的督促行为有差异，同时不同组别间\"服从\"的定义也不相同，而且在事后的问卷调查中，志愿者中有一些表示当时对电击是否为真有所怀疑，佩里认为这些人不能算在\"服从\"类内。",
+          "source_file": "exa_吕品：臭名昭著的米尔格拉姆实验背后_爱思想.md_chunk1.md",
+          "location": "中后段"
+        },
+        {
+          "excerpt": "Here, Baumrind has cited the very best reason for examining obedience in this setting, namely that it possesses \"ecological validity.\" Here is one social context in which compliance occurs regularly. Military and job situations are also particularly meaningful settings for the study of obedience precisely because obedience is natural and appropriate to these contexts.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk4.md",
+          "location": "OTHER ISSUES段落"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆的实验方法论不同于传统假设检验：出于对现象的好奇去发现和了解，而非证明或证伪已有理论，有时缺乏明确理论支撑。实验设计本质具有强迫性，需要被试以明确行动解决心理斗争，注重情境因素而非人格特质。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "一般的心理学家都是为了证明或证伪某套已设计好的理论来进行实验，有具体的理论指引，而他的实验有时候显得缺乏理论支撑，好像是仅仅为了发现和了解现象而进行实验，缺乏方向性与目的性。",
+          "source_file": "exa_米尔格拉姆传记·笔记.md",
+          "location": "一他这个人/学术方面段落"
+        },
+        {
+          "excerpt": "他善于设计实验，并且其设计的实验都具有一种类似的特征——本质上具有强迫性，在实验中需要使被试用明确的行动去解决其心理斗争，并且都注重情境因素。",
+          "source_file": "exa_米尔格拉姆传记·笔记.md",
+          "location": "一他这个人/学术方面段落"
+        },
+        {
+          "excerpt": "The technique allows important variables to be manipulated at several points in the experiment. One may vary aspects of the source of command, content and form of command, instrumentalities for its execution, target object, general social setting, etc. The problem, therefore, is not one of designing increasingly more numerous experimental conditions, but of selecting those that best illuminate the process of obedience from the socio-psychological standpoint.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "General Procedure段末"
+        }
+      ]
+    },
+    {
+      "claim": "服从实验为阿伦特'平庸的恶'提供了科学基础，但'服从'概念无法完全解释超出命令要求的主动暴行。米尔格拉姆提出双重机制——放弃责任（代理状态）和接受权威对现实的定义（如纳粹将犹太人定义为'害虫'），但这一解释缺乏实证支持。他反对将大屠杀直接等同于实验室，但认为实验室是研究破坏性服从一般问题的有效起点。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "米尔格拉姆改变实验的要素，做了19个独立实验，实验对象多达1000人。这一实验的设计与结果震惊了全球心理学界。德国、意大利、澳大利亚等国的心理学家在不同时期重复了这一实验，得到的结果基本相同。在《对权威的服从：一次逼近人性真相的心理学实验》中，米尔格拉姆完整记录了这19个实验的设计、过程、结果以及部分受试者在实验中的反应，并对实验结果进行了深度分析，揭示了在等级社会中服从权威现象的社会及心理原因。",
+          "source_file": "exa_对权威的服从：一次逼近人性真相的心理学实验 - [美]斯坦利·米尔格拉姆 - 微信读书.md",
+          "location": "书籍简介段落"
+        },
+        {
+          "excerpt": "更进一步，米尔格拉姆的研究为汉娜·阿伦特提出的\"平庸的恶\"概念提供了科学基础。阿伦特在《耶路撒冷的艾希曼》中坚持认为，艾希曼不应该被简单地看作是变态的虐待狂魔鬼，其实，他只是一个服从上级命令的平凡官僚。但是，服从又不能完全解释大屠杀中发生的种种血腥的现象。...如果仅仅只有服从命令这一原因，那他们这种超乎命令要求的，只为增加犹太人痛苦的行为该如何解释？",
+          "source_file": "exa_米尔格拉姆传记·笔记.md",
+          "location": "三服从实验/理论分析段落"
+        },
+        {
+          "excerpt": "米尔格拉姆对此还有一种解释，他认为破坏性服从包括两部分：放弃责任，将其交给上级管理人员（自己进入\"中间人\"角色），另一个则是接受权威对情境或现实的描述。当一个人把责任交给了发布命令的权威之后，他自己就不必决定行为中的伦理性，权威在此为他做出了选择。",
+          "source_file": "exa_米尔格拉姆传记·笔记.md",
+          "location": "三服从实验段落"
+        },
+        {
+          "excerpt": "The German event was cited to point up a serious problem in the human situation: the potentially destructive effect of obedience. But the best way to tackle the problem of obedience, from a scientific standpoint, is in no way restricted by \"what happened exactly\" in Germany. What happened exactly can never be duplicated in the laboratory or anywhere else. The real task is to learn more about the general problem of destructive obedience using a workable approach.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk4.md",
+          "location": "纳粹比较讨论第1点"
+        }
+      ]
+    },
+    {
+      "claim": "服从实验的核心数据：65%的被试（26/40）服从到最高450伏，仅35%做出反抗。渐进式反抗模式显示300V时5人拒绝、315V时4人拒绝。服从者虽然不情愿且报告不愿伤害受害者，但感到有义务遵循实验者命令——服从源于角色义务感而非恶意。服从者事后表现出深深释然。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "1960年代，在耶鲁大学任教的心理学家斯坦利·米尔格拉姆进行了一系列以服从为主题的实验，打破了人们对个人道德的自信和对自由意志的迷信。...尽管\"学生\"以各种形式反抗，有26名受试者在实验者的命令下坚持到最后，对\"学生\"施加了最强程度的电击。",
+          "source_file": "exa_对权威的服从：一次逼近人性真相的心理学实验 - [美]斯坦利·米尔格拉姆 - 微信读书.md",
+          "location": "简介段落"
+        },
+        {
+          "excerpt": "在整个实验过程中，当电压增加到300V时，只有5人拒绝再提高电压，当电压增加到315V时，又有4人拒绝服从命令，电压为330V时，又有2人表示拒绝；之后，在电压达到345V、360V、375V时又各有1人拒绝服从命令。共有14人(占被试舶35％)做出了种种反抗：拒绝执行主试的命令。另外26个被试（占被试的65％)服从了实验者的命令，坚持到实验的最后",
+          "source_file": "exa_斯坦利·米尔格兰姆 - MBA智库百科.md",
+          "location": "服从实验段落"
+        },
+        {
+          "excerpt": "Typically these obedient subjects report that they do not wish to hurt the victim, but they feel obligated to follow the orders of the experimenter. On questioning they often state that it would have been \"better\" not to have shocked the victim at the highest voltage levels.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第128页"
+        },
+        {
+          "excerpt": "The procedure created extreme levels of nervous tension in some Ss. Profuse sweating, trembling, and stuttering were typical expressions of this emotional disturbance. One unexpected sign of tension—yet to be explained—was the regular occurrence of nervous laughter, which in some Ss developed into uncontrollable seizures.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "Of the 40 subjects, 26 obeyed the orders of the experimenter to the end, proceeding to punish the victim until they reached the most potent shock available on the shock generator.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "Results-Distribution of scores段"
+        },
+        {
+          "excerpt": "Subjects were observed to sweat, tremble, stutter, bite their lips, groan, and dig their fingernails into their flesh. These were characteristic rather than exceptional responses to the experiment.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "Results-Signs of extreme tension段"
+        }
+      ]
+    },
+    {
+      "claim": "代理状态是服从的核心心理机制：个体在层级社会情境中将自己视为执行他人意愿的工具，放弃个人责任。'责任转移'使人们在'奉命行事'时不再为后果负责。被试将决定权交给权威，将自我视为'工具'。这种视角甚至会延续到事后对行为的自我解释中。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "米尔格拉姆提出了一个\"代理状态（agentic State）\"的概念：一个社会情境中的人，如果他主观地将自己放在被更高阶层管理的位置，他就处于代理状态。在这种状态下，个体认为自己不需要为自己的行为负责，而是将自我定义为执行其他人意愿的工具。",
+          "source_file": "exa_米尔格拉姆传记·笔记.md",
+          "location": "三服从实验段落"
+        },
+        {
+          "excerpt": "米尔格拉姆发现，当人们认为自己的行为是\"奉命行事\"，他们就不再为后果负责。这种心理机制称为责任转移（agentic state）。在这种状态下，个体将自己视为执行者，而非决策者。",
+          "source_file": "exa_什么是米尔格拉姆服从实验 - 人格与社会.md",
+          "location": "03 为什么我们会服从/不是我的错段落"
+        },
+        {
+          "excerpt": "米尔格拉姆的结论是当个人对自己的判断没有绝对信心时，特别是在危急时刻，会把决定权交给一个比自己高一等级的权威。此时个人会把自己视作一个\"工具\"，只是服从命令之完成任务，所以不必对自己的行为负责。",
+          "source_file": "exa_吕品：臭名昭著的米尔格拉姆实验背后_爱思想.md_chunk1.md",
+          "location": "中段"
+        },
+        {
+          "excerpt": "The same mechanisms that allow the subject to perform the act, to obey rather than to defy the experimenter, transcend the moment of performance and continue to justify his behavior for him. The same viewpoint the subject takes while performing the actions is the viewpoint from which he later sees his behavior, that is, the perspective of \"carrying out the task assigned by the person in authority.\"",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk3.md",
+          "location": "第2段"
+        }
+      ]
+    },
+    {
+      "claim": "权威的外在符号极大增加服从率：白大褂、冷静语气、名校身份等自动赋予'正确'光环。米尔格拉姆识别了导致高服从率的九大情境因素：机构声望、目的崇高性、受害者自愿参与、被试承诺、报酬义务、角色分配公平性、心理学家权限模糊性、安全保证、以及受害者300伏前继续参与的解读。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "米尔格拉姆发现，实验者的穿着（白大褂）、语气（冷静专业）、身份（耶鲁大学研究员）都极大增加了服从率。这让人联想到医学、法律、教育等领域，专业外表和身份常常自动赋予\"正确\"的光环。",
+          "source_file": "exa_什么是米尔格拉姆服从实验 - 人格与社会.md",
+          "location": "03 为什么我们会服从/权威的魔力段落"
+        },
+        {
+          "excerpt": "1. The experiment is sponsored by and takes place on the grounds of an institution of unimpeachable reputation, Yale University. ... 2. The experiment is, on the face of it, designed to attain a worthy purpose — advancement of knowledge about learning and memory. Obedience occurs not as an end in itself, but as an instrumental element in a situation that the subject construes as significant, and meaningful. ... 4. The subject, too, has entered the experiment voluntarily, and perceives himself under obligation to aid the experimenter.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "Discussion段，因素1-9"
+        }
+      ]
+    },
+    {
+      "claim": "权威的一致性是服从的关键因素：当两个权威命令互相矛盾时，被试停止服从，表明服从取决于权威的一致性而非命令内容本身。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "两个\"双权威\"实验，判別如果权威自己陷入了冲突，会发生什么事情。结果為，权威的命令互相矛盾时，受试者停止了服从行为。",
+          "source_file": "exa_米爾格倫實驗- 維基百科，自由的百科全書.md",
+          "location": "变体段落"
+        }
+      ]
+    },
+    {
+      "claim": "同伴反抗是削弱权威的最有效手段：两名同谋反抗使服从从65%降至10%，36/40被试反抗。米尔格拉姆总结8个具体机制：植入反抗想法、使反抗显得自然、社会确认施暴不当、持续社会不认可、责任集中、展示反抗后果极小、认同反抗同伴、削弱实验者权威。但被试普遍低估群体影响——27名反抗者中仅4人承认同伴是关键因素。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "研究表明，当实验中增加一个\"同伴\"也拒绝服从时，被试拒绝电击的比例从65%下降到10%。换句话说，我们并不缺乏勇气，只是缺乏示范。",
+          "source_file": "exa_什么是米尔格拉姆服从实验 - 人格与社会.md",
+          "location": "04 谁更容易服从段落"
+        },
+        {
+          "excerpt": "In Experiment I, 26 subjects proceeded to the end of the command series; less than one-sixth of this number obeyed fully in the group setting (obedient versus defiant subjects x2 = 25.81, df=1, p < .001).",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第131页"
+        },
+        {
+          "excerpt": "Indeed, of the score of experimental variations completed in the Yale study on obedience none was so effective in undermining the experimenter's authority as the manipulation reported here.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第131页"
+        },
+        {
+          "excerpt": "The peers instill in the subject the idea of defying the experimenter. It may not have occurred to some subjects as a response possibility.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第132-133页，因素1"
+        },
+        {
+          "excerpt": "the experimenter's power may be diminished by the very fact of failing to keep the two confederates in line, following the general rule that every failure of authority to exact compliance to its commands weakens the perceived power of the authority",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第133页，因素8"
+        },
+        {
+          "excerpt": "Twenty-seven of the defiant subjects stated that they would have broken off without the benefit of the confederates' example; four subjects definitely acknowledged the confederates' rebellion as the critical factor in their own defiance. In general, then, subjects underestimate the degree to which their defiant actions are dependent on group support.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第132页"
+        }
+      ]
+    },
+    {
+      "claim": "服从者具有特定人格特征：世俗主义、重视社会压力及行为的社会价值、不怀疑地接受权威命令、不敢流露真实感受、喜欢跟着权威行事、害怕偏离社会准则。权威主义人格的五个特征为：崇尚秩序、服从权威、排斥异议、厌恶自省、怕承担责任。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "\"权威主义人格\"。通常具有以下特征：崇尚秩序；服从权威；排斥异议；厌恶自省；怕承担责任。这类人格往往在军事、宗教、等级森严的文化中被强化。",
+          "source_file": "exa_什么是米尔格拉姆服从实验 - 人格与社会.md",
+          "location": "04 谁更容易服从段落"
+        },
+        {
+          "excerpt": "測驗顯示，服從實驗者命令、不斷增強對「學習者」施加電擊的被試，個性有更多如下特徵：世俗主義、重視社會壓力及個人行爲的社會價值；毫不懷疑地接受權威的命令，並對違反社會習俗和社會價值的人不屑一顧；多數不敢流露出真實的感受，思想個性竝不明顯；喜歡跟着權威行事，害怕偏離社會準則。",
+          "source_file": "exa_米爾格倫實驗- 維基百科，自由的百科全書.md",
+          "location": "结果段落末尾"
+        }
+      ]
+    },
+    {
+      "claim": "群体吸引力与规模效应呈正向关系：刺激人群从1人增至15人时，驻足比例从4%增至40%。行为越费时费力加入可能性越低（抬头看比率始终高于停下加入）。同一操纵可同时产生线性和曲线从众函数，取决于因变量。加入更大群体有逻辑基础——更大群体更可能在关注有价值事物。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "While 4% of the passersby stopped alongside a single individual looking up, 40% of the passersby stopped alongside a stimulus crowd of 15.",
+          "source_file": "paper_Note on the drawing power of crowds of different size..md_chunk1.md",
+          "location": "RESULTS段落"
+        },
+        {
+          "excerpt": "While one person induced 42 % of the passersby to look up (whether or not they also stopped), the stimulus crowd of 15, all looking in the same direction, caused 86% of the passersby to orient themselves in the same direction",
+          "source_file": "paper_Note on the drawing power of crowds of different size..md_chunk2.md",
+          "location": "RESULTS第2段"
+        },
+        {
+          "excerpt": "the percentage of those who only look up is always higher than those who stop, regardless of the size of the stimulus crowd. It appears that the more demanding, in time or effort, the behavior the less likely it is that the passerby will join it.",
+          "source_file": "paper_Note on the drawing power of crowds of different size..md_chunk2.md",
+          "location": "RESULTS第4段"
+        },
+        {
+          "excerpt": "The present study shows that a single set of group-size manipulations can generate both types of functions, depending on the specific dependent variable selected for analysis.",
+          "source_file": "paper_Note on the drawing power of crowds of different size..md_chunk2.md",
+          "location": "趋势分析段落"
+        },
+        {
+          "excerpt": "There is some logical basis for joining larger crowds: all other things being equal, the larger the crowd the more likely its members are attending to a matter of interest.",
+          "source_file": "paper_Note on the drawing power of crowds of different size..md_chunk3.md",
+          "location": "末段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆的数据直接否证了科尔曼-詹姆斯自由形成群体规模模型的假设：获取率不仅取决于可加入人数，还取决于初始群体大小，证实了'传染假设'（加入大群体概率高于小群体）的必要性。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "Coleman and James pointed out that \"a contagion assumption—that is, an assumption that a person is more likely to join a large group than a small one [p. 44],\" might be needed in their model.",
+          "source_file": "paper_Note on the drawing power of crowds of different size..md_chunk1.md",
+          "location": "引言第3段"
+        },
+        {
+          "excerpt": "The results of this study show that the number of persons who will react to, and join in, the observable behavior of a stimulus crowd is related to the size of the stimulus crowd. These findings contradict the acquisition assumption of the Coleman and James model.",
+          "source_file": "paper_Note on the drawing power of crowds of different size..md_chunk3.md",
+          "location": "末段"
+        }
+      ]
+    },
+    {
+      "claim": "服从实验的起源动机是对艾希曼审判的反思：人类服从倾向如此根深蒂固以至于抹灭了道德和同情能力。实验产生极端紧张情绪——被试大量出汗、颤抖、口吃，甚至出现无法控制的神经性笑声和癫痫发作。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "米爾格倫認為在某些情況下，人类的服从倾向（the human tendency to obey）是如此根深蒂固和强大，以至于它抹灭了一个人如何表现出道德、伦理甚至同情行为的能力。",
+          "source_file": "exa_米爾格倫實驗- 維基百科，自由的百科全書.md",
+          "location": "实验背景段落"
+        },
+        {
+          "excerpt": "The procedure created extreme levels of nervous tension in some Ss. Profuse sweating, trembling, and stuttering were typical expressions of this emotional disturbance. One unexpected sign of tension—yet to be explained—was the regular occurrence of nervous laughter, which in some Ss developed into uncontrollable seizures.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "Of the 40 subjects, 26 obeyed the orders of the experimenter to the end, proceeding to punish the victim until they reached the most potent shock available on the shock generator.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "Results-Distribution of scores段"
+        },
+        {
+          "excerpt": "Subjects were observed to sweat, tremble, stutter, bite their lips, groan, and dig their fingernails into their flesh. These were characteristic rather than exceptional responses to the experiment.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "Results-Signs of extreme tension段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆区分信号从众（仅信息性表态）和行为从众（对环境产生实际改变），强调言语从众的发现不能自动推广到行为层面：一个人可能口头接受群体规范却不愿行动。主张社会心理学必须研究有心理意义的行为内容，而非用琐碎替代任务。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A distinction can be made between signal conformity and action conformity in that the immediate consequence of the former is purely informational; the subject states his opinion or reports on his perception of some feature of the environment. Action conformity, on the other hand, produces an immediate effect or alteration in the milieu that goes beyond a contribution of information.",
+          "source_file": "paper_Group pressure and action against a person..md_chunk1.md",
+          "location": "第3-4段"
+        },
+        {
+          "excerpt": "eventually social psychology must come to grips with significant behavior contents, contents that are of interest in their own right and are not simply trivial substitutes for psychologically meaningful forms of behavior.",
+          "source_file": "paper_Group pressure and action against a person..md_chunk1.md",
+          "location": "第6段"
+        },
+        {
+          "excerpt": "There is little reason to assume a priori that observations made with regard to verbal conformity are automatically applicable to action. A person may pay lip service to the norms of a group and then be quite unwilling to carry out the kinds of behavior the group norms imply.",
+          "source_file": "paper_Group pressure and action against a person..md_chunk1.md",
+          "location": "第5段"
+        },
+        {
+          "excerpt": "A distinction can be made between signal conformity and action conformity in that the immediate consequence of the former is purely informational; the subject states his opinion or reports on his perception of some feature of the environment. Action conformity, on the other hand, produces an immediate effect or alteration in the milieu that goes beyond a contribution of information.",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "文章开篇第2-3段"
+        },
+        {
+          "excerpt": "There is little reason to assume a priori that observations made with regard to verbal conformity are automatically applicable to action. A person may pay lip service to the norms of a group and then be quite unwilling to carry out the kinds of behavior the group norms imply.",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "文章开篇第4段"
+        }
+      ]
+    },
+    {
+      "claim": "群体压力实验采用'最低建议获胜'规则，使被试能有效控制最大电击水平（理论上可全程维持15伏），分离群体影响与个人意志。两名同谋扮演一强一弱性格类型增强可信度。米尔格拉姆用这一范式研究群体能否诱导对他人施加越来越严重惩罚的行为层面从众。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Now the amount of punishment given on any trial is decided by the teachers themselves. Each of you will suggest a shock level. And the shock actually administered will be the lowest level suggested by any of the three teachers.",
+          "source_file": "paper_Group pressure and action against a person..md_chunk2.md",
+          "location": "METHOD/Details段落"
+        },
+        {
+          "excerpt": "But eventually social psychology must come to grips with significant behavior contents, contents that are of interest in their own right and are not simply trivial substitutes for psychologically meaningful forms of behavior. Guided by this consideration, a relatively potent form of action was selected for shaping by group pressure. We asked: Can a group induce a person to deliver punishment of increasing severity to a protesting individual?",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第137-138页过渡段"
+        },
+        {
+          "excerpt": "Thus the naive subject finds himself in a position in which, on any trial, he can effectively control the maximum shock administered to the Learner, e.g., the ground rules of the experiment would permit him to hold the shock level down to IS volts throughout the laboratory session. On the other hand he may go along with or move in the direction of the group choice.",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第139页，Procedure部分"
+        },
+        {
+          "excerpt": "Their constant unanimity is rendered credible by having Teacher 1 play a somewhat domineering, and Teacher 2 a somewhat submissive type. The confederates, played by adult actors, appear indifferent to the complaints of the Learner.",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第139页，Behavior of Teachers 1 and 2段"
+        }
+      ]
+    },
+    {
+      "claim": "群体压力显著提升电击水平：实验组与对照组差异极显著(p<.001)，群体效应随试验递增。个体差异极大：最顺从四分之一平均27.6，最不顺从仅4.8。仅2名对照组被试超越受害者强烈抗议点，却有27名实验组被试超越——群体影响使人们做出本不会做出的伤害行为。教育程度和宗教背景与顺从度相关。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "the analysis of variance showed that the overall mean shock level in the experimental condition was significantly higher than that in the control condition (p < .001). This is less interesting, however, than the differing slopes in the two conditions, which show the group effects through the course of the experimental session. The analysis of variance test for trend confirmed that the slopes for the two conditions differed significantly (p<.001).",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第140页，Results部分"
+        },
+        {
+          "excerpt": "Examination of the standard deviations in the experimental condition shows that there are large individual differences in response to group pressure, some subjects following the group closely, others resisting effectively. Subjects were ranked according to their total deviation from the confederates' shock choices. On the thirtieth critical trial the most conforming quartile had a mean shock level of 27.6, while the mean shock level of the least conforming quartile was 4.8.",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第140-141页"
+        },
+        {
+          "excerpt": "Only 2 control subjects administered shocks beyond the tenth voltage level (at this point the Learner makes his first truly vehement protest), while 27 experimental subjects went beyond this point. A median test showed that the maximum shocks administered by experimental subjects were higher than those administered by control subjects (x2 at = i = 39.2, p< .001).",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第141页，Table 3后"
+        },
+        {
+          "excerpt": "Less educated subjects (high school degree or less) tended to yield more than those who possess a college degree (x2<y = i =2.85, p < .10). Roman Catholic subjects tended to yield more than Protestant subjects (x2 at — i = 2.96, p < .10).",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第141页，背景变量分析段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆承认群体压力实验中服从与从众效应不可完全分离：实验者合法化了任意电击水平，因此无法区分从众效应与服从权威效应。在Asch实验中顺从违反对实验者的义务，但在本实验中顺从却符合'被试-实验者契约'——社会顺从所违反的关系类型取决于实验结构。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "the effects occurred within the context of authoritative sanction. This point becomes critical in any attempt to assess the relative effectiveness of conformity versus obedience as means of inducing contravalent behavior (Milgram, 1963). If the experimenter had not approved the use of all shock levels on the generator, and if he had departed from the laboratory at an early stage, thus eliminating any sign of authoritative assent during the course of the experiment, would the group have had as powerful an effect on the naive subject?",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第142页，Discussion段"
+        },
+        {
+          "excerpt": "In the Asch situation a yielding subject engages in a covert violation of his obligations to the experimenter. He has agreed to report to the experimenter what he sees, and insofar as he goes along with the group, he breaks this agreement. In contrast, in the present experiment the yielding subject acts within the terms of the \"subject-experimenter contract.\" In going along with the two confederates the subject may violate his own inner standards, and the rights of the Learner, but his relationship with the experimenter remains intact at both the manifest and private levels.",
+          "source_file": "paper_Group pressure and action against a person..md",
+          "location": "第142-143页，Discussion第5点"
+        }
+      ]
+    },
+    {
+      "claim": "Wenglinsky核心批评：米尔格拉姆将'施加痛苦的幻觉'转化为'被报告的现实'，实际上无人真正受伤害，被试信任实验情境正当性是正确的。服从实验之所以令人不安是因为它表明人们以常见灾难方式堕落，但Wenglinsky认为这唤起的只有卑劣情感，通过科学版戏剧性手法产生效果，主题实际未经证实。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "These experiments have troubled the academic community because they seem to show that people are depraved in precisely the manner that is often held responsible for so much of the hell of the twentieth century; people are so willing to obey authority that they will inflict suffering simply because they have been told to. The discussion of these experiments has now reached the general educated public.",
+          "source_file": "paper_Obedience to Authority_ An Experimental View..md",
+          "location": "书评第613页"
+        },
+        {
+          "excerpt": "Milgram's work is something of an artistic achievement because he refreshes that discredited response in us, but his is an untrue art, because it arouses only mean emotions, and through a confusion of effects. His materials do not earn the response he generates through his scientific equivalent of theatricality. The theme of his work remains unvalidated.",
+          "source_file": "paper_Obedience to Authority_ An Experimental View..md",
+          "location": "书评第613-614页"
+        },
+        {
+          "excerpt": "as a matter of fact, no one administered real pain. The interpretation of the events of the experiment by Milgram transforms the illusion of administering pain into the reported reality, or at least the lesson about reality. Whereas Milgram claims verbal activities excuse real events, Milgram is in fact doing just that while the participants in the experiment do not.",
+          "source_file": "paper_Obedience to Authority_ An Experimental View..md",
+          "location": "书评第614页"
+        },
+        {
+          "excerpt": "every one of them knew that they were in the world of an illusion, even if they didn't know where illusion left off and reality began. Something else was going on. There had to be a hidden agenda. You can fail to focus on the final fact of the non-administration of pain only if you are within the frame of the experiment, briefly accepting it as a world of its own.",
+          "source_file": "paper_Obedience to Authority_ An Experimental View..md",
+          "location": "书评第614页"
+        }
+      ]
+    },
+    {
+      "claim": "Wenglinsky的方法论批评：'表面邪恶'是实验情境人为产物而非被试内在品质；'天真被试'实验存在根本性同义反复——实验者维持被试天真状态，再将天真本身作为结果；统计数据只是装饰性，百分比不能跨情境比较。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The apparent evil revealed about people is an artifact of the experimental situation, rather than a quality of the people who participate in the experiment, and so has little if any relevance in explaining real moral choice.",
+          "source_file": "paper_Obedience to Authority_ An Experimental View..md",
+          "location": "书评第615页"
+        },
+        {
+          "excerpt": "We take as a result of the experiment the construction which makes the experiment possible: that the subject will be naive about the issue being judged. This result is tautological because all it proves is that the experimenter was able to keep the subject from seeing the true nature of the experiment (whatever that was).",
+          "source_file": "paper_Obedience to Authority_ An Experimental View..md",
+          "location": "书评第615-616页"
+        },
+        {
+          "excerpt": "The statistics that are added by Milgram are only decorative: they carry an air of proof, but no one cares what they exactly are because the fact of an atrocity is the focus of the little drama. Strictly speaking, what could the statistics mean, even if they were other than decorative? They are not replicable on the same sample, because the sample is no longer naive.",
+          "source_file": "paper_Obedience to Authority_ An Experimental View..md",
+          "location": "书评第616页"
+        }
+      ]
+    },
+    {
+      "claim": "六度分离理论：连接任意两美国人平均需5.2个中间人（波士顿起步4.4，内布拉斯加5.7）。链路存在高度集中的'漏斗'效应——48%完成链通过仅三人到达目标，一人承担25%完成链。参与者强烈倾向选择同质化的下一环（男性十倍于向同性传递），人们对链路长度的直觉判断力很差。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "1967年，\"小世界现象（small world phenomenon）\"的假说，大意是说，任何两个素不相识的人中间最多只隔着6个人，也就是说，只用6个人就可以将两个陌生人联系在一起。",
+          "source_file": "exa_斯坦利·米尔格兰姆 - MBA智库百科.md",
+          "location": "六度分离理论段落"
+        },
+        {
+          "excerpt": "Arbitrarily selected individuals (N-296) in Nebraska and Boston are asked to generate acquaintance chains to a target person in Massachusetts, employing \"the small world method\" (Milgram, 1967). Sixty-four chains reach the target person. Within this group the mean number of intermediaries between starters and targets is 5.2.",
+          "source_file": "paper_An Experimental Study of the Small World Problem.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "chains originating with the Boston random group showed a mean length of 4.4 intermediaries between starters and target, as opposed to a mean length of 5.7 intermediaries for the Nebraska random group. (p?.001 by a one-tailed Mann-Whitney U test.)",
+          "source_file": "paper_An Experimental Study of the Small World Problem.md",
+          "location": "Subpopulation Comparisons-Chain Length段"
+        },
+        {
+          "excerpt": "The funneling of chains through sociometric \"stars\" is noted, with 48 per cent of the chains passing through three persons before reaching the target.",
+          "source_file": "paper_An Experimental Study of the Small World Problem.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "Sixteen, fully 25 per cent, reached the target through a single neighbor. Another 10 made contact through a single business associate, and 5 through a second business associate. These three \"penultimate links\" together accounted for 48 per cent of the total completions.",
+          "source_file": "paper_An Experimental Study of the Small World Problem.md",
+          "location": "Common Channels段"
+        },
+        {
+          "excerpt": "Data on patterns of age, sex and occupation support the plausible hypothesis that participants select recipients from a pool of individuals similar to themselves.",
+          "source_file": "paper_An Experimental Study of the Small World Problem.md",
+          "location": "Additional Characteristics of Chains段"
+        },
+        {
+          "excerpt": "Men were ten times more likely to send the document to other men than to women, while women were equally likely to send the folder to males as to females (p<.001).",
+          "source_file": "paper_An Experimental Study of the Small World Problem.md",
+          "location": "Additional Characteristics of Chains段"
+        },
+        {
+          "excerpt": "People have poor intuitions concerning the lengths of acquaintance chains. Moreover, people can rarely see beyond their own acquaintances; it is hard to guess the circles in which friends of friends—not to mention people even more remotely connected to oneself—may move.",
+          "source_file": "paper_An Experimental Study of the Small World Problem.md",
+          "location": "Incomplete Chains段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆将小世界方法应用于种族间网络研究，发现种族链路跨越可能涉及两阶段过程：先通过'守门人'进入目标种族网络，再在内部传递。白人目标完成率是黑人的2.5倍（33% vs 13%, p<.001），但完成链路长度几乎相同，表明种族因素影响能否完成而非效率。漏斗效应对白人目标更常见。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Milgram (1967), introducing an experimental approach to the problem, demonstrated that from five to six intermediaries will, on the average, suffice to link any 2 Americans drawn from a national population of 200 million. In the present study small world methods are applied to examining ties of acquaintance between racial groups.",
+          "source_file": "paper_Acquaintance networks between racial groups_ Application of.md",
+          "location": "文章第101页引言段"
+        },
+        {
+          "excerpt": "The chains had two predominant paths to the target, either by way of his occupational setting or by way of his residential setting. The former route, that is, occupational contacts, proved the more efficient (i.e., short-chained) of the two. There was also a distinct \"funneling\" or \"common pathways\" phenomenon, a decrease in the number of different persons who were involved in the chains as they approached the target.",
+          "source_file": "paper_Acquaintance networks between racial groups_ Application of.md",
+          "location": "第102页"
+        },
+        {
+          "excerpt": "It was anticipated that there might be a two-stage process involved in the completion of chains to Negro targets. The chain might first need to gain access to Negro networks via gatekeepers, then travel within the Negro community, until contact with the target was made.",
+          "source_file": "paper_Acquaintance networks between racial groups_ Application of.md",
+          "location": "第102页"
+        },
+        {
+          "excerpt": "White target chains: No. chains 88 (33%), Negro target chains: No. chains 35 (13%). Chi-square analysis of the Target-Race x Chain-Success contingency table for all chains showed a significant association (X1 = 29.58, df = 1, p < .001).",
+          "source_file": "paper_Acquaintance networks between racial groups_ Application of.md",
+          "location": "第103页，Table 2"
+        }
+      ]
+    },
+    {
+      "claim": "种族链路数据揭示深层社会结构：未完成链路30%在第3次传递前停止。跨越种族的'守门人'几乎全是专业阶层男性。成功到达黑人目标的链路中66%在到达前完全是白人参与——成功策略是让白人网络定位后再跨越。链路终端存在'地位下降'现象。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "incomplete chain mortality occurred early—over 30% of incomplete chains stopped by the third remove (i.e., the third booklet recipient after the starter), while only 10% persisted beyond the seventh remove.",
+          "source_file": "paper_Acquaintance networks between racial groups_ Application of.md",
+          "location": "第104页"
+        },
+        {
+          "excerpt": "The gatekeepers, white senders and Negro recipients who served as points of contact and acquaintanceship, in both races were predominately males of professional status. Managers, officials, and sales-clerical personnel were also represented, while lower- and working-class gatekeepers were almost nonexistent.",
+          "source_file": "paper_Acquaintance networks between racial groups_ Application of.md",
+          "location": "第105页"
+        },
+        {
+          "excerpt": "An additional terminal effect was the status-descent of the chain, regardless of target race, as final contact was made with the target. The target typically occupied a lower status than that of the person who forged the final link—for example, of all instances of chain completion, 27% involved cases of professional status targets, while the final contact person was of professional status in 62% of these instances.",
+          "source_file": "paper_Acquaintance networks between racial groups_ Application of.md",
+          "location": "第105页"
+        },
+        {
+          "excerpt": "In 23 out of these 35 chains, the first Negro to appear in the chain was the target. Of the remaining 12, in 7 cases the first Negro entering the chain was the final contact with the target, leaving only 5 instances, 14% of the successful completions, where the chain \"traveled\" between Negroes prior to contact with the target.",
+          "source_file": "paper_Acquaintance networks between racial groups_ Application of.md",
+          "location": "第106页"
+        }
+      ]
+    },
+    {
+      "claim": "友谊网络并非随机铺设，而是反映社会的分裂与分歧。种族因素对熟人链路成功的决定性影响说明，小世界模型必须承认社会结构的作用。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The importance of target race in determining the success of acquaintance chains points to the need for recognizing the role of social structure in our model of the small world. Friendship networks are not laid down in a random fashion, but reflect the social cleavages and divisions that characterize our society.",
+          "source_file": "paper_Acquaintance networks between racial groups_ Application of.md",
+          "location": "第108页，结论段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆提出'建设性从众'概念：群体压力在特定情境下能帮助个体以与价值观一致的方式解决内在冲突。服从群体仅将服从从26增至29（不显著），但反抗群体将服从从65%降至10%——群体效应方向并非任意，其强度和方向由情境中已有的动机和社会力量配置所预定。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Edifying effects of the group, although acknowledged, have rarely been demonstrated with the clarity and force of its destructive potential. Particularly in those areas in which a morally relevant choice is at issue, experimentalists typically examine pressures that diminish the scope of individual action. They have neglected effects that enhance the individual's sense of worth, enlarge the possibilities for action, and help the subject resolve conflicting feelings in a direction congruent with his ideals and values.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第127页引言"
+        },
+        {
+          "excerpt": "The experimental problem for any study of constructive conformity is to create a situation in which undesirable behavior occurs with regularity and then to see whether group pressure can be applied effectively in the direction of a valued behavior outcome.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第127页"
+        },
+        {
+          "excerpt": "the obedient group had very little effect on the overall performance of subjects. In Experiment I, 26 of the 40 subjects complied fully with the experimenter's commands; in the present condition this figure is increased but 3, yielding a total of 29 obedient subjects. This increase falls far short of statistical significance (x2 = .52, df = 1, p > .50).",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第133页"
+        },
+        {
+          "excerpt": "Given any social situation, the strength and direction of potential group influence is predetermined by existing conditions. We need to examine the variety of field structures that typify social situations and the manner in which each controls the pattern of potential influence.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第134页"
+        },
+        {
+          "excerpt": "every other situation in which group pressure is exerted also possesses a field structure (a particular arrangement of stimulus, motive, and social factors) that limits and controls potential influence within that field. Some structures allow group influence to be exerted in one direction but not another. Seen in this light, the hypothesis of the arbitrary direction of group effects is inadequate.",
+          "source_file": "paper_Liberating effects of group pressure..md",
+          "location": "第134页"
+        }
+      ]
+    },
+    {
+      "claim": "服从与不服从之间并非简单道德选择：许多服从者表现出与反抗者相似的恐惧和不情愿，服从可指向生产性、高尚和慈善目的。服从冲突源于两种深层倾向对立——'不伤害他人'与'服从合法权威'——被试面临竞争性要求且无充足时间反思。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "While the particular form of obedience dealt with in the present study has its antecedents in these episodes, it must not be thought all obedience entails acts of aggression against others. Obedience serves numerous productive functions. Indeed, the very life of society is predicated on its existence. Obedience may be ennobling and educative and refer to acts of charity and kindness, as well as to destruction.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "摘要后第4段"
+        },
+        {
+          "excerpt": "Although obedient subjects continued to administer shocks, they often did so under extreme stress. Some expressed reluctance to administer shocks beyond the 300-volt level, and displayed fears similar to those who defied the experimenter; yet they obeyed. After the maximum shocks had been delivered, and the experimenter called a halt to the proceedings, many obedient subjects heaved sighs of relief, mopped their brows, rubbed their fingers over their eyes, or nervously fumbled cigarettes. Some shook their heads, apparently in regret.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "Results段末"
+        },
+        {
+          "excerpt": "At a more general level, the conflict stems from the opposition of two deeply ingrained behavior dispositions: first, the disposition not to harm other people, and second, the tendency to obey those whom we perceive to be legitimate authorities.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "Discussion第13点"
+        },
+        {
+          "excerpt": "The experiment gives the subject little time for reflection. The conflict comes on rapidly. It is only minutes after the subject has been seated before the shock generator that the victim begins his protests.",
+          "source_file": "paper_Behavioral Study of obedience..md",
+          "location": "Discussion第12点"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆坚持情境主义立场：决定人行为的关键因素通常不是人格特质而是所处环境。主张不试图控制感觉而是去了解它，强调人与人之间的沟通与相互了解。城乡行为差异的根源不是人格差异而是情境差异——'相似的人对非常不同的情境做出的适应性反应'。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "斯坦利·米尔格兰姆在《美国名人录》中谈到他的成功秘诀时说：\"作为一名社会心理学，我是这样看待世界的：我们不应试图控制任何实际感觉，而是应该了解它。人与人之间应相互沟通、相互了解。\"",
+          "source_file": "exa_斯坦利·米尔格兰姆 - MBA智库百科.md",
+          "location": "斯坦利·米尔格兰姆简介段落"
+        },
+        {
+          "excerpt": "米尔格拉姆自己也支持情境主义，他写道：\"本世纪的社会心理学家揭示了一个重要的事实：决定一个人行为的因素通常不取决于他是一个怎样的人，而是他处于一个怎样的环境。\"",
+          "source_file": "exa_米尔格拉姆传记·笔记.md",
+          "location": "三服从实验/特质情境之争段落"
+        },
+        {
+          "excerpt": "I suggest that contrasts between city and rural behavior probably reflect the responses of similar people to very different situations, rather than intrinsic differences in the personalities of rural and city dwellers. The city is a situation to which individuals respond adaptively.",
+          "source_file": "paper_The Experience of Living in Cities.md",
+          "location": "过载理论总结段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆坚持人的尊严在于选择能力：每个被试都有自由接受或拒绝权威指令，许多被试确实选择了反抗。与Baumrind的根本分歧在于——Baumrind将被试视为被动生物，米尔格拉姆视为主动成年人。他本人接受了设计执行实验的全部责任。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "I started with the belief that every person who came to the laboratory was free to accept or to reject the dictates of authority. This view sustains a conception of human dignity insofar as it sees in each man a capacity for choosing his own behavior. And as it turned out, many subjects did, indeed, choose to reject the experimenter's commands, providing a powerful affirmation of human ideals.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk5.md",
+          "location": "倒数第3段"
+        },
+        {
+          "excerpt": "Here, perhaps, a difference in philosophy emerges most clearly. Baumrind sees the subject as a passive creature, completely controlled by the experimenter. I started from a different viewpoint. A person who comes to the laboratory is an active, choosing adult, capable of accepting or rejecting the prescriptions for action addressed to him.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk5.md",
+          "location": "倒数第2段"
+        },
+        {
+          "excerpt": "If there is a moral to be learned from the obedience study, it is that every man must be responsible for his own actions. This author accepts full responsibility for the design and execution of the study.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk5.md",
+          "location": "CONCLUSION段落"
+        }
+      ]
+    },
+    {
+      "claim": "城市体验的核心理论框架是过载：大量人口、高密度、异质性造成信息过载，导致六种适应机制（减少时间分配、忽视低优先级、转嫁负担、阻断输入、过滤装置、专门机构），同时保护和疏远个体。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "One link is provided by the concept of overload. This term, drawn from systems analysis, refers to a system's inability to process inputs from the environment because there are too many inputs for the system to cope with, or because successive inputs come so fast that input A cannot be processed when input B is presented. When overload is present, adaptations occur. ... City life, as we experience it, constitutes a continuous set of encounters with overload, and of resultant adaptations. Overload characteristically deforms daily life on several levels, impinging on role performance, the evolution of social norms, cognitive functioning, and the use of facilities.",
+          "source_file": "paper_The Experience of Living in Cities.md",
+          "location": "Overload概念引入段"
+        },
+        {
+          "excerpt": "One adaptive response to overload, therefore, is the allocation of less time to each input. A second adaptive mechanism is disregard of low-priority inputs. ... Third, boundaries are redrawn in certain social transactions so that the overloaded system can shift the burden to the other party in the exchange ... Fifth, the intensity of inputs is diminished by filtering devices ... Sixth, specialized institutions are created to absorb inputs that would otherwise swamp the individual ... It simultaneously protects and estranges the individual from his social environment.",
+          "source_file": "paper_The Experience of Living in Cities.md",
+          "location": "六种适应机制段"
+        }
+      ]
+    },
+    {
+      "claim": "城市与小镇在帮助陌生人方面差距显著（小镇是城市的2-5倍），但更多出于安全考虑而非冷漠。城市演化出'不卷入'规范。匿名性有双重效应：既导致更多破坏行为，又保护隐私和差异——个性在大都市更易繁荣。城市氛围受人口密度、来源、国家文化和历史条件影响，各城市有独特气质。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "In the most extreme case the experimenter was five times as likely to gain admission to homes in a small town as to homes in Manhattan. ... The lower level of helpfulness by city dwellers seems due in part to recognition of the dangers of living in Manhattan, rather than to mere indifference or coldness.",
+          "source_file": "paper_The Experience of Living in Cities.md",
+          "location": "Willingness to trust and assist strangers段"
+        },
+        {
+          "excerpt": "Men are actually embarrassed to give up a seat on the subway to an old woman; they mumble \"I was getting off anyway,\" instead of making the gesture in a straightforward and gracious way. These norms develop because everyone realizes that, in situations of high population density, people cannot implicate themselves in each others' affairs, for to do so would create conditions of continual distraction which would frustrate purposeful action. ... adaptation occurs in the form of gradual evolution of norms of behavior. Norms are evolved in response to frequent discrete experiences of overload; they persist and become generalized modes of responding.",
+          "source_file": "paper_The Experience of Living in Cities.md",
+          "location": "Civilities段"
+        },
+        {
+          "excerpt": "The impersonality of city life breeds its own tolerance for the private lives of the inhabitants. Individuality and even eccentricity, we may assume, can flourish more readily in the metropolis than in the small town. Stigmatized persons may find it easier to lead comfortable lives in the city, free of the constant scrutiny of neighbors.",
+          "source_file": "paper_The Experience of Living in Cities.md",
+          "location": "anonymity段"
+        },
+        {
+          "excerpt": "In an undergraduate tutorial that I conducted at Harvard University some years ago, New York, London, and Paris were selected as reference points for attempts to measure urban atmosphere. ... Some distinctive patterns emerged. The distinguishing themes concerning New York, for example, dealt with its diversity, its great size, its pace and level of activity ... A contrasting profile emerges for London; in this case respondents placed far greater emphasis on their interactions with the inhabitants than on physical surroundings.",
+          "source_file": "paper_The Experience of Living in Cities.md",
+          "location": "The atmosphere of great cities段"
+        },
+        {
+          "excerpt": "European capitals, on the other hand, incorporate many of the adaptations which were appropriate to the period of their increasing numbers and density. Because aristocratic values were prevalent at the time of the growth of these cities, the mechanisms developed for coping with overload were based on considerations other than pure efficiency. Thus, the manners, norms, and facilities of Paris and Vienna continue to reflect esthetic values and the idealization of leisure.",
+          "source_file": "paper_The Experience of Living in Cities.md",
+          "location": "Sources of Ambiance段"
+        }
+      ]
+    },
+    {
+      "claim": "米尔格拉姆指出服从率在不同实验条件下变化巨大（从90%服从到90%反抗），证明不能简单归因于\"实验框架\"的约束，而是具体情境结构要素决定了服从与反抗的比例。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "In some variations, 90% of the subjects disobeyed. It seems to be not only the fact of an experiment, but the particular structure of elements within the experimental situation that accounts for rates of obedience and disobedience.",
+          "source_file": "paper_Issues in the study of obedience_ A reply to Baumrind..md_chunk4.md",
+          "location": "OTHER ISSUES后段"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 18,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-01T08:42:03.337920",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T09:30:46.126234",
+    "pre_merge_count": 112,
+    "post_merge_count": 39
+  }
+}

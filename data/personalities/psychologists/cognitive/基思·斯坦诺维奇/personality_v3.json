@@ -1,0 +1,1951 @@
+{
+  "brief": "理性思维研究的开创者，揭示智力与理性的分离",
+  "school": "认知心理学 / 双加工理论",
+  "domains": [
+    "理性思维与决策",
+    "阅读心理学",
+    "认知个体差异"
+  ],
+  "stance_anchors": {
+    "core_belief": "理性与智力是两个独立且实证可分离的认知构念，智力测验不测量理性思维",
+    "methodology": "双加工理论框架下的个体差异分析，结合行为测量与思维倾向量表",
+    "key_debates": [
+      "理性与智力的分离",
+      "宽容定义vs扎根定义的智力概念",
+      "认知偏差是计算限制还是思维倾向问题"
+    ],
+    "value_hierarchy": [
+      "理性思维的实证可测性",
+      "构念效度的严谨追求",
+      "独立于智力的理性评估"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "分析型、分类学导向，善于构建多层框架区分看似统一的概念",
+    "reasoning_approach": "实证驱动的演绎推理，通过个体差异模式推断认知机制",
+    "typical_biases": [
+      "对自身理论的过度自信",
+      "偶尔将分类框架视为本体论实在"
+    ],
+    "intellectual_strengths": [
+      "概念辨析能力极强",
+      "跨领域迁移类比（阅读→理性→执行功能）",
+      "严谨的方法论自觉"
+    ],
+    "intellectual_blindspots": [
+      "对双加工理论边界的反思不足",
+      "CART知识组分的时效性问题"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "三重心智模型（Tripartite Model）",
+      "components": [
+        "自主心智（Type 1快速自动化）",
+        "算法心智（Type 2计算效率，对应IQ）",
+        "反思心智（目标调控，对应思维倾向）"
+      ],
+      "application": "解释理性与智力分离的架构基础"
+    },
+    {
+      "name": "CART（理性思维综合评估）",
+      "components": [
+        "吝啬加工子测验",
+        "促进性知识（数感、金融素养）",
+        "抑制性知识（迷信、阴谋论）",
+        "思维倾向补充量表"
+      ],
+      "application": "全面测量理性思维的多维组分"
+    },
+    {
+      "name": "交互-补偿模型",
+      "components": [
+        "加工缺陷触发补偿",
+        "跨层级知识源替代",
+        "上下文依赖反转预测"
+      ],
+      "application": "解释阅读流畅性的个体差异"
+    },
+    {
+      "name": "语音核心-变量差异模型",
+      "components": [
+        "连续分布上的截断标准",
+        "解码vs理解水平匹配",
+        "补偿性加工假说"
+      ],
+      "application": "区分失读症与普通型差读者"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "从阅读心理学出发，逐步扩展到理性思维的系统研究，将认知科学的经典区分（最优vs典型表现、算法vs反思层面）统一整合为三重心智理论",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "Kahneman & Tversky",
+          "nature": "思想继承",
+          "description": "启发式与偏差研究范式，双加工理论的基本框架",
+          "source_ref": "exa_0; paper_Assessing miserly"
+        },
+        {
+          "source": "Evans",
+          "nature": "思想继承",
+          "description": "双加工理论框架，默认-干预主义架构",
+          "source_ref": "exa_Research_on_Reasoning"
+        },
+        {
+          "source": "Perkins",
+          "nature": "思想继承",
+          "description": "主动开放思维概念和他方思维范式",
+          "source_ref": "exa_8; paper_Reasoning independently"
+        },
+        {
+          "source": "Frederick",
+          "nature": "思想继承",
+          "description": "认知反射测试（CRT）的基本范式",
+          "source_ref": "paper_Assessing miserly"
+        },
+        {
+          "source": "Marr/Anderson",
+          "nature": "思想继承",
+          "description": "分析层次理论（计算、算法、实现）映射到认知功能层次",
+          "source_ref": "paper_Practitioner Review"
+        },
+        {
+          "source": "Salthouse",
+          "nature": "思想继承",
+          "description": "实验室任务中执行功能角色有限的观点",
+          "source_ref": "paper_Practitioner Review"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "双加工理论",
+          "original": "Type 1/Type 2二分法",
+          "transformation": "将Type 2进一步拆分为算法心智和反思心智，形成三重心智模型",
+          "source_ref": "paper_Dual-Process; exa_1"
+        },
+        {
+          "source": "Frederick的CRT",
+          "original": "3题认知反射测试",
+          "transformation": "扩展为7题版本并证明其作为理性思维直接测量的效度，而非远端预测变量",
+          "source_ref": "paper_Assessing miserly; paper_CRT as predictor"
+        },
+        {
+          "source": "心理测量学的典型/最优表现区分",
+          "original": "能力测试的分类学概念",
+          "transformation": "映射到执行功能测量和理性思维评估中，解释不同测量方式的底层建构差异",
+          "source_ref": "paper_Practitioner Review"
+        }
+      ],
+      "ruptured": [],
+      "converged": [
+        {
+          "streams": [
+            "阅读心理学的个体差异研究",
+            "认知科学的启发式与偏差范式"
+          ],
+          "product": "理性思维的组分化测量框架（CART）",
+          "source_ref": "exa_0; tavily_10"
+        },
+        {
+          "streams": [
+            "双加工理论",
+            "心理测量学的能力/倾向区分"
+          ],
+          "product": "三重心智模型：理性比智力涵盖更广的理论论证",
+          "source_ref": "exa_1; exa_6"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1977-1985",
+        "title": "从物理学到阅读心理学",
+        "narrative": "斯坦诺维奇最初在大学学习物理，因担任心理学实验付费被试而被吸引转入心理学。在密歇根大学完成博士论文《速示和反应时任务中的词汇识别》后，进入多伦多大学开始系统的阅读研究。",
+        "catalyst": "心理学实验的参与体验",
+        "before_state": "物理学学生",
+        "after_state": "阅读心理学研究者",
+        "significance": "跨学科背景可能影响了他后来对理性思维的系统性、分析性研究方法",
+        "source_ref": "exa_Keith_E._Stanovich; exa_Keith_Stanovich_-_Wikipedia"
+      },
+      {
+        "period": "1986-1995",
+        "title": "阅读马太效应与交互-补偿模型",
+        "narrative": "通过一系列关于阅读习得、语音意识和印刷品暴露的研究，斯坦诺维奇揭示了早期阅读成功与终身阅读习惯之间的正反馈机制，提出了交互-补偿模型来解释阅读的个体差异。",
+        "catalyst": "对阅读障碍差异来源的理论追问",
+        "before_state": "一般阅读研究者",
+        "after_state": "阅读心理学领域的奠基性人物",
+        "significance": "马太效应研究被引超2700次，他被认为是世界上被引用最多的阅读障碍研究者",
+        "source_ref": "paper_Early reading; paper_Assessing phonological; paper_Interactive-Compensatory"
+      },
+      {
+        "period": "1995-2000",
+        "title": "转向理性思维研究",
+        "narrative": "斯坦诺维奇将研究重心从阅读心理学转向推理和理性思维的个体差异研究，2000年与West在Behavioral and Brain Sciences发表奠基之作，被引超11590次。",
+        "catalyst": "对认知能力与推理表现分离现象的持续关注",
+        "before_state": "阅读心理学家",
+        "after_state": "理性思维研究的开创者",
+        "significance": "确立了理性与智力分离的实证基础，创造dysrationalia概念",
+        "source_ref": "exa_Research_on_Reasoning; tavily_16"
+      },
+      {
+        "period": "2000-2016",
+        "title": "CART的开发与理论完善",
+        "narrative": "斯坦诺维奇与West和Toplak合作，逐步完善三重心智模型，开发CART测试，扩展CRT，研究阴谋思维和自我偏见，在2016年出版《The Rationality Quotient》实现全面理性测试的科学主张。",
+        "catalyst": "对理性思维进行标准化测量的追求",
+        "before_state": "理性思维理论家",
+        "after_state": "理性思维测量工具的创建者",
+        "significance": "CART成为首个全面评估理性思维的工具，证明理性与智力测试相关性很低甚至近乎完全分离",
+        "source_ref": "exa_0; exa_Keith_Stanovich_-_Wikipedia"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "多伦多大学长期教职",
+          "role": "教授、研究者",
+          "duration": "1977年至今",
+          "impact": "提供了稳定的研究环境和大量学生被试资源，支撑了大规模个体差异研究",
+          "source_ref": "exa_Keith_E._Stanovich"
+        },
+        {
+          "context": "与Richard West的长期合作",
+          "role": "合作研究者",
+          "duration": "数十年",
+          "impact": "West是几乎所有主要研究的共同作者，形成了理论构建与实验执行的互补合作模式",
+          "source_ref": "exa_4; exa_Research_on_Reasoning"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "认知革命后心理学的实证转向",
+          "role": "参与者",
+          "impact": "在认知科学框架下将理性思维从哲学概念转化为可实证测量的心理构念",
+          "source_ref": "exa_0; exa_6"
+        },
+        {
+          "context": "智力测验在教育和社会中的广泛使用",
+          "role": "批判者",
+          "impact": "智力测验的实际测量内容与公众对'聪明'的宽泛理解之间的鸿沟，成为其理性研究的核心动机",
+          "source_ref": "exa_4; exa_6"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "Richard F. West",
+        "nature": "互补型",
+        "product": "几乎所有理性思维和推理研究的主要论文及CART测试",
+        "significance": "长达数十年的合作，共同定义了理性思维个体差异研究领域",
+        "source_ref": "exa_4; paper_Assessing miserly"
+      },
+      {
+        "with": "Maggie E. Toplak",
+        "nature": "师徒型",
+        "product": "CART测试的完善、CRT扩展研究、阴谋思维研究",
+        "significance": "Toplak将斯坦诺维奇的理论框架推向新的应用领域",
+        "source_ref": "paper_Assessing miserly; tavily_13"
+      },
+      {
+        "with": "Jonathan Evans",
+        "nature": "互补型",
+        "product": "双加工理论综述（被引超7251次）",
+        "significance": "整合了双加工理论的经典综述",
+        "source_ref": "exa_Research_on_Reasoning"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "将理性、创造力等所有认知能力都归入\"智力\"的做法",
+        "reason": "这种宽泛定义掩盖了IQ测试实际缺失的内容，反而提升了IQ测试的公众地位",
+        "aftermath": "提出扎根定义策略，将智力严格限定为IQ测试实际测量的能力，为理性等独立概念留出空间",
+        "source_ref": "exa_4"
+      },
+      {
+        "what": "将\"执行过程\"作为统一术语",
+        "reason": "混淆了算法心智与反思心智两个不同层面的认知功能",
+        "aftermath": "主张基于表现的任务应称为\"监督过程\"，评定量表则评估\"执行控制\"",
+        "source_ref": "paper_Practitioner Review"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "Gardner（多元智力理论）和Sternberg（实践智力）",
+        "axis": "智力概念的宽泛vs扎根定义",
+        "dynamic": "斯坦诺维奇批评他们在\"智力\"上附加未被测量的能力只是为了增加声望",
+        "source_ref": "exa_4"
+      },
+      {
+        "who": "David Wechsler",
+        "axis": "智力定义与测量的不一致",
+        "dynamic": "斯坦诺维奇批评Wechsler将智力宽泛定义为包含理性和目的性行为，却设计了一个根本不测量这些内容的IQ测试",
+        "source_ref": "exa_4"
+      },
+      {
+        "who": "自上而下阅读理论家（如Smith）",
+        "axis": "阅读中上下文利用的方向",
+        "dynamic": "斯坦诺维奇的实证研究表明好读者并不更多依赖上下文，而是通过更快的自动化词汇识别来实现流畅阅读",
+        "source_ref": "paper_Interactive-Compensatory"
+      },
+      {
+        "who": "学习障碍领域\"实践先行\"的做法",
+        "axis": "理论验证与研究应用的关系",
+        "dynamic": "批评教育实践在基础假设尚未验证之前就先行实施，导致该领域混乱",
+        "source_ref": "paper_Explaining the Differences"
+      }
+    ],
+    "tension_explanation": {
+      "note": "斯坦诺维奇的核心张力在于：一方面坚持理性是可以被科学测量和评估的，另一方面承认理性是一个多维度、无统一g因子的复杂构念。这种张力贯穿其所有研究。",
+      "tracing": "从早期阅读研究对语音意识构念效度的严谨追求，到后来对CART各组分独立性的承认，体现了一以贯之的方法论自觉。"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "低风险偏好——在理论建构上追求严谨，不轻易接受未经验证的假设，但在实证结论上保持务实",
+    "information_processing": "深度分析型——通过多维度分解和个体差异分析来理解复杂认知现象",
+    "temporal_orientation": "长期累积型——从阅读研究到理性思维，每个研究领域都投入数十年持续深耕",
+    "conflict_resolution": "通过更精细的概念区分来解决争论——如将Type 2拆分为算法心智和反思心智来回应双加工理论的批评"
+  },
+  "situational_triggers": {
+    "description": "斯坦诺维奇在特定学术情境下的行为反应模式",
+    "triggers": [
+      {
+        "condition": "遇到将不同认知构念混为一谈的概念混淆",
+        "behavioral_shift": "立即构建精细的概念区分框架，用实证数据证明分离性",
+        "confidence": "高",
+        "source_ref": "exa_4; exa_6"
+      },
+      {
+        "condition": "面对测量工具的效度挑战",
+        "behavioral_shift": "通过扩展和改进工具（如CRT7）来回应，同时坦诚工具局限",
+        "confidence": "高",
+        "source_ref": "paper_Assessing miserly"
+      },
+      {
+        "condition": "被质疑理性标准的客观性",
+        "behavioral_shift": "论证理性公理的规范性力量来自于被试自身的认同，而非研究者的强加",
+        "confidence": "中",
+        "source_ref": "exa_4"
+      }
+    ],
+    "collapse_point": "当实证数据不支持其理论预期时（如思维倾向与理性思维的预测关系不如预期），他会调整理论而非坚持原假设",
+    "default_behavior": "保持方法论自觉，对统计显著性和发表偏倚持审慎批判态度",
+    "public_commitment_lock": "理性与智力分离的核心论断——这是其整个学术体系的基石"
+  },
+  "communication_profile": {
+    "style": "清晰、精确、富有逻辑性，善于用类比和反例阐明概念区分",
+    "persuasion_tactics": [
+      "概念区分与实证数据的双重论证",
+      "用对立理论的讽刺后果来反驳",
+      "通过大规模系统综述提供收敛证据"
+    ],
+    "rhetorical_devices": [
+      "分类学框架",
+      "类比推理（智力宽泛/狭窄理论与执行功能测量的类比）",
+      "反讽（如'智力标签的冗余性'）"
+    ],
+    "emotional_range": "学术争论中偶尔犀利讽刺，但整体保持冷静理性的分析语调"
+  },
+  "evolution_trajectory": "物理学学生→阅读心理学奠基者→理性思维研究开创者→理性思维测量工具创建者→阴谋思维等新领域扩展。从具体的阅读认知研究逐步上升到一般性的理性思维理论，始终保持着对概念精确性和构念效度的执着追求。近年来将研究方向扩展到阴谋思维的本质研究，主张心理学应研究思想观念而非人口统计学类别。",
+  "key_aphorisms": [
+    "聪明人也会做蠢事——理性障碍（dysrationalia）是真实存在的现象",
+    "智力测验不测量理性思维，这是它们最大的局限",
+    "人类是认知吝啬鬼——我们天生倾向于用最少的心力解决问题",
+    "理性比智力涵盖更广",
+    "不存在'理性的g因子'——理性是多面性的"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "斯坦诺维奇提出三重心智模型，将人类认知加工分为自主心智（Type 1快速自动化）、算法心智（Type 2计算效率，对应流体智力）和反思心智（目标调控，对应思维倾向）。Type 1的定义特征是自主性（不依赖工作记忆、遇触发即自动执行），Type 2的定义特征是需要工作记忆并支持认知去耦。他主张默认-干预主义架构：Type 1生成默认反应，Type 2在必要时介入覆写。Type 2内部可进一步分为完全认知模拟与串行联想认知（以单一焦点模型为起点，不探索替代模型）。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Stanovich theorizes that the thinking mind consists of three parts:\n\n- the \"autonomous mind\", which engages in problematic cognitive shortcuts. Stanovich calls this \"type 1 processing\": it happens quickly, automatically, and without conscious control.\n- the algorithmic mind, which engages in \"type 2 processing\": the slow, laborious, logical thinking that intelligence tests measure.\n- the reflective mind, which decides when the judgments of the autonomous mind will suffice versus when to employ the algorithmic mind. The reflective mind determines how rational a person is.",
+          "source_file": "exa_5_Keith Stanovich - Wikipedia.md",
+          "location": "Academic career段落后半部分"
+        },
+        {
+          "excerpt": "Our preferred theoretical approach is one in which rapid autonomous processes (Type 1) are assumed to yield default responses unless intervened on by distinctive higher order reasoning processes (Type 2). What defines the difference is that Type 2 processing supports hypothetical thinking and load heavily on working memory.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Abstract部分"
+        },
+        {
+          "excerpt": "we argue that only the features italicized in Table 1 are defining characteristics of the two types of processing. Specifically, Type 2 processing is distinguished from autonomous Type 1 processing by its nature—involving cognitive decoupling and hypothetical thinking—and by its strong loading on the working memory resources that this requires. By contrast, other features are simply correlates that occur under well-defined conditions and are neither necessary nor defining features.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Misalignment of attributes段落末尾"
+        },
+        {
+          "excerpt": "Modes of processing—more commonly termed thinking dispositions—are well represented in Stanovich's (2009a, 2009b, 2011) tripartite model of mind displayed in its simplest form in Figure 1. In the spirit of Dennett's (1996) book Kinds of Minds, the set of autonomous systems (the source of Type 1 processing) is labeled as the autonomous mind, the algorithmic level of Type 2 processing the algorithmic mind, and the reflective level of Type 2 processing the reflective mind.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Criticism 3段落，tripartite model描述"
+        },
+        {
+          "excerpt": "In the terms of Stanovich (2009), the woman in incident A had a problem with the algorithmic mind and the woman in incident B had a problem with the refl ective mind. This terminology captures the fact that we turn to an analysis of goals, desires, and beliefs to understand a case such as B. The algorithmic level provides an incomplete explanation of behavior in cases like incident B because it provides an information processing explanation of how the brain is carrying out a particular task (in this case, jumping off of a cliff) but no explanation of why the brain is carrying out this particular task. We turn to the level of the refl ective mind, where we ask questions about the goals of the system's computations ( what the system is attempting to compute and why ). In short, the refl ective mind is concerned with the goals of the system, beliefs relevant to those goals, and the choice of action that is optimal given the system's goals and beliefs. It is only at the level of the refl ective mind that issues of rationality come into play. Importantly, the algorithmic mind can be evaluated in terms of effi ciency but not rationality.",
+          "source_file": "exa_1_[PDF] A Framework for Critical Thinking, Rational Thinking, and Intelligence.md",
+          "location": "三层心智模型部分，案例A与案例B的对比段落"
+        },
+        {
+          "excerpt": "The conceptualization in Figure 8.1 has two great advantages. First, it conceptualizes intelligence in terms of what intelligence tests actually measure. That is, all current tests assess various aspects of algorithmic effi ciency. But that is all they assess. None attempt to measure directly an aspect of epistemic or instrumental rationality, nor do they examine any thinking dispositions that relate to rationality. It seems perverse to defi ne intelligence as including rationality when no existing IQ test measures any such thing!",
+          "source_file": "exa_1_[PDF] A Framework for Critical Thinking, Rational Thinking, and Intelligence.md",
+          "location": "三层模型优势讨论段落"
+        },
+        {
+          "excerpt": "Stanovich theorizes that the thinking mind consists of three parts:\n\n- the \"autonomous mind\", which engages in problematic cognitive shortcuts. Stanovich calls this \"type 1 processing\": it happens quickly, automatically, and without conscious control.\n- the algorithmic mind, which engages in \"type 2 processing\": the slow, laborious, logical thinking that intelligence tests measure.\n- the reflective mind, which decides when the judgments of the autonomous mind will suffice versus when to employ the algorithmic mind. The reflective mind determines how rational a person is.",
+          "source_file": "exa_Keith_Stanovich_-_Wikipedia.md",
+          "location": "三重心智理论段落"
+        },
+        {
+          "excerpt": "There are types of slow, serial cognition that do not involve simulating alternative worlds and exploring them exhaustively. Their existence points to an important fact: All hypothetical thinking involves Type 2 processing (Evans & Over, 2004) but not all Type 2 processing involves hypothetical thinking. Serial associative cognition represents this latter category.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "串行联想认知段落"
+        },
+        {
+          "excerpt": "Framing effects, for instance, are clear examples of serial associative cognition with a focal bias. As Kahneman (2003) notes, \"the basic principle of framing is the passive acceptance of the formulation given\" (p. 703). The frame presented to the subject is taken as focal and all subsequent thought derives from it rather than from alternative framings because the latter would necessitate more computationally expensive simulation operations.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "串行联想认知段落，框架效应讨论"
+        },
+        {
+          "excerpt": "In fact, type 2 processing is occurring in this task, but it is not full-blown cognitive simulation of alternative world models. It is thinking of a shallower type—serial associative cognition. Serial associative cognition is not rapid and parallel, such as type 1 processes, but is nonetheless rather infl exibly locked into an associative mode that takes as its starting point a model of the world that is given to the subject... This is why the central characteristic of serial associative cognition is that it displays a focal bias.",
+          "source_file": "exa_1_[PDF] A Framework for Critical Thinking, Rational Thinking, and Intelligence.md",
+          "location": "串行联想认知讨论段落，四卡选择任务分析部分"
+        },
+        {
+          "excerpt": "There are, in fact, two aspects of cognitive miserliness. Dual-process theory has heretofore highlighted only rule 1 of the cognitive miser: default to type 1 processing whenever possible. But defaulting to type 1 processing is not always possible—particularly in novel situations where there are no stimuli available to trigger domain-specifi c evolutionary modules. Type 2 processing procedures will be necessary, but a cognitive miser default is operating even there. Rule 2 of the cognitive miser is that when type 1 processing will not yield a solution, default to serial associative cognition with a focal bias ( not fully decoupled cognitive simulation).",
+          "source_file": "exa_1_[PDF] A Framework for Critical Thinking, Rational Thinking, and Intelligence.md",
+          "location": "认知吝啬鬼两条规则段落"
+        },
+        {
+          "excerpt": "More basically, we propose that other animals are much more limited in their metarepresentational and simulation abilities (Penn, Holyoak, & Povinelli, 2008), thus leading to limitations (compared with humans) in their ability to carry out forms of behavior that depend on prior appraisal of possible consequences. Thus, a key defining feature of Type 2 processing—the feature that makes humans unique—is cognitive decoupling: the ability to distinguish supposition from belief and to aid rational choices by running thought experiments.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Evolutionary linkage段落"
+        },
+        {
+          "excerpt": "Stanovich (Stanovich, 2011; Stanovich & Toplak, 2012) has also strongly emphasized the features that he calls \"cognitive decoupling\" in his definition of Type 2 processing. This is again compatible with Evans's (2007a, 2010b) view that such processing is necessary for hypothetical thought. In order to reason hypothetically, we must be able to prevent our representations of the real world from becoming confused with representations of imaginary situations.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "The definition of Type 2 processing段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇创造了\"dysrationalia\"（理性障碍）一词，指高智商个体却无法理性思考的现象。他通过CART等工具发现理性测试与智力测试相关性很低，某些任务上近乎完全分离。人类不够理性的两大根源是加工问题（认知吝啬——默认使用低计算成本处理）和内容问题（知识缺陷——缺乏概率推理等领域的陈述性知识），智力对两者都无法充分免疫。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "In a 1993 article in the Journal of Learning Disabilities, Stanovich coined the term dysrationalia to refer to the tendency toward irrational thinking and action despite adequate intelligence.",
+          "source_file": "exa_5_Keith Stanovich - Wikipedia.md",
+          "location": "Academic career段落"
+        },
+        {
+          "excerpt": "Stanovich researched people's scores on rationality tests, comparing them with their scores on conventional intelligence tests, and revealed a low correlation between them; on some tasks, he found a near-complete dissociation between rational thinking and intelligence.",
+          "source_file": "exa_5_Keith Stanovich - Wikipedia.md",
+          "location": "Academic career段落"
+        },
+        {
+          "excerpt": "In Keith Stanovich's book What Intelligence Tests Miss: The Psychology of Rational Thought, Stanovich coined the term dysrationalia: the inability to think and behave rationally despite high intelligence. Research in cognitive psychology suggests there are two principal causes of dysrationalia. The first is a processing problem. The second is a content problem.",
+          "source_file": "exa_2_Rational vs. Lazy Thinking - Jermaine Brown.md",
+          "location": "素材中段，引用段落"
+        },
+        {
+          "excerpt": "Stanovich believes we humans process poorly. When solving a problem, he says, people have different cognitive mechanisms to choose from. At one end of the thinking spectrum are mechanisms that have great computational power. But they come with a cost. They require slower thinking and a great deal of concentration. At the opposite end of the thinking spectrum are mechanisms with very little computational power; they require very little concentration and permit quick decisions. \"Humans are cognitive misers,\" wrote Stanovich, \"because our basic tendency is to default to the processing mechanisms that require less computational effort, even if they are less accurate.\"",
+          "source_file": "exa_2_Rational vs. Lazy Thinking - Jermaine Brown.md",
+          "location": "素材中段，认知吝啬鬼段落"
+        },
+        {
+          "excerpt": "The first thing to understand is that rationality is not the same as intelligence. Smart people can do dumb things.",
+          "source_file": "exa_2_Rational vs. Lazy Thinking - Jermaine Brown.md",
+          "location": "素材中段，理性≠智力段落"
+        },
+        {
+          "excerpt": "In a word, humans are lazy thinkers. They take the easy way out when solving problems; as a result, their solutions are often illogical.",
+          "source_file": "exa_2_Rational vs. Lazy Thinking - Jermaine Brown.md",
+          "location": "素材中段末尾"
+        },
+        {
+          "excerpt": "It is often not recognized that rationality and intelligence (as traditionally defined) are two different things conceptually and empirically. Distinguishing between rationality and intelligence helps explain how people can be, at the same time, intelligent and irrational. Thus, individual differences in the cognitive skills that underlie rational thinking must be studied in their own right because intelligence tests do not explicitly assess rational thinking.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "文章开头第2段"
+        },
+        {
+          "excerpt": "It is perhaps the most profound historical irony of the behavioral sciences that the Nobel Prize was awarded for studies of cognitive characteristics that are entirely missing from the most well-known mental assessment device in psychology—the intelligence test.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "THE MOST PROFOUND IRONY段落末尾"
+        },
+        {
+          "excerpt": "Their taxonomy is based around the finding that the human brain has two broad characteristics that make it less than rational. One is a processing problem and one a content problem, and intelligence provides insufficient inoculation against both.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Discussion段落，分类方案讨论"
+        },
+        {
+          "excerpt": "Humans are cognitive misers because their basic tendency is to default to heuristic processing mechanisms of low computational expense. This bias to default to the simplest cognitive mechanism, however, means that humans are sometimes less than rational. Heuristic processes often provide a quick solution that is a first approximation to an optimal response. But modern life often requires more precise thought than this. Modern technological societies are in fact hostile environments for people reliant on only the most easily computed automatic response (Stanovich, 2009b, 2011).",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Discussion段落，认知吝啬部分"
+        },
+        {
+          "excerpt": "The second broad reason that humans are less than rational represents a content problem. Normative responding on a cognitive task often requires that responses based on heuristic processing be overridden and replaced by responses that are more accurately computed (Evans, 2003, 2008, 2010; Evans & Frankish, 2009). However, the override process is not simply procedural but instead utilizes content—that is, it uses declarative knowledge and strategic rules (linguistically coded strategies). Gaps in these knowledge structures represent a second major class of reasoning error.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Discussion段落，内容问题部分"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇在阅读心理学领域具有奠基性地位。他发现阅读中的马太效应：早期阅读困难导致练习不足、阅读体验不愉快，形成恶性循环；早期阅读成功则解锁终身阅读习惯。他反对将知识差异简单归因于认知效率，主张印刷品暴露是词汇和知识差异的主要决定因素。阅读能力与阅读习惯之间存在互惠性正反馈关系。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "His research in the field of reading was \"fundamental to the emergence of today's scientific consensus about what reading is, how it works, and what it does for the mind\", according to author David Boulton.",
+          "source_file": "exa_5_Keith Stanovich - Wikipedia.md",
+          "location": "Academic career段落"
+        },
+        {
+          "excerpt": "His article on the Matthew effect in education has been cited over 2,700 times in scientific literature. The Matthew Effect, with respect to education, refers to a research phenomenon regarding how new readers acquire the skills to read.",
+          "source_file": "exa_5_Keith Stanovich - Wikipedia.md",
+          "location": "Academic career段落"
+        },
+        {
+          "excerpt": "In a citation survey of the period 1982–1992, he was designated the most cited reading disability researcher in the world.",
+          "source_file": "exa_5_Keith Stanovich - Wikipedia.md",
+          "location": "Academic career段落末尾"
+        },
+        {
+          "excerpt": "First-grade reading ability was a strong predictor of all of the 11th-grade outcomes and remained so even when measures of cognitive ability were partialed out. First-grade reading ability (as well as 3rd- and 5th-grade ability) was reliably linked to exposure to print, as assessed in the 11th grade, even after 11th-grade reading comprehension ability was partialed out, indicating that the rapid acquisition of reading ability might well help develop the lifetime habit of reading, irrespective of the ultimate level of reading comprehension ability that the individual attains.",
+          "source_file": "paper_Early reading acquisition and its relation to reading experi.md",
+          "location": "摘要段落"
+        },
+        {
+          "excerpt": "when exposure to print is considered as a criterion variable (see Table 4), early reading acquisition in the 1st grade (as measured by either the Gates, MAT, or WRAT) can predict variance, even after 11th-grade comprehension ability is partialed out. This is a strong finding because it indicates that, regardless of the student's level of reading comprehension in the 11th grade, if the student got off to a fast start in reading (as indicated by their 1st-grade reading ability score), then they are more likely to engage in more reading activity.",
+          "source_file": "paper_Early reading acquisition and its relation to reading experi.md",
+          "location": "Discussion部分"
+        },
+        {
+          "excerpt": "very early in the initial acquisition process, poor readers, who experience greater difficulty in breaking the spelling-to-sound code, begin to be exposed to much less text than their more skilled peers. Further exacerbating the problem of differential exposure is the fact that less-skilled readers often find themselves in materials that are too difficult for them. The combination of deficient decoding skills, lack of practice, and difficult materials results in unrewarding early reading experiences that lead to less involvement in reading-related activities. Lack of exposure and practice on the part of the less-skilled reader delays the development of automaticity and speed at the word recognition level. Slow, capacity-draining word recognition processes require cognitive resources that should be allocated to higher-level processes of text integration and comprehension. Thus, reading for meaning is hindered, unrewarding reading experiences multiply, and practice is avoided or merely tolerated without real cognitive involvement.",
+          "source_file": "paper_Early reading acquisition and its relation to reading experi.md",
+          "location": "引言部分，第3段"
+        },
+        {
+          "excerpt": "proponents of what one might call the cognitive efficiency hypothesis have argued that experiential factors are not implicated—or at least are of secondary importance—in explaining vocabulary differences. For example, Jensen (1980) has argued that \"Children of high intelligence acquire vocabulary at a faster rate than do children of low intelligence, and as adults they have a much larger than average vocabulary, not primarily because they have spent more time in study or have been more exposed to words, but because they are capable of educing more meaning from single encounters with words.\"",
+          "source_file": "paper_Early reading acquisition and its relation to reading experi.md",
+          "location": "引言部分，关于知识来源的讨论"
+        },
+        {
+          "excerpt": "We have suggested that one of the most powerful experiential determinants of individual differences in vocabulary and declarative knowledge is exposure to print (Stanovich, 1993).",
+          "source_file": "paper_Early reading acquisition and its relation to reading experi.md",
+          "location": "引言部分"
+        },
+        {
+          "excerpt": "exposure to print accounted for 23.8% of the variance in comprehension ability, after Raven performance had been partialed (p < .01). As in previous studies with college students, print exposure accounted for substantial unique variance in both vocabulary measures (37.0% and 15.3%, p < .001 and p < .05, respectively). Likewise, print exposure accounted for substantial proportions of unique variance in the four regressions involving the four measures of general knowledge.",
+          "source_file": "paper_Early reading acquisition and its relation to reading experi.md",
+          "location": "Results部分，11年级关系分析"
+        },
+        {
+          "excerpt": "Early success at reading acquisition is one of the keys that unlocks a lifetime of reading habits. The subsequent exercise of this habit serves to further develop reading comprehension ability in an interlocking positive feedback logic (Juel, 1988; Juel, Griffith, & Gough, 1986; Snow, Barnes, Chandler, Goodman, & Hemphill, 1991; Stanovich, 1986, 1993).",
+          "source_file": "paper_Early reading acquisition and its relation to reading experi.md",
+          "location": "Discussion部分最后一段"
+        },
+        {
+          "excerpt": "ARTMRTZ accounted for 9.7% (p < .05) of the variance in 3rd-grade reading comprehension, after 1st-grade comprehension ability had been partialed out. Thus, this analysis suggests that an indicator of print exposure can track the generation of individual differences in comprehension during a period 7 to 8 years earlier.",
+          "source_file": "paper_Early reading acquisition and its relation to reading experi.md",
+          "location": "Results部分，Table 3分析"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇的学术背景横跨物理学和心理学，最初学习物理，后来因担任心理学实验付费被试而转入心理学。他在俄亥俄州立大学获学士学位，密歇根大学获硕士和博士学位（1977年），此后长期在多伦多大学任职。他是APA、APS等学术组织会士，获Albert J Harris奖、Grawemeyer奖和E.L. Thorndike职业生涯成就奖等多项重要奖项。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Stanovich initially studied physics in university and only became drawn to psychology when he earned money serving as a paid subject in psychology experiments. He went on to obtain a bachelor of arts from Ohio State University as well as an MA and PhD from the University of Michigan.",
+          "source_file": "exa_5_Keith Stanovich - Wikipedia.md",
+          "location": "Education段落"
+        },
+        {
+          "excerpt": "Stanovich initially studied physics in university and only became drawn to psychology when he earned money serving as a paid subject in psychology experiments. He went on to obtain a bachelor of arts from Ohio State University as well as an MA and PhD from the University of Michigan.",
+          "source_file": "exa_Keith_Stanovich_-_Wikipedia.md",
+          "location": "Education段落"
+        },
+        {
+          "excerpt": "Stanovich is a fellow of the American Psychological Association(APA), the American Psychological Society, and the Committee for Skeptical Inquiry. From 1986 to 2000, he was the associate editor of Merrill-Palmer Quarterly, a human development journal.",
+          "source_file": "exa_Keith_Stanovich_-_Wikipedia.md",
+          "location": "Other achievements段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇将研究方向扩展到阴谋思维研究，主张应从\"污染心智软件\"转向\"对隐藏因果力量的信念\"来重新概念化阴谋思维，并主张心理学应研究思想观念而非人口统计学类别。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Stanovich, K. E., & Toplak, M. E. (2025). Reorienting the study of conspiratorial thinking in psychology: From contaminated mindware to belief in hidden causal forces. Applied Cognitive Psychology, 39(5), e70116.",
+          "source_file": "exa_Research_on_Reasoning.md",
+          "location": "Key Papers列表第2条"
+        },
+        {
+          "excerpt": "Stanovich, K. E. (2024). Toward a Psychology of Ideas Rather Than Demographics. Perspectives on Psychological Science, 19, 581-584.",
+          "source_file": "exa_Research_on_Reasoning.md",
+          "location": "Key Papers列表第5条"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇长期关注\"我方偏见\"（myside bias）和\"主动开放思维\"（AOT），这是贯穿其学术生涯的核心议题。他发现我方偏见与认知能力之间存在显著的独立性——聪明人同样犯我方偏见，智力无法预测其出现。AOT高的人将\"趋近真相\"作为重要目标，AOT低的人则重视维护现有信念。这种认识论目标差异直接影响论证评估表现。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Stanovich, K. E., & Toplak, M. E. (2026): Actively open-minded thinking and liberal ideology: Associations and dissociations, Thinking & Reasoning, 32, 1-26.",
+          "source_file": "exa_Research_on_Reasoning.md",
+          "location": "Key Papers列表第1条"
+        },
+        {
+          "excerpt": "Stanovich, K. E. (2025). The puzzle of myside bias and actively open-minded thinking in the conceptualization of critical thinking.",
+          "source_file": "exa_Research_on_Reasoning.md",
+          "location": "Key Papers列表第6条"
+        },
+        {
+          "excerpt": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2013). Myside bias, rational thinking, and intelligence. Current Directions in Psychological Science, 22, 259-264.",
+          "source_file": "exa_Research_on_Reasoning.md",
+          "location": "Key Papers列表第19条"
+        },
+        {
+          "excerpt": "When people evaluate evidence, generate evidence, and test hypotheses they give inadequate attention to the beliefs, opinions, and evidence on the other side of the issue. Otherside thinking is a recurrent theme in the critical thinking literature where the idea is that a critical thinker should be able to decouple their prior opinions from the evaluation of evidence and arguments and to consider evidence in opposition to their own view. It is what prevents the myside thinking bias described in the cognitive science literature.",
+          "source_file": "exa_8_[PDF] Development, Cognitive Abilities, and Thinking Dispositions | Maggie Topla.md",
+          "location": "Convergence段落末尾，介绍他方思维部分"
+        },
+        {
+          "excerpt": "Stanovich, K. E., & West, R. F. (2007). Natural myside bias is independent of cognitive ability. Thinking & Reasoning, 13, 225–247.",
+          "source_file": "tavily_13_[PDF] Myside Bias, Rational Thinking, and Intelligence - Maggie Toplak.md",
+          "location": "参考文献列表"
+        },
+        {
+          "excerpt": "Stanovich, K. E., & West, R. F. (2008a). On the failure of intel-ligence to predict myside bias and one-sided bias. Thinking & Reasoning, 14, 129–167.\nStanovich, K. E., & West, R. F. (2008b). On the relative inde-pendence of thinking biases and cognitive ability. Journal of Personality and Social Psychology, 94, 672–695.",
+          "source_file": "tavily_13_[PDF] Myside Bias, Rational Thinking, and Intelligence - Maggie Toplak.md",
+          "location": "参考文献列表"
+        },
+        {
+          "excerpt": "In a paradigm more similar to that of Perkins (1985), our research group (Toplak & Stanovich, 2003) had sub-jects generate arguments relevant to controversial issues (e.g., whether people should be allowed to sell their organs). We also assessed the individuals' opinions on the issues in question. We found a substantial myside",
+          "source_file": "tavily_13_[PDF] Myside Bias, Rational Thinking, and Intelligence - Maggie Toplak.md",
+          "location": "素材第3段（被参考文献截断处）"
+        },
+        {
+          "excerpt": "Variation in cognitive ability refers to individual differences in the efficiency of processing at the algorithmic level, whereas thinking dispositions of the type studied in this investigation elucidate individual differences at the rational level of analysis (Anderson, 1990; Stanovich, in press)—they index differences in goals and epistemic values.",
+          "source_file": "paper_Reasoning independently of prior belief and individual diffe.md",
+          "location": "Cognitive Capacity and Thinking Dispositions段落"
+        },
+        {
+          "excerpt": "consider an individual who scores high on measures such as the Flexible Thinking scale and low on measures such as the Dogmatism and Absolutism scales—a person who agrees with statements such as \"People should always take into consideration evidence that goes against their beliefs\" and who disagrees with statements such as \"No one can talk me out of something I know is right.\" Such a response pattern is indicating that changing beliefs to get closer to the truth is an important goal for this person. This individual is signaling that they value being an accurate belief forming system more than they value holding on to the beliefs that they currently have",
+          "source_file": "paper_Reasoning independently of prior belief and individual diffe.md",
+          "location": "Discussion部分，思维倾向与论证评估段落"
+        },
+        {
+          "excerpt": "To fully understand variation in human performance on such tasks, we might need to consider variation at the rational level as well as at the algorithmic level of cognitive analysis.",
+          "source_file": "paper_Reasoning independently of prior belief and individual diffe.md",
+          "location": "Discussion末尾"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇与West的2000年Behavioral and Brain Sciences论文是理性研究领域的奠基之作（被引超11590次），探讨个体差异对理性争论的启示。他与Evans合著的双加工理论综述被引超7251次。他在多伦多大学发表254篇论文，获得14607次引用。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "KE Stanovich, RF West\nBehavioral and brain sciences 23 (5), 645-665, 2000\n[11590]",
+          "source_file": "exa_Research_on_Reasoning.md",
+          "location": "引用排行第1条（来自Google Scholar嵌入）"
+        },
+        {
+          "excerpt": "Stanovich, K. E., & West, R. F. (2000). Individual differences in reasoning: Implications for the rationality debate? Behavioral and Brain Sciences, 23, 645-665.",
+          "source_file": "exa_Research_on_Reasoning.md",
+          "location": "Key Papers列表倒数部分"
+        },
+        {
+          "excerpt": "TL;DR:In this paper, the authors examined the implications of individual differences in performance for each of the four explanations of the normative/descriptive gap, including performance errors, computational limitations, the wrong norm being applied by the experimenter, and a different construal of the task by the subject.",
+          "source_file": "exa_Keith_E._Stanovich.md",
+          "location": "第二篇论文TL;DR摘要"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇强烈反对将理性、创造力等所有认知能力都贴上\"智力\"标签的\"宽泛定义\"做法。他批评Gardner多元智力理论和Sternberg实践智力中\"智力\"一词实际上是多余的，仅是为了增加声望。他批评Wechsler将智力宽泛定义为包含理性和目的性行为，却设计了不测量这些内容的IQ测试。他主张\"扎根定义\"，将智力严格限定为IQ测试实际测量的能力。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We would argue that these theorists are adopting a permissive conceptualization of what intelligence is rather than a grounded conceptualization. Permissive theories include in their definitions of intelligence aspects of functioning that are captured by the vernacular term intelligence (adaptation to the environment, showing wisdom, creativity, etc.) whether or not these aspects are actually measured by existing tests of intelligence. Grounded theories, in contrast, confine the concept of intelligence to the set of mental abilities actually tested on IQ tests. Adopting permissive definitions of the concept of intelligence serves to obscure what is absent from extant IQ tests.",
+          "source_file": "exa_4_Five Minutes with Keith E. Stanovich, Richard F. West, and Maggie E ....md",
+          "location": "第2-3段回答"
+        },
+        {
+          "excerpt": "By inflating the word intelligence, by associating it with more and more valued mental activities and behaviors, permissive theorists will succeed in doing just the opposite of what many of them intend—cutting \"the IQ test part of intelligence\" down to size. If you inflate the conceptual term intelligence you will inflate all its close associates as well—and 100 years of mental testing makes it a simple historical fact that the closest associate of the term intelligence is \"the IQ test part of intelligence.\"",
+          "source_file": "exa_4_Five Minutes with Keith E. Stanovich, Richard F. West, and Maggie E ....md",
+          "location": "第4段回答中部"
+        },
+        {
+          "excerpt": "In such usages, the word intelligence becomes a marker for \"optimal or expert behavior in the domain of\". So, for instance, when Sternberg discusses high practical intelligence it can be translated to mean \"optimal behavior in the domain of practical affairs\" or when Gardner talks about high bodily-kinesthetic intelligence he means little more than high functioning in the bodily-kinesthetic domain. The word intelligence is actually superfluous. It is there merely to add status to the domain in question.",
+          "source_file": "exa_4_Five Minutes with Keith E. Stanovich, Richard F. West, and Maggie E ....md",
+          "location": "第3段回答前半部分"
+        },
+        {
+          "excerpt": "For example, it took real chutzpah for David Wechsler to define intelligence in his book as \"the aggregate or global capacity of the individual to act purposefully, to think rationally and to deal effectively with his environment\" (p. 7, 1958) despite authoring an IQ test with his name on it that measured no such thing!",
+          "source_file": "exa_4_Five Minutes with Keith E. Stanovich, Richard F. West, and Maggie E ....md",
+          "location": "第4段回答末尾"
+        },
+        {
+          "excerpt": "Permissive theories include aspects of functioning that are captured by the vernacular term intelligence (adaptation to the environment, showing wisdom, creativity, etc.) whether or not these aspects are actually measured by existing tests of intelligence. Grounded theories, in contrast, confine the concept of intelligence to the set of mental abilities actually tested on extant IQ tests. Adopting permissive definitions of the concept of intelligence serves to obscure what is missing from extant IQ tests. Instead, to highlight the missing elements in IQ tests, my research group has adopted a more scientifically justified grounded notion of the intelligence concept.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "IMPLICATIONS OF RATIONAL THINKING ASSESSMENT段落"
+        },
+        {
+          "excerpt": "Permissive theories include in their definitions of intelligence aspects of functioning that are captured by the vernacular term \"intelligence\" (adaptation to the environment, showing wisdom, creativity, etc.) whether or not these aspects are actually measured by existing tests of intelligence. Grounded theories, in contrast, confine the concept of intelligence to the set of mental abilities actually tested on IQ tests. Adopting permissive definitions of the concept of intelligence serves to obscure what is absent from extant IQ tests.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "A Grounded Theory of Intelligence段落前"
+        }
+      ]
+    },
+    {
+      "claim": "理性不是天生的单一能力，不存在\"理性的g因子\"。CART包含20个子测验和4个思维倾向量表，涵盖工具理性（在给定资源下最大化目标实现）和认知理性（信念与真实世界结构的一致性）两个维度。思维倾向与理性呈倒U形关系，是达致理性的手段而非目的本身。理性是连续变量而非分类概念。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "There is no way to train for rational thinking across the board. What I mean is that there is no training program that will generalize to all aspects of rational thinking. This is because there is no g-factor of rational thinking. Rationality is a multifarious concept. This is reflected in the fact that the CART has 20 subtests and four thinking dispositions scales (the latter are not part of the total score but just for informational purposes). Collectively they tap both instrumental rationality and epistemic rationality. In cognitive science, instrumental rationality means behaving in the world so that you get exactly what you most want, given the resources (physical and mental) available to you. Epistemic rationality concerns how well beliefs map onto the actual structure of the world.",
+          "source_file": "exa_4_Five Minutes with Keith E. Stanovich, Richard F. West, and Maggie E ....md",
+          "location": "第5段回答（关于理性是否可训练的问题）"
+        },
+        {
+          "excerpt": "They are not part of the total score on the test because, among other things, the maximum score on a thinking disposition measure is not to be equated with the maximal rationality. Optimal functioning on these measures is traced instead by an inverted Ushaped function. Maximizing these dispositions is not the criterion of rational thought itself. Thinking dispositions such as these are a means to rationality, not ends in themselves. For this reason, thinking dispositions subscales are segregated in the CART and not treated as direct measures of rational thinking themselves.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "Table 2说明第四列部分"
+        },
+        {
+          "excerpt": "Rationality is a multifarious concept. It is unlikely to yield as substantial a g-factor as is the case with intelligence (Deary, 2013; Hunt, 2011). Thus, assessment might be logistically difficult and reporting outcomes from a rational thinking test might be complex. However, we should not shirk from measuring something just because it is logistically difficult—particularly if the domain is important.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "COMPLICATIONS段落末尾"
+        },
+        {
+          "excerpt": "To a layperson, lingering associations with the Aristotelian categorical view may well make the term \"irrationality\" sound more cutting than it actually is. As cognitive scientists, we could do better to signal that it is the noncategorical, continuous sense of \"rationality\" and \"irrationality\" that we use in our science. When we find a behavioral pattern that is less than optimally rational, we could easily say that it is \"less than perfectly ratio-nal\" rather than that it is irrational—with no loss of the intended meaning. Perhaps if this had been the habit in the literature, the Great Rationality Debate in cognitive science (Bishop & Trout, 2005; Cohen, 1981; Kelman, 2011; Stanovich, 1999, 2004; Stein, 1996; Tetlock & Mellers, 2002) would not have become so heated.",
+          "source_file": "tavily_10_[PDF] toward a test of rational thinking _ Keith Stanovich, Richard West ....md",
+          "location": "素材第1段"
+        },
+        {
+          "excerpt": "We follow many cognitive science theorists in recognizing two types of rationality: instrumental and epistemic (Manktelow, 2004; Over, 2004). The simplest definition of instrumental rationality, the one that most emphasizes that it is grounded in the practical world, is this: behaving in the world so that you get exactly what you most want, given the resources (physical and mental) available to you. Somewhat more technically, we could characterize instrumental rationality as the optimization of the individual's goal fulfillment. Economists and cognitive scientists have refined the notion of optimization of goal fulfillment into the technical notion of expected utility. Epistemic rationality concerns how well beliefs map onto the actual structure of the world.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "RATIONALITY IN COGNITIVE SCIENCE段落"
+        },
+        {
+          "excerpt": "The simplest definition of instrumental rationality is: behaving in the world so that you get exactly what you most want, given the resources (physical and mental) available to you. Epistemic rationality concerns how well beliefs map onto the actual structure of the world. Manktelow (2004) has emphasized the practicality of both types of rationality by noting that they concern two critical things: what is true and what to do.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "Rationality: Instrumental and Epistemic段落"
+        },
+        {
+          "excerpt": "Continuous definitions of rationality motivate cognitive reform, because most people are less than optimally rational, and thus most people can improve their rational thinking tendencies.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "Rationality in Cognitive Science段落末尾"
+        },
+        {
+          "excerpt": "We follow many cognitive science theorists in recognizing two types of rationality: instrumental and epistemic (Manktelow, 2004; Over, 2004). The simplest definition of instrumental rationality is: Behaving in the world so that you get exactly what you most want, given the resources (physical and mental) available to you. Somewhat more technically, we could char-acterize instrumental rationality as the optimization of the individual's goal fulfillment. Economists and cognitive scientists have refined the notion of optimization of goal fulfillment into the technical notion of expected utility.",
+          "source_file": "tavily_10_[PDF] toward a test of rational thinking _ Keith Stanovich, Richard West ....md",
+          "location": "素材第2段"
+        }
+      ]
+    },
+    {
+      "claim": "CART测试的独特框架在于混合过程考量和知识考量：既评估认知吝啬等过程问题，也评估促进性知识（数感、金融素养）和抑制性知识（\"污染心智软件\"——迷信、反科学态度、阴谋信念、功能失调的个人信念）。成功表现需要检测Type 1反应不足、抑制直觉反应、并通过心智软件（mindware）生成更好的替代反应。心智软件来自学习经验，支持理性的集中在概率、因果和科学推理领域。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The framework for the CART is unique in that it provides a mix of process considerations and knowledge considerations. Critical thinking assessment, for example, is often criticized for its overemphasis on process issues and for its failure to acknowledge that no thinking can be rational or critical without requisite knowledge. In contrast, the CART assesses critical knowledge bases (numeracy, financial literacy, risk knowledge) while also measuring the tendency to acquire problematic knowledge (superstitions, anti-science attitudes, conspiracy theories). Of course, the CART also assesses processing issues related to rationality under the general rubric of miserly information processing. But the knowledge components of the CART might be particularly prone to change over time",
+          "source_file": "exa_4_Five Minutes with Keith E. Stanovich, Richard F. West, and Maggie E ....md",
+          "location": "第4段回答（关于CART分数是否随时间变化的问题）"
+        },
+        {
+          "excerpt": "However, I have discussed in previous publications (Stanovich, 2004, 2009, 2011) how not all mindware is helpful or useful in fostering rationality. Indeed, the presence of certain kinds of mindware is often precisely the problem. I coined the category label contaminated mindware for the presence of declarative knowledge bases that foster irrational rather than rational thinking.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "Table 2说明，第三列部分"
+        },
+        {
+          "excerpt": "The third column from the left in Table 2 lists the four categories of contaminated mindware that are assessed on the CART: superstitious thinking, antiscientific attitudes, conspiracy beliefs, and dysfunctional personal beliefs.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "Table 2说明紧接上文"
+        },
+        {
+          "excerpt": "From a processing standpoint, the necessity of overriding Type 1 processing must be detected. Then the intuitive response primed by Type 1 processing must be inhibited and the normative response must be retrieved or synthesized and then substituted by Type 2 processing. In addition to these processing requirements, successful performance on heuristics and biases tasks requires the presence of several important knowledge bases. The knowledge, rules, and strategies that can be retrieved and used to replace a Type 1 intuitive response have been referred to as mindware (see Stanovich, West, & Toplak, 2011), a term coined by David Perkins in a 1995 book.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "THE CART AND THE HEURISTICS AND BIASES LITERATURE后半段"
+        },
+        {
+          "excerpt": "During the simulation process, declarative knowledge and strategic rules (linguistically-coded strategies) are used to transform a decoupled representation. The knowledge, rules, procedures, and strategies that can be retrieved and used to transform decoupled representations have been referred to as mindware, a term coined by Perkins (1995).",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "三分架构详细模型段落，mindware描述"
+        },
+        {
+          "excerpt": "The knowledge structures that support rational thought are specialized. They cluster in the domains of probabilistic reasoning, causal reasoning, and scientific reasoning. In contrast, the crystallized knowledge assessed on IQ tests is deliberately designed to be nonspecialized.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "Why Rationality Is a More Encompassing Construct段落，晶体智力讨论"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇论证CART不受\"理性标准主观\"批评的影响：工具理性任务接受受试者的目标为前提，只评估偏好一致性；当受试者被指出犯错后，大多数会承认违反了自己本想遵循的理性原则。CART只使用理性规范无争议的项目。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "There are two reasons that this is not an issue for the CART. The first is that the tasks used to operationalize instrumental rationality in the CART are relativistic in a certain sense. These tasks are designed to accept the goals of the subject as given. Recall from above that instrumental rationality means behaving in the world so that you get exactly what you most want, given the resources (physical and mental) available to you. Somewhat more technically, economists and cognitive scientists have refined the notion of optimization of goal fulfillment into the technical notion of expected utility. Utility theory as a normative model takes a person's goals as they are and simply asks if the preferences the person displays satisfy certain consistency relationships (the so-called axioms of choice).",
+          "source_file": "exa_4_Five Minutes with Keith E. Stanovich, Richard F. West, and Maggie E ....md",
+          "location": "chunk2第2段"
+        },
+        {
+          "excerpt": "Take a very basic principle of rational choice, transitivity (not tested in the CART, but many similar axioms are). Transitivity says that if you prefer A to B and B to C, then you should prefer A to C. If, instead, you prefer A to B and prefer B to C and prefer C to A, you have violated the transitivity axiom and (it has been shown) you cannot be maximizing utility. You are not instrumentally rational. The content of A, B, and C do not matter to the axiom. It is relativistic in that sense. It doesn't care what the content of the options are, only that you stay consistent.",
+          "source_file": "exa_4_Five Minutes with Keith E. Stanovich, Richard F. West, and Maggie E ....md",
+          "location": "chunk2第3段"
+        },
+        {
+          "excerpt": "There is also a second reason why the CART is not vulnerable to criticisms that responses on it should be scored another way. It has been found that subjects who have missed an item will most frequently, when the error is pointed out, agree that they have violated a principle of rational thinking that, in general, they would want to follow. In short, when presented with a rational choice axiom that they have just violated in a choice situation, most subjects will actually endorse the axiom. That subjects endorse the strictures of rationality when presented with them explicitly suggests that they acknowledge the normative force of the axioms of rational choice. We have only used items in the CART for which the rational thinking norms are uncontroversial.",
+          "source_file": "exa_4_Five Minutes with Keith E. Stanovich, Richard F. West, and Maggie E ....md",
+          "location": "chunk2最后一段"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇在语音意识研究中展现了严格的方法论立场：主张对实验范式进行任务比较分析，通过广泛采样任务类型、语音对比位置和指导语措辞来验证构念效度。他发现非押韵语音意识任务具有高度共同方差（平均相关.62），因子分析仅提取一个因子，且简短语音任务对后续阅读的预测力等于或优于IQ和阅读准备测试。仅两个变量即可解释66.2%的一年级阅读方差。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Without careful task analysis and comparison it will remain unclear to what extent the predictive power of these tasks resides in the phonological ability or the other extraneous cognitive processes.",
+          "source_file": "paper_Assessing phonological awareness in kindergarten children_ I.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "The present authors are not the first to recognize that a lack of direct task comparisons is the current Achilles’ heel of the phonological awareness literature.",
+          "source_file": "paper_Assessing phonological awareness in kindergarten children_ I.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "In short, the phonological task domain was widely sampled in terms of task type, location of phonological contrast, and task instructions.",
+          "source_file": "paper_Assessing phonological awareness in kindergarten children_ I.md",
+          "location": "第6段"
+        },
+        {
+          "excerpt": "The seven nonrhyming tasks were highly interrelated. Despite the differing task requirements there was every indication that these tasks were tapping a similar construct. The mean correlation between the seven tasks was quite high, considering the reliability of the measures.",
+          "source_file": "paper_Assessing phonological awareness in kindergarten children_ I.md",
+          "location": "讨论部分第2段"
+        },
+        {
+          "excerpt": "Factor analysis revealed only one factor on which all the nonrhyming phonological tasks loaded highly.",
+          "source_file": "paper_Assessing phonological awareness in kindergarten children_ I.md",
+          "location": "摘要"
+        },
+        {
+          "excerpt": "Stepwise regression stopped after only two variables had entered the equation. Together, these two variables accounted for 66.2% of the variance in reading ability (adjusted R* = .638).",
+          "source_file": "paper_Assessing phonological awareness in kindergarten children_ I.md",
+          "location": "讨论部分第2段"
+        },
+        {
+          "excerpt": "three of the seven nonrhyming phonological measures (each containing 10 items and taking less than 10 min to administer) predicted first-grade reading ability as well as a standardized readiness test containing six different subsections, and all of the nonrhyming phonological measures were superior to an omnibus IQ test.",
+          "source_file": "paper_Assessing phonological awareness in kindergarten children_ I.md",
+          "location": "结果部分最后一段"
+        },
+        {
+          "excerpt": "The prereading readiness test correlated 52 with first-grade reading ability and the correlation between the raw score on the Otis-Lennon and reading ability was .25.",
+          "source_file": "paper_Assessing phonological awareness in kindergarten children_ I.md",
+          "location": "结果部分最后一段"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇在研究设计上保持务实：当多重统计指标一致时，即使样本量与变量比不够理想，仍认为数据模式稳健。他既保持统计谨慎，又不因方法论完美主义而拒绝实质性结论。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Although caution in interpreting multivariate statistics is always advised when the subjects to variables ratio is in the range employed in our investigation, the convergence of all of the analyses suggests that the data patterns are probably robust.",
+          "source_file": "paper_Assessing phonological awareness in kindergarten children_ I.md",
+          "location": "讨论部分第2段"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇的双过程理论核心假设：人类天生是认知吝啬鬼，默认使用低计算成本的Type 1加工。Type 1自主快速但精度有限，Type 2功能强大但计算昂贵缓慢。现代技术社会对仅依赖自动反应的人充满敌意，认知吝啬倾向严重阻碍目标实现。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Humans are cognitive misers because their basic tendency is to default to Type 1 processing mechanisms of low computational expense. Using less computational capacity for one task means that there is more left over for another task if they both must be completed simultaneously. This would seem to be adaptive. Nevertheless, this strong bias to default to the simplest cognitive mechanism—to be a cognitive miser—means that humans are often less than rational.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "引言第4段"
+        },
+        {
+          "excerpt": "Type 1 processes are low in computational power but have the advantage that they are low in cost. These mechanisms cannot solve a wide range of problems and do not permit fine-grained accuracy, but they are fast acting, do not interfere with other ongoing cognition, require little concentration, and are not experienced as aversive.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "引言第3段"
+        },
+        {
+          "excerpt": "Modern technological societies are in fact hostile environments for people reliant on only the most easily computed automatic response (see Kahneman, 2011; Stanovich, 2004; Sunstein, 2013; Thaler & Sunstein, 2008).",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "引言第4段"
+        },
+        {
+          "excerpt": "That humans are cognitive misers has been a major theme throughout the past 40 years of research in psychology and cognitive science. When approaching any problem, our brains have available various computational mechanisms for dealing with the situation. These mechanisms embody a trade-off, however. The trade-off is between power and expense. Some mechanisms have great computational power—they can solve a large number of novel problems with great accuracy. However, this power comes with a cost. These mechanisms take up a great deal of attention, tend to be slow, tend to interfere with other thoughts and actions we are carrying out, and require great concentration that is often experienced as aversive (the Type 2 processing just discussed). Humans are cognitive misers because their basic tendency is to default to other less accurate processing mechanisms of low computational expense (the Type 1 processing just discussed).",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "THE CART TASKS AND FRAMEWORK段落，左列第二行起"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇认为CRT是测量认知吝啬加工的黄金标准。CRT的独特之处在于先触发强有力但错误的直觉反应，受试者必须压制这一优势反应。CRT的错误模式不同于传统顿悟问题：顿悟问题失败是因为想不出方案，CRT失败是因为吝啬加工阻止了对错误直觉的压制。CRT本质上是认知吝啬倾向的行为测量，而非自我报告，这解释了它为何比认知能力测试更能预测理性思维差异。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The three problems on the CRT are of interest to researchers working in the dual-process tradition because a strong alternative response is initially primed and then must be overridden.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "引言第5段"
+        },
+        {
+          "excerpt": "They found that the CRT was a better predictor of rational thinking than either measures of intelligence or measures of executive functioning. Several of the regression analyses conducted indicated that the CRT could predict rational thinking performance independent of not only intelligence but also executive functioning and thinking dispositions. In fact, in all of the analyses, the CRT by itself accounted for more unique variance explained than the block of cognitive ability measures (intelligence). This is astounding predictive performance for a three-item measure!",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "引言第6段"
+        },
+        {
+          "excerpt": "In this study, we showed that the CRT is a more potent predictor of performance on a wide sample of tasks from the heuristics-and-biases literature than measures of cognitive ability, thinking dispositions, and executive functioning. Although the CRT has a substantial correlation with cognitive ability, a series of regression analyses indicated that the CRT was a unique predictor of performance on heuristics-and-biases tasks. It accounted for substantial additional variance after the other measures of individual differences had been statistically controlled. We conjecture that this is because neither intelligence tests nor measures of executive functioning assess the tendency toward miserly processing in the way that the CRT does.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "This problem and the two others on the CRT seem at first glance to be similar to the well-known insight problems in the problem-solving literature, but they in fact display a critical difference. Classic insight problems do not usually trigger an attractive alternative response. Instead, the participant sits lost in thought trying to reframe the problem correctly. The three problems on the CRT are of interest to researchers working in the heuristics-and-biases tradition because a strong alternative response is initially primed and then must be overridden.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "引言部分"
+        },
+        {
+          "excerpt": "They give the first response that comes to mind—10 cents—without thinking further and realizing that this cannot be right. The bat would then have to cost $1.10, and the total cost would then be $1.20 rather than the required $1.10. People often do not think deeply enough to realize their error, and cognitive ability is no guarantee against making the error.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "引言部分，bat/ball问题描述"
+        },
+        {
+          "excerpt": "Interpreted in this way, the CRT becomes in part a measure of rational thought, rather than a distal predictor or an underlying ability supporting rational thought. This type of interpretation is consistent with its high correlation with the rational-thinking composite score. In short, the CRT is a measure of the tendency toward the class of reasoning error that derives from miserly processing. This may be why the predictive power of the CRT is in part separable from cognitive ability. Intelligence tests do not assess the tendency toward miserly processing in the way that the CRT does. Instead, the former measures computational power that is available to the participant, but not necessarily the depth of processing that is typically used in most situations.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Discussion段落，CRT作为吝啬测量"
+        },
+        {
+          "excerpt": "the CRT might be a particularly potent measure of miserly tendencies because of its logic of construction: It is a performance measure rather than a self-report measure. That is, it is not a questionnaire measure on which people indicate their preferences for engagement—for example, as the need-for-cognition scale does (Cacioppo, Petty, Feinstein, & Jarvis, 1996). Instead, the tendency to accept heuristically triggered responses is measured in a real performance context where participants are searching for an accurate solution. The CRT measures miserliness in action, so to speak. It is a direct measure of miserly processing rather than an indirect self-report indicator.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Discussion段落，CRT作为行为测量"
+        },
+        {
+          "excerpt": "the CRT is unlike traditional insight tasks in the reasoning literature (Gilhooly & Fioratou, 2009). Insight problems are not failed because the participant fails to think enough; often, they spend minutes immersed in intense thought, but nonetheless fail to derive the correct solution. In traditional insight problems (e.g., the nine-dot problem), participants spend a long time thinking because no viable solution at all occurs to them. The type of error made on the CRT is different. On this test, an incorrect answer is initially primed. However, miserly processing ensures that it is not overridden and replaced by a superior response.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Discussion段落，CRT与顿悟问题对比"
+        },
+        {
+          "excerpt": "The potency of the CRT as a predictor of performance on heuristics-and-biases tasks certainly does not derive from its ability to assess knowledge gaps, because it clearly does no such thing. In contrast, the CRT does seem highly relevant to the idea of humans as cognitive misers. As mentioned in the introduction, the CRT is unlike traditional insight tasks in the reasoning literature (Gilhooly & Fioratou, 2009). Insight problems are not failed because the participant fails to think enough; often, they spend minutes immersed in intense thought, but nonetheless fail to derive the correct solution. In traditional insight problems (e.g., the nine-dot problem), participants spend a long time thinking because no viable solution at all occurs to them. The type of error made on the CRT is different. On this test, an incorrect answer is initially primed. However, miserly processing ensures that it is not overridden and replaced by a superior response.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "chunk 10，第2-3段"
+        },
+        {
+          "excerpt": "uses declarative knowledge and strategic rules (linguistically coded strategies). Gaps in these knowledge structures represent a second major class of reasoning error. If one is going to trump a heuristic response with conflicting information or a learned rule, one must have previously learned the information or the rule. Rational-thinking errors due to such knowledge gaps can occur in a potentially large set of coherent knowledge bases in the domains of probabilistic reasoning, causal reasoning, logic, and scientific thinking (the importance of alternative hypotheses, etc.).",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "chunk 10，第1段"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇敏锐指出CRT面临的实践困境：经典题目因广泛传播而逐渐失去效度，三题版本信度不足，且在非精英样本中存在地板效应（平均正确仅0.5题）。CRT4与CRT3呈中等相关（r=.58），合并为七题版本后alpha达0.72。CRT4在预测思维倾向方面优于CRT3（尤其AOT: .45 vs .29），而CRT3在预测理性思维任务上更强。七题版本可稀释单题污染影响。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The items are becoming extremely well known—especially the famous bat-and-ball item. The latter is used in countless classroom demonstrations now, and it has appeared in many magazines and famous books—most notably Daniel Kahneman’s rightly lauded and extensively reviewed Thinking, Fast and Slow (2011). From the standpoint of reliability, three items is obviously too few.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "引言第7段"
+        },
+        {
+          "excerpt": "Thus the CRT is badly in need of supplement and extension.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "引言第8段"
+        },
+        {
+          "excerpt": "the four new items displayed a moderately high correlation of .58 with the three original items. There were indications that the four new items, although valid CRT items, were somewhat less perfect indicators than the original three items. The median correlation among the three CRT3 items was .40, whereas the median correlation among the items of CRT4 was .21.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "结果部分第1-2段"
+        },
+        {
+          "excerpt": "The internal consistently of the seven items, considered together, was quite substantial. All 21 inter-item correlations were positive and all but one were statistically significant. The median inter-item correlation was .27, the mean was .29, and Cronbach’s alpha was 0.72.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "结果部分第3段"
+        },
+        {
+          "excerpt": "the four new items had a substantial correlation with the classic three and when amalgamated to form a seven-item scale, the composite scale displayed substantial internal consistency.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Table 1下方总结段落"
+        },
+        {
+          "excerpt": "Our data show that a researcher who wished to substitute CRT4 for CRT3 (perhaps due to the familiarity issues discussed above) would be amply justified, given our results. The two forms had a substantial .58 correlation. CRT3 and CRT4 had similar correlations with the rational thinking composite score (.52 and .48, respectively, see Table 2). CRT4 actually had a higher correlation with the thinking dispositions composite score than did CRT3 (.42 versus .30).",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Discussion部分，CRT4替代性段落"
+        },
+        {
+          "excerpt": "The need for an alternative is clear because of the increasing exposure that the three classic items are getting—particularly the bat-and-ball problem, which has appeared in books and magazines and is a common classroom demonstration. Alternatively, a seven-item version could be used, providing a more comprehensive test and one that would submerge (that is, attenuate) the effect of any contamination from the bat-and-ball item.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Discussion开头段落"
+        },
+        {
+          "excerpt": "the CRT3 is known to be a difficult test and scores on it are very low even among elite populations (Frederick, 2005). Among non-elite samples floor effects might be a problem. Our sample, and a sample at the University of Toledo (see Frederick, 2005), answered only one-half of one item correct. The CRT4, on the other hand, is at least somewhat easier than the CRT3. The mean probability of answering an item correct on the CRT3 is .17, whereas the mean probability of answering an item correct on the CRT4 is .24.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Discussion部分，CRT4优势段落"
+        },
+        {
+          "excerpt": "Regarding the thinking dispositions, CRT4 was the most potent predictor in all four cases, and explained significant unique variance in three of four cases. Regarding the five rational thinking tasks that did show a relationship with the CRT, the results were more mixed but favoured CRT3 as the more potent predictor.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Table 3分析段落"
+        },
+        {
+          "excerpt": "The first regression in Table 4 indicates that CRT3 and CRT4 were both independent predictors of the rational thinking composite score (8.5% and 4.8% of the variance, respectively).",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Table 4第一回归分析段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇采用多维度的个体差异框架测量理性思维：除认知能力外，还测量认知需求（NFC）、主动开放思维（AOT）、反迷信思维（ST）和未来后果考量（CFC）四种思维倾向。这体现了理性不仅取决于算法心智的计算效率，还取决于反思心智的思维倾向——一个人是否愿意投入认知资源进行深度思考。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In order to situate the seven-item version within the overall space of individual differences, we also assessed cognitive ability (intelligence and executive functioning) and four different thinking dispositions (Need for Cognition, Actively Openminded Thinking, Superstitious Thinking, and Consideration of Future Consequences).",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "方法部分概述段落"
+        },
+        {
+          "excerpt": "This 41-item measure is scored in the direction that higher scores represented a greater tendency towards openminded thinking (Stanovich & West, 1997, 2007). Examples of items are “People should always take into consideration evidence that goes against their beliefs”, “Certain beliefs are just too important to abandon no matter how good a case can be made against them” (reverse scored), and “No one can talk me out of something I know is right” (reverse scored).",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "AOT量表描述段落"
+        },
+        {
+          "excerpt": "Intelligence, however, is not an exhaustive measure of cognitive functioning. For one thing, intelligence tests fail to tap important metacognitive strategies and cognitive styles that are critical components of what has been termed the reflective mind (Sinatra & Pintrich, 2003; Stanovich, 2009, 2011; Sternberg, 2003).",
+          "source_file": "exa_8_[PDF] Development, Cognitive Abilities, and Thinking Dispositions | Maggie Topla.md",
+          "location": "Convergence Across Different Measures of Cognitive Sophistication段落中段"
+        }
+      ]
+    },
+    {
+      "claim": "信念偏见三段论推理任务是斯坦诺维奇研究理性思维偏离的标志性方法：将信念内容与逻辑形式制造冲突，检验人们是否在逻辑判断中被先验信念绑架。在Wason选择任务中他展现了评分灵活性，援引Margolis的\"开放解读\"论证，体现多元视角不被单一标准束缚。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Each problem was worded such that the validity judgement was in conflict with the believability of the conclusion. There were two types of these so-called inconsistent syllogisms. One type of inconsistent syllogism had a believable conclusion but an invalid format... The other type had an unbelievable conclusions in a logically valid format... Problems of this type have typically been thought to mirror the critical thinking skill of being able to put aside one’s prior knowledge and reason from new premises.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "信念偏见任务描述段落"
+        },
+        {
+          "excerpt": "Because correct responding on nondeontic versions is typically so low, we also scored P-only choosers as correct (see Toplak & Stanovich, 2002), an alternative task construal championed by Margolis (1987). He has argued that turning the P card only is an appropriate response if the participant has adopted a so-called “open” reading of the rule—one where the cards represent classes rather than individual exemplars.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "选择任务描述段落"
+        }
+      ]
+    },
+    {
+      "claim": "偏差盲点揭示了元认知层面的关键非理性：人们系统性地认为自己比他人更不易受认知偏差影响，即使被告知偏差机制后依然如此。框架效应和偏差盲点与CRT、认知能力和思维倾向均不相关，表明这些偏差具有不同的个体差异结构，可能不受一般认知能力驱动。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Participants rated other students as more likely to commit the bias than themselves (all ps < .01). A composite bias blind spot score was derived by summing the self/other difference scores for the four items (M = 1.74, SD = 2.18), t(159) = 10.07, p < .001; Cronbach’s alpha was .57.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "偏差盲点描述段落"
+        },
+        {
+          "excerpt": "Neither CRT measure predicted performance on the framing task or in the bias blind spot task. However, measures of cognitive ability and thinking dispositions also failed to correlate with these two tasks.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Table 2下方框架效应段落"
+        },
+        {
+          "excerpt": "This lack of association of individual difference variables with performance on the bias blind spot task is not surprising because we have previously found it to be fairly independent of cognitive ability (West, Meserve, & Stanovich, 2012). Framing performance also tends to be independent of cognitive ability when assessed in a between-participants context (Stanovich & West, 2008), but sometimes shows relationships with cognitive ability in within-participants designs like this one (Stanovich & West, 1998b). Perhaps it is because the two versions were widely separated in our battery that framing failed to correlate with either the CRT or cognitive ability.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Discussion部分，框架效应与偏差盲点段落"
+        }
+      ]
+    },
+    {
+      "claim": "CRT存在显著性别差异，男性表现优于女性，CRT3和CRT4上效应量相似（Cohen's d约0.64-0.65），复制了Frederick(2005)的发现。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Frederick (2005) reported that there was a highly significant sex difference on CRT3—a difference of almost a half an item correct. We replicated his finding of significantly better performance by males on CRT3 (M ¼ .81 versus .29), t(158) ¼ 3.94, p < .001. Likewise, we found a gender difference of about the same magnitude and in the same direction on CRT4 (M ¼ 1.38 versus .71), t(158) ¼ 4.03, p < .001. The effect size of .652 for CRT4 (Cohen's d) was similar to the effect size of .637 for CRT3.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Table 1后性别差异段落"
+        }
+      ]
+    },
+    {
+      "claim": "CRT7在预测理性思维综合分数时是比认知能力和思维倾向更强的独立预测变量（独特方差11.4% vs 3.8%）。但在预测大学成绩时，思维倾向是最强预测变量（10.3%独特方差），CRT7未能预测独特方差，表明思维倾向对学业成就的独特贡献超过认知反思能力。",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "the second regression analysis in Table 4 regresses the rational thinking composite on the three main predictor variables: CRT7, cognitive ability, and the thinking dispositions composite. This analysis addresses the question investigated in Toplak et al. (2011)—whether the CRT predicts rational thinking merely because of its association with cognitive ability and thinking dispositions. In this simultaneous regression CRT7 is the dominant unique predictor, explaining 11.4% unique variance, followed by the cognitive ability (WASI) which explained a statistically significant 3.8% unique variance. The thinking dispositions composite did not predict unique variance.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Table 4分析段落"
+        },
+        {
+          "excerpt": "The third regression in Table 4 removes CRT7 from the equation and demonstrates that thinking dispositions are a significant independent predictor (3.4% unique variance) when only cognitive ability is partialled out.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Table 4第三回归分析段落"
+        },
+        {
+          "excerpt": "the final analysis in Table 4 regresses college average on CRT7, cognitive ability, and the thinking dispositions composite. In the simultaneous regression only thinking dispositions and cognitive ability predicted unique variance, with the former being the stronger independent predictor (10.3% unique variance versus 5.4% unique variance).",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Table 4最后回归分析段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇认为CRT不应被视为理性思维的远端预测变量，而应被解释为对理性思维的直接测量——它测量人们接受Type 1直觉反应的程度，而吝啬加工正是大量非规范反应的来源。CRT与理性思维的相关性（.49）高于其与认知能力的相关性（.32-.40）。CRT跨越了认知能力和思维倾向的边界：既具有最优表现测量特征，又包含典型表现测量特征。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Consistent with the results of Toplak et al. (2011), in this study we demonstrated that an expanded CRT was a substantial unique predictor of rational thinking performance independent not only of cognitive ability, but also of a fairly comprehensive set of thinking dispositions. This predictive power derives, we speculate, because the CRT is a strong indicator of the miserly processing that, in dual process theory, is the source of much non-normative responding. On this view, the CRT could be interpreted as an actual measure of rational thought, rather than as a distal predictor or an underlying ability supporting rational thought.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Discussion部分，CRT作为理性思维测量段落"
+        },
+        {
+          "excerpt": "This may be why the predictive power of the CRT is in part separable from cognitive ability. The latter measures computational power that is available to the individual, but not necessarily the depth of processing that is typically used in most situations. Intelligence tests do not assess the tendency towards miserly processing in the way that the CRT does. Instead, in the CRT, the tendency to accept Type 1 responses is measured in a real performance context where people are searching for an accurate solution.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Discussion部分，CRT与智力测验区别段落"
+        },
+        {
+          "excerpt": "the CRT appears to be a somewhat complex measure. It seems to carry properties across the boundary of an important distinction in classical personality and psychometric work—that is, the distinction between cognitive abilities and thinking dispositions. This conceptual distinction follows from differentiating optimal (sometimes termed maximal) performance situations and typical performance situations. [...] The CRT, in fact, may derive its potency as a predictor from the fact that it taps both a cognitive ability dimension and a thinking disposition dimension.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "引言部分，关于CRT心理结构的讨论"
+        },
+        {
+          "excerpt": "The CRT displayed its highest correlation with this composite score (.49), followed by its correlation with the heuristics-and-biases composite (.42) and its correlation with CA2 (.40), the cognitive ability indicator that combined the WASI composite with working memory performance. Thus, two characteristics of the CRT appear to be that it has moderate overlap with cognitive ability and that it is a predictor of rational thinking.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Results部分，Table 2相关分析"
+        },
+        {
+          "excerpt": "The two components of rational thinking—avoidance of thinking biases on the heuristic-and-biases tasks and syllogistic reasoning independent of prior belief—displayed a moderate correlation with each other (.29). These two variables were standardized and added together to form a rational-thinking composite score. The CRT displayed its highest correlation with this composite score (.49), followed by its correlation with the heuristics-and-biases composite (.42) and its correlation with CA2 (.40), the cognitive ability indicator that combined the WASI composite with working memory performance.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Results段落，Table 1之后"
+        },
+        {
+          "excerpt": "the strongest correlate of performance on the rational-thinking composite score was, in fact, the CRT (r = .49). Cognitive ability was the next most potent zero-order predictor. The WASI displayed a correlation of .41 with the rational-thinking composite score and the summed standard scores of the WASI and the working memory task (CA2) displayed a correlation of .47.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Results段落，Table 2之前"
+        },
+        {
+          "excerpt": "the CRT might be a particularly potent measure of miserly tendencies because of its logic of construction: It is a performance measure rather than a self-report measure. That is, it is not a questionnaire measure on which people indicate their preferences for engagement—for example, as the need-for-cognition scale does (Cacioppo, Petty, Feinstein, & Jarvis, 1996). Instead, the tendency to accept heuristically triggered responses is measured in a real performance context where participants are searching for an accurate solution. The CRT measures miserliness in action, so to speak. It is a direct measure of miserly processing rather than an indirect self-report indicator.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "chunk 10，第5段"
+        },
+        {
+          "excerpt": "One astute reviewer mentioned the caution that in order to remain a performance measure rather than a self-report measure, the familiarity of the CRT items will need to be assessed. That is, we must be cautious about the growing publicity that the CRT is receiving. Clearly, if individuals become familiar with the items, the CRT can no longer be considered a performance measure. Most studies try to assess whether participants have seen the problems before. The ultimate answer will be in the generation of more CRT items that vary in their surface characteristics.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "chunk 10，脚注1"
+        }
+      ]
+    },
+    {
+      "claim": "CRT与理性思维任务的相关性不均匀：与信念偏差和分母忽视任务相关最高，因为这两个任务最直接代表'吝啬加工'。并非所有理性失败都属于吝啬加工——缺乏陈述性知识（科学思维、概率推理、金融素养）同样导致非理性。理性思维的两大成分（避免启发式偏差vs独立于信念的演绎推理）之间仅呈中等相关（r=.29），证明理性是多维构念。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "classifying the CRT as a rational thought indicator does not mean that it will correlate equally with every rational thinking task because rational thinking, in our framework, is multifarious (Stanovich, 2011; Stanovich et al., 2011).",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Discussion部分，理性思维多面性段落"
+        },
+        {
+          "excerpt": "Correlations with the CRT will also tend be higher with tasks where non-normative responding is due to miserly processing. However, not all failures of rational thinking are of this type (Stanovich & West, 2008). Less-rational responding can also be due to the fact that people have not acquired the proper declarative knowledge in domains such as scientific thinking, probabilistic reasoning, and financial and economic literacy.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Discussion部分末段"
+        },
+        {
+          "excerpt": "it should be noted that the CRT had its largest correlations with the two tasks (belief bias and denominator neglect) that, according to our taxonomy (Stanovich, 2011; Stanovich, West, & Toplak, 2011), are the two tasks in the current battery that most closely represent the rational thinking category of miserly processing.",
+          "source_file": "paper_Assessing miserly information processing_ An expansion of th.md",
+          "location": "Discussion部分，CRT最大相关段落"
+        },
+        {
+          "excerpt": "The two components of rational thinking—avoidance of thinking biases on the heuristic-and-biases tasks and syllogistic reasoning independent of prior belief—displayed a moderate correlation with each other (.29).",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Results部分，Table 2相关分析段落"
+        },
+        {
+          "excerpt": "Most measures were more correlated with performance on the heuristics-and-biases tasks than with performance on syllogistic reasoning with belief bias. This was particularly true of the thinking dispositions measures (.16 to .24 versus .04 to .15).",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Results段落，Table 2讨论"
+        }
+      ]
+    },
+    {
+      "claim": "CRT在控制WASI认知能力、三项执行功能和三项思维倾向后，仍能额外解释理性思维复合得分约11%的独特方差，是智力模块的两倍以上。共同性分析揭示CRT独特方差（10.8%）大于认知能力独特方差（7.4%），思维倾向独特方差仅1.6%。三组预测变量总共解释35.6%的理性思维方差。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The first block of variables entered were the WASI Vocabulary and WASI Matrix scores, and they accounted for 17.3% of the variance (p < .001). The second block of variables entered were the three executive-functioning measures, and they accounted for an additional 5.6% of the variance (p < .001). Entered third as a block were the three thinking disposition measures, and they accounted for an additional 2.1% of the variance (p < .05). Finally, scores on the CRT were entered into the equation and accounted for a substantial amount of unique variance (11.2%, p < .001).",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Results部分，Table 3回归分析"
+        },
+        {
+          "excerpt": "Finally, scores on the CRT were entered into the equation and accounted for a substantial amount of unique variance (11.2%, p < .001).\n\nThe results of this analysis clearly indicate that the CRT's ability to predict performance on rational-thinking tasks is not entirely due to its variance in common with cognitive ability—nor is it due to its variance in common with executive functioning in addition to cognitive ability. Finally, when the overlap with thinking disposition measures is partialed out as well, the CRT remains able to predict substantial unique variance.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Table 3分析段落"
+        },
+        {
+          "excerpt": "There we see that the CRT accounts for over twice as much unique variance (11.2% vs. 4.2%) as the next best predictor (the intelligence block).",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Table 3分析段落，唯一方差列讨论"
+        },
+        {
+          "excerpt": "The first row indicates the unique variance in the rational-thinking composite explained by each of the predictors. The next row displays the explained variance in the rational-thinking composite that is common to the CRT and the cognitive ability block (10.2%). The third row displays the explained variance in the rational-thinking composite that is common to the CRT and the thinking dispositions block (0.5%). The fourth row displays the explained variance in the rational-thinking composite that is common to the cognitive ability block and the thinking dispositions block (2.8%). The fifth row indicates that the explained variance in the rational-thinking composite that is common to all three predictors is 2.3%. All of the variance components added together (.108 + .074 + .016 + .102 + .005 + .028 + .023) sum to the total variance explained in the rational-thinking composite score by the three groups of predictors: 35.6%.",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Discussion段落，共同性分析部分"
+        },
+        {
+          "excerpt": "The criterion variable in this final hierarchical regression analysis was the rational-thinking composite score. The first block of variables entered were the WASI Vocabulary, WASI Matrix, and working memory scores, and they accounted for 22.7% of the variance (p < .001). The second block of variables entered were the three thinking disposition measures, and they accounted for an additional 2.1% of the variance (p < .05). Finally, scores on the CRT were entered into the equation and accounted for a substantial amount of unique variance (10.8%, p < .001). The far right column indicates that the CRT was the more potent unique predictor of the three (10.8% unique variance vs. 7.4% and 1.6%).",
+          "source_file": "paper_The Cognitive Reflection Test as a predictor of performance.md",
+          "location": "Table 3最后一组回归分析段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇主张批判性思维应被重新定位为理性思维的子类。批判性思维缺乏与认知科学数据和理论的深度联系，而理性概念与现代认知科学紧密交织。批判性思维的基础技能是去情境化——将推理与先前信念、生动例子和情境线索分离的能力。教育的终极目标是使学生更理性。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Grounding critical thinking within the concept of rationality in this manner has many conceptual advantages. First, the concept of rationality is deeply intertwined with the data and theory of modern cognitive science in a way that the concept of critical thinking is not. In addition, as I argued earlier in this article, theory in cognitive science differentiates rationality from intelligence and explains why rationality and intelligence often dissociate. This finding, and its explanation, confirms a long-standing belief in education that intelligence does not guarantee critical thinking.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "RATIONAL THINKING SUBSUMES CRITICAL THINKING段落"
+        },
+        {
+          "excerpt": "We can see that it is rationality, and not critical thinking per se, that is the ultimate goal of education by conducting some simple thought experiments or imaginative hypotheticals. For example, we could imagine a person with excellent epistemic rationality (his or her degree of confi dence in propositions being well calibrated to the available evidence relevant to the proposition) and optimal practical rationality (the person optimally satisfi es desires) who was not actively open-minded—that is, who was not a good critical thinker under standard assumptions. Of course we would still want to mold such an individual's dispositions in the direction of open-mindedness for the sake of society as a whole. But the essential point for the present discussion is that, from a purely individual perspective, we would now be hard pressed to fi nd reasons why we would want to change such a person's thinking dispositions—whatever they were—if they had led to rational thought and action in the past.",
+          "source_file": "exa_1_[PDF] A Framework for Critical Thinking, Rational Thinking, and Intelligence.md",
+          "location": "批判性思维服务于理性思维部分"
+        },
+        {
+          "excerpt": "The emphasis on unbiasedness in reasoning has led many theorists to highlight the importance of decontextualization as the foundational skill of critical thinking thought (see Paul, 1984, 1987; Siegel, 1988). For example, Kelley (1990) argues that \"the ability to step back from our train of thought . . . . is a virtue because it is the only way to check the results of our thinking, the only way to avoid jumping to conclusions, the only way to stay in touch with the facts\" (p. 6).",
+          "source_file": "exa_1_[PDF] A Framework for Critical Thinking, Rational Thinking, and Intelligence.md",
+          "location": "批判性思维基础技能部分，去情境化讨论"
+        }
+      ]
+    },
+    {
+      "claim": "理性思维任务的表现与认知成熟度一致相关，无论按年龄、认知能力还是思维倾向衡量。更具认知复杂性的个体更倾向于给出规范性反应。思维倾向与智力的相关性仅为弱到中等（通常低于0.30），在控制智力后仍能独立预测启发式与偏差任务表现。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "All 5 reasoning domains were consistently related to cognitive sophistication regardless of how it was indexed (age, cognitive ability, thinking dispositions).",
+          "source_file": "exa_8_[PDF] Development, Cognitive Abilities, and Thinking Dispositions | Maggie Topla.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "the data on thinking dispositions and cognitive ability have tended to converge in empirical investigations. Specifically, the same rational thinking tasks that correlate with cognitive ability also correlate with thinking dispositions, and those that fail to correlate with cognitive ability also fail to correlate with thinking dispositions",
+          "source_file": "exa_8_[PDF] Development, Cognitive Abilities, and Thinking Dispositions | Maggie Topla.md",
+          "location": "Convergence Across Different Measures of Cognitive Sophistication段落"
+        },
+        {
+          "excerpt": "It is clear from Figure 8.1 why rationality and intelligence can become dissociated. As long as variation in thinking dispositions is not perfectly correlated with fl uid intelligence, there is the statistical possibility of dissociations between rationality and intelligence. Substantial empirical evidence indicates that individual differences in thinking dispositions and intelligence are far from perfectly correlated. Many different studies involving thousands of subjects (e.g., Ackerman & Heggestad, 1997; Austin & Deary, 2002; Baron, 1982; Bates & Shieles, 2003; Cacioppo et al., 1996; Eysenck, 1994; Goff & Ackerman, 1992; Kanazawa, 2004; Kokis, Macpherson, Toplak, West, & Stanovich, 2002; Zeidner & Matthews, 2000) have indicated that measures of intelligence display only moderate to weak correlations (usually less than .30) with some thinking dispositions (e.g., actively open-minded thinking, need for cognition) and near zero correlations with others (e.g., conscientiousness, curiosity, diligence).",
+          "source_file": "exa_1_[PDF] A Framework for Critical Thinking, Rational Thinking, and Intelligence.md",
+          "location": "理性与智力分离的讨论段落"
+        }
+      ]
+    },
+    {
+      "claim": "发展研究中理性思维任务的结果常常不一致，部分原因是刺激等价性问题：年幼儿童可能缺乏展示偏差所需的知识，导致看似随机的反应反而在统计学上更接近规范答案，形成U形发展曲线（随机反应→聪明错误→规范反应）。在五个重要理性任务上，年龄、认知能力和思维倾向均与表现相关，呈现汇聚证据。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "One of the reasons for the lack of convergence across developmental studies of rational thinking is that developmentally appropriate stimuli in these domains are difficult to construct. Consider the example of an experiment by Jacobs and Potenza (1991) on base rate sensitivity. They found a significant positive developmental trend (more normative responses with age across 1st, 3rd, 6th grade students, and college students) in their so-called object condition, but in their so-called social condition the developmental trend was in the opposite direction—more reliance on the vivid information and less reliance on the more diagnostic statistical information by the older children.",
+          "source_file": "exa_8_[PDF] Development, Cognitive Abilities, and Thinking Dispositions | Maggie Topla.md",
+          "location": "Developmental Trends and Stimulus Equivalence段落"
+        },
+        {
+          "excerpt": "In other words, such task situations often spawn the developmental sequence: random responding followed by smart errors (see Morsanyi & Handley, 2008)—finally followed by normative responding. Situations like this sometimes occur when the process of attribute substitution is taking place.",
+          "source_file": "exa_8_[PDF] Development, Cognitive Abilities, and Thinking Dispositions | Maggie Topla.md",
+          "location": "Developmental Trends and Stimulus Equivalence段落末尾"
+        },
+        {
+          "excerpt": "In summary, with respect to five important tasks and effects in the rational thinking literature—denominator neglect, belief bias syllogisms, base rate sensitivity, resistance to framing, and other-side thinking—we have observed convergent results. All three measures of cognitive sophistication (age, cognitive ability, and thinking dispositions) correlated with these tasks and effects.",
+          "source_file": "tavily_12_[PDF] Development, Cognitive Abilities, and Thinking Dispositions.md",
+          "location": "素材中段，summary段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇综合20项研究的系统回顾发现，基于表现与评定量表的执行功能测量之间仅有极低关联：286个相关中仅24%显著，中位相关r=0.19。这一低关联不能归因于自我报告vs他人评定或临床vs非临床样本差异。两者确实在评估不同底层建构——前者提供加工效率（算法心智）指示，后者提供目标追求（反思心智）指示，不应可互换使用。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Only 68 (24%) of the 286 relevant correlations reported in these studies were statistically signiﬁcant, and the overall median correlation was only .19. Conclusions: It was concluded that performance-based and rating measures of executive function assess different underlying mental constructs. We discuss how these two types of measures appear to capture different levels of cognition, namely, the efﬁciency of cognitive abilities and success in goal pursuit.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "We scrutinized 20 studies that examined the association between performance-based and ratings measures of executive function. Amalgamated across studies, only 68 (24%) of a total of 286 correlational comparisons were statistically signiﬁcant. The magnitude of correlations obtained was quite low, with median values of r = .18, .14, and .25 for the BRIEF, BADS-DEX questionnaire, and the impulsivity rating measures, respectively. The median correlation was only 0.19 across all these studies. Even these values are likely to be on the high side, because some of the studies did not report values for nonsigniﬁcant correlations.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk5，Summary段落"
+        },
+        {
+          "excerpt": "The results of the studies that we analyzed revealed a surprising lack of association between performance-based and ratings of executive function. The small to modest association is unlikely to be the result of self-versus other-ratings or to clinical versus nonclinical samples, because the pattern of associations was comparable across these studies and samples. Although both types of measures are supposed to index the same underlying mental construct, a basic principle of convergent validity in science is that different operational measures of the same construct should correlate highly. This is apparently not the case for performance-based and rating measures of executive function.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk5，Summary段落末尾"
+        },
+        {
+          "excerpt": "We suggest that performance-based and ratings of executive function assess different aspects of cognitive and behavioral functioning that independently contribute to clinical problems.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk5，Theoretical perspectives段落"
+        },
+        {
+          "excerpt": "We scrutinized 20 studies that examined the association between performance-based and ratings measures of executive function. Amalgamated across studies, only 68 (24%) of a total of 286 correlational comparisons were statistically signiﬁcant. The magnitude of correlations obtained was quite low, with median values of r = .18, .14, and .25 for the BRIEF, BADS-DEX questionnaire, and the impulsivity rating measures, respectively. The median correlation was only 0.19 across all these studies. Even these values are likely to be on the high side, because some of the studies did not report values for nonsigniﬁcant correlations. Given that the great majority of the correlations reviewed in this study were not signiﬁcant, it is likely that Type 1 error was responsible for some the correlations reaching a level of signiﬁcance. Furthermore, via the well-known ﬁle-drawer problem (that signiﬁcant effects are differentially advantaged in the publication process), there may have been a number of nonsigniﬁcant ﬁndings that were never published.\n\nThe results of the studies that we analyzed revealed a surprising lack of association between performance-based and ratings of executive function. The small to modest association is unlikely to be the result of self-versus other-ratings or to clinical versus nonclinical samples, because the pattern of associations was comparable across these studies and samples. Although both types of measures are supposed to index the same underlying mental construct, a basic principle of convergent validity in science is that different operational measures of the same construct should correlate highly. This is apparently not the case for performance-based and rating measures of executive function.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 8，20项研究元分析总结段落"
+        },
+        {
+          "excerpt": "The implication for the practicing clinician is that there is more separability than commonality among performance-based and ratings of executive function. These two classes of measures should not be interpreted as equivalent, interchangeable, or as types or subcategories of one another. The fact that both sets of measures are deﬁned as executive functions in name further confuses the issue, suggesting that these measures are alike, when in fact they represent different aspects of cognitive and behavioral functioning. Impairment on performance-based measures of executive function does not translate into impairment on ratings of executive function, or vice versa, as was demonstrated by Biederman et al. (2008).",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 9，临床实践启示段落"
+        },
+        {
+          "excerpt": "Converging evidence supports the conclusion that performance-based and rating measures of executive function assess different aspects of executive function. The administration, task demands, and scoring of these domains of measures are different. Performance-based measures involve considerable structure and direction from the examiner, whereas ratings measures involve very little direction from the examiner. A summary of the empirical work that has examined the association between performance-based and rating measures of executive function demonstrates a very small to modest association between these domains of measures. Theoretical perspectives from the cognitive science literature suggest that performance-based and rating measures of executive function capture different cognitive levels of analysis. Speciﬁcally, performance-based measures provide an indication of processing efﬁciency (the algorithmic mind) and rating measures provide an indication of individual goal pursuit (the reﬂective mind).\n\nAn important implication is that one should not presume that performance-based and ratings measures of executive function capture the same level of analysis, underlying process, or neural substrate. Thus, these measures should not be used interchangeably as parallel measures of executive function in clinical assessments. Both domains of assessment are useful and valuable, but they provide different types of information in the context of clinical assessment.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 10，结论部分"
+        }
+      ]
+    },
+    {
+      "claim": "执行功能评估面临\"不纯性问题\"：大多数执行功能测量涉及非执行过程（如Stroop任务中的颜色命名），使纯粹测量变得困难。执行功能缺陷在多种神经精神疾病中有重要临床意义（TBI、精神分裂症、ADHD等），但两类测量方式是否反映相同建构远未确定。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "A major challenge in the assessment of executive functions is the impurity problem, namely that most measures of executive function involve non-executive processes in the task context, such as color naming in the Stroop task (Miyake & Friedman, 2012).",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "Introduction段落，执行功能评估部分"
+        },
+        {
+          "excerpt": "Deﬁcits in executive functions are of particular relevance for clinicians. Such deﬁcits may result in inappropriate social behavior, problems with decision-making and judgment, and difﬁculties with initiating, following, shifting, and organizing plans. Difﬁculties with executive functions have been implicated in several neurological and psychiatric conditions such as: traumatic brain injuries; schizophrenia; substance use; obsessive-compulsive disorder; psychopathy; attention-deﬁcit/hyperactivity disorder; and pathological gambling.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "Introduction段落"
+        },
+        {
+          "excerpt": "Deﬁcits in executive functions are of particular relevance for clinicians. Such deﬁcits may result in inappropriate social behavior, problems with decision-making and judgment, and difﬁculties with initiating, following, shifting, and organizing plans (Damasio, 1994, 1996; Strauss et al., 2006). Difﬁculties with executive functions have been implicated in several neurological and psychiatric conditions such as: traumatic brain injuries (Clark, Manes, Antoun, Sahakian, & Robbins, 2003; Labudda et al., 2009); schizophrenia (Cavallaro et al., 2003; Kester et al., 2006; Nakamura et al., 2008); substance use (Barry & Petry, 2008; Ernst et al., 2003); obsessive-compulsive disorder (Lawrence et al., 2006); psychopathy (Mahmut, Homewood, & Stevenson, 2008); attention-deﬁcit/hyperactivity disorder (Toplak, Jain, & Tannock, 2005); and pathological gambling (Toplak, Liu, MacPherson, Toneatto, & Stanovich, 2007).",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk3开头部分，执行功能缺陷临床意义段落"
+        },
+        {
+          "excerpt": "the extent to which these two types of measures actually reﬂect the same underlying mental construct is far from certain and has never before been examined in a review.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk3第2段"
+        }
+      ]
+    },
+    {
+      "claim": "基于表现的执行功能测量与评定量表在施测条件上存在根本差异：前者在高度标准化条件下进行，由单一主试引导，依赖客观指标；后者由知情者报告日常困难，旨在提供生态效度。BRIEF是最常用量表，但其部分维度（如启动、材料组织）没有对应的表现测量。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Performance-based tests are administered in highly standardized conditions. Stimulus presentation is carefully controlled so that each examinee experiences and completes the task in precisely the same way as other examinee. In addition, the measures of performance are typically based on the examinee's accuracy, response time, and/or speeded responding under a time constraint.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "Performance-based measures of executive function段落"
+        },
+        {
+          "excerpt": "Rating scales of executive function were developed to provide an ecologically valid indicator of competence in complex, everyday, problem-solving situations. An assumption underlying the use of these rating scales is that they are measuring behaviors that are importantly related with processes that are assessed by performance-based measures of executive function.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "Rating scales of executive function段落开头"
+        },
+        {
+          "excerpt": "One characteristic of the BRIEF is that some of its scales have no parallel performance-based measures of executive function. Although the Inhibit and Working Memory scales map onto parallel performance-based measures of executive function, the Initiate and Organization of Materials scales do not map onto analogous performance-based measures.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "Rating scales of executive function段落中段"
+        },
+        {
+          "excerpt": "Performance-based tests are administered in highly standardized conditions. Stimulus presentation is carefully controlled so that each examinee experiences and completes the task in precisely the same way as other examinees. In addition, the measures of performance are typically based on the examinee's accuracy, response time, and/or speeded responding under a time constraint.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk3，Performance-based measures段落"
+        },
+        {
+          "excerpt": "Rating scales of executive function were developed to provide an ecologically valid indicator of competence in complex, everyday, problem-solving situations (Roth, Isquith, & Gioia, 2005).",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk3，Rating scales段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇团队对20项研究采取尽可能包容的策略，从PsyInfo和PubMed检索，涵盖不同发展阶段和人群。他对统计显著性和发表偏倚持审慎批判态度：由于大多数相关不显著，达到显著的可能是I型错误；文件抽屉问题使不显著发现可能从未发表。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Our approach was to be as inclusive as possible, so that the analysis would include a range of studies with different periods of development (child and adult) and different populations (clinical and nonclinical samples). Thirteen of the 20 studies were conducted with children and seven were conducted with adults.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk3，measurable association段落"
+        },
+        {
+          "excerpt": "Given that the great majority of the correlations reviewed in this study were not signiﬁcant, it is likely that Type 1 error was responsible for some the correlations reaching a level of signiﬁcance. Furthermore, via the well-known ﬁle-drawer problem (that signiﬁcant effects are differentially advantaged in the publication process), there may have been a number of nonsigniﬁcant ﬁndings that were never published.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk5，Summary段落中间"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇用智力领域宽泛vs狭窄理论来类比执行功能测量问题：智力被宽泛定义却被狭窄测量，同样WCST低持续性错误不能索引所有问题解决能力。基于表现任务更适合称为\"监督过程\"（调控由外部主试主导），而非\"执行过程\"。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "This distinction between broad and narrow theories of intelligence is discussed by Stanovich (2009b), who noted that 'broad theories include aspects of functioning that are captured by the vernacular term intelligence (adaptation to the environment, showing wisdom and creativity, etc.), whether or not these aspects are actually measured by existing tests of intelligence. Narrow theories, in contrast, conﬁne the concept of intelligence to the set of mental abilities actually tested on extant IQ tests' (p. 12). That is, a full-scale intelligence score (narrow sense) does not assess all of the ways that someone may be considered to be 'smart' as a layperson might understand that term (broad sense). This is analogous to executive functions. For example, few perseverative errors on the WCST (narrow sense) does not index all the ways that someone shows competence in novel problem-solving and goal-directed behavior (broad sense).",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk6，intelligence analogy段落"
+        },
+        {
+          "excerpt": "For this reason, Stanovich (2009a) has suggested that the term executive processes has been misnamed. The term 'executive' conﬂates these two different levels and 'mistakenly implies that everything 'higher up' has been taken care of, or that there is no level higher than what these executive functioning tasks measure' (Stanovich, 2009a, p. 67). Performance-based tasks would be better described as supervisory processes, as regulation is directed by an external examiner.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk7，executive processes misnamed段落"
+        },
+        {
+          "excerpt": "It is extremely important to differentiate between the algorithmic and reﬂective levels, as they provide different information about cognitive functioning. For this reason, Stanovich (2009a) has suggested that the term executive processes has been misnamed. The term 'executive' conﬂates these two different levels and 'mistakenly implies that everything 'higher up' has been taken care of, or that there is no level higher than what these executive functioning tasks measure' (Stanovich, 2009a, p. 67). Performance-based tasks would be better described as supervisory processes, as regulation is directed by an external examiner.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 8，'executive processes'误命名段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇将心理测量学中典型表现vs最优表现的经典区分应用于执行功能测量：基于表现的测量属最优表现条件（任务解释由检查者决定，评估加工效率），评定量表属典型表现条件（参与者自行解读任务，评估目标优先排序和认识调控）。所有智力测试都是最优表现评估，而理性思维测量在典型表现条件下进行。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Psychometricians have long distinguished typical performance situations from optimal or maximal performance situations (see Ackerman, 1994, 1996; Ackerman & Heggestad, 1997; Cronbach, 1949; Matthews, Zeidner, & Roberts, 2002). Typical performance situations remain unconstrained in that no overt instructions to maximize performance are given, and the task interpretation is determined to some extent by the participant. The goals to be pursued in the task are left somewhat open. The issue is what a person would typically do in such a situation, given few constraints. Typical performance measures assess in part goal prioritization and epistemic regulation.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk7，typical vs optimal performance段落"
+        },
+        {
+          "excerpt": "Both performance-based and rating measures of executive function provide important and nonredundant information about an individual's efﬁciency and success in achieving goals.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk7，rating measures段落末尾"
+        },
+        {
+          "excerpt": "The conceptual differentiation of performance-based and rating measures of executive function is also consistent with an important distinction in psychometrics. Psychometricians have long distinguished typical performance situations from optimal or maximal performance situations (see Ackerman, 1994, 1996; Ackerman & Heggestad, 1997; Cronbach, 1949; Matthews, Zeidner, & Roberts, 2002). Typical performance situations remain unconstrained in that no overt instructions to maximize performance are given, and the task interpretation is determined to some extent by the participant. The goals to be pursued in the task are left somewhat open. The issue is what a person would typically do in such a situation, given few constraints. Typical performance measures assess in part goal prioritization and epistemic regulation. In contrast, optimal performance situations are those where the task interpretation is highly constrained, and the person performing the task is instructed to maximize performance. Thus, optimal performance measures examine questions of the efﬁciency of goal pursuit. All tests of intelligence or cognitive aptitude are optimal performance assessments, whereas measures of critical thinking and cognitive styles are often assessed under typical performance conditions. Likewise, many measures of rational thinking and decision-making are assessed under typical performance conditions (Stanovich, 2009b; Stanovich, West, & Toplak, 2011).",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 8，典型vs最佳表现心理测量学区分段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇引用Salthouse等人的观点：实验室任务中执行功能角色可能相当有限，因为任务组织由实验者提供，参与者不需自己发现或创造。评定量表面临知情者报告的固有挑战（情境效应、不同观察者判断差异），但其本身也存在信效度问题。",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "This point about the laboratory measures has been made before by Salthouse et al. (2003): 'The role of executive functioning may also be rather limited in many laboratory tasks because much of the organization or structure of the tasks is provided by the experimenter and does not need to be discovered or created by the research participant' (p. 569). Performance-based measures of executive function provide important information regarding efﬁciency of processing, but ratings of executive function tell us more about success in rational goal pursuit.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk7，Salthouse引用段落"
+        },
+        {
+          "excerpt": "Ratings of behaviors related to executive functions are also fraught with challenges related to informant reports, such as context effects and differences in the way different observers judge behavior (Barkley, 2006).",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk7，rating measures段落"
+        }
+      ]
+    },
+    {
+      "claim": "算法心智与反思心智的双层框架映射到执行功能测量：基于表现的测量评估算法层面的加工效率（抑制、工作记忆），评定量表评估反思层面的理性目标追求。两者对应不同认知功能层次，不应混淆。这一区分借鉴了Marr和Anderson的分析层次理论。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Our explanation for the lack of convergence displayed by the performance-based and behavior rating measures involves positing that these measures are actually tapping different cognitive levels—speciﬁcally, what Stanovich (2009b, 2011) terms the difference between the algorithmic and the reﬂective mind.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk6，algorithmic vs reflective段落"
+        },
+        {
+          "excerpt": "Cognitive scientists refer to the level of analysis concerned with efﬁciency as the algorithmic level of analysis (Anderson, 1990; Marr, 1982; Stanovich, 1999, 2009b). The cognitive psychologist and neuropsychologist work largely at this level by showing that human performance can be explained by information processing mechanisms in the brain, such as, input coding mechanisms, perceptual registration mechanisms, working memory, long-term memory, etc. In contrast, the reﬂective level of analysis is concerned with the goals of the person, beliefs relevant to those goals, and the choice of action that is rational given the goals and beliefs.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk6，algorithmic vs reflective段落"
+        },
+        {
+          "excerpt": "Performance measures may indeed be assessing something of genuine importance, namely the efﬁciency of the processes available to recruit in behavioral control, such as inhibition, but performance-based measures bypass the whole issue of rational goal pursuit.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk6末尾"
+        },
+        {
+          "excerpt": "We suggest that performance-based and ratings of executive function assess different aspects of cognitive and behavioral functioning that independently contribute to clinical problems.\n\nWe might begin to explain the lack of association between performance and ratings of executive function by drawing an analogy with the field of intelligence. Like the case of executive functioning, the construct of intelligence has also been deﬁned broadly, but measured narrowly. This distinction between broad and narrow theories of intelligence is discussed by Stanovich (2009b), who noted that 'broad theories include aspects of functioning that are captured by the vernacular term intelligence (adaptation to the environment, showing wisdom and creativity, etc.), whether or not these aspects are actually measured by existing tests of intelligence. Narrow theories, in contrast, conﬁne the concept of intelligence to the set of mental abilities actually tested on extant IQ tests' (p. 12).",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 8，理论分析部分，intelligence类比段落"
+        },
+        {
+          "excerpt": "Our explanation for the lack of convergence displayed by the performance-based and behavior rating measures involves positing that these measures are actually tapping different cognitive levels—speciﬁcally, what Stanovich (2009b, 2011) terms the difference between the algorithmic and the reﬂective mind.\n\nCognitive scientists refer to the level of analysis concerned with efﬁciency as the algorithmic level of analysis (Anderson, 1990; Marr, 1982; Stanovich, 1999, 2009b). The cognitive psychologist and neuropsychologist work largely at this level by showing that human performance can be explained by information processing mechanisms in the brain, such as, input coding mechanisms, perceptual registration mechanisms, working memory, long-term memory, etc. In contrast, the reﬂective level of analysis is concerned with the goals of the person, beliefs relevant to those goals, and the choice of action that is rational given the goals and beliefs (Bratman, Israel, & Pollack, 1991; Dennett, 1987; Newell, 1982, 1990; Pollock, 1995; Stanovich, 2009b, 2011). In short, the reﬂective level is concerned with the goals of the system, beliefs relevant to those goals, and the choice of action that is optimal given the system's goals and beliefs. It is only at the level of the reﬂective mind where issues of optimal decision-making come into play.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 8，算法心vs反思心核心理论段落"
+        },
+        {
+          "excerpt": "Performance measures may indeed be assessing something of genuine importance, namely the efﬁciency of the processes available to recruit in behavioral control, such as inhibition, but performance-based measures bypass the whole issue of rational goal pursuit. This point about the laboratory measures has been made before by Salthouse et al. (2003): 'The role of executive functioning may also be rather limited in many laboratory tasks because much of the organization or structure of the tasks is provided by the experimenter and does not need to be discovered or created by the research participant' (p. 569). Performance-based measures of executive function provide important information regarding efﬁciency of processing, but ratings of executive function tell us more about success in rational goal pursuit.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 8，表现测量与理性目标追求段落"
+        }
+      ]
+    },
+    {
+      "claim": "在ADHD领域，两类执行功能测量显示极低重叠：仅14%在表现测量上受损的ADHD成人同时在评定量表上也受损。标准化评估情境不应简单视为'生态效度低'的局限，而应重新理解为积极指标——它揭示了在高结构条件下的表现能力，增加环境结构可能改善ADHD儿童的执行功能表现。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Biederman et al. (2008) examined overlap in impairment on performance-based and ratings measures of executive function in a sample of adults with ADHD. There was little overlap in the impairment identiﬁed by these two domains of measures. Only 14% of the participants who had impairment on the performance-based measures of executive function reported impairment on the rating scale measure of executive function.\n\nAlso, Barkley and Murphy (2010a,b) explored whether performance-based and ratings measures of executive function made overlapping or unique contributions to explaining self-reported occupational problems in a sample of adults with ADHD. In fact, the two different types of measures of executive function explained separate variance in occupational success in adults with ADHD.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 9，ADHD领域证据段落"
+        },
+        {
+          "excerpt": "The distinction between typical and maximal performance maps onto other theoretical models of ADHD that distinguish between motivational and executive processes (Sonuga-Barke, 2002). The distinction between these domains have been shown behaviorally (Crone, Jennings, & van der Molen, 2003; Martel & Nigg, 2006; Shuster & Toplak, 2009; Sonuga-Barke, Dalen, & Remington, 2003) and has also been articulated in neural models (Sagvolden, Johansen, Aase, & Russell, 2005). As Barkley (1997) has noted, 'measures taken in clinics or laboratory assessments over relatively brief temporal durations are going to prove less sensitive to the identiﬁcation of the disorder and its associated cognitive deﬁcits than will measures collected repeatedly over longer periods of time…' (p. 332).",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 9，ADHD动机vs执行过程区分段落"
+        },
+        {
+          "excerpt": "Performance-based measures of executive function provide information regarding performance in highly structured environments where the examiner has set the goals and outcomes for the testing session. If performance is low in this optimal, structured testing environment, this might tell us something about potential processing weaknesses in the individual. If performance in this structured environment is at least average and less variable than in unstructured environments, this indicates that a structured environment facilitates performance. Better performance in the standardized assessment context should be taken as an indicator of how well the child would do in the classroom with additional structure and support. The standardized assessment situation has been critiqued for providing a less ecologically valid assessment of how a child performs in 'real' or everyday contexts. However, the standardized assessment situation provides a 'good test' of how well a child will perform under high structure and direction from an examiner. Instead of regarding the 1:1 behavior testing situation in an assessment as a nonecologically valid indicator of behavior, it should be regarded as an indicator of how well performance is ameliorated under highly structured conditions. This is a somewhat novel perspective on the standardized assessment context.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 9，标准化评估新颖视角段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇提出交互-补偿模型解释阅读流畅性个体差异：当某一加工存在缺陷时，读者会更依赖其他知识源来补偿，差的读者可能比好的读者更依赖上下文线索——这与自上而下模型直接相反。在正字法结构效应上，好读者并不更多利用正字法冗余，反驳了Smith的假说。快速、无需上下文的词汇识别才是区分好坏读者的关键。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "When combined with an assumption of compensatory processing (that a deficit in any particular process will result in a greater reliance on other knowledge sources, regardless of their level in the processing hierarchy), interactive models provide a better account of the existing data on the use of orthographic structure and sentence context by good and poor readers. A review of the research literature seems to indicate that, beyond the initial stages of reading acquisition, superior reading ability is not associated with a greater tendency to use the redundancy inherent in natural language to speed word recognition. Instead, general comprehension strategies and rapid context-free word recognition appear to be the processes that most clearly distinguish good from poor readers.",
+          "source_file": "paper_Toward an Interactive-Compensatory Model of Individual Diffe.md",
+          "location": "论文摘要"
+        },
+        {
+          "excerpt": "Notice also that a compensatory assumption is not embodied in most top-down models of reading (e.g., Levin & Kaplan, 1970; Smith, 1971). In these models, higher-level processes (i.e., hypothesis-testing based on contextual expectancies) are usually less implicated in the performance of poorer readers. These models seldom consider the possibility that the poorer reader may compensate for a deficit in a lower-level process, such as letter or word recognition, by relying more on a higher-level knowledge source. In contrast, working from the interactive-processes conception, one might assume that, given a deficit in a particular process, the reader would rely more on other knowledge sources, regardless of their level.",
+          "source_file": "paper_Toward an Interactive-Compensatory Model of Individual Diffe.md",
+          "location": "Interactive Models and the Compensatory Hypothesis部分"
+        },
+        {
+          "excerpt": "Studies that have examined the effect of orthographic structure on the speed of recognition have consistently found that this variable does not distinguish good from poor readers once the child has passed the initial stages of reading acquisition. Changes in the use of orthographic structure occur only very early in the development of reading skill. Krueger, Keen, and Rublevich (1974) found that both fourth-graders and adults searched for a letter faster through word than through nonword displays. However, the magnitude of the effect, as indicated by the relative reduction in search times, was the same for both age groups.",
+          "source_file": "paper_Toward an Interactive-Compensatory Model of Individual Diffe.md",
+          "location": "Orthographic Structure Effects部分"
+        },
+        {
+          "excerpt": "Once beyond the very initial stages of reading acquisition, the poor reader not only uses orthographic redundancy to facilitate word recognition, but there is evidence indicating that in some situations the poor reader may even rely more on this stored knowledge source than the good reader. Such findings present problems for models oriented to top-down processing such as that presented by Smith (1971), since these models account for the good readers' fluency by attributing to them a greater use of redundancy at all levels.",
+          "source_file": "paper_Toward an Interactive-Compensatory Model of Individual Diffe.md",
+          "location": "Orthographic Structure Effects部分结尾"
+        },
+        {
+          "excerpt": "Smith (1971) has argued that the poor reader is deficient in both types of contextual processing. The hypothesis that the general comprehension strategies of better readers are superior will not be challenged here since there is some support for this position (Guthrie, 1973; Oakan et al., 1971; Schwartz, 1977; Smiley et al., 1977; Forrest & Barron, Note 4). However, the idea that a greater ability to use contextual redundancy to facilitate word recognition also differentiates the good from the poor reader appears to be mistaken.",
+          "source_file": "paper_Toward an Interactive-Compensatory Model of Individual Diffe.md",
+          "location": "Sentence Context Effects and Top-Down Models部分"
+        },
+        {
+          "excerpt": "Based on their failure to find predictability effects and their repeated observations of reliable display size and word frequency effects, Mitchell and Green (1978) concluded that reading rate is more dependent on the speed with which a reader can recognize words and construct a representation than on the ability to use predictions to facilitate word recognition.",
+          "source_file": "paper_Toward an Interactive-Compensatory Model of Individual Diffe.md",
+          "location": "句子上下文效应讨论中引用Mitchell & Green段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇提出\"语音核心-变量差异模型\"区分失读症与普通型差读者：失读症儿童认知特征是连续分布上应用截断标准的结果，而非质的不同。他严厉批评学习障碍领域实践先于理论。关于\"质差\"与\"量差\"的语义争论被他认为是\"完全无益且科学上毫无用处的\"。区分了解码水平匹配和理解水平匹配两种设计，两者结果长期不一致。他提出补偿性加工假说：失读症儿童利用高级技能（词汇量、世界知识）补偿语音加工缺陷。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "A coherent conception of dyslexia has been difficult to arrive at because research findings have continually created logical paradoxes for the psychometric definition of reading disability. This paper develops the phonological-core variable-difference model This model of the cognitive characteristics of dyslexic children is one of the few that does not create psychometric paradoxes of the type that have plagued the learning disabilities field. The model provides a way to conceptualize the differences between dyslexic and garden-variety poor readers. The model highlights the importance of viewing the concept of dyslexia as the outcome of the application of an arbitrary criterion in a continuous distribution, thus avoiding the connotations of discreteness that have continually undermined our understanding of reading disability.",
+          "source_file": "paper_Explaining the Differences Between the Dyslexic and the Gard.md",
+          "location": "摘要/开篇段落"
+        },
+        {
+          "excerpt": "There has recently been an increasing recognition that the field in some sense \"got ahead of itself,\" that educational practice simply \"took off\" before a thorough investigation of certain foundational assumptions had been carried out. Thus, much recent research has a \"get back to basics\" feel to it, as researchers double back to retrace crucial empirical and theoretical steps that were skipped during the mad rush to implement what we now know were nascent hypotheses rather than established empirical facts.",
+          "source_file": "paper_Explaining the Differences Between the Dyslexic and the Gard.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "I should mention as an aside that I view the interminable semantic debates in developmental psychology over what constitutes a qualitative as opposed to a quantitative difference as utterly futile and scientifically useless. Alternative terms would do equally well and probably would not trigger what are essentially linguistic debates. Nevertheless, I use the terms for convenience, ease of communication, and to make clear the connections with previous research. What is important is the experimental contrasts that have operationalized the idea of qualitative difference and/or differential causation in the literature.",
+          "source_file": "paper_Explaining the Differences Between the Dyslexic and the Gard.md",
+          "location": "第4段"
+        },
+        {
+          "excerpt": "This operationalization has been dominated by two different designs. One is the reading-level match design, where an older group of dyslexic children is matched on reading level with a younger group of nondyslexic children. The cognitive characteristics and reading subskills of the two groups are then compared. The logic here is fairly straightforward. If the reading subskills and cognitive characteristics of the two groups do not match, then it would seem that they are arriving at their similar reading levels via different routes, and this would support the idea of differential causation. In contrast, if the reading subskill profiles of the two groups are identical, this would seem to undermine the rationale for the differential educational treatment of dyslexic children and for their theoretical differentiation.",
+          "source_file": "paper_Explaining the Differences Between the Dyslexic and the Gard.md",
+          "location": "第5-6段"
+        },
+        {
+          "excerpt": "The compensatory processing hypothesis begins by assuming the importance of phonological processing skills in early reading development (Bradley & Bryant, 1985; Liberman, 1982; Mann, 1986; Stanovich, 1986b, 1988; Williams, 1984). From this assumption, and the psychometric constraints mentioned above, it follows that a rigorously defined sample of reading disabled children should display performance inferior to that of the younger CL-matched children on phonological analysis and phonological recoding skills, but should simultaneously display superior vocabulary, real-world knowledge, and/or strategic abilities (i.e., superior performance on other variables that should be correlated with the raw score on the IQ test). The similar overall level of comprehension ability in the two groups presumably obtains because the dyslexic children use these other skills and knowledge sources to compensate for seriously deficient phonological processing skills.",
+          "source_file": "paper_Explaining the Differences Between the Dyslexic and the Gard.md",
+          "location": "第12段"
+        },
+        {
+          "excerpt": "Specifically, some investigations have matched children with reading comprehension tests (e.g., Bruck, 1988; Seidenberg, Bruck, Fornarolo, & Backman, 1985), while others have matched the children on word recognition skills (e.g., Olson et al., 1985; Treiman & Hirsh-Pasek, 1985). And finally, some have matched children using a composite of both word recognition and reading comprehension (Bloom, Wagner, Reskin, & Bergman, 1980; Jorm et al., 1986). Unfortunately, all of these investigations have been referred to as reading-level (RL) match studies, thus substantially increasing the difficulty of integrating the research findings in this area. It has been insufficiently recognised that the results and interpretation of an RL-match design may vary depending upon whether the matching is done with a comprehension test or with a word recognition test.",
+          "source_file": "paper_Explaining the Differences Between the Dyslexic and the Gard.md",
+          "location": "第9段"
+        }
+      ]
+    },
+    {
+      "claim": "实证研究发现普通型差读者在理解水平匹配中表现出与年幼正常读者高度一致的认知档案，13项变量中仅字母命名速度有显著差异，支持发展滞后模型。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The results of the CL comparisons are easily summarized. The performance patterns of these two groups were remarkably convergent. They differed significantly on only 1 of the 13 variables listed in Table 2. The performance of the two groups was virtually identical on the Peabody, rhyme-production errors, oddity errors, oddity response time, picture naming, pseudoword z-score, word naming speed in both related and neutral contexts, and contextual facilitation score.",
+          "source_file": "paper_Explaining the Differences Between the Dyslexic and the Gard.md",
+          "location": "Table 2讨论部分，第1-2段"
+        },
+        {
+          "excerpt": "Thus, only one variable — letter-naming time — differentiated the two groups. This variable has been shown to track age much more strongly than reading ability in previous investigations (Jackson & Biemiller, 1985; Stanovich, Feeman, & Cunningham, 1983) and so its statistical significance in a CL match is predictable and empirically convergent. With this one exception, the reading-related cognitive performance profiles of these two groups of readers were highly similar. This pattern of performance similarities is consistent with a developmental lag model of the reading skill deficits displayed by the less skilled fifth-grade children that extends over rather broad cognitive domains. Cognitively, they resemble younger children who are at the same stage of reading acquisition.",
+          "source_file": "paper_Explaining the Differences Between the Dyslexic and the Gard.md",
+          "location": "Table 2讨论部分，第4段"
+        }
+      ]
+    },
+    {
+      "claim": "Stanovich反对将规范性作为Type 2加工的定义特征。Type 1在良性环境中可产生正确反应，Type 2有时也会导致偏差。将理性标签贴在某种加工类型上是错误的，因为理性是有机体层面概念。但在需要覆写Type 1的任务中，Type 2与规范性正确反应确实存在强相关性。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Perhaps the most persistent fallacy in the perception of dual-process theories is the idea that Type 1 processes (intuitive, heuristic) are responsible for all bad thinking and that Type 2 processes (reflective, analytic) necessarily lead to correct responses. ... Rationality is an organismic-level concept and should never be used to label a subpersonal process (i.e., a type of processing). As an example, people's face recognition systems are neither rational nor irrational. They are, instead, either efficient or inefficient.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Normativity and rationality段落"
+        },
+        {
+          "excerpt": "In fact, Type 1 processing can lead to right answers and Type 2 processing to biases in some circumstances (see Evans, 2007a; Stanovich, 2011). Although the correlation between nonoptimal responses and Type 1 processing is no doubt modest in benign environments, it can be quite high in hostile environments.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Normativity and rationality段落"
+        }
+      ]
+    },
+    {
+      "claim": "Stanovich提出区分定义特征与相关特征的方法论原则：双加工理论不需要所有属性完美共现，只需至少一个二分属性必要且充分。批评者将所有属性视为必须同时出现是稻草人论证。他还区分加工类型（types）与加工模式（modes）：思维倾向反映Type 2内部的连续变异，而非区分Type 1和Type 2的指标。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "But all of these dichotomies were never necessary to establish the two types of processing. The only thing needed is at least one dichotomous property that is necessary and sufficient. In a later section of this article, we discuss our preferred candidates for the defining features of Type 1 and Type 2 processing.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Defining versus correlated features段落"
+        },
+        {
+          "excerpt": "this standard of proof, requiring a perfect, deterministic level of conjoined features, is higher than that generally applied in any field of psychology. Second, from a theoretical point of view, although there is a clear basis for predicting a strongly correlated set of features, very few need be regarded as essential and defining characteristics of Type 1 and 2 processes",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Criticism 2段落"
+        },
+        {
+          "excerpt": "The implication by some critics (Newstead, 2000; Osman, 2004) that the mere demonstration of processing continua in some contexts undermines dual-process models is not correct. Because Type 2 processing is the only type of processing that is characterized by flexible goals and flexible cognitive control, it is variation in this type of processing that all thinking disposition measures are assessing.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Criticism 3段落"
+        },
+        {
+          "excerpt": "Continuous variation in both cognitive ability and thinking dispositions can determine the probability that a response primed by Type 1 processing will be expressed—but the continuous variation in this probability in no way invalidates the discrete distinction between Type 1 and Type 2 processing.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Criticism 3段落末尾"
+        }
+      ]
+    },
+    {
+      "claim": "Stanovich主张默认-干预主义架构优于并行竞争架构：Type 1远快于Type 2，若并行则快马须等慢马；Type 2需要极有限的工作记忆资源，须选择性分配。认知去耦是人类独特的心智能力，是Type 2核心特征，与流体智力高度相关，使人能区分假设与信念、运行思想实验。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "One difficulty with parallel-competitive forms of dual-process theory (e.g., S. A. Sloman, 1996; Smith & DeCoster, 2000) is that, in general, Type 1 processing is very much quicker than Type 2 processing. Thus, if both types of processing are to have their say, the fast horse must wait for the slow horse to arrive before any potential conflict can be resolved. A more fundamental problem, perhaps, is that Type 2 processing requires extremely limited and precious working memory resources, according to the definitions we are putting forward. These must be selectively allocated to the most important task at hand.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Default interventionism段落"
+        },
+        {
+          "excerpt": "More basically, we propose that other animals are much more limited in their metarepresentational and simulation abilities (Penn, Holyoak, & Povinelli, 2008), thus leading to limitations (compared with humans) in their ability to carry out forms of behavior that depend on prior appraisal of possible consequences. Thus, a key defining feature of Type 2 processing—the feature that makes humans unique—is cognitive decoupling: the ability to distinguish supposition from belief and to aid rational choices by running thought experiments.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "Evolutionary linkage段落"
+        },
+        {
+          "excerpt": "Stanovich (Stanovich, 2011; Stanovich & Toplak, 2012) has also strongly emphasized the features that he calls \"cognitive decoupling\" in his definition of Type 2 processing. This is again compatible with Evans's (2007a, 2010b) view that such processing is necessary for hypothetical thought. In order to reason hypothetically, we must be able to prevent our representations of the real world from becoming confused with representations of imaginary situations.",
+          "source_file": "paper_Dual-Process Theories of Higher Cognition.md",
+          "location": "The definition of Type 2 processing段落"
+        }
+      ]
+    },
+    {
+      "claim": "Stanovich开发了论证评估测试（AET），创新性地使用个体化回归分析分离先验信念与论证质量对评价的影响。认知能力和思维倾向（尤其AOT）都能独特预测独立于信念的论证评估能力，且独特方差超过共有方差（总方差20%中，8.4%独特归因认知能力，6.7%独特归因思维倾向，4.9%共有）。思维倾向测量的是理性层面的认识论目标差异。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Our analytic strategy was to regress each participant's evaluations of the argument simultaneously, on the objective measure of argument quality and on the strength of the belief that he or she had about the propositions prior to reading the argument. The standardized beta weight for argument quality then becomes an index of that participant's reliance on the quality of the arguments independent of their beliefs on the issues in question.",
+          "source_file": "paper_Reasoning independently of prior belief and individual diffe.md",
+          "location": "A New Analytic Strategy for Assessing Argument Evaluation Ability段落"
+        },
+        {
+          "excerpt": "Our methodology is different from the traditional logic used in critical thinking tests, and it is a more sensitive one for measuring individual differences. For example, those who devise standardized critical thinking tests often simply try to balance opinions across items by using a variety of issues and by relying on chance to ensure that prior belief and strength of the argument are relatively balanced from respondent to respondent (Watson & Glaser, 1980). In contrast, we actually measured the prior opinion and took it into account in the analysis",
+          "source_file": "paper_Reasoning independently of prior belief and individual diffe.md",
+          "location": "A New Analytic Strategy段落"
+        },
+        {
+          "excerpt": "In total, 20.0% of the variance in AET performance was explained (multiple R = .447). A portion (8.4%) of this variance explained was unique to cognitive ability, and 6.7% of the variance was uniquely explained by the thinking dispositions. Only 4.9% of the variance explained was common to the cognitive ability and thinking dispositions measures. Thus, the commonality analysis indicates that there was considerable nonoverlap in the variance in AET performance explained by cognitive ability and thinking dispositions.",
+          "source_file": "paper_Reasoning independently of prior belief and individual diffe.md",
+          "location": "Table 3及公共性分析段落"
+        },
+        {
+          "excerpt": "The AOT composite score accounted for significant variance in performance on the AET even after SAT scores were entered into the equation—as did scores on the superstitious thinking, outcome bias (a measure of decontextualization), and counterfactual thinking (a measure of perspective switching) measures. Thus, the linkage between thinking dispositions and performance on the AET illustrated in Table 1 is not entirely due to covariance with cognitive ability.",
+          "source_file": "paper_Reasoning independently of prior belief and individual diffe.md",
+          "location": "Results部分，Table 2描述段落"
+        },
+        {
+          "excerpt": "a composite actively open-minded thinking (AOT) score was formed by summing the scores on the Flexible Thinking, Openness-Ideas, and Openness-Values scales and subtracting the sum of the Absolutism, Dogmatism, and Categorical Thinking scales. Thus, high scores on the AOT composite indicate openness to belief change and cognitive flexibility, whereas low scores indicate cognitive rigidity and resistance to belief change.",
+          "source_file": "paper_Reasoning independently of prior belief and individual diffe.md",
+          "location": "Composite Actively Open-Minded Thinking score段落"
+        }
+      ]
+    },
+    {
+      "claim": "Stanovich的核心论断：理性比智力更广泛。智力测验仅测量算法层面的认知效率，但理性还需要反思心智的思维倾向——主动开放思维、认知需要、未来后果考虑等。理性不仅需要计算能力，还需要认识论层面的目标管理和信念校准，完全不在IQ测验测量范围内。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "To put it simply, the concept of rationality encompasses thinking dispositions and algorithmic-level capacity, whereas the concept of intelligence (at least as it is commonly operationalized) is largely confined to algorithmic-level capacity. Intelligence tests do not attempt to measure aspects of epistemic or instrumental rationality, nor do they examine any thinking dispositions that relate to rationality.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "Why Rationality Is a More Encompassing Construct Than Intelligence段落"
+        },
+        {
+          "excerpt": "the reflective mind is concerned with the goals of the system, beliefs relevant to those goals, and the choice of action that is optimal given the system's goals and beliefs. All of these characteristics implicate the reflective mind in many issues of rationality. High computational efficiency in the algorithmic mind is not a sufficient condition for rationality.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "Three Kinds of Minds段落"
+        }
+      ]
+    },
+    {
+      "claim": "串行联想认知是Type 2加工中不涉及完整认知模拟的子类型：以单一焦点模型为起点进行序列思考，不探索替代世界模型。框架效应是其典型例子——被试被动接受给定表述框架并以此推理，而非重新构建替代框架。反思心智可发起中断改变起点或启动完整模拟。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "There are types of slow, serial cognition that do not involve simulating alternative worlds and exploring them exhaustively. Their existence points to an important fact: All hypothetical thinking involves Type 2 processing (Evans & Over, 2004) but not all Type 2 processing involves hypothetical thinking. Serial associative cognition represents this latter category.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "串行联想认知段落"
+        },
+        {
+          "excerpt": "Framing effects, for instance, are clear examples of serial associative cognition with a focal bias. As Kahneman (2003) notes, \"the basic principle of framing is the passive acceptance of the formulation given\" (p. 703). The frame presented to the subject is taken as focal and all subsequent thought derives from it rather than from alternative framings because the latter would necessitate more computationally expensive simulation operations.",
+          "source_file": "exa_6_[PDF] 46 Intelligence and Rationality - Keith Stanovich's.md",
+          "location": "串行联想认知段落，框架效应讨论"
+        }
+      ]
+    },
+    {
+      "claim": "批判性思维应被置于理性思维框架下理解。理性（而非批判性思维本身）才是教育终极目标。批判性思维培养的思维倾向之所以有价值，是因为使人更理性。智力不能保证批判性思维或理性，这一认知科学发现确认了教育界长期以来的直觉。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We can see that it is rationality, and not critical thinking per se, that is the ultimate goal of education by conducting some simple thought experiments or imaginative hypotheticals. For example, we could imagine a person with excellent epistemic rationality (his or her degree of confi dence in propositions being well calibrated to the available evidence relevant to the proposition) and optimal practical rationality (the person optimally satisfi es desires) who was not actively open-minded—that is, who was not a good critical thinker under standard assumptions. Of course we would still want to mold such an individual's dispositions in the direction of open-mindedness for the sake of society as a whole. But the essential point for the present discussion is that, from a purely individual perspective, we would now be hard pressed to fi nd reasons why we would want to change such a person's thinking dispositions—whatever they were—if they had led to rational thought and action in the past.",
+          "source_file": "exa_1_[PDF] A Framework for Critical Thinking, Rational Thinking, and Intelligence.md",
+          "location": "批判性思维服务于理性思维部分"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇与West开发了作者识别测验（ART）作为测量阅读量的工具：50个真实作家名与50个干扰名混合，关键创新在于避免社会期望偏差。正字法加工能力能独立于语音加工预测词汇识别和拼写技能，与阅读量相关联，越不可从语音规则预测的拼写模式与ART关联越强。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The Author Recognition Test was explicitly designed to circumvent the problem of questionnaire contamination by the tendency of respondents to give socially desirable answers (Paulhus, 1984). This problem is particularly acute in cases like the present one, in which relatively educated people are being asked questions about a socially valued activity such as reading. The logic we used in designing the Author Recognition Test (ART) to circumvent the social desirability problems inherent in most reading exposure measures (such as the Reading and Media Habits Questionnaire) is a simple, yet powerful one. In the ART the subject indicates whether he or she is familiar with the name of a particular popular author by putting a check mark next to the name. There are 50 names of authors on the ART. What prevents the subject from simply checking all of the names is the fact that we mixed in 50 foils—names of people who are not popular writers or authors. Thus, the tendency to have a low criterion for checking a name would result in the checking of foils as well as actual authors. In essence, the ART uses a signal detection logic.",
+          "source_file": "paper_Exposure to Print and Orthographic Processing.md",
+          "location": "Study 1方法部分，Author Recognition Test描述段落"
+        },
+        {
+          "excerpt": "The results of the two studies were supportive of the idea that there are individual differences in reading and spelling caused by variation in orthographic processing skills. Moreover, these orthographic processing skills appear to be linked to print exposure, and thus to be environmentally mediated, rather than being simply indirect products of differences in phonological processing ability. Both studies demonstrate the potential usefulness of the Author Recognition Test as an indicator of print exposure in research on the cognitive consequences of literacy.",
+          "source_file": "paper_Exposure to Print and Orthographic Processing.md",
+          "location": "论文摘要/导言部分"
+        },
+        {
+          "excerpt": "This (inverse) measure of phonological coding skill was entered first into a regression equation predicting the composite spelling z score, and it explained 33.5 percent of the variance. When the best measure of print exposure (performance on the ART) was entered next into the regression equation, it accounted for a statistically significant 11.9 percent (p < .01) of additional variance in spelling ability.",
+          "source_file": "paper_Exposure to Print and Orthographic Processing.md",
+          "location": "Study 1结果部分，print exposure effects independent of phonological skill"
+        },
+        {
+          "excerpt": "Both reading volume measures show higher correlations with errors on the morphophonemic segments than with errors on the orthographic segments, and higher correlations with errors on the exception segments than with errors on the morphophonemic segments... A test for difference between dependent correlations (Cohen & Cohen, 1975, p. 53) indicated that the correlation involving exception segments was significantly larger than that involving orthographic segments for both the favorite authors question, t(58) = 2.71, p < .01, and performance on the ART, t(58) = 2.07, p < .05. Thus, the less predictable the spelling pattern from surface rules, the greater the association between performance on that pattern and the subject's print exposure.",
+          "source_file": "paper_Exposure to Print and Orthographic Processing.md",
+          "location": "Study 1结果部分，Experimental spelling test and print exposure"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇与West在7项大规模研究中系统探讨了认知能力和思维倾向对理性思维任务的预测。核心分析策略：认知能力与推理任务的相关揭示算法层面的计算限制；思维倾向与推理任务的相关揭示反省层面的认识论调控。个体差异模式可检验\"偏离规范性都是表现错误\"的假说——不同任务间的正相关流形说明偏离受系统性因素影响。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Significant relationships involving cognitive ability were interpreted as indicating algorithmic-level limitations on the computation of the normative response. Relationships with thinking dispositions were interpreted as indicating that styles of epistemic regulation can predict individual differences in performance on these tasks.",
+          "source_file": "paper_Individual differences in rational thought..md",
+          "location": "论文摘要"
+        },
+        {
+          "excerpt": "Variation in cognitive ability refers to individual differences in the efficiency of processing at the algorithmic level. In contrast, thinking dispositions of the type studied in this investigation elucidate individual differences at the rational level. They index the individual's goals and epistemic values (Anderson, 1990, 1991; Kruglanski & Webster, 1996).",
+          "source_file": "paper_Individual differences in rational thought..md",
+          "location": "IMPLICATIONS部分，thinking dispositions as moderators of competence"
+        },
+        {
+          "excerpt": "For example, the strongest possible form of this view is that all discrepancies from normative responses are due to performance errors. This strong form has the implication that there should be virtually no correlations among performance on disparate reasoning tasks. If each departure from normative responding represents a momentary processing lapse due to distraction, carelessness, or temporary confusion, there is no reason to expect covariance in performance across various indexes of rational thinking. In contrast, positive manifold among disparate rational thinking tasks would call into question the notion that all variability in responding can be attributable to performance errors.",
+          "source_file": "paper_Individual differences in rational thought..md",
+          "location": "引言部分，个体差异的含义讨论"
+        }
+      ]
+    },
+    {
+      "claim": "思维倾向与认知能力在可塑性上存在关键差异：认知能力短期内无法通过劝告改善，但思维倾向（如花更多时间思考、考虑反面证据）更具可塑性。如果思维倾向而非认知能力是限制规范性反应的主要因素，教学干预的潜力更大。推理任务与认知能力相关方向具有理论诊断价值：正相关支持规范性模型恰当，负相关可能意味着应用了不当规范模型。",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "According to Baron's (1985) conception, cognitive capacities cannot be improved in the short-term by admonition or instruction. They are, nevertheless, affected by long-term practice. Thinking dispositions, in contrast, are better viewed as cognitive styles that are more malleable: \"Although you cannot improve working memory by instruction, you can tell someone to spend more time on problems before she gives up, and if she is so inclined, she can do what you say\" (Baron, 1985, p. 15).",
+          "source_file": "paper_Individual differences in rational thought..md",
+          "location": "THINKING DISPOSITIONS AS MODERATORS OF COMPETENCE部分"
+        },
+        {
+          "excerpt": "Because thinking dispositions and cognitive capacity are thought to differ in their degree of malleability, it is important to determine the relative proportion of variance in rational thinking skills that can be explained by each. To the extent that thinking dispositions explain variance in a rational thinking skill independent of cognitive capacity, theorists such as Baron (1985, 1988, 1993b) would predict that the skill would be more teachable.",
+          "source_file": "paper_Individual differences in rational thought..md",
+          "location": "同上段落"
+        },
+        {
+          "excerpt": "One way to indirectly test this claim is to investigate how responses on reasoning tasks correlate with measures of cognitive capacity. If that correlation is positive, it would seem to justify the use of the normative model being employed to evaluate performance, whereas negative correlations might be indicating that an inappropriate normative model is being applied to the situation.",
+          "source_file": "paper_Individual differences in rational thought..md",
+          "location": "ALGORITHMIC-LEVEL LIMITATIONS部分"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇与West发现：在被试间设计中，大量经典思维偏差与认知能力不相关（合取效应、框架效应、锚定、沉没成本等），表明许多认知偏差是人类信息加工系统的普遍属性。但认知能力确实与避免某些偏差相关（分母忽视、信念偏差、概率匹配等），关键在于任务是否需要算法层面计算能力来覆盖启发式反应。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "In 7 different studies, the authors observed that a large number of thinking biases are uncorrelated with cognitive ability. These thinking biases include some of the most classic and well-studied biases in the heuristics and biases literature, including the conjunction effect, framing effects, anchoring effects, outcome bias, base-rate neglect, \"less is more\" effects, affect biases, omission bias, myside bias, sunk-cost effect, and certainty effects that violate the axioms of expected utility theory.",
+          "source_file": "paper_On the relative independence of thinking biases and cognitiv.md",
+          "location": "论文摘要"
+        },
+        {
+          "excerpt": "Thus, across all of the ANOVAs, only two of the six interactions between form and cognitive ability were statistically significant, and only one of these (that for outcome bias) was in the direction of reduced judgmental bias on the part of the group higher in cognitive ability... In summary, Experiment 1 produced very little evidence indicating that cognitive ability was related to judgmental biases when the latter were assessed in between-subjects designs.",
+          "source_file": "paper_On the relative independence of thinking biases and cognitiv.md",
+          "location": "Experiment 1结果总结段落"
+        },
+        {
+          "excerpt": "In a further experiment, the authors nonetheless showed that cognitive ability does correlate with the tendency to avoid some rational thinking biases, specifically the tendency to display denominator neglect, probability matching rather than maximizing, belief bias, and matching bias on the 4-card selection task. The authors present a framework for predicting when cognitive ability will and will not correlate with a rational thinking tendency.",
+          "source_file": "paper_On the relative independence of thinking biases and cognitiv.md",
+          "location": "论文摘要"
+        }
+      ]
+    },
+    {
+      "claim": "卡尼曼指出被试内设计可能夸大了认知能力与偏差的关系，被试间设计更接近真实生活。在'少即是多'效应上，比例优势效应不受认知能力调节——高SAT组与低SAT组同样表现出非理性偏好。沉没成本和风险-收益反向关联上认知能力同样未能减弱偏差。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "In a commentary on this research on individual differences, Kahneman (2000) pointed out that the correlations observed may well have been inflated because most of the relevant studies used within-subjects designs, which contain cues signalling the necessity of heuristic system override (Bartels, 2006; Fischhoff, Slovic, & Lichtenstein, 1979; Kahneman & Frederick, 2002; Kahneman & Tversky, 1982a; Shafir, 1998). He argued that between-subjects tests of the coherence of responses represent a much stricter criterion and perhaps a more appropriate one because \"much of life resembles a between-subjects experiment\" (Kahneman, 2000, p. 682).",
+          "source_file": "paper_On the relative independence of thinking biases and cognitiv.md",
+          "location": "引言部分，Kahneman评论段落"
+        },
+        {
+          "excerpt": "The nonnormative tendency to view risk and reward as negatively correlated was not attenuated by high cognitive ability within the range that we studied. In fact, each of the four negative correlations were higher in the high-SAT group than in the low-SAT group. However, none of the differences between the correlations were significant when a Fisher z test (values of 1.51, 0.12, 0.45, and 1.12, respectively) was used.",
+          "source_file": "paper_On the relative independence of thinking biases and cognitiv.md",
+          "location": "Experiment 4结果段落"
+        },
+        {
+          "excerpt": "Both cognitive ability groups displayed sunk-cost effects of roughly equal magnitude... There was a slight tendency for the low-SAT participants to show a larger sunk-cost effect, but the Cognitive Ability × Condition interaction did not attain statistical significance, F(1, 725) = 1.21, MSE = 9.13.",
+          "source_file": "paper_On the relative independence of thinking biases and cognitiv.md",
+          "location": "Experiment 3结果段落"
+        }
+      ]
+    },
+    {
+      "claim": "CART揭示了认知能力与理性思维各组分之间相关性的光谱式分布：概率推理、科学推理、避免信念偏差与认知能力强相关（.45-.55）；框架效应、锚定、过度自信呈中等相关（.25-.35）；决策偏好异常和时间贴现与认知能力几乎无关。理性是多维度构念，不同组分与智力关系截然不同，关于'理性和智力关系'的讨论必须针对具体组分。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "There are fairly strong correlations, in the range of .45-.55 between cognitive ability and several components of rational thinking in the CART such as probabilistic reasoning, scientific reasoning, avoiding belief bias in syllogistic reasoning, and probabilistic numeracy. Moderate correlations in the range of.25-.35 are found for rational thinking components such as avoiding framing effects in decision-making, avoiding anchoring biases, avoiding overconfidence, and evaluating informal arguments. We find fairly low correlations between cognitive ability and preference anomalies in decision-making and temporal discounting. So there are a range of relationships.",
+          "source_file": "tavily_14_Rationality, Bias, Politics, and AI.md",
+          "location": "素材第1段"
+        },
+        {
+          "excerpt": "You are correct to ask about the forms or components of rational thinking rather than rational thinking itself because the latter is a multifarious concept involving many different subcomponents. In our Comprehensive Assessment of Rational Thinking (CART), described in our book The Rationality Quotient, we measured 20 different components of rationality and four different thinking dispositions related to rational thinking. Your question implies, correctly, that different components of rational thinking have different relationships with intelligence/cognitive ability. I'll describe some of the components that span the continuum of this relationship.",
+          "source_file": "tavily_14_Rationality, Bias, Politics, and AI.md",
+          "location": "素材末尾Stanovich回复段"
+        },
+        {
+          "excerpt": "However, there are some tasks in the heuristics and bi-ases literature that lack any association at all with cognitive ability. The so-called false consensus effect in the opinion prediction paradigm (Krueger & Clement 1994; Krueger & Zeiger 1993) displays complete dissociation with cognitive ability (Stanovich 1999; Stanovich & West 1998c). Like-wise, the overconfidence effect in the knowledge calibra-tion paradigm (e.g., Lichtenstein et al. 1982) displays a neg-ligible correlation with cognitive ability (Stanovich 1999; Stanovich & West 1998c).",
+          "source_file": "tavily_16_[PDF] Individual differences in reasoning: Implications for the rationality ....md",
+          "location": "素材第2段"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇提出一个重要的实证分析框架：推理任务与认知能力之间相关性的强弱可判断描述性-规范性差距来源。强相关意味着算法层面限制是主因（低能力者确实难以达到规范性标准）；无相关则意味着不存在计算限制，规范性回应应对所有人为处方性标准。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Using such a framework, we view the magnitude of the correlation between performance on a reasoning task and cognitive capacity as an empirical clue about the impor-tance of algorithmic limitations in creating discrepancies between descriptive and normative models. A strong cor-relation suggests important algorithmic-level limitations that might make the normative response not prescriptive for those of lower cognitive capacity (Panglossian theorists drawn to this alternative explanation of normative/descrip-tive gaps were termed Apologists by Stanovich 1999.) In contrast, the absence of a correlation between the norma-tive response and cognitive capacity suggests no computa-tional limitation and thus no reason why the normative re-sponse should not be considered prescriptive (see Baron",
+          "source_file": "tavily_16_[PDF] Individual differences in reasoning: Implications for the rationality ....md",
+          "location": "素材第3段"
+        }
+      ]
+    },
+    {
+      "claim": "理性与智力的分离有统计学基础：只要思维倾向与流体智力不是完全相关，理性与智力就可能产生分离。大量实证研究表明两者相关性仅为弱到中等（通常低于0.30），有些接近零。思维倾向在控制智力后仍能独立预测启发式与偏差任务表现。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "It is clear from Figure 8.1 why rationality and intelligence can become dissociated. As long as variation in thinking dispositions is not perfectly correlated with fl uid intelligence, there is the statistical possibility of dissociations between rationality and intelligence. Substantial empirical evidence indicates that individual differences in thinking dispositions and intelligence are far from perfectly correlated. Many different studies involving thousands of subjects (e.g., Ackerman & Heggestad, 1997; Austin & Deary, 2002; Baron, 1982; Bates & Shieles, 2003; Cacioppo et al., 1996; Eysenck, 1994; Goff & Ackerman, 1992; Kanazawa, 2004; Kokis, Macpherson, Toplak, West, & Stanovich, 2002; Zeidner & Matthews, 2000) have indicated that measures of intelligence display only moderate to weak correlations (usually less than .30) with some thinking dispositions (e.g., actively open-minded thinking, need for cognition) and near zero correlations with others (e.g., conscientiousness, curiosity, diligence).",
+          "source_file": "exa_1_[PDF] A Framework for Critical Thinking, Rational Thinking, and Intelligence.md",
+          "location": "理性与智力分离的讨论段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇与West在2016年出版《The Rationality Quotient》，实现了对理性思维进行全面测试的科学主张。他比较了理性测试和智力测试的得分，发现两者相关性很低，某些任务上近乎完全分离。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "In his 2016 book, The Rationality Quotient: Toward a Test of Rational Thinking, Stanovich and colleagues followed through on the claim that a comprehensive test of rational thinking is scientifically possible, given current knowledge. Stanovich researched people's scores on rationality tests, comparing them with their scores on conventional intelligence tests, and revealed a low correlation between them; on some tasks, he found a near-complete dissociation between rational thinking and intelligence.",
+          "source_file": "exa_Keith_Stanovich_-_Wikipedia.md",
+          "location": "理性商数段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇的理性思维概念源于双过程模型：Type 2加工的重要功能是将Type 1触发的早期表征下线并用更好反应替代，启发式与偏见文献中大多数任务依赖这种替代机制。理性思维任务表现与认知成熟度一致相关（无论按年龄、认知能力还是思维倾向衡量），更具认知复杂性的个体更倾向于规范性反应。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "All 5 reasoning domains were consistently related to cognitive sophistication regardless of how it was indexed (age, cognitive ability, thinking dispositions).",
+          "source_file": "exa_8_[PDF] Development, Cognitive Abilities, and Thinking Dispositions | Maggie Topla.md",
+          "location": "摘要段"
+        },
+        {
+          "excerpt": "the data on thinking dispositions and cognitive ability have tended to converge in empirical investigations. Specifically, the same rational thinking tasks that correlate with cognitive ability also correlate with thinking dispositions, and those that fail to correlate with cognitive ability also fail to correlate with thinking dispositions",
+          "source_file": "exa_8_[PDF] Development, Cognitive Abilities, and Thinking Dispositions | Maggie Topla.md",
+          "location": "Convergence Across Different Measures of Cognitive Sophistication段落"
+        },
+        {
+          "excerpt": "That framework posits that performance on rational thinking tasks correlates with cognitive ability under two different circumstances. Both circumstances follow from the fact that dual process models [...] posit that an important function of Type 2 processes is to take early representations triggered by Type 1 processing offline and to substitute better responses. This is because most of the tasks in the heuristics and biases literature were",
+          "source_file": "tavily_12_[PDF] Development, Cognitive Abilities, and Thinking Dispositions.md",
+          "location": "素材末段"
+        },
+        {
+          "excerpt": "In summary, with respect to five important tasks and effects in the rational thinking literature—denominator neglect, belief bias syllogisms, base rate sensitivity, resistance to framing, and other-side thinking—we have observed convergent results. All three measures of cognitive sophistication (age, cognitive ability, and thinking dispositions) correlated with these tasks and effects.",
+          "source_file": "tavily_12_[PDF] Development, Cognitive Abilities, and Thinking Dispositions.md",
+          "location": "素材中段，summary段落"
+        }
+      ]
+    },
+    {
+      "claim": "斯坦诺维奇采用双过程理论框架来理解启发式与偏差任务。Type 1处理具有自主性——触发刺激出现时必须执行，不依赖高级控制系统。Type 2处理非自主，较慢且计算成本高。理性的核心问题在于Type 1和Type 2产生不同反应时：CART任务设计旨在诊断Type 1与Type 2处理在决定最终反应时的主导地位。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "In many such theories, the defining feature of Type 1 processing is its autonomy—the execution of Type 1 processes is mandatory when their triggering stimuli are encountered, and they are not dependent on input from high-level control systems. Autonomous processes have other correlated features—their execution tends to be rapid, they do not put a heavy load on central processing capacity, they tend to be associative—but these other correlated features are not defining.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "THE CART AND THE HEURISTICS AND BIASES LITERATURE段落中段"
+        },
+        {
+          "excerpt": "The really interesting issues of rationality arise when we have the possibility of different types of processing (Type 1 and Type 2) priming different responses. It is just this situation that heuristics and biases tasks put under the microscope. These tasks, interpreted within a dual-process framework (Kahneman, 2011), end up being diagnostic of the dominance of Type 1 versus Type 2 processing in determining the final response.",
+          "source_file": "exa_0_[PDF] The Comprehensive Assessment of Rational Thinking - Keith Stanovich's.md",
+          "location": "THE CART AND THE HEURISTICS AND BIASES LITERATURE段落后半"
+        }
+      ]
+    },
+    {
+      "claim": "执行功能（尤其是抑制和设置转换）与理性思维任务表现存在理论上的有趣关联，因为许多启发式与偏差问题需要抑制一个优势的「自然」反应。本研究纳入三种执行功能任务（设置转换、抑制、工作记忆）作为智力的补充，结果显示执行功能与理性思维任务存在系统性关联。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "As Kahneman (2003, 2011) has pointed out, many heuristics and biases problems require suppressing a prepotent \"natural\" response to the task. Such suppression could well be related to the types of set-shifting and inhibitory processes that are directly and indirectly assessed on measures of executive functioning. We thus, included three executive functioning tasks (a set-shifting task, an inhibition task, and a working memory task) in our study to complement the intelligence measures of cognitive ability.",
+          "source_file": "exa_8_[PDF] Development, Cognitive Abilities, and Thinking Dispositions | Maggie Topla.md",
+          "location": "方法部分，执行功能测量段落"
+        }
+      ]
+    },
+    {
+      "claim": "论文Key Points总结强调：基于表现的测量在最佳表现条件下评估认知加工效率（'监督过程'），评定量表在典型表现条件下评估个体目标达成（'执行控制'）。两者共同揭示了个体在结构化vs非结构化条件下的响应差异——即目标被明确设定vs个体需自主执行目标时的表现差异。增加环境结构可能改善ADHD儿童的执行功能表现。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Performance-based measures of executive function occur under maximal or optimal performance situations and assess the processing efﬁciency of cognitive abilities under very structured conditions. Rating measures of executive function occur under typical performance situations and assess the extent to which individuals accomplish goal pursuits under unstructured conditions. The former are 'supervisory' and the latter involve 'executive control'.\n\nTogether, these divergent sets of information provide an indication of how well or poorly an individual responds in structured versus unstructured conditions. That is, how well the individual performs when the goals are explicitly laid out versus when the individual must execute his/her own goals without explicit guidance.",
+          "source_file": "paper_Practitioner Review_ Do performance‐based measures and ratin.md",
+          "location": "chunk 10，Key Points部分"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 34,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-04-30T20:44:40.205329",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T10:14:15.731693",
+    "pre_merge_count": 158,
+    "post_merge_count": 59
+  }
+}

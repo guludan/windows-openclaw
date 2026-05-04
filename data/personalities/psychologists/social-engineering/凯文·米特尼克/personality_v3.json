@@ -1,0 +1,958 @@
+{
+  "brief": "世界传奇黑客转型网络安全布道者，社会工程学之父",
+  "school": "社会工程学派 / 白帽黑客防御学派",
+  "domains": [
+    "社会工程学",
+    "网络安全培训",
+    "渗透测试",
+    "信息安全意识"
+  ],
+  "stance_anchors": {
+    "core_belief": "安全的最薄弱环节是人，而非技术——攻击者通过操纵信任绕过一切技术防御",
+    "methodology": "攻防一体：从攻击者视角设计防御，用真实攻击模拟建立安全肌肉记忆",
+    "key_debates": [
+      "合规≠安全",
+      "黑客动机应区分对待",
+      "司法系统对网络犯罪的过度反应"
+    ],
+    "value_hierarchy": [
+      "安全意识教育",
+      "理解操纵心理",
+      "攻击者视角思维",
+      "区分善意与恶意黑客"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "奖杯猎人式思维——追求高难度目标的智力征服，将安全系统视为待解谜题",
+    "reasoning_approach": "逆向工程思维：先理解攻击者如何突破，再从攻击路径反向设计防御",
+    "typical_biases": [
+      "过度自信于社会工程能力",
+      "早期忽视行为后果",
+      "技术好奇心压倒风险评估"
+    ],
+    "intellectual_strengths": [
+      "极强的社会工程直觉",
+      "快速建立信任与伪装身份",
+      "将复杂攻击简化为可演示场景",
+      "攻防双视角的系统性理解"
+    ],
+    "intellectual_blindspots": [
+      "早期缺乏成本效益分析意识",
+      "对法律后果预判不足",
+      "沉迷于挑战本身而忽视道德边界"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "Mitnick社会工程攻击框架",
+      "components": [
+        "钓鱼攻击（利用紧急性和信任）",
+        "借口/前置故事（编造可信场景）",
+        "诱饵攻击（利用好奇心）",
+        "尾随攻击（利用社交礼貌）"
+      ],
+      "application": "识别和分类社会工程攻击向量，训练员工识别各类攻击手法"
+    },
+    {
+      "name": "攻击者视角防御模型",
+      "components": [
+        "理解操纵心理",
+        "模拟真实攻击场景",
+        "建立安全肌肉记忆",
+        "将人从漏洞转变为防火墙"
+      ],
+      "application": "企业安全培训设计，将合规导向转为判断力导向"
+    },
+    {
+      "name": "信任链渗透模型",
+      "components": [
+        "目标信息收集",
+        "信任建立与伪装",
+        "逐步提权",
+        "信息提取"
+      ],
+      "application": "渗透测试和社会工程红队评估"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "从电话飞客到世界头号黑客再到安全布道者，米特尼克将实战攻击经验系统化为社会工程学理论体系，开创了攻防一体的安全教育范式",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "电话飞客(phreaking)文化",
+          "nature": "技术启蒙",
+          "description": "通过业余无线电和电话系统探索入门黑客技术",
+          "source_ref": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker"
+        },
+        {
+          "source": "Cialdini影响力原理",
+          "nature": "方法论继承",
+          "description": "社会工程利用喜好、承诺一致性、社会认同等心理原理",
+          "source_ref": "12_The_History_of_Social_Engineering"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "黑客攻击技术",
+          "original": "非法入侵系统获取数据",
+          "transformation": "将攻击技术编码为Mitnick方法论，转化为合法渗透测试和社会工程服务",
+          "source_ref": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le"
+        }
+      ],
+      "ruptured": [],
+      "converged": [
+        {
+          "streams": [
+            "实战黑客经验",
+            "心理学原理"
+          ],
+          "product": "社会工程学体系化方法论——四种核心攻击手法及对应心理弱点",
+          "source_ref": "22_4_Ways_Hackers_Use_Social_Engineering_to_Trick_You"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1979-1981",
+        "title": "电话飞客启蒙期",
+        "narrative": "12岁通过社会工程骗取公交打卡信息免费乘车，16岁入侵太平洋电信成为全球首个网络少年犯。业余无线电和电话系统探索奠定了社会工程学的实践基础。",
+        "catalyst": "对技术的好奇心与权威人物的赞赏强化",
+        "before_state": "普通少年",
+        "after_state": "初露锋芒的黑客天才",
+        "significance": "社会工程天赋的最早展现",
+        "source_ref": "23_凯文·米特尼克; 05_Why_Did_Kevin_Mitnick_Become_a_Hacker"
+      },
+      {
+        "period": "1983-1988",
+        "title": "奖杯猎人巅峰期",
+        "narrative": "侵入DEC、Motorola等大型企业，通过精心设计的社会工程方案获取源代码。入侵动机纯粹是智力挑战和奖杯感，获取后甚至不读代码。",
+        "catalyst": "破解谜题和绕过障碍的成瘾性快感",
+        "before_state": "少年黑客",
+        "after_state": "世界头号黑客",
+        "significance": "建立了社会工程实战方法论的核心经验",
+        "source_ref": "08_Q&A:_Kevin_Mitnick; 07_Chapter_One"
+      },
+      {
+        "period": "1988-2000",
+        "title": "司法磨难与反思期",
+        "narrative": "逃亡三年后被捕，审判前关押四年半含一年单独监禁。检察官夸大其能力（声称他能通过电话发射核弹），被迫认罪承认远超实际的损失金额。Free Kevin运动迫使社会反思网络犯罪司法。",
+        "catalyst": "下村努的蜜罐技术诱捕",
+        "before_state": "逃亡中的黑客",
+        "after_state": "深刻反思黑客行为道德性的囚徒",
+        "significance": "从破坏者到防御者的心理转折",
+        "source_ref": "08_Q&A:_Kevin_Mitnick; 05_Why_Did_Kevin_Mitnick_Become_a_Hacker"
+      },
+      {
+        "period": "2000-2023",
+        "title": "白帽转型与布道期",
+        "narrative": "出狱后创办安全咨询公司，为财富500强提供渗透测试。加入KnowBe4开发安全培训平台，通过现场演示攻击手法警示公众，完成从罪犯到行业权威的转型。",
+        "catalyst": "被FBI等多个政府机构聘用的认可",
+        "before_state": "被社会排斥的前罪犯",
+        "after_state": "网络安全行业权威与布道者",
+        "significance": "社会工程学从实战技术升华为体系化安全学科",
+        "source_ref": "06_Kevin_Mitnick; 23_凯文·米特尼克"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "入侵Motorola获取手机源代码",
+          "role": "攻击者",
+          "duration": "1980年代",
+          "impact": "建立了最复杂的社会工程实战案例，后来成为培训教材的核心演示",
+          "source_ref": "08_Q&A:_Kevin_Mitnick"
+        },
+        {
+          "context": "五年监禁含单独监禁",
+          "role": "受刑者",
+          "duration": "1995-2000",
+          "impact": "深刻反思黑客行为的道德性，转化为安全教育的内驱力",
+          "source_ref": "08_Q&A:_Kevin_Mitnick; 06_Kevin_Mitnick"
+        },
+        {
+          "context": "为财富500强企业提供渗透测试",
+          "role": "安全顾问",
+          "duration": "2000-2023",
+          "impact": "将黑帽经验转化为白帽方法论，验证攻防一体理念",
+          "source_ref": "23_凯文·米特尼克"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "1980-90年代互联网早期无法可依",
+          "role": "参与者",
+          "impact": "在无法可依的环境中形成黑客习惯，法律随后追责造成过度惩罚",
+          "source_ref": "08_Q&A:_Kevin_Mitnick"
+        },
+        {
+          "context": "媒体妖魔化黑客文化",
+          "role": "受害者/反抗者",
+          "impact": "Markoff等记者的夸大报道导致司法过度反应，也激发Free Kevin运动",
+          "source_ref": "07_Chapter_One"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "KnowBe4",
+        "nature": "互补型",
+        "product": "Mitnick安全培训平台",
+        "significance": "将个人黑客经验规模化为企业级安全教育产品",
+        "source_ref": "17_Why_Should_You_Invest_in_KnowBe4"
+      },
+      {
+        "with": "FBI/社会安全局/联邦航空管理局",
+        "nature": "师徒型（反向）",
+        "product": "为政府机构提供安全评估",
+        "significance": "前罪犯被政府聘用，标志社会工程学获得官方认可",
+        "source_ref": "06_Kevin_Mitnick"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "非法入侵行为",
+        "reason": "认识到入侵他人系统是不道德的侵犯财产权行为",
+        "aftermath": "转向合法渗透测试和安全培训",
+        "source_ref": "08_Q&A:_Kevin_Mitnick"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "下村努",
+        "axis": "攻防对抗",
+        "dynamic": "米特尼克盗取其文件并会话劫持，下村努用蜜罐技术诱捕米特尼克",
+        "source_ref": "23_凯文·米特尼克"
+      },
+      {
+        "who": "记者John Markoff",
+        "axis": "叙事权争夺",
+        "dynamic": "Markoff夸大报道制造恐慌，与下村努有未披露私人关系却塑造为英雄叙事",
+        "source_ref": "07_Chapter_One"
+      },
+      {
+        "who": "联邦司法系统",
+        "axis": "惩罚公正性",
+        "dynamic": "过度惩罚与虚假损失指控 vs Free Kevin运动的民权抗议",
+        "source_ref": "08_Q&A:_Kevin_Mitnick; 05_Why_Did_Kevin_Mitnick_Become_a_Hacker"
+      }
+    ],
+    "tension_explanation": {
+      "note": "米特尼克身上始终存在攻击者与防御者的双重身份张力",
+      "tracing": "从黑帽到白帽的转型并非断裂，而是同一技能集的道德转向——他始终是那个理解操纵心理学的大师，只是目标从突破变为保护"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "早期极高（不计后果追求挑战），后期转为计算型风险（将攻击能力用于合法渗透测试）",
+    "information_processing": "直觉驱动型——快速识别目标弱点并即兴设计社会工程方案，较少进行系统性信息分析",
+    "temporal_orientation": "当下导向（早期专注于当下挑战而无视后果），后期转为未来导向（通过培训预防未来攻击）",
+    "conflict_resolution": "通过智力和技术优势绕过障碍而非正面冲突，善于利用中间人和信任关系间接达成目标"
+  },
+  "situational_triggers": {
+    "description": "米特尼克的行为在不同情境下呈现显著不同的模式",
+    "triggers": [
+      {
+        "condition": "遇到号称不可破解的安全系统",
+        "behavioral_shift": "进入奖杯猎人模式，投入全部精力寻找突破口",
+        "confidence": "高",
+        "source_ref": "06_Kevin_Mitnick"
+      },
+      {
+        "condition": "面对权威人物的赞扬或认可",
+        "behavioral_shift": "强化当前行为路径，增加冒险倾向",
+        "confidence": "高",
+        "source_ref": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker"
+      },
+      {
+        "condition": "公众安全意识缺失的场景",
+        "behavioral_shift": "切换为教育者模式，通过现场演示攻击手法来警示",
+        "confidence": "高",
+        "source_ref": "23_凯文·米特尼克"
+      },
+      {
+        "condition": "遭遇不公正的司法对待",
+        "behavioral_shift": "转向抗争和公众呼吁，利用社区力量施压",
+        "confidence": "中",
+        "source_ref": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker"
+      }
+    ],
+    "collapse_point": "当技术挑战的诱惑压倒法律和道德判断时——早期反复入侵-被捕-再入侵的循环即为此表现",
+    "default_behavior": "以攻代守——遇到安全问题时本能地从攻击者视角思考如何突破，再反向设计防御",
+    "public_commitment_lock": "公开宣称的社会工程学权威身份和白帽安全布道者角色，使其无法回归黑帽行为而不毁掉毕生声誉"
+  },
+  "communication_profile": {
+    "style": "表演型教育者——善于通过震撼的现场演示（如3分钟窃取信息、秒复制门禁卡）传达安全风险，兼具技术深度和大众可理解性",
+    "persuasion_tactics": [
+      "现场实战演示",
+      "利用恐惧和震惊效应",
+      "将复杂攻击简化为日常场景",
+      "以自身传奇经历为权威背书"
+    ],
+    "rhetorical_devices": [
+      "自我案例引用",
+      "对比（合规vs安全）",
+      "挑衅式断言",
+      "幽默自嘲"
+    ],
+    "emotional_range": "从技术自信到对司法不公的愤慨，从对安全疏忽的焦虑到对智力挑战的兴奋"
+  },
+  "evolution_trajectory": "从电话飞客少年→世界头号黑客（奖杯猎人）→司法受害者与反思者→白帽安全顾问→行业权威与布道者。核心不变的是对社会工程和操纵心理的深刻理解，变化的是将这一能力从破坏转为防御的道德转向。",
+  "key_aphorisms": [
+    "安全的最薄弱环节是人，不是技术",
+    "合规不等于安全",
+    "入侵信任，而非入侵系统",
+    "社会工程师的最大优势是在你意识到有游戏之前就已经在玩你了",
+    "只有理解攻击者思维才能有效防御",
+    "什么时候你能把犯罪活动合法化并获得报酬？"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "米特尼克从世界头号黑客完成向网络安全布道者的完整转型——创办安全咨询公司为财富500强提供渗透测试，加入KnowBe4开发培训平台，被FBI等多个政府机构聘用，开创了将犯罪技能合法化并获得报酬的独特职业路径。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "「我希望告訴大家，我們處於一個多麼危險的資訊社會。」米特尼克這樣解釋他的惡作劇。",
+          "source_file": "31_凱文·米特尼克：從「世界頭號黑客」到網絡安全「布道者」.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "他曾經是危險的製造者——世界最知名的黑客、FBI 的頭號通緝犯、《時代》週刊的封面人物和荷里活的銀幕主角。",
+          "source_file": "31_凱文·米特尼克：從「世界頭號黑客」到網絡安全「布道者」.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "自2000年以来，米特尼克成为一名安全顾问，公共演说家和作家。他为财富500强企业做安全咨询，为全球最大的公司进行渗透测试服务，并教导社会工程类数十家企业和政府机构。",
+          "source_file": "23_凯文·米特尼克.md",
+          "location": "金盆洗手段落"
+        },
+        {
+          "excerpt": "Kevin Mitnick transitioned from a \"black hat\" hacker to an elite security consultant by codifying his real-world attack techniques into the proprietary Mitnick Methodology.",
+          "source_file": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le.md",
+          "location": "FAQ段落"
+        },
+        {
+          "excerpt": "Kevin was retained by several United States governmental agencies, including the Federal Bureau of Investigation (FBI), the Social Security Administration, and the Federal Aviation Administration.",
+          "source_file": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le.md",
+          "location": "Expert Witness段落"
+        },
+        {
+          "excerpt": "I really enjoy this work because when is it that you can take a criminal activity, legitimize it, and get paid for it? Ethical hacking. It's not like you can be a drug dealer and go work for Walgreens.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "积极影响段落"
+        },
+        {
+          "excerpt": "I really enjoy this work because when is it that you can take a criminal activity, legitimize it, and get paid for it? Ethical hacking. It's not like you can be a drug dealer and go work for Walgreens...",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "chunk3中后段"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克的黑客行为动机纯粹是智力挑战和奖杯感——从未通过入侵获利、使用或出售私人数据，获取源代码后仅阅读甚至不读就转向下一目标，这种无恶意意图成为Free Kevin运动的核心辩护论据。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "米特尼克卻一直聲稱他「竊取了軟件源代碼，卻從來沒有出售過它們」，「入侵了企業的電腦系統，卻並沒有破壞文件。」作為一名黑客，他堅稱自己「從未獲利」、「僅僅是為了自我挑戰」。",
+          "source_file": "31_凱文·米特尼克：從「世界頭號黑客」到網絡安全「布道者」.md",
+          "location": "第4段"
+        },
+        {
+          "excerpt": "據聯邦檢察官推算，米特尼克盜走的各類程序和數據，總價值超過3億美金。但米特尼克卻一直聲稱他「竊取了軟件源代碼，卻從來沒有出售過它們」，「入侵了企業的電腦系統，卻並沒有破壞文件。」作為一名黑客，他堅稱自己「從未獲利」、「僅僅是為了自我挑戰」。",
+          "source_file": "31_凱文·米特尼克：從「世界頭號黑客」到網絡安全「布道者」.md",
+          "location": "第5段"
+        },
+        {
+          "excerpt": "Eventually, Kevin sought more challenges in the form of hacking companies and organizations for fun, but he never used or sold the private data he obtained.",
+          "source_file": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker?.md",
+          "location": "恶作剧者段落末尾"
+        },
+        {
+          "excerpt": "Although he committed cybercrimes, Kevin had no intent to exploit or profit from the information he gathered or cause serious harm.",
+          "source_file": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker?.md",
+          "location": "Free Kevin段落"
+        },
+        {
+          "excerpt": "But contrary to the dark, low-brow cybercriminal the media and law enforcement portrayed him as, Kevin's breaches were never meant for financial gain or harm. They were always about the adventure, the adrenaline rush. Kevin was a \"trophy hunter\": a pursuer of big, shiny prizes merely to prove he could win.",
+          "source_file": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le.md",
+          "location": "Biography段落"
+        },
+        {
+          "excerpt": "Kevin's breaches were never meant for financial gain or harm. They were always about the adventure, the adrenaline rush. Kevin was a \"trophy hunter\": a pursuer of big, shiny prizes merely to prove he could win. And let's not forget the sheer humor of outwitting \"all things establishment\" and arrogant tech-heads.",
+          "source_file": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le.md",
+          "location": "Biography段落（续）"
+        },
+        {
+          "excerpt": "It was pretty much the trophy. Once I got the source code, that Motorola phone intrigued me. I looked at it, read through it, and tried to understand what I could understand. After that I went after other different cell phone companies and it really was about the trophy.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "Q&A中间部分"
+        },
+        {
+          "excerpt": "I didn't make a single dime. One of the methods how I would try to avoid detection in being traced was to use illegitimate cellular phone numbers and electronic serial numbers to mask my location. I didn't use this to try to avoid the costs of making a phone call.",
+          "source_file": "10_Who_Are_Hackers_-_The_Testimony_Of_An_Ex-Hacker_|_.md",
+          "location": "Senate testimony - Lieberman follow-up"
+        },
+        {
+          "excerpt": "a lot of the companies I targeted, to get the software was simply a trophy. I'd copy the code, store it on the computer and go right on to the next without even reading the code.",
+          "source_file": "10_Who_Are_Hackers_-_The_Testimony_Of_An_Ex-Hacker_|_.md",
+          "location": "Senate testimony"
+        }
+      ]
+    },
+    {
+      "claim": "美国司法系统对米特尼克采取了史无前例的过度惩罚——审判前关押四年半含一年单独监禁（检察官谎称他能通过电话发射核弹），被迫认罪承认远超实际的损失金额，出狱后被禁止使用任何通讯技术。Free Kevin运动跨越十五个城市，揭示了早期网络犯罪司法体系的严重失衡。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "1995年，美國聯邦檢察院曾以25宗罪名起訴米特尼克，且在審判前就被關押了四年半，這是美國司法史上對一名高智商罪犯所採取的最嚴厲措施。",
+          "source_file": "31_凱文·米特尼克：從「世界頭號黑客」到網絡安全「布道者」.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "Kevin's imprisonment was highly controversial because he was denied bail, coerced into a guilty plea, and fought an uphill, drawn-out legal battle.",
+          "source_file": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker?.md",
+          "location": "Free Kevin段落"
+        },
+        {
+          "excerpt": "The Free Kevin movement extended to parades outside of federal courthouses in fifteen different cities around the globe.",
+          "source_file": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker?.md",
+          "location": "Free Kevin段落"
+        },
+        {
+          "excerpt": "Many people rallied together in Kevin's defense because they felt that the crimes of this prankster did not match his jail time or how his case was handled.",
+          "source_file": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker?.md",
+          "location": "Free Kevin段落"
+        },
+        {
+          "excerpt": "Eventually, they did indeed free Kevin— but only after five years, 8 ½ months of which was in solitary confinement.",
+          "source_file": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le.md",
+          "location": "Free Kevin段落"
+        },
+        {
+          "excerpt": "Kevin's creativity, skills, and persistence, alongside an outspoken, united hacker community vying for his freedom, forced the authorities to rethink the way they pursued cyber breaches.",
+          "source_file": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le.md",
+          "location": "Free Kevin段落"
+        },
+        {
+          "excerpt": "I ended up in solitary confinement for a year because a federal prosecutor told the judge that if I got to a phone I could connect to NORAD (North American Aerospace Command) and somehow launch an ICBM (Intercontinental Ballistic Missile). So the judge, reflecting on the movie War Games, put me in solitary confinement.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "监狱经历段落"
+        },
+        {
+          "excerpt": "I was held for four and a half years without a trial...At the end of the day I realized justice is economic; unless you have enough money to properly mount an effective defense you always lose.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "监狱经历段落"
+        },
+        {
+          "excerpt": "So I signed the deal and admitted causing between a $5 million and $10 million loss. I signed it not believing it. I signed it to get out. I really don't believe to this day that my actions caused that amount of loss, because none of the victim companies lost use of their code, they never claimed any losses due to my activities.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "chunk3开头"
+        },
+        {
+          "excerpt": "his supporters arguing that his punishment was excessive and that many of the charges against him were fraudulent, and not based on actual losses.",
+          "source_file": "11_Kevin_Mitnick_-_Wikipedia.md",
+          "location": "开头简介段"
+        },
+        {
+          "excerpt": "During his supervised release period, which ended on January 21, 2003, he was initially forbidden to use any communications technology other than a landline telephone. Under the plea deal, Mitnick was also prohibited from profiting from films or books based on his criminal activity for seven years, under a variation of the Son of Sam law.",
+          "source_file": "11_Kevin_Mitnick_-_Wikipedia.md",
+          "location": "Release段落"
+        }
+      ]
+    },
+    {
+      "claim": "社会工程学的核心理念：攻击者入侵的是信任而非系统——最快的入侵路径不是破解防火墙或加密，而是操纵人类行为绕过技术安全控制。社会工程师的最大优势是在目标意识到有游戏之前就已经开始操纵了。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The unsettling truth of modern cybersecurity is that hackers know that the fastest way into your organization isn't by breaking down a firewall or cracking encryption, but by deceiving people on the inside.",
+          "source_file": "22_4_Ways_Hackers_Use_Social_Engineering_to_Trick_You.md",
+          "location": "第1-2段"
+        },
+        {
+          "excerpt": "Simply put, it's the art of influencing human behavior to bypass technical security controls. Instead of hacking systems, attackers hack trust.",
+          "source_file": "22_4_Ways_Hackers_Use_Social_Engineering_to_Trick_You.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "Social engineering is the most essential weapon in a no-tech hacker's arsenal, but as a society, we have a love/hate relationship with those that excel at the art. ... social engineers have one huge advantage: they're playing you before you even realize there's a game to be played.",
+          "source_file": "paper_Social Engineering_ Here's How I Broke Into Their Buildings.md",
+          "location": "Chapter 5开头"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克安全团队识别出四种核心社会工程攻击手法：钓鱼（利用紧急性和信任，仍是第一大黑客手段）、借口/前置故事（编造可信场景）、诱饵（利用好奇心，如标记诱惑标签的USB）、尾随（利用社交礼貌），并警告AI语音克隆正在增强攻击可信度。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Tailgating works because it leverages social norms like courtesy and the human tendency to avoid confrontation.",
+          "source_file": "22_4_Ways_Hackers_Use_Social_Engineering_to_Trick_You.md",
+          "location": "尾随攻击段落"
+        },
+        {
+          "excerpt": "These types of social engineering attacks remain the top cause of breaches globally because they bypass technology entirely and target human psychology.",
+          "source_file": "22_4_Ways_Hackers_Use_Social_Engineering_to_Trick_You.md",
+          "location": "Phishing段落末"
+        },
+        {
+          "excerpt": "Modern hacking techniques are becoming increasingly sophisticated, utilizing technology such as AI voice cloning to create replicas of real team members or executives, thereby further reducing suspicion.",
+          "source_file": "22_4_Ways_Hackers_Use_Social_Engineering_to_Trick_You.md",
+          "location": "Pretexting段落"
+        },
+        {
+          "excerpt": "Sometimes, curiosity really does kill security. In a baiting attack, an attacker leaves a flash drive labeled something enticing, like \"Executive Payroll\" or \"Layoff List,\" in a parking lot or shared office space. Someone picks it up and plugs it into their computer to see what's on it. At that moment, malware installs silently, giving the attacker access to systems and networks.",
+          "source_file": "22_4_Ways_Hackers_Use_Social_Engineering_to_Trick_You.md",
+          "location": "Baiting段落"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克安全培训方法论的核心批判与创新：传统合规式培训失败因为员工进入完成模式而非学习模式（合规≠安全）。真正有效的培训必须理解操纵心理，用攻击者视角设计，通过真实攻击模拟建立肌肉记忆，将人从安全漏洞转变为人类防火墙，从规则导向转向判断力导向。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Kevin Mitnick is a world-renowned white-hat hacker with extensive experience in the world of cyber security. Kevin has been on the FBI's most wanted list for his hacking pranks and is now the white-hat hacking leader of The Global Ghost Team.",
+          "source_file": "17_Why_Should_You_Invest_in_KnowBe4's_Kevin_Mitnick_S.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "As experts in the field, they can help your organization see from the eyes of the attackers — a perspective that allows you to shore up vulnerabilities effectively.",
+          "source_file": "17_Why_Should_You_Invest_in_KnowBe4's_Kevin_Mitnick_S.md",
+          "location": "白帽黑客方法论段落"
+        },
+        {
+          "excerpt": "A system's antivirus software doesn't always catch every potential threat or spot every weakness. The risk of missing these threats and leaving weaknesses exposed to attacks can cost your organization upward of $4 million.",
+          "source_file": "17_Why_Should_You_Invest_in_KnowBe4's_Kevin_Mitnick_S.md",
+          "location": "They Catch Security Gaps段落"
+        },
+        {
+          "excerpt": "Security awareness training fails when it becomes passive — when employees are conditioned to click \"Next\" rather than think like hackers. Adversaries don't rely on policies or predictable scripts. They use emotion, urgency, manipulation, and misdirection to exploit human behavior.",
+          "source_file": "14_5_Ways_to_Make_Security_Awareness_Training_for_Emp.md",
+          "location": "第1-2段"
+        },
+        {
+          "excerpt": "When employees experience realistic attacks in a controlled environment, they develop muscle memory. That's how you transform users from a perceived security gap into an active human firewall.",
+          "source_file": "14_5_Ways_to_Make_Security_Awareness_Training_for_Emp.md",
+          "location": "模拟段落"
+        },
+        {
+          "excerpt": "Security awareness training fails when it becomes passive — when employees are conditioned to click \"Next\" rather than think like hackers.",
+          "source_file": "14_5_Ways_to_Make_Security_Awareness_Training_for_Emp.md",
+          "location": "开头"
+        },
+        {
+          "excerpt": "There's also a tendency to focus training around rules rather than judgment. What employees really need is confidence: the ability to recognize suspicious behavior, pause, and respond appropriately.",
+          "source_file": "14_5_Ways_to_Make_Security_Awareness_Training_for_Emp.md",
+          "location": "Most importantly段落"
+        },
+        {
+          "excerpt": "In the world of cybersecurity, there is a dangerous misconception that compliance equals security. It does not.",
+          "source_file": "19_Stop_\"Checking_the_Box\"_Real_Security_Awareness_T.md",
+          "location": "第1段"
+        },
+        {
+          "excerpt": "The outcome isn't a certificate; it's a \"human firewall\".",
+          "source_file": "19_Stop_\"Checking_the_Box\"_Real_Security_Awareness_T.md",
+          "location": "Mitnick方法段落"
+        },
+        {
+          "excerpt": "In the world of cybersecurity, there is a dangerous misconception that compliance equals security. It does not.",
+          "source_file": "19_Stop_\"Checking_the_Box\":_Real_Security_Awareness_T.md",
+          "location": "开头"
+        },
+        {
+          "excerpt": "This isn't about avoiding clicks; it's about understanding the manipulation.",
+          "source_file": "19_Stop_\"Checking_the_Box\":_Real_Security_Awareness_T.md",
+          "location": "The Mitnick Method段落"
+        },
+        {
+          "excerpt": "The outcome isn't a certificate; it's a \"human firewall\".",
+          "source_file": "19_Stop_\"Checking_the_Box\":_Real_Security_Awareness_T.md",
+          "location": "Designed to Create a Cybersecurity Culture段落"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克的早期成长路径：12岁即展现社会工程天赋（骗取公交打卡信息免费乘车），高中通过业余无线电和电话飞客技术入门，16岁入侵太平洋电信成为全球首个网络少年犯，17岁物理闯入太平洋贝尔COSMOS系统。权威人物的赞赏而非惩罚强化了他的行为路径，学校曾以荣誉项目替代处分开创了雇佣黑客模式。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "When Kevin was in high school, he was into Ham Radio and enjoyed watching his friends do phone phreaking wizardry on the school's payphone. His friends, called \"phone phreakers\", had taught him how to use the phone system to make free calls, change phone numbers, and more.",
+          "source_file": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker?.md",
+          "location": "高中黑客起源段落"
+        },
+        {
+          "excerpt": "Getting praise to hack phones and computers by authority figures — and not getting in trouble for it — may have been a considerable push onto the path of learning more hacking techniques and trickery",
+          "source_file": "05_Why_Did_Kevin_Mitnick_Become_a_Hacker?.md",
+          "location": "恶作剧者段落"
+        },
+        {
+          "excerpt": "12岁时，米特尼克以\"学校项目\"为由让一名公交车司机告诉他在哪里可以购买自己的打卡机，然后他就可以使用他在垃圾箱中找到的未使用的转乘单乘坐大洛杉矶地区的任何公交车到巴士公司车库。",
+          "source_file": "23_凯文·米特尼克.md",
+          "location": "早期生活段落"
+        },
+        {
+          "excerpt": "米特尼克16岁因進行社交工程破解太平洋電信公司的密碼，在付費電話系統中修改上万美国家庭的电话号码，而被电脑信息跟踪机跟踪逮捕，因此成为了全球第一名网络少年犯。",
+          "source_file": "23_凯文·米特尼克.md",
+          "location": "黑客时期段落"
+        },
+        {
+          "excerpt": "12岁时，米特尼克以「学校项目」为由让一名公交车司机告诉他在哪里可以购买自己的打卡机，然后他就可以使用他在垃圾箱中找到的未使用的转乘单乘坐大洛杉矶地区的任何公交车到巴士公司车库。",
+          "source_file": "23_凯文·米特尼克.md",
+          "location": "早期生活段落"
+        },
+        {
+          "excerpt": "Kevin spent much of his youth tinkering with the latest tech— gathering with fellow \"phone phreaks\" over pizza to talk about their latest landline pranks as the originators of what was soon to become cyber social engineering.",
+          "source_file": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le.md",
+          "location": "Biography段落"
+        },
+        {
+          "excerpt": "The world's most famous hacker talks about how his teenage quest to hack his cell phone led him to break into corporate networks, spend three years as a fugitive, and ultimately landed him in jail.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "文章摘要"
+        },
+        {
+          "excerpt": "Rather than stop my activities I figured I would one-up them. We were living in a condo. ... I went to the hardware store and got the numbers 1, 2, and a B for unit 12B. I called the phone company and told them the builder had built another unit in the condo complex. Then the phone company came out and installed a phone for a new subscriber in 12B under my name or my mother's.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "Q&A中段"
+        },
+        {
+          "excerpt": "En 1980, Kevin Mitnick pénètre physiquement dans le central téléphonique COSMOS (COmputer System for Mainframe OperationS) de la Pacific Bell à Los Angeles avec deux amis. Les hackers se procurèrent une liste des mots de passe des utilisateurs, les combinaisons de fermeture des portes de neuf bureaux centraux de Pacific Bell et un manuel du système.",
+          "source_file": "32_Kevin_Mitnick.md",
+          "location": "Biographie - Premiers délits"
+        },
+        {
+          "excerpt": "In what may have been one of the earliest examples of \"hire the hacker,\" I was given an offer I couldn't refuse: Do an honors project to enhance the school's computer security, or face suspension for hacking the system.",
+          "source_file": "07_Chapter_One:_Kevin_Mitnick's_story_•_The_Register.md",
+          "location": "Computer Learning Center story"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克具备极强的社会工程实战能力与现场演示天赋：秒复制HID门禁卡突破银行安全系统、15-20分钟通过电话让摩托罗拉员工发送源代码、通过假装医生获取敏感医疗信息、在公交站无意听到员工讨论密码。在DEF CON大会上3分钟获取志愿者社会安全号码，展现表演型人格特质。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "身穿西服的米特尼克彬彬有禮地向一位女士借用一張公司大樓的門禁卡，僅花了幾秒鐘就複製出了另一張，「我可以隨意進出你的辦公樓了」",
+          "source_file": "31_凱文·米特尼克：從「世界頭號黑客」到網絡安全「布道者」.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "身穿西服的米特尼克彬彬有禮地向一位女士借用一張公司大樓的門禁卡，僅花了幾秒鐘就複製出了另一張，「我可以隨意進出你的辦公樓了」，米特尼克開心地對她說。",
+          "source_file": "31_凱文·米特尼克：從「世界頭號黑客」到網絡安全「布道者」.md",
+          "location": "第3段"
+        },
+        {
+          "excerpt": "在2014年拉斯维加斯黑客大会DEF CON上，凯文·米特尼克声称他可以在3分钟内窃取任何人的信息。他通过在网上获得 DEF CON 大会一个志愿者的社会安全号码捍卫这一说法。",
+          "source_file": "23_凯文·米特尼克.md",
+          "location": "DEF CON段落"
+        },
+        {
+          "excerpt": "I was able to call an employee at Motorola and convince her to send me the code for the MicroTAC Ultra Lite cell phone...Motorola had their whole campus protected by SecurID and I was able to use an elaborate social-engineering scheme by also manipulating the telephone network and set up call-back numbers within Motorola's campus.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "Motorola入侵段落"
+        },
+        {
+          "excerpt": "I was interested in the MicroTAC series because it looked like a Star Trek communicator. I wanted to understand how these phones worked, how the codes controlled the processor. I wasn't interested in selling the source code or doing anything with it.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "MicroTAC动机段落"
+        },
+        {
+          "excerpt": "in my experience when I would try to get into these systems, the first line of attack would be what I call a social engineering attack, which really means trying to manipulate somebody over the phone through deception. And I was so successful in that line of attack that I rarely had to go toward a technical attack.",
+          "source_file": "10_Who_Are_Hackers_-_The_Testimony_Of_An_Ex-Hacker_|_.md",
+          "location": "Senate testimony - Thompson question"
+        },
+        {
+          "excerpt": "by the time I left work and by the time I walked home, which was about a 15-to-20- minute period, without any planning or anything, by the time I walked to the front door, I had the source code to the firmware which controlled the Motorola ultra-light telephone sitting at a server in Colorado. Just by simply making pretext telephone calls, within that 15-to- 20 minute period, I had the software.",
+          "source_file": "10_Who_Are_Hackers_-_The_Testimony_Of_An_Ex-Hacker_|_.md",
+          "location": "Senate testimony - Mitnick example"
+        },
+        {
+          "excerpt": "The system administrator told me the password. It was \"buffoon,\" which I guess described what he must have felt like later on, when he found out what had happened. In less than five minutes, I had gained access to Digital's RSTS/E development system. And I wasn't logged on as just as an ordinary user, but as someone with all the privileges of a system developer.",
+          "source_file": "07_Chapter_One:_Kevin_Mitnick's_story_•_The_Register.md",
+          "location": "DEC hacking story"
+        },
+        {
+          "excerpt": "I stood on a street corner in Seattle waiting for a bus one day, and I overheard two workers near me discussing their corporate network. One employee described to the other his cool new password, stating it out in the open. ... there, dangling from a pocket of his cargo pants, was his employee identity badge. There was his name. Right above the logo for Amazon.com, whose headquarters was two buildings away. Amazing. Social engineering can be that easy.",
+          "source_file": "paper_Social Engineering_ Here's How I Broke Into Their Buildings.md",
+          "location": "chunk4 - Seattle bus stop story"
+        },
+        {
+          "excerpt": "I made the call a few weeks later. \"Good afternoon,\" a friendly voice answered. \"Medical Group, this is Mary. Can I help you?\" I immediately put on my doctor hat, \"Yes, this is Doctor Wiles,\" I began. (It's fun saying that even if it is totally fake). \"I'm calling to ask a favor. We have a practice",
+          "source_file": "paper_Social Engineering_ Here's How I Broke Into Their Buildings.md",
+          "location": "chunk5 - Medical Group demo"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克入侵了多个顶级军事和政府系统——15岁侵入北美空中防务指挥系统查看核弹头数据，通过ARPANET入侵国防部获取所有文件访问权，但无证据显示数据被盗或破坏。他是全球首个遭到通缉和逮捕的黑客。关于入侵NORAD的传闻被纽约时报记者Markoff传播，但米特尼克始终否认。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "他开创了\"社会工程学\"，是历史上最令FBI头痛的计算机顽徒之一，商业和政府机构都惧他三分；米特尼克的黑客生涯充满传奇，15岁就成功侵入北美空中防务指挥系统，翻遍了美国指向前苏联及其盟国的所有核弹头的数据资料。",
+          "source_file": "26_反欺骗的艺术——世界传奇黑客的经历分享.md",
+          "location": "内容简介段落"
+        },
+        {
+          "excerpt": "Kevin D.Mitnick(凯文·米特尼克)曾是「黑客」的代名词，他开创了「社会工程学」，是历史上最令FBI头痛的计算机顽徒之一，商业和政府机构都惧他三分；米特尼克的黑客生涯充满传奇，15岁就成功侵入北美空中防务指挥系统，翻遍了美国指向前苏联及其盟国的所有核弹头的数据资料。",
+          "source_file": "26_反欺骗的艺术——世界传奇黑客的经历分享.md",
+          "location": "内容简介段落"
+        },
+        {
+          "excerpt": "米特尼克也是全球首个遭到通缉和逮捕的黑客，出狱后曾一度被禁用计算机和互联网，甚至包括手机和调制解调器。",
+          "source_file": "26_反欺骗的艺术——世界传奇黑客的经历分享.md",
+          "location": "内容简介段落"
+        },
+        {
+          "excerpt": "Steven Roads, un ancien ami de Mitnick, confiait à la presse que ce dernier se serait introduit dans le site du North American Air Defense Command (NORAD) à Colorado Springs en 1979, ce que l'intéressé a toujours nié. Cette rumeur a été diffusée dans le New York Times par John Markoff, qui a d'ailleurs ajouté la rumeur selon laquelle le film Wargames (1983) avait été inspiré par l'histoire de Kevin Mitnick ; en fait, les scénaristes n'avaient jamais entendu parler de lui quand ils ont créé le film.",
+          "source_file": "32_Kevin_Mitnick.md",
+          "location": "Biographie - Premiers délits"
+        },
+        {
+          "excerpt": "Il est placé en centre de détention pour jeunes situé à Stockton en Californie durant six mois pour s'être connecté à l'ARPANET, l'ancêtre d'Internet, et avoir obtenu un accès illégal à tous les fichiers du département de la Défense américaine. Aucune preuve de vol ou de dégradation de données n'est apportée à l'époque : Mitnick a simplement assouvi sa curiosité.",
+          "source_file": "32_Kevin_Mitnick.md",
+          "location": "Biographie - Premières condamnations"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克是典型的奖杯猎人——追求大型闪亮目标仅为证明自己能做到，入侵是为了冒险和肾上腺素快感，戏弄建制派和傲慢技术人员的幽默感。他自述黑客行为的成瘾本质：即使知道违法也无法停止，如同运动员每日练习，完全专注于活动本身而不考虑后果。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Kevin was a \"trophy hunter\": a pursuer of big, shiny prizes merely to prove he could win. And let's not forget the sheer humor of outwitting \"all things establishment\" and arrogant tech-heads.",
+          "source_file": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le.md",
+          "location": "传记第3段"
+        },
+        {
+          "excerpt": "I was so hooked into the adventure of the hacking game, doing it for a number of years even though it became illegal. It was thrilling, adventurous. It was all about solving the puzzle, using intellect to get around obstacles. It was like a huge game.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "是否知法段落"
+        },
+        {
+          "excerpt": "my motivation was the quest for knowledge, the intellectual challenge, the thrill and also the escape from reality--kind of like somebody who chooses to gamble to block out things that they would rather not think about.",
+          "source_file": "10_Who_Are_Hackers_-_The_Testimony_Of_An_Ex-Hacker_|_.md",
+          "location": "Senate testimony - Lieberman question"
+        },
+        {
+          "excerpt": "I wasn't doing a cost-benefit analysis. And I didn't think of the consequences when I was engaging in this behavior. I just did it and I wasn't thinking about, well, if I were to get caught I'd have these consequences.",
+          "source_file": "10_Who_Are_Hackers_-_The_Testimony_Of_An_Ex-Hacker_|_.md",
+          "location": "Senate testimony - Lieberman question on consequences"
+        },
+        {
+          "excerpt": "I'm not sure I'd consider it addictive behavior. It was just an activity I was intensely interested and focused on because ever since I was a young boy I was interested in telecommunications and computers. And that was just my calling, just like somebody who is very interested in sports and every day they go out and practice.",
+          "source_file": "10_Who_Are_Hackers_-_The_Testimony_Of_An_Ex-Hacker_|_.md",
+          "location": "Senate testimony - Edwards question"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克逃亡三年使用虚假身份，1995年被下村努用蜜罐技术诱捕。此前他曾盗取下村努文件并会话劫持其网站流量，两人的攻防博弈成为网络安全史经典猫鼠游戏。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "1994年，米特尼克向圣迭戈超级计算机中心进行入侵与攻击，并戏弄了在此工作的日裔美籍计算机安全专家下村努，盗走了他计算机中的文件，还使用会话劫持技术盗走他的网站的流量。后来下村努使用蜜罐技术设立了\"蜜罐\"让米特尼克中计引诱他上钩",
+          "source_file": "23_凯文·米特尼克.md",
+          "location": "黑客时期段落"
+        },
+        {
+          "excerpt": "后来下村努使用蜜罐技术设立了「蜜罐」让米特尼克中计引诱他上钩，用「电子隐形化」技术进行跟踪，结果1995年米特尼克再次被逮捕。",
+          "source_file": "23_凯文·米特尼克.md",
+          "location": "黑客时期段落末"
+        },
+        {
+          "excerpt": "For three years, Kevin went on the run, using false identities and fleeing from city to city to resist arrest until cornered in a final showdown with the Feds, who would stop at nothing to bring him down. In 1995, he was finally forced to serve five years of hard time by those who feared the extent of his digital power.",
+          "source_file": "06_Kevin_Mitnick:_The_Hacker_Who_Became_a_Security_Le.md",
+          "location": "Biography段落末"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克事后深刻反思：认为入侵他人系统是不道德的侵犯财产权行为，归因于年轻不成熟和当时缺乏合法学习途径。建议有意学习黑客技术者购买自己的系统测试。他曾停止活动但被FBI线人引诱重新开始。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Don't break the law. Don't intrude on other peoples' property. It's just the wrong thing to do. It's unethical and immoral. And now of course it's illegal. It's trespassing. You're violating somebody's property rights.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "教训段落"
+        },
+        {
+          "excerpt": "What I attribute my change of heart to is growing up. Back then I was young and immature, and never damaged anything intentionally.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "教训段落"
+        },
+        {
+          "excerpt": "I started hacking back in the '70s and there were basically no laws against it, against phreaking or hacking. In school, my parents and other people actually encouraged it. There were no ethics taught. If you could hack into the school's computer you were considered a whiz kid. ... Then they criminalized it later. I was so hooked into the adventure of the hacking game, doing it for a number of years even though it became illegal.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "Q&A中间"
+        },
+        {
+          "excerpt": "In hindsight, I wouldn't do what I did because now I'm much smarter and wiser, and I caused a lot of network and systems administrators a lot of headaches undeservedly. It was the wrong thing to do. But at the time there was no such thing as penetration testing and no school curriculum on security. You had to be self-taught.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "Q&A反思段"
+        },
+        {
+          "excerpt": "Nowadays--which was not possible for me when I was younger, as computer systems are now more affordable--if somebody wants to hack they can buy their own computer system and hack the operating system and learn the vulnerabilities on their own system without affecting anybody else.",
+          "source_file": "10_Who_Are_Hackers_-_The_Testimony_Of_An_Ex-Hacker_|_.md",
+          "location": "Senate testimony末段"
+        },
+        {
+          "excerpt": "I did stop for a while and then at that time that I wasn't engaging in that behavior, the Department of Justice, specifically the FBI, sent this informant to target me. And basically, I got hooked back into",
+          "source_file": "10_Who_Are_Hackers_-_The_Testimony_Of_An_Ex-Hacker_|_.md",
+          "location": "Senate testimony - Edwards follow-up"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克认为司法本质是经济的——没有足够资金就无法有效辩护。他被惩罚不是因为做了什么，而是因为代表了什么（黑客的象征）。政府的3亿美元损失指控荒谬，受害公司从未声称损失。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "I really don't believe to this day that my actions caused that amount of loss, because none of the victim companies lost use of their code, they never claimed any losses due to my activities.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "损失争议段落"
+        },
+        {
+          "excerpt": "I was the example for the federal government, so they needed to put me away for a long time. That's why I was very angry and bitter against the government at the time, because I wasn't being punished for what I did. I was being punished for what I represented at the time.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "损失争议段落"
+        },
+        {
+          "excerpt": "At the end of the day I realized justice is economic; unless you have enough money to properly mount an effective defense you always lose.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "Q&A监狱段末"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克主张应区分黑帽黑客动机：是盗刷信用卡牟利，还是出于智力好奇心入侵系统，不能一刀切。他以Frank Abagnale和Steve Wozniak为例说明前黑客可通过改革成为行业权威。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Were they getting credit card numbers and buying merchandise on the Internet? Or were they hacking systems for their own intellectual curiosity? You can't just lump black hat hackers into one category.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "雇用前黑帽段落"
+        },
+        {
+          "excerpt": "You can't just lump black hat hackers into one category. You have to look at what they did in the past, what they've done since then, and what credentials they have to get the job done.",
+          "source_file": "08_Q&A:_Kevin_Mitnick,_from_ham_operator_to_fugitive_.md",
+          "location": "chunk3末段"
+        }
+      ]
+    },
+    {
+      "claim": "80%的数据泄露受害者将攻击成功归因于缺乏网络安全意识或技能，防范社会工程的最佳防御是教育每位员工了解其易用性和威胁。",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "In a 2022 Cybersecurity Skills Gap Report from Fortinet, 80% of data breach victims cited a lack of cyber security awareness or skills for why the attacks were successful.",
+          "source_file": "17_Why_Should_You_Invest_in_KnowBe4's_Kevin_Mitnick_S.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "One of the best defenses against social engineering is awareness. Every employee should be educated on how easily social engineering can be used, the large threat it poses if not detected, and some simple countermeasures.",
+          "source_file": "paper_Social Engineering_ Here's How I Broke Into Their Buildings.md",
+          "location": "chunk6 - Countering Social Engineering Attacks"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克的密码安全建议：使用30字符以上passphrase替代传统密码，禁止密码重用（轻微变体也不安全），不赞成字典词汇密码，应使用密码管理器。这体现了攻防一体方法论——理解攻击者如何破解再从攻击者视角设计防御。",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Kevin recommends using a passphrase of at least 30 characters instead of what we normally think of as a traditional password.",
+          "source_file": "20_8_Password_Security_Tips_from_Kevin_Mitnick_for_Be.md",
+          "location": "密码策略段落"
+        },
+        {
+          "excerpt": "When you share the same password across different platforms, a hacker has a golden key that unlocks multiple doors. This is also true for slight variations of the same password.",
+          "source_file": "20_8_Password_Security_Tips_from_Kevin_Mitnick_for_Be.md",
+          "location": "Tip 3段落"
+        },
+        {
+          "excerpt": "I'm not a big fan of passwords based on words in the dictionary",
+          "source_file": "paper_Social Engineering_ Here's How I Broke Into Their Buildings.md",
+          "location": "chunk6"
+        }
+      ]
+    },
+    {
+      "claim": "米特尼克早期信任被背叛——所谓的朋友利用他的访问权限复制源代码后向DEC举报了他，这是关于信任脆弱性的深刻教训。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "After they had downloaded all the software they wanted, they called the corporate security department at DEC and told them someone had hacked into the company's corporate network. And they gave my name. My so-called friends first used my access to copy highly sensitive source code, and then turned me in. There was a lesson here, but not one I managed to learn easily. Through the years to come, I would repeatedly get into trouble because I trusted people who I thought were my friends.",
+          "source_file": "07_Chapter_One:_Kevin_Mitnick's_story_•_The_Register.md",
+          "location": "DEC story continuation"
+        }
+      ]
+    },
+    {
+      "claim": "记者Markoff违反新闻伦理——与下村努有未披露的私人关系却将其塑造为网络英雄，曾以不接受采访就将任何来源信息当作事实来威胁米特尼克。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "While making me out to be a villain, Markoff, in a subsequent article, set up Shimomura as the number one hero of cyberspace. Again he was violating journalistic ethics by not disclosing a pre-existing relationship: this hero in fact had been a personal friend of Markoff's for years.",
+          "source_file": "07_Chapter_One:_Kevin_Mitnick's_story_•_The_Register.md",
+          "location": "Markoff criticism section"
+        },
+        {
+          "excerpt": "Markoff gave me an ultimatum: either interview with us or anything we hear from any source will be accepted as the truth. He was clearly frustrated and annoyed that I would not cooperate, and was letting me know he had the means to make me regret it.",
+          "source_file": "07_Chapter_One:_Kevin_Mitnick's_story_•_The_Register.md",
+          "location": "First Contact section"
+        }
+      ]
+    },
+    {
+      "claim": "FCC法官2001年裁定米特尼克已充分改造，可以持有业余无线电执照。",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "In December 2001, a Federal Communications Commission (FCC) judge ruled that Mitnick was sufficiently rehabilitated to possess a federally issued amateur radio license.",
+          "source_file": "11_Kevin_Mitnick_-_Wikipedia.md",
+          "location": "Release段落"
+        }
+      ]
+    },
+    {
+      "claim": "社会工程的心理学原理：利用喜好原理让人合作（最基本的心理学武器）、承诺与一致性原理通过长期慢节奏培养关系获取大回报、社会认同原理让人依赖他人行为判断选择。前置故事的成功取决于快速编织可信场景并灵活应对质疑。社会工程历史可追溯至公元前1184年特洛伊木马。",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "the earliest accounts of social engineering-like strategic hoodwinking trace back to the Trojan War in 1184 B.C. ... The Trojans fell for the trick; dragging the wooden statue past their protective barriers as a trophy for their long-overdue victory. After the sun went down and the Trojans went to bed, the Greek soldiers waiting inside of the horse snuck out and unlocked the gates around their city.",
+          "source_file": "12_The_History_of_Social_Engineering_-_Mitnick_Securi.md",
+          "location": "The Trojan Horse Attack段落"
+        },
+        {
+          "excerpt": "The success of the pretext is dependent on how strategically the bad actor can piece together a believable scenario, as well as their ability to pivot the conversation back in their favor should their pretext be questioned. This means that social engineers must be quick on their feet, or have a number of clever excuses in line should they need to smooth down any ruffled, high-alert feathers.",
+          "source_file": "12_The_History_of_Social_Engineering_-_Mitnick_Securi.md",
+          "location": "The Makings of a Good Pretext段落"
+        },
+        {
+          "excerpt": "Social engineers are often so successful at their cons because they work very hard to get you to like them, knowing you'll be more willing to cooperate with their requests if you find them appealing.",
+          "source_file": "12_The_History_of_Social_Engineering_-_Mitnick_Securi.md",
+          "location": "Liking段落末"
+        },
+        {
+          "excerpt": "Social engineers commit to long-term, slow-nurture engagements for a big payoff in the end. They may also lock you into upholding your word on a small promise, knowing you'll want to preserve your self-image by keeping it, and that they can use your need for verbal consistency to manipulate you in the future.",
+          "source_file": "12_The_History_of_Social_Engineering_-_Mitnick_Securi.md",
+          "location": "Commitment & Consistency段落"
+        },
+        {
+          "excerpt": "Cybercriminals know that people rely on the actions and opinions of others to determine their own. That's because we innately trust that if others are doing or saying one thing, it must be a safe or wise choice.",
+          "source_file": "12_The_History_of_Social_Engineering_-_Mitnick_Securi.md",
+          "location": "Consensus & Social Proof段落"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 14,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-01T08:10:20.634157",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T03:27:57.726382",
+    "pre_merge_count": 99,
+    "post_merge_count": 20
+  }
+}

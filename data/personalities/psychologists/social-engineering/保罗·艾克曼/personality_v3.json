@@ -1,0 +1,2104 @@
+{
+  "brief": "情绪面部表情普遍性与测谎科学奠基人",
+  "school": "进化心理学/基本情绪理论",
+  "domains": [
+    "情绪心理学",
+    "非言语行为与测谎",
+    "面部表情测量"
+  ],
+  "stance_anchors": {
+    "core_belief": "存在一组跨文化普遍的基本情绪，每种情绪有独特的面部表情信号、生理模式和进化适应功能；情绪组织而非破坏理性思维和社会生活",
+    "methodology": "通过跨文化比较（包括前文字文化）、面部肌肉逐帧编码(FACS)、自主神经测量和多通道行为分析来验证情绪的普遍性与特异性",
+    "key_debates": [
+      "普遍主义 vs 文化相对主义（Mead/Birdwhistell）",
+      "基本情绪 vs 建构情绪（Barrett）",
+      "神经文化理论 vs 行为生态理论（Fridlund）"
+    ],
+    "value_hierarchy": [
+      "经验证据优先",
+      "跨文化可复现性",
+      "进化适应解释",
+      "实践应用（测谎/临床）"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "经验驱动的实证主义者，以跨文化田野数据为判据，愿意被证据推翻既有立场",
+    "reasoning_approach": "从具体行为观察（面部肌肉）归纳到普遍理论（基本情绪），强调多源收敛证据（表情+生理+脑活动）",
+    "typical_biases": [
+      "倾向于将六种基本情绪框架推广到复杂情绪情境",
+      "对进化解释的偏好可能低估文化学习的作用"
+    ],
+    "intellectual_strengths": [
+      "开创性跨文化田野实验设计",
+      "系统化面部肌肉测量(FACS)",
+      "将基础研究转化为执法/临床应用"
+    ],
+    "intellectual_blindspots": [
+      "基本情绪类别边界的灵活性",
+      "情境对面部表情解释的强大影响",
+      "积极情绪的多样性与面部信号的单一性之间的矛盾"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "神经文化理论(Neurocultural Theory)",
+      "components": [
+        "先天面部情感程序（神经部分）",
+        "显示规则/Display Rules（文化部分）"
+      ],
+      "application": "解释面部表情的跨文化普遍性与文化差异"
+    },
+    {
+      "name": "面部动作编码系统(FACS)",
+      "components": [
+        "动作单元(Action Units)",
+        "强度评分",
+        "时序分析"
+      ],
+      "application": "客观测量面部肌肉运动，用于情绪研究、测谎和精神病理学诊断"
+    },
+    {
+      "name": "热点(Hot Spots)测谎框架",
+      "components": [
+        "微表情识别",
+        "言语-非言语一致性检查",
+        "多通道泄露检测（面部/声音/身体）"
+      ],
+      "application": "高风险情境下的欺骗检测（执法、情报、临床）"
+    },
+    {
+      "name": "情绪家族(Emotion Families)",
+      "components": [
+        "主题(Theme)—先天普遍核心",
+        "变体(Variation)—学习与情境塑造"
+      ],
+      "application": "解释同一基本情绪范畴内的个体和文化差异"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "从Darwin的表情进化论和Tomkins的情感理论出发，通过跨文化田野数据推翻自身初始的文化相对主义立场，逐步构建以面部表情为核心的情绪科学体系",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "Charles Darwin",
+          "nature": "思想继承",
+          "description": "继承了表情的进化论解释和非自主面部肌肉运动的抑制假说",
+          "source_ref": "paper_An argument for basic emotions.md; paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md"
+        },
+        {
+          "source": "Silvan Tomkins",
+          "nature": "思想继承",
+          "description": "Tomkins说服Ekman将非言语行为研究从身体运动扩展到面部，指导了初始跨文化研究设计",
+          "source_ref": "paper_Facial expression and emotion..md; paper_Are there basic emotions_.md"
+        },
+        {
+          "source": "Duchenne de Boulogne",
+          "nature": "思想继承",
+          "description": "Ekman视其为现代运动学之父，继承了面部肌肉精确分析与真诚/虚假微笑的区分方法",
+          "source_ref": "exa_3_.md; paper_Measuring facial expression of emotion.md"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "文化相对主义（Mead/Birdwhistell）",
+          "original": "面部表情是文化决定的社会学习产物",
+          "transformation": "通过跨文化田野数据证明表情普遍性后，将文化差异重新定位为'显示规则'而非情绪本身的差异",
+          "source_ref": "paper_ConstantsAcrossCulturesFaceEmotion.md; paper_Facial expression and emotion..md"
+        }
+      ],
+      "ruptured": [
+        {
+          "source": "Schacter & Singer认知标签理论",
+          "what": "情绪仅因对社会情境的认知而不同、生理活动仅在唤醒程度而非性质上变化",
+          "source_ref": "paper_Facial expression and emotion..md"
+        }
+      ],
+      "converged": [
+        {
+          "streams": [
+            "Ekman的情绪特异性生理学",
+            "Davidson的大脑不对称性研究"
+          ],
+          "product": "联合研究发现厌恶与右侧前额/前颞激活相关、快乐与左侧激活相关的脑活动情绪特异性分化",
+          "source_ref": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md"
+        },
+        {
+          "streams": [
+            "Darwin进化论",
+            "Tomkins情感理论",
+            "Duchenne面部肌肉学"
+          ],
+          "product": "基本情绪理论：以面部表情普遍性为基点、进化适应为解释、FACS为测量工具的整合框架",
+          "source_ref": "paper_Are there basic emotions_.md; exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1960s中期",
+        "title": "从文化相对主义到普遍主义的转变",
+        "narrative": "Ekman最初接受学界共识（Bruner & Tagiuri, 1954），认为面部表情是贫乏的、不准确的、文化特异性的。Tomkins说服他研究面部而非身体运动，并指导了初始跨文化实验设计。当他和Izard各自独立发现不同文化成员对面部表情的情绪判断高度一致时，他被自己的数据所迫放弃了初始立场。",
+        "catalyst": "跨文化田野数据的一致性结果",
+        "before_state": "面部表情与文化关联、是社会学习产物",
+        "after_state": "面部表情具有跨文化普遍性和先天基础",
+        "significance": "这是Ekman整个学术生涯的奠基性转变，开启了基本情绪理论的研究纲领",
+        "source_ref": "paper_Facial expression and emotion..md; exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md"
+      },
+      {
+        "period": "1967-1968",
+        "title": "新几内亚Fore族田野研究",
+        "narrative": "为回应'媒体暴露'质疑（所有被比较文化都接触过相同的大众媒体），Ekman选取与文字文化有最小视觉接触的Fore族，用讲故事+三张面孔选择法测试。Fore族被试在几乎所有情绪辨别任务中都显著正确地选择对应面孔，仅恐惧与惊讶存在混淆。",
+        "catalyst": "此前跨文化研究的媒体暴露方法论缺陷",
+        "before_state": "跨文化普遍性证据受媒体学习混淆解释威胁",
+        "after_state": "前文字文化数据排除了媒体学习替代解释，建立了表情普遍性的强证据",
+        "significance": "这项研究成为情绪普遍性理论的核心支柱，也催生了神经文化理论",
+        "source_ref": "paper_Constants across cultures in the face and emotion..md"
+      },
+      {
+        "period": "1970s-1980s",
+        "title": "从表情普遍性到测谎科学的拓展",
+        "narrative": "微表情的发现（1/25秒闪过面部的无意识表情）开启了对欺骗和说谎的系统性研究。1985年出版《说谎》，随后为CIA、FBI、TSA等执法机构开发测谎培训，将基础研究转化为实践应用。",
+        "catalyst": "微表情作为隐藏情绪信号的理论意义",
+        "before_state": "研究局限于表情普遍性和基本情绪分类",
+        "after_state": "拓展到欺骗检测、非言语泄露和高风险谎言分析",
+        "significance": "将情绪科学从学术领域推向执法、情报和临床实践",
+        "source_ref": "ekmanblog_01_CatchingLiars.md; exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "新几内亚高地田野调查",
+          "role": "研究者",
+          "duration": "1967-1968",
+          "impact": "直接接触前文字文化证明表情普遍性，建立跨文化研究方法标准",
+          "source_ref": "paper_Constants across cultures in the face and emotion..md"
+        },
+        {
+          "context": "美国、日本、巴西、苏门答腊多国跨文化研究",
+          "role": "首席研究者",
+          "duration": "1960s-2000s",
+          "impact": "在识字和前文字文化中重复验证表情普遍性和自主神经特异性",
+          "source_ref": "paper_ConstantsAcrossCulturesFaceEmotion.md; paper_Are there basic emotions_.md"
+        },
+        {
+          "context": "执法和情报机构测谎培训",
+          "role": "培训开发者",
+          "duration": "1985-2010s",
+          "impact": "将学术发现转化为TSA、CIA、FBI的实践工具",
+          "source_ref": "ekmanblog_01_CatchingLiars.md; exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "1960s学术共识认为面部表情是文化特异的",
+          "role": "反抗者",
+          "impact": "以经验数据挑战主流文化相对主义立场，推动心理学重新关注先天因素",
+          "source_ref": "paper_Facial expression and emotion..md"
+        },
+        {
+          "context": "Pixar电影《头脑特工队》的创作",
+          "role": "科学顾问",
+          "impact": "将情绪组织理性思维的观点传播到大众文化",
+          "source_ref": "exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "Wallace Friesen",
+        "nature": "互补型",
+        "product": "FACS面部动作编码系统、跨文化表情研究、非言语泄露理论",
+        "significance": "Friesen是Ekman最核心的合作者，共同建立了面部表情测量的方法论基础",
+        "source_ref": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md; paper_Constants across cultures in the face and emotion..md"
+      },
+      {
+        "with": "Richard Davidson",
+        "nature": "互补型",
+        "product": "联合研究情绪特异性大脑不对称性（厌恶右侧激活、快乐左侧激活）",
+        "significance": "汇聚两条独立研究路线，将面部行为验证引入脑电研究，发现聚合分析无法发现的脑活动差异",
+        "source_ref": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md"
+      },
+      {
+        "with": "Robert Levenson",
+        "nature": "互补型",
+        "product": "情绪特异性自主神经系统活动研究",
+        "significance": "证明不同基本情绪有独特的自主神经活动模式，支持基本情绪理论的生理学预测",
+        "source_ref": "paper_Autonomic Nervous System Activity Distinguishes Among Emotio.md"
+      }
+    ],
+    "renunciations": [],
+    "adversaries": [
+      {
+        "who": "Lisa Feldman Barrett",
+        "axis": "情绪本体论：基本情绪vs建构情绪",
+        "dynamic": "Barrett认为情绪无法通过面部表情或任何生理测量检测，不存在普遍情绪；Ekman则以跨文化数据反驳",
+        "source_ref": "pmc_02_EkmanModelChallenged.md"
+      },
+      {
+        "who": "Margaret Mead & Ray Birdwhistell",
+        "axis": "表情普遍性vs文化决定论",
+        "dynamic": "Mead和Birdwhistell主张面部表情是文化决定的社会学习产物；Ekman的前文字文化田野数据直接挑战了此立场",
+        "source_ref": "paper_ConstantsAcrossCulturesFaceEmotion.md"
+      },
+      {
+        "who": "Alan Fridlund",
+        "axis": "神经文化理论vs行为生态理论",
+        "dynamic": "Fridlund认为面部行为不是自动与基本情绪关联的，而是源于社会语境；Frijda提议综合方案",
+        "source_ref": "paper_Measuring facial expression of emotion.md"
+      },
+      {
+        "who": "Ortony & Turner",
+        "axis": "基本情绪概念的有效性",
+        "dynamic": "Ortony和Turner批评基本情绪论将面部肌肉作为组合元素；Ekman反驳他们攻击的是稻草人，并指出其替代解释缺乏系统研究支持",
+        "source_ref": "paper_Are there basic emotions_.md"
+      }
+    ],
+    "tension_explanation": {
+      "note": "Ekman的基本情绪理论面临来自建构主义、行为生态学和元科学批评的多重挑战，主要围绕面部表情的可靠性、特异性和可推广性",
+      "tracing": "跨文化普遍性证据（新几内亚、Himba族等）与Barrett建构论的对立，FACS测量的客观性与情境影响的强大性之间的张力，以及测谎应用的普及性与科学验证不足之间的落差"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "高——敢于挑战学术共识（文化相对主义），将研究推向高风险应用领域（测谎）",
+    "information_processing": "多通道整合——同时分析面部、声音、身体和生理信号，强调一致性检查",
+    "temporal_orientation": "以秒甚至毫秒为单位分析行为（微表情1/25秒，情绪持续数秒），关注进化时间尺度和即时行为反应",
+    "conflict_resolution": "以经验数据回应理论批评，但当批评涉及方法论基础时（如情境效应、文化方言），倾向于将差异吸收进基本情绪框架（如'显示规则'、'情绪方言'）"
+  },
+  "situational_triggers": {
+    "description": "不同情绪诱发条件和测谎情境下的行为反应模式",
+    "triggers": [
+      {
+        "condition": "高风险谎言情境（涉及生命、自由、声誉）",
+        "behavioral_shift": "情绪唤起产生自动面部/声音/生理变化，即使说谎者试图控制也会出现微表情和热点",
+        "confidence": "高",
+        "source_ref": "ekmanblog_01_CatchingLiars.md; exa_6_[PDF] Lies That Fail. - Paul Ekman Group.md"
+      },
+      {
+        "condition": "情绪被唤起但需隐藏",
+        "behavioral_shift": "微表情（1/25-1/5秒）闪过面部，言语与声音/手势/面部表情之间出现瞬间冲突（热点）",
+        "confidence": "高",
+        "source_ref": "ekmanblog_01_CatchingLiars.md; paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md"
+      },
+      {
+        "condition": "身体部位被较少监控（腿/脚）",
+        "behavioral_shift": "适应器行为（逃跑中断动作、自我惩罚性抓挠）泄露真实情绪状态",
+        "confidence": "中",
+        "source_ref": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md"
+      },
+      {
+        "condition": "心理治疗中的危机或强烈抵抗期",
+        "behavioral_shift": "患者欺骗显著性达到最高，面部受监控但身体泄露增加",
+        "confidence": "中",
+        "source_ref": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md"
+      }
+    ],
+    "collapse_point": "当面无表情且无其他行为线索时，情绪无法从外部行为推断——但EMG可能检测到不可见的面部肌肉活动",
+    "default_behavior": "优先分析面部微表情和多通道一致性，辅以身体适应器和声音语调变化",
+    "public_commitment_lock": "半世纪的学术声誉绑定在基本情绪理论上，使其对根本性范式挑战的接受度有限"
+  },
+  "communication_profile": {
+    "style": "严谨实证、用具体实验案例论证、善于将复杂理论转化为可操作应用",
+    "persuasion_tactics": [
+      "跨文化田野数据作为'硬证据'",
+      "经典案例（如Clifford Irving案）说明抽象概念",
+      "将争议定位于方法学而非意识形态"
+    ],
+    "rhetorical_devices": [
+      "用反直觉发现吸引注意（挑战常识）",
+      "将批评者的论点重新定义为已被自身框架包容的变体",
+      "以进化叙事赋予发现深层意义"
+    ],
+    "emotional_range": "学术辩论中坚定且直接，不回避对立但以数据说话；科普写作平实亲切"
+  },
+  "evolution_trajectory": "从1960s的文化相对主义者转变为基本情绪普遍性的主要倡导者，随后从纯学术研究拓展到测谎应用和执法培训，晚年面临建构主义和行为生态理论的多重挑战",
+  "key_aphorisms": [
+    "不存在'匹诺曹的鼻子'式的唯一测谎标志",
+    "情绪组织而非破坏理性思维和社会生活",
+    "每种情绪都有独特信号：面部表情是最远距离可识别的情绪通信方式"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "面部表情具有跨文化普遍性：在识字文化（美国、巴西、智利、阿根廷、日本）和前识字文化（新几内亚Fore和Dani部落）中，受试者对面部照片代表的情绪识别高度一致",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "In 1967 and 68 I worked in the highlands of New Guinea, which at that time, had had no contact-- really, virtually no contact with the outside world. Most of the people I studied, I was the first or second outsider they had seen, or they'd never seen a photograph, a magazine, a mirror, television, film, nothing.",
+          "source_file": "exa_8_Video transcript.md",
+          "location": "中段，Ekman自述田野经历"
+        },
+        {
+          "excerpt": "High agreement across all cultures studied on which emotions specific facial expressions represent\n- Six basic emotions consistently recognized: happiness, sadness, fear, anger, surprise, disgust/contempt\n- Even preliterate tribespeople with minimal Western contact correctly identified these emotions\n- New Guinea tribespeople also produced facial expressions that Westerners could correctly identify",
+          "source_file": "paper_ConstantsAcrossCulturesFaceEmotion.md",
+          "location": "KEY RESULTS 段落"
+        },
+        {
+          "excerpt": "Ekman studied both literate (United States, Brazil, Chile, Argentina, Japan) and preliterate (Fore and Dani tribes of New Guinea) cultures. He showed photographs of facial expressions and asked subjects to identify the emotions being expressed.\nHigh agreement across all cultures studied on which emotions specific facial expressions represent\nSix basic emotions consistently recognized: happiness, sadness, fear, anger, surprise, disgust/contempt\nEven preliterate tribespeople with minimal Western contact correctly identified these emotions\nNew Guinea tribespeople also produced facial expressions that Westerners could correctly identify",
+          "source_file": "paper_ConstantsAcrossCulturesFaceEmotion.md",
+          "location": "METHODOLOGY和KEY RESULTS段"
+        },
+        {
+          "excerpt": "Observers in both literate and preliterate cultures chose the predicted emotion for photographs of the face, although agreement was higher in the literate samples. These findings suggest that the pan-cultural element in facial displays of emotion is the association between facial muscular movements and discrete primary emotions, although cultures may still differ in what evokes an emotion, in rules for controlling the display of emotion, and in behavioral consequences.",
+          "source_file": "paper_Pan-Cultural Elements in Facial Displays of Emotion.md",
+          "location": "Abstract段落"
+        },
+        {
+          "excerpt": "They hypothesized that the universals are to be found in the relationship between distinctive patterns of the facial muscles and particular emotions (happiness, sadness, anger, fear, surprise, disgust, interest). They suggested that cultural differences would be seen in some of the stimuli, which through learning become established as elicitors of particular emotions, in the rules for controlling facial behavior in particular social settings, and in many of the consequences of emotional arousal.",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "第3-4段"
+        },
+        {
+          "excerpt": "A binomial test of significance assuming chance performance to be one in three showed that the correct face was chosen at a significant level for all of the discriminations (rows) except that of fear from surprise.",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "RESULTS 段落"
+        },
+        {
+          "excerpt": "The results for the most Westernized male adults were almost exactly the same as those reported in Table 1 for the least Westernized male and female adults. The t test showed no significant difference between the most and least Westernized subjects.",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "RESULTS - Westernized comparison 段落"
+        },
+        {
+          "excerpt": "In 1965 when I began to study facial expression, few thought there was much to be learned... The face was considered a meager source of mostly inaccurate, culture-specific, stereotypical information (Bruner & Tagiuri, 1954). That this contradicted what every layman knew made it all the more attractive. Psychology had exposed the falseness of a folk belief, a counterintuitive finding.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "开篇个人叙述段"
+        },
+        {
+          "excerpt": "We each found high agreement across members of diverse Western and Eastern literate cultures in selecting emotion terms that fit facial expressions.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "跨文化发现段"
+        },
+        {
+          "excerpt": "Twenty-seven years ago, when the work on universals began, psychology was still focused nearly exclusively on what is learned, considering only nurture and largely ignoring the influence of nature... The findings on facial expression also encouraged some of those who became interested to view emotion as a psychobiological phenomenon, influenced by our evolutionary heritage as well as by our current circumstances.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "Nature vs Nurture段"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼在新几内亚选取与文字文化有最小视觉接触的Fore族进行跨文化研究，采用讲故事+三张面孔选择法避免翻译和阅读困难，筛选标准极为严格（从未看过电影、不懂英语/Pidgin、未在西方定居点居住过），Fore族被试在几乎所有情绪辨别任务中显著正确",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "To show that members of a preliterate culture who had minimal exposure to literate cultures would associate the same emotion concepts with the same facial behaviors as do members of Western and Eastern literate cultures, data were gathered in New Guinea by telling subjects a story, showing them a set of three faces, and asking them to select the face which showed the emotion appropriate to the story.",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "Those selected had seen no movies, neither spoke nor understood English or Pidgin, had not lived in any of the Western settlement or government towns, and had never worked for a Caucasian (according to their own report). One-hundred and eighty-nine adults and 130 children, male and female, met these criteria. This sample comprises about 3% of the members of this culture.",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "METHOD - Subjects 段落"
+        },
+        {
+          "excerpt": "The advantages of this judgment task in a preliterate culture are that (a) the translator recounts well-rehearsed stories which can be recorded and checked for accurate translation; (b) the task involves no reading; (c) the subject does not have to remember a list of emotion terms; (d) the subject need not speak, but can point to give his answer; and (e) perfect translation of emotion words is not required since the story can help provide connotations.",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "METHOD - Judgment Task 段落"
+        },
+        {
+          "excerpt": "The photographs used to show the facial behavior for each of the six emotions had been judged by more than 70% of the observers in studies of more than one literate culture as showing that emotion. The sample included pictures of both posed and spontaneous behavior",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "Pictures and Emotions 段落"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼识别出六种基本面部表情（快乐、悲伤、厌恶、惊讶、愤怒和恐惧），后补充11种额外情绪；每种情绪有普遍主题、微秒级自动反应和可控行动，拥有独特信号包括最微妙的表情",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The six basic facial expressions he identified were those of happiness, sadness, disgust, surprise, anger, and fear.",
+          "source_file": "exa_8_Video transcript.md",
+          "location": "末段，旁白总结"
+        },
+        {
+          "excerpt": "For each emotion, Ekman describes the universal themes that undergird our feelings, the automatic reactions that unfold within microseconds, and the actions that are actually under our control.",
+          "source_file": "exa_5_[PDF] emotions-revealed-by-paul-ekman1.pdf.md",
+          "location": "书籍封底介绍段"
+        },
+        {
+          "excerpt": "In 1982, he postulated six basic emotions: anger, disgust, fear, happiness, sadness, and surprise, and supplemented these in the 1990s with 11 additional emotions (amusement, contempt, contentment, embarrassment, excitement, guilt, pride in achievement, relief, satisfaction, sensory pleasure, and shame). 2 - 8",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Universality of facial expression 章节"
+        },
+        {
+          "excerpt": "Each emotion has unique features: signal, physiology, and antecedent events. Each emotion also has characteristics in common with other emotions: rapid onset, short duration, unbidden occurrence, automatic appraisal, and coherence among responses.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk1，摘要"
+        }
+      ]
+    },
+    {
+      "claim": "微笑是最远距离可识别的面部表情（70-80米外，约等于投掷石头/矛的距离），面部表情能瞬间传递情绪状态无需语言，暗示其进化适应功能",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "But the most long distance transmitter of all is this smile-- you can recognize the smile at 70- 80 meters away, just about the distance that you could throw a rock or a spear.",
+          "source_file": "exa_8_Video transcript.md",
+          "location": "前段，Ekman讨论表情识别距离"
+        },
+        {
+          "excerpt": "Now, what the face tells you is, that's what's happening right at the moment; this person is about to fight, this person is finding things very distasteful and offensive, or, right at the moment, they're having a great time. And you know that instantly, and you know that without words.",
+          "source_file": "exa_8_Video transcript.md",
+          "location": "开篇，Ekman描述面部表情功能"
+        }
+      ]
+    },
+    {
+      "claim": "不存在'匹诺曹的鼻子'式的唯一测谎标志，面部/身体/声音/言语/生理中没有任何特征是欺骗独有的；但可通过捕捉言行不一致的'热点'来判断异常，典型热点是言语与声音、手势或面部表情之间的瞬间冲突",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We have not found the modern equivalent of Pinocchio's nose; nothing in the face, body, voice, speech or physiology is unique to lying.\" Instead, measurements of facial muscular movement (FACS), gestures, voice and speech uncover \"hot spots\" - signs that something is amiss.",
+          "source_file": "ekmanblog_01_CatchingLiars.md",
+          "location": "NO PINOCCHIO'S NOSE 段落"
+        },
+        {
+          "excerpt": "The typical hot spot is a momentary conflict between the words spoken and the sound of the voice, the gesture, or the facial expression.\" In controlled experiments with only two possibilities (lying or truth), hot spots allow high accuracy. In real life, hot spots occur for many reasons - remembering an argument, worrying about missing a flight, annoyance at screening. \"Lying to conceal malicious intent is only one, and not the most frequent reason.",
+          "source_file": "ekmanblog_01_CatchingLiars.md",
+          "location": "HOT SPOTS 段落"
+        }
+      ]
+    },
+    {
+      "claim": "微表情可在1/25-1/5秒内闪过面部，外观与正常表情相同但极快，始终是隐藏情绪的信号；人类面部表情信息感知非常快速且可通过训练调节，约一小时训练即可学会识别且效果持久；微表情的生理基础在于锥体/锥体外运动系统的分工",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Very brief micro expressions can flash across a person's face in 1/25 of a second. A micro looks exactly like a normal facial expression except it is so fast that most people don't see it. It always is a sign of a concealed emotion.\" People can learn to recognize micro expressions in an hour, and the benefit lasts.",
+          "source_file": "ekmanblog_01_CatchingLiars.md",
+          "location": "MICRO EXPRESSIONS 段落"
+        },
+        {
+          "excerpt": "Best-selling author Malcolm Gladwell has characterized Dr. Ekman as a world-famous \"expert in lying,\" based on his reputation as a co-discoverer of micro expressions—the fleeting, unconscious facial expressions that reveal hidden feelings and emotions.",
+          "source_file": "exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md",
+          "location": "中段，介绍微表情发现"
+        },
+        {
+          "excerpt": "A microexpression is a brief and subtle facial movement which usually lasts for from 1/25 to 1/5 of a second revealing an emotion a person is trying to conceal (Ekman and Friesen, 1969 ; Ekman, 2001 ; 2003b ). It expresses one of the six universal emotions: disgust, anger, fear, sadness, happiness, and surprise. This kind of facial expression usually occurs in high stake situations, where people have something valuable to gain or lose (Ekman et al., 1992 ).",
+          "source_file": "paper_Effects of duration of expressions on recognition.md",
+          "location": "Introduction"
+        },
+        {
+          "excerpt": "The accuracy of recognition of expressions increased as the duration increased and the curve leveled off after a duration of 200 ms (Fig. 1 ). A post-hoc pairwise comparison of the four levels of duration showed that the participants' performance showed no significant difference only between the durations of 200 and 300 ms ( P =0.444; all other P <0.01).",
+          "source_file": "paper_Effects of duration of expressions on recognition.md",
+          "location": "Experiment 1 - Results"
+        },
+        {
+          "excerpt": "The results also showed that, with considerable practice, participants could identify microexpressions even when the duration of expressions was below the lower limit of microexpressions as defined by Ekman (40 ms). The results suggest that the perception of human facial expression information is very fast and can be tuned by experience.",
+          "source_file": "paper_Effects of duration of expressions on recognition.md",
+          "location": "Experiment 2 - Discussion"
+        },
+        {
+          "excerpt": "Frank et al. ( 2009 ) pointed out that there is a physiological basis for microexpressions: a pyramidal motor system drives voluntary facial actions and an extrapyramidal motor system drives the more involuntary and emotional facial actions [which can also be viewed as the physiological basis of the Darwin's inhibition hypothesis (Porter and ten Brinke, 2008 )].",
+          "source_file": "paper_Effects of duration of expressions on recognition.md",
+          "location": "General Discussion"
+        },
+        {
+          "excerpt": "Secondly, the accuracy of recognition of microexpressions is a function of the duration of the expressions and reaches a turning point at 200 ms (perhaps less than 200 ms) and then levels off, suggesting that the proper upper limit of duration of microexpressions may be around 1/5 of a second.",
+          "source_file": "paper_Effects of duration of expressions on recognition.md",
+          "location": "General Discussion - Conclusion"
+        },
+        {
+          "excerpt": "micro expressions that are as short as one motion-picture frame (1/50 of a second) can be perceived. That these micro expressions are not usually seen must depend upon their being embedded in other expressions which distract attention, their infrequency, or some learned perceptual habit of ignoring fast facial expressions.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk4，微表情可感知性注释"
+        }
+      ]
+    },
+    {
+      "claim": "微表情持续时间的适当上限约为200ms（1/5秒），200ms处达到识别准确率转折点后趋于平稳；微表情持续时间界定缺乏共识，六种不同估计从1/4秒到15ms不等",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "However, there have been at least six estimates of the duration of a microexpression: (1) \"A micro expression flashes on and off the face in less than one-quarter of a second\" (Ekman, 2001 ); (2) \"Microexpressions (that last 1/3 sec. or less)\" (Ekman and Rosenberg, 2005 ); (3) \"They last for less than half a second\" (Frank et al., 2009 )... Thus, there is a lack of consensus about the time range of the duration of a microexpression.",
+          "source_file": "paper_Effects of duration of expressions on recognition.md",
+          "location": "Introduction - duration estimates"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼提出神经文化理论(neurocultural theory)：先天面部情感程序（神经部分）解释普遍性，显示规则/display rules（文化部分）解释文化差异——文化差异不在基本情绪本身，而在何时/何地/对谁展示情绪的社会规范，这些规则通过社会化习得，可遮掩、夸大或调节先天表情",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Ekman developed a neurocultural theory that accounts for both universals (the \"neuro\" part - innate facial affect program) and cultural differences (the \"cultural\" part - display rules that govern when and how emotions are expressed).",
+          "source_file": "paper_ConstantsAcrossCulturesFaceEmotion.md",
+          "location": "NEUROCULTURAL THEORY 段落"
+        },
+        {
+          "excerpt": "Cultures differ not in the basic emotions themselves but in display rules - social norms about when, where, and to whom certain emotions may be shown. These rules are learned through socialization and can mask, exaggerate, or modulate the innate expressions.",
+          "source_file": "paper_ConstantsAcrossCulturesFaceEmotion.md",
+          "location": "DISPLAY RULES 段落"
+        },
+        {
+          "excerpt": "Much of the research was framed by Ekman's \"neuro-cultural\" theory of emotion ( Ekman, 1972 ), in which universal motor programs for emotional facial expressions might have different elicitors, display rules, and/or consequences because of culture-specific learning. Ekman (1972) and Friesen (1972) proposed display rules as one of the main aspects of emotional facial expression production and interpretation that vary across cultures.",
+          "source_file": "paper_Cultural Differences in Facial Expression.md",
+          "location": "Cultural Differences in Facial Expression Interpretation段"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼从最初认为面部表情与文化关联、是社会学习的产物，通过跨文化研究证据被迫接受表情普遍性的相反立场——这是一个40年间从文化相对主义到普遍主义的根本转变",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In 1982, he postulated six basic emotions: anger, disgust, fear, happiness, sadness, and surprise, and supplemented these in the 1990s with 11 additional emotions (amusement, contempt, contentment, embarrassment, excitement, guilt, pride in achievement, relief, satisfaction, sensory pleasure, and shame).",
+          "source_file": "exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md",
+          "location": "中段，Ekman早期研究背景介绍"
+        },
+        {
+          "excerpt": "My views over the past 40 years have changed radically from my initial view (Ekman, 1957) that: (a) a pleasant-unpleasant and active-passive scale were sufficient to capture the differences among emotions; and (b) the relationship between a facial configuration and what it signified is socially learned and culturally variable. I was forced to adopt the opposite view by findings from my own and others' cross-cultural studies of facial expressions.",
+          "source_file": "exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md",
+          "location": "INTRODUCTION 段落"
+        }
+      ]
+    },
+    {
+      "claim": "情绪组织而非破坏理性思维和社会生活；情绪在即将爆发前可以被识别和预防；这一观点影响了Pixar电影《头脑特工队》的创作",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "As Dr. Ekman noted in a New York Times op-ed following the movie's release, \"emotions organize—rather than disrupt—rational thinking. . . [and] our social lives.\"",
+          "source_file": "exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md",
+          "location": "末段，Advising Hollywood部分"
+        },
+        {
+          "excerpt": "In his talk, Dr. Ekman will discuss how to spot signs of a pending outburst—and prevent it from occurring. He will offer step-by-step suggestions to help you recognize when an emotion is just beginning and when it is being concealed and how to acknowledge your actual feelings.",
+          "source_file": "exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md",
+          "location": "前段，讲座内容描述"
+        },
+        {
+          "excerpt": "emotions organize—rather than disrupt—rational thinking. . . [and] our social lives.",
+          "source_file": "exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md",
+          "location": "末段，Ekman在纽约时报的op-ed观点"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼花了近五十年研究面部/身体/声音变化如何暴露谎言，重点关注涉及生命、自由、声誉或重要关系的高风险谎言，为CIA、FBI、TSA等执法机构开发了欺骗检测培训",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Ekman spent nearly fifty years studying how changes in demeanor (face, body, voice) might betray a lie. Focus on serious lies where life, freedom, reputation, or important relationships are at stake.",
+          "source_file": "ekmanblog_01_CatchingLiars.md",
+          "location": "FIFTY YEARS OF RESEARCH 段落"
+        },
+        {
+          "excerpt": "It's a discovery that sparked his groundbreaking explorations of deception and lying. His 1985 book, Telling Lies: Clues to Deceit in the Marketplace, Politics, and Marriage (W. W. Norton rev. 2009), prompted him to develop workshops in detecting deception for law enforcement agencies such as the TSA, CIA and FBI",
+          "source_file": "exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md",
+          "location": "The Deception Detector 段落"
+        },
+        {
+          "excerpt": "His 1985 book, Telling Lies: Clues to Deceit in the Marketplace, Politics, and Marriage (W. W. Norton rev. 2009), prompted him to develop workshops in detecting deception for law enforcement agencies such as the TSA, CIA and FBI",
+          "source_file": "exa_9_World-Renowned Psychologist Paul Ekman, PhD '58, '08 (Hon.), to Deliver Adelphi'.md",
+          "location": "中段，著作与执法培训"
+        }
+      ]
+    },
+    {
+      "claim": "实时识别热点的硬件和软件尚未成熟但正在进展中，未来自动热点检测器可能即时评估面部表情和身体生理",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Hardware and software that identifies hot spots in real time isn't ready for prime time now, but it is progressing. Soon automated hot spot detectors could evaluate facial expressions and bodily physiology instantly, from a distance.",
+          "source_file": "ekmanblog_01_CatchingLiars.md",
+          "location": "AUTOMATED DETECTION段"
+        }
+      ]
+    },
+    {
+      "claim": "Lisa Feldman Barrett的建构情绪理论认为情绪无法通过面部表情或任何生理测量检测，不存在跨文化的普遍情绪；每个人基于个人经验建构情绪，情绪是大脑利用感官数据、知识和社会互动历史建构的概念",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Argues emotions cannot be detected through facial expressions or any other physiological measurement, and it is not possible to state there are \"universal\" emotions across people, nations, or cultures. Each person constructs their own emotions based on personal experiences. Emotions are not \"reactions\" to external events: the experience is a \"simulation\" or prediction. Emotions are concepts constructed by the brain out of pieces of sensory data, knowledge and history of social interactions.",
+          "source_file": "pmc_02_EkmanModelChallenged.md",
+          "location": "CONSTRUCTED EMOTION THEORY 段落"
+        },
+        {
+          "excerpt": "Argues emotions cannot be detected through facial expressions or any other physiological measurement, and it is not possible to state there are \"universal\" emotions across people, nations, or cultures. Each person constructs their own emotions based on personal experiences. Emotions are not \"reactions\" to external events: the experience is a \"simulation\" or prediction.",
+          "source_file": "pmc_02_EkmanModelChallenged.md",
+          "location": "CONSTRUCTED EMOTION THEORY段"
+        }
+      ]
+    },
+    {
+      "claim": "实验发现使用艾克曼基本情绪模型标注句子时被试内一致性率较低，尤其低述情障碍水平者更明显；高述情障碍者更频繁使用基于艾克曼模型的情绪标签（尤其负性情绪），暗示基本情绪模型可能更适合描述情绪简化处理的个体",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Low within-subjects agreement rates for both datasets, particularly for subjects with low levels of alexithymia. Frequent use of emotions based on Ekman model, particularly negative ones, in people with high levels of alexithymia.",
+          "source_file": "pmc_02_EkmanModelChallenged.md",
+          "location": "RESULTS SUMMARY 段落"
+        },
+        {
+          "excerpt": "This study tests whether traditional models are sufficient to capture the complexity of daily life emotions.\nLow within-subjects agreement rates for both datasets, particularly for subjects with low levels of alexithymia.\nChallenges the sufficiency of Ekman's six basic emotions for representing real-life emotional complexity.",
+          "source_file": "pmc_02_EkmanModelChallenged.md",
+          "location": "ABSTRACT和RESULTS SUMMARY段"
+        },
+        {
+          "excerpt": "Frequent use of emotions based on Ekman model, particularly negative ones, in people with high levels of alexithymia.",
+          "source_file": "pmc_02_EkmanModelChallenged.md",
+          "location": "RESULTS SUMMARY段"
+        }
+      ]
+    },
+    {
+      "claim": "John Koenig的《模糊悲伤词典》创造的描述情绪的新词挑战了是否所有情绪体验都可简化为六种普遍基本情绪的假设",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "John Koenig's compendium of new words for emotions represents emotions that \"shine a light on the fundamental strangeness of being a human being.\" These \"undefined emotions\" challenge whether all emotional experiences can be reduced to the six universal basic emotions.",
+          "source_file": "pmc_02_EkmanModelChallenged.md",
+          "location": "THE DICTIONARY OF OBSCURE SORROWS 段落"
+        }
+      ]
+    },
+    {
+      "claim": "过去五十年的面部表情研究主要关注观察者判断而非直接测量面部本身，少数测量面部的研究在情绪样本、被试面部、刺激人物和面部成分采样上均不足且理论指导不够；Duchenne和Darwin的理论描述也不够完整",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Rather than continuing the study of the particular facial muscles which distinguished one from another emotion, the past five decades of psychological research on the face in relation to emotion instead have been devoted primarily to determining what emotion observers can judge from the face (whether their judgments are accurate, what categories of emotion can be judged, etc.). Comparatively few investigators have actually looked at the face itself, applying some measurement procedure to the appearance of the face and determining whether the resulting measurements were related to some index of emotion.",
+          "source_file": "exa_3_.md",
+          "location": "第2-3段，文献回顾"
+        },
+        {
+          "excerpt": "This last limitation may be due to the atheoretical bias of these investigators, none of whom specified the basis for their choice of facial components or scores. Instead, it would seem that they measured anything that appeared to vary in their set of faces, or that they could reliably measure, or that was salient to them. If they had looked to theory, they would have found only some guidance, primarily from Duchenne (1862) and those who were influenced by him (Darwin, 1872; Plutchik, 1962; Tomkins, 1962, 1963).",
+          "source_file": "exa_3_.md",
+          "location": "第4段，对先前研究的批评"
+        },
+        {
+          "excerpt": "the past five decades of psychological research on the face in relation to emotion instead have been devoted primarily to determining what emotion observers can judge from the face ... Comparatively few investigators have actually looked at the face itself, applying some measurement procedure",
+          "source_file": "exa_3_.md",
+          "location": "第一段，回顾研究历史"
+        },
+        {
+          "excerpt": "All of the studies were limited by insufficient sampling of at least one of the following: the number of emotions studied ... the number of different faces measured; the number of different stimulus persons used; and the number and kind of facial components measured.",
+          "source_file": "exa_3_.md",
+          "location": "第二段，批评既往研究局限"
+        },
+        {
+          "excerpt": "This last limitation may be due to the atheoretical bias of these investigators, none of whom specified the basis for their choice of facial components or scores. ... If they had looked to theory, they would have found only some guidance, primarily from Duchenne (1862) and those who were influenced by him (Darwin, 1872; Plutchik, 1962; Tomkins, 1962, 1963). However, even these theorists ... failed to describe completely all of the facial configurations ... And their descriptions were not intended to be a measurement procedure for determining what emotion is shown in a face.",
+          "source_file": "exa_3_.md",
+          "location": "第二段末尾至第三段"
+        }
+      ]
+    },
+    {
+      "claim": "Duchenne被Ekman视为现代运动学之父，Darwin评价他为'最仔细研究每块肌肉收缩的人'，但后来研究者几乎忽视了他的贡献",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Although Duchenne was the father of modern kinesiology, of whose work Darwin (1872) had written, \"no one has more carefully studied the contractions of each separate muscle and the consequent furrows produced on the skin\", later investigators virtually ignored his contributions.",
+          "source_file": "exa_3_.md",
+          "location": "第1段，Duchenne的历史贡献"
+        }
+      ]
+    },
+    {
+      "claim": "谎言失败有两个基本原因：思维层面的失败（未准备好谎言线路、无法预见所有问题、难以记住说辞）和情绪层面的干扰（情绪唤起时面部/呼吸/声音变化自动发生不可选择控制）",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "There are two basic reasons why lies fail—one that involves thinking, and one that involves emotions. Lies fail due to a failure of the liar to prepare his or her line, or due to the interference of emotions. These reasons have different implications for the potential behavioral clues that betray a lie.",
+          "source_file": "exa_6_[PDF] Lies That Fail. - Paul Ekman Group.md",
+          "location": "第2段，开篇总论"
+        },
+        {
+          "excerpt": "Any of these failures—in anticipating when it will be necessary to lie, in inventing a line which is adequate to changing circumstances, in remembering the line one has adopted—produce easily spotted clues to deceit. What the person says is either internally inconsistent, or at odds with other incontrovertible facts, known at the time or later revealed.",
+          "source_file": "exa_6_[PDF] Lies That Fail. - Paul Ekman Group.md",
+          "location": "LIES BETRAYED BY THINKING CLUES 段落"
+        },
+        {
+          "excerpt": "An attempt to conceal an emotion at the moment it is felt could be betrayed in words, but except for a slip of the tongue, it usually is not. Unless there is a wish to confess what is felt, the liar does not have to put into words the feelings being concealed. One has less choice in concealing a facial expression, or rapid breathing, or a tightening in the voice.",
+          "source_file": "exa_6_[PDF] Lies That Fail. - Paul Ekman Group.md",
+          "location": "LYING ABOUT FEELINGS 段落"
+        },
+        {
+          "excerpt": "Liars do not always anticipate when they will need to lie. There is not always time to prepare the line to be taken, to rehearse and memorize it. Even when there has been ample advance notice, and a false line has been carefully devised, the liar may not be clever enough to anticipate all the questions that may be asked",
+          "source_file": "exa_6_[PDF] Lies That Fail. - Paul Ekman Group.md",
+          "location": "LIES BETRAYED BY THINKING CLUES段"
+        },
+        {
+          "excerpt": "An attempt to conceal an emotion at the moment it is felt could be betrayed in words, but except for a slip of the tongue, it usually is not. ... One has less choice in concealing a facial expression, or rapid breathing, or a tightening in the voice.\nWhen emotions are aroused changes occur automatically without choice or deli[beration]",
+          "source_file": "exa_6_[PDF] Lies That Fail. - Paul Ekman Group.md",
+          "location": "LYING ABOUT FEELINGS段"
+        }
+      ]
+    },
+    {
+      "claim": "过度流畅的陈述可能是精心排练的骗局标志，一些骗子甚至故意犯小错以避免显得太完美（如Clifford Irving案）",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Too smooth a line may be the sign of a well rehearsed con man. To make matters worse, some con men knowing this purposely make slight mistakes in order not to seem too smooth! This was the case with Clifford Irving, who claimed he was authorized by Howard Hughes to write Hughes' biography. While on trial, Irving deliberately contradicted himself (albeit minor contradictions) because he knew that only liars tell perfectly planned accounts.",
+          "source_file": "exa_6_[PDF] Lies That Fail. - Paul Ekman Group.md",
+          "location": "LIES BETRAYED BY THINKING CLUES 段落"
+        }
+      ]
+    },
+    {
+      "claim": "欺骗线索或情绪泄露可表现在面部表情变化、身体动作、声音语调、吞咽、呼吸深浅、言语间长停顿、口误、微表情或手势失误等多种形式",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Deception clues or leakage may be shown in a change in the expression on the face, a movement of the body, an inflection to the voice, a swallowing in the throat, a very deep or shallow breath, long pauses between words, a slip of the tongue, a microfacial expression, or a gestural slip.",
+          "source_file": "exa_6_[PDF] Lies That Fail. - Paul Ekman Group.md",
+          "location": "第1段"
+        }
+      ]
+    },
+    {
+      "claim": "'基本'(basic)有三种含义：(1)存在多种不同离散情绪的立场；(2)情绪因应对基本生命任务的适应性价值而进化；(3)进化在解释情绪共性中的作用——三种含义可独立持有",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "There are three meanings of the term \"basic\" (see also Ortony & Turner, 1990). First, it distinguishes those who maintain that there are a number of separate emotions, that differ one from another in important ways. From this perspective, fear, anger, disgust, sadness and contempt, all negative emotions, differ in their appraisal, antecedent events, probable behavioral response, physiology and other characteristics described below.",
+          "source_file": "exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md",
+          "location": "第3段，三种'基本'含义"
+        },
+        {
+          "excerpt": "The second meaning of the adjective \"basic\" is to indicate instead the view that emotions evolved for their adaptive value in dealing with fundamental life tasks. Innate factors play a role in accounting for the characteristics they share, not species-constant or species-variable learning.",
+          "source_file": "exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md",
+          "location": "INTRODUCTION段，第二种含义"
+        }
+      ]
+    },
+    {
+      "claim": "发现表情普遍性不必然要求接受进化论解释——社会建构主义者可允许存在离散情绪而不接受进化适应性含义，普遍性也可归因于物种恒常学习(species-constant learning)而非系统发生",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "To identify separate discrete emotions does not necessarily require that one also take an evolutionary view of emotions. A social constructionist could allow for separate emotions without embracing the second meaning of the adjective \"basic\". Even the discovery of universals in expression or in antecedent events does not require giving a major role to evolution. Instead, one can attribute universals to species-constant learning—social learning which will usually occur for all members of the species, regardless of culture (cf. Allport, 1924). In this view it is ontogeny, not phylogeny, which is responsible for any commonalities in emotion",
+          "source_file": "exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md",
+          "location": "第4段"
+        },
+        {
+          "excerpt": "Even the discovery of universals in expression or in antecedent events does not require giving a major role to evolution. Instead, one can attribute universals to species-constant learning—social learning which will usually occur for all members of the species, regardless of culture (cf. Allport, 1924). In this view it is ontogeny, not phylogeny, which is responsible for any commonalities in emotion",
+          "source_file": "exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md",
+          "location": "INTRODUCTION段，讨论替代解释"
+        }
+      ]
+    },
+    {
+      "claim": "Tooby和Cosmides强调情绪的关键要素：当前事件评价受祖先过去影响；不同理论家对基本生命任务的描述相互兼容（Johnson-Laird和Oatley的普遍人类困境、Lazarus的核心关系主题、Stein和Trabasso的目标达成/失败）",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Tooby & Cosmides (1990) tell us that emotions impose \"...on the present world an interpretative landscape derived from the covariant structure of the past ...\". Emotions, they say, deal with recurrent \"... adaptive situations ... fighting, falling in love, escaping predators, confronting sexual infidelity, and so on, each [of which] recurred innumerable times in evolutionary history ...\" (pp. 407-408). Tooby & Cosmides emphasize what I consider the crucial element which distinguishes the emotions: our appraisal of a current event is influenced by our ancestral past.",
+          "source_file": "exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md",
+          "location": "第5段"
+        },
+        {
+          "excerpt": "These different descriptions are quite compatible, each emphasizing another aspect of the phenomenon. Common to all these views is the presumption that emotions are designed to deal with inter-organismic encounters, between people or between people and other animals.",
+          "source_file": "exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md",
+          "location": "第二页，讨论不同理论家观点"
+        }
+      ]
+    },
+    {
+      "claim": "情绪主要功能是调动个体应对人际或人与动物间的互动，但也可在独处时发生（对雷声、音乐、失去身体支撑等）",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Common to all these views is the presumption that emotions are designed to deal with inter-organismic encounters, between people or between people and other animals. Nevertheless, it is important to note that emotions can and do occur when we are not in the presence of others, and are not imagining other people. We can have emotional reactions to thunder, music, loss of physical support, auto-erotic activity, etc. Yet I believe the primary function of emotion is to mobilize the organism",
+          "source_file": "exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md",
+          "location": "第5段"
+        },
+        {
+          "excerpt": "Common to all these views is the presumption that emotions are designed to deal with inter-organismic encounters, between people or between people and other animals. Nevertheless, it is important to note that emotions can and do occur when we are not in the presence of others, and are not imagining other people. We can have emotional reactions to thunder, music, loss of physical support, auto-erotic activity, etc.",
+          "source_file": "exa_0_[PDF] Basic-Emotions.pdf - Paul Ekman Group.md",
+          "location": "第二页末段"
+        }
+      ]
+    },
+    {
+      "claim": "自主神经系统活动可以区分不同情绪：通过逐块肌肉构建情绪面部原型和重温过去情绪体验，产生的自主神经活动不仅能区分积极与消极情绪，还能区分消极情绪之间的差异（如愤怒心率增加显著高于快乐，愤怒手指温度升高显著高于快乐）",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Emotion-specific activity in the autonomic nervous system was generated by constructing facial prototypes of emotion muscle by muscle and by reliving past emotional experiences. The autonomic activity produced distinguished not only between positive and negative emotions, but also among negative emotions.",
+          "source_file": "paper_Autonomic Nervous System Activity Distinguishes Among Emotio.md",
+          "location": "Abstract段落"
+        },
+        {
+          "excerpt": "Heart rate increased more in anger (mean calculated across tasks + standard error, +8.0 ± 1.8 beats per minute) and fear (+8.0 ± 1.6 beats per minute) than in happiness (+2.6 ± 1.0 beats per minute). Left and right finger temperatures increased more in anger (left, +0.100C ± 0.0090; right, +0.080C ± 0.008°) than in happiness (left, -0.07°C + 0.0020; right, -0.03°C ± 0.002°).",
+          "source_file": "paper_Autonomic Nervous System Activity Distinguishes Among Emotio.md",
+          "location": "结果段落"
+        }
+      ]
+    },
+    {
+      "claim": "Ekman团队设计了六项方法学改进来克服以往自主神经研究的缺陷：研究六种而非两三种情绪、建立验证程序确保样本只含目标情绪、获取足够广泛的测量指标、连续而非前后测量、使用多种诱发任务、以专业演员和面部研究者为被试",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "(i) A broad sample of six emotions was studied, rather than the two or three that are typical. (ii) Verification procedures were instituted to maximize the likelihood that each sample contained only the single target emotion and no other. (iii) A sufficiently broad sample of autonomic measures was obtained... (iv) Autonomic measures were taken from the onset of emotion production continuously until it was terminated. (v) Multiple eliciting tasks were used with the same subjects. (vi) Professional actors (N = 12) and scientists who study the face (N = 4) served as subjects",
+          "source_file": "paper_Autonomic Nervous System Activity Distinguishes Among Emotio.md",
+          "location": "方法学段落"
+        }
+      ]
+    },
+    {
+      "claim": "当不使用验证标准而纳入所有自主神经数据时，仅积极与消极情绪的区分保留，消极情绪之间的所有区分消失——这支持了情绪状态验证的重要性，也解释了以往研究为何无法区分更多消极情绪",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "when the major analyses were rerun including all ANS data without regard to whether verification criteria were met, only the negative versus positive emotional distinctions remained; all distinctions among negative emotions were lost. We interpret this finding as supporting the importance of verification of emotional state and as indicating one reason previous studies that failed to include verification procedures have been unable to distinguish so many negative emotions.",
+          "source_file": "paper_Autonomic Nervous System Activity Distinguishes Among Emotio.md",
+          "location": "negative findings段落"
+        }
+      ]
+    },
+    {
+      "claim": "面部表情-情绪映射的常识观点已深度渗透社会各领域（FBI/TSA训练特工、自闭症诊断、法律系统判断被告），但这些应用缺乏坚实科学证据支撑；研究提出三大不足：(1)有限可靠性(2)缺乏特异性(3)有限可推广性",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Agents of the U.S. Federal Bureau of Investigations (FBI) and the Transportation Security Administration (TSA) were trained to detect emotions and other intentions using these facial configurations, with the goal of identifying and thwarting terrorists",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk5, 引言段"
+        },
+        {
+          "excerpt": "defendants who are perceived as untrustworthy receive harsher sentences than they otherwise would ( Wilson & Rule, 2015 , 2016 ), and such perceptions are more likely when a person appears to be angry (i.e., facial structure is similar to the hypothesized facial expression of anger, which is a scowl ( Todorov, 2017 ). An incorrect inference about a defendant's emotional state can cost someone her children, her freedom, or even her life",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk5, 法律系统段"
+        },
+        {
+          "excerpt": "We identify three key shortcomings in the scientific research that have contributed to a general misunderstanding about how emotions are expressed and perceived in facial movements, and that limit the translation of this scientific evidence for other uses: limited reliability (instances of the same emotion category are neither reliably expressed with or perceived from a common set of facial movements); lack of specificity (there is no unique mapping between a single configuration of facial movements and instances of the same emotion category); and, limited generalizability (the effects of context and culture have not been sufficiently documented and accounted for).",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk5, 三大不足段"
+        }
+      ]
+    },
+    {
+      "claim": "基本情绪方法假设核心面部配置可像指纹一样诊断内在情绪状态，更大的表达变异被解释为显示规则或情绪调节策略；但科学家实际行动往往与声明不一致——承认多种面部动作可表达同一情绪的同时，实验设计和综述文章仍给人单一独特表情的印象",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "More substantial variation in expressions (e.g., smiling in anger, gasping with widened eyes in anger, and scowling not in anger, but in confusion or concentration) is typically explained as the result of some process that is independent of an emotion itself, such as display rules, emotion regulation strategies such as suppressing the expression, or culture-specific dialects (as proposed by various scientists, including Elfenbein, 2013 , 2017 ; Ekman & Cordaro, 2011",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk5, 基本情绪方法段"
+        },
+        {
+          "excerpt": "The common view of emotional expressions persist, too, because scientists' actions often don't follow their claims in a transparent, straightforward way. Many scientists continue to design experiments, use stimuli and publish review papers that, ironically, leave readers with the impression that certain emotion categories each have a single, unique facial expression, even as those same scientists acknowledge that every emotion category can be expressed with a variable set of facial movements.",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk6, 科学实践矛盾段"
+        }
+      ]
+    },
+    {
+      "claim": "从面部动作推断情绪本质上是反向推理，需计算p[情绪|面部配置]；仅当同时满足可靠性、特异性、可推广性和效度四项标准时才能合理称之为'情绪表情'；效度问题（证明当事人确实处于预期情绪状态）几乎从未被解决",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "When you see someone smile and infer that the person is happy, you are making what is known as a reverse inference: you are assuming that the smile reveals something about the person's emotional state that you cannot access directly. Reverse inference requires calculating a conditional probability: the probability that a person is in a particular emotion episode (such as happiness) given the observation of a unique set of facial muscle movements (such as a smile).",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk6, 反向推理段"
+        },
+        {
+          "excerpt": "Four criteria must be met to justify a reverse inference that a particular facial configuration expresses and therefore reveals a specific emotional state: reliability, specificity, generalizability and validity",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk6, 四项标准段"
+        },
+        {
+          "excerpt": "Questions of validity are almost never addressed in production and perception studies. Even if reliable and specific facial movements are observed across generalizable circumstances, it is a difficult and unresolved question as to whether these facial movements can justify an inference about a person's emotion state.",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk7, 效度问题段"
+        }
+      ]
+    },
+    {
+      "claim": "不同研究者对同一情绪提出的面部动作单元配置存在差异（如愤怒：4+5+7+23 vs 4+5+24+38 vs 4+5或7+22+23+24），但核心假设始终是每个情绪类别有一个诊断性原型表情",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Published studies typically test the hypothesis that there are unique emotion-expression links ... The exact facial configuration tested varies slightly from study to study, but a core facial configuration is still assumed (see Table 1 for examples). This pattern of testing the hypothesis that instances of one emotion category are expressed with a single core facial configuration reinforces (perhaps unintentionally) the common view that each emotion category is consistently and uniquely expressed with its own distinctive configuration of facial movements.",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk6, 研究一致性段"
+        }
+      ]
+    },
+    {
+      "claim": "面部表情的特异性要求一个面部配置仅表达该情绪类别且优于随机水平，不能同时以优于随机水平表达其他心理事件；可靠性70%-90%为强证据，40%-69%为中等，20%-39%为弱支持",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "If a facial configuration is diagnostic of a specific emotion category, then the facial configuration should express instances of one and only one emotion category better than chance; it should not consistently express instances of any other mental event (emotion or otherwise) at better than chance levels. For example, to be considered the expression of anger, a scowling facial configuration must not express sadness, confusion, indigestion, an attempt to socially influence, etc. at better than chance levels.",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk7, Table 2特异性段"
+        },
+        {
+          "excerpt": "Reliability rates between 70% and 90% provide strong evidence for the commonsense view, between 40% and 69% provide moderate support for the commonsense view, and between 20% and 39% provide weak support ( Ekman, 1994 ; Haidt & Keltner, 1999 ; Russell, 1994 ).",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk8, 可靠性标准段"
+        }
+      ]
+    },
+    {
+      "claim": "可推广性的两个关键问题：实验室发现能否推广到现实世界？WEIRD人群发现能否推广到小规模偏远社区？情境对情绪表达和感知有多重影响维度（社会因素、内部物理/心理情境、时间、个体差异、文化）",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "There are two crucial questions about generalizability when it comes to the production and perception of emotional expressions: Do the findings from a laboratory experiment generalize to observations in the real world? And, do the findings from studies that sample participants from Westernized, Educated, Industrialized, Rich and Democratic (WEIRD; Henrich, Heine, & Norenzayan, 2010 ) populations generalize to people who live in small-scale, remote communities?",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk7, 可推广性问题段"
+        },
+        {
+          "excerpt": "It is possible, for example, that a state of anger is expressed differently depending on various factors that can be studied, including the situational context (such as whether a person is at work, at school, or at home), social factors (such as who else is present in the situation and the relationship between the expresser and the perceiver), the person's internal physical context (based on how much sleep they had, how hungry they are, etc.), a person's internal mental context (such as the past experiences that come to mind or the evaluations they make), the temporal context (what just occurred a moment ago), differences between people (such as whether someone is male or female, warm or distant), and the cultural context, such as whether the expression is occurring in a culture that values the rights of individuals (vs. group cohesion)",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk8, 情境因素段"
+        }
+      ]
+    },
+    {
+      "claim": "六种基本情绪的面部表情原型源自达尔文1872年著作，但达尔文是规定(stipulated)而非发现这些配置；关于六种基本情绪的研究远超其他情绪类别（700余条vs不足70条）",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "They originated with Charles Darwin, who stipulated (rather than discovered) that certain facial configurations are expressions of certain emotion categories, inspired by photographs taken by Duchenne and drawings made by the Scottish anatomist Charles Bell ( Darwin, 1872 ). These stipulations largely form the basis of the common view of emotional expressions.",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk8, 达尔文起源段"
+        },
+        {
+          "excerpt": "A PsycInfo search for the term \"facial expression\" combined with \"anger, disgust, fear, happiness, sadness, surprise\" produced over 700 entries, but a similar search including \"love, shame, contempt, hate, interest, distress, guilt\" returned less than 70 entries ( Duran & Fernandez-Dols, 2018 ).",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk8, 研究数量段"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼反驳Ortony和Turner对基本情绪论的批评：表情和生理的普遍性证据强烈表明已研究情绪具有生物学基础；不否认文化和社会学习的作用，但进化施加了约束；'基本情绪'不是作为组合元素使用，而是聚焦于有生物学基础的情绪",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "This position does not deny the important role of culture and social learning processes in every aspect of emotion—the control of expressions, the symbolic representation of emotional experience, how one evaluates emotion-relevant situations, attitudes about one's own emotions, how one copes with emotion, and so on—but it is not a totally malleable system. There are constraints as a result of our evolution, and not the",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "第2段，开篇立场声明"
+        },
+        {
+          "excerpt": "In their argument against basic emotions, Ortony and Turner (1990) distinguished two ways in which that phrase has been used: (a) to describe elements that combine to form larger more complex emotions and (b) to denote emotions that are presumed to have a biological basis. I will not comment on the first use, because neither I nor most other current researchers who posit basic emotions use the concept in this way.",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "第2段"
+        }
+      ]
+    },
+    {
+      "claim": "没有任何系统的、可复制的客观证据表明已精确识别的情绪面部表情会在没有情绪的情况下出现——Ortony和Turner的'面部表情可独立于情绪'论点是不成立的稻草人论证",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The question more cogently posed, once the straw man is put aside, is whether the facial expressions that have been precisely identified for each of the emotions I have described ever occur either without emotion or without an attempt to fabricate the appearance of emotion. No one has ever reported any systematic, replicated, objective evidence that this occurs in any culture.",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "中段"
+        }
+      ]
+    },
+    {
+      "claim": "面部肌肉动作不是一个整齐系统：某些肌肉只在一种情绪中出现（如愤怒中嘴唇红缘收窄收紧），有时一块肌肉就能传递情绪信号（如厌恶只需levator labii superioris），但单一肌肉动作的意义可能来自其在复杂表情中的角色而非独立构件",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Only one muscle is needed to signal disgust clearly (levator labii superioris, alquae nasi, which raises the nares, pulls up the infraorbital triangle, and wrinkles the sides of the nose), and that muscle action does not occur systematically in any other emotion. The zygomatic muscle, which pulls the lip corners upward, can alone signal enjoyment, but it occurs in combination with other muscles to signal sadness. Facial muscle action is not a neat or a tidy system, and it is certainly not one that fits Ortony and Turner's theoretical preconceptions.",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "中后段"
+        },
+        {
+          "excerpt": "Even if some elemental muscle movements were to be shown to have universal signal value, that would not prove that the meaning of the complex facial expressions is derived from the meanings of the muscular elements. It might just as well be the reverse, that the meaning of single muscle actions may be derived from the role of those muscles in complex emotional expressions.",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "中后段"
+        }
+      ]
+    },
+    {
+      "claim": "不同自主神经系统活动模式是为让机体准备执行特定情绪适应所需的运动动作而进化的；不为快乐或蔑视找到特异性自主神经活动，因为这些情绪不太可能有与生存相关的特定运动模式",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "My own view is that these different patterns of ANS activity evolved to prepare the organism for quite different motor actions that were likely to be adaptive for particular emotions, such as anger, fear, or disgust. I do not expect to find emotion-specific ANS activity for either happiness or contempt, emotions in which it is unlikely that any specific pattern of motor activity would have been relevant to survival.",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "Physiology部分"
+        }
+      ]
+    },
+    {
+      "claim": "在苏门答腊米南加保人（保守穆斯林、母系社会）中复制了情绪特异性自主神经活动的发现，表明该现象具有跨文化普遍性",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Examining members of a very different culture—the Minangkabau of Sumatra, Indonesia, who are fundamentalist Moslem and matrilineal—we replicated our earlier findings on emotion-specific ANS activity.",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "Physiology部分"
+        }
+      ]
+    },
+    {
+      "claim": "基本情绪方法的价值在于引导的研究问题和发现——30年前面部表情被认为不可靠、情绪不是热门话题；Tomkins的基本情绪理论启发了众多研究者获取现在的证据",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Instead let me suggest that the value of the basic emotion approach is in the questions it directs attention to and the research findings that are generated by those who work from this stance. ... Ortony and Turner dismissed such findings as routine, not remembering that such evidence did not exist 30 years ago. Facial expressions were then considered to be an inaccurate source of culture-specific information, and neither expression nor emotion was then the popular topic it is today. Tomkins's (1962, 1963) theory of basic emotions inspired a number of researchers who obtained some of the evidence we now have and now argue about how to interpret.",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "Why Call Them Basic Emotions? 部分"
+        }
+      ]
+    },
+    {
+      "claim": "Ortony和Turner承认跨文化证据'令人印象深刻'，其替代解释既缺乏系统研究支持也与已知肌肉作用相矛盾",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Ortony and Turner admitted that there is no cross-cultural evidence to support their position, and they acknowledged that the cross-cultural evidence for the position they have attacked is \"impressive.\"",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "Physiology部分前段"
+        }
+      ]
+    },
+    {
+      "claim": "面部肌肉活动不仅用于情绪显示——还包括表情符号（精确象征意义、社会化学习、文化变异）、面部对话信号（七种方式伴随言语说明）、和工具性面部动作（如亲吻和吐痰）",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Facial muscular action is not dedicated just to emotional display. We (Ekman & Friesen, 1969,1975) described emblematic facial expressions, such as the wink; like hand gestures, these are movements that have precise symbolic meaning and are socially learned and culturally variable. I (Ekman, 1979) also distinguished facial conversational signals that in seven different ways illustrate speech as it is spoken, much like the hands often do. There are also a number of instrumental facial actions, such as kissing and spitting.",
+          "source_file": "paper_Are there basic emotions_.md",
+          "location": "中段，面部肌肉功能的多元分类"
+        }
+      ]
+    },
+    {
+      "claim": "Fridlund的行为生态理论与神经文化理论对立，认为面部行为源于社会语境而非自动与基本情绪关联；虽尚未获强力支持，但Frijda提议了折中方案",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "In contrast to the neurocultural theory, Fridlund, in his biological behavior-based mimic theory assumed that facial behavior is not automatically related to basic emotions, but rather originates from social contexts and is used more or less indiscriminately. Although the behavioural ecology theory has not been strongly supported, and related evidence is still limited, Frijda has suggested a synthesis between these conflicting theories",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Universality of facial expression部分"
+        }
+      ]
+    },
+    {
+      "claim": "只有'快乐'（微笑）被公认与底层生理和面部表情模式有可观察的关联；其他基本表情模式存在相当大的科学争议；人类情绪研究因缺乏适合的情绪理论共识而受阻",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "A major problem stems from interpreting data which have not always been fully confirmed, and are based on Paul Ekman's theory of six basic patterns of expression (happiness, anger, disgust, fear, sadness, and surprise). 2 - 8 Only the first of Ekman's \"basic emotions,\" the feeling of happiness with its expressive feature of the \"smile,\" is observably related to the underlying physiological and facial pattern of expression. Considerable scientific controversy exists regarding Ekman's other basic patterns of expression.",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Introduction部分"
+        },
+        {
+          "excerpt": "Despite recent progress, studies on human emotions have been hindered by the lack of consensus on an emotion theory suited to examining the dynamic aspects of emotion and its expression. Studying expression of emotion in patients with mental health conditions for diagnostic and therapeutic purposes will profit from theoretical and methodological progress.",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Abstract部分"
+        },
+        {
+          "excerpt": "Only the first of Ekman's \"basic emotions,\" the feeling of happiness with its expressive feature of the \"smile,\" is observably related to the underlying physiological and facial pattern of expression. Considerable scientific controversy exists regarding Ekman's other basic patterns of expression.",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Introduction 段落"
+        },
+        {
+          "excerpt": "A fundamental problem is a limitation in interpreting experimental data because of a lack of a scientifically consensual emotion theory, which has great repercussions on the analysis of facial expression.",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "The future of measuring the facial expression of emotion 章节"
+        }
+      ]
+    },
+    {
+      "claim": "新生儿研究支持表情的先天基础：新生儿对糖水+香草精液以微笑回应、对臭鸡蛋味以厌恶回应、6个月大即有愤怒面部表情",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "In the newborn, Sroufe found reactive crying and native smiling. In an experimental study by Steiner, newborn babies who were exposed to a sugar solution with vanilla flavoring reacted with a smile, compared with an expression of disgust in response to a strong smell of rotten eggs. Izard found the facial expression of irritation to be present from the 6th month of life, while the facial expression of fear presents later.",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Universality of facial expression部分"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼基于基本情绪理论开发了面部动作编码系统(FACS)，通过逐帧分析视频面部图像记录'动作单元'，优点是不受偏见影响、有20+年行为数据积累，缺点是依赖较强情绪且分析耗时；自发与摆拍表情在形态学和动态特征上不同",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The pioneer of this approach to measuring facial expression of emotion was Ekman, who, based on his theory of six basic emotions, developed the Facial Action Coding System (FACS). 8 This method allows the identification of basic emotions over time, using the image of a videotaped face for image analysis and documenting specific expression changes (called \"Action Units\"). The advantage of this method is that facial expression of emotion can be studied without biases by the investigator or the technique. Its disadvantages are the dependence on relatively strong emotions and the time needed to analyze the fixed images one by one using the Facial Action Coding System (EMFACS) method.",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Measuring facial expression of emotion 章节"
+        },
+        {
+          "excerpt": "It is important to distinguish FACS itself from facial muscle models that employ aspects of FACS. In particular, there has been a tendency to confuse FACS with CANDIDE. FACS is performed by human observers using stop-motion video. Although there are clearly defined relationships between FACS and the underlying facial muscles, FACS is an image-based method. Facial actions are defined by the image changes they produce in video sequences of face images.",
+          "source_file": "paper_Classifying Facial Actions.md",
+          "location": "FACS自动测量段"
+        },
+        {
+          "excerpt": "Many of these systems were designed with an objective of classifying facial expressions into a few basic categories of emotion, such as happy, sad, or surprised. For basic science investigations of facial behavior itself, such as studying the difference between genuine and simulated pain, an objective and detailed measure of facial activity such as FACS is needed.",
+          "source_file": "paper_Classifying Facial Actions.md",
+          "location": "自动化表情测量局限段"
+        },
+        {
+          "excerpt": "There is over 20 years of behavioral data on the relationships of facial action codes to emotion and to state variables such as deceit, interest, depression, and psychopathology.",
+          "source_file": "paper_Classifying Facial Actions.md",
+          "location": "FACS行为数据段"
+        },
+        {
+          "excerpt": "movement parameters that were estimated from posed, prototypical expressions may not be appropriate descriptors for spontaneous facial expressions, which differ from posed expressions in both their morphology and their dynamics",
+          "source_file": "paper_Classifying Facial Actions.md",
+          "location": "自发vs摆拍表情段"
+        }
+      ]
+    },
+    {
+      "claim": "EMFACS区分了'真诚微笑'(felt smile，涉及颧大肌和眼轮匝肌，自发非自愿)和'虚假微笑'(phoney smile，仅涉及颧大肌，社交语境重要)",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The \"felt smile\" (also \"real laughing\") involves the M. zygomaticus and M. orbicularis oculi muscles, which results in spontaneous involuntary smiling/laughing as an expression of perceived happiness. Another type of smiling is the well-known \"phoney smile\" or \"social smile\" which involves the isolated use of M. zygomaticus major and is important in social contexts and personal relationships. 8",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Measuring facial expression of emotion - smile types 段落"
+        }
+      ]
+    },
+    {
+      "claim": "精神分裂症患者面部表情贫乏（尤其笑的肌肉群），与阴性症状相关；上唇提肌过度活动与阳性症状相关但可能反映'模仿解体'而非特定情绪；抑郁患者比精神分裂症患者表情缺陷更大，悲伤最小表达与强烈主观感受间存在差距",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Most information on facial expression of emotion is obtained from schizophrenic patients, who have been found to exhibit a paucity of facial expression, particularly in the muscles involved in laughter. This deficit correlates with the amount of negative symptoms. Hyperactivity of the levator labii muscle is seen in patients with schizophrenia and correlates with positive symptoms (on the Positive and Negative Symptom Scale).",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Facial expression of emotion in mental illness 章节"
+        },
+        {
+          "excerpt": "Mimic disintegration is defined as the inability to organize specific facial muscle movements as an integrated whole, thus making it difficult for observers to decode the emotional state and establish contact or develop a relationship.",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Facial expression of emotion in mental illness - mimic disintegration 段落"
+        },
+        {
+          "excerpt": "Both patient groups (schizophrenic and depressed patients) exhibited less spontaneous facial expression of emotion than healthy people and, compared with the schizophrenic patients, depressed patients showed a greater deficit. A discrepancy between minimal facial expression of sorrow and an intense subjective feeling of sorrow was found in depressed patients.",
+          "source_file": "paper_Measuring facial expression of emotion.md",
+          "location": "Facial expression of emotion in mental illness - depressed patients 段落"
+        }
+      ]
+    },
+    {
+      "claim": "恐惧与惊讶的混淆可能反映文化经验特征（Fore文化中恐惧事件几乎总是令人惊讶），但这一局部失败不削弱大部分情绪辨别的跨文化发现",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Fear faces may not have been distinguished from surprise faces, because in this culture fearful events are almost always also surprising; that is, the sudden appearance of a hostile member of another village, the unexpected meeting of a ghost or sorcerer, etc.",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "DISCUSSION 段落"
+        }
+      ]
+    },
+    {
+      "claim": "跨文化面部情绪行为普遍性的证据不否认文化差异的存在；文化差异体现在诱发情绪的情境、情绪的行为后果以及管理面部行为的'展示规则'上",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The growing body of evidence of a pan-cultural element in emotional facial behavior does not imply the absence of cultural differences in the face and emotion. Ekman (1968) and Ekman and Friesen (1969) have suggested that cultural differences will be manifest in the circumstances which elicit an emotion, in the action consequences of an emotion, and in the display rules which govern the management of facial behavior in particular social settings.",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "DISCUSSION 最后一段"
+        }
+      ]
+    },
+    {
+      "claim": "基本情绪的非言语声音表达可被跨文化双向识别（英语者与纳米比亚Himba族），但积极情绪（成就、宽慰、感官愉悦）仅在文化内部被识别——积极情绪信号多为文化特异性；笑声是唯一被双向识别的积极声音，暗示深层进化根源",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Vocalizations communicating the so-called \"basic emotions\" (anger, disgust, fear, joy, sadness, and surprise) were bidirectionally recognized. In contrast, a set of additional emotions was only recognized within, but not across, cultural boundaries. Our findings indicate that a number of primarily negative emotions have vocalizations that can be recognized across cultures, while most positive emotions are communicated with culture-specific signals.",
+          "source_file": "paper_Cross_cultural recognition of basic emotions.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "For individual emotions, they performed at better-than-chance levels for a subset of the emotions [χ 1 = 8.83 (anger), 27.03 (disgust), 18.24 (fear), 9.96 (sadness), 25.14 (surprise), and 49.79 (amusement), all P < 0.05, Bonferroni corrected]. These data show that the communication of these emotions via nonverbal vocalizations is not dependent on a shared culture between producer and listener: these signals are recognized across cultural borders.",
+          "source_file": "paper_Cross_cultural recognition of basic emotions.md",
+          "location": "Results - Himba listeners"
+        },
+        {
+          "excerpt": "Tickling triggers laugh-like vocalizations in nonhuman primates ( 25 ) as well as other mammals ( 26 ), suggesting that it is a social behavior with deep evolutionary roots ( 27 ). Laughter is thought to have originated as a part of playful communication between young infants and mothers, and also occurs most commonly in both children and nonhuman primates in response to physical play ( 28 ).",
+          "source_file": "paper_Cross_cultural recognition of basic emotions.md",
+          "location": "Discussion - Laughter"
+        }
+      ]
+    },
+    {
+      "claim": "存在'组内优势'(in-group advantage)：情绪信号在同文化生产者-感知者之间被最准确识别，因为表达和感知都经过文化特异性规则过滤",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "These cultural variations, acquired through social learning, underlie the finding that emotional signals tend to be recognized most accurately when the producer and perceiver are from the same culture ( 12 ). This is thought to be because expression and perception are filtered through culture-specific sets of rules, determining what signals are socially acceptable in a particular group. When these rules are shared, interpretation is facilitated. In contrast, when cultural filters differ between producer and perceiver, understanding the other's state is more difficult.",
+          "source_file": "paper_Cross_cultural recognition of basic emotions.md",
+          "location": "Discussion - In-Group Advantage"
+        }
+      ]
+    },
+    {
+      "claim": "跨文化情绪信号一致性支持'普遍情感程序'(universal affect programs)概念，信号形式根植于灵长类祖先的交流展示；积极情绪信号可能文化特异因为促进群内凝聚，但骄傲(pride)作为自我提升性展示可被跨文化识别",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The consistency of emotional signals across cultures supports the notion of universal affect programs: that is, evolved systems that regulate the communication of emotions, which take the form of universal signals ( 18 ). These signals are thought to be rooted in ancestral primate communicative displays.",
+          "source_file": "paper_Cross_cultural recognition of basic emotions.md",
+          "location": "Discussion - universal affect programs"
+        },
+        {
+          "excerpt": "It is well established that the communication of positive affect facilitates social cohesion with group members ( 22 ). Such affiliative behaviors may be restricted to in-group members with whom social connections are built and maintained. However, it may not be desirable to share such signals with individuals who are not members of one's own cultural group. An exception may be self-enhancing displays of positive affect. Recent research has shown that postural expressions of pride are universally recognized ( 23 ).",
+          "source_file": "paper_Cross_cultural recognition of basic emotions.md",
+          "location": "Discussion - Positive Emotions"
+        }
+      ]
+    },
+    {
+      "claim": "双文化比较法已广泛复制；在六种基本表情中快乐最易识别，愤怒和恐惧较难区分（常与厌恶/惊讶混淆）",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "We examined vocal signals of emotions using the two-culture approach, in which participants from two populations that are maximally different in terms of language and culture are compared ( 10 ). The claim of universality is strengthened to the extent that the same phenomenon is found in both groups. This approach has previously been used in work demonstrating the universality of facial expressions of the emotions happiness, anger, fear, sadness, disgust, and surprise ( 11 ), a result that has now been extensively replicated ( 12 ).",
+          "source_file": "paper_Cross_cultural recognition of basic emotions.md",
+          "location": "Introduction"
+        },
+        {
+          "excerpt": "The participants showed confusion between anger and disgust, fear and surprise, and sadness and disgust (Table 1 ). Happiness was rarely mistaken for other expressions and therefore was the easiest expression to recognize, while anger and fear were distinguished relatively poorly.",
+          "source_file": "paper_Effects of duration of expressions on recognition.md",
+          "location": "Experiment 1 - Discussion"
+        }
+      ]
+    },
+    {
+      "claim": "情绪身体情境可戏剧性改变对标准面部表情的识别：一个被74%识别为悲伤的孤立面孔嵌入恐惧身体情境后不到20%识别为悲伤；面部-情境整合是自动化的（非意图、不可控、不费力），即使被试被明确告知也无法忽视情境信息",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "To take an example, consider the facial expression in Figure 1 , recognized as fearful by over 70% of participants ( Aviezer, Hassin, Bentin, et al., 2008 ). In fact, the face was a prototypical facial expression of sadness recognized as sad by 74% of participants when it was presented in isolation ( Ekman & Friesen, 1976 ). Yet, when a fearful context was embedded, the sad face was recognized as sad by less than 20% of the participants.",
+          "source_file": "paper_Automaticity of Emotional Face_Context Integration.md",
+          "location": "Introduction - face-context example"
+        },
+        {
+          "excerpt": "In Experiment 1 participants were motivated and instructed to avoid using the context while categorizing contextualized facial expression, or they were led to believe that the context was irrelevant. Nevertheless, they were unable to disregard the context, which exerted a strong effect on their emotion recognition.",
+          "source_file": "paper_Automaticity of Emotional Face_Context Integration.md",
+          "location": "Abstract"
+        },
+        {
+          "excerpt": "In Experiment 2, participants categorized contextualized facial expressions while engaged in a concurrent working memory task. Despite the load, the context exerted a strong influence on their recognition of facial expressions. These results suggest that facial expressions and their body contexts are integrated in an unintentional, uncontrollable, and relatively effortless manner.",
+          "source_file": "paper_Automaticity of Emotional Face_Context Integration.md",
+          "location": "Abstract"
+        }
+      ]
+    },
+    {
+      "claim": "'相似性效应'：面部表情与情境所关联的标准表情越相似，情境影响越强；面部表情间相似性可通过计算机模型和感知混淆模式客观评估",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The magnitude of face-context integration was strongly correlated with the degree of similarity between the target facial expression (i.e., the face being presented) and the facial expression that was prototypically associated with the emotional context... The more similar the target facial expression was to the face prototypically associated with the emotional context, the stronger the contextual influence: a pattern we coined the \"similarity effect\"",
+          "source_file": "paper_Automaticity of Emotional Face_Context Integration.md",
+          "location": "Introduction - similarity effect"
+        }
+      ]
+    },
+    {
+      "claim": "日本和美国参与者在判断本文化成员面部表情时更准确，存在双向组内优势；神经计算模型在日式或美式文化情境中训练后能复现这一效应，说明文化特异性表情方言通过学习习得",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "In Experiment 1, Japanese and U.S. participants interpreted facial expressions of emotion. Each group was better than the other at classifying facial expressions posed by members of the same culture. In Experiment 2, this reciprocal in-group advantage was reproduced by a neurocomputational model trained in either a Japanese cultural context or an American cultural context. The model demonstrates how each of us, interacting with others in a particular cultural context, learns to recognize a culture-specific facial expression dialect.",
+          "source_file": "paper_Cultural Differences in Facial Expression.md",
+          "location": "Abstract段"
+        },
+        {
+          "excerpt": "The results of the human study exhibit a reciprocal in-group advantage for Japanese and American participants, as predicted by the encoder-decoder distance hypothesis. They thus support the view of the previously discussed signal equivalence requirement as a culture eraser.",
+          "source_file": "paper_Cultural Differences in Facial Expression.md",
+          "location": "实验1结果段"
+        },
+        {
+          "excerpt": "We found that models trained in a primarily Japanese cultural context best reproduced the Japanese participants' pattern of responses, and that models trained in a primarily American cultural context best reproduced the American participants' pattern of responses. These results thus support the hypothesis that our interpretation of facial expressions depends on the interaction of a learning process that slowly tunes our estimates of class-conditional densities and a second process that adapts to the cultural decoding rules via different priors on emotion categories.",
+          "source_file": "paper_Cultural Differences in Facial Expression.md",
+          "location": "实验2结果段"
+        }
+      ]
+    },
+    {
+      "claim": "编码器-解码器距离假设：元分析(168项研究)发现同文化识别准确率平均高9.3%，随文化间接触增多而减弱；Elfenbein和Ambady批评Matsumoto的'信号等价'要求实际是'文化擦除器'，消除了发现文化差异的可能性",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Elfenbein and Ambady (2002b) performed a meta-analysis of the data on cross-cultural recognition of emotional expressions across different modalities in studies from 1931–2001. Their main conclusion was that emotions are generally better recognized when posed and judged by members of the same culture. Over 168 studies, participants judging posers from their own culture were an average of 9.3% more accurate than judges from other cultures.",
+          "source_file": "paper_Cultural Differences in Facial Expression.md",
+          "location": "Encoder-Decoder Distance段"
+        },
+        {
+          "excerpt": "The authors argue that signal equivalence (Matsumoto's second criterion for establishing an in-group advantage) is actually a culture eraser , eliminating any possibility of finding and understanding cultural differences in interpretation of emotional expressions.",
+          "source_file": "paper_Cultural Differences in Facial Expression.md",
+          "location": "Elfenbein & Ambady回应段"
+        }
+      ]
+    },
+    {
+      "claim": "面部表情的文化差异可用贝叶斯推断框架解释：观察者基于似然（外观模型）和先验（文化情境中情绪出现频率）计算后验概率",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "We can formalize the observer's task as a Bayesian a posteriori estimation problem: at each point in time t , given an observation (facial image) x t , estimate the posterior probabilities P ( c i |x t ), the probability of each category given a face. Using Bayes' rule, these estimates can be computed based on the product of two quantities, the likelihoods and the priors.",
+          "source_file": "paper_Cultural Differences in Facial Expression.md",
+          "location": "Computational Modeling段"
+        }
+      ]
+    },
+    {
+      "claim": "JACFEE数据集是唯一满足Matsumoto效度标准的跨文化刺激集（FACS编码、56张照片、7种情绪），但正因为统一了肌肉动作而消除了文化表达差异",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "To date, the only cross-cultural stimulus set meeting Matsumoto's validity criteria is the Japanese and Caucasian Facial Expressions of Emotion (JACFEE)... The eight examples of each emotional expression were coded using the Facial Action Coding System (FACS; Ekman & Friesen, 1978 ) to ensure that every expression involved the exact same set of muscle contractions at the same level of intensity.",
+          "source_file": "paper_Cultural Differences in Facial Expression.md",
+          "location": "JACFEE数据集段"
+        }
+      ]
+    },
+    {
+      "claim": "自动化FACS编码对行为科学至关重要：FACS由人类观察者使用慢动作视频执行，是基于图像的方法；构建了24名受试者、1100+序列、150+面部动作的图像数据库，三位FACS编码员以高信度编码",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Culture × Dataset × Posed 18 .0347 13.77 <.001",
+          "source_file": "paper_Cultural Differences in Facial Expression.md",
+          "location": "Table 4 ANOVA结果"
+        },
+        {
+          "excerpt": "The full database contains over 1,100 sequences containing over 150 distinct actions, or action combinations, and 24 different subjects... The images were coded by three experienced FACS coders certified with high intercoder reliability. The criterion for acceptance of images was that the requested action and only the requested action was present.",
+          "source_file": "paper_Classifying Facial Actions.md",
+          "location": "Image Database段"
+        }
+      ]
+    },
+    {
+      "claim": "Silvan Tomkins是面部表情普遍性研究的唯一异议声音，说服艾克曼从身体运动扩展到面部研究，指导了初始跨文化设计；同时指导Carroll Izard进行类似研究但未告知双方，为科学提供独立重复",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The late Silvan Tomkins (1963) was virtually the only contrary voice. He convinced me to extend my studies of nonverbal behavior from body movement to the face, helping me design my initial cross-cultural studies. Tomkins also advised Carroll Izard in the design of similar studies at the same time. He did not tell either of us about the other, which helped the science because it provided independent replications but was an unwelcome surprise when we learned that we had not been alone in our discoveries.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "Tomkins段"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼提出关于面部表情和情绪的四个核心问题：(1)表情通常传达什么信息？(2)没有面部表情能否有情绪？(3)没有情绪能否有面部表情？(4)个体在情绪面部表达上有何差异？——这些问题构成其研究纲领的理论框架",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Four questions about facial expression and emotion are discussed: What information does an expression typically convey? Can there be emotion without facial expression? Can there be a facial expression of emotion without emotion? How do individuals differ in their facial expressions of emotion?",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "摘要段"
+        }
+      ]
+    },
+    {
+      "claim": "表情普遍性的发现打破了心理学几乎只关注学习而忽视先天影响的框架，使情绪被视为受进化遗产和当前环境共同影响的'心理生物学现象'；同时推动了情绪特异性生理学研究——恐惧和愤怒等不同情绪服务于不同适应性功能",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "But once expressions were found to be emotion specific, it made sense to reexamine the issue of whether there might also be emotion-specific physiological changes... Such a perspective would expect that emotion-specific changes in autonomic physiology would have evolved to serve the quite-different adaptations that are likely in emotions such as fear and anger.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "情绪特异性生理学段"
+        }
+      ]
+    },
+    {
+      "claim": "情绪家族概念：以愤怒为例包括从恼怒到狂怒及各种形式的愤怒；家族成员共享的特征构成'主题'（先天贡献），不同成员是围绕主题的变体（后天培养和情境影响）；家族边界不是模糊的",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The characteristics shared by all members of an emotion family constitute the theme for that emotion and are most likely to reflect the contribution of nature. The different members of the family are variations around that theme, reflecting more the influence of nurture and the particulars of the occasion when the emotion occurs.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "情绪家族段"
+        },
+        {
+          "excerpt": "I am proposing that the themes are not simply the most common feature of a basic emotion category, but are the core elements, the product of our evolution, to be found in all instances of an emotion. Also, I do not propose that the boundaries between basic emotion families are fuzzy.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk2，theme与variation"
+        }
+      ]
+    },
+    {
+      "claim": "情绪家族的最终界定不应来自情绪词汇研究，而应来自对评价过程、运动反应的细致检验以及情绪特异性中枢神经系统活动研究",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "I believe the definitive evidence on what constitutes a family, and in particular the delineation of the theme for each family, will come not from the study of emotion words but from closer examination of appraisal processes, motor responses, and ultimately what is revealed by studies of emotion-specific activity in the central nervous system.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "情绪家族界定段"
+        }
+      ]
+    },
+    {
+      "claim": "面部表情研究证明了将情绪视为离散状态的有效性，反对Schacter和Singer(1962)的认知标签理论（情绪仅因认知而不同、生理仅在唤醒程度变化）",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The research on facial expressions has also shown the utility of conceiving of emotions as separate discrete states, such as fear, anger, and disgust, rather than simply as positive versus negative states or even more simply as differing only in respect to arousal.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "离散情绪状态段"
+        }
+      ]
+    },
+    {
+      "claim": "某些文化可能没有描述特定情绪的单一词汇但不意味着该情绪不存在（如塔希提人没有悲伤一词但有悲伤表情）",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "Levy (1984) argued that although the Tahitians have no word for sadness, he saw sad expressions in people who had experienced a loss.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk6开头，讨论语言与情绪"
+        }
+      ]
+    },
+    {
+      "claim": "情绪可在没有可见面部表情时发生（人们报告感受情绪并显示自主神经变化但不表现可见面部活动），但仍可检测到EMG测量的不可见面部活动；面部表情最可能在感知动态事件时出现而非记忆重现或静态图片",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "There is evidence that people may show no change in visible facial activity even though they report feeling emotions and manifest changes in autonomic nervous system activity. In these studies those people do manifest subvisible, patterned changes in facial activity as measured with electromyography (EMG)",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk6，Can There Be Emotion Without Facial Expression段"
+        },
+        {
+          "excerpt": "I suspect that facial expressions are most likely to occur when someone sees or hears a dynamic (moving) event and the beginning of the event is marked rather than very slow and gradual. ... we found a lower incidence of facial expressions far less when we asked people to remember and relive a past emotional event than when people responded to short motion picture films.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk6，讨论表情出现条件"
+        }
+      ]
+    },
+    {
+      "claim": "双手可改变面部表情传达的信息：握拳配合愤怒、手遮悲伤变羞耻、手遮愉悦变害羞",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The clenched fist contributes information compatible with a facial expression of anger. The hand covering part of a sad expression might change that signal into shame, whereas the hand covering part of an enjoyment expression changes that signal into coyness.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk6，讨论手部动作与表情组合"
+        }
+      ]
+    },
+    {
+      "claim": "所有积极情绪共享同一种表情（特定微笑），观察者需通过情境区分具体哪种积极情绪；可能也存在一组不快情绪（失望、丧失悲伤、懊悔、羞耻、内疚）共享单一表情（眉毛内侧上扬、脸颊微抬、嘴角下拉）",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "all of the positive emotions (amusement, sensory pleasure, pride, etc.) share a single expression, a particular type of smile (Ekman, Davidson, & Friesen, 1990). An observer distinguishes which of these positive emotions is evident, not so much from the expression itself ... as from the context, from knowledge of what emotion is likely in a given situation for a given person.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk7，讨论积极情绪共享表情"
+        },
+        {
+          "excerpt": "I have preliminary evidence that these emotions share an expression in which the inner corners of the eyebrows are raised, the cheeks are slightly raised, and the lip corners are pulled downward. Distinguishing among the unhappiness emotions depends on contextual knowledge more than on the expression itself.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk7，讨论不快情绪共享表情"
+        }
+      ]
+    },
+    {
+      "claim": "情绪的充分必要条件应是：当前事件评价受祖先过去影响（系统发生而非仅个体发生），以及可识别的中枢神经系统活动模式",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The sine qua non for emotion should not be a unique pan-cultural signal. Instead, I believe it is more sensible to establish two other criteria for when we should consider a change in state to be an emotion. ... What distinguishes emotions from other psychological phenomena is that our appraisal of a current event is influenced by our ancestral past.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk7，定义情绪标准"
+        }
+      ]
+    },
+    {
+      "claim": "指涉性表情用于谈论过去/未来的情绪而非当下感受，必须与真实情绪表情有足够差异让观察者知道情绪未被感受；嘲笑表情(mock expression)表示感受到与所示表情相反的情绪",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Although a referential expression must resemble sufficiently an actual emotional expression for an observer to know which emotion is being referred to, it must differ sufficiently for the observer to know that the emotion is not felt at the moment of expression. This can be accomplished by one of a number of transformations. The duration of the expression may be very brief or very long or its onset or offset may be more abrupt than natural.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk8，讨论referential expression"
+        },
+        {
+          "excerpt": "Mock expressions are a particular type of referential expression, which state that the person feels the opposite of the emotion shown. ... Exaggeration in time or scope is used to convey the negation in the mock expression. For example, when describing a situation that was found to be not at all amusing, the expresser may show an exaggerated smile, perhaps also laughing in a deliberately false fashion, underlining the point that enjoyment was not experienced.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk8，讨论mock expression"
+        }
+      ]
+    },
+    {
+      "claim": "故意做出完整的情绪肌肉配置可产生该情绪的生理反应甚至主观体验，这可能是人们讲述情绪经历时意外重新体验该情绪的原因",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "I make this suggestion on the basis of a number of studies in which we have found that deliberately performing the entire muscular configuration for an emotion generates the physiology and often the subjective experience of emotion (summarized in Ekman, 1992b). ... this may be one of the reasons why sometimes when people give an account of an emotional experience they unexpectedly begin to reexperience the emotion.",
+          "source_file": "paper_Facial expression and emotion..md",
+          "location": "chunk8，讨论故意表情引发真实情绪"
+        }
+      ]
+    },
+    {
+      "claim": "非言语行为可以逃避欺骗努力、规避自我审查或暴露伪装，源自Darwin的洞见：受意志最少控制的肌肉最易仍行动；如果非言语行为仅与言语冗余则无需仔细关注",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The proposal that nonverbal behavior may escape efforts to deceive, may evade self-censoring, or may betray dissimulation is by no means new. Darwin wrote: Some actions ordinarily associated through habit with certain states of mind may be partially repressed through the will, and in such cases the muscles which are least under the separate control of the will are the most liable still to act, causing movements which we recognize as expressive.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk1，引述Darwin观点"
+        },
+        {
+          "excerpt": "if body movements and facial expressions were only redundant with verbal behavior, there would be little need for the therapist to carefully attend to it, or the psychotherapy researcher to bear the burden of recording and analyzing visual records. ... evidence of how nonverbal behavior can provide information which differs from that provided by words.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk1，引言段"
+        }
+      ]
+    },
+    {
+      "claim": "欺骗可分为针对他人的欺骗(alter-deception)和自我欺骗(self-deception)；自我欺骗中虚假信息实际被感受到但并非全部感受，类似精神分析反向形成防御",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "self-deception is a more individual phenomenon, where the presence of the other person is not necessarily relevant to the deception. Alter is not the primary target; instead the purpose of the deception is to conceal information from the self-aware part of the self. There is a division within the individual such that one part of the self can inhibit and conceal information from the more conscious or self-aware part of the individual.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk2，self-deception段"
+        },
+        {
+          "excerpt": "The simulated behavior during self-deception differs from the simulation during alter-deception; it is less explicitly managed and the false message is actually felt, but it is not all that is felt. The simulation and its degree of genuineness is much like the feelings involved in the psychoanalytic defense mechanism of reaction-formation",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk2，self-deception模拟段"
+        }
+      ]
+    },
+    {
+      "claim": "欺骗情境有三个维度：欺骗显著性、角色采纳、合作vs对抗；研究应仅关注至少一方高度关注且赌注重要的互动；在双方高度关注、角色对称且对抗的情况下，令人信服的欺骗表演最为困难",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "At least three aspects of deceptive interactions need to be considered in order to distinguish deceptions from other forms of social interaction, and also to distinguish among types of deceptive encounters. For both ego and alter we must specify the saliency of deception, the adoption of deceptive and detective roles, and whether there is collaboration or antagonism between ego and alter about the discovery or maintenance of deception.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk2，DIMENSIONS OF DECEPTIVE SITUATIONS段"
+        },
+        {
+          "excerpt": "Deception within games, at least for those who don't take their games too seriously, would be one such example; the telling of \"white lies\" is another. In our terms, deception is not salient in situations in which the stakes are low. We shall consider only interactions where there is a focus upon deception for at least one participant, and where there are important issues at stake which motivate at least one of the participants to care about success.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk3，saliency讨论"
+        },
+        {
+          "excerpt": "Convincing deceptive performances should be most difficult under the following conditions: saliency for both ego and alter",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk3末尾"
+        }
+      ]
+    },
+    {
+      "claim": "心理治疗是特殊欺骗情境：角色不对称（患者兼具欺骗者和侦探角色），欺骗显著性在危机或强烈抵抗期达到最高",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "psychotherapy is characterized by role asymmetry, with patient probably in both deceiver and detector roles, and the therapist more in the role of detector. And, in psychotherapy, the saliency of deception will fluctuate, perhaps being maximal for both participants at periods of therapeutic crisis or intense resistance.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk3，心理治疗段"
+        }
+      ]
+    },
+    {
+      "claim": "面部是最佳非言语发送器（速度快、可分辨模式最多、可见度最高），脚/腿是最差发送器；但外部反馈和内部反馈也呈面部最高、腿脚最低的层级，使得腿脚在泄露和欺骗线索中反而是良好来源（因最不被监控）",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The face has the greatest visibility; it is covered only by sunglasses, make-up or hair, except in cultures that frequently use masks or veils. It is difficult to hide the face without being obvious about concealment; there are no inhibition maneuvers for the face equivalent to putting the hands in the pocket or sitting upon them.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk4，面部vs脚/腿发送能力比较"
+        },
+        {
+          "excerpt": "The feet and legs are in almost all respects the worst nonverbal senders. Their transmission time is slow, far slower than that for the face or hands. The number of discriminable stimulus patterns which can be emitted is also limited.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk4，脚/腿作为最差发送器"
+        },
+        {
+          "excerpt": "the face receives more commentary than the hands or the legs/feet. ... it would be extraordinary for alter to ask about ego's nose picking, ear scratching, or genital rubbing, so it would be unusual for him to comment on leg squeezing or foot arching.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk5，外部反馈讨论"
+        },
+        {
+          "excerpt": "People have the greatest internal feedback about their face, next most about their hands and least about their legs and feet. ... our verbal vocabulary is most extensive for facial behaviors, next most for hands, and least for legs/feet. ... the possible neural linkage of the facial muscles as affect programs, as suggested by Silvan Tomkins.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk5，内部反馈讨论"
+        },
+        {
+          "excerpt": "the availability of leakage and deception clues reverses the pattern described for differences in sending capacity, internal feedback, and external feedback. The worst sender, the legs/feet, is also the least responded to and the least within ego's awareness, and thus a good source for leakage and deception clues.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk7，leakage总结段"
+        },
+        {
+          "excerpt": "The best sender, the face, is most closely watched by alter, most carefully monitored by ego, most subject to inhibition and dissimulation, and thus the most confusing source of information during deception; apart from micro expressions, it is not a major source of leakage and deception clues. The hands are intermediate on both counts.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk7，面部vs身体泄露总结"
+        }
+      ]
+    },
+    {
+      "claim": "适应器(adaptors)源自早期生活满足需要、管理情绪、维持人际接触的习得行为，分为自我/他人/物体适应器，基于习惯且主要涉及身体，比面部动作更不容易被抑制",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Adaptors develop from movements which are first learned by a person in early life as part of his adaptive efforts to satisfy self or bodily needs, to perform bodily actions, to manage emotions, to develop or maintain prototypic interpersonal contacts, and to learn instrumental activities. ... they are emitted by the adult, particularly during social conversations, in a form in which only a fragment of the original adaptive behavior can be seen.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk6，adaptors定义"
+        },
+        {
+          "excerpt": "Since the adaptors are habitually based, and primarily involve the body rather than the face, they are less likely than facial acts to be inhibited, and they are rarely employed as part of a simulation. ... adaptors will emerge as deception clues which betray this discomfort and stand out as discordant with the primary dissimulated message.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk6，adaptors与欺骗"
+        }
+      ]
+    },
+    {
+      "claim": "欺骗者可能通过自我惩罚性抓挠、用手遮脸（掩盖尴尬的适应器）或腿部/脚部中断性逃跑动作来暴露线索",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "ego may scratch or pick at himself to punish himself for deceiving, or he may tend to hide his face with his hands, an adaptor for concealing embarrassment, or he may engage in abortive flight movements with his legs/feet.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk6，欺骗中的适应器表现"
+        }
+      ]
+    },
+    {
+      "claim": "实验验证泄露假设：精神病患者访谈录像分别展示给只看头/面的和只看身体的观察者，面部观察者看到健康合作形象而身体观察者看到紧张/诱惑/不安等负面特质",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The basic design of the experiments was to show a film of one of the interviews silently to one of two different groups of naive observers, one group viewing only the face and head, the other viewing the body from the neck down. ... To test hypotheses about the source of leakage of withheld information, the information conveyed by head/face cues was contrasted with information conveyed by body cues.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk7，ILLUSTRATIVE EXPERIMENTS段"
+        },
+        {
+          "excerpt": "those who view only the head/face will tend to see only the appearance of a healthy, cooperative patient, while those who view the body will perceive the coquettish, excited, seductive picture. ... the observers of the legs/feet guessed that the patient was in her teens, while those who saw the face/head guessed her to be in her thirties.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk8，患者A实验结果"
+        },
+        {
+          "excerpt": "These results provide the best illustration of our formulation of the source of leakage and deception clues.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk8，患者B实验结论"
+        }
+      ]
+    },
+    {
+      "claim": "欺骗失败有三个原因：有意识的矛盾心理（想被抓住）、关于欺骗的次级内疚/羞耻/焦虑增加隐瞒负担、无法监控和伪装不注意的非言语行为",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The last explanation of why a person fails in deception is the one provided in the main argument of the paper. Ego cannot monitor and disguise those forms of nonverbal behavior to which he has customarily not attended and about which he does not maintain feedback.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk9，欺骗失败原因总结"
+        }
+      ]
+    },
+    {
+      "claim": "应用包括训练提高微表情识别和适应器警觉性，以及通过录像反馈提高内部反馈成为更好的非言语表达者",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "People could be trained to become better nonverbal liars, utilizing videotape feedback to enhance their internal feedback, and focusing external feedback to help them plug up leaks and better eliminate deception clues; the most benevolent use of such procedures would be in the dramatic arts. ... Training could be developed which would improve recognition of micro expressions as well as alert the observer to [adaptors]",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk9，应用段"
+        }
+      ]
+    },
+    {
+      "claim": "厌恶与右侧前额和前颞区激活相关，快乐与前颞区左侧激活相关；中央和顶叶区域无不对称差异；仅聚合比较正负向影片时无可靠差异——必须用面部行为验证情绪存在才能发现特异性",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Disgust was found to be associated with right-sided activation in the frontal and anterior temporal regions compared with the happy condition. Happiness was accompanied by left-sided activation in the anterior temporal region compared with disgust. No differences in asymmetry were found between emotions in the central and parietal regions. When data aggregated across positive films were compared to aggregate negative film data, no reliable differences in brain activity were found.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk1，摘要"
+        },
+        {
+          "excerpt": "for activation measures based on alpha power, in both the frontal and anterior temporal regions, the disgust condition produces significant increases in right-sided activation compared with the happy condition.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk7，结果总结"
+        },
+        {
+          "excerpt": "The lack of a difference in parietal asymmetry between the happy and the disgust periods suggests that these conditions did not differ in the cognitive processes that are mediated by this brain region. ... If the difference between these conditions had been associated with asymmetries in motor control, we would have expected the central region to reliably distinguish between them. The fact that it did not suggests that the difference between these conditions is in a process other than motor asymmetries per se.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk11，脑区特异性讨论"
+        }
+      ]
+    },
+    {
+      "claim": "Ekman实验室（进化视角情绪特异性表达/生理）与Davidson实验室（大脑不对称性）的汇聚研究，代表了心理生理学情绪研究的八个方法论要求的实践：情绪验证、被试内设计、多生理指标、足够持续时间、面部行为标定、严格伪迹排除等",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "One is theory and evidence from Ekman's laboratory, which, from an evolutionary perspective, takes the position that each emotion is characterized by unique patterns of expressive behavior and physiological activity. The second is research from Davidson's laboratory on cerebral asymmetry and emotion, which indicates the differential involvement of the two cerebral hemispheres in the control of certain positive and negative emotions.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk1，引言段"
+        },
+        {
+          "excerpt": "The study reported here was designed to accommodate each of these eight methodological desiderata. Short film clips were used to elicit emotion. ... To verify the presence of the target emotion, we used a combination of facial behavior and self-report criteria.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk2，方法论段"
+        },
+        {
+          "excerpt": "The EEG measures were precisely synchronized with the facial behavior by having the same triggers produce event marks on the video record and the computer data base simultaneously. ... Chunks of EEG 1.02 s in duration served as the epoch length for analysis. These chunks were overlapped by 75%. ... we required a minimum of 10 s of artifact-free EEG during each expression type",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk3，EEG方法段"
+        },
+        {
+          "excerpt": "We specifically designed the situation in this fashion to maximize the degree to which subjects perceived themselves to be viewing the film clips \"privately,\" with little experimenter contact.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk4，实验设计段"
+        },
+        {
+          "excerpt": "Although the provision of such an instruction did succeed in reducing movement artifact, it also had the unfortunate effect of dramatically reducing facial behavior in response to the film clips. We thus eliminated this instruction, believing that we would actually obtain more usable data without it.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk9，方法学教训"
+        }
+      ]
+    },
+    {
+      "claim": "不使用面部行为标记仅按影片时段聚合的EEG无法区分正负情绪条件，说明不验证目标情绪是否实际产生就无法发现脑活动差异——这是情绪生理分化研究的关键方法论突破",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "The finding that EEG from the entire film period does not differentiate between the positive and negative films is consistent with our first hypothesis. ... when an individual is exposed to an elicitor such as a film, there are periods during the presentation of the stimulus when little or no emotion is present as well as periods during which emotions inconsistent with the target emotion are produced.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk6，Hypothesis 1结果"
+        },
+        {
+          "excerpt": "When facial criteria are used to verify the presence of the target emotion and to specify onset and offset times for data extraction, differences in asymmetry emerge that distinguish between disgust and either happy or baseline conditions.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk8，面部行为验证的价值"
+        }
+      ]
+    },
+    {
+      "claim": "面部表情偏移的意义不确定：起始是否标志情绪体验开始不清楚，消失可能仅因肌肉疲劳而非情绪消退",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "It is not certain whether the onset of the facial expression denotes the onset of an emotional experience, or whether emotional experience may begin prior to the onset of emotional expression. Perhaps even more problematic is the significance of facial expression offset. It may be that facial action returns to baseline after a certain period of time has elapsed solely as a function of muscular fatigue.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk8，面部表情时间标记局限"
+        }
+      ]
+    },
+    {
+      "claim": "Ekman预测情绪特异性分化存在于自主神经和中枢神经系统，已获得正负情绪之间和四种负情绪之间的稳健自主神经分化",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Ekman (1984) predicted that such differentiation would be found in both the autonomic and central nervous systems. Ekman, Levenson, and their colleagues have obtained robust autonomic differentiation between positive and negative emotions and among four negative emotions.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk9，生理分化文献"
+        }
+      ]
+    },
+    {
+      "claim": "根据接近-退缩模型，与退缩相关的情绪（恐惧和厌恶）都应与右侧前部激活相关，这与心理生理特异性不矛盾——相似前部不对称的情绪应在其他中枢神经系统指标上不同",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "according to this model, two emotions that are each associated with withdrawal (such as fear and disgust) should both be associated with right-sided anterior activation. It should be noted that this view is not inconsistent with the notion of psychophysiological specificity. Two emotions that are similar in anterior activation asymmetry should differ in some other measure of central nervous system function.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk10，approach-withdrawal模型讨论"
+        }
+      ]
+    },
+    {
+      "claim": "快乐条件未能比基线产生更多左侧激活，可能因为研究中积极情绪主要是amusement（看猴子/猩猩电影），不一定包含接近行为倾向",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Although some types of amusement may involve the activation of approach behavior, we believe that in this study, in which amusement was aroused by watching a film of monkeys and gorillas playing, the tendency to approach was weak or nonexistent.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk10，amusement与approach"
+        }
+      ]
+    },
+    {
+      "claim": "前部EEG不对称的个体差异与情绪反应性和精神病理易感性相关，被解释为体验正负情绪的阈值标志",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "individual differences in anterior EEG asymmetry are related to emotional reactivity and vulnerability to psychopathology in both infants and adults. ... We have interpreted such individual differences in anterior asymmetry to mark a threshold for the experience of certain positive and negative emotions.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk11，个体差异段"
+        }
+      ]
+    },
+    {
+      "claim": "情绪研究领域混淆源于：许多情绪术语指家族内变体而非独立情绪，仅用单一标准定义情绪；所有情绪词汇可能仅涉及少数基本情绪的强度/情境/表现方式变体",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "The confusion which has plagued the field of emotion research about what are the emotions, has been due, I believe to two problems. The first has been the failure to recognise that many of the emotion terms refer to variations within a family.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk2，混淆来源"
+        },
+        {
+          "excerpt": "all of the terms in the emotion lexicon-at least the hundred or so that are most prototypical of the category emotion-refer in one way or another to a mere handful of basic-level emotions. Each term seems to specify either the intensity",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk3，情绪词汇与基本情绪"
+        }
+      ]
+    },
+    {
+      "claim": "惊讶和轻蔑的独特面部表情证据不如其他基本情绪牢固：惊讶在前文字文化中仅一个能区分于恐惧，轻蔑的前文字文化研究从未进行",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "The evidence for a unique facial expression for surprise and contempt is not as firm. ... the surprise faces were distinguished from fear faces in only one of the two preliterate cultures studied. ... Contempt expressions were not included in preliterate culture studies, and the current evidence on literate cultures is contradictory.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk4，surprise和contempt证据"
+        }
+      ]
+    },
+    {
+      "claim": "检查数百小时前文字文化自发行为电影未发现其他有普世面部表情的情绪，但不能确定不存在",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Friesen and I inspected hundreds of hours of motion picture films of spontaneous behaviour in two preliterate cultures ... and saw no other [universal expressions]. It is not possible to be certain that there are no other emotions which have a universal facial expression, but none have been suggested.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk4，穷尽搜索"
+        }
+      ]
+    },
+    {
+      "claim": "有证据显示愤怒、恐惧和厌恶有独特自主神经活动模式（可能悲伤也有）；如果基本情绪为应对根本生活任务而进化，不仅应有表情信号还应有使机体准备不同反应的生理变化",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "If basic emotions evolved to deal with fundamental life-tasks, they should not only provide information through expressions to conspecifics about what is occurring, but there should also be physiological changes preparing the organism to respond differently in different emotional states.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk5，情绪特异性生理学"
+        }
+      ]
+    },
+    {
+      "claim": "其他灵长类有类似恐惧和愤怒的面部表情，可能也有悲伤和快乐类似表情，但尚未有系统研究用精确肌肉测量方法比较",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "There is some evidence for similar facial expressions in other primates for fear and anger, possibly also for sadness and happiness. ... No primatologist has specifically attempted to identify the universe of facial expressions in another species to compare them to what is known about human expressions.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk5，灵长类比较"
+        }
+      ]
+    },
+    {
+      "claim": "如果某种情绪没有特定运动模式具有生存价值，就没有理由预期其有特定自主神经活动模式——这解释了为何惊讶和愉悦没有发现情绪特异性生理模式；对积极情绪是否存在统一普遍行动倾向缺乏观察数据",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "If no specific pattern of motor activity had survival value for an emotion, then there would be no reason to expect a specific pattern of ANS activity to have been established for that emotion. That is why I think we have not found an emotion-specific pattern ... for either surprise or enjoyment.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk6，为何某些情绪无特异性ANS"
+        },
+        {
+          "excerpt": "It is not that actions never occur in any of these states, but it is not self-evident that there is any uniform, universal tendency for one or another action in each of these different positive emotions. ... when any of the agreeable emotions are occurring, one's survival is not at stake, there is no urgent need to act.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk6，积极情绪无统一行动倾向"
+        }
+      ]
+    },
+    {
+      "claim": "情绪前因事件可能具有跨文化共性（如恐惧的前因是身体/心理伤害），但具体内容因文化而异",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "the antecedent event for fear is physical or psychological harm. ... who a significant other is or can be will differ from culture to culture",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk7，前因事件"
+        }
+      ]
+    },
+    {
+      "claim": "当考察未试图抑制感受的个体时，应能发现自主反应和表情变化间的一致性，两种反应系统本质上不是分离的",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "I propose that when we examine individuals who have not chronically or at the moment tried to inhibit their feelings or expression, we will find that there is some coherence, some systematic relationship between these two response systems during emotional events. ... I am positing that the autonomic responses and expressive changes are not, by nature, disconnected",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk7，反应系统一致性"
+        }
+      ]
+    },
+    {
+      "claim": "Ekman提出两种评价机制：自动评价（极快、无意识、高度选择性）和扩展评价（缓慢、有意识、可能只产生弥散警觉），LeDoux的解剖学研究得出几乎相同观点",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "There must be an appraiser mechanism which selectively attends to those stimuli ... Since the interval between stimulus and emotional response is sometimes extraordinarily short, the appraisal mechanism must be capable of operating with great speed. ... the appraisal mechanism is able to operate automatically. ... Appraisal is not always automatic. Sometimes the evaluation of what is happening is slow, deliberate and conscious.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk8，双评价机制"
+        }
+      ]
+    },
+    {
+      "claim": "情绪持续时间以秒计而非分钟或小时；积极情绪的问题在于每种没有独特信号——所有积极情绪共享杜兴微笑，而每种基本消极情绪都有独特信号",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Levenson and Gottman are measuring emotions during the course of marital interaction and they report observing many emotional events which last seconds not minutes.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk8，情绪持续时间"
+        },
+        {
+          "excerpt": "each of these positive emotions does not have a distinctive signal, although each of the basic negative emotions does have such a distinctive signal. Instead, all of the positive emotions share what I have called the Duchenne smile, which is marked by not only the smiling lips ... but also by the pulling inwards of the skin surrounding the eyes.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk9，积极情绪共享信号问题"
+        }
+      ]
+    },
+    {
+      "claim": "也许对生存而言只需知道是积极情绪而非具体哪种——因为人们不能选择自己的情绪所以可以解释自己的行为（当时被情绪控制）",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "Perhaps it has not been relevant to survival to know which positive emotion was occurring, only that it was a positive emotion rather than anger, fear, disgust, or sadness.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk9，为何积极情绪无独特信号"
+        }
+      ]
+    },
+    {
+      "claim": "没有单一特征是基本情绪的充分必要条件，独特之处在于情绪发生时以进化适应的方式处理当前根本生活任务；如果所有情绪都是基本的，基本情绪框架的价值在于强调情绪彼此分离的进化论观点",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "I do not think any of the nine characteristics should be regarded as the sine qua non for emotions. What is unique is that when an emotion occurs we are dealing with current fundamental life-tasks in ways which were adaptive in our evolutionary past. ... An observer can infer that an emotion is likely to be occurring when: the response system changes are complex ... the changes are organised ... the changes happen quickly; some of the response system changes are ones common to all people; some of the responses are not unique to homo sapiens.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk10，观察者判断标准"
+        },
+        {
+          "excerpt": "If all emotions are basic, what then is the value of using that term. It underlines the differences between this and other viewpoints and approaches to emotion which do not consider emotions to be separate from one another, and/or do not take an evolutionary viewpoint.",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk11，基本情绪框架价值"
+        }
+      ]
+    },
+    {
+      "claim": "基本情绪方法在过去30年中推动了面部表情普世性研究、系统发生比较、情绪特异性生理学和表情早期发展的研究；TSA已在机场部署微表情行为检测但逮捕率不到1%，许多科学家批评其未经严格科学验证",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Unfortunately, evidence about the link between microexpressions and deception is far from conclusive. However, microexpressions may be the most promising approach to detecting deception (Ekman, 2009 )... Also, the application of microexpressions to airport security is not very effective as less than 1% of suspects have subsequently been arrested (Weinberger, 2010 ).",
+          "source_file": "paper_Effects of duration of expressions on recognition.md",
+          "location": "General Discussion - deception debate"
+        },
+        {
+          "excerpt": "It was this position which led myself and Friesen, and quite independently Izard, to seek evidence on the universality of facial expression. It was this position which also motivated phylogenetic comparisons. It also guided much of the recent research on emotion-specific physiology",
+          "source_file": "paper_An argument for basic emotions.md",
+          "location": "chunk11，研究推动"
+        }
+      ]
+    },
+    {
+      "claim": "微表情分析与测谎的联系尚远非定论",
+      "dim": "tension",
+      "merged_from": []
+    },
+    {
+      "claim": "艾克曼和Friesen区分了面部行为中普遍性和文化特异性的元素：普遍性体现在特定面部肌肉模式与特定情绪的关联；文化差异体现在情绪诱发刺激、面部行为控制规则及情绪后果上",
+      "dim": "stance",
+      "merged_from": []
+    },
+    {
+      "claim": "艾克曼的面部表情普遍性研究挑战了当时Margaret Mead和Ray Birdwhistell等文化相对主义者的主导观点",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "This landmark paper presents Ekman's evidence for universality in facial expressions of emotion across cultures. The research challenged the prevailing view (Margaret Mead, Ray Birdwhistell) that facial expressions are culturally determined and learned differently in each society.",
+          "source_file": "paper_ConstantsAcrossCulturesFaceEmotion.md",
+          "location": "ABSTRACT AND KEY FINDINGS 段落"
+        }
+      ]
+    },
+    {
+      "claim": "该研究挑战了Mead和Birdwhistell等文化相对主义者的主流观点，即面部表情是文化决定并在每个社会中以不同方式习得的",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "This landmark paper presents Ekman's evidence for universality in facial expressions of emotion across cultures. The research challenged the prevailing view (Margaret Mead, Ray Birdwhistell) that facial expressions are culturally determined and learned differently in each society.",
+          "source_file": "paper_ConstantsAcrossCulturesFaceEmotion.md",
+          "location": "ABSTRACT段"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼研究涵盖美国、日本、巴西和巴布亚新几内亚的田野调查，分析住院患者的情绪态度与预后关系，探索愤怒、悲伤、恐惧、惊讶、厌恶、轻蔑和快乐的进化与行为本质",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Drawing on Ekman's fieldwork investigating universal facial expressions in the United States, Japan, Brazil, and Papua New Guinea; his analysis of the prognosis of hospital patients based on their emotional attitude; and dozens of other studies, Emotions Revealed explores the evolutionary and behavioral essences of anger, sadness, fear, surprise, disgust, contempt, and happiness.",
+          "source_file": "exa_5_[PDF] emotions-revealed-by-paul-ekman1.pdf.md",
+          "location": "书籍封底介绍段"
+        }
+      ]
+    },
+    {
+      "claim": "此前跨文化面部表情研究的根本缺陷在于：所有被比较的文化都接触过相同的大众媒体面部表情展示，被试可能通过学习习得相同识别规范而非证明普遍性",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "While these investigators interpreted their results as evidence of universals in facial behavior, their interpretation was open to argument; because all the cultures they compared had exposure to some of the same mass media portrayals of facial behavior, members of these cultures might have learned to recognize the same set of conventions, or become familiar with each other's different facial behavior.",
+          "source_file": "paper_Constants across cultures in the face and emotion..md",
+          "location": "第6段"
+        }
+      ]
+    },
+    {
+      "claim": "艾克曼的基本情绪理论在过去50年对情绪研究具有高度影响力，常识观点最容易被关联到其简化版本",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Ekman's theoretical approach has been highly influential in research on emotion for much of the past 50 years. We often cite studies inspired by the basic emotion approach for this reason. In addition, the common view of emotional expressions is also most readily associated with a simplified version of basic emotion approach, as exemplified by the quotes above. Critiques of Ekman's basic emotion view (and related views) are numerous (e.g., Barrett, 2006a , 2007 , 2011 ; Ortony & Turner, 1990 ; Russell, 1991 , 1994 , 1995 ), as are rejoinders that defend it (e.g., Ekman, 1992 , 1994 ; Izard, 2007 ). Our paper steps back from this dialogue.",
+          "source_file": "paper_Challenges to Inferring Emotion From Facial Movements.md",
+          "location": "chunk5, 研究范围段"
+        }
+      ]
+    },
+    {
+      "claim": "姿态和步态高度受基本性格因素和认同模型影响，但也容易通过训练或练习改变",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "posture, and gait are paradoxical forms of nonverbal behavior. They are, we believe, highly determined by basic characterological aspects of the individual and, in particular, by identification models and yet are easily modified by training or exercise",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk4，姿态和步态段"
+        }
+      ]
+    },
+    {
+      "claim": "有意识的矛盾心理者不希望隐瞒信息，而是希望以不太被问责的方式传达矛盾信息，使用宏观面部表情、姿态线索和手部空间运动等被关注的非言语形式",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "like the person who wants to be caught, the consciously ambivalent person should not be considered as wanting to conceal information, but as wanting to convey one of his messages in such a way that he will be less accountable for it. ... macro facial displays, postural cues, hand in space movements, and other forms of nonverbal activity which customarily receive attention from alter will be employed.",
+          "source_file": "paper_Nonverbal Leakage and Clues to Deception_sup_†__sup_.md",
+          "location": "chunk9，conscious ambivalence段"
+        }
+      ]
+    },
+    {
+      "claim": "假设厌恶和快乐都将与基线在前部激活不对称上可区分：厌恶右侧更强，快乐左侧更强",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We specifically predicted that disgust would be associated with a significant increase in right-sided anterior activation compared with baseline and that happiness would be accompanied by a significant increase in left-sided anterior activation compared with baseline.",
+          "source_file": "paper_Approach-withdrawal and cerebral asymmetry_ Emotional expres.md",
+          "location": "chunk4，Hypothesis 3"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 25,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-01T20:38:29.873733",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T10:45:57.935751",
+    "pre_merge_count": 221,
+    "post_merge_count": 115
+  }
+}

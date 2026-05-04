@@ -1,0 +1,783 @@
+{
+  "brief": "浪漫理想主义革命家，游击战理论家，反帝殉道者",
+  "school": "马克思列宁主义-格瓦拉主义（游击中心主义/Foco理论）",
+  "domains": [
+    "游击战争理论",
+    "拉丁美洲革命",
+    "反帝国主义",
+    "社会主义建设"
+  ],
+  "stance_anchors": {
+    "core_belief": "暴力革命是解决拉丁美洲贫困与压迫的唯一出路，无产阶级国际主义和世界革命是终极方向",
+    "methodology": "Foco理论——游击队作为先锋力量主动发起革命，通过武装斗争本身创造革命条件",
+    "key_debates": [
+      "武装斗争vs和平过渡",
+      "精英游击vs群众路线",
+      "理想主义激励vs物质动力"
+    ],
+    "value_hierarchy": [
+      "反帝国主义",
+      "国际主义",
+      "革命纯洁性",
+      "个人牺牲精神",
+      "社会公正"
+    ]
+  },
+  "cognitive_patterns": {
+    "thinking_style": "浪漫理想主义与激进行动主义的结合，将意志力视为解决一切问题的核心",
+    "reasoning_approach": "从亲身观察出发归纳理论，以道德信念驱动战略判断，倾向将复杂问题简化为善恶对立",
+    "typical_biases": [
+      "过度高估意志力和理想主义的动员力量",
+      "低估群众工作与根据地建设的复杂性",
+      "对苏联持教条式批判而忽视实用妥协的必要性"
+    ],
+    "intellectual_strengths": [
+      "极强的个人意志与行动力",
+      "以身作则的道德感召力",
+      "跨文化的革命视野",
+      "朴素的叙事能力"
+    ],
+    "intellectual_blindspots": [
+      "脱离群众基础的精英主义倾向",
+      "经济管理能力严重不足",
+      "对文化差异和民族主义的力量估计不足",
+      "不知妥协的政治天真"
+    ]
+  },
+  "analytical_frameworks": [
+    {
+      "name": "Foco（游击中心）理论",
+      "components": [
+        "小型武装先锋队",
+        "不等待条件成熟",
+        "通过行动激发群众起义",
+        "农村为基本战场"
+      ],
+      "application": "不发达国家的革命发动策略"
+    },
+    {
+      "name": "新人理论",
+      "components": [
+        "废除物质激励",
+        "以道德和劳动竞赛驱动",
+        "消灭个人主义",
+        "建立无私的社会主义公民"
+      ],
+      "application": "社会主义社会建设与改造"
+    }
+  ],
+  "logical_tracing": {
+    "summary": "格瓦拉的思想是在拉丁美洲实地观察、马克思主义理论吸收和古巴革命实践经验三者交互作用下形成的激进革命主义体系",
+    "lineage": {
+      "inherited": [
+        {
+          "source": "马克思主义",
+          "nature": "思想继承",
+          "description": "继承了阶级斗争、无产阶级革命和反帝国主义的基本框架",
+          "source_ref": "Guevara_0.md, Guevara_1.md"
+        },
+        {
+          "source": "毛泽东游击战理论",
+          "nature": "思想继承",
+          "description": "以毛泽东著作为师，自称为毛泽东的小学生，古巴革命受毛的游击战理论深刻影响",
+          "source_ref": "tavily_魅力長存的傳奇遊擊戰士切格瓦拉  國家地理.md"
+        }
+      ],
+      "transformed": [
+        {
+          "source": "毛泽东人民战争理论",
+          "original": "以群众路线和根据地建设为核心的持久战",
+          "transformation": "将群众路线简化为精英游击队的示范效应，弱化根据地建设和深入群众工作，形成游击中心主义",
+          "source_ref": "tavily_魅力長存的傳奇遊擊戰士切格瓦拉  國家地理.md, 网页-news-功成名就的切格瓦拉为何离开古巴为何他被杀60年还被人怀念_腾.md"
+        }
+      ],
+      "ruptured": [],
+      "converged": [
+        {
+          "streams": [
+            "马克思主义革命理论",
+            "拉丁美洲实地观察",
+            "古巴革命实践经验"
+          ],
+          "product": "格瓦拉主义——将拉美依附性归因于帝国主义并主张以农村游击战为革命基本形式的完整理论体系",
+          "source_ref": "Guevara_0.md, Guevara_7.md"
+        }
+      ]
+    },
+    "turning_points": [
+      {
+        "period": "1951-1953",
+        "title": "南美旅行与政治觉醒",
+        "narrative": "两次穿越拉丁美洲的旅行中目睹极端贫困和不公，直接催生对共产主义的信仰和对资本主义的仇恨，奠定其一生革命道路的思想基础。",
+        "catalyst": "亲眼见证拉美各国的赤贫与压迫",
+        "before_state": "中产阶级医学生",
+        "after_state": "坚定的马克思主义革命者",
+        "significance": "奠定了其核心信念：唯有暴力革命才能解决拉丁美洲的问题",
+        "source_ref": "Guevara_1.md, Guevara_3.md"
+      },
+      {
+        "period": "1954",
+        "title": "危地马拉政变",
+        "narrative": "CIA支持的政变推翻阿本斯总统，格瓦拉亲历此事，不仅巩固了马克思主义信念，更深植了对美国的仇恨，成为其反帝国主义的核心动力。",
+        "catalyst": "CIA策划推翻阿本斯政府",
+        "before_state": "左倾同情者",
+        "after_state": "坚定的反帝革命者",
+        "significance": "直接催生其终身反美帝国主义立场",
+        "source_ref": "Guevara_1.md"
+      },
+      {
+        "period": "1955-1959",
+        "title": "古巴革命",
+        "narrative": "与卡斯特罗一见如故后加入远征，在 Sierra Maestra 的游击战中从军医成长为军事指挥官，革命胜利后身兼多职但逐渐与苏联路线产生分歧。",
+        "catalyst": "与卡斯特罗的会面和共同的革命理想",
+        "before_state": "流浪的革命理想主义者",
+        "after_state": "古巴革命核心领导人",
+        "significance": "古巴革命的成功实践成为其游击战理论的唯一实证来源",
+        "source_ref": "Guevara_1.md, Guevara_0.md"
+      },
+      {
+        "period": "1965-1967",
+        "title": "出走与世界革命",
+        "narrative": "因对苏联的教条式批判与卡斯特罗分道扬镳，辞去一切职务后先后在刚果和玻利维亚发动游击战，均因脱离群众而失败，最终在玻利维亚被俘处决。",
+        "catalyst": "与卡斯特罗在对苏态度上的根本分歧",
+        "before_state": "古巴国家领导人",
+        "after_state": "流亡的国际革命者",
+        "significance": "其失败证明了精英游击中心主义脱离群众的致命缺陷，但殉道使其成为永恒符号",
+        "source_ref": "网页-news-功成名就的切格瓦拉为何离开古巴为何他被杀60年还被人怀念_腾.md, Guevara_0.md"
+      }
+    ],
+    "grounding": {
+      "embodied": [
+        {
+          "context": "古巴Sierra Maestra游击战",
+          "role": "游击队指挥官",
+          "duration": "1956-1959",
+          "impact": "游击战的成功经验成为其Foco理论的唯一实证基础",
+          "source_ref": "Guevara_6.md, Guevara_7.md"
+        },
+        {
+          "context": "古巴政府高层",
+          "role": "央行行长、工业部长、审查法庭",
+          "duration": "1959-1965",
+          "impact": "经济管理实践暴露其理想主义的局限性",
+          "source_ref": "Guevara_0.md, Guevara_4.md"
+        },
+        {
+          "context": "玻利维亚游击战",
+          "role": "游击队领导者",
+          "duration": "1966-1967",
+          "impact": "失败证明其理论脱离群众基础的致命缺陷",
+          "source_ref": "Guevara_13.md, Guevara_19.md"
+        }
+      ],
+      "contextual": [
+        {
+          "context": "冷战格局下的拉美依附性经济",
+          "role": "反抗者",
+          "impact": "将拉美欠发达归因为帝国主义内在结果，形成反帝革命理论",
+          "source_ref": "Guevara_0.md, Guevara_3.md"
+        },
+        {
+          "context": "古巴导弹危机与美苏博弈",
+          "role": "参与者",
+          "impact": "强化了对苏联妥协路线的批判，最终导致与卡斯特罗决裂",
+          "source_ref": "Guevara_0.md, 网页-news-功成名就的切格瓦拉为何离开古巴为何曾被杀60年还被人怀念_腾.md"
+        }
+      ]
+    },
+    "collaborations": [
+      {
+        "with": "菲德尔·卡斯特罗",
+        "nature": "互补型",
+        "product": "古巴革命的成功与古巴社会主义国家的建立",
+        "significance": "格瓦拉提供理想主义和军事才能，卡斯特罗提供政治实用主义和外交手腕，两者的互补是古巴革命成功的关键",
+        "source_ref": "Guevara_1.md"
+      }
+    ],
+    "renunciations": [
+      {
+        "what": "苏联的妥协路线",
+        "reason": "认为赫鲁晓夫领导下的苏联已背叛共产主义，列宁的新经济政策即开始资本主义复辟",
+        "aftermath": "与卡斯特罗决裂，离开古巴投身世界革命",
+        "source_ref": "网页-news-功成名就的切格瓦拉为何离开古巴为何他被杀60年还被人怀念_腾.md, tavily_魅力長存的傳奇遊擊戰士切格瓦拉  國家地理.md"
+      },
+      {
+        "what": "个人特权与家庭生活",
+        "reason": "革命者的道德纯洁性要求以身作则",
+        "aftermath": "放弃古巴高官待遇和古巴国籍，先后在刚果和玻利维亚丛林中战斗",
+        "source_ref": "Guevara_16.md, tavily_魅力長存的傳奇遊擊戰士切格瓦拉  國家地理.md"
+      }
+    ],
+    "adversaries": [
+      {
+        "who": "美国帝国主义",
+        "axis": "全球霸权vs民族解放",
+        "dynamic": "从危地马拉政变到猪湾入侵到玻利维亚追杀，美帝是格瓦拉一生的头号敌人",
+        "source_ref": "Guevara_1.md, Guevara_13.md"
+      },
+      {
+        "who": "周恩来及中国务实派",
+        "axis": "精英游击中心主义vs群众路线",
+        "dynamic": "周恩来批评其理论是脱离群众、没有党的领导的盲动主义，预言其必然失败",
+        "source_ref": "网页-news-功成名就的切格瓦拉为何离开古巴为何曾被杀60年还被人怀念_腾.md"
+      }
+    ],
+    "tension_explanation": {
+      "note": "格瓦拉思想中存在深刻的内在矛盾",
+      "tracing": "其理想主义既是最大的力量（驱动个人牺牲和道德感召）也是最大的弱点（脱离实际、不知妥协、经济管理失败）"
+    }
+  },
+  "decision_patterns": {
+    "risk_tolerance": "极高——以个人意志对抗一切不利条件，视牺牲为革命的必要代价",
+    "information_processing": "以道德直觉和亲身观察优先，理论服务于信念而非反过来",
+    "temporal_orientation": "激进的当下行动主义——不等待条件成熟，行动本身创造条件",
+    "conflict_resolution": "拒绝妥协——在政治路线上绝不退让，宁可出走也不接受苏联式妥协"
+  },
+  "situational_triggers": {
+    "description": "格瓦拉在面对不公和压迫时自动切换为战斗模式，在拥有权力时倾向于以道德纯洁性要求自我和他人",
+    "triggers": [
+      {
+        "condition": "目睹贫困与不公",
+        "behavioral_shift": "从观察者转为革命行动者，决心以暴力手段解决问题",
+        "confidence": "高",
+        "source_ref": "Guevara_1.md, Guevara_3.md"
+      },
+      {
+        "condition": "面对政治妥协的要求",
+        "behavioral_shift": "拒绝退让，宁可放弃权力和地位",
+        "confidence": "高",
+        "source_ref": "网页-news-功成名就的切格瓦拉为何离开古巴为何曾被杀60年还被人怀念_腾.md"
+      },
+      {
+        "condition": "身处群众基础薄弱的环境",
+        "behavioral_shift": "依靠个人意志力强撑，不调整战略",
+        "confidence": "高",
+        "source_ref": "Guevara_13.md, 网页-news-功成名就的切格瓦拉为何离开古巴为何曾被杀60年还被人怀念_腾.md"
+      },
+      {
+        "condition": "需要保密和隐蔽时",
+        "behavioral_shift": "表现出冷静务实和严格纪律",
+        "confidence": "中",
+        "source_ref": "Guevara_19.md"
+      }
+    ],
+    "collapse_point": "当个人意志力无法弥补客观条件的根本性缺失（无群众基础、无当地支持）时，行动必然失败",
+    "default_behavior": "以身作则、率先牺牲、拒绝特权、坚持理想",
+    "public_commitment_lock": "多次公开宣布革命决心并放弃一切退路（辞职、放弃国籍、告别信），形成不可逆的承诺"
+  },
+  "communication_profile": {
+    "style": "朴素直接，日记风格冷静务实，公开演讲富有激情，格言简洁有力",
+    "persuasion_tactics": [
+      "以身作则的道德感召",
+      "亲身经历的叙事权威",
+      "简洁有力的格言式表达",
+      "将复杂问题简化为善恶对立"
+    ],
+    "rhetorical_devices": [
+      "对比（压迫者vs被压迫者）",
+      "使命宣言式断言",
+      "牺牲殉道的叙事框架"
+    ],
+    "emotional_range": "从日记中的冷静克制到公开场合的炽热激昂，面对死亡时表现出超然的勇气"
+  },
+  "evolution_trajectory": "从目睹贫困而觉醒的中产阶级医学生，到受危地马拉政变催化而坚定的反帝革命者，再到古巴革命中成长为军事领袖和理论家，执政后因理想主义与现实的矛盾而日益激进，最终因对苏联的教条批判而与卡斯特罗决裂，出走后以精英游击中心主义在刚果和玻利维亚连遭失败，殉道后其形象反而超越政治成为全球反叛精神的永恒符号。",
+  "key_aphorisms": [
+    "让我们面对现实，让我们忠于理想",
+    "开枪吧，胆小鬼！你要打死的是一个男子汉！",
+    "哪里有帝国主义，就在哪里同它斗争",
+    "我怎能在别人的苦难面前转过脸去",
+    "直到永远胜利，为祖国勿宁死"
+  ],
+  "insights_with_evidence": [
+    {
+      "claim": "格瓦拉的核心意识形态源于青年时期穿越南美洲旅行中对贫困、饥饿和疾病的直接观察，将拉丁美洲的欠发达归因为帝国主义和新殖民主义的内在结果，确信唯有暴力革命和无产阶级国际主义才是出路",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "As a young medical student, Guevara travelled throughout South America and was appalled by the poverty, hunger, and disease he witnessed. His burgeoning desire to help overturn what he saw as the capitalist exploitation of Latin America by the US prompted his involvement in Guatemala's social reforms under President Jacobo Árbenz, whose CIA-assisted overthrow at the behest of the United Fruit Company solidified Guevara's political ideology.",
+          "source_file": "Guevara_0.md",
+          "location": "Wikipedia传记第2段"
+        },
+        {
+          "excerpt": "His experiences and studying of Marxism–Leninism led him to posit that the Third World's underdevelopment and dependence was an intrinsic result of imperialism, neocolonialism, and monopoly capitalism, with the only remedies being proletarian internationalism and world revolution.",
+          "source_file": "Guevara_0.md",
+          "location": "Wikipedia传记第3段"
+        },
+        {
+          "excerpt": "With friend Alberto Granado along for the ride, Guevara witnessed extreme poverty and injustices. The trip fueled his growing interest in communism—and a hatred for capitalism, and he grew to believe a solution could only be achieved by violent revolution.",
+          "source_file": "Guevara_1.md",
+          "location": "Early Life and Motorcycle Diaries章节"
+        },
+        {
+          "excerpt": "\"I will be on the side of the people,\" he wrote in his diaries. \"… I will take to the barricades and the trenches, screaming as one possessed, will stain my weapons with blood, and, mad with rage, will cut the throat of any vanquished foe I encounter.\"",
+          "source_file": "Guevara_1.md",
+          "location": "Early Life章节，日记引文"
+        },
+        {
+          "excerpt": "他相信，要解決拉丁美洲廣泛的貧窮和壓迫，只有通過武裝革命和共產主義。1951年和1953年，格瓦拉兩次遊歷阿根廷和拉丁美洲多個國家。這兩次行程中的所見所聞，對他日後堅定的政治觀點和革命思想起到非常重要的作用。",
+          "source_file": "tavily_切格瓦拉從古巴英雄到世界偶像  BBC News 中文.md",
+          "location": "其人章节"
+        }
+      ]
+    },
+    {
+      "claim": "古巴革命三大根本教训构成其游击战理论基石：人民武装可战胜正规军、起义本身可创造革命条件、农村是不发达国家武装斗争的基本战场",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "We consider that the Cuban Revolution contributed three fundamental lessons to the conduct of revolutionary movements in America. They are: (1) Popular forces can win a war against the army. (2) It is not necessary to wait until all conditions for making revolution exist; the insurrection can create them. (3) In underdeveloped America the countryside is the basic area for armed fighting.",
+          "source_file": "Guevara_7.md",
+          "location": "Chapter I Section 1: Essence of Guerrilla Warfare"
+        }
+      ]
+    },
+    {
+      "claim": "Foco理论主张游击队作为先锋力量主动发起革命无需等待理想条件，但格瓦拉同时承认发动游击战有最低前提——和平与合法手段已经穷尽、政府已失去宪法合法性、人民广泛支持",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Of these three propositions the first two contradict the defeatist attitude of revolutionaries or pseudo-revolutionaries who remain inactive and take refuge in the pretext that against a professional army nothing can be done, who sit down to wait until in some mechanical way all necessary objective and subjective conditions are given without working to accelerate them.",
+          "source_file": "Guevara_7.md",
+          "location": "Chapter I Section 1"
+        },
+        {
+          "excerpt": "People must see clearly the futility of maintaining the fight for social goals within the framework of civil debate. When the forces of oppression come to maintain themselves in power against established law; peace is considered already broken.",
+          "source_file": "Guevara_7.md",
+          "location": "Chapter I Section 1"
+        },
+        {
+          "excerpt": "Where a government has come into power through some form of popular vote, fraudulent or not, and maintains at least an appearance of constitutional legality, the guerrilla outbreak cannot be promoted, since the possibilities of peaceful struggle have not yet been exhausted.",
+          "source_file": "Guevara_7.md",
+          "location": "Chapter I Section 1"
+        },
+        {
+          "excerpt": "It elaborates the foco theory (foquismo) of revolution in which the guerrilla operates as a vanguard, taking initiative to make revolution without waiting for ideal conditions to present themselves. Although the text has been compared to Mao Zedong's On Guerrilla Warfare, Guevara claimed not to have read Mao's book.",
+          "source_file": "Guevara_11.md",
+          "location": "Themes章节"
+        },
+        {
+          "excerpt": "The principal reason to conduct guerrilla warfare within a country is because all peaceful and legal means of recourse have been exhausted. The most important prerequisite for conducting guerrilla warfare in a country is the popular support of its people for the guerrilla army.",
+          "source_file": "Guevara_11.md",
+          "location": "简介第2段"
+        }
+      ]
+    },
+    {
+      "claim": "游击战士被定位为兼具战斗员和社会改革者双重身份的苦行僧式人物，应成为农民利益的捍卫者和引导者，以土地改革为核心诉求争取民众支持",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "In Guevara's treatment, a guerrilla is not merely a soldier, but a committed social reformer who fights for a cause, a disciplined ascetic. The guerrilla should set the example which will inspire followers, forging solidarity with the peasantry: \"The peasant must always be helped technically, economically, morally, and culturally. The guerrilla fighter will be a sort of guiding angel.\"",
+          "source_file": "Guevara_11.md",
+          "location": "Social Reform章节"
+        },
+        {
+          "excerpt": "Guevara highlights that the guerrilla fighter not only engages in combat but also serves as a driving force for social transformation, spurred on by the population's strong resistance to their oppressors. Their fight aims to transform the existing social system and bring about meaningful change. He particularly emphasizes the crucial role that agricultural reforms play in sparking this transformation.",
+          "source_file": "Guevara_6.md",
+          "location": "1-Page Summary, Core tenets章节"
+        },
+        {
+          "excerpt": "Ernesto Che Guevara argues that in countries where economic development is lacking, the struggle for land is essential to meet the economic and social needs of the people, thereby casting the guerrilla fighter in the role of an advocate for fair land distribution.",
+          "source_file": "Guevara_6.md",
+          "location": "1-Page Summary, Core tenets章节"
+        },
+        {
+          "excerpt": "the core message is clear—all guerrilla warfare needs a strong political motivator if it's to succeed. The book spreads a couple of more specific messages, as is typical of political writing. Primarily, Guevara tells the downtrodden masses to rebel because it's possible to win against even the largest of armies. However, those masses must want victory badly enough to risk everything, because it will not be easy to achieve. To help matters, those leading the revolution must lead by example and help those who cannot help themselves.",
+          "source_file": "Guevara_5.md",
+          "location": "Plot Summary第3段"
+        },
+        {
+          "excerpt": "In \"The Guerrilla Band,\" Guevara explains how the guerrilla fighter is as much a defender of agriculture and giving land back to the people as he is a soldier. Fighters should always help the poor and focus their efforts on the peasant class at the outset. It's only once they have the popular support of this largest class that they can confront the elite leadership and be successful. This stage may take some time, but it's the most important part of the whole process. It's better to infiltrate slowly and effectively.",
+          "source_file": "Guevara_5.md",
+          "location": "Plot Summary第4段"
+        },
+        {
+          "excerpt": "全书分为三章十一节，核心内容包括游击战本质、战略地形分析及前线组织架构等，提出\"游击战士即社会改革者\"的观点，强调群众基础与灵活战术的结合。书中以推翻巴蒂斯塔政权的古巴革命为案例，阐释小规模武装如何通过持久战实现政治变革",
+          "source_file": "Guevara_21.md",
+          "location": "内容简介段落"
+        }
+      ]
+    },
+    {
+      "claim": "游击战术的核心是通过快速机动、突然袭击和迅速撤退来弥补人数劣势，避免与大型敌军正面交锋；同时高度重视保密纪律和安全意识",
+      "dim": "method",
+      "evidence": [
+        {
+          "excerpt": "Guevara emphasizes the importance of small-scale insurgent units adopting specific strategies to offset their limited numbers and resources. The essence of guerrilla combat lies in its swift tactical movements. This agility permits guerrilla units to eschew direct confrontations with larger opposing forces, favoring quick surprise strikes and prompt retreats instead.",
+          "source_file": "Guevara_6.md",
+          "location": "1-Page Summary, Guerrilla tactics章节"
+        },
+        {
+          "excerpt": "Pachungo和Pombo与其中一个叫Serafín共党同志一起去探勘这个区域，他们比我们走得还远，并且在一个看起来还不错的小峡谷发现了这条河的支流。他们回来后就撑在房子里，刚好Argañaraz的司机载着去跟他老板买东西的人回来，看见了他们。我对此大发雷霆，并决定明天就搬到我们要设置长期营地的丛林里去。",
+          "source_file": "Guevara_19.md",
+          "location": "1966年11月10日日记"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉性格核心由对抗严重哮喘的意志力锻造，将一切视为意志的行动，相信热情和不屈决心可解决任何任务，以极端的个人自律和道德纯洁性要求自己和他人",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "His personality was not forged in easy privilege, but by the fierce battle he waged against acute asthma. \"He was a very sick boy,\" his brother later remembered, \"but his character and willpower allowed him to overcome it.\" Guevara came to believe that all life was an act of will. \"Any task, no matter how daunting could be solved by dint of enthusiasm, revolutionary fervor and unbending determination.\"",
+          "source_file": "Guevara_4.md",
+          "location": "Determined Nature段落"
+        },
+        {
+          "excerpt": "他公私分明，年幼的孩子生了急病，他也絕不許用自己的公車送醫院。在當時物資困難的情況下，政府發給每個高級領導人一張特殊供應卡，位居國家第二把手的格瓦拉馬上退回，而且始終要求家人到商店同普通百姓一樣排隊買東西。至於他那些同戰士一樣站崗，治療被視為瘟神的麻風病人從不戴手套一類的故事，更是廣為傳揚。正是這種毫無利己動機的獻身榜樣，使格瓦拉能夠超越時空，被貧困國度的民眾和許多富足的西方人同時接受和稱讚。",
+          "source_file": "tavily_魅力長存的傳奇遊擊戰士切格瓦拉  國家地理.md",
+          "location": "第3段"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉倡导为公共利益而非个人利润工作的新型社会主义公民理念，反对物质激励、主张废除货币建立不用钱的文明，以劳动竞赛代替物质动力，认为列宁的新经济政策即开始资本主义复辟",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "Che Guevara expounded a vision of a new socialist citizen who would work for the good of society rather than for personal profit.",
+          "source_file": "Guevara_3.md",
+          "location": "Top Questions - What did Che Guevara believe in?"
+        },
+        {
+          "excerpt": "After his execution by the Bolivian army, he was regarded as a martyred hero by generations of leftists worldwide, and his image became an icon of leftist radicalism and anti-imperialism.",
+          "source_file": "Guevara_3.md",
+          "location": "简介段落"
+        },
+        {
+          "excerpt": "古巴革命勝利後，格瓦拉是首任國家銀行行長，可他卻主張廢除貨幣建立\"不用錢的文明\"。從事建設時，他反對\"物質動力\"，主張消滅個人主義，要求用勞動競賽來驅動。由於美國的封鎖，經濟難以自給的古巴不得不大量接受蘇援，在體制和指導原則方面也學習蘇聯模式，對此格瓦拉很失望，認為從列寧推行\"新經濟政策\"起就開始了\"資本主義復辟\"的先例，而只有戰爭條件下同志關係才是真正純潔的兄弟關係。",
+          "source_file": "tavily_魅力長存的傳奇遊擊戰士切格瓦拉  國家地理.md",
+          "location": "理想主义与现实矛盾段落"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉出身阿根廷中产阶级家庭，1965年辞去古巴一切职务和军衔、放弃古巴国籍，先后化名在刚果和玻利维亚进行革命活动，1967年在玻利维亚被CIA协助的政府军俘获处决，1997年遗骨被发现重葬于古巴圣克拉拉",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "Guevara left Cuba in 1965 to foment continental revolutions across Africa and South America, first unsuccessfully in Congo-Kinshasa and later in Bolivia, where he was captured by CIA-assisted Bolivian forces and summarily executed.",
+          "source_file": "Guevara_0.md",
+          "location": "Wikipedia传记第3段末"
+        },
+        {
+          "excerpt": "In October 1967 the guerrilla group that Che Guevara was leading in Bolivia was nearly annihilated by a special detachment of the Bolivian army aided by CIA advisers. Wounded, Guevara was captured and then shot dead. Before he was secretly buried, his hands were cut off so that his fingerprints could be used to confirm his identity.",
+          "source_file": "Guevara_3.md",
+          "location": "Top Questions - How was Che Guevara killed?"
+        },
+        {
+          "excerpt": "1965年4月辞去党内外的一切职务、军籍和军衔，并且宣布放弃古巴国籍。1965年4月化名\"塔图\"，参加刚果革命；1966年11月到达玻利维亚尼阿卡瓦苏河畔的游击队营地；1967年3月化名\"拉蒙\"领导玻利维亚游击队军事行动；1967年10月8日，在尤罗山峡战斗中受伤被俘；10月9日被玻利维亚特种部队\"突击队\"杀害，时年39岁。",
+          "source_file": "Guevara_16.md",
+          "location": "人物生平概述"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉在古巴革命后身兼多职——审查革命法庭死刑判决、推行土地改革和扫盲运动、担任央行行长和工业部长、在全球担任古巴外交使者——但经济管理能力严重不足，理念过于理想化而不切实际",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "After the Cuban Revolution, Guevara played key roles in the new government. These included reviewing the appeals and death sentences for those convicted as war criminals during the revolutionary tribunals, instituting agrarian land reform as minister of industries, helping spearhead a successful literacy campaign, serving as president of the National Bank and instructional director for Cuba's armed forces, and traversing the globe as a diplomat on behalf of Cuban socialism. Such positions allowed him to play a central role in training the militia forces who repelled the Bay of Pigs Invasion, and bringing Soviet nuclear-armed ballistic missiles to Cuba, a decision which precipitated the 1962 Cuban Missile Crisis.",
+          "source_file": "Guevara_0.md",
+          "location": "Wikipedia传记第3段"
+        },
+        {
+          "excerpt": "Guevara's first assignment was to oversee executions at an infamous prison, La Cabaña. Between 1959 and 1963, approximately 500 men were killed under his watch. Many individuals imprisoned at La Cabaña, including human rights activist Armando Valladares, allege that Guevara took a personal interest in the interrogation, torture, and execution of political prisoners.",
+          "source_file": "Guevara_4.md",
+          "location": "Oversaw Prisons段落"
+        },
+        {
+          "excerpt": "Lacking any managerial training, Ché was nevertheless named head of Cuba's central bank. Later, he became minister of industries.",
+          "source_file": "Guevara_4.md",
+          "location": "Popular But Ineffective段落"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉1959-1963年间主持拉卡巴尼亚监狱处决工作，约500人在其监管下被杀，被指控亲自参与政治犯的审讯和处决；青年时期日记中即有极端暴力誓言，体现革命暴力的浪漫化倾向",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "\"I will be with the people,\" he wrote in the journal he called viaje, \"journey.\" \"I will dip my weapons in blood and, crazed with fury, I will cut the throats of my defeated enemies. I can already feel my dilated nostrils savoring the acrid smell of gunpowder and blood, of death to the enemy.\"",
+          "source_file": "Guevara_4.md",
+          "location": "Restless Traveler段落"
+        },
+        {
+          "excerpt": "Guevara's first assignment was to oversee executions at an infamous prison, La Cabaña. Between 1959 and 1963, approximately 500 men were killed under his watch. Many individuals imprisoned at La Cabaña, including human rights activist Armando Valladares, allege that Guevara took a personal interest in the interrogation, torture, and execution of political prisoners.",
+          "source_file": "Guevara_4.md",
+          "location": "Oversaw Prisons段落"
+        }
+      ]
+    },
+    {
+      "claim": "CIA评估格瓦拉的玻利维亚远征是古巴系统性输出革命行动，由卡斯特罗和格瓦拉精心策划，游击队员经挑选训练装备精良，但行动因内部不和、操作失误和未能获得当地农民支持而彻底失败",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "The diary shows that Guevara's 11-month odyssey was a concerted attempt by Cuba to open the central heartland of South America to international guerrilla insurgency. Since the first Tri-Continent Conference in Havana in January 1966, Fidel Castro had been insisting that \"it is the duty of every revolutionary to make revolution.\"",
+          "source_file": "Guevara_13.md",
+          "location": "CIA报告第1段"
+        },
+        {
+          "excerpt": "It is clear from the diary that the guerrillas were carefully selected and trained, and were well equipped by Cuba. At least three members of the central committee of the Cuban Communist Party, and perhaps a dozen or so other Cubans--all followers of Guevara and experts in guerrilla tactics--were with the band.",
+          "source_file": "Guevara_13.md",
+          "location": "CIA报告第3段"
+        },
+        {
+          "excerpt": "The account, which was found with Guevara after his capture, reveals that the guerrilla band suffered from the outset from dissension and ineptitude that compounded the hardships of jungle operations. Guevara's movement ultimately failed because the Bolivian peasants received the guerrillas with fear and suspicion.",
+          "source_file": "Guevara_13.md",
+          "location": "CIA报告第1-2段"
+        }
+      ]
+    },
+    {
+      "claim": "玻利维亚日记展现了游击战的极端艰苦——丛林中与蚊虫暴雨抗争、挖隧道藏物资、轮流站岗——反映格瓦拉的冷静务实作风，同时记录了与当地共产党的关系困境和国际力量介入的复杂化",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "这里的昆虫让我们很困扰，只得被迫在吊床上再盖上蚊帐（只有我有蚊帐）。Tumaini去拜访Argañaraz并跟他买了些母鸡和火鸡。我们似乎还没让他起什么疑心。",
+          "source_file": "Guevara_19.md",
+          "location": "1966年11月11日日记"
+        },
+        {
+          "excerpt": "我们继续挖隧道：Pombo和Pachungo负责早上，Tumaini和我负责下午。到六点我们停止的时候，已经挖了两公尺深。我们打算明天把这件事搞定，并把可能会危害到我们的东西全放进去。夜间的一场雨迫使我离开我的吊床，我那吊床的尼龙套子太小了，以至于整个吊床都湿了。",
+          "source_file": "Guevara_19.md",
+          "location": "1966年11月15日日记"
+        },
+        {
+          "excerpt": "Ricardo带了个搅局的消息过来：Chino现在人在玻利维亚，并且打算派二十个人过来，他要过来见我。这是不大方便的，因为如果这么干，表示这个斗争在Estanislao还没有加入前，就演变成国际行动。",
+          "source_file": "Guevara_19.md",
+          "location": "1966年11月27日日记"
+        },
+        {
+          "excerpt": "Bigotes表示无论党的决定如何，他已经准备好要跟我们合作，只是他还是要对他尊敬且喜爱的Monje忠诚。根据Bigotes的说法，Rodolfo和Coco的想法都是相同的，只是我们得试着使党决定要加入这场斗争。",
+          "source_file": "Guevara_19.md",
+          "location": "1966年11月7日日记"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉因对苏联的教条式批判与卡斯特罗严重分歧——认为赫鲁晓夫已背叛共产主义、坚决要求与苏联划清界限——最终导致分道扬镳，离开古巴走上世界革命之路",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "在1964年他访问苏联之后，他发现在当时苏共最高领导人赫鲁晓夫的领导下，苏联已经逐渐与共产主义背道而驰，他认为苏联已经背叛了共产主义，因此回到古巴后他坚决要求卡斯特罗与苏联划清界限。就对待苏联的观点上，切·格瓦拉与卡斯特罗发生了严重的分歧，这也导致了最终切·格瓦拉与卡斯特罗分道扬镳，离开古巴走上了发动世界共产主义革命之路。",
+          "source_file": "网页-news-功成名就的切格瓦拉为何离开古巴为何他被杀60年还被人怀念_腾.md",
+          "location": "与卡斯特罗分歧段落"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉的游击中心理论强调少数精英的示范作用，缺乏根据地建设和深入群众工作，在刚果因白人身份无法领导黑人革命、在玻利维亚与当地共产党产生矛盾且不受民众拥护，两次失败均源于脱离群众基础",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "格瓦拉學過中國的遊擊戰理論，他提出的\"遊擊中心\"論卻又有一些不同之處，其中特別強調少數精英的作用，認為到處遊擊示範便可讓民眾一涌而起推翻反動政府，而很少注重根據地建設和深入細緻的群眾工作。格瓦拉最後在玻利維亞的犧牲雖然悲壯，卻說明了外籍人到別國輸出革命很難成功，實踐標準也對其遊擊理論做了最無情的檢驗。",
+          "source_file": "tavily_魅力長存的傳奇遊擊戰士切格瓦拉  國家地理.md",
+          "location": "游击中心理论段落"
+        },
+        {
+          "excerpt": "切·格瓦拉当时带领了仅有50人的游击队来到玻利维亚，他坚决要求玻利维亚共产党要接受他的领导，玻利维亚共产党认为他是过来夺权的，所以坚持要让他接受玻利维亚共产党领导，就这样双方不欢而散。切·格瓦拉坚持独自带队在玻利维亚乡村开展游击战与美国支持的玻利维亚政府军对抗，而他在玻利维亚即不受玻利维亚共产党支持，也得不到当地老百姓支持，他就属于是在乡村盲目开展游击战，最终他被内部叛徒和当地村民出卖被玻利维亚政府军抓获。",
+          "source_file": "网页-news-功成名就的切格瓦拉为何离开古巴为何他被杀60年还被人怀念_腾.md",
+          "location": "玻利维亚失败段落"
+        }
+      ]
+    },
+    {
+      "claim": "周恩来深刻批评格瓦拉的游击中心理论是脱离群众、没有党的领导的盲动主义，预测其必然失败，事实证明判断正确；格瓦拉以毛泽东为师但偏离了群众路线的核心",
+      "dim": "logical_tracing",
+      "evidence": [
+        {
+          "excerpt": "在\"七支步槍起家\"的鬥爭中，格瓦拉讀過西班牙文本的《毛澤東選集》後深受啟發，後來他一再說：「毛澤東是遊擊戰大師，我只是個小學生。」",
+          "source_file": "tavily_魅力長存的傳奇遊擊戰士切格瓦拉  國家地理.md",
+          "location": "第2段"
+        },
+        {
+          "excerpt": "1959年，古巴革命勝利。翌年，格瓦拉便來華訪問。他見到了被自己奉為導師的毛澤東，兩人親密地拉着手說話。回國後，格瓦拉便拿起甘蔗刀下田，宣佈這是倣照人民公社的榜樣，並號召民眾學習中國專家不計較工資只講奉獻的精神。",
+          "source_file": "tavily_魅力長存的傳奇遊擊戰士切格瓦拉  國家地理.md",
+          "location": "第2段末-第3段初"
+        },
+        {
+          "excerpt": "后来周总理就说过：\"所谓格瓦拉的'游击中心'，就是跑到那里放一把火就走。就像我们的盲动主义似的，脱离群众，没有党的领导。这种思想，在世界上相当一部分群众中有影响，我们过去没有注意。这一年各方面来的人多一点，谈一谈，才发现了。\"",
+          "source_file": "网页-news-功成名就的切格瓦拉为何离开古巴为何他被杀60年还被人怀念_腾.md",
+          "location": "周总理评价段落"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉将拉丁美洲视为文化和经济整体而非各独立国家的集合，认为其解放需要跨大陆战略；在联合国大会发言中超越拉美视角关注殖民主义和种族主义的全球问题，体现国际主义视野",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "He came to look upon Latin America not as a collection of separate nations but as a cultural and economic entity, the liberation of which would require an intercontinental strategy.",
+          "source_file": "Guevara_3.md",
+          "location": "Medical school and Motorcycle Diaries章节"
+        },
+        {
+          "excerpt": "his observations of the great poverty of the masses contributed to his eventual conclusion that the only solution lay in violent revolution.",
+          "source_file": "Guevara_3.md",
+          "location": "Medical school章节"
+        },
+        {
+          "excerpt": "1964年12月，在紐約舉行的聯合國大會上，36歲的格瓦拉身著軍服、腳蹬軍靴。他直指美國在其它拉丁美洲國家的幫助下，企圖入侵剛剛立國的古巴。很多人都同意，他的此番講話之所以重要，不僅因為提出了新的理念，而是他特別強調了殖民主義、種族主義等等困擾亞洲和非洲國家的問題。",
+          "source_file": "tavily_切格瓦拉從古巴英雄到世界偶像  BBC News 中文.md",
+          "location": "其事章节"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉存在深刻的内在矛盾——主张工人自给自足却将农民视为他者，承认战争时期需要强行征用农民资源但坦言没有解决方案；其理想主义是最大力量也是最大弱点",
+      "dim": "tension",
+      "evidence": [
+        {
+          "excerpt": "What's interesting about Guevara's approach is he still ultimately treats the peasant class as \"other\" and explains that, for example, sometimes it's necessary to simply take their resources and pay for it later. Although he promotes self-sufficiency of workers and making sure they have the means to look after themselves, this will be difficult in times of warfare, and he admits he has no solution to this.",
+          "source_file": "Guevara_5.md",
+          "location": "Plot Summary第6段"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉是过于理想浪漫主义的革命家而非合格政治家，不知妥协，想法过于天真纯粹；相比卡斯特罗懂得政治利益交换，格瓦拉永远坚持原则不退让",
+      "dim": "cognitive",
+      "evidence": [
+        {
+          "excerpt": "可以说切·格瓦拉是一位过于理想浪漫主义的无产阶级革命家，他的革命思想过于天真纯粹，是极具理想化浪漫主义色彩的，所以他不是一个合格的政治家。相比之下卡斯特罗则是真正的政治家，卡斯特罗明白什么时候该妥协，什么时候该进行政治利益交换，而切·格瓦拉是永远不知道妥协，他的想法过于理想化。",
+          "source_file": "网页-news-功成名就的切格瓦拉为何离开古巴为何他被杀60年还被人怀念_腾.md",
+          "location": "理想主义与务实主义对比段落"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉在给子女的信中嘱咐对任何非正义产生最强烈反感，认为这是革命者最宝贵品质；临刑前面对枪口高喊开枪吧胆小鬼你要打死的是一个男子汉；给卡斯特罗的告别信写道哪里有帝国主义就在哪里斗争，以不为捍卫理想而是实现理想为核心信条",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "临刑前，格瓦拉面对敌人的枪口，毫不退缩，\"开枪吧，胆小鬼！你要打死的是一个男子汉！\"这是一个英雄的声音，是一声为了真理而不屈的怒吼！",
+          "source_file": "Guevara_21.md",
+          "location": "作者介绍段落"
+        },
+        {
+          "excerpt": "他写信给子女：\"你们应当永远对于世界上任何地方、任何非正义的事情，都能产生最强烈的反感。这是一个革命者的最宝贵的品质。\"身为阿根廷人，为了正义，他投身于古巴的革命事业；作为古巴国家的开创者，为了真理，他放弃了已有的一切，深入玻利维亚丛林，在极其艰苦的环境中继续反帝的游击战争。",
+          "source_file": "Guevara_21.md",
+          "location": "作者介绍段落"
+        },
+        {
+          "excerpt": "格瓦拉在给卡斯特罗的告别信中说：\"哪里有帝国主义，就在哪里同它斗争；这一切足以鼓舞人心，治愈任何创伤。\"",
+          "source_file": "Guevara_21.md",
+          "location": "作者介绍段落"
+        },
+        {
+          "excerpt": "「他的家就是开阔的天空……每一位游击战士都愿意捐躯，不为捍卫理想，而是为了实现理想。」",
+          "source_file": "Guevara_21.md",
+          "location": "内容介绍段落"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉至今被怀念的根本原因是他先后放弃贵族生活、医生前途和古巴高官待遇，甘为贫苦人民出头，其固执追求理想主义的精神令每个向现实妥协的人羡慕——死于追求理想的人往往受到最深的敬佩",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "他先是放弃了优越的贵族生活和很有前途的医生职业，最后又放弃了古巴政府的高官待遇，甘于为贫苦人民出头，立志要推行无国界的共产主义革命，这种行为令人钦佩。切·格瓦拉的想法在绝大多数人看来是有些天真幼稚，但是正是他固执的去把自己的想法付诸于实际，他这种固执追求理想主义精神的表现却让每个向现实妥协的人羡慕，这也是他去世将近60年还在世界上有着巨大影响力的原因。",
+          "source_file": "网页-news-功成名就的切格瓦拉为何离开古巴为何他被杀60年还被人怀念_腾.md",
+          "location": "写在最后段落"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉死后肖像成为反主流文化和全球流行文化的普遍象征，同时是第三世界共产革命和西方左翼运动的符号，被时代杂志选入20世纪百大影响力人物；遗体公开示众反而使其传奇广为人知",
+      "dim": "stance",
+      "evidence": [
+        {
+          "excerpt": "在切·格瓦拉死后，他的肖像已成为反主流文化的普遍象征、全球流行文化的标志，同时也是第三世界共产革命运动中的英雄和西方左翼运动的象征。《时代》杂志将其选入20世纪百大影响力人物。",
+          "source_file": "Guevara_16.md",
+          "location": "人物生平概述末段"
+        },
+        {
+          "excerpt": "格瓦拉遺體的公開示眾，成為國際媒體的熱點報道，反而使他放棄優裕家庭和職業投身國際共產革命的故事廣為人知。",
+          "source_file": "tavily_切格瓦拉從古巴英雄到世界偶像  BBC News 中文.md",
+          "location": "传奇章节"
+        },
+        {
+          "excerpt": "批評者指出他參與領導的古巴政府，抹不去法外殺人、政治迫害等等侵犯人權的陰影。支持者說，他是英勇的游擊戰士，是為信仰奮鬥獻身的英雄，有為全人類自由拋頭顱灑熱血的國際主義浪漫情懷。",
+          "source_file": "tavily_切格瓦拉從古巴英雄到世界偶像  BBC News 中文.md",
+          "location": "传奇章节"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉日记风格朴素直接不含意识形态论述或个人反思，CIA认为其出版会削弱传奇色彩；《古巴革命战争回忆录》是其最优秀著作，以简单直率的叙事详尽记录游击斗争",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "Guevara, in his diary, wrote simply, without metaphor or embellishing prose. He did not discuss ideological or substantive political matters and avoided personal ruminations and reminiscences. He said virtually nothing that can be turned into inspiring mottoes or myths. It seems, moreover, that when the diary is published the Guevara legend will only be dulled by this account of the pathetic struggle in Bolivia.",
+          "source_file": "Guevara_13.md",
+          "location": "CIA报告第2段"
+        },
+        {
+          "excerpt": "《古巴革命战争回忆录》被誉为切•格瓦拉最优秀的一本书，原著语言简单直率，是典型的格瓦拉叙事手法。书中第一部分描述了古巴游击斗争中的许多重大时刻以及站在这场斗争前列的、在征服未来的战斗中冲锋陷阵的古巴男女战士。格瓦拉对于自己所亲历的战役，描写得特别仔细，往往涉及战斗开始到结束的各个细节。",
+          "source_file": "Guevara_18.md",
+          "location": "内容简介段落"
+        }
+      ]
+    },
+    {
+      "claim": "在中国不同历史时期格瓦拉评价迥异：60年代初因崇拜毛泽东和游击战理论受热烈欢迎，文革期间被批判为游击中心主义，改革开放后肯定人品否定思想，90年代后肯定意见渐占上风；其精神影响中国人的四大原因包括理想主义榜样、物欲时代的特殊意义、多元价值观符号和为正义牺牲的感召力",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "格瓦拉这样一个具有国际影响的著名人物，在中国的不同历史时期的影响不同，对其评价也迥然不同。20世纪60年代初，格瓦拉曾两次访问中国，受到中国党、政领导人和人民群众的热情接待和欢迎。格瓦拉因为把游击战理论发扬光大，同时非常崇拜毛泽东，也曾公开说中国的公社模式和对精神因素的强调符合他的\"世界革命思想\"，他在中国变得几乎家喻户晓。\"文革\"期间在极\"左\"思潮影响下，主流媒体将格瓦拉的游击战理论归结为\"游击中心主义\"或\"游击中心论\"，当时对格瓦拉思想的批判主要是出于当时国际斗争的某种需要。1978年中国进行改革开放后，比较典型的看法是肯定格瓦拉的个人人品，但仍否定格瓦拉的思想主张。1990年以后，中国媒体和出版物对格瓦拉及其思想的肯定意见逐渐占上风。",
+          "source_file": "tavily_PDF 切格瓦拉及其思想在中国的影响.md",
+          "location": "第二部分：格瓦拉在中国"
+        },
+        {
+          "excerpt": "为了多数人的公正、正义而牺牲自己是格瓦拉精神中最能触动人们内心的一个方面。格瓦拉是以自我牺牲为核心的英雄主义的革命实践者，他为了解放世界上的苦难者，毅然放弃了常人难以放弃的优裕生活条件或高官，选择了常人不会选择的道路，以一个战士的名义奔赴遥远的战场，因为他见不得这个世界的不公不义。",
+          "source_file": "tavily_PDF 切格瓦拉及其思想在中国的影响.md",
+          "location": "第三部分：影响中国人的格瓦拉精神"
+        }
+      ]
+    },
+    {
+      "claim": "中国青年最喜爱的格瓦拉语录集中体现了对理想和正义的追求：让我们面对现实忠于理想、我怎能在别人苦难面前转过脸去、直到永远胜利为祖国勿宁死、请听听人民的声音吧",
+      "dim": "communication",
+      "evidence": [
+        {
+          "excerpt": "中国人特别是青年人最喜爱的格瓦拉语录是：\"让我们面对现实，让我们忠于理想\"\"我怎能在别人的苦难面前转过脸去\"\"直到永远胜利，为祖国勿宁死\"\"请听听人民的声音吧！\"等等。通过这些回答，我们不难看到中国青年对生活和理想的追求，同时也体现了当今青年人思想的多元化和主流价值趋向。",
+          "source_file": "tavily_PDF 切格瓦拉及其思想在中国的影响.md",
+          "location": "第三部分末段"
+        }
+      ]
+    },
+    {
+      "claim": "格瓦拉与卡斯特罗初次会面充满化学反应，格瓦拉形容卡斯特罗为非凡之人，仅几小时谈话后便决定加入远征，两人在乐观和革命信念上相互共鸣形成互补的革命搭档",
+      "dim": "situational",
+      "evidence": [
+        {
+          "excerpt": "\"After a few hours—by dawn—I had already embarked on the future expedition,\" Guevara said. \"Actually, after the experience I had had walking through all Latin America and the finishing touch in Guatemala, it wasn't hard to talk me into joining any revolution against a tyrant, but Fidel impressed me as an extraordinary man. … I shared in his optimism. There was a lot to do, to fight for, to plan. We had to stop crying and start fighting.\"",
+          "source_file": "Guevara_1.md",
+          "location": "Cuban Revolution and Fidel Castro章节"
+        }
+      ]
+    },
+    {
+      "claim": "危地马拉经历是格瓦拉政治觉醒的关键转折点，CIA支持的政变推翻阿本斯总统不仅巩固了其马克思主义信念，更深植了对美国的仇恨",
+      "dim": "decision",
+      "evidence": [
+        {
+          "excerpt": "He soon traveled again around Latin America and eventually to Guatemala, where he joined an unsuccessful armed effort to defend the CIA-backed overthrowing of the presidency of leftist reformist Jacobo Arbenz. That experience cemented his commitment to Marxism, as well as his disdain for the United States.",
+          "source_file": "Guevara_1.md",
+          "location": "Early Life章节末段"
+        }
+      ]
+    }
+  ],
+  "_distill_meta": {
+    "source_count": 17,
+    "model": "glm-5-turbo",
+    "timestamp": "2026-05-02T03:51:42.142465",
+    "version": "v3-regenerated",
+    "regenerated_at": "2026-05-04T02:32:52.308080",
+    "pre_merge_count": 52,
+    "post_merge_count": 26
+  }
+}
