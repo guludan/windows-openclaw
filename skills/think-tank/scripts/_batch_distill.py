@@ -12,7 +12,6 @@ _batch_distill.py — 批量V3蒸馏（子session调用）
 
 注意:
     - 大素材自动分段（>60000字符）
-    - 模板: skills/think-tank/templates/distill_prompt_v3.md
     - 逐篇蒸馏模式用于素材过多时LLM上下文不够的场景
 """
 
@@ -28,7 +27,6 @@ from typing import List, Tuple, Dict, Any
 from _distill_utils import split_material_into_chunks
 
 BASE_DIR = Path("/mnt/d/data/think-tank-data/personalities")
-TEMPLATE = Path("~/.openclaw/workspace/skills/think-tank/templates/distill_prompt_v3.md").expanduser()
 MAX_CHARS = 60000
 
 
@@ -133,13 +131,6 @@ def generate_per_file_prompts(person_dir: Path) -> None:
     为每个素材文件生成独立的蒸馏prompt，保存到 _per_file_prompts/ 目录
     大文件会自动按段落切分成多个chunks（每个chunk不超过15000字符）
     """
-    # 读取模板
-    if not TEMPLATE.exists():
-        print(f"错误: 模板文件不存在: {TEMPLATE}", file=sys.stderr)
-        sys.exit(1)
-
-    template_content = TEMPLATE.read_text(encoding='utf-8')
-
     # 获取素材文件
     materials = get_materials(person_dir)
     if not materials:
@@ -594,8 +585,6 @@ def build_distill_task(person_name: str, person_dir: Path, person_domain: str = 
     """构建蒸馏任务prompt（给sessions_spawn用）"""
 
     # 读取模板
-    template = TEMPLATE.read_text(encoding='utf-8') if TEMPLATE.exists() else ""
-    template_ref = "读取模板: ~/.openclaw/workspace/skills/think-tank/templates/distill_prompt_v3.md"
 
     # 读取素材
     files = get_materials(person_dir)
