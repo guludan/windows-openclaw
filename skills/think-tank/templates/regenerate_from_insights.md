@@ -86,6 +86,9 @@
    - 目标：合并后的insight数量应为原始的30-60%
    - ⚠️ 不要丢弃独特观点，只合并实质相同的
    - ⚠️ 每条原始insight必须被引用一次（出现在某个merged_from中），不能丢失
+   - ⚠️ **dim维度必须严格保留，禁止把method/stance/decision等不同维度合并到一起**
+   - ⚠️ 原始insights中的每个dim都必须在输出中保留。如果原始有method、stance、cognitive、decision等维度，输出中也必须有对应dim的insights
+   - ⚠️ 只能合并**同一dim内**的相似观点。跨dim合并会导致维度信息丢失
 
    ### 🚫 绝对禁止新增insights
    - **insights_with_evidence只能是对原始insights的归纳合并，禁止新增原始insights中不存在的观点**
