@@ -86,6 +86,13 @@
    - 目标：合并后的insight数量应为原始的30-60%
    - ⚠️ 不要丢弃独特观点，只合并实质相同的
    - ⚠️ 每条原始insight必须被引用一次（出现在某个merged_from中），不能丢失
+
+   ### 🚫 绝对禁止新增insights
+   - **insights_with_evidence只能是对原始insights的归纳合并，禁止新增原始insights中不存在的观点**
+   - 每条insight必须有 `merged_from` 字段引用至少一个原始index
+   - 不要根据你的知识补充、延伸、或「完善」原始insights中没有的内容
+   - 输出空数组 `[]` 比编造一条没有evidence支撑的insight好一百倍
+   - 违反此规则的输出将被代码自动删除
 2. 其他字段（brief, school, domains, stance_anchors 等）根据合并后的insights归纳生成
 3. 信息不足的字段用空数组 [] 或空字符串，**绝不编造**
 4. logical_tracing 从insights中推断思想来源，标注source_ref
