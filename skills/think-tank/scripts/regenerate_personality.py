@@ -1,22 +1,105 @@
 #!/usr/bin/env python3
 """
-regenerate_personality.py — 基于已蒸馏insights重新生成完整人格模型
+regenerate_personality.py — 基于已蒸馏insights重新生成完整人格模型（v2: 两阶段）
 
 用法:
     python3 regenerate_personality.py <person_dir>                    # 生成prompt
     python3 regenerate_personality.py <person_dir> --apply            # 应用结果
+    python3 regenerate_personality.py --all                           # 批量生成所有prompt
+    python3 regenerate_personality.py --all --apply                   # 批量apply
 
-流程:
-    1. 读取 personality_v3.json 中的 insights_with_evidence
-    2. 生成重新生成的prompt（insights作为输入）
-    3. sessions_spawn调LLM生成完整人格模型
-    4. --apply: 替换顶层字段，保留原insights_with_evidence
+两阶段流程（insights > 100时自动启用）:
+    阶段1: 本地按dim分组 + claim关键词去重 → 压缩到80-120条
+    阶段2: 用压缩后的insights一次性生成完整人格模型
+
+单阶段流程（insights <= 100）:
+    直接用全部insights生成完整人格模型
 """
-import json, sys
+import json, sys, re, hashlib
 from pathlib import Path
 from datetime import datetime
+from collections import defaultdict
 
 TEMPLATE = Path("~/.openclaw/workspace/skills/think-tank/templates/regenerate_from_insights.md").expanduser()
+PERSONALITIES_ROOT = Path("/mnt/d/data/think-tank-data/personalities")
+
+# --- 工具函数 ---
+
+def token_overlap(a, b):
+    """两个字符串的token重叠度 (0-1)"""
+    ta = set(a.lower().split())
+    tb = set(b.lower().split())
+    if not ta or not tb:
+        return 0.0
+    return len(ta & tb) / max(len(ta | tb), 1)
+
+def cluster_by_similarity(claims, threshold=0.55):
+    """简单贪心聚类：将相似claim归为一簇"""
+    clusters = []  # list of lists of (index, claim_text)
+    used = set()
+    
+    for i, c in enumerate(claims):
+        if i in used:
+            continue
+        cluster = [(i, c)]
+        used.add(i)
+        for j, c2 in enumerate(claims):
+            if j in used:
+                continue
+            if token_overlap(c, c2) >= threshold:
+                cluster.append((j, c2))
+                used.add(j)
+        clusters.append(cluster)
+    return clusters
+
+def compact_insights(iwe, target_max=100):
+    """
+    本地压缩insights：
+    1. 按dim分组
+    2. 同dim内按claim相似度聚类
+    3. 每簇选最长claim作为代表，记录merged_indices
+    返回压缩后的insights列表（含_merged_from字段）
+    """
+    # 按dim分组
+    by_dim = defaultdict(list)
+    for i, ins in enumerate(iwe):
+        dim = ins.get("dim", "unknown")
+        by_dim[dim].append((i, ins))
+    
+    compacted = []
+    
+    for dim, items in by_dim.items():
+        claims = [ins.get("claim", "") for _, ins in items]
+        clusters = cluster_by_similarity(claims, threshold=0.55)
+        
+        for cluster in clusters:
+            # 选最长claim作为代表
+            best_idx = max(cluster, key=lambda x: len(x[1]))[0]
+            original_indices = [items[idx][0] for idx, _ in cluster]
+            
+            rep_ins = {
+                "index": items[best_idx][0] + 1,  # 1-indexed
+                "claim": items[best_idx][1].get("claim", ""),
+                "dim": dim,
+                "evidence_count": sum(len(items[idx][1].get("evidence", [])) for idx, _ in cluster),
+                "_merged_from": [oi + 1 for oi in original_indices],  # 1-indexed
+                "_is_cluster": len(cluster) > 1,
+                "_cluster_size": len(cluster)
+            }
+            compacted.append(rep_ins)
+    
+    # 按dim排序
+    dim_order = {"stance": 0, "cognitive": 1, "method": 2, "decision": 3, 
+                 "communication": 4, "logical_tracing": 5, "tension": 6, "situational": 7}
+    compacted.sort(key=lambda x: (dim_order.get(x.get("dim", ""), 9), -x.get("_cluster_size", 1)))
+    
+    # 如果压缩后仍然超过target，截断低优先级的
+    if len(compacted) > target_max:
+        compacted = compacted[:target_max]
+    
+    return compacted
+
+# --- 阶段1: 生成prompt ---
 
 def generate_prompt(person_dir):
     person_dir = Path(person_dir)
@@ -34,35 +117,75 @@ def generate_prompt(person_dir):
     
     template = TEMPLATE.read_text(encoding="utf-8")
     
-    # 准备insights摘要（不包含完整evidence，控制prompt大小）
-    insights_summary = []
-    for i, ins in enumerate(iwe):
-        entry = {
-            "index": i + 1,
-            "claim": ins.get("claim", ""),
-            "dim": ins.get("dim", ""),
-            "evidence_count": len(ins.get("evidence", [])),
-            "source_files": list(set(ev.get("source_file", "") for ev in ins.get("evidence", [])))
-        }
-        insights_summary.append(entry)
+    needs_compaction = len(iwe) > 100
     
-    prompt = template.replace("{count}", str(len(iwe)))
-    prompt = prompt.replace("{insights_json}", json.dumps(insights_summary, ensure_ascii=False, indent=2))
+    if needs_compaction:
+        # 两阶段：先本地压缩
+        compacted = compact_insights(iwe, target_max=90)
+        
+        # 生成摘要（不含evidence，控制大小）
+        insights_summary = []
+        for ins in compacted:
+            entry = {
+                "index": ins["index"],
+                "claim": ins["claim"][:300],
+                "dim": ins["dim"],
+                "evidence_count": ins["evidence_count"],
+            }
+            if ins.get("_is_cluster"):
+                entry["note"] = f"此条由{ins['_cluster_size']}条相似insight合并"
+                entry["merged_from"] = ins["_merged_from"]
+            insights_summary.append(entry)
+        
+        prompt = template.replace("{count}", str(len(compacted)))
+        prompt = prompt.replace("{insights_json}", json.dumps(insights_summary, ensure_ascii=False, indent=2))
+        
+        # 保存压缩映射供apply使用
+        merge_map = {}
+        for ins in compacted:
+            for orig_idx in ins.get("_merged_from", [ins["index"]]):
+                merge_map[orig_idx] = ins["index"]
+        merge_map_path = person_dir / "_regenerate_merge_map.json"
+        merge_map_path.write_text(json.dumps({
+            "compacted_count": len(compacted),
+            "original_count": len(iwe),
+            "merge_map": merge_map,
+            "compacted": compacted
+        }, ensure_ascii=False), encoding="utf-8")
+        
+        print(f"[两阶段模式] {person_dir.name}")
+        print(f"  原始insights: {len(iwe)} → 压缩后: {len(compacted)}")
+    else:
+        # 单阶段：直接用全部
+        insights_summary = []
+        for i, ins in enumerate(iwe):
+            entry = {
+                "index": i + 1,
+                "claim": ins.get("claim", ""),
+                "dim": ins.get("dim", ""),
+                "evidence_count": len(ins.get("evidence", [])),
+            }
+            insights_summary.append(entry)
+        
+        prompt = template.replace("{count}", str(len(iwe)))
+        prompt = prompt.replace("{insights_json}", json.dumps(insights_summary, ensure_ascii=False, indent=2))
+        
+        print(f"[单阶段模式] {person_dir.name}")
+        print(f"  insights: {len(iwe)}")
     
     prompt_path = person_dir / "_regenerate_prompt.md"
     prompt_path.write_text(prompt, encoding="utf-8")
     
-    print(f"Prompt saved: {prompt_path}")
-    print(f"  {len(iwe)} insights as input")
-    print(f"  Prompt size: {len(prompt)} chars")
-    print(f"\nNext: spawn子session处理此prompt，输出到 {person_dir}/_regenerate_result.json")
-    print(f"Then: python3 regenerate_personality.py {person_dir} --apply")
+    print(f"  Prompt size: {len(prompt)//1024}KB")
+    print(f"  Prompt saved: {prompt_path}")
 
+# --- 阶段2: 应用结果 ---
 
 def apply_result(person_dir):
     person_dir = Path(person_dir)
     result_path = person_dir / "_regenerate_result.json"
     pv3_path = person_dir / "personality_v3.json"
+    merge_map_path = person_dir / "_regenerate_merge_map.json"
     
     if not result_path.exists():
         print(f"ERROR: {result_path} not found", file=sys.stderr)
@@ -72,7 +195,6 @@ def apply_result(person_dir):
         content = f.read()
     
     # 尝试解析JSON（处理markdown包裹）
-    import re
     m = re.search(r'```(?:json)?\s*\n?(.*?)\n?```', content, re.DOTALL)
     candidate = m.group(1) if m else content
     
@@ -84,28 +206,32 @@ def apply_result(person_dir):
     
     # 读取现有V3
     pv3 = json.loads(pv3_path.read_text(encoding="utf-8"))
+    original_iwe = pv3.get("insights_with_evidence", [])
     
     # 备份
     backup_path = pv3_path.parent / f"personality_v3.json.bak.{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    pv3_path.rename(backup_path)
+    import shutil
+    shutil.copy2(pv3_path, backup_path)
     print(f"Backup: {backup_path}")
     
-    # 合并：用新数据替换顶层字段，insights用LLM的merged_from做代码级evidence合并
-    original_iwe = pv3.get("insights_with_evidence", [])
+    # --- insights合并 ---
     new_iwe_raw = new_data.get("insights_with_evidence", [])
-    
-    # LLM输出包含merged_from字段时，用原始insights的evidence合并
-    merged_iwe = []
     used_indices = set()
+    merged_iwe = []
+    
+    # 检查是否有两阶段的merge_map
+    has_merge_map = merge_map_path.exists()
+    compacted_info = None
+    if has_merge_map:
+        compacted_info = json.loads(merge_map_path.read_text(encoding="utf-8"))
     
     for new_ins in new_iwe_raw:
         merged_from = new_ins.get("merged_from", [])
         if merged_from and original_iwe:
-            # 收集所有被合并的原始insights的evidence
             all_evidence = []
             for idx in merged_from:
                 if 0 < idx <= len(original_iwe):
-                    orig = original_iwe[idx - 1]  # 1-indexed
+                    orig = original_iwe[idx - 1]
                     for ev in orig.get("evidence", []):
                         key = (ev.get("excerpt", ""), ev.get("source_file", ""))
                         if not any((e.get("excerpt", ""), e.get("source_file", "")) == key for e in all_evidence):
@@ -117,18 +243,31 @@ def apply_result(person_dir):
                 "evidence": all_evidence
             })
         else:
-            # LLM没有merged_from（旧格式），直接使用
             merged_iwe.append(new_ins)
     
-    # 检查是否有遗漏的原始insights
+    # 如果有两阶段merge_map，将压缩映射中的原始indices也标记为已使用
+    if has_merge_map and compacted_info:
+        # LLM可能用压缩后的index引用，需要展开到原始indices
+        compacted_list = compacted_info.get("compacted", [])
+        expanded_used = set()
+        for idx in list(used_indices):
+            expanded_used.add(idx)
+            # 检查这个idx是否是某个压缩代表
+            for c in compacted_list:
+                if c["index"] == idx:
+                    for orig_idx in c.get("_merged_from", []):
+                        expanded_used.add(orig_idx)
+        used_indices = expanded_used
+    
+    # 检查遗漏
     if original_iwe and used_indices:
         all_expected = set(range(1, len(original_iwe) + 1))
         missed = all_expected - used_indices
         if missed:
-            for idx in missed:
+            for idx in sorted(missed):
                 orig = original_iwe[idx - 1]
                 merged_iwe.append(orig)
-            print(f"  ⚠️ {len(missed)} insights未被LLM合并，已原样保留")
+            print(f"  ⚠️ {len(missed)} insights未被合并，已原样保留")
     
     new_data["insights_with_evidence"] = merged_iwe
     new_data["_distill_meta"] = pv3.get("_distill_meta", {})
@@ -140,18 +279,81 @@ def apply_result(person_dir):
     # 保存
     pv3_path.write_text(json.dumps(new_data, ensure_ascii=False, indent=2), encoding="utf-8")
     
-    print(f"Applied: {pv3_path}")
-    dedup_count = len(original_iwe) - len(merged_iwe)
-    print(f"  Insights: {len(original_iwe)} → {len(merged_iwe)} (merged {dedup_count})")
-    print(f"  Updated: brief, school, domains, stance_anchors, cognitive_patterns, etc.")
+    print(f"Applied: {person_dir.name}")
+    print(f"  Insights: {len(original_iwe)} → {len(merged_iwe)}")
+    
+    # 清理临时文件
+    for tmp in ["_regenerate_prompt.md", "_regenerate_result.json", "_regenerate_merge_map.json"]:
+        p = person_dir / tmp
+        if p.exists():
+            p.unlink()
 
+# --- 批量操作 ---
+
+def find_all_person_dirs():
+    """找到所有有personality_v3.json的目录"""
+    dirs = set()
+    # 匹配任意深度的personality_v3.json
+    for pv3 in PERSONALITIES_ROOT.rglob("personality_v3.json"):
+        dirs.add(pv3.parent)
+    return sorted(dirs)
+
+def batch_generate():
+    dirs = find_all_person_dirs()
+    print(f"Found {len(dirs)} personalities with v3")
+    for d in dirs:
+        try:
+            generate_prompt(d)
+        except Exception as e:
+            print(f"ERROR {d.name}: {e}")
+        print()
+
+def batch_apply():
+    dirs = find_all_person_dirs()
+    applied = 0
+    for d in dirs:
+        result_path = d / "_regenerate_result.json"
+        if not result_path.exists():
+            continue
+        try:
+            apply_result(d)
+            applied += 1
+        except Exception as e:
+            print(f"ERROR {d.name}: {e}")
+        print()
+    print(f"Applied {applied}/{len(dirs)}")
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="基于insights重新生成完整人格模型")
-    parser.add_argument("person_dir", help="人物目录路径")
+    parser = argparse.ArgumentParser(description="基于insights重新生成完整人格模型（两阶段）")
+    parser.add_argument("person_dir", nargs="?", help="人物目录路径")
     parser.add_argument("--apply", action="store_true", help="应用_regenerate_result.json")
+    parser.add_argument("--all", action="store_true", help="批量操作所有人物")
+    parser.add_argument("--list", action="store_true", help="列出所有待regenerate的人物")
     args = parser.parse_args()
+    
+    if args.list:
+        dirs = find_all_person_dirs()
+        for d in dirs:
+            pv3 = json.loads((d / "personality_v3.json").read_text())
+            ins = pv3.get("insights_with_evidence", [])
+            has_result = (d / "_regenerate_result.json").exists()
+            meta = pv3.get("_distill_meta", {})
+            is_regen = "regenerated" in meta.get("version", "")
+            status = "✅已regen" if is_regen else ("⏳有result" if has_result else "⬜待处理")
+            print(f"{status} {d.name}: {len(ins)} insights")
+        return
+    
+    if args.all:
+        if args.apply:
+            batch_apply()
+        else:
+            batch_generate()
+        return
+    
+    if not args.person_dir:
+        parser.print_help()
+        sys.exit(1)
     
     if args.apply:
         apply_result(args.person_dir)

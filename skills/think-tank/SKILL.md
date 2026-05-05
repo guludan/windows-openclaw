@@ -176,17 +176,26 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 
 逐篇蒸馏只生成 insights_with_evidence，顶层字段（brief, school, domains, logical_tracing等）可能过时。合并后需要重新生成：
 
+**两阶段处理（insights > 100时自动启用）：**
+- **阶段1（本地压缩）**：按dim分组 → claim关键词重叠度聚类（阈值0.55）→ 每簇选最长claim为代表 → 压缩到~90条
+- **阶段2（LLM生成）**：用压缩后的insights一次性生成完整人格模型（insights ≤100时跳过阶段1）
+
+**为什么需要两阶段：** insights超过100条时prompt会超过20KB（毛泽东615条=88KB），超出LLM有效处理范围。压缩后避免了分批处理导致的字段合并冲突问题。
+
 **regenerate会做归纳合并**：LLM将同一论点的多条insight合并，输出 `merged_from` 索引，代码自动合并原始evidence。目标压缩到30-60%，evidence总量不变。
 
 #### 三步流程
 
 **Step 4b-1: 生成prompt**（代码层，不调LLM）
 ```bash
+# 单人
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py <person_dir>
+# 批量（所有有v3的人物）
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py --all
 ```
 - 输入：`personality_v3.json` 中的 insights_with_evidence
-- 输出：`_regenerate_prompt.md`（包含insights摘要：claim + dim + source_files，**不含excerpt**，控制prompt大小）
-- ⚠️ prompt中只有insight摘要，不含完整evidence，所以LLM无法输出evidence
+- insights > 100：自动本地压缩（按dim分组+关键词聚类），保存 `_regenerate_merge_map.json` 供apply展开
+- 输出：`_regenerate_prompt.md`（包含insights摘要，**不含excerpt**，控制prompt大小）
 
 **Step 4b-2: spawn子session调LLM**
 ```
@@ -195,17 +204,21 @@ spawn子session → 读 _regenerate_prompt.md → 输出 _regenerate_result.json
 - LLM任务：①归纳合并相似insights ②生成顶层字段（brief, school, domains等）
 - LLM输出格式：每条insight包含 `merged_from` 数组（原始insight的index）
 - ⚠️ `_regenerate_result.json` 是**中间产物**，不是最终人格文件，不含完整evidence
-- ⚠️ LLM可能输出非法JSON（claim中有未转义引号），apply时会自动尝试修复
 
 **Step 4b-3: apply合并**
 ```bash
+# 单人
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py <person_dir> --apply
+# 批量
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/regenerate_personality.py --all --apply
 ```
 - 读取 `_regenerate_result.json`（LLM的合并方案）
 - 根据 `merged_from` 索引，从原始 `personality_v3.json` 中提取完整evidence合并到对应insight
+- 两阶段模式：自动展开压缩映射，确保所有原始insights被覆盖
 - 遗漏的原始insight自动原样保留
 - 旧文件自动备份为 `personality_v3.json.bak.{timestamp}`
 - 输出：更新后的 `personality_v3.json`（最终人格文件）
+- 清理临时文件（prompt、result、merge_map）
 
 #### 数据流图
 ```

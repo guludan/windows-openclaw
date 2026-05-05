@@ -42,7 +42,7 @@
 | 质量评分 | `skills/think-tank/scripts/quality_check_llm.py` | batch_size=8 |
 | 蒸馏 | `skills/think-tank/scripts/_batch_distill.py` | `--per-file` → `--merge-per-file` |
 | 增量蒸馏 | `skills/think-tank/scripts/incremental_distill.py` | `--auto` |
-| 重新生成人格 | `skills/think-tank/scripts/regenerate_personality.py` | `--apply` |
+| 重新生成人格 | `skills/think-tank/scripts/regenerate_personality.py` | `--all`批量, `--apply`, 两阶段(>100ins自动压缩) |
 | 入库 | `skills/think-tank/scripts/ingest_v3.py` | 严禁并发 |
 | 报告生成 | `skills/think-tank/scripts/think_tank_pipeline_v3.py` | |
 
