@@ -5,11 +5,11 @@
 - 项目方向：① **人格智库** (think-tank) ② **人格还原** (person-replication)
 - GitHub：guludan
 
-## 智库项目状态（2026-04-30）
+## 智库项目状态（2026-05-06）
 
 ### 数据目录
 - 数据根：`/mnt/d/data/think-tank-data/`
-- 向量库：`_chromadb/lacan_db/`（需清空重建）
+- 向量库：`_chromadb/lacan_db/`（6集合架构，已重建）
 - 报告：`reports/`
 - 人物映射：`personalities/name_map.json`（150人）
 
@@ -20,13 +20,18 @@
 ### 质检状态：100% ✅
 - Total: 3922, Kept: 3055, Discarded: 867
 
-### 蒸馏状态：待开始
-- 质检完成后待蒸馏
+### 蒸馏+入库状态：已入库51人 ✅
+- 45人（首批）+ 6人（补跑：林彪、凯文·米特尼克、阿莫斯·特沃斯基、丹尼尔·卡尼曼、基思·斯坦诺维奇、Eugene_Fama）
+- 6集合架构：personas/cognitive/claims/evidence/tracing/tension
+- 向量总数约9000+
 
-### 数据清理（2026-04-30完成）
-- materials/根目录清零，json全部清理，init_db不注册json
-- 文件名特殊字符已sanitize
-- 搜索缓存归档到_search_cache/
+### 2026-05-05~06 蒸馏流水线修复
+- 巨型段落切分bug：单段>15KB按句子再切分（commit 67165ab）
+- 假excerpt过滤：标题/References自动过滤（commit d975213）
+- 两阶段regenerate压缩bug：未合并压缩代表保留（commit 9347a7a）
+- dim维度丢失：按比例截断确保每个dim有代表（commit 6bf6fd7）
+- regenerate模板：禁止跨dim合并（commit 2108cb7）
+- 6人假excerpt清理+重新入库：周恩来、徐向前、林彪、邓小平、马丁·塞利格曼、卡尔·罗杰斯
 
 ## 📦 模块索引（任务→模块→函数 映射）
 
