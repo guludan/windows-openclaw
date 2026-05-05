@@ -229,6 +229,7 @@ def apply_result(person_dir):
         merged_from = new_ins.get("merged_from", [])
         if merged_from and original_iwe:
             all_evidence = []
+            dims_from_orig = []
             for idx in merged_from:
                 if 0 < idx <= len(original_iwe):
                     orig = original_iwe[idx - 1]
@@ -236,14 +237,36 @@ def apply_result(person_dir):
                         key = (ev.get("excerpt", ""), ev.get("source_file", ""))
                         if not any((e.get("excerpt", ""), e.get("source_file", "")) == key for e in all_evidence):
                             all_evidence.append(ev)
+                    if orig.get("dim"):
+                        dims_from_orig.append(orig["dim"])
                     used_indices.add(idx)
+            # dim: LLM输出优先，否则从原始insights取众数
+            final_dim = new_ins.get("dim", "")
+            if not final_dim and dims_from_orig:
+                from collections import Counter
+                final_dim = Counter(dims_from_orig).most_common(1)[0][0]
             merged_iwe.append({
                 "claim": new_ins.get("claim", ""),
-                "dim": new_ins.get("dim", ""),
+                "dim": final_dim,
                 "evidence": all_evidence
             })
         else:
-            merged_iwe.append(new_ins)
+            # 无merged_from的insight（LLM新增或遗漏）
+            # 如果没有evidence，标记为待清理
+            item = {
+                "claim": new_ins.get("claim", ""),
+                "dim": new_ins.get("dim", ""),
+                "evidence": new_ins.get("evidence", [])
+            }
+            if not item["evidence"]:
+                item["_no_original_evidence"] = True
+            merged_iwe.append(item)
+    
+    # 清理LLM编造的无evidence insights
+    fabricated = sum(1 for i in merged_iwe if i.get("_no_original_evidence"))
+    if fabricated > 0:
+        merged_iwe = [i for i in merged_iwe if not i.get("_no_original_evidence")]
+        print(f"  🧹 清理{fabricated}条LLM编造insight（无原始evidence）")
     
     # 如果有两阶段merge_map，将压缩映射中的原始indices也标记为已使用
     if has_merge_map and compacted_info:
