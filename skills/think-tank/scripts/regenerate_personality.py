@@ -93,9 +93,40 @@ def compact_insights(iwe, target_max=100):
                  "communication": 4, "logical_tracing": 5, "tension": 6, "situational": 7}
     compacted.sort(key=lambda x: (dim_order.get(x.get("dim", ""), 9), -x.get("_cluster_size", 1)))
     
-    # 如果压缩后仍然超过target，截断低优先级的
+    # 如果压缩后仍然超过target，按比例截断确保每个dim都有代表
     if len(compacted) > target_max:
-        compacted = compacted[:target_max]
+        # 按比例分配名额给每个dim
+        from collections import Counter
+        dim_counts = Counter(c.get("dim", "unknown") for c in compacted)
+        total = len(compacted)
+        dim_quota = {}
+        remaining = target_max
+        # 每个dim至少保留1个（如果有的话），然后按比例分配剩余
+        for dim in dim_counts:
+            min_quota = 1
+            dim_quota[dim] = min_quota
+            remaining -= min_quota
+        # 按比例分配剩余名额
+        if remaining > 0:
+            for dim, cnt in dim_counts.items():
+                extra = max(0, round(remaining * cnt / total))
+                dim_quota[dim] += extra
+        
+        # 按quota从每个dim取前N条
+        final = []
+        dim_used = Counter()
+        for c in compacted:
+            dim = c.get("dim", "unknown")
+            if dim_used[dim] < dim_quota.get(dim, 0):
+                final.append(c)
+                dim_used[dim] += 1
+        # 如果还有空位，补上
+        if len(final) < target_max:
+            used_ids = set(id(c) for c in final)
+            for c in compacted:
+                if id(c) not in used_ids and len(final) < target_max:
+                    final.append(c)
+        compacted = final
     
     return compacted
 
