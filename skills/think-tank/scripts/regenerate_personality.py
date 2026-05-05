@@ -284,13 +284,33 @@ def apply_result(person_dir):
     
     # 检查遗漏
     if original_iwe and used_indices:
-        all_expected = set(range(1, len(original_iwe) + 1))
-        missed = all_expected - used_indices
-        if missed:
-            for idx in sorted(missed):
-                orig = original_iwe[idx - 1]
-                merged_iwe.append(orig)
-            print(f"  ⚠️ {len(missed)} insights未被合并，已原样保留")
+        if has_merge_map and compacted_info:
+            # 两阶段模式：保留未合并的压缩代表，不展开回原始insights
+            compacted_list = compacted_info.get("compacted", [])
+            missed_compacted = [c for c in compacted_list if c["index"] not in used_indices]
+            if missed_compacted:
+                for c in missed_compacted:
+                    # 保留压缩代表的claim，合并其包含的所有原始evidence
+                    all_ev = []
+                    for orig_idx in c.get("_merged_from", [c["index"]]):
+                        if 0 < orig_idx <= len(original_iwe):
+                            for ev in original_iwe[orig_idx - 1].get("evidence", []):
+                                all_ev.append(ev)
+                    merged_iwe.append({
+                        "claim": c.get("claim", ""),
+                        "dim": c.get("dim", ""),
+                        "evidence": all_ev
+                    })
+                print(f"  ℹ️ {len(missed_compacted)} 个压缩代表未被LLM合并，已保留（含合并后evidence）")
+        else:
+            # 单阶段模式：原始insights未被合并的逐条保留
+            all_expected = set(range(1, len(original_iwe) + 1))
+            missed = all_expected - used_indices
+            if missed:
+                for idx in sorted(missed):
+                    orig = original_iwe[idx - 1]
+                    merged_iwe.append(orig)
+                print(f"  ⚠️ {len(missed)} insights未被合并，已原样保留")
     
     new_data["insights_with_evidence"] = merged_iwe
     new_data["_distill_meta"] = pv3.get("_distill_meta", {})
