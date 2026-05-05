@@ -309,6 +309,24 @@ def merge_per_file_results(person_dir: Path) -> None:
         print("错误: 没有有效的 insights 数据", file=sys.stderr)
         sys.exit(1)
 
+    # === excerpt质量过滤 ===
+    # 过滤掉 excerpt 太短（<30字，大概率是标题）或为空字符串的假evidence
+    before_ev = sum(len(ins.get('evidence', [])) for ins in all_insights)
+    for ins in all_insights:
+        if 'evidence' in ins and isinstance(ins['evidence'], list):
+            ins['evidence'] = [ev for ev in ins['evidence']
+                              if isinstance(ev, dict)
+                              and ev.get('excerpt', '')
+                              and len(ev['excerpt'].strip()) >= 30]
+    after_ev = sum(len(ins.get('evidence', [])) for ins in all_insights)
+    removed_ev = before_ev - after_ev
+    # 过滤掉无evidence的空insight（可能是LLM编造的）
+    before_ins = len(all_insights)
+    all_insights = [ins for ins in all_insights if ins.get('evidence')]
+    after_ins = len(all_insights)
+    if removed_ev > 0 or before_ins != after_ins:
+        print(f"  excerpt质量过滤: 移除 {removed_ev} 条短/空excerpt, 移除 {before_ins - after_ins} 条无evidence的insight")
+
     print(f"\n总计: {len(all_insights)} insights")
 
     # Save per-file distillate results to distillates/ directories
