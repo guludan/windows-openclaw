@@ -56,6 +56,32 @@ def split_material_into_chunks(content: str, filename: str, max_chars: int = 150
     for para in paragraphs:
         para_len = len(para) + 2  # 加上 \n\n
 
+        # 如果单个段落超过max_chars，按句子强制切分
+        if para_len > max_chars:
+            # 按中英文句号、问号、感叹号切分
+            import re
+            sentences = re.split(r'(?<=[。.？?！!])\s*', para)
+            for sent in sentences:
+                sent = sent.strip()
+                if not sent:
+                    continue
+                sent_len = len(sent) + 2
+                if current_length + sent_len > max_chars and current_chunk:
+                    chunk_content = '\n\n'.join(current_chunk)
+                    chunks.append({
+                        "index": chunk_index, "filename": filename,
+                        "chunk_suffix": f"_chunk{chunk_index}",
+                        "result_filename": f"{filename}_chunk{chunk_index}.json",
+                        "content": chunk_content, "char_count": len(chunk_content), "total_chunks": 0
+                    })
+                    chunk_index += 1
+                    overlap_buffer = current_chunk[-overlap_paragraphs:] if len(current_chunk) >= overlap_paragraphs else current_chunk[:]
+                    current_chunk = list(overlap_buffer)
+                    current_length = sum(len(p) + 2 for p in current_chunk)
+                current_chunk.append(sent)
+                current_length += sent_len
+            continue
+
         # 如果当前段落加入后会超出限制，且已有内容，则完成当前chunk
         if current_length + para_len > max_chars and current_chunk:
             # 保存当前chunk
