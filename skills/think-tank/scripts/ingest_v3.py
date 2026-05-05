@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """
-ingest_v3.py — 从 personality_v3.json 重建向量库（单人）
+ingest_v3.py — 从 personality_v3.json 入库到向量库（单人/全部）
+
+集合架构（v5）:
+  personas   — 人物匹配（按领域/维度分条，避免跨学科混合）
+  cognitive  — 认知模式（思维风格/推理/偏差/决策模式）
+  claims     — 具体观点（insights_with_evidence.claim + evidence_ids）
+  evidence   — 原文证据摘录
+  tracing    — 思想谱系（lineage/turning_points/grounding/collaborations/renunciations/adversaries）
+  tension    — 内在矛盾
 
 用法:
     python3 ingest_v3.py <person_name> <person_dir>
-    python3 ingest_v3.py 毛泽东 /mnt/d/data/think-tank-data/personalities/military/毛泽东
-
-Embedding: 本地 Ollama bge-m3 (1024维)
-DB路径: /mnt/d/data/think-tank-data/_chromadb/lacan_db
+    python3 ingest_v3.py --all
 """
 
 import json, sys, os, gc, time, re, hashlib
@@ -22,14 +27,11 @@ DB_PATH = Path("/mnt/d/data/think-tank-data/_chromadb/lacan_db")
 OLLAMA_URL = "http://172.26.0.1:11434/api/embed"
 OLLAMA_MODEL = "bge-m3:latest"
 
-COLLECTION_SPECS = {
-    "core_profile":  "人格核心摘要 (brief+school+domains+evolution)",
-    "insights":      "深层逻辑 (信念/认知/框架/决策/溯源)",
-    "evidence":      "被蒸馏标注的原文证据片段",
-}
+COLLECTION_NAMES = [
+    "personas", "cognitive", "claims", "evidence", "tracing", "tension"
+]
 
-# Lacan 维度集合（暂时不用，保留结构）
-# "unconscious", "repetition", "transference", "drive", "tension"
+BATCH_SIZE = 4
 
 
 def embed_texts(texts):
@@ -42,311 +44,32 @@ def embed_texts(texts):
             if r.status_code == 200:
                 return r.json()["embeddings"]
             print(f"  Embed API {r.status_code}, retry {attempt+1}...", flush=True)
-            time.sleep(3)
+            time.sleep(5)
         except Exception as e:
             print(f"  Embed error: {e}, retry {attempt+1}...", flush=True)
-            time.sleep(5)
+            time.sleep(10)
     return []
 
 
 def is_meaningful(text, min_len=30):
-    """检查文本是否有实际意义（过滤空值/纯标记/噪音）"""
+    """检查文本是否有实际意义"""
     if not text or len(text.strip()) < min_len:
         return False
-    # 过滤纯标记行（如 "论敌交锋: -"）
     stripped = text.strip()
     if stripped.endswith(':') or stripped.endswith('：'):
         return False
-    if stripped.endswith(': -') or stripped.endswith(': —') or stripped.endswith('：—'):
-        return False
-    # 过滤纯结构无内容
     if re.match(r'^\[.*?\]\s+\S+:\s*[-—]?\s*$', stripped):
         return False
     return True
 
 
-def extract_insights(pv3, person_name):
-    """从 personality_v3.json 提取有意义的深层逻辑片段
-
-    目标：RAG检索能回答"这个人是怎么思考的"、"依据是什么"
-    每条记录必须包含具体内容 + 来源
-    """
-    chunks = []
-
-    def add(text, source, dim):
-        if is_meaningful(text):
-            chunks.append({'text': text, 'source': source, 'dim': dim})
-
-    # === 立场锚点 ===
-    sa = pv3.get('stance_anchors', {})
-    if isinstance(sa, dict):
-        add(f"[{person_name}] 核心信念: {sa.get('core_belief', '')}", 'core_belief', 'stance')
-        add(f"[{person_name}] 方法论: {sa.get('methodology', '')}", 'methodology', 'stance')
-        for d in sa.get('key_debates', []):
-            add(f"[{person_name}] 核心争议: {d}", 'key_debate', 'stance')
-        for i, v in enumerate(sa.get('value_hierarchy', [])):
-            add(f"[{person_name}] 价值排序{i+1}: {v}", 'value_hierarchy', 'stance')
-
-    # === 认知模式 ===
-    cp = pv3.get('cognitive_patterns', {})
-    if isinstance(cp, dict):
-        add(f"[{person_name}] 思维风格: {cp.get('thinking_style', '')}", 'thinking_style', 'cognitive')
-        add(f"[{person_name}] 推理方式: {cp.get('reasoning_approach', '')}", 'reasoning', 'cognitive')
-        for b in cp.get('typical_biases', []):
-            add(f"[{person_name}] 典型偏差: {b}", 'bias', 'cognitive')
-        for s in cp.get('intellectual_strengths', []):
-            add(f"[{person_name}] 核心优势: {s}", 'strength', 'cognitive')
-        for b in cp.get('intellectual_blindspots', []):
-            add(f"[{person_name}] 认知盲区: {b}", 'blindspot', 'cognitive')
-
-    # === 分析框架 ===
-    for af in pv3.get('analytical_frameworks', []):
-        if isinstance(af, dict) and af.get('name'):
-            comps = ', '.join(af.get('components', []))
-            app = af.get('application', '')
-            add(f"[{person_name}] 框架「{af['name']}」: {comps} | 应用: {app}", 'framework', 'method')
-            if af.get('source_ref'):
-                chunks[-1]['text'] += f" [来源: {af['source_ref']}]"
-
-    # === 决策模式 ===
-    dp = pv3.get('decision_patterns', {})
-    if isinstance(dp, dict):
-        for key, label in [('risk_tolerance','风险偏好'), ('information_processing','信息处理'),
-                           ('temporal_orientation','时间取向'), ('conflict_resolution','冲突解决')]:
-            if dp.get(key):
-                add(f"[{person_name}] 决策-{label}: {dp[key]}", f'decision_{key}', 'decision')
-
-    # === 沟通风格 ===
-    csp = pv3.get('communication_profile', {})
-    if isinstance(csp, dict):
-        add(f"[{person_name}] 沟通风格: {csp.get('style', '')}", 'comm_style', 'communication')
-        for t in csp.get('persuasion_tactics', []):
-            add(f"[{person_name}] 说服策略: {t}", 'persuasion', 'communication')
-
-    # === 核心格言 ===
-    for a in pv3.get('key_aphorisms', []):
-        add(f"[{person_name}] 格言: {a}", 'aphorism', 'communication')
-
-    # === 思想演变 ===
-    ev = pv3.get('evolution_trajectory', '')
-    if ev:
-        add(f"[{person_name}] 思想演变: {ev}", 'evolution', 'stance')
-
-    # === logical_tracing（v3核心 — 回答"是什么让这个人这么想"）===
-    lt = pv3.get('logical_tracing', {})
-    if not isinstance(lt, dict):
-        return chunks
-
-    add(f"[{person_name}] 逻辑溯源: {lt.get('summary', '')}", 'lt_summary', 'logical_tracing')
-
-    # lineage: dict {inherited, transformed, ruptured, converged}
-    lineage = lt.get('lineage', {})
-    if isinstance(lineage, dict):
-        for category, label in [('inherited','继承'), ('transformed','改造'), ('ruptured','断裂'), ('converged','融合')]:
-            items = lineage.get(category, [])
-            if not isinstance(items, list):
-                continue
-            for item in items:
-                if not isinstance(item, dict):
-                    continue
-                parts = [item.get('source', ''), item.get('nature', ''), item.get('description', '')]
-                text = ' | '.join(p for p in parts if p)
-                ref = item.get('source_ref', '')
-                if text and ref:
-                    add(f"[{person_name}] 谱系-{label}: {text} [来源: {ref}]", f'lineage_{category}', 'logical_tracing')
-                elif text:
-                    add(f"[{person_name}] 谱系-{label}: {text}", f'lineage_{category}', 'logical_tracing')
-
-    # turning_points: list of dicts
-    for i, tp in enumerate(lt.get('turning_points', [])):
-        if not isinstance(tp, dict):
-            continue
-        parts = []
-        if tp.get('title'): parts.append(tp['title'])
-        if tp.get('period'): parts.append(f"({tp['period']})")
-        if tp.get('narrative'): parts.append(tp['narrative'])
-        if tp.get('catalyst'): parts.append(f"催化剂: {tp['catalyst']}")
-        if tp.get('significance'): parts.append(f"意义: {tp['significance']}")
-        text = ' '.join(parts)
-        ref = tp.get('source_ref', '')
-        if text and ref:
-            add(f"[{person_name}] 转折{i+1}: {text} [来源: {ref}]", 'turning_point', 'logical_tracing')
-        elif text:
-            add(f"[{person_name}] 转折{i+1}: {text}", 'turning_point', 'logical_tracing')
-
-    # grounding: dict {embodied, contextual}
-    grounding = lt.get('grounding', {})
-    if isinstance(grounding, dict):
-        for category, label in [('embodied','肉身经历'), ('contextual','语境沉浸')]:
-            items = grounding.get(category, [])
-            if not isinstance(items, list):
-                continue
-            for item in items:
-                if not isinstance(item, dict):
-                    continue
-                parts = [item.get('context', ''), item.get('role', ''), item.get('impact', '')]
-                text = ' | '.join(p for p in parts if p)
-                ref = item.get('source_ref', '')
-                if text and ref:
-                    add(f"[{person_name}] 扎根-{label}: {text} [来源: {ref}]", f'grounding_{category}', 'logical_tracing')
-                elif text:
-                    add(f"[{person_name}] 扎根-{label}: {text}", f'grounding_{category}', 'logical_tracing')
-
-    # collaborations: list of dicts {with, nature, product, significance, source_ref}
-    for item in lt.get('collaborations', []):
-        if not isinstance(item, dict):
-            continue
-        parts = [f"与{item.get('with','')}", item.get('nature',''), item.get('product',''), item.get('significance','')]
-        text = ' | '.join(p for p in parts if p and p != f"与")
-        ref = item.get('source_ref', '')
-        if text and ref:
-            add(f"[{person_name}] 合作: {text} [来源: {ref}]", 'collaboration', 'logical_tracing')
-        elif text:
-            add(f"[{person_name}] 合作: {text}", 'collaboration', 'logical_tracing')
-
-    # renunciations: list of dicts {what, reason, aftermath, source_ref}
-    for item in lt.get('renunciations', []):
-        if not isinstance(item, dict):
-            continue
-        parts = [item.get('what',''), item.get('reason',''), item.get('aftermath','')]
-        text = ' | '.join(p for p in parts if p)
-        ref = item.get('source_ref', '')
-        if text and ref:
-            add(f"[{person_name}] 拒绝: {text} [来源: {ref}]", 'renunciation', 'logical_tracing')
-        elif text:
-            add(f"[{person_name}] 拒绝: {text}", 'renunciation', 'logical_tracing')
-
-    # adversaries: list of dicts {who, axis, dynamic, source_ref}
-    for item in lt.get('adversaries', []):
-        if not isinstance(item, dict):
-            continue
-        parts = [item.get('who',''), item.get('axis',''), item.get('dynamic','')]
-        text = ' | '.join(p for p in parts if p)
-        ref = item.get('source_ref', '')
-        if text and ref:
-            add(f"[{person_name}] 论敌: {text} [来源: {ref}]", 'adversary', 'logical_tracing')
-        elif text:
-            add(f"[{person_name}] 论敌: {text}", 'adversary', 'logical_tracing')
-
-    # tension_explanation: dict {note, tracing}
-    te = lt.get('tension_explanation', {})
-    if isinstance(te, dict) and te.get('tracing'):
-        add(f"[{person_name}] 张力溯源: {te['tracing']}", 'logical_tracing', 'tension')
-
-    return chunks
-
-
-def ingest_evidence(person_name, category, pv3, cols):
-    """从 personality_v3.json 的 insights_with_evidence 字段入库到 insights 和 evidence 集合"""
-    iwe = pv3.get('insights_with_evidence', [])
-    if not iwe:
-        print("  evidence: 0 (insights_with_evidence字段为空)", flush=True)
-        return 0, 0
-
-    evidence_col = cols["evidence"]
-
-    # Phase 1: 先入库所有 evidence 条目，收集 ID 映射
-    ev_texts, ev_ids, ev_metas = [], [], []
-    # Map: (insight_index, ev_index_within_insight) -> ev_id
-    ev_id_map = {}
-    global_ev_idx = 0
-
-    for i, ins in enumerate(iwe):
-        if not isinstance(ins, dict):
-            continue
-        claim = ins.get('claim', '')
-        dim = ins.get('dim', '')
-        evidences = ins.get('evidence', [])
-        for ei, ev in enumerate(evidences):
-            if not isinstance(ev, dict):
-                continue
-            excerpt = ev.get('excerpt', '')
-            if not excerpt or len(excerpt.strip()) < 20:
-                continue
-            ev_id = f"{person_name}_ev_{global_ev_idx:03d}"
-            ev_id_map[(i, ei)] = ev_id
-            source_file = ev.get('source_file', '')
-            location = ev.get('location', '')
-            ev_texts.append(excerpt)
-            ev_ids.append(ev_id)
-            ev_metas.append({
-                "person": person_name,
-                "category": category,
-                "source_file": source_file,
-                "location": location,
-                "insight_id": f"{person_name}_ins_{i:03d}",
-                "material_id": f"{person_name}_mat_{hashlib.md5(source_file.encode()).hexdigest()[:8]}" if source_file else "",
-            })
-            global_ev_idx += 1
-
-    # 批量 embed evidence
-    for bi in range(0, len(ev_texts), 8):
-        batch = ev_texts[bi:bi+8]
-        embeds = embed_texts(batch)
-        if embeds and len(embeds) == len(batch):
-            evidence_col.add(
-                documents=batch,
-                embeddings=embeds,
-                ids=ev_ids[bi:bi+8],
-                metadatas=ev_metas[bi:bi+8]
-            )
-        gc.collect()
-
-    # Phase 2: 入库 insights (每个 claim 一条，关联 evidence_ids)
-    ins_texts, ins_ids, ins_metas = [], [], []
-    for i, ins in enumerate(iwe):
-        if not isinstance(ins, dict):
-            continue
-        claim = ins.get('claim', '')
-        if not claim or len(claim.strip()) < 20:
-            continue
-        dim = ins.get('dim', '')
-        evidences = ins.get('evidence', [])
-        # 收集关联的 evidence IDs
-        linked_ev_ids = []
-        for ei in range(len(evidences)):
-            if (i, ei) in ev_id_map:
-                linked_ev_ids.append(ev_id_map[(i, ei)])
-        first_source = evidences[0].get('source_file', '') if evidences else ''
-
-        ins_id = f"{person_name}_ins_{i:03d}"
-        ins_texts.append(claim)
-        ins_ids.append(ins_id)
-        ins_metas.append({
-            "person": person_name,
-            "category": category,
-            "dim": dim,
-            "claim": claim[:200],
-            "evidence_ids": ",".join(linked_ev_ids),
-            "source_file": first_source,
-        })
-
-    # 批量 embed insights
-    for bi in range(0, len(ins_texts), 8):
-        batch = ins_texts[bi:bi+8]
-        embeds = embed_texts(batch)
-        if embeds and len(embeds) == len(batch):
-            cols["insights"].add(
-                documents=batch,
-                embeddings=embeds,
-                ids=ins_ids[bi:bi+8],
-                metadatas=ins_metas[bi:bi+8]
-            )
-        gc.collect()
-
-    print(f"  evidence: {len(ev_ids)} excerpts, {len(ins_ids)} insights", flush=True)
-    return len(ins_ids), len(ev_ids)
-
-
-def load_v3(pv3_path):
-    """加载并修复 JSON"""
-    import re as _re
-    raw = pv3_path.read_text(encoding='utf-8')
-    raw = _re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f]', '', raw)
+def safe_json_load(path):
+    """加载JSON，容错"""
+    raw = path.read_text(encoding='utf-8', errors='replace')
+    raw = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f]', '', raw)
     try:
         return json.loads(raw)
     except json.JSONDecodeError:
-        # 容错：修复值内未转义的引号
         chars = list(raw)
         in_str = False
         for i, ch in enumerate(chars):
@@ -365,6 +88,368 @@ def load_v3(pv3_path):
         return json.loads(''.join(chars))
 
 
+def _batch_add(collection, texts, ids, metas):
+    """分批embed+写入集合"""
+    total = 0
+    for bi in range(0, len(texts), BATCH_SIZE):
+        batch_t = texts[bi:bi+BATCH_SIZE]
+        embeds = embed_texts(batch_t)
+        if embeds and len(embeds) == len(batch_t):
+            collection.add(
+                documents=batch_t,
+                embeddings=embeds,
+                ids=ids[bi:bi+BATCH_SIZE],
+                metadatas=metas[bi:bi+BATCH_SIZE]
+            )
+            total += len(embeds)
+        gc.collect()
+        time.sleep(1)  # 让ollama喘息
+    return total
+
+
+# ============================================================
+# 集合1: personas — 按领域/维度分条存储
+# ============================================================
+def extract_personas(pv3, person_name, category):
+    """
+    从personality_v3.json提取人物匹配信息。
+    不做一条大汇总，按领域/维度分条避免跨学科幻觉。
+    """
+    chunks = []
+    school = pv3.get('school', '')
+    evolution = pv3.get('evolution_trajectory', '')
+
+    def add(text, domain_label):
+        if is_meaningful(text, min_len=20):
+            chunks.append({
+                'text': text,
+                'domain': domain_label,
+            })
+
+    # 1. 基础定位（brief+school）
+    brief = pv3.get('brief', '')
+    if brief and school:
+        add(f"[{person_name}] {brief} | 学派: {school}", 'overview')
+
+    # 2. 每个领域单独一条
+    for dom in pv3.get('domains', []):
+        # 从stance_anchors找该领域相关的信念
+        sa = pv3.get('stance_anchors', {})
+        if not isinstance(sa, dict):
+            sa = {}
+        parts = [f"[{person_name}] 领域: {dom}"]
+        if school:
+            parts.append(f"学派: {school}")
+        if sa.get('core_belief'):
+            parts.append(f"核心信念: {sa['core_belief']}")
+        if sa.get('methodology'):
+            parts.append(f"方法论: {sa['methodology']}")
+        if evolution:
+            parts.append(f"演变: {evolution}")
+        add(' | '.join(parts), dom)
+
+    # 3. 思想演变单独一条（如果有实质内容）
+    if evolution and is_meaningful(evolution, min_len=40):
+        add(f"[{person_name}] 思想演变轨迹: {evolution}", 'evolution')
+
+    # 4. 从logical_tracing提取关键时期/事件（按turning_point拆）
+    lt = pv3.get('logical_tracing', {})
+    if isinstance(lt, dict):
+        for tp in lt.get('turning_points', []):
+            if not isinstance(tp, dict):
+                continue
+            parts = []
+            if tp.get('title'): parts.append(tp['title'])
+            if tp.get('period'): parts.append(f"({tp['period']})")
+            if tp.get('narrative'): parts.append(tp['narrative'])
+            text = ' '.join(parts)
+            if is_meaningful(text, min_len=30):
+                domain_label = tp.get('period', 'turning_point')
+                add(f"[{person_name}] 人生转折: {text}", domain_label)
+
+    # 5. 从grounding提取关键经历
+    grounding = lt.get('grounding', {}) if isinstance(lt, dict) else {}
+    if isinstance(grounding, dict):
+        for cat in ['embodied', 'contextual']:
+            for item in grounding.get(cat, []):
+                if not isinstance(item, dict):
+                    continue
+                ctx = item.get('context', '')
+                role = item.get('role', '')
+                impact = item.get('impact', '')
+                text = ' | '.join(p for p in [ctx, role, impact] if p)
+                if is_meaningful(text, min_len=30):
+                    add(f"[{person_name}] 经历: {text}", ctx or 'experience')
+
+    return chunks
+
+
+# ============================================================
+# 集合2: cognitive — 认知模式
+# ============================================================
+def extract_cognitive(pv3, person_name):
+    """提取思维风格、推理方式、偏差、决策模式等"""
+    chunks = []
+
+    def add(text, dim):
+        if is_meaningful(text):
+            chunks.append({'text': text, 'dim': dim})
+
+    cp = pv3.get('cognitive_patterns', {})
+    if isinstance(cp, dict):
+        add(f"[{person_name}] 思维风格: {cp.get('thinking_style', '')}", 'thinking_style')
+        add(f"[{person_name}] 推理方式: {cp.get('reasoning_approach', '')}", 'reasoning')
+        for b in cp.get('typical_biases', []):
+            add(f"[{person_name}] 典型偏差: {b}", 'bias')
+        for s in cp.get('intellectual_strengths', []):
+            add(f"[{person_name}] 核心优势: {s}", 'strength')
+        for b in cp.get('intellectual_blindspots', []):
+            add(f"[{person_name}] 认知盲区: {b}", 'blindspot')
+
+    # 决策模式
+    dp = pv3.get('decision_patterns', {})
+    if isinstance(dp, dict):
+        for key, label in [('risk_tolerance','风险偏好'), ('information_processing','信息处理'),
+                           ('temporal_orientation','时间取向'), ('conflict_resolution','冲突解决')]:
+            if dp.get(key):
+                add(f"[{person_name}] 决策-{label}: {dp[key]}", f'decision_{key}')
+
+    # 分析框架
+    for af in pv3.get('analytical_frameworks', []):
+        if isinstance(af, dict) and af.get('name'):
+            comps = ', '.join(af.get('components', []))
+            app = af.get('application', '')
+            add(f"[{person_name}] 框架「{af['name']}」: {comps} | 应用: {app}", 'framework')
+
+    # 沟通风格
+    csp = pv3.get('communication_profile', {})
+    if isinstance(csp, dict):
+        add(f"[{person_name}] 沟通风格: {csp.get('style', '')}", 'comm_style')
+        for t in csp.get('persuasion_tactics', []):
+            add(f"[{person_name}] 说服策略: {t}", 'persuasion')
+
+    # 核心格言
+    for a in pv3.get('key_aphorisms', []):
+        add(f"[{person_name}] 格言: {a}", 'aphorism')
+
+    return chunks
+
+
+# ============================================================
+# 集合3: claims — insights_with_evidence.claim
+# ============================================================
+def extract_claims(pv3, person_name, category):
+    """提取具体观点，带dim和evidence_ids"""
+    iwe = pv3.get('insights_with_evidence', [])
+    if not iwe:
+        return []
+
+    # 先建立evidence ID映射（与ingest_evidence一致）
+    chunks = []
+    for i, ins in enumerate(iwe):
+        if not isinstance(ins, dict):
+            continue
+        claim = ins.get('claim', '')
+        dim = ins.get('dim', '')
+        evidences = ins.get('evidence', [])
+        if not claim or len(claim.strip()) < 20:
+            continue
+
+        # 收集evidence IDs
+        ev_ids = []
+        for ei, ev in enumerate(evidences):
+            if isinstance(ev, dict) and ev.get('excerpt', ''):
+                ev_ids.append(f"{person_name}_ev_{len(ev_ids):03d}")
+
+        chunks.append({
+            'text': claim,
+            'dim': dim,
+            'evidence_count': len(evidences),
+            'evidence_ids': ','.join(ev_ids) if ev_ids else '',
+        })
+
+    return chunks
+
+
+# ============================================================
+# 集合4: evidence — 原文摘录
+# ============================================================
+def extract_evidence(pv3, person_name, category):
+    """提取原文证据片段"""
+    iwe = pv3.get('insights_with_evidence', [])
+    if not iwe:
+        return []
+
+    chunks = []
+    global_ev_idx = 0
+    for i, ins in enumerate(iwe):
+        if not isinstance(ins, dict):
+            continue
+        dim = ins.get('dim', '')
+        evidences = ins.get('evidence', [])
+        for ei, ev in enumerate(evidences):
+            if not isinstance(ev, dict):
+                continue
+            excerpt = ev.get('excerpt', '')
+            if not excerpt or len(excerpt.strip()) < 20:
+                continue
+            source_file = ev.get('source_file', '')
+            location = ev.get('location', '')
+            # 检测语言
+            lang = 'en'
+            if any('\u4e00' <= c <= '\u9fff' for c in excerpt[:100]):
+                lang = 'zh'
+            chunks.append({
+                'text': excerpt,
+                'ev_id': f"{person_name}_ev_{global_ev_idx:03d}",
+                'dim': dim,
+                'source_file': source_file,
+                'location': location,
+                'insight_idx': i,
+                'language': lang,
+            })
+            global_ev_idx += 1
+
+    return chunks
+
+
+# ============================================================
+# 集合5: tracing — 思想谱系
+# ============================================================
+def extract_tracing(pv3, person_name):
+    """提取logical_tracing全部内容"""
+    lt = pv3.get('logical_tracing', {})
+    if not isinstance(lt, dict):
+        return []
+
+    chunks = []
+
+    def add(text, dim, period=''):
+        if is_meaningful(text, min_len=30):
+            chunks.append({'text': text, 'dim': dim, 'period': period})
+
+    add(f"[{person_name}] 逻辑溯源: {lt.get('summary', '')}", 'lt_summary')
+
+    # lineage
+    lineage = lt.get('lineage', {})
+    if isinstance(lineage, dict):
+        for cat, label in [('inherited','继承'), ('transformed','改造'), 
+                           ('ruptured','断裂'), ('converged','融合')]:
+            for item in lineage.get(cat, []):
+                if not isinstance(item, dict):
+                    continue
+                parts = [item.get('source', ''), item.get('nature', ''), item.get('description', '')]
+                text = ' | '.join(p for p in parts if p)
+                ref = item.get('source_ref', '')
+                if ref:
+                    text += f" [来源: {ref}]"
+                add(f"[{person_name}] 谱系-{label}: {text}", f'lineage_{cat}')
+
+    # turning_points
+    for tp in lt.get('turning_points', []):
+        if not isinstance(tp, dict):
+            continue
+        parts = []
+        if tp.get('title'): parts.append(tp['title'])
+        if tp.get('period'): parts.append(f"({tp['period']})")
+        if tp.get('narrative'): parts.append(tp['narrative'])
+        if tp.get('catalyst'): parts.append(f"催化剂: {tp['catalyst']}")
+        if tp.get('significance'): parts.append(f"意义: {tp['significance']}")
+        text = ' '.join(parts)
+        ref = tp.get('source_ref', '')
+        if ref:
+            text += f" [来源: {ref}]"
+        period = tp.get('period', '')
+        add(f"[{person_name}] 转折: {text}", 'turning_point', period)
+
+    # grounding
+    grounding = lt.get('grounding', {})
+    if isinstance(grounding, dict):
+        for cat, label in [('embodied','肉身经历'), ('contextual','语境沉浸')]:
+            for item in grounding.get(cat, []):
+                if not isinstance(item, dict):
+                    continue
+                parts = [item.get('context', ''), item.get('role', ''), item.get('impact', '')]
+                text = ' | '.join(p for p in parts if p)
+                ref = item.get('source_ref', '')
+                if ref:
+                    text += f" [来源: {ref}]"
+                add(f"[{person_name}] 扎根-{label}: {text}", f'grounding_{cat}')
+
+    # collaborations
+    for item in lt.get('collaborations', []):
+        if not isinstance(item, dict):
+            continue
+        parts = [f"与{item.get('with','')}", item.get('nature',''), item.get('product',''), item.get('significance','')]
+        text = ' | '.join(p for p in parts if p and p != "与")
+        ref = item.get('source_ref', '')
+        if ref:
+            text += f" [来源: {ref}]"
+        add(f"[{person_name}] 合作: {text}", 'collaboration')
+
+    # renunciations
+    for item in lt.get('renunciations', []):
+        if not isinstance(item, dict):
+            continue
+        parts = [item.get('what',''), item.get('reason',''), item.get('aftermath','')]
+        text = ' | '.join(p for p in parts if p)
+        ref = item.get('source_ref', '')
+        if ref:
+            text += f" [来源: {ref}]"
+        add(f"[{person_name}] 拒绝: {text}", 'renunciation')
+
+    # adversaries
+    for item in lt.get('adversaries', []):
+        if not isinstance(item, dict):
+            continue
+        parts = [item.get('who',''), item.get('axis',''), item.get('dynamic','')]
+        text = ' | '.join(p for p in parts if p)
+        ref = item.get('source_ref', '')
+        if ref:
+            text += f" [来源: {ref}]"
+        add(f"[{person_name}] 论敌: {text}", 'adversary')
+
+    return chunks
+
+
+# ============================================================
+# 集合6: tension
+# ============================================================
+def extract_tension(pv3, person_name):
+    """提取张力/矛盾"""
+    chunks = []
+    lt = pv3.get('logical_tracing', {})
+    if not isinstance(lt, dict):
+        return chunks
+
+    te = lt.get('tension_explanation', {})
+    if isinstance(te, dict) and te.get('tracing'):
+        chunks.append({
+            'text': f"[{person_name}] 张力溯源: {te['tracing']}",
+            'dim': 'tension_tracing',
+        })
+    if isinstance(te, dict) and te.get('note'):
+        chunks.append({
+            'text': f"[{person_name}] 内在矛盾: {te['note']}",
+            'dim': 'tension_note',
+        })
+
+    # stance_anchors里的key_debates也是张力来源
+    sa = pv3.get('stance_anchors', {})
+    if isinstance(sa, dict):
+        for d in sa.get('key_debates', []):
+            if is_meaningful(d, min_len=20):
+                chunks.append({
+                    'text': f"[{person_name}] 核心争议: {d}",
+                    'dim': 'debate',
+                })
+
+    return chunks
+
+
+# ============================================================
+# 主入口
+# ============================================================
 def run(person_name, person_dir):
     person_dir = Path(person_dir)
     pv3_path = person_dir / "personality_v3.json"
@@ -372,124 +457,150 @@ def run(person_name, person_dir):
         print(f"ERROR: {pv3_path} not found", flush=True)
         return
 
-    # 提取 category：person_dir 的父目录相对路径
-    # 例如: /mnt/d/data/think-tank-data/personalities/scholars/economics/Milton_Friedman -> scholars/economics
-    #       /mnt/d/data/think-tank-data/personalities/military/毛泽东 -> military
     category = str(person_dir.parent.relative_to(BASE_DIR)) if person_dir.parent != BASE_DIR else ""
-
-    pv3 = load_v3(pv3_path)
+    pv3 = safe_json_load(pv3_path)
     meta = pv3.get('_distill_meta', {})
     print(f"Ingesting {person_name}... ({meta.get('source_count','?')} sources)", flush=True)
 
     os.makedirs(DB_PATH, exist_ok=True)
     client = chromadb.PersistentClient(path=str(DB_PATH))
     cols = {}
-    for name, desc in COLLECTION_SPECS.items():
-        cols[name] = client.get_or_create_collection(name=name, metadata={"desc": desc})
-
-    # Also ensure Lacan collections exist (for compatibility)
-    for name in ["unconscious", "repetition", "transference", "drive", "tension"]:
+    for name in COLLECTION_NAMES:
         cols[name] = client.get_or_create_collection(name=name)
 
-    # === 统一删除该人物的旧数据（所有集合） ===
-    all_collections = ["core_profile", "insights", "evidence", "tension",
-                       "unconscious", "repetition", "transference", "drive"]
+    # 删除该人物旧数据
     total_deleted = 0
-    for col_name in all_collections:
+    for col_name in COLLECTION_NAMES:
         try:
             col = cols[col_name]
-            old = col.get(where={"person": person_name, "category": category}, include=[])
+            old = col.get(where={"person": person_name}, include=[])
             if old['ids']:
                 col.delete(ids=old['ids'])
                 total_deleted += len(old['ids'])
-                print(f"  删除 {col_name}: {len(old['ids'])}条", flush=True)
-        except Exception as e:
-            # 集合可能为空或不存在，忽略错误
+        except Exception:
             pass
     if total_deleted > 0:
-        print(f"  共删除旧数据: {total_deleted}条", flush=True)
+        print(f"  删除旧数据: {total_deleted}条", flush=True)
 
-    # 1. core_profile
-    core_text = (
-        f"[{person_name}] {pv3.get('brief','')} "
-        f"| 学派: {pv3.get('school','')} "
-        f"| 领域: {', '.join(pv3.get('domains',[]))} "
-        f"| 演变: {pv3.get('evolution_trajectory','')}"
-    )
-    core_id = f"{person_name}_core"
-    core_col = cols["core_profile"]
-    embeds = embed_texts([core_text])
-    if embeds:
-        core_col.add(documents=[core_text], embeddings=embeds, ids=[core_id],
-                    metadatas=[{"person": person_name, "category": category, "source": "personality_v3"}])
-    print(f"  core_profile: 1", flush=True)
+    counts = {}
 
-    # 2. insights
-    insight_chunks = extract_insights(pv3, person_name)
-    ins_col = cols["insights"]
-    tension_col = cols["tension"]
-
-    if insight_chunks:
-        # v4.2: 按dim分流 — tension写入独立集合，其余写入insights
-        ins_texts, ins_ids, ins_metas = [], [], []
-        ten_texts, ten_ids, ten_metas = [], [], []
-        for i, c in enumerate(insight_chunks):
-            meta = {"person": person_name, "category": category, "source": c['source'], "dim": c['dim'],
-                    "source_ref": "", "material_id": ""}
-            # 提取source_ref建立关联
-            m = re.search(r'\[来源:\s*(\S+)\]', c['text'])
-            if m:
-                meta["source_ref"] = m.group(1)
-                meta["material_id"] = f"{person_name}_mat_{hashlib.md5(m.group(1).encode()).hexdigest()[:8]}"
-            if c['dim'] == 'tension':
-                ten_texts.append(c['text'])
-                ten_ids.append(f"{person_name}_ten_{len(ten_ids)}")
-                ten_metas.append(meta)
-            else:
-                ins_texts.append(c['text'])
-                ins_ids.append(f"{person_name}_ins_{len(ins_ids)}")
-                ins_metas.append(meta)
-        # 写入insights
-        ins_embeds = []
-        for bi in range(0, len(ins_texts), 8):
-            e = embed_texts(ins_texts[bi:bi+8])
-            if e: ins_embeds.extend(e)
-            gc.collect()
-        if ins_embeds:
-            ins_col.add(documents=ins_texts[:len(ins_embeds)], embeddings=ins_embeds,
-                       ids=ins_ids[:len(ins_embeds)], metadatas=ins_metas[:len(ins_embeds)])
-        # 写入tension
-        ten_embeds = []
-        for bi in range(0, len(ten_texts), 8):
-            e = embed_texts(ten_texts[bi:bi+8])
-            if e: ten_embeds.extend(e)
-            gc.collect()
-        if ten_embeds:
-            tension_col.add(documents=ten_texts[:len(ten_embeds)], embeddings=ten_embeds,
-                           ids=ten_ids[:len(ten_embeds)], metadatas=ten_metas[:len(ten_embeds)])
-        print(f"  insights: {len(ins_embeds)} | tension: {len(ten_embeds)} (原始{len(insight_chunks)})", flush=True)
+    # 1. personas
+    persona_chunks = extract_personas(pv3, person_name, category)
+    if persona_chunks:
+        texts, ids, metas = [], [], []
+        for i, c in enumerate(persona_chunks):
+            texts.append(c['text'])
+            ids.append(f"{person_name}_persona_{i:03d}")
+            metas.append({
+                "person": person_name,
+                "category": category,
+                "domain": c['domain'],
+            })
+        counts['personas'] = _batch_add(cols["personas"], texts, ids, metas)
     else:
-        print(f"  insights: 0 (无有意义内容)", flush=True)
-    gc.collect()
+        counts['personas'] = 0
 
-    # 3. evidence (from insights_with_evidence)
-    ev_ins_count, ev_ev_count = ingest_evidence(person_name, category, pv3, cols)
+    # 2. cognitive
+    cog_chunks = extract_cognitive(pv3, person_name)
+    if cog_chunks:
+        texts, ids, metas = [], [], []
+        for i, c in enumerate(cog_chunks):
+            texts.append(c['text'])
+            ids.append(f"{person_name}_cog_{i:03d}")
+            metas.append({
+                "person": person_name,
+                "category": category,
+                "dim": c['dim'],
+            })
+        counts['cognitive'] = _batch_add(cols["cognitive"], texts, ids, metas)
+    else:
+        counts['cognitive'] = 0
 
-    # 汇总
-    print(f"  DONE — core:1 + insights:{len(ins_embeds) if insight_chunks else 0} + tension:{len(ten_embeds) if insight_chunks else 0} + evidence:{ev_ev_count} excerpts ({ev_ins_count} insights)", flush=True)
+    # 3. evidence (先入库evidence，收集真实ID，供claims引用)
+    ev_chunks = extract_evidence(pv3, person_name, category)
+    ev_id_map = {}  # (insight_idx, ev_idx_within) -> real_ev_id
+    if ev_chunks:
+        texts, ids, metas = [], [], []
+        for c in ev_chunks:
+            texts.append(c['text'])
+            ids.append(c['ev_id'])
+            metas.append({
+                "person": person_name,
+                "category": category,
+                "dim": c['dim'],
+                "source_file": c['source_file'],
+                "location": c['location'],
+                "language": c['language'],
+                "insight_idx": str(c['insight_idx']),
+            })
+        counts['evidence'] = _batch_add(cols["evidence"], texts, ids, metas)
+    else:
+        counts['evidence'] = 0
+
+    # 4. claims
+    claim_chunks = extract_claims(pv3, person_name, category)
+    if claim_chunks:
+        texts, ids, metas = [], [], []
+        for i, c in enumerate(claim_chunks):
+            texts.append(c['text'])
+            ids.append(f"{person_name}_claim_{i:03d}")
+            metas.append({
+                "person": person_name,
+                "category": category,
+                "dim": c['dim'],
+                "evidence_count": str(c['evidence_count']),
+            })
+        counts['claims'] = _batch_add(cols["claims"], texts, ids, metas)
+    else:
+        counts['claims'] = 0
+
+    # 5. tracing
+    trace_chunks = extract_tracing(pv3, person_name)
+    if trace_chunks:
+        texts, ids, metas = [], [], []
+        for i, c in enumerate(trace_chunks):
+            texts.append(c['text'])
+            ids.append(f"{person_name}_trace_{i:03d}")
+            metas.append({
+                "person": person_name,
+                "category": category,
+                "dim": c['dim'],
+                "period": c.get('period', ''),
+            })
+        counts['tracing'] = _batch_add(cols["tracing"], texts, ids, metas)
+    else:
+        counts['tracing'] = 0
+
+    # 6. tension
+    ten_chunks = extract_tension(pv3, person_name)
+    if ten_chunks:
+        texts, ids, metas = [], [], []
+        for i, c in enumerate(ten_chunks):
+            texts.append(c['text'])
+            ids.append(f"{person_name}_ten_{i:03d}")
+            metas.append({
+                "person": person_name,
+                "category": category,
+                "dim": c['dim'],
+            })
+        counts['tension'] = _batch_add(cols["tension"], texts, ids, metas)
+    else:
+        counts['tension'] = 0
+
+    summary = ' | '.join(f"{k}:{v}" for k, v in counts.items())
+    print(f"  DONE — {summary}", flush=True)
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python3 ingest_v3.py <person_name> <person_dir>")
-        print("       python3 ingest_v3.py --all  # 重建全部")
+        print("       python3 ingest_v3.py --all  # 入库全部")
         sys.exit(0)
 
     if sys.argv[1] == '--all':
         base = Path("/mnt/d/data/think-tank-data/personalities")
         for group in sorted(base.iterdir()):
             if not group.is_dir(): continue
-            # Handle flat (military) and nested (scholars/sub/person) structures
             for candidate in sorted(group.iterdir()):
                 if not candidate.is_dir(): continue
                 if (candidate / "personality_v3.json").exists():
