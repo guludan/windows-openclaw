@@ -251,6 +251,12 @@ def generate_per_file_prompts(person_dir: Path) -> None:
 4. 输出必须是合法 JSON 数组
 5. 每个insight至少1条evidence，重要观点2-5条
 6. 不要因为"没有明确观点"就偷懒输出空数组
+7. **excerpt 长度必须在50字以上**。禁止以下行为：
+   - ❌ 用文章标题作为excerpt（如「林彪何以执掌东北帅印」只有9个字）
+   - ❌ 用章节标题作为excerpt（如「References」「总序」「楔子」）
+   - ❌ 用文件名或标题行作为excerpt
+   - ✅ excerpt必须是正文段落的逐字摘录（50-500字）
+   - ✅ 如果该素材确实支撑某个观点，从正文中找到具体的段落摘录
 """
 
             # 保存prompt
@@ -310,22 +316,39 @@ def merge_per_file_results(person_dir: Path) -> None:
         sys.exit(1)
 
     # === excerpt质量过滤 ===
-    # 过滤掉 excerpt 太短（<30字，大概率是标题）或为空字符串的假evidence
+    # 规则：
+    # 1. 空excerpt → 删除
+    # 2. location包含"标题"且excerpt<50字 → 大概率是文章标题不是正文 → 删除
+    # 3. excerpt是纯英文"References"等无意义内容 → 删除
     before_ev = sum(len(ins.get('evidence', [])) for ins in all_insights)
+    JUNK_EXCERPTS = {'references', 'reference', 'bibliography', 'acknowledgments'}
     for ins in all_insights:
         if 'evidence' in ins and isinstance(ins['evidence'], list):
-            ins['evidence'] = [ev for ev in ins['evidence']
-                              if isinstance(ev, dict)
-                              and ev.get('excerpt', '')
-                              and len(ev['excerpt'].strip()) >= 30]
+            filtered = []
+            for ev in ins['evidence']:
+                if not isinstance(ev, dict):
+                    continue
+                exc = ev.get('excerpt', '').strip()
+                loc = ev.get('location', '').strip()
+                # 空excerpt
+                if not exc:
+                    continue
+                # location标记为"标题"且内容太短 → 是文章标题
+                if '标题' in loc and len(exc) < 50:
+                    continue
+                # 纯参考文献/章节标记
+                if exc.lower() in JUNK_EXCERPTS:
+                    continue
+                filtered.append(ev)
+            ins['evidence'] = filtered
     after_ev = sum(len(ins.get('evidence', [])) for ins in all_insights)
     removed_ev = before_ev - after_ev
-    # 过滤掉无evidence的空insight（可能是LLM编造的）
+    # 过滤掉无evidence的空insight
     before_ins = len(all_insights)
     all_insights = [ins for ins in all_insights if ins.get('evidence')]
     after_ins = len(all_insights)
     if removed_ev > 0 or before_ins != after_ins:
-        print(f"  excerpt质量过滤: 移除 {removed_ev} 条短/空excerpt, 移除 {before_ins - after_ins} 条无evidence的insight")
+        print(f"  excerpt质量过滤: 移除 {removed_ev} 条标题/空excerpt, 移除 {before_ins - after_ins} 条无evidence的insight")
 
     print(f"\n总计: {len(all_insights)} insights")
 
