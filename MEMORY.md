@@ -20,10 +20,21 @@
 ### 质检状态：100% ✅
 - Total: 3922, Kept: 3055, Discarded: 867
 
-### 蒸馏+入库状态：已入库51人 ✅
-- 45人（首批）+ 6人（补跑：林彪、凯文·米特尼克、阿莫斯·特沃斯基、丹尼尔·卡尼曼、基思·斯坦诺维奇、Eugene_Fama）
+### 蒸馏+入库状态：45人全部入库 ✅
+- military 25 + psychologists 19 + scholars 1（Eugene_Fama）
 - 6集合架构：personas/cognitive/claims/evidence/tracing/tension
-- 向量总数约9000+
+- 向量总数：10,715
+- 45人×6集合全部完整覆盖（乔纳森·海特已修复）
+- 零向量修复30/43，剩余13条bge-m3模型bug（特定文本返回NaN）
+
+### 检索测试：全部通过 ✅（2026-05-06）
+- 跨领域语义检索：8个查询全部精准匹配
+- 指定人物检索：毛泽东/卡尼曼各集合结果准确
+- Evidence溯源：素材源文件正确关联
+- Tension/Cognitive/Tracing维度：语义匹配质量高
+
+### 数据备份
+- 备份路径：`/mnt/d/data2/think-tank-backup-20260506/`（785MB）
 
 ### 2026-05-05~06 蒸馏流水线修复
 - 巨型段落切分bug：单段>15KB按句子再切分（commit 67165ab）
