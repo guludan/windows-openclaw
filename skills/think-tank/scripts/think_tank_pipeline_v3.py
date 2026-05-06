@@ -937,7 +937,7 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
         print(f"  匹配 0 个历史事件（Redis不可用）")
 
     # Step 3: 深度RAG（insights + core_profile + evidence）
-    print(f"\n🔍 Step 3: 深度RAG检索（含evidence）"
+    print(f"\n🔍 Step 3: 深度RAG检索（含evidence）")
     if sub_queries:
         print(f"  子议题: {len(sub_queries)}个（自定义）")
     else:

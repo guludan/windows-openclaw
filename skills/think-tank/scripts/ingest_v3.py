@@ -438,11 +438,26 @@ def extract_tension(pv3, person_name):
     sa = pv3.get('stance_anchors', {})
     if isinstance(sa, dict):
         for d in sa.get('key_debates', []):
-            if is_meaningful(d, min_len=20):
+            if is_meaningful(d, min_len=10):
                 chunks.append({
                     'text': f"[{person_name}] 核心争议: {d}",
                     'dim': 'debate',
                 })
+
+    # 从insights_with_evidence中提取dim=tension的claims
+    # 这是系统bug修复：之前只提取顶层字段，遗漏了insights中的tension维度
+    iwe = pv3.get('insights_with_evidence', [])
+    if isinstance(iwe, list):
+        for ins in iwe:
+            if not isinstance(ins, dict):
+                continue
+            if ins.get('dim', '') == 'tension':
+                claim = ins.get('claim', '')
+                if claim and len(claim.strip()) >= 20:
+                    chunks.append({
+                        'text': f"[{person_name}] 张力: {claim}",
+                        'dim': 'tension_claim',
+                    })
 
     return chunks
 
