@@ -31,24 +31,60 @@ COLLECTION_NAMES = [
     "personas", "cognitive", "claims", "evidence", "tracing", "tension"
 ]
 
-BATCH_SIZE = 4
+BATCH_SIZE = 4  # 减小批次防OOM和ollama 500
 
 
 def embed_texts(texts):
-    """向量化 via Ollama bge-m3"""
+    """向量化 via Ollama bge-m3，含NaN容错"""
     if not texts:
         return []
-    for attempt in range(3):
+    
+    # 先尝试批量embed
+    result = _try_embed(texts)
+    if result is not None:
+        return result
+    
+    # 批量失败（可能某条触发了NaN），逐条embed
+    if len(texts) > 1:
+        print(f"  Batch embed failed, falling back to single-item embed...", flush=True)
+        embeds = []
+        for t in texts:
+            e = _try_embed([t])
+            if e is None:
+                # 单条也失败，用零向量
+                print(f"  WARN: NaN embedding, using zero vector: {t[:50]}...", flush=True)
+                embeds.append([0.0] * 1024)
+            else:
+                embeds.append(e[0])
+        return embeds
+    
+    # 单条也失败
+    print(f"  WARN: Embed failed, using zero vector: {texts[0][:50]}...", flush=True)
+    return [[0.0] * 1024]
+
+
+def _try_embed(texts):
+    """尝试批量embed，返回None表示失败"""
+    for attempt in range(2):
         try:
             r = requests.post(OLLAMA_URL, json={"model": OLLAMA_MODEL, "input": texts}, timeout=120)
             if r.status_code == 200:
-                return r.json()["embeddings"]
+                embeds = r.json()["embeddings"]
+                # NaN检查
+                clean = []
+                for emb in embeds:
+                    if any(x != x for x in emb):
+                        return None  # 触发fallback
+                    clean.append(emb)
+                return clean
+            if r.status_code == 500:
+                return None  # NaN导致的500，不要重试
             print(f"  Embed API {r.status_code}, retry {attempt+1}...", flush=True)
-            time.sleep(5)
+            time.sleep(10 * (attempt + 1))
         except Exception as e:
             print(f"  Embed error: {e}, retry {attempt+1}...", flush=True)
-            time.sleep(10)
-    return []
+            time.sleep(10 * (attempt + 1))
+    return None
 
 
 def is_meaningful(text, min_len=30):
@@ -102,8 +138,36 @@ def _batch_add(collection, texts, ids, metas):
                 metadatas=metas[bi:bi+BATCH_SIZE]
             )
             total += len(embeds)
+        del embeds
         gc.collect()
-        time.sleep(1)  # 让ollama喘息
+        time.sleep(3)  # 让ollama喘息
+    return total
+
+
+def _ingest_collection(col, chunks, person_name, category, id_prefix, meta_fields):
+    """流式入库：逐批提取+embed+写入，避免大数据人物OOM"""
+    if not chunks:
+        return 0
+    total = 0
+    for bi in range(0, len(chunks), BATCH_SIZE):
+        batch = chunks[bi:bi+BATCH_SIZE]
+        texts = [c['text'] for c in batch]
+        ids = [f"{person_name}_{id_prefix}_{bi+i:03d}" for i in range(len(batch))]
+        metas = []
+        for c in batch:
+            m = {"person": person_name, "category": category}
+            for f in meta_fields:
+                m[f] = str(c.get(f, ''))
+            metas.append(m)
+        embeds = embed_texts(texts)
+        if embeds and len(embeds) == len(texts):
+            col.add(documents=texts, embeddings=embeds, ids=ids, metadatas=metas)
+            total += len(embeds)
+        else:
+            print(f"  WARN: {id_prefix} batch {bi//BATCH_SIZE} embed failed, skipping", flush=True)
+        del batch, texts, embeds
+        gc.collect()
+        time.sleep(3)
     return total
 
 
@@ -501,106 +565,80 @@ def run(person_name, person_dir):
 
     # 1. personas
     persona_chunks = extract_personas(pv3, person_name, category)
-    if persona_chunks:
-        texts, ids, metas = [], [], []
-        for i, c in enumerate(persona_chunks):
-            texts.append(c['text'])
-            ids.append(f"{person_name}_persona_{i:03d}")
-            metas.append({
-                "person": person_name,
-                "category": category,
-                "domain": c['domain'],
-            })
-        counts['personas'] = _batch_add(cols["personas"], texts, ids, metas)
-    else:
-        counts['personas'] = 0
+    counts['personas'] = _ingest_collection(
+        cols["personas"], persona_chunks, person_name, category,
+        "persona", ["domain"])
 
     # 2. cognitive
     cog_chunks = extract_cognitive(pv3, person_name)
-    if cog_chunks:
-        texts, ids, metas = [], [], []
-        for i, c in enumerate(cog_chunks):
-            texts.append(c['text'])
-            ids.append(f"{person_name}_cog_{i:03d}")
-            metas.append({
-                "person": person_name,
-                "category": category,
-                "dim": c['dim'],
-            })
-        counts['cognitive'] = _batch_add(cols["cognitive"], texts, ids, metas)
-    else:
-        counts['cognitive'] = 0
+    counts['cognitive'] = _ingest_collection(
+        cols["cognitive"], cog_chunks, person_name, category,
+        "cog", ["dim"])
 
     # 3. evidence (先入库evidence，收集真实ID，供claims引用)
     ev_chunks = extract_evidence(pv3, person_name, category)
-    ev_id_map = {}  # (insight_idx, ev_idx_within) -> real_ev_id
     if ev_chunks:
-        texts, ids, metas = [], [], []
-        for c in ev_chunks:
-            texts.append(c['text'])
-            ids.append(c['ev_id'])
-            metas.append({
-                "person": person_name,
-                "category": category,
-                "dim": c['dim'],
-                "source_file": c['source_file'],
-                "location": c['location'],
-                "language": c['language'],
-                "insight_idx": str(c['insight_idx']),
-            })
-        counts['evidence'] = _batch_add(cols["evidence"], texts, ids, metas)
+        # evidence用自带ev_id，需要特殊处理
+        total = 0
+        for bi in range(0, len(ev_chunks), BATCH_SIZE):
+            batch = ev_chunks[bi:bi+BATCH_SIZE]
+            texts = [c['text'] for c in batch]
+            ids = [c['ev_id'] for c in batch]
+            metas = []
+            for c in batch:
+                metas.append({
+                    "person": person_name, "category": category,
+                    "dim": c['dim'], "source_file": c['source_file'],
+                    "location": c['location'], "language": c['language'],
+                    "insight_idx": str(c['insight_idx']),
+                })
+            embeds = embed_texts(texts)
+            if embeds and len(embeds) == len(texts):
+                cols["evidence"].add(documents=texts, embeddings=embeds, ids=ids, metadatas=metas)
+                total += len(embeds)
+            del batch, texts, embeds
+            gc.collect()
+            time.sleep(3)  # ollama喘息
+        counts['evidence'] = total
     else:
         counts['evidence'] = 0
 
     # 4. claims
     claim_chunks = extract_claims(pv3, person_name, category)
     if claim_chunks:
-        texts, ids, metas = [], [], []
-        for i, c in enumerate(claim_chunks):
-            texts.append(c['text'])
-            ids.append(f"{person_name}_claim_{i:03d}")
-            metas.append({
-                "person": person_name,
-                "category": category,
-                "dim": c['dim'],
-                "evidence_count": str(c['evidence_count']),
-            })
-        counts['claims'] = _batch_add(cols["claims"], texts, ids, metas)
+        total = 0
+        for bi in range(0, len(claim_chunks), BATCH_SIZE):
+            batch = claim_chunks[bi:bi+BATCH_SIZE]
+            texts = [c['text'] for c in batch]
+            ids = [f"{person_name}_claim_{bi+i:03d}" for i in range(len(batch))]
+            metas = []
+            for c in batch:
+                metas.append({
+                    "person": person_name, "category": category,
+                    "dim": c['dim'], "evidence_count": str(c['evidence_count']),
+                })
+            embeds = embed_texts(texts)
+            if embeds and len(embeds) == len(texts):
+                cols["claims"].add(documents=texts, embeddings=embeds, ids=ids, metadatas=metas)
+                total += len(embeds)
+            del batch, texts, embeds
+            gc.collect()
+            time.sleep(3)  # ollama喘息
+        counts['claims'] = total
     else:
         counts['claims'] = 0
 
     # 5. tracing
     trace_chunks = extract_tracing(pv3, person_name)
-    if trace_chunks:
-        texts, ids, metas = [], [], []
-        for i, c in enumerate(trace_chunks):
-            texts.append(c['text'])
-            ids.append(f"{person_name}_trace_{i:03d}")
-            metas.append({
-                "person": person_name,
-                "category": category,
-                "dim": c['dim'],
-                "period": c.get('period', ''),
-            })
-        counts['tracing'] = _batch_add(cols["tracing"], texts, ids, metas)
-    else:
-        counts['tracing'] = 0
+    counts['tracing'] = _ingest_collection(
+        cols["tracing"], trace_chunks, person_name, category,
+        "trace", ["dim", "period"])
 
     # 6. tension
     ten_chunks = extract_tension(pv3, person_name)
-    if ten_chunks:
-        texts, ids, metas = [], [], []
-        for i, c in enumerate(ten_chunks):
-            texts.append(c['text'])
-            ids.append(f"{person_name}_ten_{i:03d}")
-            metas.append({
-                "person": person_name,
-                "category": category,
-                "dim": c['dim'],
-            })
-        counts['tension'] = _batch_add(cols["tension"], texts, ids, metas)
-    else:
-        counts['tension'] = 0
+    counts['tension'] = _ingest_collection(
+        cols["tension"], ten_chunks, person_name, category,
+        "ten", ["dim"])
 
     summary = ' | '.join(f"{k}:{v}" for k, v in counts.items())
     print(f"  DONE — {summary}", flush=True)
