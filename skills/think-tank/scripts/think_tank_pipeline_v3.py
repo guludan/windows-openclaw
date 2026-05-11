@@ -23,7 +23,7 @@ import chromadb, requests
 sys.path.insert(0, str(Path(__file__).parent))
 from historical_context import search_historical_events, get_redis_status
 
-DB_PATH = "/mnt/d/data/think-tank-data/_chromadb/lacan_db"
+DB_PATH = "/mnt/d/data/think-tank-data/personalities/_chromadb/lacan_db"
 OLLAMA_URL = 'http://172.26.0.1:11434/api/embed'
 OLLAMA_MODEL = 'bge-m3:latest'
 REPORT_DIR = "/mnt/d/data/think-tank-data/reports"
@@ -194,7 +194,10 @@ def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6)
     """
     client = chromadb.PersistentClient(path=DB_PATH)
     queries = sub_queries if sub_queries else {"default": question}
-    COLLECTIONS = ["insights", "core_profile", "evidence", "tension"]
+    # v6: 修正collection名称，匹配实际6个collection
+    COLLECTIONS = ["personas", "cognitive", "claims", "evidence", "tracing", "tension"]
+    # personas和cognitive权重更高（核心身份和思维模式）
+    HIGH_WEIGHT_COLS = {"personas", "cognitive"}
 
     # 按人聚合: {person: {"profile": "", "insights": [], "evidence": [], "tensions": []}}
     persons = {}
@@ -221,16 +224,40 @@ def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6)
                     seen.add(key)
                     if person not in persons:
                         persons[person] = {"profile": "", "insights": [], "evidence": [], "tensions": []}
-                    # insights和tension不截断，evidence截断800字
                     text = doc if col_name != "evidence" else doc[:800]
-                    if col_name == "core_profile":
-                        persons[person]["profile"] = text
+                    if col_name in ("personas", "cognitive"):
+                        # personas/cognitive → profile（核心身份+思维模式）
+                        if not persons[person]["profile"]:
+                            persons[person]["profile"] = text
+                        else:
+                            persons[person]["profile"] += "\n" + text[:500]
                     elif col_name == "tension":
                         persons[person]["tensions"].append(text)
                     elif col_name == "evidence":
                         persons[person]["evidence"].append(text)
+                    elif col_name == "tracing":
+                        # tracing → evidence补充
+                        persons[person]["evidence"].append(text[:800])
                     else:
+                        # claims → insights
                         persons[person]["insights"].append(text)
+                    # 高权重collection重复检索
+                    if col_name in HIGH_WEIGHT_COLS:
+                        extra_n = min(3, col.count())
+                        extra = col.query(query_embeddings=[emb], n_results=n + extra_n)
+                        for j in range(n, min(n + extra_n, len(extra["documents"][0]))):
+                            e_meta = extra["metadatas"][0][j]
+                            e_person = e_meta.get("person", e_meta.get("personality_name", "?"))
+                            e_doc = extra["documents"][0][j]
+                            e_key = f"{e_person}|{col_name}|extra_{j}"
+                            if e_key in seen: continue
+                            seen.add(e_key)
+                            if e_person not in persons:
+                                persons[e_person] = {"profile": "", "insights": [], "evidence": [], "tensions": []}
+                            if col_name == "personas" and not persons[e_person]["profile"]:
+                                persons[e_person]["profile"] = e_doc
+                            elif col_name == "cognitive":
+                                persons[e_person]["insights"].append(e_doc)
             except Exception as e:
                 pass
 
@@ -415,6 +442,24 @@ def red_blue_match(question: str, rag_data: dict) -> dict:
     """从RAG结果中筛选红蓝对抗阵容（不含心理学家），独立匹配心理学家人格"""
     rag_persons = set(rag_data.keys())
 
+    # v6: 如果rag_persons太少，从personas collection补充
+    if len(rag_persons) < 10:
+        try:
+            client = chromadb.PersistentClient(path=DB_PATH)
+            col = client.get_collection("personas")
+            emb = embed(question)
+            if emb:
+                res = col.query(query_embeddings=[emb], n_results=30)
+                for i, doc in enumerate(res["documents"][0]):
+                    meta = res["metadatas"][0][i]
+                    person = meta.get("person", meta.get("personality_name", "?"))
+                    if person not in rag_persons:
+                        rag_persons.add(person)
+                        if person not in rag_data:
+                            rag_data[person] = {"profile": doc[:500], "insights": [], "evidence": [], "tensions": []}
+        except Exception:
+            pass
+
     # 红蓝阵营（不含心理学家）
     selection = {}
     for team, members in RED_BLUE_TEAMS.items():
@@ -453,7 +498,127 @@ def format_red_blue_prompt(selection: dict) -> str:
     return "\n".join(lines)
 
 
-def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dict, selection: dict, affairs_data: dict = None, market_data: dict = None) -> dict:
+def extract_theory_skeleton(rag_data: dict) -> dict:
+    """v6: 从RAG数据提取学者理论骨架，识别分歧点，输出章节结构建议"""
+    if not rag_data:
+        return {"scholarly_skeleton": "（无RAG数据）", "divergence_points": [], "chapter_suggestion": ""}
+
+    scholar_frameworks = []
+    for person, data in rag_data.items():
+        profile = data.get("profile", "")
+        insights = data.get("insights", [])
+        tensions = data.get("tensions", [])
+        if not insights and not profile:
+            continue
+        scholar_frameworks.append({
+            "person": person,
+            "profile": profile[:300],
+            "core_insights": [ins[:200] for ins in insights[:3]],
+            "tensions": [t[:150] for t in tensions[:2]],
+        })
+
+    # 构建LLM prompt提取理论框架
+    scholar_text_parts = []
+    for sf in scholar_frameworks[:20]:  # 最多20人
+        part = f"### {sf['person']}\n"
+        if sf['profile']:
+            part += f"身份: {sf['profile']}\n"
+        part += "核心观点: " + " | ".join(sf['core_insights']) + "\n"
+        if sf['tensions']:
+            part += "内在张力: " + " | ".join(sf['tensions']) + "\n"
+        scholar_text_parts.append(part)
+    scholar_text = "\n".join(scholar_text_parts)
+
+    # 用本地LLM提取骨架（直接调用Ollama）
+    prompt = f"""你是学术分析引擎。从以下学者数据中：
+1. 提取每位学者的理论框架（前提假设→因果路径→核心预测→盲区），每人2-3行
+2. 识别框架间的2-4个根本分歧点（因果路径不同、预测方向相反、假设前提冲突）
+3. 建议以分歧点为骨架的章节组织方式
+
+输出格式：
+## 学者框架
+（每人2-3行精炼摘要）
+## 根本分歧点
+（每个分歧点：对立框架+分歧本质）
+## 章节结构建议
+（基于分歧点组织）
+
+学者数据：
+{scholar_text}"""
+
+    skeleton = ""
+    try:
+        r = requests.post('http://172.26.0.1:11434/api/generate',
+            json={"model": "qwen3:8b", "prompt": prompt, "stream": False},
+            timeout=120)
+        if r.status_code == 200:
+            skeleton = r.json().get("response", "")
+            # strip thinking tags
+            import re
+            skeleton = re.sub(r'<think>.*?</think>', '', skeleton, flags=re.DOTALL).strip()
+    except Exception as e:
+        skeleton = f"（LLM提取失败: {e}，使用原始数据）\n{scholar_text[:2000]}"
+
+    return {
+        "scholarly_skeleton": skeleton,
+        "divergence_points": [],  # LLM输出中已包含
+        "chapter_suggestion": "",
+        "scholar_frameworks": scholar_frameworks,
+    }
+
+
+def generate_quant_output(question: str, decomp: dict, scenarios: str, market_data: dict) -> dict:
+    """v6: 从情景树提取量化信号，生成结构化JSON输出"""
+    assets = decomp.get('relevant_assets', [])
+    if not assets and not market_data:
+        return {}
+
+    prompt = f"""你是量化分析师。基于以下情景分析和市场数据，生成量化交易信号。
+
+议题: {question}
+相关资产: {', '.join(assets)}
+市场数据: {json.dumps(market_data, ensure_ascii=False)[:1500]}
+情景分析:
+{scenarios[:3000]}
+
+请输出严格JSON（不要markdown代码块）：
+{{
+  "probability_distribution": {{
+    "scenario_bull": 0.0,
+    "scenario_base": 0.0,
+    "scenario_bear": 0.0,
+    "scenario_tail": 0.0
+  }},
+  "price_levels": [
+    {{"asset": "", "direction": "long/short", "entry": 0.0, "target": 0.0, "stop": 0.0, "trigger_condition": ""}}
+  ],
+  "cross_asset_correlation": {{
+    "note": "条件相关性矩阵，情景触发时的相关性变化",
+    "pairs": [{{"pair": "A/B", "normal": 0.0, "stress": 0.0}}]
+  }},
+  "kelly_sizing": [
+    {{"asset": "", "edge": 0.0, "odds": 0.0, "kelly_fraction": 0.0, "recommended_pct": 0.0}}
+  ]
+}}"""
+
+    try:
+        r = requests.post('http://172.26.0.1:11434/api/generate',
+            json={"model": "qwen3:8b", "prompt": prompt, "stream": False},
+            timeout=120)
+        if r.status_code == 200:
+            text = r.json().get("response", "")
+            import re
+            text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
+            # extract JSON from response
+            json_match = re.search(r'\{[\s\S]*\}', text)
+            if json_match:
+                return json.loads(json_match.group())
+    except Exception as e:
+        print(f"  ⚠️ 量化输出生成失败: {e}")
+    return {}
+
+
+def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dict, selection: dict, affairs_data: dict = None, market_data: dict = None, theory_skeleton: dict = None) -> dict:
     """构建报告章节任务（v5: 条件判断+框架对抗+因果推理+市场数据）"""
     dims = ', '.join(decomp['triggered_dimensions'])
     ents = ', '.join(decomp.get('matched_entities', ['通用']))
@@ -471,16 +636,25 @@ def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dic
 
     quote_rule = '【引用纪律】每个关键论点必须直接引用下方学者的具体观点。格式要求：先给出来源（学者名+作品/框架名+年份），再引用原文核心论断，最后说明该论点的适用边界和与当前问题的因果连接。严禁：纯转述（「XX认为」而无原文）、[RAG: XX]式标签（不可验证不可挑战）、无边界条件的引用。当学者存在内在张力时必须呈现。'
 
-    # v5: 4章 — 因果图→框架对抗→偏差审计→条件情景树
+    # v6: 理论骨架文本
+    skeleton_text = ""
+    if theory_skeleton and theory_skeleton.get("scholarly_skeleton"):
+        skeleton_text = theory_skeleton["scholarly_skeleton"]
+
+    # v6: 6章结构 — 执行摘要→学者理论骨架→框架对抗→偏差审计→条件情景树→量化信号
     chapters = {
-        "ch01": {"title": "因果图与历史类比库", "words": "1500-1800",
-            "instruction": f"你是因果分析引擎。撰写第1章：因果图与历史类比库（1500-1800字）。{common}\n## 维度：{dims} | 实体：{ents} | 资产：{assets}\n\n### 第一部分：因果变量图（800-1000字）\n识别当前局势中的关键因果变量及其相互关系。要求：\n1. 列出5-8个关键变量（如：地缘冲突烈度、能源供给中断风险、通胀传导链条、技术替代速度等）\n2. 标注变量间的因果方向（A→B）和相互作用（A↔B）\n3. 标注每个变量的不确定性来源（已知/部分已知/未知）\n4. 区分已确认事实与推测性判断\n\n禁止：空洞过渡句、重复数据、编造因果链。{quote_rule}\n\n### 第二部分：历史类比库（500-700字）\n从历史中提取2-3个最相关的类比事件。每个类比必须包含：\n1. 事件概述（时间/背景/结果）\n2. 与当前局势的相似性\n3. 与当前局势的关键差异\n4. 该类比的推理启示（不是「历史会重演」，而是「这个变量在那个场景下是怎么演化的」）\n\n## 历史参照\n{hist_text}\n\n## RAG参考\n{rag_text}"},
-        "ch02": {"title": "框架对抗与关键分歧", "words": "1500-2000",
-            "instruction": f"你是学术辩论裁判。撰写第2章：框架对抗与关键分歧（1500-2000字）。{common}\n\n核心理念：不是红方vs蓝方的人对抗，而是**分析框架之间的对抗**。同一事件，用不同理论框架看会得到不同的因果路径。\n\n写作结构：\n1. 识别2-3个关键分歧点（不是「结论不同」，而是「底层因果假设不同」）\n2. 对每个分歧点，呈现不同框架的推理路径：\n   - 现实主义框架看到的是什么因果链\n   - 经济学框架看到的是什么因果链\n   - 历史类比框架看到的是什么因果链\n3. 交锋：各框架的盲区在哪里？哪个框架的因果链在当前条件下更可能成立？\n4. 收敛：不同框架是否在某些中间结论上达成一致？\n\n禁止：并列式罗列（「A认为X，B认为Y」不是交锋）、车轱辘话、用概率替代推理。{quote_rule}\n\n## RAG参考\n{rag_text}"},
-        "ch03": {"title": "认知偏差审计", "words": "1200-1500",
-            "instruction": f"你是认知偏差审计专家。撰写第3章：认知偏差审计（1200-1500字）。{common}\n\n你不是红蓝任何一方，而是独立元分析者。你的任务是：标注本报告各关键判断可能受哪些认知偏差影响，并给出去偏差的具体操作。\n\n审计框架（8位心理学家，每人至少一个实质性应用）：\n1. 丹尼尔·卡尼曼：前景理论/损失厌恶/系统双过程/框架效应\n2. 所罗门·阿希：从众效应（区分信息性vs规范性影响）\n3. 菲利普·津巴多：情境力量/去个性化\n4. 乔纳森·海特：道德基础理论——各方在哪些道德维度上不可通约\n5. 罗伯特·西奥迪尼：影响力原则——互惠/权威/社会认同/稀缺/承诺与一致/喜好\n6. 阿尔伯特·班杜拉：道德脱离/三元交互决定论——螺旋升级机制\n7. 保罗·艾克曼：情绪动力学——恐惧和愤怒的阶段变化、情绪劫持临界点\n8. 丹·阿瑞利：锚定效应/任意一致性/默认偏差\n\n每个偏差必须：\na) 引用具体理论/实验名称和学者的insight原文\nb) 标注本报告中**哪个具体判断**可能受此偏差影响\nc) 标注偏差方向（该偏差使我们高估还是低估了X）\nd) 给出去偏差的具体操作（不是「要注意」，而是「为对抗锚定效应，我们从历史基准率出发重新评估……」）\n\n禁止：对称补刀式「双方都有偏差」（要分析不对称性）、罗列理论而不锚定到本报告的具体判断。{quote_rule}\n\n## RAG参考\n{rag_text}"},
-        "ch04": {"title": "条件情景树与鲁棒性测试", "words": "1500-1800",
-            "instruction": f"你是战略推理引擎。撰写第4章：条件情景树与鲁棒性测试（1500-1800字）。{common}\n\n⚠️ 绝对禁止：给任何事件赋概率数字（如30%、45%、25%）。概率数字是认知暴力——它给读者虚假精确感，实际上只是LLM的随机输出。\n\n### 第一部分：条件情景树（800-1000字）\n用「若X条件满足→则Y更可能发生」的条件判断替代概率。\n\n结构：\n- 情景A：触发条件=[具体可观测的事件/指标] → 推演=[基于哪个学者的框架，因果链是什么] → 核心指标变化=[具体数字区间+时间框架] → 持续时间\n- 情景B：同上\n- 情景C：同上\n- 每个情景必须标注：判断依据（历史基准率或学者框架）、该判断在什么条件下需要更新\n\n### 第二部分：尾部风险清单（300-400字）\n列出2-3个不可量化但需关注的黑天鹅场景。这些是「我们无法预测但必须设想」的情况。每个包含：场景描述+为什么不可量化+最坏后果。\n\n### 第三部分：鲁棒性测试与投资启示（300-400字）\n本报告的核心建议在什么条件下会失效？给出具体的失效条件检测指标。\n投资启示（如果适用）：不预测方向，而是设计从波动中获益的结构（反脆弱思路）。具体标的+仓位逻辑，但必须标注「这是基于X假设的，若Y则失效」。\n\n{quote_rule}\n\n## 资产：{assets}\n## RAG参考\n{rag_text}\n\n## 历史参照\n{hist_text}"},
+        "ch00": {"title": "执行摘要", "words": "300",
+            "instruction": f"你是高级编辑。撰写执行摘要（300字以内）。{common}\n\n要求：\n1. 一句话概括核心问题\n2. 3-5个关键发现（每个一句话）\n3. 最重要的行动建议\n4. 最大的不确定性来源\n\n注意：这是最后写的章节，但放在最前面。等ch01-ch05完成后再写。"},
+        "ch01": {"title": "学者理论骨架", "words": "1200-1500",
+            "instruction": f"你是理论分析引擎。撰写第1章：学者理论骨架（1200-1500字）。{common}\n\n核心任务：展示RAG中各位学者的底层分析框架，而不是LLM自创因果图。\n\n{ skeleton_text}\n\n## 维度：{dims} | 实体：{ents} | 资产：{assets}\n\n写作结构：\n1. 按分歧点分组，每组呈现对立的学者框架\n2. 每个框架：前提假设→因果路径→核心预测→盲区\n3. 标注每个框架的适用边界条件\n\n禁止：LLM自创因果链、空洞总结。必须基于上方RAG数据。{quote_rule}\n\n## RAG参考\n{rag_text}"},
+        "ch02": {"title": "框架对抗与关键分歧", "words": "1500-1800",
+            "instruction": f"你是学术辩论裁判。撰写第2章：框架对抗与关键分歧（1500-1800字）。{common}\n\n核心理念：不是红方vs蓝方的人对抗，而是**分析框架之间的对抗**。同一事件，用不同理论框架看会得到不同的因果路径。\n\n写作结构：\n1. 识别2-3个关键分歧点（不是「结论不同」，而是「底层因果假设不同」）\n2. 对每个分歧点，呈现不同框架的推理路径\n3. 交锋：各框架的盲区在哪里？\n4. 收敛：不同框架是否在某些中间结论上达成一致？\n\n禁止：并列式罗列、车轱辘话。{quote_rule}\n\n## RAG参考\n{rag_text}"},
+        "ch03": {"title": "认知偏差审计（Checklist）", "words": "800-1000",
+            "instruction": f"你是认知偏差审计专家。撰写第3章：认知偏差审计（800-1000字，Checklist格式）。{common}\n\n使用Checklist格式，每个偏差一条：\n\n### [偏差名称] — [偏差方向：高估/低估X]\n- **学者**: [引用卡尼曼/海特/西奥迪尼/阿希/班杜拉/艾克曼/阿瑞利的理论和insight原文]\n- **影响判断**: 本报告中[哪个具体判断]可能受此偏差影响\n- **去偏差操作**: [具体操作，不是「要注意」]\n\n至少覆盖6位心理学家的核心偏差。禁止罗列理论而不锚定到本报告。{quote_rule}\n\n## RAG参考\n{rag_text}"},
+        "ch04": {"title": "条件情景树（含量化触发指标）", "words": "1200-1500",
+            "instruction": f"你是战略推理引擎。撰写第4章：条件情景树（1200-1500字）。{common}\n\n⚠️ 禁止给事件赋概率数字。用条件判断替代。\n\n结构：\n- 情景A：触发条件=[具体可观测指标/事件+量化阈值] → 推演=[基于哪个学者框架] → 核心指标变化=[数字区间+时间框架]\n- 情景B/C同上\n- 每个情景必须包含量化触发指标（如：布伦特原油>$120、VIX>35、美元指数突破105）\n\n尾部风险清单：2-3个黑天鹅场景。\n\n{quote_rule}\n\n## 资产：{assets}\n## RAG参考\n{rag_text}\n\n## 历史参照\n{hist_text}"},
+        "ch05": {"title": "量化信号与交易建议", "words": "800-1000",
+            "instruction": f"你是量化策略分析师。撰写第5章：量化信号与交易建议（800-1000字）。{common}\n\n基于前面章节的情景分析，生成：\n1. **关键价格水平与触发条件**：每个相关资产的具体入场/目标/止损位\n2. **跨资产条件相关性**：情景触发时相关性如何变化\n3. **Kelly Criterion仓位建议**：基于情景概率的仓位sizing\n4. **反脆弱结构**：如何从波动中获益（期权结构、对冲组合）\n5. **失效条件**：以上建议在什么条件下需要完全推翻\n\n所有建议必须标注假设前提和失效条件。不构成投资建议。\n\n## 资产：{assets}\n{market_block}"},
     }
 
     premortem = {"title": "预-mortem偏差审计", "words": "800-1000",
@@ -909,7 +1083,7 @@ def auto_ingest_materials(affairs: dict, question: str):
 def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True, enable_affairs: bool = True):
     """完整Pipeline v5 (框架对抗+条件情景+多源时事+市场数据)"""
     print("=" * 60)
-    print("🧠 智库分析Pipeline v5 (框架对抗+条件情景+多源时事+市场数据)")
+    print("🧠 智库分析Pipeline v6 (理论骨架+量化输出+6章结构)")
     print("=" * 60)
 
     # Redis
@@ -979,9 +1153,15 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
     psych_total = len(selection.get("心理学家", []))
     print(f"  红蓝阵营: {rb_total}人 | 心理学家(独立): {psych_total}人")
 
-    # Step 5: 构建分段task（v5: 4章 + 预-mortem）
-    print(f"\n📝 Step 5: 构建分段报告任务（4章 + 预-mortem偏差审计）")
-    chapters, premortem = build_chapter_tasks(question, decomp, events, rag_data, selection, affairs_data, market_data)
+    # Step 5: 理论骨架提取（v6新增）
+    print(f"\n🦴 Step 5: 理论骨架提取")
+    theory_skeleton = extract_theory_skeleton(rag_data)
+    n_frameworks = len(theory_skeleton.get("scholar_frameworks", []))
+    print(f"  提取 {n_frameworks} 位学者的理论框架")
+
+    # Step 6: 构建分段task（v6: 6章 + 预-mortem）
+    print(f"\n📝 Step 6: 构建分段报告任务（6章 + 预-mortem偏差审计）")
+    chapters, premortem = build_chapter_tasks(question, decomp, events, rag_data, selection, affairs_data, market_data, theory_skeleton)
     os.makedirs("/tmp", exist_ok=True)
     topic_hash = hashlib.md5(question.encode()).hexdigest()[:4]
     for ch_id, ch in chapters.items():
@@ -1001,18 +1181,20 @@ def run_pipeline(question: str, sub_queries: dict = None, auto_save: bool = True
         "rag_total": total_rag,
         "rag_col_counts": {"insights": total_insights, "tension": total_tensions, "evidence": sum(len(d.get('evidence',[])) for d in rag_data.values())},
         "red_blue_selection": {k: v for k, v in selection.items()},
+        "theory_skeleton": {"frameworks": n_frameworks},
         "chapters": {k: {"title": v["title"], "words": v["words"]} for k, v in chapters.items()},
         "premortem": {"title": premortem["title"], "words": premortem["words"]},
         "generated_at": time.strftime("%Y-%m-%d %H:%M"),
+        "version": "v6",
     }
     with open("/tmp/think_tank_v3_framework.json", "w") as f:
         json.dump(framework, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ Pipeline就绪: {total_rag}条RAG + {len(events)}个历史事件 + {rb_total}人红蓝对抗 + {psych_total}人心理学家(独立)")
+    print(f"\n✅ Pipeline就绪: {total_rag}条RAG + {len(events)}个历史事件 + {rb_total}人红蓝对抗 + {psych_total}人心理学家(独立) + {n_frameworks}人理论骨架")
     if auto_save:
         print(f"\n📄 报告将保存到: {REPORT_DIR}/")
     print(f"\n💡 各章节task已保存到 /tmp/{topic_hash}_ch0X_task.txt + _premortem_task.txt")
-    print(f"   生成顺序：ch01-ch04并行 → premortem审计 → 拼接最终报告")
+    print(f"   生成顺序：ch01-ch05并行 → ch00(执行摘要，最后) → premortem审计 → 拼接最终报告")
 
     return chapters, premortem, framework
 

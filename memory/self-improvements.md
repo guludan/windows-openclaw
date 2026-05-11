@@ -19,6 +19,19 @@
 
 ---
 
+## 2026-05-10: 先查备份再决定方案，不要上来就重建
+- 电脑重启后chromadb空了，没查备份就想重新向量化147人
+- 备份就在D盘237MB，cp回来就解决了
+- 浪费半小时排查"segfault"，实际是DB_PATH指向旧空路径
+- **规则**: 数据丢了/空了 → 先查备份 → 再决定方案
+- **规则**: DB_PATH只改一次，改完立即验证
+- **规则**: 有现成脚本就用，不要手写新脚本
+
+## 2026-05-10: WSL跨盘大文件操作用robocopy
+- rsync/du/cp在D→D2跨盘操作时WSL2 OOM被杀
+- Windows robocopy稳定快速，34秒926MB
+- **规则**: 跨盘大操作一律用 `/mnt/c/Windows/System32/cmd.exe /c "robocopy ..."`
+
 ## 2026-04-21: chromadb 绝对不能并发
 - chromadb 不支持多进程并发写入，WSL 9p 文件系统下尤其严重
 - 并发写 → segfault / 数据库损坏 / SQLite 锁死

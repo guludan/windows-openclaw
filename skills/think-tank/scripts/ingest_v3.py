@@ -23,7 +23,7 @@ import requests
 
 # ============ 配置 ============
 BASE_DIR = Path("/mnt/d/data/think-tank-data/personalities")
-DB_PATH = Path("/mnt/d/data/think-tank-data/_chromadb/lacan_db")
+DB_PATH = Path("/mnt/d/data/think-tank-data/personalities/_chromadb/lacan_db")
 OLLAMA_URL = "http://172.26.0.1:11434/api/embed"
 OLLAMA_MODEL = "bge-m3:latest"
 

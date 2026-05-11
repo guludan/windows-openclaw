@@ -25,7 +25,7 @@ REDIS_PORT = 6379
 REDIS_DB = 0  # 历史事件用DB0
 
 #chromadb路径
-CHROMA_PATH = "/mnt/d/data/think-tank-data/_chromadb/lacan_db"
+CHROMA_PATH = "/mnt/d/data/think-tank-data/personalities/_chromadb/lacan_db"
 
 def get_redis():
     return redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB, decode_responses=True)
