@@ -163,6 +163,23 @@
 - evidence 结构：{"excerpt": "原文", "source_file": "文件名", "location": "位置描述"}
 - **总结蒸馏红线时漏掉了evidence这个最关键要求**，这是蒸馏质量命脉
 
+## 2026-05-11: 🔴 未经允许不允许在脚本中单独调用付费API
+- **规则**: 未经黄老板明确允许，不允许在脚本中单独调用付费API（SiliconFlow、GLM等）
+- sessions_spawn走coding plan，免费，可以正常使用
+- 本地ollama调用免费，可以正常使用
+
+## 2026-05-11: 向量入库批量写入导致电脑重启
+- chromadb向量入库时批量写入太多数据，内存溢出导致电脑重启
+- **规则**: 向量入库必须逐个入库，禁止大批量写入
+- 蒸馏可以批量跑，只要不超出上下文限制即可
+- **规则**: 超时就重试，不要自作主张换策略
+- **规则**: 没有黄老板明确指令不要自作主张写新脚本，用现有脚本
+- **规则**: embedding模型是bge-m3:latest（http://172.26.0.1:11434），不是qwen
+- **规则**: qwen3:8b禁止调用，本项目不使用该模型
+- **规则**: 蒸馏/骨架提取/量化生成等所有LLM任务必须走子session（sessions_spawn），不允许在脚本中直接调用本地ollama模型
+- **规则**: 子session蒸馏合法模型只有glm-5-turbo和glm-5.1
+- **规则**: pipeline报告生成也必须走子session，不允许脚本直接调模型
+
 ## 2026-04-30: regenerate_personality必须严格按模板字段名输出
 - 子session在regenerate时自造字段名，没有按distill_prompt_v3.md模板
 - turning_points用了event/description而不是period/title/narrative/catalyst/before_state/after_state/significance

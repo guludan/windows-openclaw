@@ -547,17 +547,7 @@ def extract_theory_skeleton(rag_data: dict) -> dict:
 {scholar_text}"""
 
     skeleton = ""
-    try:
-        r = requests.post('http://172.26.0.1:11434/api/generate',
-            json={"model": "qwen3:8b", "prompt": prompt, "stream": False},
-            timeout=120)
-        if r.status_code == 200:
-            skeleton = r.json().get("response", "")
-            # strip thinking tags
-            import re
-            skeleton = re.sub(r'<think>.*?</think>', '', skeleton, flags=re.DOTALL).strip()
-    except Exception as e:
-        skeleton = f"（LLM提取失败: {e}，使用原始数据）\n{scholar_text[:2000]}"
+    # ⚠️ 理论骨架提取必须走子session（sessions_spawn），不允许在脚本中直接调用本地模型
 
     return {
         "scholarly_skeleton": skeleton,
@@ -600,22 +590,9 @@ def generate_quant_output(question: str, decomp: dict, scenarios: str, market_da
     {{"asset": "", "edge": 0.0, "odds": 0.0, "kelly_fraction": 0.0, "recommended_pct": 0.0}}
   ]
 }}"""
-
-    try:
-        r = requests.post('http://172.26.0.1:11434/api/generate',
-            json={"model": "qwen3:8b", "prompt": prompt, "stream": False},
-            timeout=120)
-        if r.status_code == 200:
-            text = r.json().get("response", "")
-            import re
-            text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
-            # extract JSON from response
-            json_match = re.search(r'\{[\s\S]*\}', text)
-            if json_match:
-                return json.loads(json_match.group())
-    except Exception as e:
-        print(f"  ⚠️ 量化输出生成失败: {e}")
+    # ⚠️ 量化输出生成必须走子session（sessions_spawn），不允许在脚本中直接调用本地模型
     return {}
+
 
 
 def build_chapter_tasks(question: str, decomp: dict, events: list, rag_data: dict, selection: dict, affairs_data: dict = None, market_data: dict = None, theory_skeleton: dict = None) -> dict:
