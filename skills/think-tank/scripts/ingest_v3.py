@@ -31,7 +31,7 @@ COLLECTION_NAMES = [
     "personas", "cognitive", "claims", "evidence", "tracing", "tension"
 ]
 
-BATCH_SIZE = 4  # 减小批次防OOM和ollama 500
+BATCH_SIZE = 1  # 减小批次防OOM和ollama 500
 
 
 def embed_texts(texts):
@@ -542,103 +542,116 @@ def run(person_name, person_dir):
     print(f"Ingesting {person_name}... ({meta.get('source_count','?')} sources)", flush=True)
 
     os.makedirs(DB_PATH, exist_ok=True)
-    client = chromadb.PersistentClient(path=str(DB_PATH))
-    cols = {}
-    for name in COLLECTION_NAMES:
-        cols[name] = client.get_or_create_collection(name=name)
+    counts = {}
 
-    # 删除该人物旧数据
-    total_deleted = 0
-    for col_name in COLLECTION_NAMES:
+    def _get_col(name):
+        """每次获取新client，防止长时间持有导致segfault"""
+        c = chromadb.PersistentClient(path=str(DB_PATH))
+        return c.get_or_create_collection(name=name)
+
+    def _del_old(col_name):
+        col = _get_col(col_name)
         try:
-            col = cols[col_name]
             old = col.get(where={"person": person_name}, include=[])
             if old['ids']:
                 col.delete(ids=old['ids'])
-                total_deleted += len(old['ids'])
+                return len(old['ids'])
         except Exception:
-            pass
+            return 0
+
+    # 删除该人物旧数据
+    total_deleted = sum(x or 0 for x in (_del_old(cn) for cn in COLLECTION_NAMES))
     if total_deleted > 0:
         print(f"  删除旧数据: {total_deleted}条", flush=True)
-
-    counts = {}
+    gc.collect()
 
     # 1. personas
-    persona_chunks = extract_personas(pv3, person_name, category)
+    print("  [1/6] personas...", flush=True)
     counts['personas'] = _ingest_collection(
-        cols["personas"], persona_chunks, person_name, category,
+        _get_col("personas"), extract_personas(pv3, person_name, category), person_name, category,
         "persona", ["domain"])
+    del pv3; gc.collect()
 
     # 2. cognitive
-    cog_chunks = extract_cognitive(pv3, person_name)
+    pv3 = safe_json_load(pv3_path)
+    print("  [2/6] cognitive...", flush=True)
     counts['cognitive'] = _ingest_collection(
-        cols["cognitive"], cog_chunks, person_name, category,
+        _get_col("cognitive"), extract_cognitive(pv3, person_name), person_name, category,
         "cog", ["dim"])
+    del pv3; gc.collect()
 
-    # 3. evidence (先入库evidence，收集真实ID，供claims引用)
+    # 3. evidence (分段入库，每段后释放client)
+    pv3 = safe_json_load(pv3_path)
+    print("  [3/6] evidence...", flush=True)
     ev_chunks = extract_evidence(pv3, person_name, category)
     if ev_chunks:
-        # evidence用自带ev_id，需要特殊处理
         total = 0
-        for bi in range(0, len(ev_chunks), BATCH_SIZE):
-            batch = ev_chunks[bi:bi+BATCH_SIZE]
-            texts = [c['text'] for c in batch]
-            ids = [c['ev_id'] for c in batch]
-            metas = []
-            for c in batch:
-                metas.append({
-                    "person": person_name, "category": category,
-                    "dim": c['dim'], "source_file": c['source_file'],
-                    "location": c['location'], "language": c['language'],
-                    "insight_idx": str(c['insight_idx']),
-                })
-            embeds = embed_texts(texts)
-            if embeds and len(embeds) == len(texts):
-                cols["evidence"].add(documents=texts, embeddings=embeds, ids=ids, metadatas=metas)
-                total += len(embeds)
-            del batch, texts, embeds
-            gc.collect()
-            time.sleep(3)  # ollama喘息
+        SEGMENT = 20  # 每20条重建client
+        for seg_start in range(0, len(ev_chunks), SEGMENT):
+            seg = ev_chunks[seg_start:seg_start+SEGMENT]
+            col = _get_col("evidence")
+            for c in seg:
+                embeds = embed_texts([c['text']])
+                if embeds:
+                    col.add(
+                        documents=[c['text']], embeddings=embeds, ids=[c['ev_id']],
+                        metadatas=[{
+                            "person": person_name, "category": category,
+                            "dim": c['dim'], "source_file": c['source_file'],
+                            "location": c['location'], "language": c['language'],
+                            "insight_idx": str(c['insight_idx']),
+                        }])
+                    total += 1
+            del col; gc.collect()
+            if seg_start % 100 == 0:
+                print(f"    evidence: {total}/{len(ev_chunks)}", flush=True)
         counts['evidence'] = total
     else:
         counts['evidence'] = 0
+    del pv3; gc.collect()
 
-    # 4. claims
+    # 4. claims (分段入库)
+    pv3 = safe_json_load(pv3_path)
+    print("  [4/6] claims...", flush=True)
     claim_chunks = extract_claims(pv3, person_name, category)
     if claim_chunks:
         total = 0
-        for bi in range(0, len(claim_chunks), BATCH_SIZE):
-            batch = claim_chunks[bi:bi+BATCH_SIZE]
-            texts = [c['text'] for c in batch]
-            ids = [f"{person_name}_claim_{bi+i:03d}" for i in range(len(batch))]
-            metas = []
-            for c in batch:
-                metas.append({
-                    "person": person_name, "category": category,
-                    "dim": c['dim'], "evidence_count": str(c['evidence_count']),
-                })
-            embeds = embed_texts(texts)
-            if embeds and len(embeds) == len(texts):
-                cols["claims"].add(documents=texts, embeddings=embeds, ids=ids, metadatas=metas)
-                total += len(embeds)
-            del batch, texts, embeds
-            gc.collect()
-            time.sleep(3)  # ollama喘息
+        SEGMENT = 20
+        for seg_start in range(0, len(claim_chunks), SEGMENT):
+            seg = claim_chunks[seg_start:seg_start+SEGMENT]
+            col = _get_col("claims")
+            for i, c in enumerate(seg):
+                embeds = embed_texts([c['text']])
+                if embeds:
+                    col.add(
+                        documents=[c['text']], embeddings=embeds,
+                        ids=[f"{person_name}_claim_{seg_start+i:03d}"],
+                        metadatas=[{
+                            "person": person_name, "category": category,
+                            "dim": c['dim'], "evidence_count": str(c['evidence_count']),
+                        }])
+                    total += 1
+            del col; gc.collect()
         counts['claims'] = total
     else:
         counts['claims'] = 0
+    del pv3; gc.collect()
 
     # 5. tracing
-    trace_chunks = extract_tracing(pv3, person_name)
+    pv3 = safe_json_load(pv3_path)
+    print("  [5/6] tracing...", flush=True)
     counts['tracing'] = _ingest_collection(
-        cols["tracing"], trace_chunks, person_name, category,
+        _get_col("tracing"), extract_tracing(pv3, person_name), person_name, category,
         "trace", ["dim", "period"])
+    del pv3; gc.collect()
 
     # 6. tension
-    ten_chunks = extract_tension(pv3, person_name)
+    pv3 = safe_json_load(pv3_path)
+    print("  [6/6] tension...", flush=True)
     counts['tension'] = _ingest_collection(
-        cols["tension"], ten_chunks, person_name, category,
+        _get_col("tension"), extract_tension(pv3, person_name), person_name, category,
         "ten", ["dim"])
+    del pv3; gc.collect()
 
     summary = ' | '.join(f"{k}:{v}" for k, v in counts.items())
     print(f"  DONE — {summary}", flush=True)
