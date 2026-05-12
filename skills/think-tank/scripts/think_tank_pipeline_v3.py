@@ -19,11 +19,11 @@ Usage:
 import json, sys, os, subprocess, time, re, hashlib
 from pathlib import Path
 
-import chromadb, requests
+import lancedb, requests
 sys.path.insert(0, str(Path(__file__).parent))
 from historical_context import search_historical_events, get_redis_status
 
-DB_PATH = "/mnt/d/data/think-tank-data/personalities/_chromadb/lacan_db"
+DB_PATH = "/mnt/d/data/think-tank-data/personalities/_lacandb/lacan_db_v2"
 OLLAMA_URL = 'http://172.26.0.1:11434/api/embed'
 OLLAMA_MODEL = 'bge-m3:latest'
 REPORT_DIR = "/mnt/d/data/think-tank-data/reports"
@@ -192,7 +192,7 @@ def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6)
     深度RAG搜索，返回按人聚合的数据（v4.2: 按人分组，insights不截断）
     返回: {person_name: {"profile": str, "insights": [str], "evidence": [str], "tensions": [str]}}
     """
-    client = chromadb.PersistentClient(path=DB_PATH)
+    db = lancedb.connect(DB_PATH)
     queries = sub_queries if sub_queries else {"default": question}
     # v6: 修正collection名称，匹配实际6个collection
     COLLECTIONS = ["personas", "cognitive", "claims", "evidence", "tracing", "tension"]
@@ -210,14 +210,14 @@ def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6)
 
         for col_name in COLLECTIONS:
             try:
-                col = client.get_collection(col_name)
-                if col.count() == 0:
+                table = db.open_table(col_name)
+                n = 3 if col_name == "evidence" else n_per_col
+                results = table.search(emb).limit(n).to_list()
+                if not results:
                     continue
-                n = min(3 if col_name == "evidence" else n_per_col, col.count())
-                res = col.query(query_embeddings=[emb], n_results=n)
-                for i, doc in enumerate(res["documents"][0]):
-                    meta = res["metadatas"][0][i]
-                    person = meta.get("person", meta.get("personality_name", "?"))
+                for row in results:
+                    person = row.get("person", row.get("personality_name", "?"))
+                    doc = row.get("document", row.get("text", ""))
                     key = f"{person}|{col_name}"
                     if key in seen:
                         continue
@@ -243,12 +243,12 @@ def deep_rag_search(question: str, sub_queries: dict = None, n_per_col: int = 6)
                         persons[person]["insights"].append(text)
                     # 高权重collection重复检索
                     if col_name in HIGH_WEIGHT_COLS:
-                        extra_n = min(3, col.count())
-                        extra = col.query(query_embeddings=[emb], n_results=n + extra_n)
-                        for j in range(n, min(n + extra_n, len(extra["documents"][0]))):
-                            e_meta = extra["metadatas"][0][j]
-                            e_person = e_meta.get("person", e_meta.get("personality_name", "?"))
-                            e_doc = extra["documents"][0][j]
+                        extra_n = 3
+                        extra = table.search(emb).limit(n + extra_n).to_list()
+                        for j in range(n, min(n + extra_n, len(extra))):
+                            row_e = extra[j]
+                            e_person = row_e.get("person", row_e.get("personality_name", "?"))
+                            e_doc = row_e.get("document", row_e.get("text", ""))
                             e_key = f"{e_person}|{col_name}|extra_{j}"
                             if e_key in seen: continue
                             seen.add(e_key)
@@ -445,14 +445,14 @@ def red_blue_match(question: str, rag_data: dict) -> dict:
     # v6: 如果rag_persons太少，从personas collection补充
     if len(rag_persons) < 10:
         try:
-            client = chromadb.PersistentClient(path=DB_PATH)
-            col = client.get_collection("personas")
+            db = lancedb.connect(DB_PATH)
+            table = db.open_table("personas")
             emb = embed(question)
             if emb:
-                res = col.query(query_embeddings=[emb], n_results=30)
-                for i, doc in enumerate(res["documents"][0]):
-                    meta = res["metadatas"][0][i]
-                    person = meta.get("person", meta.get("personality_name", "?"))
+                results = table.search(emb).limit(30).to_list()
+                for row in results:
+                    person = row.get("person", row.get("personality_name", "?"))
+                    doc = row.get("document", row.get("text", ""))
                     if person not in rag_persons:
                         rag_persons.add(person)
                         if person not in rag_data:
@@ -1025,7 +1025,7 @@ def format_affairs_for_prompt(affairs: dict) -> str:
 
 
 def auto_ingest_materials(affairs: dict, question: str):
-    """时事素材入库到chromadb（不再明文保存）"""
+    """时事素材入库到lancedb（不再明文保存）"""
     saved = 0
     
     for topic, articles in affairs.items():
@@ -1035,25 +1035,29 @@ def auto_ingest_materials(affairs: dict, question: str):
                 continue
             saved += 1
             
-            # 入库到chromadb的evidence集合
+            # 入库到lancedb的evidence表
             try:
-                client = chromadb.PersistentClient(path=DB_PATH)
-                col = client.get_or_create_collection("evidence", metadata={"hnsw:space": "cosine"})
+                db = lancedb.connect(DB_PATH)
+                table = db.open_table("evidence")
                 emb = embed(text[:500])
                 if emb:
                     import hashlib
                     doc_id = hashlib.md5(text.encode()).hexdigest()[:16]
-                    col.upsert(
-                        ids=[f"auto_{doc_id}"],
-                        embeddings=[emb],
-                        documents=[text[:1000]],
-                        metadatas=[{"person": "时事自动入库", "source": a.get('source', 'unknown'), "title": a['title'], "url": a.get('url', ''), "type": "current_affairs"}]
-                    )
+                    row = {
+                        "vector": emb,
+                        "document": text[:1000],
+                        "person": "时事自动入库",
+                        "source": a.get('source', 'unknown'),
+                        "title": a['title'],
+                        "url": a.get('url', ''),
+                        "type": "current_affairs",
+                    }
+                    table.add([row])
             except Exception as e:
                 print(f"  ⚠️ 自动入库失败: {e}")
     
     if saved:
-        print(f"  📥 chromadb入库: {saved}条高质量素材")
+        print(f"  📥 lancedb入库: {saved}条高质量素材")
     return saved
 
 

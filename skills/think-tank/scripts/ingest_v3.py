@@ -18,12 +18,12 @@ ingest_v3.py — 从 personality_v3.json 入库到向量库（单人/全部）
 import json, sys, os, gc, time, re, hashlib
 from pathlib import Path
 
-import chromadb
+import lancedb
 import requests
 
 # ============ 配置 ============
 BASE_DIR = Path("/mnt/d/data/think-tank-data/personalities")
-DB_PATH = Path("/mnt/d/data/think-tank-data/personalities/_chromadb/lacan_db")
+DB_PATH = Path("/mnt/d/data/think-tank-data/personalities/_lacandb/lacan_db_v2")
 OLLAMA_URL = "http://172.26.0.1:11434/api/embed"
 OLLAMA_MODEL = "bge-m3:latest"
 
@@ -124,28 +124,30 @@ def safe_json_load(path):
         return json.loads(''.join(chars))
 
 
-def _batch_add(collection, texts, ids, metas):
-    """分批embed+写入集合"""
+def _batch_add(table, texts, ids, metas):
+    """分批embed+写入LanceDB表"""
     total = 0
     for bi in range(0, len(texts), BATCH_SIZE):
         batch_t = texts[bi:bi+BATCH_SIZE]
         embeds = embed_texts(batch_t)
         if embeds and len(embeds) == len(batch_t):
-            collection.add(
-                documents=batch_t,
-                embeddings=embeds,
-                ids=ids[bi:bi+BATCH_SIZE],
-                metadatas=metas[bi:bi+BATCH_SIZE]
-            )
+            records = []
+            for j in range(len(batch_t)):
+                rec = dict(metas[bi:bi+BATCH_SIZE][j])
+                rec['id'] = ids[bi:bi+BATCH_SIZE][j]
+                rec['text'] = batch_t[j]
+                rec['vector'] = embeds[j]
+                records.append(rec)
+            table.add(records)
             total += len(embeds)
         del embeds
         gc.collect()
-        time.sleep(3)  # 让ollama喘息
+        time.sleep(3)
     return total
 
 
-def _ingest_collection(col, chunks, person_name, category, id_prefix, meta_fields):
-    """流式入库：逐批提取+embed+写入，避免大数据人物OOM"""
+def _ingest_collection(table, chunks, person_name, category, id_prefix, meta_fields):
+    """流式入库：逐批提取+embed+写入LanceDB，避免大数据人物OOM"""
     if not chunks:
         return 0
     total = 0
@@ -153,19 +155,23 @@ def _ingest_collection(col, chunks, person_name, category, id_prefix, meta_field
         batch = chunks[bi:bi+BATCH_SIZE]
         texts = [c['text'] for c in batch]
         ids = [f"{person_name}_{id_prefix}_{bi+i:03d}" for i in range(len(batch))]
-        metas = []
-        for c in batch:
-            m = {"person": person_name, "category": category}
+        records = []
+        for i, c in enumerate(batch):
+            rec = {"person": person_name, "category": category}
             for f in meta_fields:
-                m[f] = str(c.get(f, ''))
-            metas.append(m)
+                rec[f] = str(c.get(f, ''))
+            rec['id'] = ids[i]
+            rec['text'] = c['text']
+            records.append(rec)
         embeds = embed_texts(texts)
         if embeds and len(embeds) == len(texts):
-            col.add(documents=texts, embeddings=embeds, ids=ids, metadatas=metas)
+            for j, rec in enumerate(records):
+                rec['vector'] = embeds[j]
+            table.add(records)
             total += len(embeds)
         else:
             print(f"  WARN: {id_prefix} batch {bi//BATCH_SIZE} embed failed, skipping", flush=True)
-        del batch, texts, embeds
+        del batch, texts, embeds, records
         gc.collect()
         time.sleep(3)
     return total
@@ -545,17 +551,24 @@ def run(person_name, person_dir):
     counts = {}
 
     def _get_col(name):
-        """每次获取新client，防止长时间持有导致segfault"""
-        c = chromadb.PersistentClient(path=str(DB_PATH))
-        return c.get_or_create_collection(name=name)
+        """获取LanceDB表，不存在则创建"""
+        db = lancedb.connect(str(DB_PATH))
+        try:
+            return db.open_table(name)
+        except Exception:
+            # 表不存在，创建空表后删除init记录
+            db.create_table(name, [{'id': '_init', 'vector': [0.0]*1024}], mode='overwrite')
+            tbl = db.open_table(name)
+            tbl.delete("id = '_init'")
+            return tbl
 
     def _del_old(col_name):
-        col = _get_col(col_name)
         try:
-            old = col.get(where={"person": person_name}, include=[])
-            if old['ids']:
-                col.delete(ids=old['ids'])
-                return len(old['ids'])
+            tbl = _get_col(col_name)
+            before = tbl.count_rows()
+            tbl.delete(f"person = '{person_name}'")
+            after = tbl.count_rows()
+            return before - after
         except Exception:
             return 0
 
@@ -593,14 +606,15 @@ def run(person_name, person_dir):
             for c in seg:
                 embeds = embed_texts([c['text']])
                 if embeds:
-                    col.add(
-                        documents=[c['text']], embeddings=embeds, ids=[c['ev_id']],
-                        metadatas=[{
-                            "person": person_name, "category": category,
-                            "dim": c['dim'], "source_file": c['source_file'],
-                            "location": c['location'], "language": c['language'],
-                            "insight_idx": str(c['insight_idx']),
-                        }])
+                    col.add([{
+                        "id": c['ev_id'],
+                        "person": person_name, "category": category,
+                        "dim": c['dim'], "source_file": c['source_file'],
+                        "location": c['location'], "language": c['language'],
+                        "insight_idx": str(c['insight_idx']),
+                        "text": c['text'],
+                        "vector": embeds[0],
+                    }])
                     total += 1
             del col; gc.collect()
             if seg_start % 100 == 0:
@@ -623,13 +637,13 @@ def run(person_name, person_dir):
             for i, c in enumerate(seg):
                 embeds = embed_texts([c['text']])
                 if embeds:
-                    col.add(
-                        documents=[c['text']], embeddings=embeds,
-                        ids=[f"{person_name}_claim_{seg_start+i:03d}"],
-                        metadatas=[{
-                            "person": person_name, "category": category,
-                            "dim": c['dim'], "evidence_count": str(c['evidence_count']),
-                        }])
+                    col.add([{
+                        "id": f"{person_name}_claim_{seg_start+i:03d}",
+                        "person": person_name, "category": category,
+                        "dim": c['dim'], "evidence_count": str(c['evidence_count']),
+                        "text": c['text'],
+                        "vector": embeds[0],
+                    }])
                     total += 1
             del col; gc.collect()
         counts['claims'] = total

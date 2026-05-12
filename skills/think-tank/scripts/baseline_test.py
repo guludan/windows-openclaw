@@ -15,13 +15,13 @@ RAG系统基准测试 v1.0
 """
 
 import json
-import chromadb
+import lancedb
 import requests
 from pathlib import Path
 from collections import defaultdict
 import time
 
-DB_PATH = "/mnt/d/data/think-tank-data/personalities/_chromadb/lacan_db"
+DB_PATH = "/mnt/d/data/think-tank-data/personalities/_lacandb/lacan_db_v2"
 OLLAMA_URL = "http://172.26.0.1:11434/api/embed"
 OLLAMA_MODEL = "bge-m3:latest"
 COLLECTION_NAMES = ["personas", "cognitive", "claims", "evidence", "tracing", "tension"]
@@ -134,7 +134,7 @@ BASELINE_QUERIES = [
 ]
 
 def run_baseline():
-    client = chromadb.PersistentClient(path=DB_PATH)
+    client = lancedb.connect(DB_PATH)
     
     results = []
     
@@ -156,7 +156,7 @@ def run_baseline():
         
         # 检索所有集合
         for col_name in COLLECTION_NAMES:
-            col = client.get_collection(col_name)
+            col = client.open_table(col_name)
             r = col.query(query_embeddings=[q_emb], n_results=10, 
                          include=["documents", "metadatas", "distances"])
             
