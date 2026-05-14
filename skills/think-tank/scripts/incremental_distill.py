@@ -493,7 +493,7 @@ def apply_incremental_result(person_dir, pv3_data):
             now_iso = datetime.now().isoformat()
             for filename in distilled_files:
                 distillate_path = None
-                # Check _per_file_results/ (distillates/ removed 2026-05-14)
+                # Check _per_file_results/
                 candidate = Path(person_dir) / "_per_file_results" / f"{filename}.json"
                 if candidate.exists():
                     distillate_path = str(candidate.relative_to(person_dir))

@@ -131,11 +131,11 @@
 }
 ```
 
-这些可以从现有personality_v3.json用LLM批量提取，存入chromadb的metadata。
+这些可以从现有personality_v3.json用LLM批量提取，存入LanceDB的metadata。
 
 **匹配逻辑**：
 ```
-议题 → LLM提取维度向量 → chromadb按维度×框架×立场检索 → 
+议题 → LLM提取维度向量 → LanceDB按维度×框架×立场检索 → 
 每维度选2-3人（确保框架多样性）→ 至少1名反共识专家 → 委员会名单
 ```
 

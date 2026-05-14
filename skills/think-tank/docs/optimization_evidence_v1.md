@@ -42,7 +42,7 @@
     - 内容在黑名单(References等): quality_score = 0
     - 纯数字/章节号: quality_score = 0
   ```
-- 检索时：在chromadb的where条件中加 `quality_score >= 0.3` 过滤
+- 检索时：在LanceDB的where条件中加 `quality_score >= 0.3` 过滤
 - 好处：不丢失任何数据，但低质量evidence在检索中被降权
 - 代价：需要给5359条已有evidence补算quality_score
 

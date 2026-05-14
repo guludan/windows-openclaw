@@ -352,7 +352,7 @@ def merge_per_file_results(person_dir: Path) -> None:
 
     print(f"\n总计: {len(all_insights)} insights")
 
-    # Save per-file distillate results to distillates/ directories
+    # Save per-file distillate results to _per_file_results/
     # Also update _db.sqlite
     db_path = person_dir / "_db.sqlite"
     db_conn = None
@@ -377,11 +377,7 @@ def merge_per_file_results(person_dir: Path) -> None:
                     category = "papers"
                 elif not (person_dir / "materials" / "raw" / source_file).exists() and source_file.startswith("paper_"):
                     category = "papers"
-                # NOTE: distillates/ removed 2026-05-14, results live only in _per_file_results/
-                # dist_dir = person_dir / category / "distillates"
-                # dist_dir.mkdir(parents=True, exist_ok=True)
-                # dist_path = dist_dir / f"{result_file.stem}.json"
-                # dist_path.write_text(json.dumps(insights, ensure_ascii=False, indent=2), encoding='utf-8')
+                # Results live in _per_file_results/
 
                 # Update DB
                 if db_conn:

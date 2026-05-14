@@ -238,9 +238,9 @@ evidence.metadata.source_file → 磁盘上的txt路径
 - 地址：`http://172.26.0.1:11434/api/embed`
 - 批量：8条一组
 
-### ⚠️ 严禁并发写入chromadb
+### ⚠️ 严禁并发写入 LanceDB
 
-WSL 9p文件系统下多进程写入会导致segfault和数据库损坏。必须串行。
+LanceDB 不支持并发写入，必须串行。
 
 ---
 

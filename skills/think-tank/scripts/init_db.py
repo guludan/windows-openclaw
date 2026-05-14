@@ -116,7 +116,7 @@ def check_dup_against_existing(content: str, existing_contents: list) -> str | N
 
 
 def iter_persons():
-    """Same traversal as migrate_structure.py"""
+    """Same traversal logic as init_db scan"""
     for group_dir in sorted(BASE_DIR.iterdir()):
         if not group_dir.is_dir() or group_dir.name.startswith('.'):
             continue
