@@ -23,7 +23,7 @@ import lancedb, requests
 sys.path.insert(0, str(Path(__file__).parent))
 from historical_context import search_historical_events, get_redis_status
 
-DB_PATH = "/mnt/d/data/think-tank-data/personalities/_lacandb/lacan_db_v2"
+DB_PATH = "/mnt/d/data/think-tank-data/personalities/_lacandb/lacan_db"
 OLLAMA_URL = 'http://172.26.0.1:11434/api/embed'
 OLLAMA_MODEL = 'bge-m3:latest'
 REPORT_DIR = "/mnt/d/data/think-tank-data/reports"

@@ -21,7 +21,7 @@ from pathlib import Path
 from collections import defaultdict
 import time
 
-DB_PATH = "/mnt/d/data/think-tank-data/personalities/_lacandb/lacan_db_v2"
+DB_PATH = "/mnt/d/data/think-tank-data/personalities/_lacandb/lacan_db"
 OLLAMA_URL = "http://172.26.0.1:11434/api/embed"
 OLLAMA_MODEL = "bge-m3:latest"
 COLLECTION_NAMES = ["personas", "cognitive", "claims", "evidence", "tracing", "tension"]

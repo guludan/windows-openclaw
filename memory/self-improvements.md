@@ -116,10 +116,24 @@
 - **全量蒸馏用 _batch_distill.py --per-file，增量用 incremental_distill.py --auto**
 - 两者共用 _per_file_prompts/ 和 _per_file_results/ 目录
 
+## 2026-05-13: regenerate截断追加bug修复
+- 问题：两阶段regenerate中，compact_insights()压缩到90条后，被截断丢弃的300+条insights在apply时全部原样追加回来，等于没压缩
+- 成功案例（特沃斯基161→32, Fama 309→75）：insights<200，丢弃少
+- 失败案例（哈德纳吉488→440, 丹·阿瑞利586→549）：insights>300，丢弃多
+- 修复：apply阶段对discarded insights按dim+claim相似度匹配已有merged insights，evidence合并进去，只有真正无法匹配的才原样保留
+- **修改文件**: regenerate_personality.py 347行附近
+- 同时spawn 3+子session导致gateway内存暴涨，WSL OOM，电脑关机
+- 这个错误反复犯：batch蒸馏同时开多个子session，worker内部又开子session
+- **绝对规则：蒸馏子session必须严格串行，一次只跑1个，完成后再spawn下一个**
+- 即使看起来"慢"，也比搞关机强一百倍
+- 5并发上限是给质量评分的，蒸馏不是质量评分
+- **电脑关机 = 所有进程中断 = 数据丢失风险 = 白干**
+- 不允许为了"加速"而并发
+
 ## 2026-04-29: spawn子session必须立即重试超时
 - gateway超时率~50%，spawn失败后必须立刻重试，不要等
 - 每个子session完成事件后立刻spawn下一批，保持流水线
-- 5并发上限，glm-5-turbo模型
+- 质量评分可以5并发，但蒸馏必须串行
 - 黄老板要求：超时自动重试，不要空转
 
 ## 2026-04-26: 删数据库必须经黄老板同意

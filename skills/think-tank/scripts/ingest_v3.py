@@ -23,7 +23,7 @@ import requests
 
 # ============ 配置 ============
 BASE_DIR = Path("/mnt/d/data/think-tank-data/personalities")
-DB_PATH = Path("/mnt/d/data/think-tank-data/personalities/_lacandb/lacan_db_v2")
+DB_PATH = Path("/mnt/d/data/think-tank-data/personalities/_lacandb/lacan_db")
 OLLAMA_URL = "http://172.26.0.1:11434/api/embed"
 OLLAMA_MODEL = "bge-m3:latest"
 
@@ -31,7 +31,7 @@ COLLECTION_NAMES = [
     "personas", "cognitive", "claims", "evidence", "tracing", "tension"
 ]
 
-BATCH_SIZE = 1  # 减小批次防OOM和ollama 500
+BATCH_SIZE = 50  # LanceDB无OOM问题，批量加速
 
 
 def embed_texts(texts):
@@ -173,7 +173,7 @@ def _ingest_collection(table, chunks, person_name, category, id_prefix, meta_fie
             print(f"  WARN: {id_prefix} batch {bi//BATCH_SIZE} embed failed, skipping", flush=True)
         del batch, texts, embeds, records
         gc.collect()
-        time.sleep(3)
+        time.sleep(0.5)
     return total
 
 
@@ -550,17 +550,34 @@ def run(person_name, person_dir):
     os.makedirs(DB_PATH, exist_ok=True)
     counts = {}
 
+    # 完整schema，用于首次创建表
+    _SCHEMAS = {
+        'personas': {'id': 'str', 'person': 'str', 'category': 'str', 'text': 'str', 'vector': 'list<float>', 'domain': 'str'},
+        'cognitive': {'id': 'str', 'person': 'str', 'category': 'str', 'text': 'str', 'vector': 'list<float>', 'dim': 'str'},
+        'evidence': {'id': 'str', 'person': 'str', 'category': 'str', 'dim': 'str', 'source_file': 'str', 'location': 'str', 'language': 'str', 'insight_idx': 'str', 'text': 'str', 'vector': 'list<float>'},
+        'claims': {'id': 'str', 'person': 'str', 'category': 'str', 'dim': 'str', 'evidence_count': 'str', 'text': 'str', 'vector': 'list<float>'},
+        'tracing': {'id': 'str', 'person': 'str', 'category': 'str', 'text': 'str', 'vector': 'list<float>', 'dim': 'str', 'period': 'str'},
+        'tension': {'id': 'str', 'person': 'str', 'category': 'str', 'text': 'str', 'vector': 'list<float>', 'dim': 'str'},
+    }
+
     def _get_col(name):
         """获取LanceDB表，不存在则创建"""
         db = lancedb.connect(str(DB_PATH))
         try:
             return db.open_table(name)
         except Exception:
-            # 表不存在，创建空表后删除init记录
-            db.create_table(name, [{'id': '_init', 'vector': [0.0]*1024}], mode='overwrite')
-            tbl = db.open_table(name)
-            tbl.delete("id = '_init'")
-            return tbl
+            # 用完整schema创建
+            schema = _SCHEMAS.get(name, {'id': 'str', 'text': 'str', 'vector': 'list<float>'})
+            import pyarrow as pa
+            fields = []
+            for fname, ftype in schema.items():
+                if ftype == 'str':
+                    fields.append(pa.field(fname, pa.string()))
+                elif ftype == 'list<float>':
+                    fields.append(pa.field(fname, pa.list_(pa.float32())))
+            arrow_schema = pa.schema(fields)
+            db.create_table(name, schema=arrow_schema, mode='overwrite')
+            return db.open_table(name)
 
     def _del_old(col_name):
         try:
@@ -599,23 +616,28 @@ def run(person_name, person_dir):
     ev_chunks = extract_evidence(pv3, person_name, category)
     if ev_chunks:
         total = 0
-        SEGMENT = 20  # 每20条重建client
+        SEGMENT = 400  # 每20条重建client
         for seg_start in range(0, len(ev_chunks), SEGMENT):
             seg = ev_chunks[seg_start:seg_start+SEGMENT]
             col = _get_col("evidence")
-            for c in seg:
-                embeds = embed_texts([c['text']])
-                if embeds:
-                    col.add([{
-                        "id": c['ev_id'],
-                        "person": person_name, "category": category,
-                        "dim": c['dim'], "source_file": c['source_file'],
-                        "location": c['location'], "language": c['language'],
-                        "insight_idx": str(c['insight_idx']),
-                        "text": c['text'],
-                        "vector": embeds[0],
-                    }])
-                    total += 1
+            # 批量embed
+            batch_texts = [c['text'] for c in seg]
+            batch_embeds = embed_texts(batch_texts)
+            records = []
+            for ci, c in enumerate(seg):
+                vec = batch_embeds[ci] if ci < len(batch_embeds) else [0.0]*1024
+                records.append({
+                    "id": c['ev_id'],
+                    "person": person_name, "category": category,
+                    "dim": c['dim'], "source_file": c['source_file'],
+                    "location": c['location'], "language": c['language'],
+                    "insight_idx": str(c['insight_idx']),
+                    "text": c['text'],
+                    "vector": vec,
+                })
+            if records:
+                col.add(records)
+            total += len(records)
             del col; gc.collect()
             if seg_start % 100 == 0:
                 print(f"    evidence: {total}/{len(ev_chunks)}", flush=True)
@@ -630,21 +652,26 @@ def run(person_name, person_dir):
     claim_chunks = extract_claims(pv3, person_name, category)
     if claim_chunks:
         total = 0
-        SEGMENT = 20
+        SEGMENT = 400
         for seg_start in range(0, len(claim_chunks), SEGMENT):
             seg = claim_chunks[seg_start:seg_start+SEGMENT]
             col = _get_col("claims")
+            # 批量embed
+            batch_texts = [c['text'] for c in seg]
+            batch_embeds = embed_texts(batch_texts)
+            records = []
             for i, c in enumerate(seg):
-                embeds = embed_texts([c['text']])
-                if embeds:
-                    col.add([{
-                        "id": f"{person_name}_claim_{seg_start+i:03d}",
-                        "person": person_name, "category": category,
-                        "dim": c['dim'], "evidence_count": str(c['evidence_count']),
-                        "text": c['text'],
-                        "vector": embeds[0],
-                    }])
-                    total += 1
+                vec = batch_embeds[i] if i < len(batch_embeds) else [0.0]*1024
+                records.append({
+                    "id": f"{person_name}_claim_{seg_start+i:03d}",
+                    "person": person_name, "category": category,
+                    "dim": c['dim'], "evidence_count": str(c['evidence_count']),
+                    "text": c['text'],
+                    "vector": vec,
+                })
+            if records:
+                col.add(records)
+            total += len(records)
             del col; gc.collect()
         counts['claims'] = total
     else:
