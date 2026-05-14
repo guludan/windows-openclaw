@@ -310,27 +310,37 @@ skills/think-tank/
 │   ├── _preprocess.py            素材预处理（去重+低质量过滤+质量报告）
 │   ├── quality_check_llm.py      LLM质量评分（生成prompt→sessions_spawn评分→apply）
 │   ├── _batch_distill.py         全量蒸馏（--per-file逐篇蒸馏+--merge-per-file合并）
+│   ├── _distill_utils.py         蒸馏工具函数（共用）
 │   ├── incremental_distill.py    ⭐ 增量蒸馏（新素材补充insights+合并evidence）
-│   ├── regenerate_personality.py 基于insights重新生成完整人格模型
+│   ├── regenerate_personality.py 基于insights重新生成完整人格模型（多批次）
 │   ├── ingest_v3.py              ⭐ 单人入库（素材chunk+结构化），自动删除旧数据
+│   ├── auto_distill.py           批量自动蒸馏（管理多人流水线）
 │   ├── fetch_papers.py           论文搜索+下载+PDF提取（SS+arXiv→Sci-Hub→PyMuPDF）
 │   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v4.0（4章+预-mortem）
-│   └── ...（其他辅助脚本）
+│   ├── cache_news.py             时事采集→Redis缓存
+│   ├── cache_news_tags.py        时事Tag索引系统
+│   ├── fetch_acled.py            ACLED冲突数据采集
+│   ├── fetch_cls.py              财联社快讯采集（Playwright绕WAF）
+│   ├── fetch_market.py           市场数据采集
+│   ├── fetch_ucdp.py             UCDP冲突数据采集
+│   └── historical_context.py     历史参照长效化引擎
 ├── templates/
 │   ├── distill_prompt_v3.md      V3蒸馏模板（含逻辑溯源+情境触发）
 │   ├── quality_score_prompt.md   LLM质量评分模板（精简版，~350B）
-│   └── regenerate_from_insights.md 重新生成人格模板
+│   ├── regenerate_from_insights.md 单批次重新生成人格模板
+│   ├── regenerate_batch_dim.md   多批次按dim合并模板
+│   └── regenerate_summary.md     多批次汇总模板（顶层字段）
 └── docs/
     ├── DIRECTORY_SPEC.md         目录结构规范
     └── pipeline.md               Pipeline说明
 ```
 
 /mnt/d/data/think-tank-data/              ← 数据目录（D盘）
-├── _chromadb/lacan_db/                   ← 向量库（chromadb，严禁并发）
-├── personalities/                        ← 150人素材+蒸馏
+├── _lacandb/lacan_db/                   ← 向量库（LanceDB，严禁并发写入）
+├── personalities/                        ← 人物素材+蒸馏
 │   ├── military/                         ← 25人
 │   ├── scholars/                         ← 83人（18子领域）
-│   └── psychologists/                    ← 30人（6子领域）
+│   └── psychologists/                    ← 45人（6子领域）
 └── reports/                              ← 生成的报告
 ```
 
@@ -338,7 +348,11 @@ skills/think-tank/
 ```
 person_name/
 ├── _db.sqlite                          ← 素材元数据（状态追踪）
+├── _distilled_files.json               ← 已蒸馏素材记录
 ├── personality_v3.json                 ← 蒸馏产出的人格模型（最终结果）
+├── meta.json                           ← 人物元信息
+├── _per_file_prompts/                  ← 蒸馏prompt（逐篇生成）
+├── _per_file_results/                  ← ⭐ 蒸馏结果（唯一存放位置）
 ├── materials/
 │   ├── raw/                            ← ✅ 素材来源①：网页采集素材（.md/.txt）
 │   ├── _discarded/                     ← ❌ 质量未通过的素材
@@ -346,8 +360,7 @@ person_name/
 │   ├── _search_cache/                  ← 搜索结果缓存（.json）
 │   ├── _quality_scores.json            ← 质量评分结果
 │   ├── _quality_report.json            ← 质检报告
-│   ├── _quality_prompt_*.md            ← 评分prompt（batch_size=8）
-│   └── _per_file_prompts/              ← 蒸馏prompt
+│   └── _quality_prompt_*.md            ← 评分prompt
 └── papers/
     ├── raw/                            ← ✅ 素材来源②：论文全文提取文本（.md）
     ├── pdfs/                           ← 论文PDF原件

@@ -201,3 +201,34 @@
 - grounding.embodied用了experience/description而不是context/role/duration/impact
 - lineage.transformed缺original/transformation，converged缺streams/product
 - **解决方案**：regenerate prompt中必须附上完整的模板字段名要求，并明确说"字段名必须严格按以下结构，禁止自造字段名"
+
+## 2026-05-14: distillates/ 双路径问题（第8次了）
+
+### 问题
+- `_batch_distill.py --merge-per-file` 在合并时会把结果**复制一份**到 `materials/distillates/` 或 `papers/distillates/`
+- 导致蒸馏结果散落在两处：`_per_file_results/` 和 `distillates/`
+- 每次统计蒸馏进度都漏算一处，反复出现"XX没蒸馏完"的误判
+
+### 修复
+1. `_batch_distill.py` merge_per_file_results() 中创建distillates的代码已注释掉
+2. `incremental_distill.py` apply时查找路径从distillates改为_per_file_results
+3. 全量删除所有distillates目录，内容合并到_per_file_results
+4. DIRECTORY_SPEC.md已更新
+5. **蒸馏结果唯一存放位置：`_per_file_results/`**
+
+### 教训
+- 修改数据存放路径时，必须同时修改：①脚本创建逻辑 ②脚本读取逻辑 ③文档 ④SELF_IMPROVEMENTS
+- 黄老板已经指出8次了，每次都只改一半
+
+### 更深层教训
+- 这次根本不是"蒸馏没跑完"的问题，是我在统计时漏算了一处数据就下结论"XX没蒸馏"
+- 然后基于错误判断重新跑了一批重复的蒸馏任务，浪费了黄老板的API费用和时间
+- **核心错误：没查清楚就动手，先开了子session跑再说**
+- 正确做法：先搞清数据全貌→确认是否真的需要跑→再动手
+- 黄老板原话："拿着假数据和瑕疵数据骗了一周"——虽然数据本身是真的，但我的错误判断导致了错误的行动
+
+### 更深层教训
+- 根本不是"蒸馏没跑完"，是统计时漏算数据就下结论
+- 基于错误判断重新跑重复蒸馏，浪费API费用和时间
+- 核心错误：没查清楚就动手，先开子session再说
+- 正确做法：先搞清数据全貌→确认是否真需要→再动手

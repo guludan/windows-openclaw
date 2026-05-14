@@ -377,10 +377,11 @@ def merge_per_file_results(person_dir: Path) -> None:
                     category = "papers"
                 elif not (person_dir / "materials" / "raw" / source_file).exists() and source_file.startswith("paper_"):
                     category = "papers"
-                dist_dir = person_dir / category / "distillates"
-                dist_dir.mkdir(parents=True, exist_ok=True)
-                dist_path = dist_dir / f"{result_file.stem}.json"
-                dist_path.write_text(json.dumps(insights, ensure_ascii=False, indent=2), encoding='utf-8')
+                # NOTE: distillates/ removed 2026-05-14, results live only in _per_file_results/
+                # dist_dir = person_dir / category / "distillates"
+                # dist_dir.mkdir(parents=True, exist_ok=True)
+                # dist_path = dist_dir / f"{result_file.stem}.json"
+                # dist_path.write_text(json.dumps(insights, ensure_ascii=False, indent=2), encoding='utf-8')
 
                 # Update DB
                 if db_conn:

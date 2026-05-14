@@ -493,11 +493,10 @@ def apply_incremental_result(person_dir, pv3_data):
             now_iso = datetime.now().isoformat()
             for filename in distilled_files:
                 distillate_path = None
-                for cat in ["materials", "papers"]:
-                    candidate = Path(person_dir) / cat / "distillates" / f"{filename}.json"
-                    if candidate.exists():
-                        distillate_path = str(candidate.relative_to(person_dir))
-                        break
+                # Check _per_file_results/ (distillates/ removed 2026-05-14)
+                candidate = Path(person_dir) / "_per_file_results" / f"{filename}.json"
+                if candidate.exists():
+                    distillate_path = str(candidate.relative_to(person_dir))
                 db_conn.execute(
                     "UPDATE items SET distilled=1, status='distilled', distillate_path=?, distill_time=? WHERE filename=?",
                     (distillate_path, now_iso, filename)

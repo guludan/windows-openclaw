@@ -20,12 +20,14 @@
 ### 质检状态：100% ✅
 - Total: 3922, Kept: 3055, Discarded: 867
 
-### 蒸馏+入库状态：151人蒸馏完成（2026-05-14）
+### 蒸馏+入库状态（2026-05-14 修正）
 - 6集合架构：personas/cognitive/claims/evidence/tracing/tension
 - 向量总数：30,481（LanceDB）
-- **蒸馏完成**：151人全部蒸馏merge完成
-- **待蒸馏**：契克森米哈赖 0/230（唯一剩余）
+- **蒸馏完成**：45人（所有prompt有对应result）
+- **蒸馏未完成**：63人，共缺2057个prompt（详见 /tmp/distill_incomplete_final.json）
+- **待蒸馏**：契克森米哈赖 0/230（唯一无personality_v3的）
 - **regenerate问题**：110/151人insights未真正合并（单evidence占比>40%），需用新的多批次regenerate全员重跑
+- **蒸馏结果唯一路径**：`_per_file_results/`（distillates已废弃并清理）
 
 ### 🔴 regenerate多批次重构（2026-05-14）
 - v3：去掉compact_insights截断（之前截断丢弃导致evidence丢失的bug源）
