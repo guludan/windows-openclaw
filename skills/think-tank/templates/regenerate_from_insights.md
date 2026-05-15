@@ -70,7 +70,7 @@
   "insights_with_evidence": [],
   "_distill_meta": {
     "source_count": 0,
-    "model": "glm-5-turbo",
+    "model": "当前使用的LLM",  # 替换为当前session使用的模型
     "timestamp": "",
     "version": "v3-regenerated"
   }

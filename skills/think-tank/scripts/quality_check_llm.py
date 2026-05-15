@@ -9,8 +9,8 @@ quality_check_llm.py — LLM质量评分工具
 
 流程:
     1. 读取 _quality_report.json（由_preprocess.py --quality 生成）
-    2. 生成 _quality_prompt.md（给GLM的评分指令）
-    3. 主session通过 sessions_spawn 调GLM处理prompt，返回JSON评分
+    2. 生成 _quality_prompt.md（给LLM的评分指令）
+    3. 主session通过 sessions_spawn 调LLM处理prompt，返回JSON评分
     4. 评分写入 _quality_scores.json
     5. --apply 将action=discard的文件移到 _discarded/
 """
@@ -24,7 +24,7 @@ from pathlib import Path
 
 
 def generate_prompt(person_dir: Path, batch_size: int = 8) -> list:
-    """生成GLM评分prompt文件，按批次分段，避免超出上下文
+    """生成LLM评分prompt文件，按批次分段，避免超出上下文
     
     返回prompt文件路径列表，每个文件包含一批素材的评分指令。
     """
@@ -285,7 +285,7 @@ def main():
     parser.add_argument("--apply-from-file", action="store_true",
                         help="从_quality_scores.json应用评分结果")
     parser.add_argument("--apply", metavar="JSON_STR",
-                        help="直接应用JSON评分字符串（从GLM返回的结果）")
+                        help="直接应用JSON评分字符串（从LLM返回的结果）")
     args = parser.parse_args()
 
     person_dir = Path(args.person_dir)
@@ -323,7 +323,7 @@ def main():
 
     elif args.apply:
         try:
-            # GLM可能返回markdown包裹的JSON，提取纯JSON
+            # LLM可能返回markdown包裹的JSON，提取纯JSON
             json_str = args.apply.strip()
             if json_str.startswith("```"):
                 lines = json_str.split('\n')
@@ -341,7 +341,7 @@ def main():
     else:
         batches = generate_prompt(person_dir)
         print(f"\nGenerated {len(batches)} batch prompt files.")
-        print(f"\nNext step (sessions_spawn调GLM-4.7处理):")
+        print(f"\nNext step (sessions_spawn调LLM处理):")
         print(f"For each batch file, spawn a sub-session to:")
         print(f"  1. Read the batch prompt file")
         print(f"  2. Score each material as JSON array")

@@ -136,7 +136,7 @@ python3 _preprocess.py <person_dir> --quality
 # Step 2: 生成分批评分prompt
 python3 quality_check_llm.py <person_dir>
 
-# Step 3: 用sessions_spawn调GLM评分每批prompt
+# Step 3: 用sessions_spawn调LLM评分每批prompt
 # （主session通过sessions_spawn调子agent处理每个_quality_prompt_N.md）
 
 # Step 4: 应用评分结果
@@ -304,3 +304,45 @@ skills/think-tank/templates/
 ├── quality_score_prompt.md            # 质量评分模板
 └── regenerate_from_insights.md        # 重新生成模板
 ```
+
+
+## 新V3流程（2026-05-15更新）
+
+### 弃用旧v3
+不再从旧 `personality_v3.json` 读取合并。所有人物统一走以下流程：
+
+### 1. Merge（生成空壳v3）
+```bash
+rm -f <person_dir>/personality_v3.json
+python3 _batch_distill.py <person_dir> --merge-per-file
+```
+- 只从 `_per_file_results/` 读取insights
+- 顶层字段留空，等regen阶段填充
+- 过滤无evidence的insight
+- 自动标准化dim名称（biography→situational等）
+
+### 2. 去重合并（batch_dedup_regen.py）
+```bash
+python3 batch_dedup_regen.py <person_dir>
+```
+**Step 1 - 语义去重：**
+- 按dim分组
+- 每批40条claims交给DeepSeek API
+- LLM判断语义重复的claims，输出合并方案（保留哪条、合并到哪条）
+- 程序层面合并evidence（只按excerpt去重，不修改原始文本）
+- cost: ~$0.01-0.02/人
+
+**Step 2 - 顶层字段生成：**
+- 基于去重后的insights+evidence
+- 每个dim取最有代表性的8条，带top-3 evidence
+- LLM生成brief/school/domains/stance_anchors等所有顶层字段
+- 信息不足用空数组，绝不编造
+
+### 批量处理
+```bash
+python3 batch_dedup_regen.py --people "name1,name2"
+python3 batch_dedup_regen.py --all --force
+python3 batch_dedup_regen.py <person_dir> --dedup-only
+python3 batch_dedup_regen.py <person_dir> --regen-only
+```
+

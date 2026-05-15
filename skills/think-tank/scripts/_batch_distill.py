@@ -166,11 +166,12 @@ def generate_per_file_prompts(person_dir: Path) -> None:
 
             # 构建chunk说明（如果有切分）
             chunk_info = ""
+            chunk_suffix = chunk["chunk_suffix"]
+            stem = material_file.stem  # 不含扩展名
+            prompt_filename = f"_prompt_{prompt_index:03d}_{stem}{chunk_suffix}.md"
+            result_filename = f"_prompt_{prompt_index:03d}_{stem}{chunk_suffix}.json"
             if chunk["total_chunks"] > 1:
                 chunk_info = f"\n**说明**: 本文件较大，已切分为第 {chunk['index']}/{chunk['total_chunks']} 部分，chunk之间有2个段落重叠以保持上下文连贯性。"
-                result_filename = chunk["result_filename"]
-            else:
-                result_filename = f"{material_file.name}.json"
 
             # 生成prompt
             prompt = f"""# 人格蒸馏 Prompt v3（逐篇蒸馏模式）
@@ -260,11 +261,6 @@ def generate_per_file_prompts(person_dir: Path) -> None:
 """
 
             # 保存prompt
-            # 如果是chunk，文件名格式: _prompt_{index}_{filename}_chunk{N}.md
-            chunk_suffix = chunk["chunk_suffix"]
-            # 去掉素材文件扩展名，避免 .md.md 双扩展名
-            stem = material_file.stem  # 不含扩展名
-            prompt_filename = f"_prompt_{prompt_index:03d}_{stem}{chunk_suffix}.md"
             prompt_path = prompts_dir / prompt_filename
             prompt_path.write_text(prompt, encoding='utf-8')
 
@@ -415,98 +411,42 @@ def merge_per_file_results(person_dir: Path) -> None:
         finally:
             db_conn.close()
 
-    # 读取或创建 personality_v3.json
+    # 从 _per_file_results 生成全新的 personality_v3.json
+    # 旧v3已被弃用，不再读取合并
     pv3_path = person_dir / "personality_v3.json"
-
-    if pv3_path.exists():
-        # 读取现有的 personality_v3.json
-        existing_data = json.loads(pv3_path.read_text(encoding='utf-8'))
-        existing_insights = existing_data.get("insights_with_evidence", [])
-        print(f"现有 insights: {len(existing_insights)}")
-
-        # 合并 insights（相同claim的合并evidence）
-        merged_insights = merge_insights(existing_insights + all_insights)
-        print(f"合并后 insights: {len(merged_insights)}")
-
-        # 更新数据
-        existing_data["insights_with_evidence"] = merged_insights
-        existing_data["_distill_meta"]["timestamp"] = datetime.now().isoformat()
-        if "source_count" in existing_data["_distill_meta"]:
-            materials = get_materials(person_dir)
-            existing_data["_distill_meta"]["source_count"] = len(materials)
-
-        final_data = existing_data
-    else:
-        # 创建新的 personality_v3.json
-        materials = get_materials(person_dir)
-        final_data = {
-            "brief": "",
-            "school": "",
-            "domains": [],
-            "stance_anchors": {
-                "core_belief": "",
-                "methodology": "",
-                "key_debates": [],
-                "value_hierarchy": []
-            },
-            "cognitive_patterns": {
-                "thinking_style": "",
-                "reasoning_approach": "",
-                "typical_biases": [],
-                "intellectual_strengths": [],
-                "intellectual_blindspots": []
-            },
-            "analytical_frameworks": [],
-            "logical_tracing": {
-                "summary": "",
-                "lineage": {
-                    "inherited": [],
-                    "transformed": [],
-                    "ruptured": [],
-                    "converged": []
-                },
-                "turning_points": [],
-                "grounding": {
-                    "embodied": [],
-                    "contextual": []
-                },
-                "collaborations": [],
-                "renunciations": [],
-                "adversaries": [],
-                "tension_explanation": {
-                    "note": "",
-                    "tracing": ""
-                }
-            },
-            "decision_patterns": {
-                "risk_tolerance": "",
-                "information_processing": "",
-                "temporal_orientation": "",
-                "conflict_resolution": ""
-            },
-            "situational_triggers": {
-                "description": "",
-                "triggers": [],
-                "collapse_point": "",
-                "default_behavior": "",
-                "public_commitment_lock": ""
-            },
-            "communication_profile": {
-                "style": "",
-                "persuasion_tactics": [],
-                "rhetorical_devices": [],
-                "emotional_range": ""
-            },
-            "evolution_trajectory": "",
-            "key_aphorisms": [],
-            "insights_with_evidence": merge_insights(all_insights),
-            "_distill_meta": {
-                "source_count": len(materials),
-                "model": "glm-5-turbo",
-                "timestamp": datetime.now().isoformat(),
-                "version": "v3-logical-tracing"
-            }
+    materials = get_materials(person_dir)
+    
+    merged = merge_insights(all_insights)
+    print(f"合并后 insights: {len(merged)}")
+    
+    final_data = {
+        "brief": "",
+        "school": "",
+        "domains": [],
+        "stance_anchors": {"core_belief": "", "methodology": "", "key_debates": [], "value_hierarchy": []},
+        "cognitive_patterns": {"thinking_style": "", "reasoning_approach": "", "typical_biases": [], "intellectual_strengths": [], "intellectual_blindspots": []},
+        "analytical_frameworks": [],
+        "logical_tracing": {
+            "summary": "",
+            "lineage": {"inherited": [], "transformed": [], "ruptured": [], "converged": []},
+            "turning_points": [],
+            "grounding": {"embodied": [], "contextual": []},
+            "collaborations": [], "renunciations": [], "adversaries": [],
+            "tension_explanation": {"note": "", "tracing": ""}
+        },
+        "decision_patterns": {"risk_tolerance": "", "information_processing": "", "temporal_orientation": "", "conflict_resolution": ""},
+        "situational_triggers": {"description": "", "triggers": [], "collapse_point": "", "default_behavior": "", "public_commitment_lock": ""},
+        "communication_profile": {"style": "", "persuasion_tactics": [], "rhetorical_devices": [], "emotional_range": ""},
+        "evolution_trajectory": "",
+        "key_aphorisms": [],
+        "insights_with_evidence": merged,
+        "_distill_meta": {
+            "source_count": len(materials),
+            "model": "deepseek-chat",
+            "timestamp": datetime.now().isoformat(),
+            "version": "v3-logical-tracing"
         }
+    }
 
     # 保存 personality_v3.json
     with open(pv3_path, "w", encoding="utf-8") as f:
@@ -661,7 +601,7 @@ def build_distill_task(person_name: str, person_dir: Path, person_domain: str = 
 - source_ref 必须指向素材文件名
 - 信息不足用空数组 []，绝不编造
 - 输出必须是合法JSON
-- _distill_meta.model 填 "glm-5-turbo"，_distill_meta.version 填 "v3-logical-tracing" """
+- _distill_meta.model 填 "当前使用的LLM"，_distill_meta.version 填 "v3-logical-tracing" """
     else:
         # 大素材：分段处理
         chunks = []
@@ -700,7 +640,7 @@ def build_distill_task(person_name: str, person_dir: Path, person_domain: str = 
 - source_ref 必须指向素材文件名
 - 信息不足用空数组 []，绝不编造
 - 输出必须是合法JSON
-- _distill_meta.model 填 "glm-5-turbo"，_distill_meta.version 填 "v3-logical-tracing" """
+- _distill_meta.model 填 "当前使用的LLM"，_distill_meta.version 填 "v3-logical-tracing" """
 
     return task
 

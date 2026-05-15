@@ -75,18 +75,18 @@ metadata: {"openclaw":{"emoji":"🏛️","os":["linux","darwin","win32"]}}
 ⚠️ **--quality 是必须参数，不要省略。** 只跑预处理不做质量检测等于没做。
 
 ```bash
-# Step 2b: LLM质量评分（sessions_spawn调GLM-5-turbo，batch_size=5）
+# Step 2b: LLM质量评分（sessions_spawn调LLM，batch_size=5）
 # 1. 生成评分prompt（batch_size=5，已内置）
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/quality_check_llm.py <person_dir>
 # 生成 _quality_prompt_0.md, _quality_prompt_1.md ...（每批5篇，最大~70KB）
 
-# 2. spawn子session评分（5并发，glm-5-turbo）
+# 2. spawn子session评分（5并发，当前可用模型）
 # - ≤3个prompt：1个子session读所有prompt并评分
 # - >3个prompt：按3个一批分成多个子session（避免context overflow）
 # - 子session任务：read prompt文件 → 评分JSON → 写入 _quality_scores.json → exec --apply-from-file
 # - gateway超时率~50%，spawn失败后立即重试
 # - 每个子session完成后立刻spawn下一批，保持流水线
-# - **10并发**：glm-5-turbo + glm-4.7混用
+# - **10并发**：当前可用模型
 
 # 3. apply（子session内自动执行）
 ~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/quality_check_llm.py <person_dir> --apply-from-file
@@ -371,7 +371,7 @@ person_name/
 
 ## 红线
 
-- **GLM调用必须走sessions_spawn**，禁止直接调API
+- **LLM调用必须走sessions_spawn**，禁止直接调API
 - **质量评分只用LLM，禁止用规则评分脚本**
 - **蒸馏必须逐篇逐chunk处理**，一次读全部会导致幻觉。每篇读完提取观点+标注source_ref，再读下一篇
 - **`_batch_distill.py --per-file` 从数据库查询非废弃素材**（status != 'discarded'），必须在Step 2b质量评分完成后执行
@@ -384,3 +384,31 @@ person_name/
 - 分析必须基于RAG素材，禁止凭空编造
 - source_ref 必须指向真实素材
 - 每份报告末尾标注"AI模拟"
+
+
+## 🆕 新V3流程（2026-05-15更新）
+
+**弃用旧v3**：不再从旧 `personality_v3.json` 读取合并。所有人物统一走新流程：
+
+### Step 0: Merge（生成空壳v3）
+```bash
+rm -f <person_dir>/personality_v3.json
+python3 _batch_distill.py <person_dir> --merge-per-file
+```
+- 只从 `_per_file_results/` 读insights，顶层字段留空
+- 过滤无evidence的insight，自动标准化dim名称
+
+### Step 1+2: 去重+顶层字段生成
+```bash
+python3 batch_dedup_regen.py <person_dir>
+python3 batch_dedup_regen.py --people "name1,name2"
+python3 batch_dedup_regen.py --all --force
+```
+- Step 1: 按dim分组, LLM语义去重合并claims, evidence程序级合并
+- Step 2: 基于去重后的insights+evidence, LLM生成顶层字段
+
+### 选项
+- `--batch-size 40` 每批insights数
+- `--dedup-only` / `--regen-only` 分步执行
+- `--force` 强制重新处理
+
