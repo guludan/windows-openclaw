@@ -14,6 +14,7 @@ import os
 import sys
 import re
 import json
+import random
 import subprocess
 from typing import List, Dict, Any, Optional, Set
 from datetime import datetime
@@ -21,7 +22,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
 from urllib.parse import quote, urlencode
 import time
-import re
 from pathlib import Path
 
 
@@ -136,13 +136,29 @@ ZHIAHU_COOKIE_PATH = os.path.expanduser("~/.openclaw/workspace/.cookies/zhihu_co
 MACRO_DATA_PATH = "/mnt/d/data/conflict-data/market/"
 
 # Key轮换：主key失败自动切换备用key（支持 _BACKUP, _BACKUP2 后缀）
+# 内嵌API key（环境变量覆盖优先）
+_DEFAULT_KEYS = {
+    "SERPAPI_KEY": "848c4ec87cac7776b9404f0af1aeb36fce936d1aa3aebe899664eaa43e67ccc2",
+    "SERPAPI_KEY_BACKUP": "cbf5714a2a6bafe15343f793774329a8e62bbe3ed1c2ec6eaef5c0210ed92cb1",
+    "EXA_API_KEY": "7be7a599-fa7b-4107-9ef1-ad96646156c2",
+    "EXA_API_KEY_BACKUP": "68d64b2b-0c48-4fd4-a1fb-74fb71f3f4ba",
+    "TAVILY_API_KEY": "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",
+    "TAVILY_API_KEY_BACKUP": "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",
+}
+
 _key_cache = {}
 def _get_working_key(env_name: str) -> Optional[str]:
-    """获取可用的API key，主key失效时自动轮换备用key。"""
+    """获取可用的API key，优先环境变量，其次内嵌默认key。"""
     if env_name in _key_cache:
         return _key_cache[env_name]
     for suffix in ["", "_BACKUP", "_BACKUP2"]:
         key = os.environ.get(f"{env_name}{suffix}", "")
+        if key:
+            _key_cache[env_name] = key
+            return key
+    # 环境变量未找到，回退到内嵌默认key
+    for suffix in ["", "_BACKUP", "_BACKUP2"]:
+        key = _DEFAULT_KEYS.get(f"{env_name}{suffix}", "")
         if key:
             _key_cache[env_name] = key
             return key
@@ -373,82 +389,22 @@ def _search_searxng(query: str, max_results: int = 5, instance_url: str = "http:
 
 def _search_duckduckgo(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
     """
-    Search using DuckDuckGo HTML version (requests-based scraping).
-
-    Args:
-        query: Search query
-        max_results: Maximum number of results
-
-    Returns:
-        List of search results
+    Search DuckDuckGo via Playwright (browser rendering).
+    替代了旧的HTML parser（DDG已废弃class名）。
     """
-    try:
-        url = "https://html.duckduckgo.com/html/"
-        params = {"q": query}
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-        }
-
-        response = requests.get(url, params=params, headers=headers, timeout=30)
-        response.raise_for_status()
-
-        # Parse HTML response
-        from html.parser import HTMLParser
-
-        class DuckDuckGoParser(HTMLParser):
-            def __init__(self):
-                super().__init__()
-                self.results = []
-                self.current_result = {}
-                self.in_result = False
-                self.in_title = False
-                self.in_snippet = False
-                self.capture_data = False
-
-            def handle_starttag(self, tag, attrs):
-                attrs_dict = dict(attrs)
-                class_name = attrs_dict.get("class", "")
-
-                if tag == "a" and "result__a" in class_name:
-                    self.in_result = True
-                    self.current_result = {"url": attrs_dict.get("href", "")}
-                    self.in_title = True
-                    self.capture_data = True
-
-                if tag == "a" and class_name.startswith("result__snippet"):
-                    self.in_snippet = True
-                    self.capture_data = True
-
-            def handle_endtag(self, tag):
-                if tag == "a" and self.in_title:
-                    self.in_title = False
-                    self.capture_data = False
-
-                if tag == "a" and self.in_snippet:
-                    self.in_snippet = False
-                    self.capture_data = False
-                    # Finalize result
-                    if self.current_result.get("title"):
-                        self.current_result["source"] = "DuckDuckGo"
-                        self.results.append(self.current_result)
-                        self.current_result = {}
-
-            def handle_data(self, data):
-                if self.capture_data:
-                    data = data.strip()
-                    if data:
-                        if self.in_title:
-                            self.current_result["title"] = self.current_result.get("title", "") + data
-                        elif self.in_snippet:
-                            self.current_result.setdefault("text", "")
-
-        parser = DuckDuckGoParser()
-        parser.feed(response.text)
-
-        return parser.results[:max_results]
-
-    except Exception:
-        return []
+    return _browser_search_base(
+        url_template="https://duckduckgo.com/?q={query}&ia=web",
+        query=query,
+        source_name="DuckDuckGo",
+        max_results=max_results,
+        selectors={
+            "result": "article[data-testid='result'], div[data-result]",
+            "title": "h2 a[data-testid='result-title-a'], h2 a",
+            "text": "span[data-testid='result-snippet']",
+        },
+        need_scroll=True,
+        wait_ms=4000
+    )
 
 def _search_exa(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
     """
@@ -561,7 +517,7 @@ def _search_serpapi(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
         return []
 
     try:
-        url = "https://serpapi.webscraper.io/search"
+        url = "https://serpapi.com/search"
         params = {
             "engine": "google",
             "q": query,
@@ -626,241 +582,415 @@ def search_general(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
 # L2: Chinese Deep Search (Zhihu, Sogou, Toutiao, Metaso, Cailian)
 # =============================================================================
 
-def _search_zhihu(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
+def _search_jina(query: str, max_results: int = 5, proxy: str = "http://172.26.0.1:10808") -> List[Dict[str, Any]]:
     """
-    Search Zhihu using API with cookie authentication.
+    通用搜索 via Jina Reader API（绕过所有反爬/验证码）。
+    尝试多个搜索引擎，取最先成功的。
 
     Args:
-        query: Search query
-        max_results: Maximum number of results
+        query: 搜索词
+        max_results: 最大结果数
+        proxy: HTTP代理
 
     Returns:
-        List of search results
+        搜索结果列表
     """
-    try:
-        # Check if cookie file exists
-        if not os.path.exists(ZHIAHU_COOKIE_PATH):
-            raise Exception("Cookie file not found")
+    search_urls = [
+        f"https://r.jina.ai/https://www.bing.com/search?q={quote(query)}&setlang=zh-Hans",
+        f"https://r.jina.ai/https://www.google.com/search?q={quote(query)}&hl=zh-CN",
+        f"https://r.jina.ai/http://www.baidu.com/s?wd={quote(query)}",
+    ]
 
-        # Read cookie
-        with open(ZHIAHU_COOKIE_PATH, 'r') as f:
-            cookie = f.read().strip()
+    all_results = []
+    for surl in search_urls:
+        try:
+            result = subprocess.run(
+                ['curl', '-sL', '--max-time', '30',
+                 '-H', 'Accept: text/markdown',
+                 '--proxy', proxy,
+                 surl],
+                capture_output=True, text=True, timeout=40
+            )
+            text = result.stdout
+            if not text or len(text) < 500:
+                continue
 
-        url = "https://www.zhihu.com/api/v4/search_v3"
-        headers = {
-            "Cookie": cookie,
-            "User-Agent": "Mozilla/5.0"
-        }
-        params = {
-            "t": "general",
-            "q": query,
-            "correction": 1,
-            "limit": max_results
-        }
+            # 过滤Jina错误信息
+            if 'SecurityCompromiseError' in text or 'Too Many Requests' in text or 'CAPTCHA' in text:
+                continue
 
-        response = requests.get(url, headers=headers, params=params, timeout=30)
-        response.raise_for_status()
-
-        results = []
-        for item in response.json().get("data", []):
-            obj = item.get("object", {})
-            results.append({
-                "title": obj.get("title", ""),
-                "text": obj.get("excerpt", "") or obj.get("content", ""),
-                "url": f"https://zhihu.com{obj.get('url', '')}",
-                "pub": "",
-                "source": "知乎"
-            })
-
-        return results[:max_results]
-
-    except Exception as e:
-        raise Exception(f"Zhihu API failed: {e}")
-
-
-def _playwright_search_base(url_template: str, query: str, source_name: str, max_results: int = 5, selectors: Dict[str, str] = None) -> List[Dict[str, Any]]:
-    """
-    Base Playwright search function for Chinese sources.
-
-    Args:
-        url_template: URL template with {query} placeholder
-        query: Search query
-        source_name: Name of the source
-        max_results: Maximum number of results
-        selectors: CSS selectors for title, text, url
-
-    Returns:
-        List of search results
-    """
-    if selectors is None:
-        selectors = {
-            "result": ".result",
-            "title": "h3 a",
-            "text": ".c-abstract",
-            "url": "h3 a"
-        }
-
-    try:
-        encoded_query = quote(query)
-        url = url_template.format(query=encoded_query)
-
-        # Playwright script as a single command
-        script = f"""
-const {{ chromium }} = require('playwright-core');
-(async () => {{
-  const browser = await chromium.launch('/snap/bin/chromium', {{ headless: true }});
-  const page = await browser.newPage();
-  await page.goto('{url}');
-  await page.waitForTimeout(2000);
-
-  const results = await page.evaluate((selectors) => {{
-    const items = [];
-    document.querySelectorAll(selectors.result).forEach(el => {{
-      const titleEl = el.querySelector(selectors.title);
-      const textEl = el.querySelector(selectors.text);
-      const urlEl = el.querySelector(selectors.url);
-      const title = titleEl?.textContent || '';
-      const text = textEl?.textContent || '';
-      const url = urlEl?.href || '';
-      if (title) items.push({{ title, text, url }});
-    }});
-    return items;
-  }}, {json.dumps(selectors)});
-
-  console.log(JSON.stringify(results));
-  await browser.close();
-}})();
-"""
-
-        result = subprocess.run(
-            ["node", "-e", script],
-            capture_output=True,
-            text=True,
-            timeout=60,
-            cwd="/home/tearsyu/.openclaw/workspace/skills/data-search"
-        )
-
-        if result.returncode == 0:
-            data = json.loads(result.stdout)
+            # 从markdown中提取链接标题和摘要
+            # Jina返回格式: [title](url) + 摘要段落
+            lines = text.split('\n')
             results = []
-            for item in data[:max_results]:
+            for i, line in enumerate(lines):
+                m = re.match(r'^\[(.+?)\]\((https?://[^)]+)\)', line)
+                if m:
+                    title = m.group(1).strip()
+                    url = m.group(2).strip()
+                    # 过滤搜索网站内部链接、图片、导航
+                    skip_urls = ['baidu.com/link?', 'baidu.com/s?', 'bing.com/search', 'baidu/img', 'blob:', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.css', '.js']
+                    if any(skip in url.lower() for skip in skip_urls):
+                        continue
+                    skip_titles = ['上一页', '下一页', '百度首页', '帮助', '官方', '设置', '登录', '关闭', 'Image', '抗击肺炎']
+                    if any(st in title for st in skip_titles):
+                        continue
+                    if title.startswith('!'):
+                        continue
+                    if len(title) < 6 or title == '[' or title == ']' or not any(c.isalpha() for c in title):
+                        continue
+                    # 取下面非空行作为text
+                    snippet = ''
+                    for j in range(i+1, min(i+4, len(lines))):
+                        ls = lines[j].strip()
+                        if ls and not ls.startswith('['):
+                            snippet = ls[:200]
+                            break
+                    results.append({
+                        "title": title, "text": snippet,
+                        "url": url, "pub": "", "source": "Jina"
+                    })
+                    if len(results) >= max_results:
+                        break
+
+            if results:
+                all_results.extend(results)
+                if len(all_results) >= max_results:
+                    return all_results[:max_results]
+
+        except Exception:
+            continue
+
+    return all_results[:max_results]
+
+
+def _search_zhihu(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
+    """Search Zhihu via Jina API（Playwright反爬严重）"""
+    # 知乎搜索：先尝试Jina，失败后用Bing + site:zhihu.com
+    zhihu_url = f"https://r.jina.ai/https://www.zhihu.com/search?type=content&q={quote(query)}"
+    try:
+        result = subprocess.run(
+            ['curl', '-sL', '--max-time', '30',
+             '-H', 'Accept: text/markdown',
+             '--proxy', 'http://172.26.0.1:10808',
+             zhihu_url],
+            capture_output=True, text=True, timeout=40
+        )
+        text = result.stdout
+        if text and len(text) >= 500:
+            lines = text.split('\n')
+            results = []
+            for i, line in enumerate(lines):
+                m = re.match(r'^\[(.+?)\]\((https?://[^)]+)\)', line)
+                if m and 'zhihu.com' in m.group(2):
+                    title = m.group(1).strip()
+                    url = m.group(2).strip()
+                    snippet = ''
+                    for j in range(i+1, min(i+4, len(lines))):
+                        ls = lines[j].strip()
+                        if ls and not ls.startswith('['):
+                            snippet = ls[:200]
+                            break
+                    results.append({
+                        "title": title, "text": snippet,
+                        "url": url, "pub": "", "source": "知乎"
+                    })
+                    if len(results) >= max_results:
+                        break
+            if results:
+                return results
+    except Exception:
+        pass
+
+    # 备用：通过Bing搜索知乎内容（via Jina）
+    try:
+        bing_url = f"https://r.jina.ai/https://www.bing.com/search?q=site%3Azhihu.com+{quote(query)}&setlang=zh-Hans"
+        result = subprocess.run(
+            ['curl', '-sL', '--max-time', '30',
+             '-H', 'Accept: text/markdown',
+             '--proxy', 'http://172.26.0.1:10808',
+             bing_url],
+            capture_output=True, text=True, timeout=40
+        )
+        text = result.stdout
+        if not text or len(text) < 500 or 'SecurityCompromiseError' in text:
+            return []
+
+        lines = text.split('\n')
+        results = []
+        for i, line in enumerate(lines):
+            m = re.match(r'^\[(.+?)\]\((https?://[^)]+)\)', line)
+            if m and 'zhihu.com' in m.group(2):
+                title = m.group(1).strip()
+                url = m.group(2).strip()
+                snippet = ''
+                for j in range(i+1, min(i+4, len(lines))):
+                    ls = lines[j].strip()
+                    if ls and not ls.startswith('['):
+                        snippet = ls[:200]
+                        break
                 results.append({
-                    "title": item.get("title", ""),
-                    "text": item.get("text", ""),
-                    "url": item.get("url", ""),
-                    "pub": "",
-                    "source": source_name
+                    "title": title, "text": snippet,
+                    "url": url, "pub": "", "source": "知乎"
                 })
-            return results
-
-        return []
-
+                if len(results) >= max_results:
+                    break
+        return results
     except Exception:
         return []
 
 
+# =============================================================================
+# 浏览器指纹池（用于Playwright搜索）
+# =============================================================================
+
+_USER_AGENTS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.129 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15",
+]
+
+_VIEWPORTS = [
+    {"width": 1920, "height": 1080},
+    {"width": 1366, "height": 768},
+    {"width": 1536, "height": 864},
+    {"width": 1440, "height": 900},
+]
+
+_PW_SCRIPT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+_CHROME_CHANNEL = "chrome"  # 使用系统Chrome（由playwright-core管理）
+
+
+def _get_random_fingerprint() -> dict:
+    """生成随机浏览器指纹（UA+Viewport+Locale）"""
+    return {
+        "userAgent": random.choice(_USER_AGENTS),
+        "viewport": random.choice(_VIEWPORTS),
+        "locale": random.choice(["zh-CN,zh;q=0.9,en;q=0.8", "en-US,en;q=0.9,zh-CN;q=0.8"]).split(",")[0],
+    }
+
+
+def _browser_search_base(
+    url_template: str, query: str, source_name: str,
+    max_results: int = 5, selectors: dict = None,
+    wait_ms: int = 3000,
+) -> List[Dict[str, Any]]:
+    """
+    统一Playwright浏览器搜索核心引擎。
+    随机指纹 + 反自动化检测 + 3次降级重试。
+    仅对Bing有效（其他引擎反爬严重）。
+    """
+    if selectors is None:
+        selectors = {"result": "li.b_algo", "title": "h2 a", "text": "p.b_lineclamp2"}
+
+    for attempt in range(3):
+        fp = _get_random_fingerprint()
+        vp = fp["viewport"]
+        ua = fp["userAgent"]
+        locale = fp["locale"]
+
+        encoded = quote(query)
+        url = url_template.format(query=encoded)
+
+        sel_result = selectors['result']
+        sel_title = selectors['title']
+        sel_text = selectors['text']
+        extract_js = f'''const items = [];
+document.querySelectorAll('{sel_result}').forEach(el => {{
+  const titleEl = el.querySelector('{sel_title}');
+  const textEl = el.querySelector('{sel_text}');
+  let title = (titleEl?.textContent || '').trim();
+  let text = (textEl?.textContent || '').trim();
+  let url = titleEl?.href || '';
+  if (title) items.push({{ title, text, url }});
+}});
+const seen = new Set();
+const unique = [];
+for (const item of items) {{
+  const key = item.title.slice(0, 40);
+  if (!seen.has(key)) {{ seen.add(key); unique.push(item); }}
+}}
+return unique.slice(0, {max_results});
+'''
+
+        script = f'''
+const {{ chromium }} = require('playwright-core');
+(async () => {{
+  const browser = await chromium.launch({{
+    headless: true, channel: '{_CHROME_CHANNEL}',
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-blink-features=AutomationControlled']
+  }});
+  const context = await browser.newContext({{
+    userAgent: '{ua}', viewport: {{ width: {vp['width']}, height: {vp['height']} }},
+    locale: '{locale}',
+  }});
+  await context.addInitScript(() => {{
+    Object.defineProperty(navigator, 'webdriver', {{ get: () => false }});
+    Object.defineProperty(navigator, 'plugins', {{ get: () => [1,2,3,4,5] }});
+    window.chrome = {{ runtime: {{}} }};
+  }});
+  const page = await context.newPage();
+  await page.waitForTimeout({random.randint(300, 1000)});
+  try {{
+    await page.goto('{url}', {{ waitUntil: 'domcontentloaded', timeout: 20000 }});
+  }} catch (e) {{}}
+  try {{
+    await page.waitForSelector('{selectors["result"]}', {{ timeout: {wait_ms} }});
+  }} catch (e) {{}}
+  await page.waitForTimeout(300);
+  const results = await page.evaluate(() => {{
+    {extract_js}
+  }});
+  console.log(JSON.stringify(results));
+  await browser.close();
+}})();
+'''
+
+        try:
+            _node_env = dict(os.environ)
+            _node_env["NODE_PATH"] = os.path.join(_PW_SCRIPT_DIR, "node_modules")
+            result = subprocess.run(
+                ["node", "-e", script],
+                capture_output=True, text=True, timeout=45,
+                cwd=_PW_SCRIPT_DIR,
+                env=_node_env
+            )
+
+            if result.returncode == 0 and result.stdout.strip():
+                try:
+                    data = json.loads(result.stdout.strip())
+                    if data and len(data) > 0:
+                        return [{
+                            "title": item.get("title", ""),
+                            "text": item.get("text", ""),
+                            "url": item.get("url", ""),
+                            "pub": "",
+                            "source": source_name
+                        } for item in data]
+                except json.JSONDecodeError:
+                    pass
+
+            # 短暂等待后换指纹重试
+            time.sleep(random.uniform(1, 3))
+
+        except Exception:
+            time.sleep(random.uniform(1, 3))
+
+    return []
+
+
 def _search_sogou(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
-    """
-    Search Sogou using Playwright.
-
-    Args:
-        query: Search query
-        max_results: Maximum number of results
-
-    Returns:
-        List of search results
-    """
-    return _playwright_search_base(
+    """Search Sogou via Playwright."""
+    return _browser_search_base(
         url_template="https://www.sogou.com/web?query={query}",
-        query=query,
-        source_name="搜狗",
+        query=query, source_name="搜狗",
         max_results=max_results,
-        selectors={
-            "result": ".results > div",
-            "title": "h3 a",
-            "text": ".str_info",
-            "url": "h3 a"
-        }
+        selectors={"result": "div.vrwrap, div.rb", "title": "h3 a, .vr-title a", "text": "div.str-text, .star-wiki"},
     )
 
 
 def _search_toutiao(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
-    """
-    Search Toutiao using Playwright.
-
-    Args:
-        query: Search query
-        max_results: Maximum number of results
-
-    Returns:
-        List of search results
-    """
-    return _playwright_search_base(
+    """Search Toutiao via Playwright."""
+    return _browser_search_base(
         url_template="https://so.toutiao.com/search?keyword={query}",
-        query=query,
-        source_name="头条",
+        query=query, source_name="头条",
         max_results=max_results,
-        selectors={
-            "result": ".result",
-            "title": "a",
-            "text": ".abstract",
-            "url": "a"
-        }
+        selectors={"result": ".result", "title": "a", "text": ".abstract"},
     )
 
 
 def _search_metaso(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
-    """
-    Search Metaso (秘塔AI搜索) using Playwright.
-
-    Args:
-        query: Search query
-        max_results: Maximum number of results
-
-    Returns:
-        List of search results with AI summaries
-    """
-    return _playwright_search_base(
-        url_template="https://metaso.cn/?q={query}",
-        query=query,
-        source_name="秘塔",
-        max_results=max_results,
-        selectors={
-            "result": ".search-result",
-            "title": "h3",
-            "text": ".summary",
-            "url": "a"
+    """Search Metaso (秘塔AI搜索). 返回AI摘要中的关键信息。"""
+    try:
+        import requests
+        url = f"https://metaso.cn/?q={quote(query)}"
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
         }
-    )
+        resp = requests.get(url, headers=headers, timeout=15)
+        html = resp.text
+
+        results = []
+
+        # 尝试多个选择器匹配AI摘要
+        # 秘塔可能使用class而非id
+        for pattern in [
+            r'<div[^>]*id="ai-summary"[^>]*>(.*?)</div>',
+            r'<div[^>]*class="[^"]*ai-summary[^"]*"[^>]*>(.*?)</div>',
+            r'<div[^>]*class="[^"]*summary[^"]*"[^>]*>(.*?)</div>',
+            r'<div[^>]*class="[^"]*answer[^"]*"[^>]*>(.*?)</div>',
+        ]:
+            m = re.search(pattern, html, re.DOTALL)
+            if m:
+                text = re.sub(r'<[^>]+>', '', m.group(1)).strip()[:300]
+                if len(text) > 20:
+                    results.append({
+                        "title": f"秘塔AI·{query}",
+                        "text": text,
+                        "url": url,
+                        "pub": "",
+                        "source": "秘塔"
+                    })
+                    break
+
+        # 也尝试从HTML meta description提取
+        if not results:
+            m = re.search(r'<meta[^>]*name="description"[^>]*content="([^"]+)"', html)
+            if m and len(m.group(1)) > 20:
+                results.append({
+                    "title": f"秘塔·{query}",
+                    "text": m.group(1).strip()[:300],
+                    "url": url,
+                    "pub": "",
+                    "source": "秘塔"
+                })
+
+        return results
+    except Exception:
+        return []
 
 
 def _search_cls(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
     """
     Search Cailian Press using AKShare.
-
-    Args:
-        query: Search query (not used, returns latest headlines)
-        max_results: Maximum number of results
-
-    Returns:
-        List of search results
+    注意：需要akshare库和conda tt环境。
     """
     try:
+        import importlib.util
+        akshare_spec = importlib.util.find_spec("akshare")
+        if akshare_spec is None:
+            return []
         import akshare as ak
 
         df = ak.stock_info_global_cls()
         results = []
 
+        ak_col_names = list(df.columns)
+
         for _, row in df.head(max_results).iterrows():
-            pub_val = row.get("发布时间", row.get("datetime", ""))
-            if hasattr(pub_val, 'strftime'):
-                pub_val = pub_val.strftime("%Y-%m-%d %H:%M:%S")
-            elif not isinstance(pub_val, str):
-                pub_val = str(pub_val)
+            # AKShare实际列名：标题、内容、发布日期、发布时间
+            title = str(row.get("标题", row.get("新闻标题", row.get("title", ""))))
+            text = str(row.get("内容", row.get("新闻内容", row.get("content", ""))))
+            url = str(row.get("新闻链接", row.get("url", "")))
+
+            pub_date = row.get("发布日期", "")
+            pub_time = row.get("发布时间", "")
+            if hasattr(pub_date, 'strftime'):
+                pub_date = pub_date.strftime("%Y-%m-%d")
+            if hasattr(pub_time, 'strftime'):
+                pub_time = pub_time.strftime("%H:%M:%S")
+            pub_val = f"{pub_date} {pub_time}" if pub_date and pub_time else str(pub_date or pub_time or "")
+
             results.append({
-                "title": str(row.get("新闻标题", row.get("title", ""))),
-                "text": str(row.get("新闻内容", row.get("content", ""))),
-                "url": str(row.get("新闻链接", row.get("url", ""))),
+                "title": title,
+                "text": text,
+                "url": url,
                 "pub": pub_val,
                 "source": "财联社"
             })
@@ -873,12 +1003,13 @@ def _search_cls(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
 
 def search_chinese(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
     """
-    L2中文深度搜索 - 知乎 → 搜狗(Playwright) → 头条(Playwright) → 秘塔(Playwright) → 财联社。
+    L2中文深度搜索 - 知乎(Jina) → 秘塔(Playwright) → Jina通用 → 财联社(akshare)。
 
-    降级策略:
-    1. 知乎API: 有cookie直接调，401则降级
-    2. Playwright源（搜狗/头条/秘塔）: 并行执行，统一无头浏览器实例
-    3. 财联社: AKShare免费接口兜底
+    说明：
+    - 搜狗/头条/百度已全面反爬，放弃Playwright方案
+    - 知乎通过Jina Reader API搜索（绕过反爬）
+    - 秘塔AI搜索有特殊结构但独特价值
+    - 财联社通过akshare获取最新资讯
 
     Args:
         query: 搜索查询
@@ -889,28 +1020,40 @@ def search_chinese(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
     """
     all_results = []
 
-    # Try Zhihu first
+    # 1. 知乎 Jina
     try:
         results = _search_zhihu(query, max_results)
         all_results.extend(results)
     except Exception:
-        pass  # Zhihu failed, continue to Playwright sources
+        pass
 
-    # Parallel execution of Playwright sources and Cailian
-    playwright_funcs = [_search_sogou, _search_toutiao, _search_metaso, _search_cls]
+    # 2. 秘塔 Playwright（免登录，价值独特）
+    try:
+        results = _search_metaso(query, max_results)
+        all_results.extend(results)
+    except Exception:
+        pass
 
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        futures = {
-            executor.submit(func, query, max_results): func
-            for func in playwright_funcs
-        }
+    # 3. SerpAPI Google搜索
+    try:
+        results = _search_serpapi(query, max_results)
+        all_results.extend(results)
+    except Exception:
+        pass
 
-        for future in as_completed(futures):
-            try:
-                results = future.result()
-                all_results.extend(results)
-            except Exception:
-                pass  # Silently skip failed sources
+    # 4. Jina通用搜索（Bing/Google）
+    try:
+        results = _search_jina(query, max_results)
+        all_results.extend(results)
+    except Exception:
+        pass
+
+    # 5. 财联社
+    try:
+        results = _search_cls(query, max_results)
+        all_results.extend(results)
+    except Exception:
+        pass
 
     return all_results
 

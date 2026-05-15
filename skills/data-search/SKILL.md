@@ -1,21 +1,23 @@
 ---
 name: data-search
-description: "统一数据搜索与采集模块。按议题定向从多源拉取数据：通用搜索(SearXNG/DuckDuckGo/Exa/Tavily/SerpAPI)、中文深度(知乎/搜狗/头条/秘塔/财联社)、学术(arXiv/Semantic Scholar/PubMed)、宏观经济(World Bank/AKShare/FRED)。内置去重、质量评分、Playwright反爬降级。触发词：数据搜索、多源搜索、议题采集、搜索模块、data search、抓取时事、拉数据。"
+description: "统一数据搜索与采集模块。按议题定向从多源拉取数据:通用搜索(SerpAPI/Exa/Tavily/Bing-Playwright)、中文深度(SerpAPI/财联社)、学术(arXiv/Semantic Scholar/PubMed)、宏观经济(World Bank/AKShare/FRED)。内置去重、质量评分。触发词:数据搜索、多源搜索、议题采集、搜索模块、data search、抓取时事、拉数据。"
 ---
 
-# Data Search — 统一数据搜索与采集模块
+# Data Search - 统一数据搜索与采集模块
 
-按议题定向从多源拉取数据，自动去重、审计质量、降级处理。不是堆砌所有搜索源，而是根据议题智能匹配最相关的数据层。
+按议题定向从多源拉取数据,自动去重、审计质量、降级处理。不是堆砌所有搜索源,而是根据议题智能匹配最相关的数据层。
 
 ## 架构
 
 ```
 议题 + 关键词
   │
-  ├─→ L1 通用搜索: SearXNG / DuckDuckGo / Exa / Tavily / SerpAPI（并行，全部跑）
-  ├─→ L2 中文深度: 知乎 / 搜狗(Playwright) / 头条(Playwright) / 秘塔(Playwright) / 财联社
-  ├─→ L3 学术支撑: arXiv / Semantic Scholar / PubMed（论文）
-  ├─→ L4 宏观数据: World Bank / AKShare / FRED（定向指标）
+  ├─→ L1 通用搜索: SerpAPI / Exa / Tavily / Bing-Playwright(并行,全部跑)
+  │   注意: SearXNG/DuckDuckGo/搜狗/头条/百度 均已失效或反爬
+  ├─→ L2 中文深度: SerpAPI(Google中文) / 财联社
+  │   注意: 知乎(Jina)连接失败,秘塔(SPA)不可解析
+  ├─→ L3 学术支撑: arXiv / Semantic Scholar / PubMed(论文)
+  ├─→ L4 宏观数据: World Bank / AKShare / FRED(定向指标)
   ├─→ L5 全文下载: Sci-Hub(论文) / libgen.com.im(著作) / archive.org(回退)
   │
   └─→ 去重 + 质量评分 + 格式化输出
@@ -25,30 +27,30 @@ description: "统一数据搜索与采集模块。按议题定向从多源拉取
 
 - Python: `~/miniconda3/envs/tt/bin/python3`
 - 模块: `requests`, `akshare`(可选), `redis`(可选)
-- Playwright: `/snap/bin/chromium`（中文搜索必需，Playwright-core 反爬降级用）
+- Playwright: `/snap/bin/chromium`(中文搜索必需,Playwright-core 反爬降级用)
 - Node.js: 用于运行 Playwright 脚本
-- 无额外 pip 安装，全部用标准库 + 已有依赖
+- 无额外 pip 安装,全部用标准库 + 已有依赖
 
 ## 环境变量
 
 | 变量 | 必需 | 说明 |
 |------|------|------|
-| `SEARXNG_URL` | 否 | SearXNG实例URL（默认：http://localhost:8888） |
-| `EXA_API_KEY` | 否 | Exa搜索(付费) |
-| `TAVILY_API_KEY` | 否 | Tavily搜索(付费) |
-| `SERPAPI_KEY` | 否 | SerpAPI(付费) |
+| `SERPAPI_KEY` | 否 | SerpAPI Google搜索(付费,有内嵌默认key) |
+| `EXA_API_KEY` | 否 | Exa搜索(付费,有内嵌默认key) |
+| `TAVILY_API_KEY` | 否 | Tavily搜索(付费,有内嵌默认key) |
+| `SEARXNG_URL` | 否 | SearXNG实例URL(默认:http://localhost:8888,已失效) |
 | `FRED_API_KEY` | 否 | FRED宏观(免费注册) |
 | `REDIS_PASSWORD` | 否 | Redis缓存 |
-| `https_proxy` | 著作下载需要 | WSL代理，如 `http://172.26.0.1:10808` |
+| `https_proxy` | 著作下载需要 | WSL代理,如 `http://172.26.0.1:10808` |
 
 ## 使用方式
 
-### 1. 作为Python模块调用（推荐）
+### 1. 作为Python模块调用(推荐)
 
 ```python
 from data_search import search
 
-# 按议题搜索，返回统一格式
+# 按议题搜索,返回统一格式
 results = search(
     question="存款90万如何躺平",
     layers=["general", "chinese", "macro"],  # 按需选择层级
@@ -72,15 +74,15 @@ results = search(
   search "中美贸易战对A股的影响" --layers general,chinese,macro --max 5
 ```
 
-### 3. 人物搜索（自动中英文双语）
+### 3. 人物搜索(自动中英文双语)
 
 ```bash
 python3 data_search.py person "林毅夫" --output-dir /path/to/materials
 ```
 
-自动读 `name_map.json` 解析中英文名，双语搜索合并去重。新人物不在映射中会返回提示，需先调 `resolve_new_person()` 推断别名。
+自动读 `name_map.json` 解析中英文名,双语搜索合并去重。新人物不在映射中会返回提示,需先调 `resolve_new_person()` 推断别名。
 
-### 4. 单层调用（灵活）
+### 4. 单层调用(灵活)
 
 ```python
 from data_search import search_general, search_chinese, search_academic, search_macro
@@ -102,7 +104,7 @@ papers = search_academic("躺平 FIRE movement", max_results=3)
 
 ### L1 通用搜索 (`search_general`)
 
-**数据源**: SearXNG → DuckDuckGo → Exa → Tavily → SerpAPI（并行，全部跑，能通就用）
+**数据源**: SerpAPI / Exa / Tavily / Bing-Playwright(并行,全部跑,能通就用)
 
 **适用**: 国际新闻、英文资讯、通用搜索
 
@@ -112,29 +114,29 @@ papers = search_academic("躺平 FIRE movement", max_results=3)
 ```
 
 **特点**:
-- SearXNG: 自建元搜索引擎，聚合Google/Bing/DDG（优先，免费）
-- DuckDuckGo: HTML版本直接抓取（次优先，免费）
-- Exa: 长文优先，500+字结果（付费）
-- Tavily: 深度搜索模式（付费）
-- SerpAPI: Google搜索结果（付费）
-- 全部失败返回空列表，不报错
+- SerpAPI: Google搜索结果(付费,`serpapi.com`,内嵌默认key,✅ 已验证可用)
+- Exa: 长文优先,500+字结果(付费,内嵌默认key,✅ 可用)
+- Tavily: 深度搜索模式(付费,内嵌默认key,⚠️ 可能已过期)
+- Bing-Playwright: 通过系统Chrome + playwright-core 无头搜索,中文结果好(✅ 可用)
+- SearXNG/DuckDuckGo: 已失效(本机无SearXNG实例,DDG解析器坏掉)
+- 全部失败返回空列表,不报错
 
 ### L2 中文深度 (`search_chinese`)
 
-**数据源**: 知乎 → 搜狗(Playwright) → 头条(Playwright) → 秘塔(Playwright) → 财联社
+**数据源**: SerpAPI(Google中文) → 财联社
 
-**适用**: 中文互联网真实声音、民间经验、政策快讯
+**适用**: 中文资讯、财经新闻
 
 **返回格式**: 同L1
 
-**降级策略**:
-1. 知乎API: 有cookie直接调，401则降级
-2. 搜狗搜索: 通过Playwright渲染搜索结果（绕反爬）
-3. 头条搜索: 通过Playwright渲染搜索结果（头条资讯）
-4. 秘塔AI搜索: 通过Playwright抓取AI摘要
-5. 财联社: AKShare `ak.stock_info_global_cls()` 免费接口
+**当前状态**:
+1. SerpAPI: Google搜索中文结果（✅ 正常）
+2. 财联社: AKShare `ak.stock_info_global_cls()` 免费接口（✅ 正常）
+3. 知乎(Jina): Jina Reader连接失败 HTTP 000（❌ 已关闭）
+4. 搜狗/头条/百度: 全面反爬，Playwright被检测（❌ 已关闭）
+5. 秘塔: 纯SPA应用，CSS module哈希类名，不可解析（❌ 已关闭）
 
-**Playwright降级**: 当API全挂时，启动无头浏览器抓取搜索结果页面，提取标题+摘要。搜狗/头条/秘塔共用同一个无头浏览器实例，减少资源开销。
+搜索管线顺序: SerpAPI → 财联社，足够覆盖中文搜索需求。
 
 ### L3 学术支撑 (`search_academic`)
 
@@ -148,16 +150,16 @@ papers = search_academic("躺平 FIRE movement", max_results=3)
 ```
 
 **特点**:
-- arXiv: 免费，物理/数学/计算机/量化金融
-- Semantic Scholar: 免费，跨学科，有引用关系，用于搜索DOI
-- PubMed: 免费，生物医学
-- 返回论文摘要，不含全文
+- arXiv: 免费,物理/数学/计算机/量化金融
+- Semantic Scholar: 免费,跨学科,有引用关系,用于搜索DOI
+- PubMed: 免费,生物医学
+- 返回论文摘要,不含全文
 
 ### L5.5 网页内容抓取 (`fetch_webpage` / `fetch_urls_to_materials`)
 
-**用途**: 批量抓取URL列表的内容，保存为素材`.md`文件。适用于搜索后拿到URL列表，需要逐篇提取正文内容的场景。
+**用途**: 批量抓取URL列表的内容,保存为素材`.md`文件。适用于搜索后拿到URL列表,需要逐篇提取正文内容的场景。
 
-**原理**: 通过Jina Reader API（`r.jina.ai`）将网页转为Markdown，走WSL代理访问。
+**原理**: 通过Jina Reader API(`r.jina.ai`)将网页转为Markdown,走WSL代理访问。
 
 **Python调用**:
 ```python
@@ -174,7 +176,7 @@ urls = [
 stats = fetch_urls_to_materials(
     urls,
     output_dir='/path/to/Person_Dir/',  # 人物目录
-    delay=6.0,                            # 间隔秒数（最小5秒）
+    delay=6.0,                            # 间隔秒数(最小5秒)
     proxy='http://172.26.0.1:10808'       # Jina代理
 )
 # stats: {"saved": N, "skipped": N, "failed": N, "files": [...]}
@@ -182,7 +184,7 @@ stats = fetch_urls_to_materials(
 
 **CLI调用**:
 ```bash
-# 1. 先用SerpAPI等收集URL列表，保存为JSON
+# 1. 先用SerpAPI等收集URL列表,保存为JSON
 python3 data_search.py fetch urls.json --output-dir /path/to/Person_Dir/
 
 # urls.json格式: [{"title": "...", "url": "https://..."}, ...]
@@ -190,10 +192,10 @@ python3 data_search.py fetch urls.json --output-dir /path/to/Person_Dir/
 
 **自动处理**:
 - 跳过YouTube/Twitter/Reddit等非内容站
-- 跳过已存在的文件（>500字节）
+- 跳过已存在的文件(>500字节)
 - 自动创建 `materials/raw/` 目录
 - 文件名sanitize
-- **间隔6秒**（红线：外部API 5-10秒间隔）
+- **间隔6秒**(红线:外部API 5-10秒间隔)
 
 ### L5 全文下载 (`download_scihub_pdf` / `download_book`)
 
@@ -203,8 +205,8 @@ from data_search import download_scihub_pdf
 # 用DOI下载论文PDF
 pdf_path = download_scihub_pdf('10.1038/nature12373', output_dir)
 ```
-- 镜像：sci-hub.ru → sci-hub.in（可直连）
-- 间隔15秒，防封
+- 镜像:sci-hub.ru → sci-hub.in(可直连)
+- 间隔15秒,防封
 
 **著作下载**:
 ```python
@@ -213,8 +215,8 @@ from data_search import download_book
 proxies = {'https': 'http://172.26.0.1:10808', 'http': 'http://172.26.0.1:10808'}
 path = download_book('Thinking Fast and Slow', output_dir, proxies=proxies)
 ```
-- 回退链：libgen.com.im → archive.org
-- 需要代理（WSL: `http://172.26.0.1:10808`）
+- 回退链:libgen.com.im → archive.org
+- 需要代理(WSL: `http://172.26.0.1:10808`)
 - 下载后用PyMuPDF(fitz)提取文本即可
 
 ### L4 宏观数据 (`search_macro`)
@@ -246,16 +248,16 @@ path = download_book('Thinking Fast and Slow', output_dir, proxies=proxies)
 ### 去重层 (`dedup_results`)
 
 - 基于标题前40字符去重
-- 跨源去重：不同搜索源返回同一篇文章只保留一条
-- 保留信息量最大的版本（text最长的）
+- 跨源去重:不同搜索源返回同一篇文章只保留一条
+- 保留信息量最大的版本(text最长的)
 
 ### 质量评分 (`score_result`)
 
-每条结果评分 0-1：
+每条结果评分 0-1:
 - 标题与query关键词匹配度 (0-0.3)
-- 正文长度（越长越可能有用）(0-0.3)
-- 来源可信度（学术>官方新闻>论坛）(0-0.2)
-- 时效性（越新越好）(0-0.2)
+- 正文长度(越长越可能有用)(0-0.3)
+- 来源可信度(学术>官方新闻>论坛)(0-0.2)
+- 时效性(越新越好)(0-0.2)
 
 ## 与其他Skill的关系
 
@@ -272,20 +274,20 @@ path = download_book('Thinking Fast and Slow', output_dir, proxies=proxies)
 skills/data-search/
 ├── SKILL.md                    # 本文件
 └── scripts/
-    ├── data_search.py          # 主模块（所有搜索逻辑）
-    └── test_data_search.py     # 测试套件（TDD）
+    ├── data_search.py          # 主模块(所有搜索逻辑)
+    └── test_data_search.py     # 测试套件(TDD)
 ```
 
 ## 素材保存工具函数
 
 ### `sanitize_filename(title, max_len=200)`
-将标题转为安全文件名：去除HTML标签、智能引号(`''``""`)、特殊字符(`<>"|\`)。
+将标题转为安全文件名:去除HTML标签、智能引号(`''``""`)、特殊字符(`<>"|\`)。
 
 ### `result_to_md(result)`
-将搜索结果dict转为markdown内容（含frontmatter: title/url/source/pub）。
+将搜索结果dict转为markdown内容(含frontmatter: title/url/source/pub)。
 
 ### `save_result(result, output_dir, prefix="")`
-单条搜索结果保存为`.md`到`output_dir/materials/raw/`。自动sanitize文件名、去重（文件存在时追加编号）。
+单条搜索结果保存为`.md`到`output_dir/materials/raw/`。自动sanitize文件名、去重(文件存在时追加编号)。
 
 ```python
 from data_search import save_result
@@ -296,7 +298,7 @@ save_result({"title":"标题","text":"正文","url":"URL","source":"Exa"}, "/pat
 批量保存搜索结果。返回保存路径列表。
 
 ### `search_person()` 自动保存
-`search_person(output_dir=...)` 调用时，自动将搜索缓存保存到`_search_cache/`，同时把有正文的结果调用`save_result()`存为md。
+`search_person(output_dir=...)` 调用时,自动将搜索缓存保存到`_search_cache/`,同时把有正文的结果调用`save_result()`存为md。
 
 ## 文件结构
 
@@ -306,19 +308,19 @@ skills/data-search/
 ├── templates/
 │   └── collection_task_prompt.md  # 子session采集task模板
 └── scripts/
-    ├── data_search.py          # 主模块（所有搜索+保存逻辑）
+    ├── data_search.py          # 主模块(所有搜索+保存逻辑)
     ├── bilibili_transcribe.py  # B站视频转录
     └── test_data_search.py     # 测试套件
 ```
 
 ## 约束
 
-- 每个搜索源独立try/except，失败静默跳过
-- 不硬编码API key，全部用 `os.environ.get()`
-- 并行搜索但同一源不并发（防rate limit）
-- **搜索结果必须保存为.md，禁止保存.json素材文件**
+- 每个搜索源独立try/except,失败静默跳过
+- 不硬编码API key,全部用 `os.environ.get()`
+- 并行搜索但同一源不并发(防rate limit)
+- **搜索结果必须保存为.md,禁止保存.json素材文件**
 - **文件名必须经过sanitize_filename()处理**
-- 搜索缓存（`_search_results_*.json`）保存到`_search_cache/`目录，init_db不注册
+- 搜索缓存(`_search_results_*.json`)保存到`_search_cache/`目录,init_db不注册
 - 中文cookie路径: `~/.openclaw/workspace/.cookies/zhihu_cookies.txt`
 - Playwright使用 `/snap/bin/chromium` 作为无头浏览器
 - SearXNG默认实例: `http://localhost:8888`
@@ -331,14 +333,14 @@ skills/data-search/
 搜索B站视频 → you-get下载 → ffmpeg提取音频 → faster-whisper转录 → 保存为`.md`格式
 
 ### 依赖
-- `you-get`（tt conda env）
-- `ffmpeg`（tt conda env）
-- `faster-whisper`（tt conda env）
-- Playwright（cookie获取+搜索）
+- `you-get`(tt conda env)
+- `ffmpeg`(tt conda env)
+- `faster-whisper`(tt conda env)
+- Playwright(cookie获取+搜索)
 
 ### 用法
 ```bash
-# 搜索并转录（关键词搜索，下载top N个视频）
+# 搜索并转录(关键词搜索,下载top N个视频)
 ~/miniconda3/envs/tt/bin/python3 scripts/bilibili_transcribe.py search \
   --keyword "沈逸 中美博弈" --max 5 \
   --output-dir /path/to/materials
@@ -368,7 +370,7 @@ date_added: "YYYY-MM-DD"
 | 模型 | VRAM/速度 | 中文质量 | 推荐 |
 |------|-----------|----------|------|
 | tiny | 最快 | 差 | 快速预览 |
-| base | 快 | 还行 | **默认，够用** |
+| base | 快 | 还行 | **默认,够用** |
 | small | 中等 | 好 | 高质量需求 |
 | medium | 慢 | 很好 | GPU可用时 |
 | large-v3 | 最慢 | 最好 | GPU可用+高精度 |

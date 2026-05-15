@@ -3,9 +3,16 @@
 ## API Keys
 
 ### 搜索
-- **Exa Search**: 7be7a599-fa7b-4107-9ef1-ad96646156c2 (primary, working), 68d64b2b-0c48-4fd4-a1fb-74fb71f3f4ba (backup, may be 403)
-- **SerpAPI**: 848c4ec87cac7776b9404f0af1aeb36fce936d1aa3aebe899664eaa43e67ccc2
+- **SerpAPI** (Google/Bing 搜索API): `848c4ec87cac7776b9404f0af1aeb36fce936d1aa3aebe899664eaa43e67ccc2` (jaccck1234567@gmail.com)
+- **SerpAPI 备用**: `cbf5714a2a6bafe15343f793774329a8e62bbe3ed1c2ec6eaef5c0210ed92cb1` (tearsjaccck@gmail.com)
+- **Exa Search 主**: `7be7a599-fa7b-4107-9ef1-ad96646156c2` (tearsjaccck@gmail.com, working)
+- **Exa Search 备**: `68d64b2b-0c48-4fd4-a1fb-74fb71f3f4ba` (jaccck1234567@gmail.com)
 - **Tavily**: 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 (primary), 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 (backup)
+  > Tavily keys可能已过期，优先用SerpAPI/Exa
+
+### 航空
+- **ICAO API**: 8d3f6e2a-9de9-4894-9bf4-8f9e1413c029
+- **OPENSKY**: clientId=jaccck1234567@gmail.com-api-client, clientSecret=UOv4T51xiUEB1c4VEx7FAefNWynaTqAk
 
 ### 经济/金融数据
 - **MAP KEY**: 758b37447501167e207b94e50bf793ef

@@ -5,57 +5,31 @@
 - 项目方向：① **人格智库** (think-tank) ② **人格还原** (person-replication)
 - GitHub：guludan
 
-## 智库项目状态（2026-05-12）
+## 智库项目状态（2026-05-15）
+
+### 新V3管线全线打通 ✅
+154/154 人完成 dedup+regen，统一步道
+- 新管线：merge(_per_file_results) → dedup(语义去重) → regen(顶层字段)
+- 废除了旧v3合并逻辑，全员走新流程
+- batch_dedup_regen.py 核心脚本
+- 总insights: 8743，无evidence: 11条
 
 ### 数据目录
 - 数据根：`/mnt/d/data/think-tank-data/`
-- 向量库：`personalities/_lacandb/lacan_db/`（6表架构，LanceDB）
-- 报告：`reports/`
-- 人物映射：`personalities/name_map.json`（153人）
+- 人物映射：`personalities/name_map.json`（154人）
+- 最新备份：`/mnt/d/data2/think-tank-backup-20260515/`（15M）
 
-### 人员：153人（注册）
-- military 25 + scholars 83 + psychologists 45
-- 新增领域：geopolitical-finance, sanctions-finance, information-warfare, indo-pacific, tech-geopolitics, political-forecasting
+### 管线脚本
+| 阶段 | 脚本 |
+|------|------|
+| Merge | `_batch_distill.py --merge-per-file` |
+| 去重+regen | `batch_dedup_regen.py` |
+| 批量管线 | `batch_pipeline.py` |
 
-### 质检状态：100% ✅
-- Total: 3922, Kept: 3055, Discarded: 867
-
-### 蒸馏+入库状态（2026-05-14 修正）
-- 6集合架构：personas/cognitive/claims/evidence/tracing/tension
-- 向量总数：30,481（LanceDB）
-- **蒸馏完成**：45人（所有prompt有对应result）
-- **蒸馏未完成**：63人，共缺2057个prompt（详见 /tmp/distill_incomplete_final.json）
-- **待蒸馏**：契克森米哈赖 0/230（唯一无personality_v3的）
-- **regenerate问题**：110/151人insights未真正合并（单evidence占比>40%），需用新的多批次regenerate全员重跑
-- **蒸馏结果唯一路径**：`_per_file_results/`（distillates已废弃并清理）
-
-### 🔴 regenerate多批次重构（2026-05-14）
-- v3：去掉compact_insights截断（之前截断丢弃导致evidence丢失的bug源）
-- 改为按dim分批regenerate，每批独立LLM合并，最后统一apply
-- 单dim > 80条自动拆子批，避免prompt过大
-- 额外一个summary prompt生成顶层字段（brief/school等）
-- 新模板：regenerate_batch_dim.md + regenerate_summary.md
-- 兼容旧流程：单文件result仍可apply
-
-### 数据备份
-- `/mnt/d/data2/think-tank-backup-20260506/`（785MB）
-- `/mnt/d/data2/think-tank-backup-20260510/`（926MB）
-- 旧ChromaDB备份已清理，现用LanceDB
-
-### LanceDB迁移（2026-05-12）
-- ChromaDB在WSL/9p上写入静默失败（不报错但数据丢失）
-- 迁移到LanceDB 0.30.2（嵌入式，跨平台好）
-- DB路径：`_lacandb/lacan_db`（D盘）
-- 6张表：personas(1843), cognitive(3041), claims(7292), evidence(14354), tension(992), tracing(2559)
-- 全量核查+去重+补录：149人27,930条0重复（2026-05-13）
-
-### 蒸馏流水线修复历史
-- 巨型段落切分bug：单段>15KB按句子再切分
-- 假excerpt过滤：标题/References自动过滤
-- 两阶段regenerate压缩bug：截断丢弃insights（2026-05-12修）
-- dim维度丢失：按比例截断确保每个dim有代表
-- regenerate模板：禁止跨dim合并
-- 6人假excerpt清理+重新入库：周恩来、徐向前、林彪、邓小平、马丁·塞利格曼、卡尔·罗杰斯
+### 已完成流程
+1. ✅ `--merge-per-file` → 154人
+2. ✅ `batch_dedup_regen.py --dedup-only` → 154人
+3. ✅ `batch_dedup_regen.py --regen-only` → 154人
 
 ## 📦 模块索引（任务→模块→函数 映射）
 
@@ -96,11 +70,14 @@
 
 ## 关键经验
 - 蒸馏输出：`personality_v3.json`
-- Python环境：`~/miniconda3/envs/tt/bin/python3`
-- API Keys：见 TOOLS.md
+- Python环境：`~/miniconda3/envs/tt/bin/python3` (Python 3.13)
+- **Python 3.13 `{{ }}` 陷阱**: 双大括号在普通代码中被解析为 `{ { set_literal } }` → `unhashable type: dict`。f-string 中 `env={{**os.environ, ...}}` 先构建 dict 再 str() 化，传给 `subprocess.run(env=str)` → 报错。修复：不要在 f-string 中用 dict unpacking，构建 dict 变量再传
+- API Keys：见 TOOLS.md, 默认 key 写在 `_DEFAULT_KEYS` dict 中(data_search.py 顶部)
 - 代码任务交给Claude Code
 - data_search.py是统一入口，不要重写
-- Tavily API key已过期
+- SerpAPI ✅ Google搜索正常（`serpapi.com`，参数 `api_key`）
+- Exa Search: `7be7a599-fa7b-4107-9ef1-ad96646156c2` (可用)
+- Tavily API key 可能已过期，优先用 SerpAPI/Exa
 
 ## 本地服务
 - STT: http://127.0.0.1:9977
