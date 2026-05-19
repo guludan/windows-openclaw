@@ -57,6 +57,14 @@
 - 所有数据库、向量库、缓存数据放这里
 - chromadb、postgres、redis 等数据目录都在此
 
+## 企业微信机器人
+- **Bot ID**: `aib5RbAzY0N-Cg_-xBCBxCG-Sj_DY2axkYg`
+- **Secret**: `EUuYVxOGVTGCOVddxjBtcNmHABBLf38FaicLITuRGhY`
+- **插件**: `wecom-aibot@0.2.0`（社区插件，基于 `@wecom/aibot-node-sdk` WebSocket 长连接）
+- **无需公网回调**，WebSocket 模式直连企业微信
+- **allowFrom**: `*`（所有人可用）
+- 配置位置: `~/.openclaw/openclaw.json` → `channels.wecom-aibot`
+
 ## 注意
 - SiliconFlow 要钱，仅作兜底
 - 优先用本地 Ollama embedding
