@@ -335,13 +335,11 @@ skills/think-tank/
     └── pipeline.md               Pipeline说明
 ```
 
-/mnt/d/data/think-tank-data/              ← 数据目录（D盘）
-├── _lacandb/lacan_db/                   ← 向量库（LanceDB，严禁并发写入）
-├── personalities/                        ← 人物素材+蒸馏
-│   ├── military/                         ← 25人
-│   ├── scholars/                         ← 83人（18子领域）
-│   └── psychologists/                    ← 45人（6子领域）
-└── reports/                              ← 生成的报告
+数据根目录: /mnt/d/data/think-tank-data/（D盘，仅数据文件）
+脚本目录: skills/think-tank/scripts/（已上GitHub，不含数据）
+├── _lacandb/lacan_db/          ← 向量库（LanceDB，严禁并发写入）
+├── personalities/               ← 人物素材+蒸馏（154人：25军+83学者+45心理）
+└── reports/                     ← 智库报告
 ```
 
 每个人物目录结构：
