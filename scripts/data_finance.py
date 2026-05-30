@@ -1068,8 +1068,13 @@ def update_all():
 
 
 def update_daily():
-    """每日增量更新（约 3 分钟）"""
-    log.info("📡 每日增量更新")
+    """每日增量更新
+    
+    注意：个股日线已迁移到 update_daily_mootdx.py（mootdx TCP 协议）
+    data_finance.py 不再负责个股日线采集。
+    """
+    log.info("📡 每日增量更新 (data_finance.py)")
+    log.info("   个股日线请用: python3 update_daily_mootdx.py")
     t_start = time.time()
     
     log.info("\n1️⃣  FRED 宏观")
@@ -1079,7 +1084,6 @@ def update_daily():
     update_coingecko(days=2)
     
     log.info("\n3️⃣  全市场行情快照")
-    scan_all_stocks()
     scan_etf_market()
     
     log.info("\n4️⃣  市场信号")

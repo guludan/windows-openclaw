@@ -43,7 +43,7 @@ def main():
                             row = rs.get_row_data()
                             try:
                                 batch.append((
-                                    code, row[2], row[1],
+                                    'A.' + code, row[2], row[1],
                                     float(row[3]) if row[3] else None,
                                     float(row[4]) if row[4] else None,
                                     float(row[5]) if row[5] else None,

@@ -19,9 +19,22 @@ __pycache__/
 # OpenClaw internal
 .openclaw/
 
+# Caches (API responses, scraped data)
+cache/
+
+# Debug images
+*.png
+
 # Runtime state
 memory/
 state/
 design/
+
+# Redis dump
+dump.rdb
+
+# Temporary / cache
+.v8_cache.pkl
+tmp/
 *.log
 __pycache__/
