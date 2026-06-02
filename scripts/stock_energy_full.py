@@ -1,25 +1,31 @@
 """
-个股 pool_energy 全量写入 — S2/S3/S1事件注入后生成个股[B][A]递推记录
+个股 pool_energy 全量写入 + --today 增量扫描最后20天
+--today: 不清空已有数据，只扫描最后20天并写入有信号的记录
 """
 import sys; sys.path.insert(0, '/home/tearsyu/.openclaw/workspace/scripts')
 import psycopg2
 import psycopg2.extras
 import numpy as np
 import pandas as pd
-import json, os, time
-from datetime import datetime
+import json, os, time, argparse
+from datetime import datetime, date
 
 DB = 'host=192.168.3.14 dbname=guludan user=guludan password=toto'
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--today', action='store_true', help='增量模式：扫描最后20天并写入当日信号，不清空已有数据')
+    args = parser.parse_args()
+    
     conn = psycopg2.connect(DB)
     cur = conn.cursor()
     
-    # 清空旧的个股pool_energy
-    print("\n[0] 清空旧的个股信号...")
-    cur.execute("DELETE FROM pool_energy WHERE level LIKE 'code:A.%'")
-    print(f"  删除: {cur.rowcount}行")
-    conn.commit()
+    if not args.today:
+        # 全量模式：清空旧的个股pool_energy
+        print("\n[0] 清空旧的个股信号...")
+        cur.execute("DELETE FROM pool_energy WHERE level LIKE 'code:A.%'")
+        print(f"  删除: {cur.rowcount}行")
+        conn.commit()
     
     print("="*60)
     print("个股 pool_energy 全量写入")
@@ -42,8 +48,14 @@ def main():
     stocks = [r[0] for r in cur.fetchall()]
     print(f"  {len(stocks)}只")
     
-    # 3) 逐只信号提取+写入
-    print("\n[3] 逐只信号提取+写入pool_energy...")
+    if args.today:
+        # 增量模式：只扫描最近20天的信号，不清空已有数据
+        print("\n[3] 今日增量模式：扫描未覆盖信号的最近交易日...")
+        today_str = date.today().isoformat()
+        mode_str = '增量'
+    else:
+        mode_str = '全量'
+    
     total_written = 0
     total_signals = 0
     total_stocks_with_signal = 0
@@ -82,8 +94,15 @@ def main():
         s3_mask = (df['vol_z'] > 2.5) & (df['v_z'] > 2.0) & (df['ret'] < -0.05)
         s1_mask = (df['vol_z'] > 3.0) & (np.abs(df['v_z']) < 1.5)
         
+        if args.today:
+            # 增量模式：从 n-20 到 n-1（覆盖最近交易日但不要求后验收益）
+            idx_range = range(max(120, n-25), n)
+        else:
+            # 全量模式：跳过最后20天（腾出T+5/T+20后验窗口）
+            idx_range = range(120, n - 20)
+        
         stock_signals = 0
-        for idx in range(120, n - 20):
+        for idx in idx_range:
             d = df.index[idx]
             d_key = d.date() if hasattr(d, 'date') else d
             if d_key not in mkt:
@@ -162,7 +181,7 @@ def main():
         _write_batch(conn, batch)
         total_written += len(batch)
     
-    print(f"\n[4] 完成")
+    print(f"\n[4] 完成 ({mode_str})")
     print(f"  总股票: {len(stocks)}")
     print(f"  有信号股票: {total_stocks_with_signal}")
     print(f"  总信号数: {total_signals}")
@@ -238,13 +257,10 @@ def daily_signal_brief(conn, report_date=None):
         
         for r in s3_rows[:10]:
             code = r[0][7:]
-            extra = json.loads(r[4])
+            extra = r[4] if isinstance(r[4], dict) else json.loads(r[4])
             vol_z = extra.get('vol_z', 0)
             v_z = extra.get('v_z', 0)
             ret = extra.get('ret_0', 0)
-            
-            # 用 qualifier 规则简单分类（不跑全量计算）
-            # 这里用 extra 的信息做初步判断，post_vol 需运行 signal_qualifier
             action = "待定性"
             if v_z > 3:
                 action = "关注"

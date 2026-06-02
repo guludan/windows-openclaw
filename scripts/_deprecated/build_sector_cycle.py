@@ -38,8 +38,11 @@ def get_industry_map() -> dict:
 
 # ============ 2. 计算板块每日行情 ============
 
-def build_sector_daily(industry_map: dict, start_date: str = "2025-01-02", end_date: str = "2026-05-18"):
+def build_sector_daily(industry_map: dict, start_date: str = "2025-01-02", end_date: str = None):
     """一次性构建全量板块日线"""
+    if end_date is None:
+        rows, _ = df._pg_execute("SELECT MAX(trade_date)::text FROM daily_prices")
+        end_date = rows[0][0]
     log.info(f"构建板块日线: {start_date} ~ {end_date}")
     
     # 获取沪深300作为基准

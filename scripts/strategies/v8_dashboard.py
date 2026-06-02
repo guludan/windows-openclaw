@@ -151,7 +151,7 @@ def scan(target_date=None):
     # 从物化视图读取（物化视图数据预先生成，不用在仪表盘里刷新）
     # 如果当日数据不存在，尝试从latest获取
     cur.execute("""
-        SELECT code, stock_name, industry, density, close, sma120, pb, sma_dev
+        SELECT code, stock_name, industry, density, close, sma120, pb, sma_dev, bvps, real_pb
         FROM mv_v8_candidates
         WHERE trade_date = %s AND sma120 > 0 AND close > 0
         ORDER BY code
@@ -162,7 +162,7 @@ def scan(target_date=None):
         cur.execute("SELECT MAX(trade_date) FROM mv_v8_candidates")
         latest_td = cur.fetchone()[0]
         cur.execute("""
-            SELECT code, stock_name, industry, density, close, sma120, pb, sma_dev
+            SELECT code, stock_name, industry, density, close, sma120, pb, sma_dev, bvps, real_pb
             FROM mv_v8_candidates
             WHERE trade_date = %s AND sma120 > 0 AND close > 0
             ORDER BY code
@@ -181,6 +181,46 @@ def scan(target_date=None):
     if dt and dt > target_date:
         target_date = dt
     
+    # ====== 停牌 & 除权过滤预加载 ======
+    xr_cache = {}  # code -> {'ex_gap':.., 'ex_days':..} 或 None
+    stale_cache = set()
+    
+    w(f'├')
+    # 检查停牌（连续5天零成交最近5天内）
+    cur.execute("""
+        SELECT substring(d.symbol,3) as code FROM daily_prices d
+        WHERE d.trade_date >= %s - 10 AND d.trade_date <= %s
+        GROUP BY d.symbol
+        HAVING MIN(volume) = 0 AND MAX(volume) = 0
+    """, (target_date, target_date))
+    for r in cur.fetchall():
+        stale_cache.add(r[0])
+    w(f'├  停牌过滤: {len(stale_cache)}只停牌')
+    
+    # 除权检测：查近期gap<-5%的交易日
+    cur.execute("""
+        SELECT x.code, x.ex_date, x.gap, 
+               %s - x.ex_date as days_since
+        FROM (
+            SELECT substring(d.symbol,3) as code,
+                   d.trade_date as ex_date,
+                   (d.open / NULLIF(LAG(d.close) OVER (PARTITION BY d.symbol ORDER BY d.trade_date), 0) - 1) as gap
+            FROM daily_prices d
+            WHERE d.trade_date >= %s - 180 AND d.trade_date <= %s
+        ) x
+        WHERE x.gap < -0.045
+        ORDER BY x.code, x.ex_date
+    """, (target_date, target_date, target_date))
+    xr_rows = cur.fetchall()
+    xr_cache = {}
+    for code, ex_d, gap, ds in xr_rows:
+        if code not in xr_cache or ds < xr_cache[code]['days']:
+            xr_cache[code] = {'date': ex_d.strftime('%m-%d'), 'gap': gap, 'days': ds}
+    
+    xr_dirty = sum(1 for x in xr_cache.values() if x['days'] < 20)
+    xr_med = sum(1 for x in xr_cache.values() if x['days'] < 60)
+    w(f'├  除权检测: {xr_dirty}只严重(<20d), {xr_med}只中度(<60d)')
+    
     # 建立联合行业&密度：物化视图已包含stock_industry + ths数据
     # 但物化视图不包含pool_energy的phase/signals信息，需要补
     
@@ -193,7 +233,20 @@ def scan(target_date=None):
     scanned = 0
     
     for row in mc_rows:
-        code, name, industry, density, close, sma120, pb, sma_dev = row
+        code, name, industry, density, close, sma120, pb, sma_dev, bvps, real_pb = row
+        
+        # 使用真实PB替代伪PB
+        raw_pb = real_pb if real_pb is not None and real_pb > 0 else pb
+        
+        # 停牌过滤
+        if code in stale_cache:
+            continue
+        
+        # 除权污染过滤：严重(<20天)完全跳过，中度(<60天)跳过V8筛选
+        xr = xr_cache.get(code)
+        if xr and xr['days'] < 20:
+            continue  # 严重除权污染，跳过
+        is_xr_mid = xr and xr['days'] < 60
         
         scanned += 1
         
@@ -202,19 +255,19 @@ def scan(target_date=None):
         if sma_dev < -0.10: sma_stats['<-10%'] += 1
         if sma_dev < -0.15: sma_stats['<-15%'] += 1
         if sma_dev < -0.20: sma_stats['<-20%'] += 1
-        if pb < 1.0: pb_stats['<1.0'] += 1
-        if pb < 0.8: pb_stats['<0.8'] += 1
-        if pb < 0.5: pb_stats['<0.5'] += 1
+        if raw_pb < 1.0: pb_stats['<1.0'] += 1
+        if raw_pb < 0.8: pb_stats['<0.8'] += 1
+        if raw_pb < 0.5: pb_stats['<0.5'] += 1
         
         ind_name = industry
         
         industry_total[ind_name] += 1
-        if pb < 1.0:
+        if raw_pb < 1.0:
             industry_underwater[ind_name] += 1
         
         # 接近触发
-        if -0.20 <= sma_dev <= -0.10 and 0.7 <= pb <= 1.0:
-            near_signals.append((code, ind_name, density, sma_dev, pb, close, sma120))
+        if -0.20 <= sma_dev <= -0.10 and 0.7 <= raw_pb <= 1.0:
+            near_signals.append((code, ind_name, density, sma_dev, raw_pb, close, sma120))
         
         # V8实际信号
         matrix = strategy.get_params(regime, today_phase)
@@ -229,13 +282,18 @@ def scan(target_date=None):
                 wgt *= 0.6
             
             if sma_dev < t_sma:
-                if density == 'DENSE' and pb >= 0.5:
+                if density == 'DENSE' and raw_pb >= 0.5:
                     pass  # DENSE标的只在PB<0.5时才纳入
-                elif pb < t_pb:
-                    t1 = sma120 * 0.95
-                    t2 = sma120
+                elif raw_pb < t_pb:
+                    # 除权中度污染的用prev_close*0.95/1.0替代P1/P2
+                    if is_xr_mid:
+                        t1 = sma120 * 0.95
+                        t2 = sma120
+                    else:
+                        t1 = sma120 * 0.95
+                        t2 = sma120
                     sl = close * 0.95
-                    v8_signals.append((code, ind_name, density, sma_dev, pb, close, sma120, t1, t2, sl, wgt))
+                    v8_signals.append((code, ind_name, density, sma_dev, raw_pb, close, sma120, t1, t2, sl, wgt))
     
     conn.close()
     
@@ -256,12 +314,12 @@ def scan(target_date=None):
         w(f'├  {"代码":>8} {"行业":<14} {"密度":<7} {"SMA%":>7} {"PB":>5} {"现价":>7} {"SMA120":>8}  距P1%')
         w(f'├  {"─"*68}')
         for ns in sorted(near_signals, key=lambda x: x[3])[:20]:
-            code, ind, dens, sd, pb, px, sma = ns
+            code, ind, dens, sd, rpb, px, sma = ns
             si = stock_info.get(code, {})
             name = si.get('name', '') or ''
             industry = si.get('industry', '') or ind
             gap_to_p1 = (px - sma*0.95) / px
-            w(f'├  {code:>8} {name:<12} {industry:<14} {dens:<7} {sd:>+6.2%} {pb:>4.2f} {px:>7.2f} {sma:>8.2f}  {gap_to_p1:>+6.2%}')
+            w(f'├  {code:>8} {name:<12} {industry:<14} {dens:<7} {sd:>+6.2%} {rpb:>5.2f} {px:>7.2f} {sma:>8.2f}  {gap_to_p1:>+6.2%}')
         if len(near_signals) > 20:
             w(f'├  ... 还有{len(near_signals)-20}只')
     
@@ -273,11 +331,14 @@ def scan(target_date=None):
         w(f'├  {"#":<4}{"代码":>8} {"名称":<12} {"行业":<14} {"密度":<7} {"SMA%":>7} {"PB":>5} {"现价":>7} {"P1":>8} {"P2":>8} {"止损":>7} {"Wt":>4}')
         w(f'├  {"─"*100}')
         for i, s in enumerate(v8_signals):
-            code, ind, dens, sd, pb, px, sma, t1, t2, sl, wgt = s
+            code, ind, dens, sd, rpb, px, sma, t1, t2, sl, wgt = s
             si = stock_info.get(code, {})
             name = si.get('name', '') or ''
             industry = si.get('industry', '') or ind
-            w(f'├  {i+1:<4}{code:>8} {name:<12} {industry:<14} {dens:<7} {sd:>+6.2%} {pb:>4.2f} {px:>7.2f} {t1:>8.2f} {t2:>8.2f} {sl:>7.2f} {wgt:>.1f}')
+            if rpb >= 0.5:
+                w(f'├  {i+1:<4}{code:>8} {name:<12} {industry:<14} {dens:<7} {sd:>+6.2%} {rpb:>5.2f} {px:>7.2f} {t1:>8.2f} {t2:>8.2f} {sl:>7.2f} {wgt:>.1f}')
+            else:
+                w(f'├  {i+1:<4}{code:>8} {name:<12} {industry:<14} {dens:<7} {sd:>+6.2%}  n/a  {px:>7.2f} {t1:>8.2f} {t2:>8.2f} {sl:>7.2f} {wgt:>.1f}')
     
     # ==================== 行业破净密度 ====================
     w(f'├')

@@ -1,6 +1,13 @@
 # HEARTBEAT.md
 
-## 金融数据日更（收盘后 15:30）
+## 盘中监测（午休 11:30~13:00）
+午休时扫北向+主力资金+盘中V8信号，输出盘中简报：
+```bash
+python3 scripts/lunch_monitor.py
+```
+输出到 `memory/reports/lunch-{today}.md` 和 `D:/data/reports/{today}/午间盘面_{today}.md`
+
+## 收盘后日更（15:30~16:30）
 交易日日更顺序（数据源已统一为同花顺L1+mootdx TCP）：
 
 ### 行情层
@@ -15,16 +22,17 @@
 7. `PYTHONUNBUFFERED=1 python3 scripts/fetch_exec_hold_daily.py` — 董监高持股变动增量（当日）
 
 ### 基本面
-6. `python3 scripts/fetch_financial_data_v2.py` — 季度财报（mootdx F10，每季初跑）
+8. `python3 scripts/fetch_financial_data_v2.py` — 季度财报（mootdx F10，每季初跑）
 
-### 简报
-8. 每个交易日 15:30 后生成 A 股简报 → `memory/reports/a-share-YYYY-MM-DD.md`
+### 简报+信号
+9. 生成A股简报 → `memory/reports/a-share-{today}.md`
+10. `python3 scripts/strategies/v8_dashboard.py` → `memory/reports/v8_dashboard_{today}.txt`
+11. `python3 scripts/position_tracker.py` → `D:/data/reports/{today}/持仓资金行为监控_{today}.md`
+12. `python3 scripts/zhuangjia_scanner_v3.py` → `D:/data/reports/{today}/庄家行为监控_v3_{today}.md`
+13. `python3 scripts/neutral_monitor.py` → `memory/reports/neutral_monitor_{today}.md`
 
-### V8 仪表盘
-9. 收盘后: `python3 scripts/strategies/v8_dashboard.py` → `memory/reports/v8_dashboard_YYYY-MM-DD.txt`
-
-### NEUTRAL监视
-10. 收盘后: `python3 scripts/neutral_monitor.py` → `memory/reports/neutral_monitor_YYYY-MM-DD.md`
+### 归档至D盘
+14. `python3 scripts/daily_report_to_disk.py` → 复制到 `D:/data/reports/{today}/`
 
 ### 💡 已废弃（不再运行）
 - `fetch_industry_daily.py` / `fetch_industry_daily_v2.py` — 行业指数数据不再采集
