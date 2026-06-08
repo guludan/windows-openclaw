@@ -5,7 +5,7 @@
 ```bash
 python3 scripts/lunch_monitor.py
 ```
-输出到 `memory/reports/lunch-{today}.md` 和 `D:/data/reports/{today}/午间盘面_{today}.md`
+输出到 `memory/reports/lunch-{today}.md` 和 `D:/data/a-stock/reports/{today}/午间盘面_{today}.md`
 
 ## 收盘后日更（15:30~16:30）
 交易日日更顺序（数据源已统一为同花顺L1+mootdx TCP）：
@@ -24,22 +24,37 @@ python3 scripts/lunch_monitor.py
 ### 基本面
 8. `python3 scripts/fetch_financial_data_v2.py` — 季度财报（mootdx F10，每季初跑）
 
-### 简报+信号
-9. 生成A股简报 → `memory/reports/a-share-{today}.md`
-10. `python3 scripts/strategies/v8_dashboard.py` → `memory/reports/v8_dashboard_{today}.txt`
-11. `python3 scripts/position_tracker.py` → `D:/data/reports/{today}/持仓资金行为监控_{today}.md`
-12. `python3 scripts/zhuangjia_scanner_v3.py` → `D:/data/reports/{today}/庄家行为监控_v3_{today}.md`
-13. `python3 scripts/neutral_monitor.py` → `memory/reports/neutral_monitor_{today}.md`
-
-### 归档至D盘
-14. `python3 scripts/daily_report_to_disk.py` → 复制到 `D:/data/reports/{today}/`
+### 收盘报告（9~14统一为1步）
+9. `python3 scripts/closing_report.py` — 统一收盘报告
+   - 整合：大盘状态/持仓监控/市场宽度/V8扫描/资金行为/Phase回溯/策略
+   - 输出：`D:/data/a-stock/reports/{today}/{收盘报告,收盘复盘}_{today}.md`
+   - 替换了独立的：简报/V8仪表盘/持仓监控/庄家监控/护盘扫描/NEUTRAL监视/牛熊识别
 
 ### 💡 已废弃（不再运行）
 - `fetch_industry_daily.py` / `fetch_industry_daily_v2.py` — 行业指数数据不再采集
 - `sector_daily` / `industry_daily` 表已删除
 - 行业超额由 `v6_multi_factor.precalc_all_industry_excess()` 从 `daily_prices` + `industry_components_ths_l1` 实时算
 
+## 智库快速作战室（按需）
+```bash
+# 恐慌/策略审议场景：自动匹配学者并行讨论
+cd skills/think-tank && python3 scripts/fast_tank.py "议题" --data /tmp/topic_data.json
+# 输出到 sessions_spawn 调度指令，手动执行并行讨论
+```
+详见 `skills/think-tank/SKILL.md` C章
+
+## 特征框架v2修正（待部署）
+- 14维→12维（去掉开收盘趋同/多空单比例/价格中枢，加入因子残差换手率/条件日内偏度/VaR偏离率）
+- 做因子暴露分解（对FF3+流动性回归取残差再算特征）
+- 做跨regime聚类稳定性验证
+- 行为突变监测：PCA投影→指数衰减baseline→CUSUM/HMM
+详见 `skills/think-tank/scripts/fast_tank.py` 中的Simons讨论结论
+
 ## 待办跟踪
+- Asness因子暴露分解验证 → 集成到特征框架v2
+- Simons PCA/ICA模式发现 + 行为突变检测 → 集成到监控管线
+- 快速作战室：支持psychologist和military体系 + 语义匹配
+- 恐慌期C1超短线策略重新激活条件：surplus_z回到-1.0以上 + 日内振幅稳定2周以上
 - Finnhub ETF指数数据（需VPN）
 - UCDP/ACLED冲突数据（需VPN）
 - 行业成分股映射（`build_industry_components_ths.py` — 按需运行）
