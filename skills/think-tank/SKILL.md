@@ -317,6 +317,7 @@ skills/think-tank/
 │   ├── auto_distill.py           批量自动蒸馏（管理多人流水线）
 │   ├── fetch_papers.py           论文搜索+下载+PDF提取（SS+arXiv→Sci-Hub→PyMuPDF）
 │   ├── think_tank_pipeline_v3.py ⭐ 报告生成 Pipeline v4.0（4章+预-mortem）
+│   ├── fast_tank.py               ⭐ 快速智库作战室（2026-06-08 新增）
 │   ├── cache_news.py             时事采集→Redis缓存
 │   ├── cache_news_tags.py        时事Tag索引系统
 │   ├── fetch_acled.py            ACLED冲突数据采集
@@ -366,6 +367,100 @@ person_name/
 ```
 
 ⚠️ **素材统计必须合计两处**：`materials/raw/` + `papers/raw/`，只算一处会严重低估素材量。
+
+## C. 快速智库作战室（2026-06-08 新增）
+
+快速作战室（Rapid War Room）是轻量级讨论模式，专为日常策略审议设计，不需要跑完整4章管线。
+
+### 使用场景
+
+- **策略审议**: 交易策略需要多视角交叉验证
+- **恐慌评估**: 市场恐慌阶段的定性分析
+- **派系识别**: 特征向量框架审校
+- **风险诊断**: 尾部风险/黑天鹅/流动性评估
+
+### 工作流
+
+```
+议题 + 背景数据 → fast_tank.py自动匹配学者 → 并行subagent(每人独立) → 交叉验证 → 冲突矩阵 → 策略修正
+```
+
+### 使用方式
+
+**Step 1: 选择学者并生成prompt**
+
+```bash
+# 自动匹配（根据议题关键词）
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/fast_tank.py "议题描述"
+
+# 手动指定学者
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/fast_tank.py "议题描述" --scholars "Nassim_Taleb,Cliff_Asness,Jim_Simons"
+
+# 带背景数据
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/fast_tank.py "议题描述" --data /path/to/data.json --output /path/to/output.md
+```
+
+**Step 2: 并行subagent跑讨论**
+
+议题 → 在父session中spawn：
+
+```
+sessions_spawn(
+    label="智库-{name}",
+    model="deepseek/deepseek-chat",
+    runTimeoutSeconds=180,
+    task=fast_tank自动生成的prompt
+)
+```
+
+每人一个独立subagent，并行讨论。
+
+**Step 3: 交叉验证**
+
+收到所有回复后，使用冲突矩阵检查：
+
+| 分歧点 | 学者A | 学者B | 裁定方式 |
+|--------|-------|-------|----------|
+| 核心判断 | 是/否 | 是/否 | 数据验证 |
+| 条件分歧 | X→Y   | A→B   | 回测验证 |
+
+### 议题→专家映射规则
+
+当前内置规则表（`fast_tank.py`中的`TOPIC_EXPERT_MAP`）：
+
+| 议题关键词 | 匹配学者 |
+|-----------|----------|
+| 恐慌/尾部风险 | Nassim_Taleb, Hyman_Minsky, Ray_Dalio |
+| 崩盘/系统性 | Hyman_Minsky, Nassim_Taleb, George_Soros |
+| 量化/T+0/因子 | Jim_Simons, Cliff_Asness, Edward_Thorp |
+| 特征向量/派系 | Jim_Simons, Cliff_Asness |
+| 板块/宏观 | Ray_Dalio, Aaron_Brown, Hyman_Minsky |
+| 庄家/行为 | Cliff_Asness, Jim_Simons, Daniel_Kahneman |
+| 策略/回测 | Edward_Thorp, Jim_Simons, Cliff_Asness |
+
+### 与报告生成管线的关系
+
+```
+现有管线(4章报告):   采集→蒸馏→入库→RAG→4章报告+预mortem (heavy, >30min)
+快速作战室(新增):    议题→选人→并行讨论→交叉验证→冲突矩阵输出 (light, <3min)
+```
+
+- **作战室**: 日常策略审议、快速交叉验证
+- **管线**: 深度分析、长篇报告、有素材采集需求
+
+### 依赖
+
+- 人格数据：`/mnt/d/data/think-tank/personalities/scholars/<domain>/<name>/personality_v3.json`
+- 脚本：`skills/think-tank/scripts/fast_tank.py`
+- 模型：deepseek/deepseek-chat（60-180s timeout）
+
+### 已知限制
+
+- 目前只支持 scholar 体系（83人），psychologist 和 military 暂未纳入
+- 议题匹配基于关键词，不是语义匹配
+- 不支持自动整合回复（需手动综合）
+
+---
 
 ## 红线
 

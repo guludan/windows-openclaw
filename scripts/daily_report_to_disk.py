@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-收盘后把报告复制到 D:/data/reports/YYYY-MM-DD/
+收盘后把报告复制到 D:/data/a-stock/reports/YYYY-MM-DD/
 """
 import shutil, os, sys
 from pathlib import Path

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 软控股份(002073) 每日监控脚本
-收盘后运行，输出特征到 D:/data/reports/选股跟踪/
+收盘后运行，输出特征到 D:/data/a-stock/reports/选股跟踪/
 """
 import sys, os, json
 sys.path.insert(0, os.path.expanduser('~/.openclaw/workspace/scripts'))
@@ -173,8 +173,8 @@ out.append(f"- 振幅趋势: {amp_trend[-1]:+.2%}")
 
 # V8仪表盘交叉参考
 out.append(f"\n## 交叉参考")
-out.append(f"- V8仪表盘: D:/data/reports/{today}/v8_dashboard_{today}.txt")
-out.append(f"- 选股推荐: D:/data/reports/{today}/选股推荐_{today}.md")
+out.append(f"- V8仪表盘: D:/data/a-stock/reports/{today}/v8_dashboard_{today}.txt")
+out.append(f"- 选股推荐: D:/data/a-stock/reports/{today}/选股推荐_{today}.md")
 
 # 写入
 report_dir = f"/home/tearsyu/.openclaw/workspace/memory/reports"
@@ -184,7 +184,7 @@ with open(report_path, 'w') as f:
     f.write('\n'.join(out))
 
 # 同时写D盘
-disk_dir = f"/mnt/d/data/reports/{today}"
+disk_dir = f"/mnt/d/data/a-stock/reports/{today}"
 os.makedirs(disk_dir, exist_ok=True)
 disk_path = f"{disk_dir}/track_002073_{today}.md"
 with open(disk_path, 'w') as f:

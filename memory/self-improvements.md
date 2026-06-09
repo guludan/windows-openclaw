@@ -4,7 +4,20 @@
 
 ---
 
+## 2026-06-05: 实时行情必须从腾讯API拉，不用AKShare
+- 腾讯行情API: `curl -s 'https://qt.gtimg.cn/q=sh600635'` 返回完整字段
+- 代码规则: `sh`前缀=上交所, `sz`前缀=深交所, `qf`前缀=北交所
+- AKShare实时行情在WSL环境下频繁被封IP，不可靠
+- PG daily_prices只有截至昨天的日线数据，没有当天实时分笔
+- **错误模式**: 习惯性先调AKShare spot接口 → 被封 → 试PG（字段名不熟崩）→ 反复试错
+- **正确做法**: 实时数据直接走腾讯API，不用绕路AKShare或PG
+
 ## 2026-04-28: 数量级必须反复核对，不能凭感觉报数字
+- "Chris Miller" → 搜出数论教授和动画导演，全名是 Christopher M. Miller
+- "Nate Silver" → 搜出生物医学信号处理论文
+- "Juan Zarate" → Treasury War下载到内战论文
+- **规则**: 短名/常见名搜索时，加领域关键词（如 "semiconductor", "forecasting", "geopolitics"）
+- **name_map应存全名**: en字段用全名（Christopher Miller而非Chris Miller）
 - "Chris Miller" → 搜出数论教授和动画导演，全名是 Christopher M. Miller
 - "Nate Silver" → 搜出生物医学信号处理论文
 - "Juan Zarate" → Treasury War下载到内战论文

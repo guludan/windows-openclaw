@@ -26,7 +26,7 @@ import data_finance as df
 
 log = logging.getLogger('market_psychology')
 
-REPORT_DIR = "/mnt/d/data/think-tank-data/market_psychology"
+REPORT_DIR = "/mnt/d/data/think-tank/market_psychology"
 
 # ============ CASE DEFINITIONS ============
 

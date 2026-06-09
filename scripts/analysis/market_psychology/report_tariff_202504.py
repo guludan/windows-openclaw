@@ -10,7 +10,7 @@ from datetime import date
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 import data_finance as df
 
-REPORT_DIR = "/mnt/d/data/think-tank-data/reports"
+REPORT_DIR = "/mnt/d/data/think-tank/reports"
 
 def load_timeline():
     """加载已保存的时间线"""

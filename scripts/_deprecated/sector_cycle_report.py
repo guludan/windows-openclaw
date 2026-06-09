@@ -2,7 +2,7 @@
 """
 板块周期分析报告 — 行业轮动 + 机构行为突变点检测
 
-产出：/mnt/d/data/think-tank-data/market_psychology/sector_cycle_report.txt
+产出：/mnt/d/data/think-tank/market_psychology/sector_cycle_report.txt
 """
 import sys, os, logging, json, collections
 import numpy as np
@@ -464,7 +464,7 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
     report = generate_report()
     
-    output_path = '/mnt/d/data/think-tank-data/market_psychology/sector_cycle_report.txt'
+    output_path = '/mnt/d/data/think-tank/market_psychology/sector_cycle_report.txt'
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(report)
     print(report)

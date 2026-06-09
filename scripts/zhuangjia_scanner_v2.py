@@ -348,7 +348,7 @@ def main():
     with open(report_path, 'w') as f:
         f.write('\n'.join(out))
     
-    disk_dir = f"/mnt/d/data/reports/{today}"
+    disk_dir = f"/mnt/d/data/a-stock/reports/{today}"
     os.makedirs(disk_dir, exist_ok=True)
     disk_path = f"{disk_dir}/庄家行为监控_v2_{today}.md"
     with open(disk_path, 'w') as f:

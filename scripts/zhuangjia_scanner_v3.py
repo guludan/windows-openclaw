@@ -367,7 +367,7 @@ def scan(check_date=None):
     
     # 输出到文件
     today_str = check_date
-    output_dir = f'/mnt/d/data/reports/{today_str}'
+    output_dir = f'/mnt/d/data/a-stock/reports/{today_str}'
     os.makedirs(output_dir, exist_ok=True)
     
     lines = []

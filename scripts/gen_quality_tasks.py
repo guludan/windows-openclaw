@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-BASE = Path("/mnt/d/data/think-tank-data/personalities")
+BASE = Path("/mnt/d/data/think-tank/personalities")
 
 # 收集所有prompt文件按人分组
 tasks = []

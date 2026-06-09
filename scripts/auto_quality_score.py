@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-BASE = Path("/mnt/d/data/think-tank-data/personalities")
+BASE = Path("/mnt/d/data/think-tank/personalities")
 PYTHON = "~/miniconda3/envs/tt/bin/python3"
 QC_SCRIPT = "~/.openclaw/workspace/skills/think-tank/scripts/quality_check_llm.py"
 

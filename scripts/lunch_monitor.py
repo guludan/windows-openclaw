@@ -199,7 +199,7 @@ report_path = f"{report_dir}/lunch-{today}.md"
 with open(report_path, 'w') as f:
     f.write('\n'.join(out))
 
-disk_dir = f"/mnt/d/data/reports/{today}"
+disk_dir = f"/mnt/d/data/a-stock/reports/{today}"
 os.makedirs(disk_dir, exist_ok=True)
 disk_path = f"{disk_dir}/午间盘面_{today}.md"
 with open(disk_path, 'w') as f:

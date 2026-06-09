@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 持仓个股资金行为追踪（精确到个股的机构出货节奏监控）
-收盘后运行，输出到 D:/data/reports/{today}/
+收盘后运行，输出到 D:/data/a-stock/reports/{today}/
 """
 import sys, os, json, psycopg2
 import numpy as np
@@ -13,8 +13,9 @@ today = date.today()
 
 # 持仓配置
 holdings = {
-    '002073': {'name': '软控股份', 'buy_date': '2026-05-29', 'buy_price': 5.68, 'cost': 5.68, 'weight': 0.7},
-    '600273': {'name': '嘉化能源', 'buy_date': '2026-05-29', 'buy_price': 7.30, 'cost': 7.30, 'weight': 0.3},
+    '002073': {'name': '软控股份', 'buy_date': '2026-06-05', 'buy_price': 5.755, 'cost': 5.755, 'shares': 200, 'weight': 0.25},
+    '600273': {'name': '嘉化能源', 'buy_date': '2026-06-05', 'buy_price': 7.2451, 'cost': 7.2451, 'shares': 400, 'weight': 0.40},
+    '600635': {'name': '大众公用', 'buy_date': '2026-06-05', 'buy_price': 5.1051, 'cost': 5.1051, 'shares': 200, 'weight': 0.35},
 }
 
 conn = psycopg2.connect(DB)
@@ -46,7 +47,9 @@ for d, ri in sorted(regime_data.items()):
     else:
         sz_sink_days = 0
 
-market = regime_data.get(today, {})
+# 取最新可用数据（今天可能还未写入）
+market_dates = [d for d in regime_data.keys() if d <= today]
+market = regime_data.get(max(market_dates), {}) if market_dates else {}
 market_phase = None
 for r in pm_data:
     if r[0] <= today:
@@ -58,9 +61,14 @@ out_lines.append("")
 out_lines.append(f"## 大盘环境")
 out_lines.append(f"- Regime: {market.get('regime','?')}")
 out_lines.append(f"- Phase: {market_phase}")
-out_lines.append(f"- surplus_z: {market.get('sz','?'):.3f} (sz5={market.get('sz5','?'):.3f} sz20={market.get('sz20','?'):.3f})")
-out_lines.append(f"- 加速度: {market.get('accel','?'):.3f}")
-out_lines.append(f"- 上涨比率: {market.get('ar','?'):.1f}%")
+sz = market.get('sz', 0) if market.get('sz') is not None else 0
+sz5 = market.get('sz5', 0) if market.get('sz5') is not None else 0
+sz20 = market.get('sz20', 0) if market.get('sz20') is not None else 0
+ar = market.get('ar', 0) if market.get('ar') is not None else 0
+accel = market.get('accel', 0) if market.get('accel') is not None else 0
+out_lines.append(f"- surplus_z: {sz:.3f} (sz5={sz5:.3f} sz20={sz20:.3f})")
+out_lines.append(f"- 加速度: {accel:.3f}")
+out_lines.append(f"- 上涨比率: {ar:.1f}%")
 out_lines.append(f"- 极空区已持续: {sz_sink_days}天")
 out_lines.append("")
 
@@ -288,7 +296,7 @@ report_path = f"{report_dir}/position_tracker_{today}.md"
 with open(report_path, 'w') as f:
     f.write('\n'.join(out_lines))
 
-disk_dir = f"/mnt/d/data/reports/{today}"
+disk_dir = f"/mnt/d/data/a-stock/reports/{today}"
 os.makedirs(disk_dir, exist_ok=True)
 disk_path = f"{disk_dir}/持仓资金行为监控_{today}.md"
 with open(disk_path, 'w') as f:

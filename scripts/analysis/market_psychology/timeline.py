@@ -263,7 +263,7 @@ if __name__ == '__main__':
     
     # 保存到文件
     import json
-    out_path = '/mnt/d/data/think-tank-data/reports/tariff_shock_202504_timeline.json'
+    out_path = '/mnt/d/data/think-tank/reports/tariff_shock_202504_timeline.json'
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, 'w') as f:
         json.dump(tl, f, ensure_ascii=False, indent=2, default=str)

@@ -10,7 +10,7 @@ os.environ['SERPAPI_KEY'] = '848c4ec87cac7776b9404f0af1aeb36fce936d1aa3aebe89966
 
 from data_search import download_scihub_pdf
 
-BASE = "/mnt/d/data/think-tank-data/personalities"
+BASE = "/mnt/d/data/think-tank/personalities"
 PDF_DIR = "/tmp/scihub_pdfs"
 os.makedirs(PDF_DIR, exist_ok=True)
 

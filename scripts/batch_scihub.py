@@ -7,16 +7,16 @@ sys.path.insert(0, '/home/tearsyu/.openclaw/workspace/skills/data-search/scripts
 from data_search import download_scihub_pdf
 
 PERSONALITY_DIRS = [
-    "/mnt/d/data/think-tank-data/personalities/psychologists/neuropsychology/V.S._Ramachandran",
-    "/mnt/d/data/think-tank-data/personalities/scholars/economics/Kenneth_Rogoff",
-    "/mnt/d/data/think-tank-data/personalities/psychologists/neuropsychology/Joseph_LeDoux",
-    "/mnt/d/data/think-tank-data/personalities/scholars/actuarial-science/Robert_Merton",
-    "/mnt/d/data/think-tank-data/personalities/scholars/financial-data/Marcos_Carreira",
-    "/mnt/d/data/think-tank-data/personalities/scholars/actuarial-science/Eugene_Fama",
-    "/mnt/d/data/think-tank-data/personalities/scholars/media-studies/Neil_Postman",
-    "/mnt/d/data/think-tank-data/personalities/scholars/economics/Milton_Friedman",
-    "/mnt/d/data/think-tank-data/personalities/scholars/actuarial-science/William_Sharpe",
-    "/mnt/d/data/think-tank-data/personalities/psychologists/evolutionary-psychology/Robert_Sapolsky",
+    "/mnt/d/data/think-tank/personalities/psychologists/neuropsychology/V.S._Ramachandran",
+    "/mnt/d/data/think-tank/personalities/scholars/economics/Kenneth_Rogoff",
+    "/mnt/d/data/think-tank/personalities/psychologists/neuropsychology/Joseph_LeDoux",
+    "/mnt/d/data/think-tank/personalities/scholars/actuarial-science/Robert_Merton",
+    "/mnt/d/data/think-tank/personalities/scholars/financial-data/Marcos_Carreira",
+    "/mnt/d/data/think-tank/personalities/scholars/actuarial-science/Eugene_Fama",
+    "/mnt/d/data/think-tank/personalities/scholars/media-studies/Neil_Postman",
+    "/mnt/d/data/think-tank/personalities/scholars/economics/Milton_Friedman",
+    "/mnt/d/data/think-tank/personalities/scholars/actuarial-science/William_Sharpe",
+    "/mnt/d/data/think-tank/personalities/psychologists/evolutionary-psychology/Robert_Sapolsky",
 ]
 
 PDF_DIR = "/tmp/scihub_pdfs"

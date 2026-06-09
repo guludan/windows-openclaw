@@ -3,7 +3,7 @@
 庄家行为全市场扫描（战术层）
 识别全流通A股的庄家行为阶段：建仓/洗盘/试盘/拉升/出货
 牛市/熊市差异化参数
-每日收盘后运行，输出到 D:/data/reports/{today}/
+每日收盘后运行，输出到 D:/data/a-stock/reports/{today}/
 """
 import sys, os, json, psycopg2
 import numpy as np
@@ -239,7 +239,7 @@ for sc, info in all_stocks.items():
     # 如果拉升但SMA偏离很深，标记V8+拉升
     # 简单SMA偏离计算
     if n >= 120:
-        sma120 = np.mean(closes[-120:])
+        sma120 = np.mean(closes[-121:-1])  # -121:-1 不含当天，避免前视偏差
         sma_dev = closes[-1]/sma120 - 1
     else:
         sma_dev = 0
@@ -389,7 +389,7 @@ report_path = f"{report_dir}/zhuangjia_{today}.md"
 with open(report_path, 'w') as f:
     f.write('\n'.join(out))
 
-disk_dir = f"/mnt/d/data/reports/{today}"
+disk_dir = f"/mnt/d/data/a-stock/reports/{today}"
 os.makedirs(disk_dir, exist_ok=True)
 disk_path = f"{disk_dir}/庄家行为监控_{today}.md"
 with open(disk_path, 'w') as f:

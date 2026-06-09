@@ -17,7 +17,7 @@ import data_finance as df
 
 log = logging.getLogger('macro_cycle')
 
-REPORT_DIR = "/mnt/d/data/think-tank-data/market_psychology"
+REPORT_DIR = "/mnt/d/data/think-tank/market_psychology"
 
 
 def load_macro(indicator: str, since: str = "2020-01-01"):

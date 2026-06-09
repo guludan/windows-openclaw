@@ -24,8 +24,21 @@ python3 scripts/lunch_monitor.py
 ### 基本面
 8. `python3 scripts/fetch_financial_data_v2.py` — 季度财报（mootdx F10，每季初跑）
 
-### 收盘报告（9~14统一为1步）
-9. `python3 scripts/closing_report.py` — 统一收盘报告
+### V9 四层决策框架（6/9）
+9. `python3 scripts/v9_framework.py run` — V9全量(政策+板块+大盘+工行+标的+持仓+决策)
+  - 单层: policy / sector / market / icbc / target / watch / sentiment
+  - sentiment: 舆论反转映射（大涨→清仓窗口, 恐慌→买入窗口）
+
+### 收盘报告
+10. `python3 scripts/closing_report.py` — 统一收盘报告
+
+### 交易监控
+11. `python3 scripts/trade_master.py status` — 交易状态+资金风控+V9简报
+12. `python3 scripts/trade_master.py daily` — 全自动管线(1~10整合)
+    - 日志: /mnt/d/data/a-stock/logs/trade_master.log
+    - 经验: /mnt/d/data/a-stock/logs/trade_experience.md
+    - 资金: 5000本金, 止损线4000(-1000=20%), 追回再还
+    - 每笔交易记录原因
    - 整合：大盘状态/持仓监控/市场宽度/V8扫描/资金行为/Phase回溯/策略
    - 输出：`D:/data/a-stock/reports/{today}/{收盘报告,收盘复盘}_{today}.md`
    - 替换了独立的：简报/V8仪表盘/持仓监控/庄家监控/护盘扫描/NEUTRAL监视/牛熊识别
