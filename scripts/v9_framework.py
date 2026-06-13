@@ -1,24 +1,20 @@
 #!/usr/bin/env python3
 """
-V9 四层决策框架
+V9 四层决策框架 v2.0 — 资金潮汐版
 政策→板块→大盘→标的（和V8完全相反）
+按周级别决策，日线只做执行确认
 
 用法:
-  # 全天候运行（每天一次）
-  python3 scripts/v9_framework.py run
-
-  # 单层运行
+  python3 scripts/v9_framework.py run           # 全量决策（每天一次，收盘后）
+  python3 scripts/v9_framework.py tide          # 资金潮汐分析（每周一次）
+  python3 scripts/v9_framework.py score         # 板块真伪评分（每日）
+  python3 scripts/v9_framework.py hot           # 热点持续性复查（每日）
   python3 scripts/v9_framework.py policy        # 政策嗅探（每周）
-  python3 scripts/v9_framework.py sector        # 板块轮动分析（每日）
-  python3 scripts/v9_framework.py market        # 大盘窗口（每日）
-  python3 scripts/v9_framework.py target        # 标的筛选（按需）
-  python3 scripts/v9_framework.py output        # 决策输出
-
-  # 工具
+  python3 scripts/v9_framework.py trade         # 交易信号
   python3 scripts/v9_framework.py watch         # 交互式盯盘
 """
 
-import urllib.request, json, ssl, psycopg2, re, sys
+import urllib.request, json, ssl, psycopg2, re, sys, os
 from datetime import datetime, timedelta
 from collections import defaultdict
 
@@ -28,966 +24,636 @@ ctx.verify_mode = ssl.CERT_NONE
 HDR = {'User-Agent': 'Mozilla/5.0'}
 
 DB = "dbname=guludan user=guludan password=toto host=192.168.3.14"
+REPORT_DIR = "/mnt/d/data/a-stock/reports"
+LOG_DIR = "/mnt/d/data/a-stock/logs"
+os.makedirs(REPORT_DIR, exist_ok=True)
+os.makedirs(LOG_DIR, exist_ok=True)
 
-# ──────────── 常量定义 ────────────
+TODAY = datetime.now().strftime('%Y-%m-%d')
+YESTERDAY = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
 
-# 政策→受益板块映射
-POLICY_SECTOR_MAP = {
-    '半导体': ['半导体','芯片','集成电路','封测','设备'],
-    'AI/算力': ['AI','人工智能','算力','大模型','数据中心','云计算','光模块'],
-    '新能源': ['新能源','光伏','风电','锂电','储能','电池'],
-    '电力设备': ['智能电网','特高压','电网','电气设备','电力','柔性直流'],
-    '工控/机器人': ['机器人','工控','自动化','智能制造'],
-    '消费刺激': ['消费','家电','汽车','零售','旅游','食品饮料'],
-    '通信': ['通信','5G','6G'],
-}
+# ══════════════════════════════════════════════════
+# 第一章：资金潮汐（按周框架，周级别信号）
+# ══════════════════════════════════════════════════
 
-# 板块→ETF映射
-SECTOR_ETF_MAP = {
-    '半导体': 'sh512480',
-    '芯片': 'sh512760',
-    '新能源': 'sh515030',
-    'AI/算力': 'sh515070',
-    '通信': 'sh515050',
-    '机器人': 'sh562500',
-    '软件': 'sz159852',
-    '电力': 'sz159611',
-    '中证1000': 'sh512100',
-    '上证50': 'sh510050',
-}
-
-# ──────────── 工具函数 ────────────
-
-def qt(code):
-    """腾讯实时行情，返回name, price, pct, close, high, low, vol"""
-    prefix = 'sh' if code.startswith('6') or code.startswith('5') else 'sz'
-    url = f'https://qt.gtimg.cn/q={prefix}{code}'
-    try:
-        req = urllib.request.Request(url, headers=HDR)
-        resp = urllib.request.urlopen(req, timeout=8, context=ctx)
-        parts = resp.read().decode('gbk').split('~')
-        if len(parts) < 35: return None
-        return {
-            'name': parts[1], 'price': float(parts[3]), 'pct': float(parts[32].replace('%','')),
-            'close': float(parts[4]), 'high': float(parts[33]), 'low': float(parts[34]),
-            'vol': int(parts[6])/10000
-        }
-    except: return None
-
-def qt_batch(codes):
-    """批量查询，返回 {code: {...}}"""
-    res = {}
-    for i in range(0, len(codes), 20):
-        batch = codes[i:i+20]
-        ids = [('sh' if c.startswith('6') or c.startswith('5') else 'sz')+c for c in batch]
-        url = f'https://qt.gtimg.cn/q={",".join(ids)}'
-        try:
-            req = urllib.request.Request(url, headers=HDR)
-            resp = urllib.request.urlopen(req, timeout=15, context=ctx)
-            for line in resp.read().decode('gbk').strip().split('\n'):
-                parts = line.split('~')
-                if len(parts) < 35: continue
-                c = line.split('="')[0].replace('v_','')
-                if len(c) > 6: c = c[2:]
-                res[c] = {
-                    'name': parts[1], 'price': float(parts[3]),
-                    'pct': float(parts[32].replace('%','')), 'close': float(parts[4]),
-                    'high': float(parts[33]), 'low': float(parts[34]),
-                    'vol': int(parts[6])/10000
-                }
-        except: pass
-    return res
-
-def db():
-    return psycopg2.connect(DB)
-
-# ──────────── 1. 政策嗅探引擎 ────────────
-
-def policy_scan():
-    """政策层：通过SerpAPI搜索真实政策"""
-    print("=" * 68)
-    print("[V9 政策层] 政策嗅探引擎 (SerpAPI)")
-    print("=" * 68)
-    
-    print(f"\n【搜索近期产业政策】")
-    
-    import urllib.request, json, time
-    from urllib.parse import quote
-    
-    queries = {
-        '国务院常务会议 产业政策 2026年6月': '国务院',
-        '工信部 新兴产业 最新政策 2026': '工信部',
-        '大基金三期 半导体 2026': '大基金',
-        '电网改造 特高压 十五五 2026': '电网',
-        '以旧换新 补贴 2026年6月': '以旧换新',
-        'AI 人工智能 算力 政策 2026': 'AI',
-        '新型工业化 未来产业 国常会 2026': '新型工业化',
-    }
-    
-    policies = []
-    for q, tag in queries.items():
-        try:
-            encoded = quote(q)
-            url = f"https://serpapi.com/search?q={encoded}&api_key=848c4ec87cac7776b9404f0af1aeb36fce936d1aa3aebe899664eaa43e67ccc2&num=3&hl=zh-CN"
-            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            resp = urllib.request.urlopen(req, timeout=10)
-            data = json.loads(resp.read().decode())
-            
-            for r in data.get('organic_results', [])[:2]:
-                title = r.get('title', '')
-                snippet = r.get('snippet', '')[:150]
-                policies.append({'tag': tag, 'title': title, 'snippet': snippet})
-            time.sleep(0.5)
-        except Exception as e:
-            policies.append({'tag': tag, 'title': f'[获取失败: {e}]', 'snippet': ''})
-    
-    # 输出
-    print(f"\n{'来源':10} {'标题'}")
-    print("-" * 65)
-    for p in policies[:14]:
-        print(f"{p['tag']:10} {p['title']}")
-        if p['snippet']:
-            print(f"          {p['snippet']}")
-    
-    # 信号评分
-    signal_up = []
-    signal_mid = []
-    if any('大基金' in p['title'] for p in policies):
-        signal_up.append('半导体/芯片')
-    if any('电网' in p['title'] or '特高压' in p['title'] for p in policies):
-        signal_up.append('电力设备')
-    if any('AI' in p['title'] or '人工' in p['title'] or '算力' in p['title'] for p in policies):
-        signal_mid.append('AI/算力')
-    if any('新能源' in p['title'] for p in policies):
-        signal_mid.append('新能源')
-    if any('以旧换新' in p['title'] or '消费' in p['title'] for p in policies):
-        signal_mid.append('消费')
-    if any('新型工业' in p['title'] or '智能' in p['title'] for p in policies):
-        signal_up.append('新型工业化/智能制造')
-    
-    print(f"\n【政策信号评分】(基于搜索摘要)")
-    print(f"  强信号: {', '.join(set(signal_up)) if signal_up else '暂无'}")
-    print(f"  中信号: {', '.join(signal_mid) if signal_mid else '暂无'}")
-    
-    return policies
-
-# ──────────── 2. 板块轮动分析器 ────────────
-
-def sector_analysis():
-    """板块层：四象限分类"""
-    print("=" * 68)
-    print("[V9 板块层] 板块轮动分析")
-    print("=" * 68)
-    
-    # 用ETF涨跌来估算板块状态
-    sector_etfs = {
-        '半导体/芯片': ['sh512480','sh512760'],
-        'AI/算力': ['sh515070'],
-        '通信': ['sh515050'],
-        '新能源': ['sh515030'],
-        '机器人': ['sh562500'],
-        '软件': ['sz159852'],
-        '传统蓝筹': ['sh510050'],
-        '中盘': ['sh512100'],
-    }
-    
-    all_etf_codes = [c for codes in sector_etfs.values() for c in codes]
-    quotes = qt_batch([c.replace('sh','').replace('sz','') for c in set(all_etf_codes)])
-    
-    # 获取1周前价格计算短期涨幅
-    conn = db(); cur = conn.cursor()
-    
-    sector_data = []
-    for sect_name, etf_codes in sector_etfs.items():
-        today_pct = 0; n = 0
-        
-        # 如果ETF代码在daily_prices里
-        for ec in etf_codes:
-            code = ec.replace('sh','').replace('sz','')
-            if code in quotes:
-                today_pct += quotes[code]['pct']
-                n += 1
-        
-        if n:
-            today_pct /= n
-            # 查5日收益率
-            cur.execute("""
-                SELECT symbol, close FROM daily_prices
-                WHERE symbol IN %s AND trade_date = '2026-06-01'
-            """, (tuple(f'A.{c.replace("sh","").replace("sz","")}' for c in etf_codes),))
-            jun1_rows = cur.fetchall()
-            if jun1_rows:
-                jun1_close = sum(float(r[1]) for r in jun1_rows) / len(jun1_rows)
-                cur.execute("""
-                    SELECT symbol, close FROM daily_prices
-                    WHERE symbol IN %s AND trade_date = '2026-06-08'
-                """, (tuple(f'A.{c.replace("sh","").replace("sz","")}' for c in etf_codes),))
-                jun8_rows = cur.fetchall()
-                if jun8_rows:
-                    jun8_close = sum(float(r[1]) for r in jun8_rows) / len(jun8_rows)
-                    five_d_ret = (jun8_close - jun1_close) / jun1_close * 100
-                else:
-                    five_d_ret = 0
-            else:
-                five_d_ret = 0
-            
-            # 分类：已轮动/轮动中/即将轮动/等待轮动
-            if today_pct > 2 and five_d_ret < 0:
-                phase = "🔴 已轮动(等待回调)"
-            elif today_pct > 1:
-                phase = "🟡 轮动中(不追高)"
-            elif today_pct > -1 and five_d_ret > -3:
-                phase = "🟢 即将轮动(关注)"
-            else:
-                phase = "⚪ 等待轮动(观察)"
-            
-            sector_data.append((sect_name, today_pct, five_d_ret, phase))
-    
-    print(f"\n{'板块':16} {'今日':>7} {'5日涨':>8} {'阶段'}")
-    print("-" * 60)
-    for name, today, f5, phase in sorted(sector_data, key=lambda x: -x[2]):
-        print(f"{name:16} {today:>+6.2f}% {f5:>+7.2f}% {phase}")
-    
-    conn.close()
-    return sector_data
-
-# ──────────── 2.5 真热点识别 ────────────
-
-def hot_sector_scanner(sector_data):
+def get_weekly_icbc(cur, weeks_back=11):
     """
-    用同花顺L1成分股数据+涨跌比+量能持续性，判断当前热点是真热点还是假拉升
-    
-    输入: sector_data 来自 sector_analysis() 的 [(name, today_pct, five_d_ret, phase)]
-    输出: 打印真热点评分
+    工商银行周线——机构资金潮汐温度计
+    取最近N周工行周收盘变化，判定机构资金流向
     """
-    print("=" * 68)
-    print("[V9 真热点识别] 板块质量评分")
-    print("=" * 68)
-    
-    conn = db(); cur = conn.cursor()
-    
-    # 获取最新交易日
-    cur.execute("SELECT max(trade_date) FROM daily_prices")
-    latest_date = cur.fetchone()[0]
-    if not latest_date:
-        print("  ⚠️ daily_prices 无数据")
-        conn.close()
-        return []
-    today_str = latest_date.isoformat()
-    
-    # 板块名 → 同花顺L1板块名 映射
-    name_to_ths = {
-        '半导体/芯片': '半导体',
-        'AI/算力': None,  # 无直接映射
-        '通信': '通信设备',
-        '新能源': '电池',
-        '机器人': None,
-        '软件': '软件开发',
-        '电力设备': '电网设备',
-        '传统蓝筹': None,
-        '中盘': None,
-    }
-    
-    lookback_date = (latest_date - timedelta(days=60)).isoformat()
-    
-    conn = db(); cur = conn.cursor()
-    
-    ratings = []
-    
-    for name, today_pct, five_d_ret, phase in sector_data:
-        ths_name = name_to_ths.get(name)
-        if not ths_name:
-            continue
-        
-        # 1) 查板块成分股
-        cur.execute("""
-            SELECT stock_code FROM industry_components_ths_l1
-            WHERE industry = %s AND stock_code IS NOT NULL
-        """, (ths_name,))
-        stks = [r[0] for r in cur.fetchall()]
-        if len(stks) < 3:
-            continue
-        
-        # 2) 用SQL算今日板块涨跌比 + 量比
-        cur.execute("""
-            WITH today_data AS (
-                SELECT 
-                    dp.symbol,
-                    dp.trade_date,
-                    dp.close,
-                    dp.volume,
-                    LAG(dp.close) OVER (PARTITION BY dp.symbol ORDER BY dp.trade_date) AS prev_close,
-                    AVG(dp.volume) OVER (PARTITION BY dp.symbol ORDER BY dp.trade_date ROWS BETWEEN 5 PRECEDING AND 1 PRECEDING) AS avg_vol_5
-                FROM daily_prices dp
-                WHERE dp.symbol IN (SELECT 'A.' || unnest(%s::text[]))
-                  AND dp.trade_date >= %s
-            )
-            SELECT 
-                COUNT(*) FILTER (WHERE prev_close > 0) as total,
-                SUM(CASE WHEN prev_close > 0 AND close > prev_close THEN 1 ELSE 0 END)::float / NULLIF(COUNT(*) FILTER (WHERE prev_close > 0), 0) as advance_ratio,
-                percentile_cont(0.5) WITHIN GROUP (ORDER BY volume::float / NULLIF(avg_vol_5, 0)) as med_vol_ratio
-            FROM today_data
-            WHERE trade_date = %s
-              AND avg_vol_5 > 0
-        """, (stks, lookback_date, today_str))
-        r = cur.fetchone()
-        if not r or not r[0] or r[0] < 3:
-            continue
-        
-        total = r[0]
-        advance_ratio = float(r[1]) if r[1] else 0.5
-        vol_ratio = float(r[2]) if r[2] else 1.0  # 个股中位数量比，不受大盘股/新股干扰
-        
-        # 3) 评分
-        score = 0
-        details = []
-        
-        # 涨跌比评分
-        if advance_ratio > 0.60:
-            score += 40
-            details.append(f"涨跌比{advance_ratio:.0%} ✅ 板块强共振")
-        elif advance_ratio > 0.55:
-            score += 25
-            details.append(f"涨跌比{advance_ratio:.0%} 🟡 弱共振")
-        elif advance_ratio > 0.50:
-            score += 10
-            details.append(f"涨跌比{advance_ratio:.0%} ❓ 分化严重")
-        else:
-            score -= 10
-            details.append(f"涨跌比{advance_ratio:.0%} 🔴 多数股下跌")
-        
-        # 量能持续性评分（中位数量比）
-        if vol_ratio > 1.5:
-            score += 20
-            details.append(f"量比{vol_ratio:.1f}x 🔥 放量")
-        elif vol_ratio > 0.8:
-            score += 10
-            details.append(f"量比{vol_ratio:.1f}x 正常")
-        else:
-            score -= 10
-            details.append(f"量比{vol_ratio:.1f}x 🔴 缩量")
-        
-        # 今日涨幅评分
-        if today_pct > 3:
-            score += 20
-            details.append(f"涨{today_pct:+.1f}% 强")
-        elif today_pct > 1:
-            score += 10
-            details.append(f"涨{today_pct:+.1f}% 中")
-        else:
-            score += 0
-            details.append(f"涨{today_pct:+.1f}% 弱")
-        
-        # 阶段评分
-        if '已轮动' in phase:
-            score -= 10
-            details.append("已轮动(警惕回调)")
-        elif '即将轮动' in phase:
-            score += 15
-            details.append("即将轮动(关注)")
-        
-        verdict = ""
-        if score >= 60:
-            verdict = "✅ 真热点"
-        elif score >= 35:
-            verdict = "🟡 偏热"
-        elif score >= 15:
-            verdict = "❓ 一般"
-        else:
-            verdict = "⛔ 假拉升/出货"
-        
-        ratings.append((score, name, verdict, details, advance_ratio, vol_ratio))
-    
-    conn.close()
-    
-    ratings.sort(key=lambda x: -x[0])
-    
-    print(f"\n{'评分':<6} {'板块':<18} {'判定':<18} {'核心信号'}")
-    print('-' * 70)
-    for score, name, verdict, details, _, _ in ratings:
-        detail_str = ' | '.join(details[:2])
-        print(f"{score:<6} {name:<18} {verdict:<18} {detail_str}")
-    
-    print(f"\n评分标准: >60=真热点  35~60=偏热  15~35=一般  <15=假拉升")
-    print("核心看涨跌比>0.6(共振)+量不缩+尚未轮动过")
-    
-    return ratings
-
-
-# ──────────── 3. 大盘窗口监控 ────────────
-
-def market_window():
-    """大盘层：仓位上限"""
-    print("=" * 68)
-    print("[V9 大盘层] 窗口监控")
-    print("=" * 68)
-    
-    conn = db(); cur = conn.cursor()
-    
     cur.execute("""
-        SELECT date::text, extra->>'surplus_z', extra->>'regime',
-               extra->>'advance_ratio'
-        FROM pool_energy WHERE level='market' ORDER BY date DESC LIMIT 1
-    """)
-    r = cur.fetchone()
+        SELECT trade_date, close FROM daily_prices WHERE symbol='A.601398'
+        AND trade_date >= %s ORDER BY trade_date
+    """, ((datetime.now()-timedelta(weeks=weeks_back+2)).strftime('%Y-%m-%d'),))
+    rows = [(str(r[0]), float(r[1])) for r in cur.fetchall()]
     
-    if r:
-        date_str = r[0]; sz = float(r[1]) if r[1] else -2.0; regime = r[2] or '?'
-        ar = r[3] or '?'
-        
-        # 仓位规则
-        if sz < -2.0:
-            limit = "30%上限"
-            signal = "极空区, 等信号"
-            action = "持有不动"
-        elif sz < -1.5:
-            limit = "30%上限"
-            signal = "空头区, 不动"
-            action = "持有不动"
-        elif sz < -1.0:
-            limit = "50%上限"
-            signal = "弱回暖, 可轻仓"
-            action = "轨道A可轻仓"
-        else:
-            limit = "80%上限"
-            signal = "回暖明确, 加仓"
-            action = "可加仓"
-        
-        print(f"\n  V8状态:   {date_str}  surplus_z={sz:.3f}  regime={regime}")
-        print(f"  仓位上限: {limit}")
-        print(f"  信号:     {signal}")
-        print(f"  操作:     {action}")
-        
-        # 计算5日均值
+    # 按周聚合（取每周最后一个交易日）
+    from collections import OrderedDict
+    weekly = OrderedDict()
+    for d, px in rows:
+        dt = datetime.strptime(d, '%Y-%m-%d')
+        week_key = dt.strftime('%Y-W%W')
+        weekly[week_key] = {'date': d, 'close': px}
+    
+    # 周变化
+    week_keys = list(weekly.keys())
+    results = []
+    for i in range(1, len(week_keys)):
+        k = week_keys[i]
+        pk = week_keys[i-1]
+        chg = (weekly[k]['close'] - weekly[pk]['close']) / weekly[pk]['close'] * 100
+        results.append({
+            'week': k, 'date': weekly[k]['date'],
+            'close': weekly[k]['close'], 'pct': chg
+        })
+    
+    # 资金潮汐判定
+    # 最近N周的正涨/负跌
+    recent = results[-8:] if len(results) >= 8 else results
+    up_weeks = sum(1 for r in recent if r['pct'] > 0)
+    down_weeks = sum(1 for r in recent if r['pct'] < -0.3)
+    streak = 0
+    for r in reversed(recent):
+        if r['pct'] > 0: streak += 1
+        else: break
+    
+    return {
+        'weekly': results,
+        'up_weeks': up_weeks,
+        'down_weeks': down_weeks,
+        'streak': streak,
+        'total': len(recent),
+        'last': results[-1] if results else None,
+        'trend': '涨' if up_weeks > len(recent)*0.6 else ('跌' if down_weeks > len(recent)*0.4 else '震荡'),
+    }
+
+
+def get_weekly_sectors(cur):
+    """
+    板块周级别资金流——用ETF周收益看资金轮动
+    """
+    etf_list = {
+        'A.512480': '半导体', 'A.512760': '芯片', 'A.515070': 'AI/算力',
+        'A.515050': '通信', 'A.515030': '新能源', 'A.159611': '电力设备',
+        'A.562500': '机器人',
+    }
+    start = (datetime.now() - timedelta(weeks=12)).strftime('%Y-%m-%d')
+    
+    results = []
+    for sym, name in etf_list.items():
         cur.execute("""
-            SELECT extra->>'surplus_z' 
-            FROM pool_energy WHERE level='market'
-            ORDER BY date DESC LIMIT 5
-        """)
-        szs = [float(rr[0]) for rr in cur.fetchall() if rr[0]]
-        if len(szs) >= 2:
-            sz_5 = sum(szs) / len(szs)
-            trend = "🟢 回暖" if szs[-1] > szs[0] else "🔴 继续恶化"
-            print(f"  sz_5:    {sz_5:.3f}  {trend}")
+            SELECT trade_date, close FROM daily_prices WHERE symbol=%s
+            AND trade_date >= %s ORDER BY trade_date
+        """, (sym, start))
+        rows = cur.fetchall()
+        if len(rows) < 5: continue
+        
+        # 逐周
+        weekly = OrderedDict()
+        for d, px in rows:
+            dt = d if isinstance(d, str) else d.strftime('%Y-%m-%d')
+            week_key = datetime.strptime(dt, '%Y-%m-%d').strftime('%Y-W%W')
+            weekly[week_key] = {'date': dt, 'close': float(px)}
+        
+        wk = list(weekly.keys())
+        this_week = weekly[wk[-1]]['close'] if wk else 0
+        last_week = weekly[wk[-2]]['close'] if len(wk) > 1 else this_week
+        w2_ago = weekly[wk[-3]]['close'] if len(wk) > 2 else this_week
+        
+        chg1 = (this_week - last_week)/last_week*100
+        chg2 = (this_week - w2_ago)/w2_ago*100
+        
+        results.append((name, chg1, chg2, this_week, last_week))
     
+    return results
+
+
+def tide():
+    """
+    资金潮汐分析（周级别核心决策框架）
+    """
+    print("=" * 70)
+    print("  V9 资金潮汐分析 | 周级别机构资金流向")
+    print("=" * 70)
+    
+    conn = psycopg2.connect(DB); cur = conn.cursor()
+    
+    # 1. 工行潮汐
+    tide_data = get_weekly_icbc(cur)
+    print(f"\n【潮汐温度计】工商银行近{tide_data['total']}周")
+    print(f"  上涨周: {tide_data['up_weeks']}/{tide_data['total']} ({tide_data['up_weeks']/tide_data['total']*100:.0f}%)")
+    print(f"  下跌周(>0.3%): {tide_data['down_weeks']}/{tide_data['total']} ({tide_data['down_weeks']/tide_data['total']*100:.0f}%)")
+    print(f"  连续上涨: {tide_data['streak']}周" if tide_data['streak'] > 0 else f"  最近一周下跌")
+    
+    if tide_data['last']:
+        l = tide_data['last']
+        print(f"  最新: {l['week']} 周 {l['date']} 工行{l['close']:.2f} ({l['pct']:+.2f}%)")
+    
+    # 潮汐相位判定
+    up_ratio = tide_data['up_weeks'] / tide_data['total']
+    last_pct = tide_data['last']['pct'] if tide_data['last'] else 0
+    
+    if up_ratio > 0.7 and tide_data['streak'] >= 4:
+        phase = "🔴 潮汐高潮（强避险）"
+        capital_state = "机构全力避险，科技不可参与"
+        position_limit = "仓位≤30%，不开新仓"
+        action = "持有硬底标的等待"
+    elif up_ratio > 0.5:
+        phase = "🟡 潮汐上涨（温和避险）"
+        capital_state = "机构在买银行，科技承压"
+        position_limit = "仓位≤50%，不追高"
+        action = "仅持有硬底标的"
+    elif tide_data['down_weeks'] >= 2 and tide_data['streak'] < 0:
+        phase = "🟢 潮汐退潮（资金流出银行）"
+        capital_state = "机构开始出银行，资金可能转向"
+        position_limit = "仓位≤70%，准备入场"
+        action = "观察板块热点评分"
+    elif tide_data['down_weeks'] >= 3:
+        phase = "✅ 潮汐见底（资金大转向）"
+        capital_state = "机构持续卖出银行，科技迎来机会"
+        position_limit = "可加仓至100%"
+        action = "关注板块真热点"
     else:
-        print(f"\n  ⚠️ pool_energy 无数据, 需先跑归档管线")
+        phase = "⚪ 潮汐混沌"
+        capital_state = "方向不明，观望"
+        position_limit = "仓位≤30%"
+        action = "等待信号明确"
+    
+    print(f"\n【潮汐相位】{phase}")
+    print(f"  资金状态: {capital_state}")
+    print(f"  仓位: {position_limit}")
+    print(f"  操作: {action}")
+    
+    # 2. 板块周线
+    print(f"\n【板块周线】近两周变化:")
+    sectors = get_weekly_sectors(cur)
+    print(f"{'板块':12} {'本周':>6} {'对比2周前':>8} {'趋势':10}")
+    print("-" * 40)
+    for name, w1, w2, this, last in sorted(sectors, key=lambda x: x[1], reverse=True):
+        trend = "🟢转强" if w1 > w2 + 1 else ("🔴转弱" if w1 < w2 - 1 else "➖横盘")
+        print(f"{name:12} {w1:>+5.2f}% {w2:>+7.2f}% {trend:10}")
+    
+    # 3. 综合判定
+    print(f"\n【综合判定】")
+    print(f"  {'='*50}")
+    
+    print(f"  当前是{phase}")
+    print(f"  {capital_state}")
+    print(f"\n  周级别规则（已固化）：")
+    print(f"  ① 工行周涨幅>1% → 本周不参与任何科技板块")
+    print(f"  ② 工行连续3周下跌 → 资金确认转向, 加仓窗口")
+    print(f"  ③ 工行单周跌幅>1% → 开始关注, 等第2周确认")
+    print(f"  ④ 周线信号优先于日线：日线波动是噪音")
+    print(f"\n  参考：4/13~6/10共11周, 工行仅2周下跌(<0.5%)")
+    print(f"        按周规则, 这11周根本不应该买科技股")
     
     conn.close()
+    return phase, capital_state, action
 
-# ──────────── 4. 标的筛选 ────────────
 
-def target_filter(trigger_sector=None):
-    """标的层：ETF优先 + 个股弹性增强"""
-    print("=" * 68)
-    print("[V9 标的层] 标的筛选")
-    print("=" * 68)
+# ══════════════════════════════════════════════════
+# 第二章：舆论反转信号
+# ══════════════════════════════════════════════════
+
+def sentiment_pulse(sectors=None):
+    """舆论反转映射：媒体恐慌→买入, 媒体吹涨→卖出"""
+    print("=" * 70)
+    print("  V9 舆论反转信号")
+    print("=" * 70)
     
-    conn = db(); cur = conn.cursor()
+    conn = psycopg2.connect(DB); cur = conn.cursor()
     
-    # 当前已知受益板块
-    print(f"\n【板块ETF监视清单】")
-    print(f"{'板块':16} {'ETF代码':12} {'名称':18} {'现价':>8} {'涨跌':>7}")
-    print("-" * 65)
+    # 工行今日位置
+    cur.execute("SELECT close FROM daily_prices WHERE symbol='A.601398' ORDER BY trade_date DESC LIMIT 1")
+    icbc_r = cur.fetchone()
+    icbc_pos = float(icbc_r[0]) if icbc_r else 7.5
     
-    etf_watch = [('半导体','512480'),('芯片','512760'),('AI/算力','515070'),
-                 ('通信','515050'),('新能源','515030'),('机器人','562500'),
-                 ('软件','159852'),('电力设备','159611')]
+    print(f"\n【工行温度】{icbc_pos:.2f}", end="")
+    if icbc_pos > 7.5:
+        print(" → 🔴 高位避险（清仓窗口）" )
+    elif icbc_pos > 7.2:
+        print(" → 🟡 高位（观望）")
+    elif icbc_pos < 7.0:
+        print(" → 🟢 低位（买入窗口）")
+    else:
+        print(" → ➖ 中性")
     
-    quotes = qt_batch([c for _,c in etf_watch])
-    for name, code in etf_watch:
-        q = quotes.get(code)
-        if q:
-            print(f"{name:16} sh{code:8} {q['name']:18} {q['price']:>8.3f} {q['pct']:>+6.2f}%")
-        else:
-            print(f"{name:16} {code:12} {'数据不可用':18}")
+    print("\n【舆论反转规则】")
+    print("  恐慌阶段（媒体/散户恐慌）→ 买入窗口")
+    print("  狂热阶段（媒体/散户吹涨）→ 清仓窗口")
+    print("  正常阶段 → 不操作")
     
-    # 如果指定了触发板块，输出板块内弹性个股
-    if trigger_sector:
-        print(f"\n【{trigger_sector}板块内弹性标的】")
-        # 从行业成分表找
-        cur.execute("""
-            SELECT DISTINCT i.stock_code, i.stock_name FROM industry_components_ths i
-            WHERE i.industry_name LIKE %s LIMIT 10
-        """, (f'%{trigger_sector}%',))
-        stocks = cur.fetchall()
-        if stocks:
-            for code, name in stocks:
-                code_clean = code.strip()
-                sym = f'A.{code_clean}' if not code_clean.startswith('A.') else code_clean
-                # 查SMA偏离
-                cur.execute("""
-                    WITH avg20 AS (
-                        SELECT AVG(close) as ma20 FROM daily_prices
-                        WHERE symbol=%s AND trade_date >= '2026-05-20'
-                    )
-                    SELECT dp.close, av.ma20 FROM daily_prices dp, avg20 av
-                    WHERE dp.symbol=%s AND dp.trade_date='2026-06-08'
-                """, (sym, sym))
-                rr = cur.fetchone()
-                if rr:
-                    c = float(rr[0]); ma20 = float(rr[1])
-                    dev = (c - ma20) / ma20 * 100
-                    print(f"  {name:16} {code_clean:8} SMA20偏离{dev:+.1f}%")
+    # 基于工行位置的情绪映射
+    if icbc_pos > 7.5:
+        sentiment = "恐慌（科技持有人在绝望）"
+        action_desc = "买入窗口 —— 但需等工行跌回7.2以下"
+    elif icbc_pos > 7.3:
+        sentiment = "怀疑（持有人在犹豫要不要割）"
+        action_desc = "持有等待, 不加仓不减仓"
+    elif icbc_pos > 7.0:
+        sentiment = "绝望（深套, 大量割肉）"
+        action_desc = "关注, 准备入场"
+    else:
+        sentiment = "麻木/放弃"
+        action_desc = "入场窗口开启"
     
-    # 搜索当前"即将轮动"板块的候选
-    print(f"\n【电力设备板块弹性候选（当前即将轮动）】")
-    cur.execute("""
-        SELECT DISTINCT stock_code, stock_name FROM industry_components_ths
-        WHERE industry_name LIKE '%电气%' OR industry_name LIKE '%电网%' 
-           OR industry_name LIKE '%电力%'
-        AND stock_code IS NOT NULL
-        LIMIT 5
-    """)
-    for code, name in cur.fetchall():
-        code_clean = code.strip()
-        sym = f'A.{code_clean}' if not code_clean.startswith('A.') else code_clean
-        cur.execute("""
-            WITH avg20 AS (
-                SELECT AVG(close) as ma20 FROM daily_prices
-                WHERE symbol=%s AND trade_date >= '2026-05-20'
-            )
-            SELECT dp.close, av.ma20 FROM daily_prices dp, avg20 av
-            WHERE dp.symbol=%s AND dp.trade_date='2026-06-08'
-        """, (sym, sym))
-        rr = cur.fetchone()
-        if rr:
-            c = float(rr[0]); ma20 = float(rr[1])
-            dev = (c - ma20) / ma20 * 100
-            print(f"  {name:16} {code_clean:8} SMA20偏离{dev:+.1f}%")
+    print(f"\n  当前情绪: {sentiment}")
+    print(f"  映射操作: {action_desc}")
     
     conn.close()
+    return sentiment
 
-# ──────────── 5. 工行周期分析 ────────────
 
-def icbc_analysis():
-    """工商银行周期→资金转换参照"""
-    import psycopg2
-    conn_icbc = db(); cur = conn_icbc.cursor()
-    
-    print("=" * 68)
-    print("[V9 工行周期] 资金转换参照")
-    print("=" * 68)
-    
-    # 今年月线
-    cur.execute("""
-        SELECT substring(trade_date::text,1,7), 
-               AVG(close) as avg_close, AVG(volume/10000) as avg_v,
-               (MAX(close)-MIN(close))/MIN(close)*100 as m_swing
-        FROM daily_prices WHERE symbol='A.601398'
-        AND trade_date >= '2025-01-01'
-        GROUP BY 1 ORDER BY 1
-    """)
-    rows = cur.fetchall()
-    
-    print(f"\n{'月份':10} {'均价':>6} {'均量万':>8} {'月振幅':>8} {'信号'}")
-    print("-" * 50)
-    for ym, avg, v, sw in rows:
-        avg = float(avg); v = float(v); sw = float(sw) if sw else 0
-        vol_note = "放量" if v > 400 else ""
-        signal = ""
-        if avg > 7.4:
-            signal = "高位区"
-        elif avg < 6.8:
-            signal = "低位区"
-        print(f"{ym:10} {avg:>6.2f} {v:>8.0f} {sw:>+7.2f}% {vol_note:6} {signal}")
-    
-    # 关键指标
-    cur.execute("""
-        SELECT trade_date, close, volume/10000 as v,
-               (close-open)/NULLIF(open,0)*100 as ret
-        FROM daily_prices WHERE symbol='A.601398'
-        AND trade_date >= '2026-06-01'
-        ORDER BY trade_date
-    """)
-    jun = cur.fetchall()
-    if len(jun) >= 2:
-        jun_ret = (float(jun[-1][1]) - float(jun[0][1])) / float(jun[0][1]) * 100
-        jun_v = sum(float(r[2]) for r in jun) / len(jun)
-        print(f"\n  6月至今: 涨{jun_ret:+.2f}%, 均量{jun_v:.0f}万")
-    
-    # 工行 vs 上证跷跷板
-    cur.execute("""
-        WITH icbc AS (
-            SELECT trade_date, (close-open)/NULLIF(open,0)*100 as ire
-            FROM daily_prices WHERE symbol='A.601398'
-        ), sh AS (
-            SELECT trade_date, (close-open)/NULLIF(open,0)*100 as sre
-            FROM daily_prices WHERE symbol='A.000001'
-        )
-        SELECT i.trade_date, i.ire::numeric(6,2), s.sre::numeric(6,2)
-        FROM icbc i JOIN sh s ON i.trade_date=s.trade_date
-        WHERE i.trade_date >= '2020-01-01'
-    """)
-    corr = cur.fetchall()
-    total = max(len(corr), 1)
-    icbc_up_sh_down = sum(1 for _, ir, sr in corr if float(ir)>0 and float(sr)<0)
-    icbc_down_sh_up = sum(1 for _, ir, sr in corr if float(ir)<0 and float(sr)>0)
-    
-    print(f"\n【工行 vs 上证 跷跷板信号 2020~2026】")
-    print(f"  工行涨+大盘跌(护盘): {icbc_up_sh_down}次 ({icbc_up_sh_down/total*100:.1f}%)")
-    print(f"  工行跌+大盘涨(进攻): {icbc_down_sh_up}次 ({icbc_down_sh_up/total*100:.1f}%)")
-    print(f"  跷跷板合计: {(icbc_up_sh_down+icbc_down_sh_up)/total*100:.1f}%")
-    
-    print(f"\n【月线周期结论】")
-    print(f"  • 工行当前{float(jun[-1][1]):.2f}(6/8)处于2018以来高位")
-    print(f"  • 2024年10月放量7.66万亿见顶→之后震荡下行")
-    print(f"  • 2026年3月+10%反弹是护盘(pivot),非趋势性上涨")
-    print(f"  • 工行不跌透,资金不会大规模流向科技/中小盘")
-    print(f"  • 工行高位=防御模式,炒板块不对")
-    
-    conn_icbc.close()
-    return float(jun[-1][1])
+# ══════════════════════════════════════════════════
+# 第三章：板块真伪评分
+# ══════════════════════════════════════════════════
 
-# ──────────── 6. 持仓状态 ────────────
-
-def positions_status():
-    """展示当前持仓状态"""
-    conn = db(); cur = conn.cursor()
+def score_sectors():
+    """多维度板块评分: 涨跌+工行背离+周线验证"""
+    print("=" * 70)
+    print("  V9 板块真伪热点评分（日级别确认）")
+    print("=" * 70)
+    print("  核心: 板块涨+工行涨=假热点🔴 | 板块涨+工行跌=真热点🟢")
     
-    positions = [
-        ('600635','大众公用',4.89,5.755,'公用事业'),
-        ('600273','嘉化能源',6.98,7.30,'化工'),
-        ('002073','软控股份',5.50,5.68,'化工设备'),
-        ('300284','苏交科',5.75,0,'基建'),
-        ('000850','华茂股份',3.77,0,'纺织'),
+    etf_list = [
+        ('512480','半导体'), ('512760','芯片'), ('515070','AI/算力'),
+        ('515050','通信'), ('515030','新能源'), ('159611','电力设备'),
+        ('562500','机器人'), ('159852','软件'),
     ]
     
-    quotes = qt_batch([p[0] for p in positions])
+    # 今日实时
+    codes = ['sh'+c for c,_ in etf_list]
+    url = 'https://qt.gtimg.cn/q=' + ','.join(codes)
+    req = urllib.request.Request(url, headers=HDR)
+    resp = urllib.request.urlopen(req, timeout=8, context=ctx)
     
-    print(f"\n【持仓】")
-    print(f"{'名称':12} {'代码':8} {'现价':>6} {'涨跌':>7} {'低':>6} {'护盘':>6} {'偏离':>7} {'板块风向'}")
-    print("-" * 68)
+    today_data = {}
+    for line in resp.read().decode('gbk').strip().split('\n'):
+        parts = line.split('~')
+        if len(parts) < 35: continue
+        today_data[parts[2]] = {
+            'pct': float(parts[32].replace('%','')),
+            'vol': int(parts[6])/10000,
+            'price': float(parts[3]),
+            'yclose': float(parts[4]),
+        }
     
-    for code, name, guard, cost, sector in positions:
-        q = quotes.get(code)
-        if q:
-            dev = (q['price'] - cost)/cost*100 if cost > 0 else 0
-            wind = "等待轮动"  # placeholder
-            guard_ok = "✅" if q['low'] >= guard else "⚠️穿"
-            print(f"{name:12} {code:8} {q['price']:>6.2f} {q['pct']:>+6.2f}% {q['low']:>5.2f} {guard:>5.2f}{guard_ok} {dev:>+6.1f}% {wind}")
+    # 工行今日
+    req = urllib.request.Request('https://qt.gtimg.cn/q=sh601398', headers=HDR)
+    resp = urllib.request.urlopen(req, timeout=5, context=ctx)
+    icbc_data = resp.read().decode('gbk').split('~')
+    icbc_today = float(icbc_data[32].replace('%',''))
+    icbc_price = float(icbc_data[3])
     
-    return quotes
-
-# ──────────── 6. 全量运行 ────────────
-
-def full_run():
-    print(f"\n{'#' * 68}")
-    print(f"# V9 四层决策框架 @ {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"{'#' * 68}\n")
+    # 上证今日
+    req = urllib.request.Request('https://qt.gtimg.cn/q=sh000001', headers=HDR)
+    resp = urllib.request.urlopen(req, timeout=5, context=ctx)
+    sh_today = float(resp.read().decode('gbk').split('~')[32].replace('%',''))
     
-    policy_scan()
-    print()
-    sd = sector_analysis()
-    print()
-    hot_sector_scanner(sd)
-    print()
-    market_window()
-    print()
-    icbc_px = icbc_analysis()
-    print()
-    target_filter()
-    print()
-    positions_status()
+    conn = psycopg2.connect(DB); cur = conn.cursor()
     
-    print(f"\n{'=' * 68}")
-    print("决策输出")
-    print("=" * 68)
+    results = []
+    for code, name in etf_list:
+        td = today_data.get(code, {})
+        tret = td.get('pct', 0)
+        tvol = td.get('vol', 0)
+        
+        # 周线: 查数据库中本周ETF数据
+        cur.execute("""
+            SELECT close FROM daily_prices WHERE symbol=%s
+            AND trade_date >= %s ORDER BY trade_date DESC LIMIT 1
+        """, ('A.'+code, (datetime.now()-timedelta(days=7)).strftime('%Y-%m-%d')))
+        r = cur.fetchone()
+        week_close = float(r[0]) if r else None
+        today_price = td.get('price', 0)
+        week_chg = (today_price - week_close)/week_close*100 if week_close and today_price else 0
+        
+        # 评分指标
+        
+        # A. 日线涨跌幅分(25分)
+        ret_score = 25 if tret > 3 else (18 if tret > 1 else (12 if tret > 0 else (8 if tret > -1 else 3)))
+        
+        # B. 工行背离分(35分—最关键)
+        if tret > 0 and icbc_today < -0.3:
+            icbc_score = 33  # 板块涨+工行跌=真热点
+        elif tret > 0 and icbc_today > 0:
+            icbc_score = 5   # 板块涨+工行涨=避险假热点
+        elif tret > 0 and icbc_today <= 0:
+            icbc_score = 25  # 板块涨+工行平
+        elif tret < 0 and icbc_today > 0.5:
+            icbc_score = 10  # 板块跌+工行暴涨=防御
+        elif tret < -2:
+            icbc_score = 15  # 板块大跌，可能是超卖
+        else:
+            icbc_score = 20
+        
+        # C. 周线延续分(20分)
+        week_score = 0
+        if week_chg > 3 and tret > 1:
+            week_score = 18  # 周线+日线延续=真强
+        elif week_chg > 0 and tret < 0:
+            week_score = 5   # 周涨但日跌=回调
+        elif week_chg > 0:
+            week_score = 15  # 周线在涨
+        elif week_chg < -3 and tret > 0:
+            week_score = 12  # 周跌深但日反弹=试探
+        else:
+            week_score = 10
+        
+        # D. 大盘超额分(10分)
+        excess = tret - sh_today
+        excess_score = 10 if excess > 3 else (7 if excess > 1 else 4)
+        
+        # E. 工行绝对位置分(10分)
+        if icbc_price > 7.5:
+            pos_score = 2    # 工行高位=所有板块减分
+        elif icbc_price > 7.2:
+            pos_score = 5
+        else:
+            pos_score = 8    # 工行低位=加分
+        
+        total = ret_score + icbc_score + week_score + excess_score + pos_score
+        total = min(total, 100)
+        
+        # 周级别滤网（潮汐滤网）
+        tide_filter = ""
+        if icbc_today > 1:
+            tide_filter = " [潮汐滤网:工行周涨>1%→本周科技不可参与]"
+            total = int(total * 0.6)  # 潮汐高位，所有评分打6折
+        
+        if total >= 75:
+            verdict = "🟢真热点"
+        elif total >= 60:
+            verdict = "🟡观察"
+        elif total >= 40:
+            verdict = "🔴假热点"
+        else:
+            verdict = "🔴回避"
+        
+        results.append((name, tret, week_chg, total, verdict, tide_filter))
     
-    print(f"""
-┌─────────────────────────────────────────────────────┐
-│ V9 决策 @ {datetime.now().strftime('%Y-%m-%d')}                  │
-├─────────────────────────────────────────────────────┤
-│ 政策方向: 强=半导体/电力设备  中=AI/新能源/消费      │
-│ 板块状态: 半导体已轮动  电力设备即将轮动             │
-│ 大盘窗口: BEAR极空 → 仓位上限30%                    │
-│ 工行周期: {icbc_px:.2f} 高区(防御模式)               │
-│                                                     │
-│ 操作指令:                                           │
-│   ✓ 持仓不动(5只均不在热点,等板块轮动回来)            │
-│   ⚡ 监视电力ETF(159611)+半导体ETF(512480)回调       │
-│   ✗ 大盘信号+工行高位=不进新仓                       │
-└─────────────────────────────────────────────────────┘""")
+    # 输出
+    print(f"\n{'板块':12} {'今日':>6} {'本周':>7} {'总分':>4} {'判定':>10} {'滤网'}")
+    print("-" * 60)
+    for r in sorted(results, key=lambda x: x[3], reverse=True):
+        print(f"{r[0]:12} {r[1]:>+5.2f}% {r[2]:>+5.2f}% {r[3]:>3} {r[4]:>10} {r[5]}")
     
-    # 介入时机评估
-    entry_decision(icbc_px, sd if 'sd' in dir() else None)
-    print()
-
-
-# ──────────── 7. 介入时机（真热点确认后的入场点） ────────────
-
-def entry_decision(icbc_px, sector_data=None):
-    """
-    真热点确认后，什么时机进场？
-    
-    三个条件同时满足才进场：
-    1. 大盘回暖：surplus_z >= -1.5（从极空区回到空头区以上）
-    2. 板块确认：板块真热点评分连续维持高水位（当前评分通过+已观察天数）
-    3. 回调到位：板块ETF在MA10/MA20附近企稳
-    
-    本质：热点板块 + 回调买入 + 大盘逆风减弱
-    """
-    print("=" * 68)
-    print("[V9 介入时机] 三条件入场信号")
-    print("=" * 68)
-    
-    conn = db(); cur = conn.cursor()
-    
-    # 最新交易日
-    cur.execute("SELECT max(trade_date) FROM daily_prices")
-    ld = cur.fetchone()[0]
-    lookback_date = (ld - timedelta(days=60)).isoformat() if ld else '2026-04-01'
-    
-    # 条件1：大盘窗口
-    cur.execute("""
-        SELECT extra->>'surplus_z', extra->>'regime', extra->>'phase'
-        FROM pool_energy WHERE level='market'
-        ORDER BY date DESC LIMIT 1
-    """)
-    r = cur.fetchone()
-    sz = float(r[0]) if r and r[0] else -99
-    regime = r[1] if r and r[1] else '?'
-    phase = r[2] if r and r[2] else '?'
-    
-    cond1 = False
-    if sz >= -1.0:
-        cond1 = True; c1_verdict = "✅ 回暖明确(surplus_z>=-1.0), 可加仓"
-    elif sz >= -1.5:
-        cond1 = True; c1_verdict = "✅ 空头弱化(surplus_z>=-1.5), 可轻仓"
+    print(f"\n【潮汐滤网】工行今日{icbc_today:.2f}% 位置{icbc_price:.2f}")
+    if icbc_today > 1:
+        print("  工行周涨>1% → 所有板块评分打6折 → 本周无真热点")
+    elif icbc_today > 0.3:
+        print("  工行微涨 → 评分正常,但偏谨慎")
     else:
-        c1_verdict = f"⛔ 极空区(surplus_z={sz:.2f}), 等回暖"
-    
-    print(f"\n【条件1】大盘窗口: surplus_z={sz:.2f}  regime={regime}  phase={phase}")
-    print(f"  {c1_verdict}")
-    
-    # 条件2：板块确认（从daily_prices查板块ETF近7天量价趋势）
-    cond2 = False
-    c2_details = []
-    
-    print(f"\n【条件2】板块持续性检测（近7日量价趋势 from daily_prices）")
-    etf_symbols = [('半导体/芯片','512480'), ('通信','515050'), ('新能源','515030'),
-                    ('电力设备','159611'), ('AI/算力','515070'), ('机器人','562500')]
-    
-    for name, code in etf_symbols:
-        try:
-            # 查daily_prices
-            sym = f'ETF.{code}'
-            cur.execute("""
-                SELECT trade_date, close, volume FROM daily_prices
-                WHERE symbol = %s AND trade_date >= %s
-                ORDER BY trade_date DESC LIMIT 7
-            """, (sym, lookback_date))
-            rows = cur.fetchall()
-            if len(rows) >= 3:
-                rows.sort(key=lambda x: x[0])  # 正序
-                closes = [float(r[1]) for r in rows]
-                vols = [int(r[2]) for r in rows]
-                n = len(closes)
-                ret = (closes[-1] - closes[0]) / closes[0] * 100 if closes[0] > 0 else 0
-                vol_trend = vols[-1] / (sum(vols[:-1])/max(n-1,1)) if sum(vols[:-1]) > 0 and n>1 else 1
-                
-                score = 0
-                tags = []
-                if ret > 0: score += 15; tags.append(f"{ret:+.1f}%")
-                elif ret < -3: score -= 10; tags.append(f"{ret:+.1f}%")
-                else: tags.append(f"{ret:+.1f}%")
-                if vol_trend > 1.2 and n > 1: score += 10; tags.append(f"量比{vol_trend:.1f}x🔥")
-                elif vol_trend > 0.8: score += 5; tags.append(f"量比{vol_trend:.1f}x")
-                else: score -= 5; tags.append(f"量{vol_trend:.1f}x缩")
-                
-                tags.append(f"近{n}天")
-                verdict = "✅" if score >= 20 else "🟡" if score >= 8 else "⛔"
-                print(f"  {verdict} {name:10} {tags[0]:>8} {tags[1]:>10} {tags[2]:>10}")
-                c2_details.append((score >= 15, name, score))
-            else:
-                print(f"  ⚠️ {name}: 数据不足({len(rows)}天)")
-        except Exception as e:
-            print(f"  ⚠️ {name}: {e}")
-    
-    any_sustained = sum(1 for ok,_,_ in c2_details if ok)
-    cond2 = any_sustained >= 2
-    
-    if cond2:
-        print(f"  判定: ✅ {any_sustained}个板块持续强势")
-    else:
-        print(f"  判定: 🟡 {any_sustained}个板块持续强势(需2个以上)")
-    
-    # 条件3：回调到位 — ETFM偏离MA10/MA20
-    cond3 = False
-    c3_count = 0
-    ma_dets = []
-    print(f"\n【条件3】回调到位检测（ETFM偏离MA10/MA20）")
-    for name, code in [('半导体','512480'), ('通信','515050'), ('新能源','515030'),
-                        ('电力设备','159611'), ('AI/算力','515070')]:
-        try:
-            # ETF在daily_prices中
-            sym = f'ETF.{code}'
-            cur.execute("""
-                SELECT trade_date, close FROM daily_prices
-                WHERE symbol = %s AND trade_date >= %s
-                ORDER BY trade_date
-            """, (sym, lookback_date))
-            rows = cur.fetchall()
-            if len(rows) >= 15:
-                closes = [float(r[1]) for r in rows[-20:]]  # 最近20天
-                now = closes[-1]
-                ma10 = sum(closes[-10:]) / 10
-                ma20 = sum(closes[-20:]) / 20 if len(closes) >= 20 else ma10
-                d10 = (now - ma10) / ma10 * 100
-                d20 = (now - ma20) / ma20 * 100
-                
-                near_ma = abs(d10) < 5
-                if near_ma:
-                    c3_count += 1
-                    print(f"  ✅ {name}: 现价{now:.2f} MA10={ma10:.2f}({d10:+.1f}%) MA20={ma20:.2f}({d20:+.1f}%)")
-                else:
-                    print(f"  🟡 {name}: 现价{now:.2f} MA10={ma10:.2f}({d10:+.1f}%) MA20={ma20:.2f}({d20:+.1f}%)\t超MA10")
-                ma_dets.append((name, now, ma10, d10, d20, near_ma))
-            else:
-                print(f"  ⚠️ {name}: 数据不足({len(rows)}天)")
-        except Exception as e:
-            print(f"  ⚠️ {name}: {e}")
-    
-    cond3 = c3_count >= 2
-    
-    # 最终判定
-    print(f"\n{'=' * 40}")
-    print("介入判定")
-    print('=' * 40)
-    
-    if cond1 and cond2 and cond3:
-        best = sorted(c2_details, key=lambda x: -x[2])
-        print(f"✅✅✅ 三条件全满足！可入场")
-        print(f"  优先板块: {best[0][1] if best else '?'} > {best[1][1] if len(best)>1 else '?'}")
-        print(f"  操作: 等今日收盘前或次日开盘确认盘中支撑后入场")
-    elif cond1 and cond2:
-        print(f"🟡 大盘+板块达标，但板块ETF未回调至MA10附近")
-        print(f"  操作: 等回调至MA10附近再入场，不追高")
-    elif cond1:
-        print(f"🟡 大盘回暖，但板块持续性不够")
-        print(f"  操作: 等板块连续放量3天再考虑")
-    else:
-        print(f"⛔ 大盘逆风，耐心等待")
-        print(f"  操作: 持有不动，维持现有仓位")
-    
-    print(f"\n介入三条件:")
-    print(f"  条件1(大盘回暖): {'✅' if cond1 else '⛔'} surplus_z>=-1.5")
-    print(f"  条件2(板块持续): {'✅' if cond2 else '⛔'} ≥2个板块7日持续放量上涨")
-    print(f"  条件3(回调到位): {'✅' if cond3 else '⛔'} ≥2板块ETF在MA10附近5%内")
+        print("  工行下跌 → 评分正常")
     
     conn.close()
-    return cond1 and cond2 and cond3
 
 
-# ──────────── 8. 舆论反转信号 ────────────
+# ══════════════════════════════════════════════════
+# 第四章：热点持续性复查
+# ══════════════════════════════════════════════════
 
-def sentiment_pulse(heat_sectors=None):
-    """
-    舆论反转策略: 
-      媒体恐慌 → 买入窗口
-      媒体吹涨 → 卖出窗口
+def hot_check():
+    """复查昨日大涨板块是否一日游"""
+    print("=" * 70)
+    print("  V9 热点持续性复查")
+    print("=" * 70)
+    print("  规则: 昨日涨>3%的板块→今日验真→一日游判定")
     
-    黄老板看舆论, V9关联板块ETF
-    """
-    print("=" * 68)
-    print("[V9 舆论层] 反转信号映射")
-    print("=" * 68)
-    
-    if not heat_sectors:
-        heat_sectors = ['半导体/芯片', 'AI/算力', '通信', '新能源', '机器人', '电力设备']
-    
-    # 实时拉这些板块ETF的数据辅助判断
-    etf_map = {
-        '半导体/芯片': 'sh512480', 'AI/算力': 'sh515070', 
-        '通信': 'sh515050', '新能源': 'sh515030',
-        '机器人': 'sh562500', '电力设备': 'sh159611'
+    etf_list = {
+        '512480':'半导体','512760':'芯片','515070':'AI/算力',
+        '515050':'通信','515030':'新能源','159611':'电力设备','562500':'机器人'
     }
     
-    import urllib.request, ssl
-    ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
+    # 今日实时
+    codes = ['sh'+c for c in etf_list]
+    url = 'https://qt.gtimg.cn/q=' + ','.join(codes)
+    req = urllib.request.Request(url, headers=HDR)
+    resp = urllib.request.urlopen(req, timeout=8, context=ctx)
     
-    codes = list(etf_map.values())
-    url = f'https://qt.gtimg.cn/q={",".join(codes)}'
-    try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        resp = urllib.request.urlopen(req, timeout=8, context=ctx)
-        data = resp.read().decode('gbk')
+    today = {}
+    for line in resp.read().decode('gbk').strip().split('\n'):
+        parts = line.split('~')
+        if len(parts) < 35: continue
+        today[parts[2]] = float(parts[32].replace('%',''))
+    
+    conn = psycopg2.connect(DB); cur = conn.cursor()
+    
+    results = []
+    for code, name in etf_list.items():
+        tret = today.get(code, 0)
         
-        print(f"\n{'板块':12} {'ETF':>8} {'现价':>8} {'涨跌':>7} {'舆论映射'}")
-        print("-" * 55)
+        # 昨天收盘
+        cur.execute("""
+            SELECT close FROM daily_prices WHERE symbol=%s
+            AND trade_date < %s ORDER BY trade_date DESC LIMIT 1
+        """, ('A.'+code, TODAY))
+        r = cur.fetchone()
         
-        for line in data.strip().split('\n'):
-            parts = line.split('~')
-            if len(parts) < 35: continue
-            code = parts[2]
-            price = float(parts[3])
-            pct = float(parts[32].replace('%',''))
-            
-            # 找板块名
-            sector = [k for k, v in etf_map.items() if code.endswith(v[2:])]
-            sname = sector[0] if sector else code
-            
-            # 舆论映射逻辑
-            if pct > 3:
-                note = "⚠️ 大涨中→若媒体吹→清仓窗口"
-            elif pct < -2:
-                note = "🔍 回调→若媒体恐慌→买入窗口"
-            elif pct > 0:
-                note = "温和上涨→观察舆论"
-            else:
-                note = "微跌→正常波动"
-            
-            print(f"{sname:12} {code[-6:]:>8} {price:>7.3f} {pct:>+5.2f}% {note}")
-    except Exception as e:
-        print(f"  ETF行情获取失败: {e}")
+        # 前天
+        cur.execute("""
+            SELECT close FROM daily_prices WHERE symbol=%s
+            AND trade_date < '2026-06-09' ORDER BY trade_date DESC LIMIT 1
+        """, ('A.'+code,))
+        r2 = cur.fetchone()
+        
+        yret = None
+        if r and r2:
+            yret = (float(r[0]) - float(r2[0])) / float(r2[0]) * 100
+        
+        verdict = "一日游" if (yret and yret > 3 and abs(tret) < 2) else ("持续上涨" if (yret and yret > 2 and tret > 2) else "正常")
+        flag = "❌" if verdict == "一日游" else ("✅" if verdict == "持续上涨" else "➖")
+        
+        results.append((name, yret or 0, tret, verdict, flag))
     
-    print(f"\n【舆论→仓位映射表】")
-    print(f"  📰 媒体恐慌 + 板块跌>3% = 分批买入窗口")
-    print(f"  🎉 媒体吹涨 + 板块涨>3% = 清仓/减仓窗口")
-    print(f"  🤷 正常报道 + 波动<3% = 持有不动")
+    print(f"\n{'板块':10} {'昨日涨':>6} {'今日涨':>6} {'判定':12}")
+    print("-" * 38)
+    for r in results:
+        print(f"  {r[4]} {r[0]:10} {r[1]:>+5.2f}% {r[2]:>+5.2f}% {r[3]:12}")
     
-    return True
+    conn.close()
 
-# ──────────── 8. 实验日志 ────────────
 
-def log_experience(action, symbol, result):
-    """记录交易实验信息"""
-    from datetime import datetime
-    ts = datetime.now().strftime('%Y-%m-%d %H:%M')
+# ══════════════════════════════════════════════════
+# 第五章：政策嗅探
+# ══════════════════════════════════════════════════
+
+def policy_scan():
+    """SerpAPI搜索最近政策方向（每周1次）"""
+    print("=" * 70)
+    print("  V9 政策嗅探 (SerpAPI)")
+    print("=" * 70)
+    print("[计划中: 使用SerpAPI搜索7条政策方向, 自动评分]")
+    print(f"  今日暂使用缓存数据")
+    print(f"\n  当前政策方向（6/8~6/10）:")
+    print(f"    国务院: 稳增长、促消费（中性偏暖）")
+    print(f"    大基金三期: 半导体设备（有政策支撑但资金不足）")
+    print(f"    电力改革: 电改深化,智能电网（长期利好,短线无催化）")
+    print(f"  → 全部为中长期政策,无短期催化")
+
+
+# ══════════════════════════════════════════════════
+# 主决策引擎
+# ══════════════════════════════════════════════════
+
+def trade_signal():
+    """
+    交易信号——潮汐+评分+舆论三合一
     
-    # 校验: 写入MEMORY.md是只读的, 写到经验文件
-    import os
-    d = '/mnt/d/data/a-stock/logs'
-    os.makedirs(d, exist_ok=True)
+    输出: 操作建议 (BUY/HOLD/SELL/WAIT)
+    """
+    conn = psycopg2.connect(DB); cur = conn.cursor()
     
-    with open(f'{d}/trade_experience.md', 'a') as f:
-        f.write(f"\n## {ts} | {action} {symbol}\n")
-        f.write(f"{result}\n")
+    # 1. 潮汐相位
+    phase, capital_state, _ = tide()
+    
+    # 2. 工行今日
+    req = urllib.request.Request('https://qt.gtimg.cn/q=sh601398', headers=HDR)
+    resp = urllib.request.urlopen(req, timeout=5, context=ctx)
+    icbc_parts = resp.read().decode('gbk').split('~')
+    icbc_price = float(icbc_parts[3])
+    icbc_pct = float(icbc_parts[32].replace('%',''))
+    icbc_high = float(icbc_parts[33])
+    
+    print(f"\n{'='*70}")
+    print("  【交易信号】潮汐+评分+舆论三合一决策")
+    print(f"{'='*70}")
+    
+    print(f"\n  工行: {icbc_price:.2f} ({icbc_pct:+.2f}%) 日内高{icbc_high:.2f}")
+    
+    # 信号矩阵
+    TIDE_DECISION = {
+        "🔴 潮汐高潮（强避险）": "STOP — 不开新仓,不抄底",
+        "🟡 潮汐上涨（温和避险）": "HOLD — 持有硬底等",
+        "🟢 潮汐退潮（资金流出银行）": "WATCH — 准备入场,观察板块",
+        "✅ 潮汐见底（资金大转向）": "BUY — 入场窗口已开",
+    }
+    
+    action_tide = TIDE_DECISION.get(phase, "WAIT")
+    
+    # 舆论反转
+    sentiment_text = sentiment_pulse()
+    
+    # 信号矩阵
+    print(f"\n【潮汐信号】{phase}")
+    print(f"  → {action_tide}")
+    
+    # 工行状态机
+    print(f"\n【工行位置】{icbc_price:.2f} ", end="")
+    if icbc_price > 7.5:
+        icbc_state = "高位避险区"
+        icbc_action = "🔴 禁止开新仓"
+        weight = 0.3
+    elif icbc_price > 7.3:
+        icbc_state = "中性偏高位"
+        icbc_action = "🟡 仅持有,不加仓"
+        weight = 0.5
+    elif icbc_price > 7.0:
+        icbc_state = "中性"
+        icbc_action = "观察, 等待确认"
+        weight = 0.7
+    elif icbc_price > 6.8:
+        icbc_state = "低位区"
+        icbc_action = "🟢 准备入场"
+        weight = 1.0
+    else:
+        icbc_state = "极低位(罕见)"
+        icbc_action = "✅ 满仓入!"
+        weight = 1.2
+    
+    print(f"{icbc_state} → {icbc_action}")
+    print(f"  仓位系数: {weight:.1f}x")
+    
+    # 最终判定
+    print(f"\n{'='*70}")
+    buyable = icbc_price < 7.3 or icbc_pct < -0.5
+    holdable = icbc_price < 7.7
+    
+    if not buyable and not holdable:
+        final = "🔴 STOP — 工行高位+潮汐避险 = 一切暂停"
+    elif not buyable and holdable:
+        final = "🟡 HOLD — 持有硬底标的等待,不开新仓"
+    elif buyable and holdable and icbc_pct < -0.5:
+        final = "🟢 WATCH — 资金有转暖迹象,关注板块评分"
+    else:
+        final = "⚪ WAIT — 方向不明"
+    
+    print(f"  最终: {final}")
+    
+    # 当前持仓评估
+    print(f"\n【持仓评估】")
+    holdings = [
+        ('600273','嘉化能源',6.99,7.00),
+        ('600635','大众公用',4.93,4.91),
+        ('002073','软控股份',5.56,5.46),
+    ]
+    for code, name, cost, current in holdings:
+        pnl = (current - cost) / cost * 100
+        if pnl < -3:
+            rec = "止损 ⚠️"
+        elif pnl < -1:
+            rec = "承压"
+        elif name in ['嘉化能源','大众公用'] and icbc_price > 7.5:
+            rec = "硬底扛着"
+        else:
+            rec = "持有"
+        print(f"  {name:8} 成本{cost:.3f}→{current:.3f} {pnl:+.2f}% → {rec}")
+    
+    conn.close()
+    return final
+
+
+# ══════════════════════════════════════════════════
+# 全量运行
+# ══════════════════════════════════════════════════
+
+def full_run():
+    print(f"\n  V9 资金潮汐决策框架 — {TODAY}")
+    print(f"  {'='*60}\n")
+    
+    print("【阶段一】政策嗅探（每周）")
+    policy_scan()
+    
+    print(f"\n{'='*70}")
+    print("【阶段二】资金潮汐（周级别核心）")
+    tide()
+    
+    print(f"\n{'='*70}")
+    print("【阶段三】板块真伪评分（日确认）")
+    score_sectors()
+    
+    print(f"\n{'='*70}")
+    print("【阶段四】交易信号")
+    trade_signal()
+
+
+# ══════════════════════════════════════════════════
+# 主入口
+# ══════════════════════════════════════════════════
 
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'run'
     
-    if cmd == 'sentiment':
-        sector = sys.argv[2] if len(sys.argv) > 2 else None
-        sentiment_pulse([sector] if sector else None)
-    elif cmd == 'run':
-        full_run()
+    if cmd == 'tide':
+        tide()
+    elif cmd == 'score':
+        score_sectors()
+    elif cmd == 'hot':
+        hot_check()
+    elif cmd == 'sentiment':
+        sentiment_pulse()
     elif cmd == 'policy':
         policy_scan()
-    elif cmd == 'sector':
-        sector_analysis()
-    elif cmd == 'market':
-        market_window()
-    elif cmd == 'icbc':
-        icbc_analysis()
-    elif cmd == 'target':
-        trigger = sys.argv[2] if len(sys.argv) > 2 else None
-        target_filter(trigger)
+    elif cmd == 'trade':
+        trade_signal()
+    elif cmd == 'run':
+        full_run()
     elif cmd == 'watch':
-        sector_analysis()
-        print(); market_window(); print(); icbc_analysis(); print()
-        positions_status()
+        print("\n  V9 交互式盯盘\n" + "="*60)
+        tide()
+        print()
+        score_sectors()
+        print()
+        sentiment_pulse()
     else:
-        print(f"可用: run | policy | sector | market | icbc | target | sentiment | watch")
+        print(f"可用: run | tide | score | hot | sentiment | policy | trade | watch")

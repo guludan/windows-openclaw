@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/home/tearsyu/miniconda3/envs/tt/bin/python3
 """
 数据获取管线 — 爬取新闻联播 + 财联社快讯 + 生成事件列表
 

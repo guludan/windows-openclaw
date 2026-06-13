@@ -462,6 +462,103 @@ sessions_spawn(
 
 ---
 
+## D. 完整智库圆桌会议管线（2026-06-13 新增）
+
+完整圆桌会议（Full Roundtable）是快速作战室的升级版，包含 8位学者独立发言 → 2位心理学家偏差审计 → LLM最终总结陈词。
+
+### 与快速作战室的区别
+
+| 维度 | 快速作战室(C) | 完整圆桌(D) |
+|:---|:---|:---|
+| 学者人数 | 3-5人 | 6-10人 |
+| 心理学家 | ❌ 无 | ✅ 2位（卡尼曼+勒庞） |
+| 偏差审计 | 手动 | 自动（心理学家独立audit） |
+| 报告 | 冲突矩阵 | 完整纪要（含偏差审计+行动指南） |
+| 耗时 | 3-5min | 10-30min |
+| 适合 | 日常策略审议 | 重大决策/危机评估 |
+
+### 标准工作流
+
+```
+议题 + 数据收集 → roundtable_v2.py自动匹配 → scholars spawn(8人并行)
+→ 汇总发言 → psychs spawn(2人并行) → 最终报告
+```
+
+### Step 1: 运行匹配脚本
+
+```bash
+cd ~/.openclaw/workspace
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/roundtable_v2.py "议题描述"
+# 可选参数:
+#   --scholars 6      # 指定学者人数（默认6）
+#   --no-news          # 跳过时事搜索
+#   --dry-run          # 只看匹配结果
+```
+
+脚本会自动：
+1. 用Exa API搜索最新时事数据
+2. 根据议题关键词匹配最相关的学者
+3. 每人生成独立发言prompt文件（`/tmp/roundtable_prompt_{name}.md`）
+4. 输出调度指令（sessions_spawn命令）
+
+### Step 2: 并行spawn学者
+
+按脚本输出的调度指令，在父session中逐个spawn（并行）：
+
+```
+sessions_spawn(
+    label="智库-圆桌-{name}",
+    model="deepseek/deepseek-chat",
+    runTimeoutSeconds=300,
+    task="[Subagent Task] Read the file at /tmp/roundtable_prompt_{name}.md. Then answer..."
+)
+```
+
+⚠️ **gateway超时很常见**，spawn失败后立即重试即可，重试2-3次通常能成功。
+⚠️ Nassim_Taleb的spawn持续gateway超时（经验），可复用之前作战室的发言。
+
+### Step 3: 汇总发言→心理学家审计
+
+等所有学者发言返回后：
+
+1. 收集8位学者的发言内容
+2. 汇总写入 `/tmp/roundtable_summary_for_psych.md`
+3. spawn两位心理学家
+
+### Step 4: 生成最终报告
+
+心理学家返回后，综合所有产出输出到D盘：
+
+```
+/mnt/d/data/a-stock/reports/{YYYY-MM-DD}/圆桌_{议题缩写}_{YYYYMMDD}.md
+```
+
+报告结构：
+```
+1. 学者独立发言
+2. 冲突矩阵（最大分歧点）
+3. 心理学家审计（勒庞+卡尼曼）
+4. 最终总结陈词（每问裁定+行动指南）
+```
+
+### 已知问题
+
+- **gateway间歇性超时**：重试2-3次一般成功；Taleb持续超时可复用之前发言
+- **Exa搜索有免费额度限制**：超出后用SerpAPI备用
+- **心理学家spawn可能超时**：勒庞不易匹配，prompt越直接越好
+- **roundtable_v2.py只生成调度指令，不自动执行spawn**——需手动在父session执行
+
+## E. 优化日志
+
+### 2026-06-13: 完整圆桌会议管线上线
+- 新增 `scripts/roundtable_v2.py` — 自动匹配+生成prompt+调度指令
+- 新增 D章（完整圆桌会议）管线文档
+- 确立 8学者+2心理学家+LLM总结 的标准流程
+- 报告输出调整到 `/mnt/d/data/a-stock/reports/`
+- 实践经验记录：gateway超时可重试、Exa搜索好用但需控制用量、Taleb的spawn持续超时
+
+---
+
 ## 红线
 
 - **LLM调用必须走sessions_spawn**，禁止直接调API
