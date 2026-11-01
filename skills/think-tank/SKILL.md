@@ -464,7 +464,14 @@ sessions_spawn(
 
 ## D. 完整智库圆桌会议管线（2026-06-13 新增）
 
-完整圆桌会议（Full Roundtable）是快速作战室的升级版，包含 8位学者独立发言 → 2位心理学家偏差审计 → LLM最终总结陈词。
+完整圆桌会议（Full Roundtable）是快速作战室的升级版，包含 8位学者独立发言 → 2位心理学家偏差审计（**分工**）→ LLM最终总结陈词。
+
+> **v3.2 去口水改动（2026-10-14）**：
+> 1. **两位心理审计分工**：卡尼曼只管**个体认知偏差**，勒庞只管**群体动力学**，**禁止重复逐人诊断**（旧版两人跑同一套四步法，报告重复~500字）。
+> 2. **统一去概率数字**：学者/综合prompt/决策树全部改为条件/触发信号表达，禁止"30%概率"式伪精确（与B章v5一致，旧版脚本与文档脱节）。
+> 3. 学者prompt 7节 → 5节，删“与其他学派对话”节，要求1200-1800字。
+> 4. 附录只留“核心判断+条件链推演”节选，不堆全发言。
+> 5. 报告正文目标 2500-4000 字。
 
 ### 与快速作战室的区别
 
@@ -472,7 +479,7 @@ sessions_spawn(
 |:---|:---|:---|
 | 学者人数 | 3-5人 | 6-10人 |
 | 心理学家 | ❌ 无 | ✅ 2位（卡尼曼+勒庞） |
-| 偏差审计 | 手动 | 自动（心理学家独立audit） |
+| 偏差审计 | 手动 | 自动（卡尼曼=个体认知偏差、勒庞=群体动力学，分工不重复） |
 | 报告 | 冲突矩阵 | 完整纪要（含偏差审计+行动指南） |
 | 耗时 | 3-5min | 10-30min |
 | 适合 | 日常策略审议 | 重大决策/危机评估 |
@@ -480,78 +487,139 @@ sessions_spawn(
 ### 标准工作流
 
 ```
-议题 + 数据收集 → roundtable_v2.py自动匹配 → scholars spawn(8人并行)
-→ 汇总发言 → psychs spawn(2人并行) → 最终报告
+议题 + 数据收集 → roundtable_v3.py prepare → 学者spawn(6-8人并行)
+→ 发言保存到 /tmp/rt_scholars/ → 心理学家spawn(2人并行) → roundtable_v3.py report
+→ 综合分析spawn → roundtable_v3.py finalize → 最终报告
 ```
 
-### Step 1: 运行匹配脚本
+### Step 1: 运行准备脚本
 
 ```bash
 cd ~/.openclaw/workspace
-~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/roundtable_v2.py "议题描述"
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/roundtable_v3.py prepare "议题描述"
 # 可选参数:
 #   --scholars 6      # 指定学者人数（默认6）
 #   --no-news          # 跳过时事搜索
-#   --dry-run          # 只看匹配结果
+#   --model deepseek/deepseek-chat
+#   --timeout 300
 ```
 
 脚本会自动：
 1. 用Exa API搜索最新时事数据
-2. 根据议题关键词匹配最相关的学者
-3. 每人生成独立发言prompt文件（`/tmp/roundtable_prompt_{name}.md`）
-4. 输出调度指令（sessions_spawn命令）
+2. 根据议题关键词匹配最相关的学者（含阵营分配：正方/反方/观察员）
+3. 每人生成增强版prompt文件（`/tmp/rt_prompt_{name}.md`，1200-1800字目标，5节：核心判断/框架运用/条件链/不确定性/情景）
+4. 输出编排文件 `/tmp/roundtable_orchestration.json`
 
 ### Step 2: 并行spawn学者
-
-按脚本输出的调度指令，在父session中逐个spawn（并行）：
 
 ```
 sessions_spawn(
     label="智库-圆桌-{name}",
     model="deepseek/deepseek-chat",
     runTimeoutSeconds=300,
-    task="[Subagent Task] Read the file at /tmp/roundtable_prompt_{name}.md. Then answer..."
+    task="Read /tmp/rt_prompt_{name}.md and produce deep analysis. Save to /tmp/rt_scholars/{name}.md"
 )
 ```
 
 ⚠️ **gateway超时很常见**，spawn失败后立即重试即可，重试2-3次通常能成功。
 ⚠️ Nassim_Taleb的spawn持续gateway超时（经验），可复用之前作战室的发言。
+⚠️ **学者发言必须保存为 /tmp/rt_scholars/{name}.md**，后续步骤会读取此目录。
 
-### Step 3: 汇总发言→心理学家审计
+### Step 3: 心理学家审计（分工，不重复）
 
-等所有学者发言返回后：
+收集学者发言后，spawn两位心理学家。**两人职责严格分开，不重叠**（卡尼曼取个体认知偏差，勒庞取群体动力学）：
 
-1. 收集8位学者的发言内容
-2. 汇总写入 `/tmp/roundtable_summary_for_psych.md`
-3. spawn两位心理学家
+```
+sessions_spawn(
+    label="智库-心理-卡尼曼",
+    model="deepseek/deepseek-chat",
+    runTimeoutSeconds=300,
+    task="Read all files in /tmp/rt_scholars/. 逐个学者识别1-2个最显著的**个体认知偏差**（引用原文），做去偏差修正表。不要分析群体层面。Save to /tmp/rt_psychs/Daniel_Kahneman.md"
+)
 
-### Step 4: 生成最终报告
+sessions_spawn(
+    label="智库-心理-勒庞",
+    model="deepseek/deepseek-chat",
+    runTimeoutSeconds=300,
+    task="Read all files in /tmp/rt_scholars/. 从**群体心理学**视角分析：群体极化/虚假共识/情绪传染/集体盲区/被忽略的反事实。**不要逐人诊断**（那由卡尼曼负责）。Save to /tmp/rt_psychs/Gustave_LeBon.md"
+)
+```
 
-心理学家返回后，综合所有产出输出到D盘：
+⚠️ 两人分工写在 `generate_psych_prompt()` 里（按 role_hint 自动切换任务块），不要手动改反。
+⚠️ 心理学家prompt要直白直接，避免超时。
 
+### Step 4: 生成综合分析prompt
+
+等所有学者+心理学家返回后：
+
+```bash
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/roundtable_v3.py report /tmp/rt_scholars/
+```
+
+这会读取所有发言+审计，生成综合分析prompt，输出spawn指令。
+
+### Step 5: spawn综合分析
+
+```
+sessions_spawn(
+    label="智库-综合分析",
+    model="deepseek/deepseek-chat",
+    runTimeoutSeconds=600,
+    task="Read /tmp/rt_synthesis_prompt.md and produce the full structured report. Write output to /tmp/rt_synthesis/analysis.md"
+)
+```
+
+⚠️ 综合分析prompt很长（含所有原始发言），需要600秒超时。
+
+### Step 6: 组装最终报告
+
+综合分析返回后：
+
+```bash
+mkdir -p /tmp/rt_synthesis
+# (如果综合agent没自动保存，把输出保存到 /tmp/rt_synthesis/analysis.md)
+~/miniconda3/envs/tt/bin/python3 skills/think-tank/scripts/roundtable_v3.py finalize /tmp/rt_synthesis/analysis.md
+```
+
+最终报告自动输出到：
 ```
 /mnt/d/data/a-stock/reports/{YYYY-MM-DD}/圆桌_{议题缩写}_{YYYYMMDD}.md
 ```
 
-报告结构：
+### 报告结构（v3.2 去口水版）
+
 ```
-1. 学者独立发言
-2. 冲突矩阵（最大分歧点）
-3. 心理学家审计（勒庞+卡尼曼）
-4. 最终总结陈词（每问裁定+行动指南）
+一、执行摘要（300-500字精炼概述）
+二、背景与议题定义（子问题拆解+时事背景）
+三、核心判断聚合（共识表格+分歧表格+孤立观点）
+四、跨框架交叉论证（按议题维度组织，非按学者）
+五、假设检验（可证伪条件+影响矩阵）
+六、情景分析（3-4个互斥情景，**用触发条件不用概率数字**）
+七、偏差审计整合（个体偏差修正+群体心理诊断）
+八、决策树（触发信号驱动，不用概率数字）
+九、风险清单（触发条件+监控指标+缓释措施）
+附录：学者核心发言节选（核心判断+条件链）+ 心理审计全文
 ```
 
 ### 已知问题
 
 - **gateway间歇性超时**：重试2-3次一般成功；Taleb持续超时可复用之前发言
 - **Exa搜索有免费额度限制**：超出后用SerpAPI备用
-- **心理学家spawn可能超时**：勒庞不易匹配，prompt越直接越好
-- **roundtable_v2.py只生成调度指令，不自动执行spawn**——需手动在父session执行
+- **综合分析prompt很长**：需要600秒超时，建议用deepseek/deepseek-chat
+- **roundtable_v3.py只生成调度指令，不自动执行spawn**——需手动在父session执行
 
 ## E. 优化日志
 
+### 2026-10-14: 圆桌去口水（v3.1 → v3.2）
+- **两位心理审计分工**：卡尼曼=个体认知偏差，勒庞=群体动力学，禁止重复逐人诊断（`generate_psych_prompt()` 按 role_hint 自动切换任务块；`PSYCHOLOGISTS` 的 role 标签同步更新）
+- **统一去概率数字**：学者prompt/综合prompt/决策树/风险清单全部改为触发条件表达，与B章v5对齐（旧版脚本仍要“30%概率”=文档与实现脱节，已修）
+- 学者prompt 7节 → 5节（删“与其他学派对话”节），目标1200-1800字
+- `cmd_finalize` 附录只保留“核心判断+条件链推演”节选，心理审计全文保留（因已不重复）
+- 报告正文目标 2500-4000 字（原4000-6000），明确“不在正文重复学者发言”
+- 背景：6.3万字旧报告里附录占27%，其中两位心理审计重复~1.1万字
+
 ### 2026-06-13: 完整圆桌会议管线上线
-- 新增 `scripts/roundtable_v2.py` — 自动匹配+生成prompt+调度指令
+- 新增 `scripts/roundtable_v3.py` — v3.1完整管线（prepare→spawn→report→synthesize→finalize）
 - 新增 D章（完整圆桌会议）管线文档
 - 确立 8学者+2心理学家+LLM总结 的标准流程
 - 报告输出调整到 `/mnt/d/data/a-stock/reports/`

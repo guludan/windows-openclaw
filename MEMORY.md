@@ -1,363 +1,50 @@
-# MEMORY.md - 小狗蛋的长期记忆
+# MEMORY.md - 小狗蛋的长期记忆（2026-09-22 重构，目标<4KB）
 
 ## 黄老板
-- **称呼**: 黄老板
-- **项目方向**: ① **人格智库** (think-tank) ② **人格还原** (person-replication) ③ **A股金融数据**
-- **GitHub**: guludan
-- **数据源**: PG工控机 192.168.3.14, AKShare(conda tt), Baostock
+- **称呼**: 黄老板 | GitHub: guludan
+- **项目**: ①A股选股（当前主战场）②人格智库 ③人格还原
+- **交易纪律**: 总资金5000，止损线4000；单只-20%或总-15%提示减仓
+- **持仓状态**: 6/26曾全清仓；9月重新活跃做形态选股（观察为主，实际仓位待确认）
+- **资产底细**: 零负债全净资产；房产广州2套+清远别墅（长隆旁，民宿+小酒馆规划）；两山两稀土矿；家庭现金~300万可调用~110万；信贷700万仅保底用。耕战思想实物型人格 → 顾问定位：备忘录+日报，不做配置推荐
 
-## v6 [B]/[A]递推引擎 + 精确信号体系（2026-05-23 ✅ 上线）
+## 🎯 选股器（2026-09 重写，核心资产）
+**入口: `scripts/scan_shortlist.py`**（7个旧scan已进`_deprecated/`；DSYM=代码 调试）
+- **黄老板钦定目标形态**: 只找**启动前**的；核心 = **横盘/阴跌 → 突然上拉→回落(试盘)**
+- 漏斗: A段吸筹(位置<80%,量比0.95~2.2) → B段洗盘+量能回升 → C段分流
+  - 池1前夜埋伏: 小实体+MA5±2.5%内+近3日涨<5%
+  - 池2试盘: 上拉(high/前收≥2.5%)+回落(收离高≥0.8%)，前置横盘(日振幅<3.5%)或阴跌(≤+2%)
+  - 启动跟踪池: 近3日涨≥5%或远离MA5>2.5% = 已启动，不进候选
+- 加分: 长下影吸筹(下影≥2%+收微涨)+15 / 试盘次日放量阳+15 / pool phase+15 / 董监高增持+15 / S1+10
+- 软标记不硬剔: 获利盘高(>88%) / 套压重(>65%) / ⚠放量上涨(涨≥3%+3日量比≥1.4，降10分)
+- 权威位置校验: **现价距一年低≥90% 或 距6月末≥60% 才剔**（统一基准，防"基准错位"）
+- 资金流: 黄老板自己看，脚本只用成交量近似（东财fflow连发89次即限流，勿依赖）
+- 基准样例: 华新600801(试盘+诱多吸筹)、东方雨虹002271(长下影砸盘→承接→试盘)、优宁维301166(诱多=要剔)
+- **待验证**: 用次日走势回调MA5偏离2.5%线；样例华新/迈瑞300760/恩华002262
 
-### ⛔ 事件驱动路线全面关闭（2026-05-25）
-所有 CCTV 文本→信号增强/门控路径经回测证伪：
-- **宏观政策底 → S3 门控**：L0 无底日反转最强(+22%)，政策底日弱(+3.69%)→ 方向反
-- **行业共振 → S2 增强**：所有回看窗口(3~14d)，有共振比无共振差 → 方向反
-- **文本层无区分度**：event_CAR(0.26%)、NLP 分数(0.615 vs 0.604)、surplus_z ρ 均失败
-- **根因**：CCTV 是滞后确认信号（产业政策已消化），不适用于日频信号增强
-- **归档**：analysis/archive/，industry_lexicon.py 保留（中线行业轮动可用）
-- **S3 失效根因**：非事件层问题，转向 E/PB 因子通道（Q 问题）
+## 数据基础设施
+- **PG**: 工控机192.168.3.14, db=guludan（daily_prices 2002~至今520万+、exec_hold_changes全市场16.6万条、pool_energy、fund_flow断更于5/26）
+- **数据源优先级**: mootdx TCP(7709) → 腾讯API → 百度K线；**AKShare禁批量**（封IP）；接口清单 `/mnt/d/data/数据接口文档.md`
+- **收盘管线**: mootdx日线 → data_finance --update-daily → backfill_limit_up → pool_engine_v1 → pool_regime_integration → stock_energy_incr → fetch_exec_hold_daily → v9_framework → daily_market_report
+- regime: pool_energy.extra（SIDEWAYS/BEAR/BULL...）；S1波动/S2脉冲/S3恐慌信号，S3×低盈余=最强买(+22%胜率98%)；S3×7d内高管增持→T+20 +26%；龙虎榜=负向（S3上榜-25%）
+- 事件驱动(CCTV)路线**已证伪关闭**，归档analysis/archive/
+- 报告输出: `/mnt/d/data/a-stock/reports/{YYYY-MM-DD}/`（股市日报/圆桌/家族备忘录），**报告不上传GitHub**
+- 智库: 154人V3管线完成，LanceDB；圆桌roundtable_v2.py（议题→8学者spawn→双心理审计→报告）
 
-### pool_energy 表
-- level维度: 'market'(大盘) 和 'code:A.xxxxxx'(个股，sig信号)
-- 字段: date, b_pool, a_pool, b_inject, a_inject, surplus, imbalance, phase, extra
-- phase: B_ACCUM/B_DISTRIB/A_ACCUM/A_RECOVER/NEUTRAL/HI_EQ
-- 大盘已写入2435天 (2015-01~2026-05-22)
+## 🔴 红线（血泪教训，违反必出事）
+1. **数据不到不跑报告不给结论** — 6/5用前日数据写当日报告全错；报告必须标注数据日期
+2. **位置判断统一用现价距一年低** — 基准错位（用6月均价）误杀过良信（实际距低6.8%）
+3. **硬门槛会系统性误杀** — 筹码30~80%门槛踢掉良信(2%)和华新(95%)两头；宁用软标签
+4. **持仓/成本只认黄老板口头** — positions表是草稿；6/10数据库脏数据6.99/4.93事故；trade_log每笔必写
+5. **回测数据入库必验3要素**: 条件+窗口+样本量(n≥20)；6/5胜率条件混淆事故
+6. **持仓分析前必拉实时行情+分时+量比+盘口** — 没看盘口别说话
+7. **外部API间隔≥5-10s**：Sci-Hub 15s；东财fflow 1.5s连发89次即限流；push2his用curl清代理直连
+8. **长脚本(>5min)用setsid/screen独立进程** — nohup在会话中断时仍可能被杀（9/22事故）
+9. **用skill先读SKILL.md**；GLM走sessions_spawn；SiliconFlow禁用；LanceDB/财报禁并发写
+10. **MEMORY/日记只能追加** — write工具会整文件覆盖，9/22日记覆盖事故（已恢复）；编辑记忆文件先read全文再带原文重写
+11. **regime_integration跑完必须验证extra.regime字段**，否则full_market_scan误判SIDEWAYS
+12. Python3.8不能装新包；f-string别用dict unpacking（3.13陷阱）；`_pg_execute()`返回(rows,cols)元组；level格式`code:A.xxx`
 
-### 精确信号体系 S1/S2/S3
-| 信号 | 条件 | 解释 |
-|------|------|------|
-| S1 surge | vol_z>3.0, \|v_z\|<1.5 | 波动暴增但没放量→未定价事件 |
-| S2 pulse | vol_z>2.5, v_z>2.0, ret>5% | 量价齐爆→Phase β公开脉冲 |
-| S3 panic | vol_z>2.5, v_z>2.0, ret<-5% | 放量恐慌→恐慌出逃 |
-
-### 全量回测确认（6,208只 × 73K信号）
-| 条件 | T+20中位 | 胜率 | 判断 |
-|------|----------|------|------|
-| S2脉冲 × 高盈余(B冲顶) | **-4.09%** | 35.3% | 强力卖出 |
-| S3恐慌 × 低盈余(B低位) | **+22.46%** | 97.8% | 极强买入 |
-| S1波动 × 低盈余(B低位) | **+9.52%** | 78.5% | 买入 |
-
-### symbol格式修复
-- mootdx增量写纯6位 `600028`，历史在`A.600028` → 统一为A.前缀
-- daily_prices: 8,352,770条, 5,469只 ✅
-- pool_energy level也同步修复
-
-### 脚本
-- `scripts/pool_engine_v1.py` — 大盘[B]/[A]递推引擎
-- `scripts/stock_energy_full.py` — 个股S1/S2/S3信号提取+写入
-- `scripts/stock_energy_backtest_full.py` — 全量回测统计
-- `scripts/fix_symbol_format.py` — symbol格式修复工具
-
-## 智库项目状态（2026-05-15）
-
-### 新V3管线全线打通 ✅
-154/154 人完成 dedup+regen
-- merge(_per_file_results) → dedup(语义去重) → regen(顶层字段)
-- 总insights: 8743，无evidence: 11条
-
-## A股金融数据（2026-05-23，symbol统一为A.前缀 ✅）
-
-### 核心表
-| 表 | 覆盖 | 行数 |
-|------|------|------|
-| daily_prices | 2002-01 ~ 2026-05-22 | 835万 (5,469只, A.前缀统一) |
-| market_signals | 2005~2026 | 30万 |
-| pool_energy | 2015~2026 (大盘+个股信号) | 7.3万 (新增v6)
-| incr_decr | 2022~2026 (上交所董监高增减持) | 2万 (10800增/9153减)
-
-### eastmoney_data.py 21个API
-限售解禁/融资融券/同花顺热点/mootdx(TCP 7709)等✅
-<!-- 精简掉了各表的详细行数，保持MEMORY.md精简 -->
-
-## 2026-05-25 策略更新
-
-### ❌ 事件驱动路线：全面关闭
-CCTV文本在三方向全部证伪，归档至 analysis/archive/
-
-### ✅ 一手信源路线：龙虎榜+增减持
-
-**龙虎榜（负向筛选器）:**
-- S3 + 龙虎榜 → T+20 -24.66%, 6.2%胜率
-- 原因：龙虎榜收录涨跌幅异常股，能上龙虎榜的S3是流动性危机而非普通恐慌
-
-**高管增持（强正向信号）:**
-- S3 + 7d内增持 → T+20 **+26.04%**, 92.9%胜率（vs基线 +9.16%）
-- S3 + 7d内减持 → T+20 +3.54%, 38.1%胜率
-- 19966条上交所数据已入库 incr_decr 表
-- policy_injector_v2.py 规则：Tier1(+20%) / Tier2(+10%) / Tier3(-8%) / 回避(-100%)
-
-**待办：**深交所增减持数据、V6完整接入
-
-## 董监高持股变动（2026-05-30 ✅ 全市场）
-
-### exec_hold_changes 表
-- 数据源：东财datacenter RPT_EXECUTIVE_HOLD_DETAILS
-- **166,284条**（2004-11-29 ~ 2026-05-29）
-- 覆盖：深主板(69K) + 创业板(50K) + 上交所(44K) + 北交所(1.8K) + 其他(0.3K)
-- 字段含：人员/职务/变动数量/均价/金额/原因/变动前后持股/变动人关系
-- 对比旧表 incr_decr（SSE源，仅上交所60K条），exec_hold_changes是全市场版
-- 脚本：`fetch_exec_hold_all.py`（全量拉取） + `fetch_exec_hold_daily.py`（增量更新）
-
-## 动态牛熊检测（2026-05-30 ✅ V8集成）
-
-### pool_regime_integration.py
-- 从 pool_energy.surplus 计算 60日滚动z-score(surplus_z) + sz_5/sz_20/加速度
-- 运行 V8 状态机 → 每日 regime (BULL/TOP_WARNING/SIDEWAYS/BOTTOM_WARNING/BEAR)
-- 写入 pool_energy.extra: surplus_z/sz_5/sz_20/accel/regime/advance_ratio
-- 写入 market_signals(regime_signal): 数值编码
-- V8Strategy.load_regime_series() 改为从 pool_energy.extra 直接读取，不再自算
-- 状态分布：SIDEWAYS 40%, BEAR 29%, BULL 24%, BOTTOM_WARNING 4%, TOP_WARNING 3%
-- 近期(2026-05-29): surplus_z=-2.405, BEAR, A_ACCUM
-
-## 核心脚本（workspace/scripts/，已上GitHub）
-
-### 金融数据
-| 脚本 | 用途 | 运行环境 |
-|------|------|----------|
-| `data_finance.py` | 主入口：日线更新/行情快照/ETF/沪深港通/信号 | conda tt |
-| `update_daily_mootdx.py` | **个股日线（mootdx TCP，不封IP）** | conda tt |
-| `update_daily_mootdx.py --start YYYY-MM-DD --end YYYY-MM-DD` | 指定范围回填 | conda tt |
-| `scripts/analysis/signals.py` | 两融/龙虎榜/ETF份额/外资ETF信号分析 | conda tt |
-| `scripts/analysis/sectors.py` | 板块成分股+收益分析（⚠️东财反爬） | conda tt |
-| `scripts/analysis/cross_corr.py` | 时滞交叉相关系数 | conda tt |
-| `scripts/analysis/run.py` | 统一入口（briefing生成） | conda tt |
-| `scripts/analysis/market_psychology/` | 板块周期/宏观周期报告脚本集 | conda tt |
-| `backfill_history.py` | A股日线回填（分段跑） | base Python |
-| `fetch_financial_data.py` | 季度财报补拉（baostock, 2024-2025） | conda tt |
-| `fetch_macro_cn.py` | 中国宏观指标（国债/SHIBOR/LPR/信用利差） | conda tt (akshare) |
-
-### 智库
-| 脚本 | 用途 |
-|------|------|
-| `_batch_distill.py --merge-per-file` | 逐篇蒸馏合并 |
-| `batch_dedup_regen.py` | 语义去重+顶层字段regen |
-| `regenerate_personality.py` | 人格顶层字段重生成 |
-| `ingest_v3.py` | LanceDB入库 |
-| `think_tank_pipeline_v3.py` | 智库报告生成 |
-
-## 🔴 红线（含 2026-06-10 新增）
-- **质量评分5分制(1-5)，用action=keep/discard判断**
-- **用skill前先读SKILL.md**
-- **LanceDB/财务数据补拉严禁并发写入**
-- **蒸馏实事求是，evidence.excerpt必须原文逐字摘录**
-- **GLM调用走sessions_spawn，禁止直接调API**
-- **SiliconFlow 禁止使用**
-- **Sci-Hub间隔15秒，外部API间隔5-10秒**
-- **长耗时脚本(>5min)需要在screen或独立进程跑，否则被SIGKILL**
-- **Python 3.8不能装新包（yfinance/akshare冲突）**
-- **论文下载必须验证作者身份**
-- **⚠️ 写入MEMORY.md的回测数据必须验明3要素：条件(SMA?V8?极空?)、窗口(含当天?)、样本量(n≥20?)** — 6/5事故：条件混淆+V8极空胜率被当作SMA胜率记录
-- **⚠️ 成本线必须在黄老板口头确认后记录，不能从数据库positions表直接取** — 6/10事故：数据库存着错误的6.99/4.93
-- **⚠️ 持仓分析前必须拉实时行情+分时数据+量比+盘口异动** — 6/10事故：没看盘口就说成本线
-- **⚠️ 每笔交易必须写入trade_log表，且记录原因** — trade_log至今是空表
-- **⚠️ 持仓管理只认黄老板说的，数据库positions是可修改的草稿不是事实**
-
-## 关键经验
-- 蒸馏输出: `personality_v3.json`
-- Python 3.13 `{{ }}` 陷阱: 普通代码中双大括号→set literal, f-string别用dict unpacking
-- **f-string中env={{**os.environ,...}}在3.13会被解析为dict表达式，提前构建变量再传**
-- Codex/Claude Code跑编码任务
-- `_pg_execute()` 返回 (rows_list, columns_list) 元组
-- Baostock财务数据速度~20只/20秒，需开screen后台跑
-- 已有PG unique constraint = (indicator, date)
-- CHANGENUM 在上交所JSON中是字符串（str），入库需 int()
-- SSE query 默认只返回第一页（100条），设置 pageSize=5000 + 翻页可拿全量
-- `level`格式 `code:A.000158`，股票代码提取 = SUBSTRING(level FROM 8)
-
-## 黄老板资产底细（2026-06-13 补充）
-- **家庭资产结构**：零负债，全净资产
-- **房产**：①清远别墅220建面/600使用，买入11,000→现17,000/㎡，已装完，长隆旁，计划民宿+小酒馆 ②广州两套约220㎡平均32,000/㎡ ③老家两处宅基地
-- **山/矿**：两座山（年产几百斤茶油）、两座稀土矿（不开采，存着增值）
-- **现金**：家庭约300万，本人可调用约110万
-- **信贷**：700万额度，仅作为最终保底/确定性机会使用
-- **保险**：医保+商业补充医疗齐全
-- **资产人格**：耕战思想，实物资产型，不适合虚拟金融；股市清仓亏243块，不玩了
-- **顾问定位**：家族资产管理备忘录+交易日股市日报（轻量），不做金融配置推荐
-
-## 2026-05-30 待办4/5/6完成
-
-### 经营现金流（Item 6 ✅ 后台运行中）
-- `scripts/fetch_cashflow.py` — 从东财 `RPT_F10_FINANCE_MAINFINADATA` 拉取
-- 建表 `financial_cashflow`，字段: symbol, end_date, netcash_operate, netcash_invest, netcash_finance
-- 当前入库8,500+条（覆盖2022~2026），后台拉取1350页继续中
-- UNIQUE(symbol, end_date)，ON CONFLICT覆盖
-
-### NEUTRAL异常监视（Item 4 ✅）
-- `scripts/neutral_monitor.py` — 4规则监视器
-  1. NEUTRAL+BEAR → 弱势震荡警告
-  2. NEUTRAL+surplus_z<-1.5 → 空头导向
-  3. NEUTRAL连续>10天 → 方向不明
-  4. Bear+accel转正 → 底背离
-- 首次报告: `memory/reports/neutral_monitor_2026-05-29.md`
-- 纳入HEARTBEAT收盘管线（第10步）
-
-### V8仪表盘（Item 5 ✅）
-- `scripts/strategies/v8_dashboard.py` — 输出到 `memory/reports/v8_dashboard_YYYY-MM-DD.txt`
-- 纳入HEARTBEAT收盘管线（第9步）
-
-### 离场策略回测（Item 3 ⚠️ 部分完成）
-- `scripts/exit_strategy_backtest.py` — 对比压力位止盈 vs 固定周期 vs 混合策略
-- 4,125次V8入场信号的回测结果:
-  | 策略 | 收益 | 胜率 | 持有 |
-  |------|------|------|------|
-  | T+5 | +2.65% | 60.7% | 5d |
-  | T+10 | +5.31% | 67.7% | 10d |
-  | T+20 | +9.24% | 72.2% | 20d |
-  | 混合40d | ~12% | ~81% | 14d |
-- 混合策略（压力位+超时强制）收益和胜率都最优
-- 但所有策略最大回撤~100%异常，需检查时序排序
-- 注：`backtest_v8_final.py`因bvps_map key不匹配导致0条信号（已定位：financial_data.symbol是'A.前缀'但density_map用纯6位）
-
-### 深度管线已更新（HEARTBEAT.md）
-```
-4. pool_engine_v1.py — [B]/[A]递推
-5. pool_regime_integration.py — 动态牛熊检测 ← 新增
-6. stock_energy_incr.py — 股票能量补全
-7. fetch_exec_hold_daily.py — 董监高增量 ← 新增
-8. fetch_financial_data_v2.py — 季度财报(按需)
-9. v8_dashboard.py — V8仪表盘 ← 新增
-10. neutral_monitor.py — NEUTRAL监视 ← 新增
-11. 生成简报
-```
-
-## 2026-06-02 新增脚本
-- `scripts/position_tracker.py` — 持仓个股资金行为监控（识别机构试盘/脉冲/磨底/吸筹信号），每日输出到D盘
-- `scripts/track_002073.py` — 软控股份日线特征监控（SMA偏离/量比/振幅/连跌，已合并入position_tracker.py）
-
-### 持仓监控逻辑
-| 信号 | 定义 | 操作 |
-|------|------|------|
-| 试盘 | 连跌≥3d后放量>1.5x反弹>2% | 关注，持有 |
-| 脉冲 | 近10日涨幅>3%+量比>1.8 | A_RECOVER切换后减仓1/2 |
-| 磨底 | 量比<0.7+振幅收缩>20% | 持有，即将脉冲 |
-| 吸筹 | 温和放量+小阳推升 | 持有，等脉冲减仓 |
-
-### 可转债折价联动（数据源确认）
-- AKShare `bond_zh_cov()` 全市场可转债数据可用（1015只，含溢价率）
-- 当前持仓(软控/嘉化)均无可转债，暂不激活
-- 扫描脚本待写，折价<-3%时标记为最高优先级
-
-### 个股持仓（2026-06-10 校准）
-- 嘉化能源(600273): 成本**7.2451** x 200股 = 1449
-- 大众公用(600635): 成本**5.1000** x 300股 = 1530
-- 软控股份(002073): 成本**5.7350** x 250股 = 1434
-- 总持仓成本: 4413 (总资金5000,仓位88%)
-- 止损线: 4000(= -1000)，可用亏损额度826
-- ⚠️ 之前positions表里记录的6.99/4.93/5.56是脏数据，6/10已修正
-- ⚠️ 苏交科/华茂无持仓，positions表脏数据已删除
-
-### 逐日滚动回测修正（2026-06-03）
-之前的全市场统计+前视偏差被逐日滚动回测（每笔交易只用到当天数据）修正：
-- **本质修正**: ①收益从全市场均值改为个股数据 ②尾部风险从假设改为真实历史
-
-#### 当前持仓回测（2026-06-05 修正版）
-⚠️ 前视偏差审计完成（详见 memory/reports/pipeline_bias_audit_2026-06-05.md）
-- SMA120包含/不包含当天对触发判断无实质影响（修正前后结果一致）
-- 真正的污染是条件混淆：6/3的"86%/88%胜率"是V8极空区(A_ACCUM)条件，
-  但被当成SMA<-15%通用条件写入MEMORY.md
-- 修正规则：MEMORY.md回测数据写入时必须标注条件+窗口+样本量
-
-#### 修正后三只标的真实胜率（SMA<-15%通用条件）
-| 股票 | n | 胜率 | T+20均值 | 中位 | 评级 |
-|------|:---:|:---:|:---:|:---:|:---:|
-| 软控(002073) | 86 | **68.6%** | +8.44% | +11.32% | **A** |
-| 大众(600635) | 20 | 60.0% | +2.75% | — | C |
-| 嘉化(600273) | 1 | 100% | +12.13% | — | 数据不足 |
-
-#### 软控深度条件
-| 条件 | n | 胜率 | 均值 |
-|:---|:---:|:---:|:---:|
-| SMA<-15% | 86 | 68.6% | +8.44% |
-| SMA<-20% | 40 | **77.5%** | +12.55% |
-| SMA<-25% | 27 | **77.8%** | +11.43% |
-→ 当前SMA偏离约-25%，按SMA<-25%条件，胜率77.8%+均值+11.43%
-
-#### 大众公用深度条件
-| 条件 | n | 胜率 | 均值 |
-|:---|:---:|:---:|:---:|
-| SMA<-15% | 20 | 60.0% | +2.75% |
-| SMA<-20% | 2 | 100% | +1.14% |
-→ SMA<-15%仅60%胜率+均值+2.75%，反弹力弱于软控
-
-### ❌待清理：6/3回测数据已被前视偏差污染
-- MEMORY.md中所有个股T+20/胜率数据（软控+5.83%/67%、嘉化+9.14%/88%、大众+11.85%/86%、重百+8.92%/77%等）
-- 污染源：backtest_cost_support.py:149 的 sma120=mean(closes[-120:]) 包含当天收盘价
-- 结论：需要用修正后的SMA120逻辑重跑
-- 当前持仓建议不变（黄老板已确认），但回测数据待修正后重挂
-
-### 机构出货节奏研究结论
-- 极空区(A_ACCUM, sz<-2.0) → 持续5~11天 → A_RECOVER脉冲(2-3天爆拉) → NEUTRAL阴跌出货(40天) → B_ACCUM底部确认
-- 当前(6/3): 极空区第5天, 加速度负, 尚未出现机构试盘/脉冲信号
-- 操作: 持有不动, 等A_RECOVER切换后脉冲拉升时减仓1/2
-
-### 下一阶段计划
-- **全周期回测**: 不再只盯熊市极空→深跌，需覆盖牛市、熊市、震荡市各阶段
-- **行为模式分类**: S1/S2/S3信号在各周期阶段的表现差异
-- **离场策略**: 需区分牛熊市的止盈止损阈值
-- 参考: 黄老板说"全周期回测，牛市熊市庄家各阶段做法"
-
-## D盘目录重构（2026-06-06）
-D盘 `/mnt/d/data/` 已从扁平散乱结构重构为按业务分类：
-- `a-stock/` — A股数据（reports按日/backtests/signals/v8-dashboard）
-- `think-tank/` — 智库（原 think-tank-data，保留原内部结构）
-- `cache/` — 缓存数据（conflict/finance）
-- `docs/` — 框架设计文档
-- `misc/` — 杂项
-- README.md 有完整说明
-脚本中所有旧路径已自动替换（sed批量处理）
-
-### 待修漏洞
-- backtest_v8_final.py bvps_map key格式问题（`A.`前缀vs纯6位）
-- 最大回撤计算需按exit日期排序（当前同一天过多信号扭曲结果）
-- regime_signal表未写入（但pool_energy.extra已有regime，V8直接读extra）
-- **⚠️ 四层漏斗L3和L1使用了2次SMA120计算（SQL+SQL），已统一为不包含当天**
-- financial_data覆盖率低（无扣非、商誉字段），Layer 0排雷受限
-
-## 智库快速作战室 + 完整圆桌（2026-06-08/2026-06-13）
-
-### 快速作战室（v1，2026-06-08）
-- `skills/think-tank/scripts/fast_tank.py` — 议题→自动匹配学者→生成讨论prompt
-
-### 完整圆桌会议（v2，2026-06-13 首次实战）
-- **首次完整运行**：金融海啸前夜 × 广州房地产 × 深圳三产（8学者+2心理学家）
-- `skills/think-tank/scripts/roundtable_v2.py` — 新增，自动匹配+搜索+生成prompt+调度指令
-- 标准流程：议题搜索(Exa) → 8学者spawn → 汇总 → 卡尼曼+勒庞双心理审计 → 最终报告
-- 报告输出到 `/mnt/d/data/a-stock/reports/{date}/`
-- 实践经验：
-  - gateway超时很常见，重试2-3次
-  - Exa API好用但需控制用量
-  - Nassim_Taleb的spawn持续超时，可复用之前发言
-  - 心理学者prompt必须直白直接才不超时
-- 黄老板资产情况｜docs/skills/think-tank/SKILL.md已更新D章+E章<br>// 红线：报告不上传GitHub
-- 匹配规则：`TOPIC_EXPERT_MAP`（恐慌→Taleb/Minsky/Dalio，量化→Simons/Asness/Thorp）
-- 使用场景：日常策略审议，不跑完整4章管线
-
-### 四专家论证结论（2026-06-08）
-| 专家 | 核心观点 | 裁定 |
-|------|---------|------|
-| Taleb | 负凸性策略在恐慌期失效，T+0关掉 | 接受C1暂停 |
-| Minsky | 量化控盘=庞氏型，传统庄=对冲型 | 接受分层持仓 |
-| Asness | 14维漏了因子暴露分解，需残差化 | 接受v2修正 |
-| Simons | 14维是确认工具非发现工具，需PCA/ICA | 接受验证层 |
-
-### 特征框架v2修正（待部署）
-- 14维→12维：去掉开收盘趋同/多空单比例/价格中枢，加入因子残差换手率/条件日内偏度/VaR偏离率
-- 新增验证层：跨regime聚类稳定性 + 置换检验
-- 新增检测层：PCA投影→指数衰减baseline→CUSUM→HMM行为突变
-
-## 🔴 6/5重大教训：收盘流程纪律
-### 收盘后执行红线（2026-06-05 18:11）
-1. **数据不到不跑报告** — mootdx/日线入库完成前，严禁生成任何分析报告
-2. **数据源优先级**：mootdx TCP(7709) → 腾讯API(PE/PB/行情) → 百度K线。**AKShare禁止用于批量数据拉取**（会被封），D盘有 `/mnt/d/data/数据接口文档.md` 包含了完整的不封IP的数据源清单
-3. **收盘管线顺序不可乱**：mootdx日线 → limit_up → pool_engine → regime_integration → stock_energy → 其他辅助数据 → **然后**出报告
-4. **报告必须标注数据日期**：如果数据库最新日期<今天，提示'报告基于{date}数据，今天数据未入库'
-5. **regime数据完整性检查**：pool_regime_integration跑完后必须验证extra是否有regime字段，否则full_market_scan会错误识别为SIDEWAYS
-6. **数据不到不给分析结论** — 宁可不说话，不说错话
-7. **D盘数据源文档**：`/mnt/d/data/数据接口文档.md` — 收录了28个A股HTTP端点，零akshare依赖。先用这个查再自己写
-8. **position_tracker持仓价格必须在写入时从数据库读取验证**，不能在代码里硬编码幻数
-
-### 教训复盘
-- **16:00报告**：用了6月4日数据写6月5日报告，结论全部过期。原因是mootdx没跑指定日期范围，只跑了增量模式（自动跳过已有日期），但6月5日数据确实不在库里
-- **软控成本7.55**：position_tracker里硬编码了错误成本，黄老板纠正为5.755。操盘数据必须从黄老板口头确认后录入，不能自己编
-- **Regime误判SIDEWAYS**：regime_integration写入market_signals时报错（code=null），事务回滚导致extra.regime字段没更新。手动补写了5201天数据
-- **fix**：`pool_regime_integration.py`第217行`code`字段不应传null，应在market_signals中写'market'
+## 经验速查
+- mootdx增量自动跳过已有日期，缺日期要用 --start/--end 指定范围
+- conda tt = ~/miniconda3/envs/tt/bin/python3（akshare环境）
+- 深度工作日志看 memory/YYYY-MM-DD.md（选股器完整迭代史在 2026-09-22.md）

@@ -12,7 +12,8 @@ import time
 import sys
 from datetime import datetime, date
 
-DB = "dbname=guludan user=guludan password=toto host=192.168.3.14"
+DB = "dbname=guludan user=guludan password=toto host=192.168.3.14 connect_timeout=5"
+FALLBACK_FILE = "/tmp/intraday_cache_fallback.jsonl"
 
 # 监控标的: 量化T+0派系 + 持仓 + 疑似
 WATCH_LIST = {
@@ -49,19 +50,24 @@ def fetch_minute_data(code_qt):
         return None
 
 def cache_batch():
-    conn = psycopg2.connect(DB)
-    cur = conn.cursor()
+    # 先拉数据
     now = datetime.now()
     time_slot = now.strftime('%H:%M')
-    
-    # 批量获取所有标的分时
-    codes = '|'.join(WATCH_LIST.keys())
-    
-    # 逐个获取更可靠
-    count = 0
+    rows = []
     for qt_code, (symbol, name) in WATCH_LIST.items():
         data = fetch_minute_data(qt_code)
         if data and data['price']:
+            rows.append((symbol, name, time_slot, data['price'], data['volume']))
+
+    if not rows:
+        return 0
+
+    # 写DB, 失败则落本地兜底文件
+    try:
+        conn = psycopg2.connect(DB)
+        cur = conn.cursor()
+        count = 0
+        for symbol, name, ts, price, vol in rows:
             try:
                 cur.execute("""
                     INSERT INTO intraday_cache (symbol, date, time_slot, price, volume)
@@ -69,22 +75,28 @@ def cache_batch():
                     ON CONFLICT (symbol, date, time_slot) DO UPDATE SET
                         price = EXCLUDED.price,
                         volume = EXCLUDED.volume
-                """, (symbol, TODAY, time_slot, data['price'], data['volume']))
+                """, (symbol, TODAY, ts, price, vol))
                 count += 1
             except Exception as e:
                 print(f"  DB error {name}: {e}")
-    
-    conn.commit()
-    cur.close()
-    conn.close()
-    return count
+        conn.commit()
+        cur.close()
+        conn.close()
+        return count
+    except Exception as e:
+        import json
+        with open(FALLBACK_FILE, 'a') as f:
+            for symbol, name, ts, price, vol in rows:
+                f.write(json.dumps({'symbol': symbol, 'date': str(TODAY), 'time_slot': ts,
+                                    'price': price, 'volume': vol}) + '\n')
+        return -1
 
 def main():
     start_time = sys.argv[1] if len(sys.argv) > 1 else None
     
-    print(f"📊 分时缓存启动 | {TODAY}")
+    print(f"📊 分时缓存启动 | {TODAY}", flush=True)
     if start_time:
-        print(f"   指定开始时间: {start_time}")
+        print(f"   指定开始时间: {start_time}", flush=True)
     
     while True:
         now = datetime.now()
@@ -104,8 +116,12 @@ def main():
         if m_val % 1 == 0 and now.second > 20 and now.second < 40:
             count = cache_batch()
             ts = now.strftime('%H:%M:%S')
-            print(f"  [{ts}] 缓存 {count}/{len(WATCH_LIST)} 只")
-            time.sleep(5)  # 避免重复拉
+            if count == -1:
+                print(f"  [{ts}] DB不可达, 数据落本地兜底文件")
+            else:
+                print(f"  [{ts}] 缓存 {count}/{len(WATCH_LIST)} 只")
+            time.sleep(25)  # 缓存过后睡到下个分钟窗口，避免同一分钟重复拉
+            continue
         
         time.sleep(1)
 

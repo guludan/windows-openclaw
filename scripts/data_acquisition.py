@@ -234,21 +234,22 @@ async def batch_fetch_cctv(start: str, end: str, batch_size: int = 30):
 
 
 def fetch_latest_cctv() -> List[Dict]:
-    """抓取最新一天的新闻联播"""
+    """抓取最新一天的新闻联播，返回 items（含 _actual_date 标记真实播出日期）"""
     today = datetime.now().strftime("%Y%m%d")
     items = fetch_cctv_day(today)
+    actual_date = today
     if not items:
         # 试试昨天（如果今天还没播）
         yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y%m%d")
         items = fetch_cctv_day(yesterday)
+        actual_date = yesterday
     
     if items:
         for item in items:
             is_rel, score = is_policy_related(item['title'], item['content'])
             item['_is_policy'] = is_rel
             item['_relevance_score'] = score
-            item['_date'] = today
-            item['date'] = today
+            item['_date'] = actual_date
     
     return items or []
 
@@ -943,9 +944,19 @@ async def main():
             for it in items[:5]:
                 tag = "📊" if it['_is_policy'] else "  "
                 log.info(f"  {tag} {it['title'][:60]}")
+            # 先写本地缓存（防PG不可达时丢数据）
+            today_str = items[0].get('date', '') or datetime.now().strftime('%Y%m%d')
+            cache_file = CACHE_DIR / f"{today_str}.json"
+            if not cache_file.exists():
+                with open(cache_file, 'w', encoding='utf-8') as f:
+                    json.dump(items, f, ensure_ascii=False, indent=2)
+                log.info(f"  缓存已写入: {cache_file.name}")
             # 自动写入event_list
             if not args.no_db:
-                _sync_cctv_to_event_list(items, latest_only=True)
+                try:
+                    _sync_cctv_to_event_list(items, latest_only=True)
+                except Exception as e:
+                    log.warning(f"  PG同步失败（数据已缓存，PG恢复后可重跑补同步）: {e}")
         else:
             log.info("无最新数据")
     
@@ -975,23 +986,32 @@ async def main():
         log.info("=== 每日数据增量更新 ===")
         
         # 1. 财联社
-        log.info("\n[1/3] 财联社快讯...")
+        log.info("\n[1/4] 财联社快讯...")
         try:
             archive_cls_news()
         except Exception as e:
             log.error(f"  财联社失败: {e}")
         
         # 2. 新闻联播最新
-        log.info("\n[2/3] 新闻联播...")
+        log.info("\n[2/4] 新闻联播...")
         try:
             items = fetch_latest_cctv()
             if items:
-                log.info(f"  获取 {len(items)} 条 (政策:{sum(1 for i in items if i['_is_policy'])})")
+                actual_date = items[0].get('_date', datetime.now().strftime("%Y%m%d"))
+                cache_file = CACHE_DIR / f"{actual_date}.json"
+                if not cache_file.exists():
+                    with open(cache_file, 'w', encoding='utf-8') as f:
+                        json.dump(items, f, ensure_ascii=False, indent=2)
+                    log.info(f"  获取 {len(items)} 条 (政策:{sum(1 for i in items if i['_is_policy'])}), 已缓存 {cache_file.name}")
+                else:
+                    log.info(f"  获取 {len(items)} 条, 缓存已存在 {cache_file.name}")
+            else:
+                log.warning("  新闻联播: 无数据")
         except Exception as e:
             log.error(f"  新闻联播失败: {e}")
         
         # 3. 政策文件
-        log.info("\n[3/3] 国务院政策文件...")
+        log.info("\n[3/4] 国务院政策文件...")
         try:
             n = crawl_gov_policies(max_urls=50)
             log.info(f"  新增 {n} 条")

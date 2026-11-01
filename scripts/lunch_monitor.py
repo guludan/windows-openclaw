@@ -61,7 +61,6 @@ cur.execute("SELECT extra FROM pool_energy WHERE level='market' AND extra IS NOT
 r = cur.fetchone()
 if r:
     try:
-        import json
         e = json.loads(r[0])
         out.append(f"- surplus_z: {float(e.get('surplus_z',0)):.3f} | regime: {e.get('regime','?')} | accel: {float(e.get('accel',0)):.3f}")
     except: pass
@@ -71,13 +70,18 @@ cur.execute("SELECT date, phase, surplus, b_pool, a_pool FROM pool_energy WHERE 
 r = cur.fetchone()
 if r:
     out.append(f"- 最新Phase: {r[1]} | surplus={float(r[2]):+.4f} | B={float(r[3]):.4f} | A={float(r[4]):.4f}")
-    cur.execute(f"SELECT extra->>'surplus_z',extra->>'regime',extra->>'accel' FROM pool_energy WHERE level='market' AND date='{r[0]}'")
+    cur.execute("SELECT extra->>'surplus_z',extra->>'regime',extra->>'accel' FROM pool_energy WHERE level='market' AND date=%s", (r[0],))
     r2 = cur.fetchone()
     if r2:
-        sz = float(r2[0]) if r2[0] else None
+        sz_raw = r2[0]
         regime = r2[1] or '?'
-        accel = float(r2[2]) if r2[2] else None
-        out.append(f"- Regime: {regime} | surplus_z: {sz:.3f} | 加速度: {accel:.3f}")
+        accel_raw = r2[2]
+        sz = float(sz_raw) if sz_raw else None
+        accel = float(accel_raw) if accel_raw else None
+        if sz is not None:
+            out.append(f"- Regime: {regime} | surplus_z: {sz:.3f} | 加速度: {accel:.3f}" if accel is not None else f"- Regime: {regime} | surplus_z: {sz:.3f}")
+        else:
+            out.append(f"- Regime: {regime}")
 
 # 4. 持仓实时盈亏（从market_snapshots最近一日）
 out.append(f"")

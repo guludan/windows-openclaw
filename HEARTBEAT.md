@@ -1,3 +1,7 @@
+> ⏸️ **收盘管线已暂停（2026-10-14，黄老板要求）** — 工控机 192.168.3.14 未连接，暂时不需要这项工作。
+> **恢复方式：删除下面 `<!-- 暂停 -->` 和 `<!-- /暂停 -->` 两行即可。**
+
+<!-- 暂停
 # 收盘后日更管线（15:30~）
 
 ## 行情层
@@ -17,15 +21,9 @@
 ## V9 框架
 9. `python3 scripts/v9_framework.py run` — V9全量
 
-## 交易监控
-10. `python3 scripts/trade_master.py status` — 状态总览
-11. `python3 scripts/trade_master.py daily` — 全自动管线
-
-## 🧠 心理圆桌
-12. `python3 scripts/psych_roundtable_daily.py --date $(date +%Y-%m-%d)`
-
 ## 📊 股市日报（交易日收盘后）
-13. `python3 scripts/daily_market_report.py`
+10. `python3 scripts/daily_market_report.py`
+暂停 -->
 
 ---
 

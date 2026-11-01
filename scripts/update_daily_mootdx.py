@@ -67,8 +67,10 @@ def update_daily(start_date=None, end_date=None, batch_commit=500):
         code = sym.replace("A.", "")
         
         try:
-            # offset=5 只取最近几天，避免全量拉取
-            klines = client.bars(symbol=code, category=4, offset=10)
+            # 动态offset: 覆盖从start_date到今天的交易日数+缓冲
+            span = (date.today() - target_start).days
+            offset = max(10, int(span * 0.75) + 10)
+            klines = client.bars(symbol=code, category=4, offset=offset)
             if klines is None or len(klines) == 0:
                 errors += 1
                 missing_stocks.append(sym)
